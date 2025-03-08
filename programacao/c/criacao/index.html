@@ -10,13 +10,13 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/c/02-criacao/">
+        <link rel="canonical" href="https://dclobato.github.io/programacao/c/criacao/">
       
       
-        <link rel="prev" href="../01-historia/">
+        <link rel="prev" href="../historia/">
       
       
-        <link rel="next" href="../03-tiposdedados/">
+        <link rel="next" href="../tiposdedados/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -455,6 +455,8 @@
       
         
       
+        
+      
     
     
     
@@ -491,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-historia/" class="md-nav__link">
+      <a href="../historia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -569,6 +571,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Edição do código fonte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentários
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -623,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-tiposdedados/" class="md-nav__link">
+      <a href="../tiposdedados/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -645,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-entrada_saida/" class="md-nav__link">
+      <a href="../entrada_saida/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -667,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-expressoes/" class="md-nav__link">
+      <a href="../expressoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -689,11 +706,33 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-fluxo/" class="md-nav__link">
+      <a href="../fluxo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
     
   </span>
   
@@ -876,27 +915,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biblioteca_c/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Biblioteca de códigos em C
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -931,6 +949,21 @@
       Edição do código fonte
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Edição do código fonte">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comentarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comentários
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1027,6 +1060,35 @@
 <p>Tela principal da IDE CLion (JetBrains)</p>
 </figcaption>
 </figure>
+<h3 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h3>
+<p>Os comentários em linguagem C são elementos não executáveis que fornecem descrições e explicações adicionais dentro do código-fonte. Eles desempenham um papel fundamental na documentação do programa, tornando-o mais legível e compreensível tanto para o próprio desenvolvedor quanto para outros programadores que possam trabalhar com o código no futuro.</p>
+<div class="admonition note inline end">
+<p class="admonition-title">Note</p>
+<p>Historicamente, antes da versão C99 (lançada em 1999), apenas os comentários de múltiplas linhas (<code class="language-c highlight"><span class="cm">/* */</span></code>) eram suportados na linguagem C. Os comentários de linha única (<code class="language-c highlight"><span class="c1">//</span></code>) foram incorporados aos compiladores C com o padrão C99, tendo sido originalmente uma característica da linguagem C++.</p>
+</div>
+<p>A linguagem C suporta dois tipos principais de comentários.</p>
+<p>O primeiro tipo são os <strong>comentários de linha única</strong>, que começam com duas barras (<code class="language-c highlight"><span class="c1">//</span></code>) e se estendem até o final da linha. Tudo que estiver após essas duas barras será ignorado pelo compilador durante o processo de compilação. Por exemplo, podemos escrever a linha abaixo em qualquer parte do código, e o compilador simplesmente ignorará esse texto.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// Este é um comentário de linha única</span>
+</span></code></pre></div></td></tr></table></div>
+<p>O segundo tipo são os <strong>comentários de múltiplas linhas</strong>, também conhecidos como comentários em bloco. Estes começam com a sequência <code class="language-c highlight"><span class="cm">/*</span></code> e terminam com <code class="language-c highlight"><span class="o">*/</span></code>. Todo o texto entre esses delimitadores é considerado um comentário, independentemente de quantas linhas ele ocupe, como no exemplo abaixo.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cm">/* Este comentário pode se estender por várias</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="cm">   linhas e explicar detalhadamente o funcionamento</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="cm">   de determinado trecho de código */</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Os comentários são utilizados por diversas razões importantes no desenvolvimento de software:</p>
+<ul>
+<li>Eles tornam o código mais legível para referência futura, o que é especialmente útil quando o programador precisa revisitar seu próprio código após um longo período;</li>
+<li>Os comentários são ferramentas valiosas para depuração, permitindo que partes do código sejam temporariamente desativadas para testes;</li>
+<li>Em ambientes onde múltiplos desenvolvedores trabalham no mesmo projeto, comentários bem escritos facilitam o entendimento do código por todos os membros da equipe, principalmente em códigos complexos ou otimizados, onde a lógica pode não ser imediatamente óbvia.</li>
+</ul>
+<div class="admonition warning inline">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Vale ressaltar que os comentários não devem ser usados como substitutos para código mal escrito. A prioridade deve ser sempre escrever código limpo e compreensível, utilizando comentários como complemento para esclarecer intenções e lógicas complexas.</p>
+</div>
+<p>Para utilizar comentários de forma eficaz, é recomendado que eles expliquem o "porquê" por trás do código, não apenas o "como". Comentários devem ser claros e concisos, fornecendo informações suficientes para entender o propósito do código sem serem excessivamente detalhados.</p>
+<p>É importante manter os comentários atualizados quando o código é modificado. Comentários desatualizados podem causar confusão e levar a erros de interpretação. Além disso, deve-se evitar comentários redundantes que apenas repetem o que o código já expressa claramente.</p>
 <h2 id="pre-processamento">Pré-processamento<a class="headerlink" href="#pre-processamento" title="Permanent link">&para;</a></h2>
 <!-- gcc -E arquivo.c -->
 
@@ -1061,45 +1123,45 @@
 <p><code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#ifndef</span></code> e outras relacionadas: permitem compilar trechos específicos do código com base em definições previamente estabelecidas. Isso é extremamente útil quando estamos escrevendo um programa que deve rodar em mais de uma arquitetura e, dependendo da arquitetura vai utilizar uma biblioteca ou outra, por exemplo.</p>
 </li>
 </ul>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplos de uso de diretivas de compilação</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span>
-<span class="normal"><a href="#__codelineno-0-19">19</a></span>
-<span class="normal"><a href="#__codelineno-0-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cp">#define max(A, B) ((A &gt; B) ? (A) : (B))</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="cp">#define min(A, B) ((A &lt; B) ? (A) : (B))</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="cp">#define DEBUG</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">{</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">maior</span><span class="p">;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="cp">#ifdef DEBUG</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Depurando o programa&quot;</span><span class="p">);</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="cp">#endif</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="n">maior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Entre %d e %d, o maior é %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">maior</span><span class="p">);</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="p">}</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplos de uso de diretivas de compilação</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="cp">#define max(A, B) ((A &gt; B) ? (A) : (B))</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="cp">#define min(A, B) ((A &lt; B) ? (A) : (B))</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="cp">#define DEBUG</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">{</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">maior</span><span class="p">;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="cp">#ifdef DEBUG</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Depurando o programa&quot;</span><span class="p">);</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="cp">#endif</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">  </span><span class="n">maior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">  </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Entre %d e %d, o maior é %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">maior</span><span class="p">);</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="compilacao-e-montagem">Compilação e montagem<a class="headerlink" href="#compilacao-e-montagem" title="Permanent link">&para;</a></h2>
 <!-- gcc -S arquivo.c -->
@@ -1136,17 +1198,17 @@
 <p>O arquivo executável gerado pode ser executado diretamente pelo sistema operacional.</p>
 <h2 id="um-programa-em-c-minimo">Um programa em C mínimo<a class="headerlink" href="#um-programa-em-c-minimo" title="Permanent link">&para;</a></h2>
 <p>Um programa em C mínimo para escrever "Olá, mundo!" na tela pode ser o seguinte</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ola_mundo.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">{</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ola, mundo!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">}</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ola_mundo.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ola, mundo!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Este programa é um exemplo clássico que foi popularizado pelo livro "The C Programming Language", escrito por Brian Kernighan e Dennis Ritchie, os criadores da linguagem C. Através de sua simplicidade, ele nos introduz aos conceitos fundamentais da linguagem, como inclusão de cabeçalhos, declaração de funções, blocos de código e operações de entrada e saída.</p>
 <p>A primeira linha, <code class="language-c highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span></code>, como já vimos, é uma diretiva de pré-processador. Neste caso, <code class="language-c highlight"><span class="cp">#include</span></code> instrui o pré-processador a inserir o conteúdo do arquivo especificado no local onde a diretiva se encontra. O arquivo <code class="language-c highlight"><span class="o">&lt;</span><span class="n">stdio</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code> é um cabeçalho da biblioteca padrão de entrada e saída (<em>Standard Input/Output Header</em>). Os colchetes angulares (<code class="language-c highlight"><span class="o">&lt;&gt;</span></code>) indicam que o arquivo deve ser buscado nos diretórios padrão do sistema. Este cabeçalho contém declarações de funções essenciais para operações de entrada e saída, incluindo a função <code class="language-c highlight"><span class="n">printf</span><span class="p">()</span></code>, que utilizaremos para exibir a mensagem na tela.</p>
@@ -1191,7 +1253,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../01-historia/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Introdução e história">
+          <a href="../historia/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Introdução e história">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1208,7 +1270,7 @@
         
         
           
-          <a href="../03-tiposdedados/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Tipos de dados">
+          <a href="../tiposdedados/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Tipos de dados">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo

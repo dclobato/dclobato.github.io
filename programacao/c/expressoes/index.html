@@ -10,13 +10,13 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/c/05-expressoes/">
+        <link rel="canonical" href="https://dclobato.github.io/programacao/c/expressoes/">
       
       
-        <link rel="prev" href="../04-entrada_saida/">
+        <link rel="prev" href="../entrada_saida/">
       
       
-        <link rel="next" href="../06-fluxo/">
+        <link rel="next" href="../fluxo/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -455,6 +455,8 @@
       
         
       
+        
+      
     
     
     
@@ -491,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-historia/" class="md-nav__link">
+      <a href="../historia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -513,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-criacao/" class="md-nav__link">
+      <a href="../criacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-tiposdedados/" class="md-nav__link">
+      <a href="../tiposdedados/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-entrada_saida/" class="md-nav__link">
+      <a href="../entrada_saida/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -716,11 +718,33 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-fluxo/" class="md-nav__link">
+      <a href="../fluxo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
     
   </span>
   
@@ -899,27 +923,6 @@
           </ul>
         </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biblioteca_c/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Biblioteca de códigos em C
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -1461,7 +1464,7 @@
 <p></center></p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Se você quer saber se um número está entre outros dois, a expressão usada na matemática (<span class="arithmatex">\(10 &lt; n &lt; 50\)</span>) não vai funcionar em C. não funcionará. Se você usar essa expressão, o compilador vai avaliar a primeira parte (<span class="arithmatex">\(10 &lt; n\)</span>) e, o resultado dessa comparação será comparado com 50.</p>
+<p>Se você quer saber se um número está entre outros dois, a expressão usada na matemática (<span class="arithmatex">\(10 &lt; n &lt; 50\)</span>) não vai funcionar em C. Se você usar essa expressão, o compilador vai avaliar a primeira parte (<span class="arithmatex">\(10 &lt; n\)</span>) e, o resultado dessa comparação será comparado com 50.</p>
 <p>A forma correta envolve o operador <strong>AND</strong> (<code class="language-c highlight"><span class="o">&amp;&amp;</span></code>): <code class="language-c highlight"><span class="mi">10</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50</span></code>.</p>
 </div>
 <h2 id="operadores-de-bit">Operadores de bit<a class="headerlink" href="#operadores-de-bit" title="Permanent link">&para;</a></h2>
@@ -1687,11 +1690,6 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">Condicional ternário</td>
-<td style="text-align: center;"><code>a ? b : c</code></td>
-<td style="text-align: left;">Se <code>a</code> for verdadeiro, retorna <code>b</code>; caso contrário, <code>c</code><br><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bom %s!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hora</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;dia&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;tarde&quot;</span><span class="p">)</span></code></td>
-</tr>
-<tr>
 <td style="text-align: center;">Tamanho de</td>
 <td style="text-align: center;"><code>sizeof a</code><br><code>sizeof (T)</code></td>
 <td style="text-align: left;">Retorna o tamanho do objeto <code>a</code> ou do tipo <code>T</code> em número de <code>chars</code>. Ou seja, <code>sizeof (char)</code> é sempre igual a 1. Como em muitos casos o tamanho do caracter (<code>sizeof (char)</code>) é igual a 8 bits, ou seja, 1 byte, <code>sizeof (T)</code> retorna o tamanho em bytes ocupado por uma variável do tipo <code>T</code></td>
@@ -1823,7 +1821,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../04-entrada_saida/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Entrada e saída">
+          <a href="../entrada_saida/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Entrada e saída">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1840,7 +1838,7 @@
         
         
           
-          <a href="../06-fluxo/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Controle de fluxo">
+          <a href="../fluxo/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Controle de fluxo">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo

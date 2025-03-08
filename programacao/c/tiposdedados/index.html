@@ -10,13 +10,13 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/c/03-tiposdedados/">
+        <link rel="canonical" href="https://dclobato.github.io/programacao/c/tiposdedados/">
       
       
-        <link rel="prev" href="../02-criacao/">
+        <link rel="prev" href="../criacao/">
       
       
-        <link rel="next" href="../04-entrada_saida/">
+        <link rel="next" href="../entrada_saida/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -455,6 +455,8 @@
       
         
       
+        
+      
     
     
     
@@ -491,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-historia/" class="md-nav__link">
+      <a href="../historia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -513,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-criacao/" class="md-nav__link">
+      <a href="../criacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -627,6 +629,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enumeracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sequencias-de-escape" class="md-nav__link">
     <span class="md-ellipsis">
       Sequências de escape
@@ -662,6 +673,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sinonimos-de-tipos-typedef" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sinônimos de tipos (typedef)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -678,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-entrada_saida/" class="md-nav__link">
+      <a href="../entrada_saida/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -700,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-expressoes/" class="md-nav__link">
+      <a href="../expressoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -722,11 +742,33 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-fluxo/" class="md-nav__link">
+      <a href="../fluxo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
     
   </span>
   
@@ -909,27 +951,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../biblioteca_c/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Biblioteca de códigos em C
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1001,6 +1022,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enumeracoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enumerações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#sequencias-de-escape" class="md-nav__link">
     <span class="md-ellipsis">
       Sequências de escape
@@ -1031,6 +1061,15 @@
   <a href="#ponteiros" class="md-nav__link">
     <span class="md-ellipsis">
       Ponteiros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sinonimos-de-tipos-typedef" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sinônimos de tipos (typedef)
     </span>
   </a>
   
@@ -1247,6 +1286,116 @@
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div></p>
 <p>Aqui, <code>PI</code> é tratado como uma variável que não pode ser modificada. Diferente de <code class="language-c highlight"><span class="cp">#define</span></code>, ele tem um tipo e ocupa uma posição de memória.</p>
+<h2 id="enumeracoes">Enumerações<a class="headerlink" href="#enumeracoes" title="Permanent link">&para;</a></h2>
+<p>As enumerações (ou <strong>enums</strong>) na linguagem C são um tipo de dados definido pelo usuário que consistem em um conjunto de constantes inteiras nomeadas. Elas fornecem uma maneira de criar nomes descritivos e significativos para um conjunto de valores inteiros, tornando o código mais legível e fácil de manter.</p>
+<p>Para declarar uma enumeração em C, utiliza-se a palavra-chave <code class="language-c highlight"><span class="k">enum</span></code> seguida pelo nome da enumeração e a lista de constantes entre chaves:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">nome_enum</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">const1</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="n">const2</span><span class="p">,</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="n">const3</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Por padrão, a primeira constante recebe o valor 0, a segunda recebe 1, e assim por diante. No entanto, é possível atribuir valores específicos às constantes, como no exemplo a seguir:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">direcao</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">NORTE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="n">SUL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="n">LESTE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="n">OESTE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">40</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Após definir um tipo de enumeração, é possível declarar variáveis desse tipo:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">direcao</span><span class="w"> </span><span class="n">minhaVar</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">minhaVar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LESTE</span><span class="p">;</span><span class="w"> </span><span class="c1">// Atribui o valor 30 à variável</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Características Importantes</p>
+<ul>
+<li><strong>Tamanho em Memória</strong>: Uma variável de enumeração ocupa o mesmo espaço que um inteiro (geralmente 4 bytes).</li>
+<li><strong>Uso em Expressões</strong>: As constantes de enumeração podem ser usadas em qualquer lugar onde a linguagem C permite uma expressão inteira.</li>
+<li><strong>Escopo</strong>: Os identificadores em uma lista de enumeração devem ser distintos de outros identificadores no mesmo escopo com a mesma visibilidade.</li>
+</ul>
+</div>
+<p>Uma aplicação interessante das enumerações é o uso como <em>flags</em> (sinalizadores). Neste caso, cada constante é definida como uma potência de 2 para permitir a combinação de múltiplas <em>flags</em> usando operadores bit a bit.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">enum</span><span class="w"> </span><span class="n">estiloTexto</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="n">NEGRITO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">     </span><span class="c1">// 00000001 em binário</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span><span class="n">ITALICO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">     </span><span class="c1">// 00000010 em binário</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="n">SUBLINHADO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w">   </span><span class="c1">// 00000100 em binário</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="p">};</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">meuEstilo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NEGRITO</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">SUBLINHADO</span><span class="p">;</span><span class="w"> </span><span class="c1">// Combina NEGRITO e SUBLINHADO (5)</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">meuEstilo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">NEGRITO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Texto em negrito</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a>
+</span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">meuEstilo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">ITALICO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Texto em itálico</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a>
+</span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">meuEstilo</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">SUBLINHADO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Texto sublinhado</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23"></a>
+</span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a>Texto em negrito
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>Texto sublinhado
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>As enumerações são particularmente úteis quando:</p>
+<ul>
+<li>Você tem um conjunto de valores relacionados que não mudarão, como dias da semana, meses, cores, etc.</li>
+<li>Você precisa de constantes nomeadas para melhorar a legibilidade do código.</li>
+<li>Você está trabalhando com <em>flags</em> e precisa combinar múltiplos valores.</li>
+<li>Você quer evitar o uso de números mágicos no código.</li>
+</ul>
+<p>Embora seja possível realizar quase tudo em C sem usar enumerações, elas proporcionam uma maneira elegante e legível de trabalhar com conjuntos de constantes relacionadas, tornando o código mais fácil de entender e manter.</p>
 <h2 id="sequencias-de-escape">Sequências de escape<a class="headerlink" href="#sequencias-de-escape" title="Permanent link">&para;</a></h2>
 <p>Alguns caracteres podem ser representados como <strong>sequências de escape</strong>: são conjuntos de dois ou mais caracteres que, na realidade, representam apenas um caractere. Um exemplo de sequência de escape é o <code class="language-c highlight"><span class="err">\</span><span class="n">n</span></code>, utilizado para representar o final de uma linha.</p>
 <p>Qualquer caracter pode ser representado pela sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">ooo</span></code>, onde <code>ooo</code> é o número octal do caracter na tabela ASCII<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Outra possibilidade é representar o caracter utilizando a sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">xhh</span></code>, onde <code>hh</code> é o número hexadecimal do caracter na tabela ASCII. Assim, a letra <code>A</code> pode ser armazenada como <code>A</code>, ou como <code class="language-c highlight"><span class="err">\</span><span class="mi">101</span></code>, que é a representação em octal do valor 65 associado à letra A maiúscula na tabela ASCII, ou como <code class="language-c highlight"><span class="err">\</span><span class="n">x41</span></code>, que é a representação em hexadecimal de 65.</p>
@@ -1315,129 +1464,129 @@
 </table>
 <h2 id="estruturas">Estruturas<a class="headerlink" href="#estruturas" title="Permanent link">&para;</a></h2>
 <p>Estruturas agregam o armazenamento de múltiplos itens de dados, de mesmo tipo ou não, em um único bloco de memória referenciado por uma única variável. O exemplo abaixo cria uma estrutura chamada <code>aniversario</code> para armazenar o nome e a data de nascimento de uma pessoa; em seguida, temos a declaração de uma variável chamada <code>Abelardo</code> do tipo <code class="language-c highlight"><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span></code></p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de estrutura em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span>
-<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">nome</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dia</span><span class="p">;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mes</span><span class="p">;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ano</span><span class="p">;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">};</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">;</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de estrutura em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">nome</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dia</span><span class="p">;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mes</span><span class="p">;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ano</span><span class="p">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="p">};</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">;</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="arranjos-arrays">Arranjos (<em>arrays</em>)<a class="headerlink" href="#arranjos-arrays" title="Permanent link">&para;</a></h2>
 <p>Para cada tipo <code>T</code>, exceto o tipo <code>void</code>, existe um tipo "arranjo de <span class="arithmatex">\(N\)</span> elementos do tipo <code>T</code>". Um arranjo é uma coleção de valores, todos do mesmo tipo, armazenados de forma contígua na memória.  Os elementos que compõem um arranjo de tamanho <span class="arithmatex">\(N\)</span> são indexados por inteiros que variam de <code>0</code> até <code>N-1</code>. Por exemplo</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de arranjo unidimensional em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span>
-<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">faltas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo com 10 elementos, cada </span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">                 </span><span class="c1">// um do tipo inteiro</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">  </span><span class="c1">// O quarto elemento do arranjo recebe</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">           </span><span class="c1">// o valor 8</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de arranjo unidimensional em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">faltas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo com 10 elementos, cada </span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">                 </span><span class="c1">// um do tipo inteiro</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">  </span><span class="c1">// O quarto elemento do arranjo recebe</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">           </span><span class="c1">// o valor 8</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Arranjos com mais de uma dimensão (as vezes chamados de <em>matrizes</em>) são definidos como um "arranjo de arranjo ...", e todas as dimensões, exceto a mais externa, precisam ser valores constantes.</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de arranjo bidimensional em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">8</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo de 10 elementos, cada um do tipo</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">               </span><span class="c1">// &#39;arranjo de 8 elementos inteiros&#39;</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de arranjo bidimensional em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">8</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo de 10 elementos, cada um do tipo</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">               </span><span class="c1">// &#39;arranjo de 8 elementos inteiros&#39;</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="ponteiros">Ponteiros<a class="headerlink" href="#ponteiros" title="Permanent link">&para;</a></h2>
 <p>Um ponteiro do tipo "ponteiro para <code>T</code>" é um tipo de dados que guarda um endereço de memória onde está armazenado um elemento do tipo <code>T</code>. Cada tipo de dado <code>T</code> tem um tipo de dados correspondente "ponteiro para <code>T</code>".</p>
 <p>Ponteiros são declarados com o uso de um asterísco (<code>*</code>) depois da declaração de tipo, e antecedendo o nome da variável.</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de ponteiros em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span>
-<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">letra</span><span class="p">;</span><span class="w">   </span><span class="c1">// &#39;letra&#39; guarda um endereço de memória onde está</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo char</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">salario</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;salario&#39; guarda um endereço de memória onde está</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo float</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">faltas</span><span class="p">;</span><span class="w">   </span><span class="c1">// &#39;faltas&#39; guarda um endereço de memória onde está</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo int</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de ponteiros em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">letra</span><span class="p">;</span><span class="w">   </span><span class="c1">// &#39;letra&#39; guarda um endereço de memória onde está</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo char</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">salario</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;salario&#39; guarda um endereço de memória onde está</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo float</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">faltas</span><span class="p">;</span><span class="w">   </span><span class="c1">// &#39;faltas&#39; guarda um endereço de memória onde está</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo int</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Os ponteiros podem armazenar endereços de variáveis do tipo "arranjo de <code>T</code>" ou para estruturas, como no exemplo</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Ponteiros para arranjos e para estruturas em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span>
-<span class="normal"><a href="#__codelineno-6-6">6</a></span>
-<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// Ponteiro para um arranjo de 10 valores inteiros</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">nodo</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">nodo</span><span class="w"> </span><span class="o">*</span><span class="n">proximo</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ponteiro (endereço de memória que guarda</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">                           </span><span class="c1">//  uma variável do tipo) para &#39;struct nodo&#39;</span>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">};</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Ponteiros para arranjos e para estruturas em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// Ponteiro para um arranjo de 10 valores inteiros</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">nodo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">nodo</span><span class="w"> </span><span class="o">*</span><span class="n">proximo</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ponteiro (endereço de memória que guarda</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">                           </span><span class="c1">//  uma variável do tipo) para &#39;struct nodo&#39;</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="p">};</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Ponteiros também podem ser declarados para variáveis do tipo "ponteiro para <code>T</code>", dando origem ao tipo "ponteiro para ponteiro para <code>T</code>", ou seja, uma variável que guarda um endereço de memória onde está armazenado um endereço de memória de uma variável do tipo <code>T</code> (uma indireção dupla). Os ponteiros para ponteiros são declarados com <code>**</code>.</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de ponteiro para ponteiro para inteiro</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// Um ponteiro para ponteiro para inteiro</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de ponteiro para ponteiro para inteiro</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// Um ponteiro para ponteiro para inteiro</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Em C, os operadores <code>*</code> e <code>&amp;</code> desempenham papéis cruciais na manipulação de ponteiros, permitindo aos programadores interagir diretamente com a memória.</p>
 <p>O operador <code>*</code>, quando usado com um ponteiro, é conhecido como <strong>operador de indireção</strong> ou <strong>dereferência</strong>. Ele permite acessar o valor armazenado na posição de memória para a qual o ponteiro aponta. Em outras palavras, se um ponteiro <code>p</code> armazena o endereço de uma variável inteira <code>x</code>, então <code>*p</code> retorna o valor armazenado na variável <code>x</code>. Esse mecanismo é fundamental para modificar o valor de uma variável indiretamente, através de seu endereço de memória.</p>
 <p>Por outro lado, o operador <code>&amp;</code> é o <strong>operador de endereço</strong>. Ele retorna o endereço de memória de uma variável. Ao aplicar <code>&amp;</code> a uma variável, obtemos um ponteiro para essa variável. Por exemplo, se <code>x</code> é uma variável inteira, então <code>&amp;x</code> retorna o endereço de memória onde <code>x</code> está armazenado. Esse operador é essencial para inicializar ponteiros, permitindo que eles apontem para variáveis específicas.</p>
 <p>A combinação de <code>*</code> e <code>&amp;</code> possibilita a manipulação eficiente da memória, permitindo a criação de estruturas de dados dinâmicas e a implementação de algoritmos que exigem acesso direto à memória.</p>
 <p>Veja o exemplo a seguir</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ponteiros.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variável inteira comum</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ponteiro para a variável &#39;valor&#39;</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ponteiro para o ponteiro &#39;ptr&#39;</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="c1">// Exibindo os valores e endereços</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de valor: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">);</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por ptr (o que esta guardado no endereco guardado em ptr): %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">);</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por ptr_ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr_ptr</span><span class="p">);</span>
-</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por *ptr_ptr: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="p">);</span>
-</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de ptr_ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr_ptr</span><span class="p">);</span>
-</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a>
-</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="p">}</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ponteiros.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variável inteira comum</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ponteiro para a variável &#39;valor&#39;</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ponteiro para o ponteiro &#39;ptr&#39;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="c1">// Exibindo os valores e endereços</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de valor: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">);</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por ptr (o que esta guardado no endereco guardado em ptr): %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por ptr_ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr_ptr</span><span class="p">);</span>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por *ptr_ptr: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="p">);</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de ptr_ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr_ptr</span><span class="p">);</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18"></a>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Valor: 10
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Endereco de valor: 00000067953ffb4c
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Valor apontado por ptr (o que esta guardado no endereco guardado em ptr): 10
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Endereco de ptr: 00000067953ffb40
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Valor apontado por ptr_ptr: 00000067953ffb4c
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Valor apontado por *ptr_ptr: 10
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Endereco de ptr_ptr: 00000067953ffb38
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Valor: 10
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Endereco de valor: 00000067953ffb4c
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Valor apontado por ptr (o que esta guardado no endereco guardado em ptr): 10
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>Endereco de ptr: 00000067953ffb40
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>Valor apontado por ptr_ptr: 00000067953ffb4c
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Valor apontado por *ptr_ptr: 10
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Endereco de ptr_ptr: 00000067953ffb38
 </span></code></pre></div>
 </div>
 </div>
@@ -1452,6 +1601,60 @@
 <p>Especialmente em sistemas embarcados, ou quando escrevendo programas que precisam manipular diretamente o <em>hardware</em> da máquina, os ponteiros são essenciais: eles permitem que os programadores leiam e escrevam em endereços de memória específicos que correspondem a registradores de <em>hardware</em>.</p>
 <p>Por fim, é só por causa da existência dos ponteiros que é possível passar parâmetros para funções por referência, permitindo que a função modifique os valores originais das variáveis.</p>
 <p>Uma abordagem disciplinada pode eliminar a maioria dos problemas: inicializar sempre os ponteiros, verificar se são nulos antes de dereferenciá-los e implementar uma estratégia clara de limpeza de memória</p>
+<h2 id="sinonimos-de-tipos-typedef">Sinônimos de tipos (<code>typedef</code>)<a class="headerlink" href="#sinonimos-de-tipos-typedef" title="Permanent link">&para;</a></h2>
+<p>O comando <code class="language-c highlight"><span class="k">typedef</span></code> em C é usado para criar sinônimos ou "<em>aliases</em>" para tipos de dados existentes. Ele permite renomear tipos de dados, facilitando a organização e o entendimento do código.</p>
+<div class="admonition warning inline end">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>É importante ressaltar que o <code class="language-c highlight"><span class="k">typedef</span></code> não cria um novo tipo de dado, apenas permite que um tipo existente seja denominado de uma forma diferente</p>
+</div>
+<p>A sintaxe básica do <code class="language-c highlight"><span class="k">typedef</span></code> é:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="k">typedef</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tipo_existente</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">novo_nome</span><span class="o">&gt;</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>O uso de <code class="language-c highlight"><span class="k">typedef</span></code> em programação oferece diversas vantagens. Em primeiro lugar, ele aprimora a legibilidade do código ao simplificar declarações complexas, facilitando o entendimento; em segundo lugar, facilita a manutenção, permitindo que a alteração de um tipo de dado seja feita em um único local, sem a necessidade de modificar cada instância de uso, e; por fim, ele simplifica as declarações de estruturas, reduzindo a necessidade de utilizar repetidamente a palavra-chave <code class="language-c highlight"><span class="k">struct</span></code>.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de uso de typedef</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-16-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-16-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-16-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-16-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-16-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-16-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-16-10">10</a></span>
+<span class="normal"><a href="#__codelineno-16-11">11</a></span>
+<span class="normal"><a href="#__codelineno-16-12">12</a></span>
+<span class="normal"><a href="#__codelineno-16-13">13</a></span>
+<span class="normal"><a href="#__codelineno-16-14">14</a></span>
+<span class="normal"><a href="#__codelineno-16-15">15</a></span>
+<span class="normal"><a href="#__codelineno-16-16">16</a></span>
+<span class="normal"><a href="#__codelineno-16-17">17</a></span>
+<span class="normal"><a href="#__codelineno-16-18">18</a></span>
+<span class="normal"><a href="#__codelineno-16-19">19</a></span>
+<span class="normal"><a href="#__codelineno-16-20">20</a></span>
+<span class="normal"><a href="#__codelineno-16-21">21</a></span>
+<span class="normal"><a href="#__codelineno-16-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1">// Define uma struct para representar um ponto no espaço 2D</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="p">{</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="p">}</span><span class="w"> </span><span class="n">Ponto</span><span class="p">;</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10"></a>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11"></a><span class="k">typedef</span><span class="w"> </span><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">uli_t</span><span class="p">;</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14"></a><span class="w">  </span><span class="c1">// Cria uma variável do tipo Ponto, que é um apelido para a struct</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15"></a><span class="w">  </span><span class="c1">// com dois inteiros definida anteriormente</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16"></a><span class="w">  </span><span class="n">Ponto</span><span class="w"> </span><span class="n">p1</span><span class="p">;</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17"></a>
+</span><span id="__span-16-18"><a id="__codelineno-16-18" name="__codelineno-16-18"></a><span class="w">  </span><span class="c1">// Mais simples que &quot;unsigned long int a, b;&quot;</span>
+</span><span id="__span-16-19"><a id="__codelineno-16-19" name="__codelineno-16-19"></a><span class="w">  </span><span class="n">uli_t</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-16-20"><a id="__codelineno-16-20" name="__codelineno-16-20"></a>
+</span><span id="__span-16-21"><a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-16-22"><a id="__codelineno-16-22" name="__codelineno-16-22"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
 <div class="footnote">
 <hr />
 <ol>
@@ -1495,7 +1698,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../02-criacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Criação de um programa em C">
+          <a href="../criacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Criação de um programa em C">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1512,7 +1715,7 @@
         
         
           
-          <a href="../04-entrada_saida/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Entrada e saída">
+          <a href="../entrada_saida/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Entrada e saída">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo

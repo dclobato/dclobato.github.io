@@ -13,8 +13,10 @@
         <link rel="canonical" href="https://dclobato.github.io/programacao/c/biblioteca_c/">
       
       
-        <link rel="prev" href="../../exercicios/competicao/">
+        <link rel="prev" href="../fluxo/">
       
+      
+        <link rel="next" href="../../exercicios/exercicios/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -434,8 +436,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -451,14 +455,16 @@
       
         
       
+        
+      
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -473,7 +479,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             A linguagem de programação C
@@ -487,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-historia/" class="md-nav__link">
+      <a href="../historia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-criacao/" class="md-nav__link">
+      <a href="../criacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -531,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-tiposdedados/" class="md-nav__link">
+      <a href="../tiposdedados/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -553,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-entrada_saida/" class="md-nav__link">
+      <a href="../entrada_saida/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -575,7 +581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-expressoes/" class="md-nav__link">
+      <a href="../expressoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -597,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-fluxo/" class="md-nav__link">
+      <a href="../fluxo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -607,6 +613,167 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#leitura-de-inteiros-reais-e-cadeias-de-caractere-sem-o-uso-de-scanf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Leitura de inteiros, reais e cadeias de caractere sem o uso de scanf()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removendo-caracteres-em-branco-no-inicio-e-no-final-de-linhas-de-texto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Removendo caracteres em branco no ínicio e no final de linhas de texto
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeros-aleatorios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Números aleatórios
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-atual" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data atual
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limites-e-constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites e constantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limites e constantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      limits.h
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floath" class="md-nav__link">
+    <span class="md-ellipsis">
+      float.h
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mathh" class="md-nav__link">
+    <span class="md-ellipsis">
+      math.h
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mascaras-de-formatacao-para-printf-e-scanf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Máscaras de formatação para printf e scanf
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modificadores-para-alinhamento-e-tamanho" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificadores para alinhamento e tamanho
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -779,166 +946,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Biblioteca de códigos em C
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Biblioteca de códigos em C
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Nesta página
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#leitura-de-inteiros-reais-e-cadeias-de-caractere-sem-o-uso-de-scanf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Leitura de inteiros, reais e cadeias de caractere sem o uso de scanf()
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#removendo-caracteres-em-branco-no-inicio-e-no-final-de-linhas-de-texto" class="md-nav__link">
-    <span class="md-ellipsis">
-      Removendo caracteres em branco no ínicio e no final de linhas de texto
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numeros-aleatorios" class="md-nav__link">
-    <span class="md-ellipsis">
-      Números aleatórios
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-atual" class="md-nav__link">
-    <span class="md-ellipsis">
-      Data atual
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limites-e-constantes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Limites e constantes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Limites e constantes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitsh" class="md-nav__link">
-    <span class="md-ellipsis">
-      limits.h
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#floath" class="md-nav__link">
-    <span class="md-ellipsis">
-      float.h
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mathh" class="md-nav__link">
-    <span class="md-ellipsis">
-      math.h
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mascaras-de-formatacao-para-printf-e-scanf" class="md-nav__link">
-    <span class="md-ellipsis">
-      Máscaras de formatação para printf e scanf
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modificadores-para-alinhamento-e-tamanho" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modificadores para alinhamento e tamanho
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2286,7 +2293,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../../exercicios/competicao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Questões de competicao">
+          <a href="../fluxo/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Controle de fluxo">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2296,11 +2303,27 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Questões de competicao
+                Controle de fluxo
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../../exercicios/exercicios/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Exercícios selecionados">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Exercícios selecionados
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
