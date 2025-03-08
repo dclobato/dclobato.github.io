@@ -1,0 +1,1306 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/exercicios/selecao/">
+      
+      
+        <link rel="prev" href="../operacoes/">
+      
+      
+        <link rel="next" href="../repeticao/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Estruturas de seleção - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#estruturas-de-selecao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Estruturas de seleção
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desafios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/03-tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/05-expressoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../operacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="estruturas-de-selecao">Estruturas de seleção<a class="headerlink" href="#estruturas-de-selecao" title="Permanent link">&para;</a></h1>
+<details class="note">
+<summary>Lembre-se</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Símbolo</th>
+<th style="text-align: left;">Significado</th>
+<th style="text-align: center;">Símbolo</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\lor\)</span></td>
+<td style="text-align: left;">OR</td>
+<td style="text-align: center;"><span class="arithmatex">\(\land\)</span></td>
+<td style="text-align: left;">AND</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\lnot\)</span></td>
+<td style="text-align: left;">NOT</td>
+<td style="text-align: center;"><span class="arithmatex">\(\oplus\)</span></td>
+<td style="text-align: left;">XOR</td>
+</tr>
+</tbody>
+</table>
+</details>
+<ol>
+<li>
+<p>Assumindo que os predicados <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(B\)</span>, <span class="arithmatex">\(C\)</span> e <span class="arithmatex">\(D\)</span> valem, respectivamente, <em>Falso</em>, <em>Falso</em>, <em>Verdadeiro</em> e <em>Falso</em>, qual o resultado da avaliação das expressões lógicas a seguir?</p>
+<ul>
+<li><span class="arithmatex">\((A \lor B) \land \lnot C\)</span></li>
+<li><span class="arithmatex">\((A \oplus B) \lor (\lnot C \land D)\)</span></li>
+<li><span class="arithmatex">\((A \land B) \oplus (\lnot C \lor D)\)</span></li>
+<li><span class="arithmatex">\((\lnot A \lor B) \land (C \oplus D)\)</span></li>
+</ul>
+</li>
+<li>
+<p>Considerando os as variáveis inteiras p, q e r, com valores 10, 20 e 30 respectivamente, calcule o resultado das expressões lógicas a seguir</p>
+<ul>
+<li><span class="arithmatex">\(p &gt; q\)</span></li>
+<li><span class="arithmatex">\(q \geq r\)</span></li>
+<li><span class="arithmatex">\(r &gt; p\)</span></li>
+<li><span class="arithmatex">\((p &lt; q) \land (p &lt; r)\)</span></li>
+<li><span class="arithmatex">\((p &gt; q) \lor (r &gt; q)\)</span></li>
+<li><span class="arithmatex">\(\lnot(\lnot(p &gt; q) \land \lnot(r &gt; q))\)</span></li>
+</ul>
+</li>
+<li>
+<p>Construa um programa que receba um número inteiro e informe se ele é positivo, negativo ou nulo, e se ele é par ou ímpar.</p>
+</li>
+<li>
+<p>Construa um programa que leia dois números e indique se são iguais ou se são diferentes. Mostre o maior e o menor (nesta sequência).</p>
+</li>
+<li>
+<p>Faça um programa que leia o número de um mês do primeiro semestre do ano (1 a 6) e escreva o nome correspondente. Seu programa deve avisar o usuário se ele digitar um valor fora da faixa possível.</p>
+</li>
+<li>
+<p>Construa um programa que leia três valores (A, B e C) e diga se a soma de A com B é menor, maior ou igual a C.</p>
+</li>
+<li>
+<p>Determinada empresa dá descontos para mulheres maiores de 45 anos e para jovens de qualquer sexo com menos de 18 anos. Faça um programa que leia o sexo e a idade de uma pessoa e diga se ela tem ou não direito a algum desconto</p>
+</li>
+<li>
+<p>Imagine um banco onde você tem uma conta com um determinado saldo e que aceita apenas uma operação de crédito (depósito) ou débito (saque). Construa um programa onde o usuário vai informar o saldo inicial da conta e o valor da operação (valores positivos são créditos, e valores negativos são débitos) e o programa vai informar se a conta tem saldo suficiente para a operação, no caso de um débito, ou o saldo final no caso de um crédito.</p>
+</li>
+<li>
+<p>Um hotel possui um esquema de cobrança de diárias onde, além da diária, a hóspede paga uma taxa por dia de hospedagem, essa taxa varia com o total de dias da estadia. Se forem até 8 dias de hospedagem, a taxa é de <span class="arithmatex">\(\text{R\$}~8.00\)</span> por dia, e se o período de hospedagem for maior que 8 dias, a taxa é de <span class="arithmatex">\(\text{R\$}~5.00\)</span> por dia.  Construa um programa que receba o valor da diária e o número de dias de hospedagem e apresente o valor total a ser pago pelo hóspede considerando diárias e taxas.</p>
+</li>
+<li>
+<p>Uma empresa paga os seus funcionários por hora trabalhada (valor da hora multiplicado pelo total de horas trabalhadas no mês) depois de descontar alguns encargos trabalhistas. Se o valor bruto a receber do funcionário for menor que <span class="arithmatex">\(\text{R\$}~1000.00\)</span> não há desconto; se o valor for maior que <span class="arithmatex">\(\text{R\$}~5000.00\)</span> o desconto é de 27%, e; se o valor estiver na faixa intermediária, o desconto é de 15% do salário bruto. Em todos os casos, há ainda o desconto do vale transporte, que corresponde a 6% do salário bruto. Construa um programa que receba o valor da hora de trabalho, o total de horas trabalhadas e escreva o salário bruto, o total de descontos, e o salário líquido (bruto – descontos) do funcionário.</p>
+</li>
+<li>
+<p>Uma empresa paga ao vendedor uma comissão calculada de acordo com o valor de suas vendas. Se o valor da venda de um corretor for de <span class="arithmatex">\(\text{R\$}~50000.00\)</span> ou mais, a comissão será de 12% do valor vendido. Se o valor da venda for maior que <span class="arithmatex">\(\text{R\$}~30000.00\)</span> e menor que <span class="arithmatex">\(\text{R\$}~50000.00\)</span>, a comissão é de 9,5%. Nos demais casos, a comissão é de 7%.  Faça um programa que leia o total de vendas de um vendedor e imprima a comissão devida pela empresa a ele.</p>
+</li>
+<li>
+<p>Anos bissextos são aqueles que são múltiplos de 4, mas não de 100, exceto pelos múltiplos de 400, que também são bissextos. Faça um programa que leia um ano e indique se aquele ano é bissexto ou não.</p>
+</li>
+<li>
+<p>O cálculo do imposto de renda retido na fonte (IRRF) pago pelo trabalhador do mercado formal é calculado de forma escalonada. Considerando a tabela de imposto de renda em vigor (e apresentada a seguir), faça um programa que leia o salário bruto de um trabalhador e calcule o IRRF a ser pago.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Mínimo</th>
+<th style="text-align: right;">Máximo</th>
+<th style="text-align: center;">Alíquota</th>
+<th style="text-align: right;">Parcela a deduzir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">R$ 0,00</td>
+<td style="text-align: right;">R$ 1.903,98</td>
+<td style="text-align: center;">0,0%</td>
+<td style="text-align: right;">R$ 0,00</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 1.903,99</td>
+<td style="text-align: right;">R$ 2.826,65</td>
+<td style="text-align: center;">7,5%</td>
+<td style="text-align: right;">R$ 142,80</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 2.826,66</td>
+<td style="text-align: right;">R$ 3.751,05</td>
+<td style="text-align: center;">15,0%</td>
+<td style="text-align: right;">R$ 354,80</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 3.751,06</td>
+<td style="text-align: right;">R$ 4.664,68</td>
+<td style="text-align: center;">22,5%</td>
+<td style="text-align: right;">R$ 636,13</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 4.664,68</td>
+<td style="text-align: right;">Ilimitado</td>
+<td style="text-align: center;">27,5%</td>
+<td style="text-align: right;">R$ 869,36</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Por exemplo, alguém que ganha <span class="arithmatex">\(\text{R\$}~5000.00\)</span> vai pagar <span class="arithmatex">\(\text{R\$}~505.64\)</span> de imposto, pois <span class="arithmatex">\(5000 \times \dfrac{27,5}{100}-869,36=505,64\)</span>.</p>
+</li>
+<li>
+<p>O sistema de avaliação de determinada disciplina, é composto por três provas. A primeira prova tem peso 2, a segunda tem peso 3 e a terceira tem peso 5. Faça um algoritmo para calcular a média final de um aluno desta disciplina e dizer se ele foi aprovado (média maior ou igual a seis), se deve fazer prova final (média maior que quatro e menor que 6) ou se foi reprovado (média menor ou igual a 4).</p>
+</li>
+<li>
+<p>O ingresso em uma universidade acontece por meio de um processo seletivo com duas fases. Na primeira fase, o certame composto por três provas (P1, P2 e P3). A nota final do candidato é calculada pela média entre as três provas. Passam para a segunda fase aqueles alunos com média superior a seis, desde que não tenha zerado nenhuma das provas. Faça um programa que leia as três notas e indique se o candidato foi aprovado ou não para a segunda fase.</p>
+</li>
+<li>
+<p>Determinado país possui um sistema monetário com cédulas de 100, 50, 20, 10, 5, 2 e 1 dinheiros, e não há divisões centesimais ("centavos"). Uma loja deseja fazer o troco utilizando a menor quantidade possível de cédulas (há um suprimento muito grande de cada uma das células). Construa um programa que receba o valor da compra, o valor pago pelo cliente (sempre maior que o valor da compra) e calcule o troco que deve ser dado, indicando quantas cédulas de cada valor devem ser usadas.</p>
+</li>
+<li>
+<p>Os salários de uma empresa possuem um reajuste não-linear, ou seja, quem ganha menos tem um reajuste maior do que o reajuste de quem ganha mais. A regra é a seguinte: salários maiores ou iguais a <span class="arithmatex">\(\text{R\$}~10000.00\)</span> recebem 3% de reajuste; salários maiores ou iguais a <span class="arithmatex">\(\text{R\$}~5000.00\)</span> e menores que <span class="arithmatex">\(\text{R\$}~10000.00\)</span> recebem 6%, e por fim; salários menores que <span class="arithmatex">\(\text{R\$}~5000.00\)</span> recebem 10%.  Faça um programa que receba o salário atual de um funcionário e calcule o valor do reajuste que será aplicado ao salário, imprimindo o salário atual, o valor do reajuste, e o novo salário.</p>
+</li>
+<li>
+<p>Faça um programa que leia o número do mês e imprima quantos dias ele tem (fevereiro tem, sempre, 28 dias)</p>
+</li>
+<li>
+<p>Faça um programa para jogar papel-pedra-tesoura. O computador deve escolher um número entre 1 (papel), 2 (pedra) ou 3 (tesoura), e o usuário deve digitar um número também entre 1 e 3. Papel ganha de pedra, pedra ganha de tesoura, e tesoura ganha de papel. Imprima quem ganhou, ou se foi empate<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
+</li>
+<li>
+<p>O cardápio de uma lanchonete está representado na tabela abaixo. Escreva um programa que leia o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche. Considere que a cada execução somente será calculado um item.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Código</th>
+<th style="text-align: left;">Nome do produto</th>
+<th style="text-align: right;">Preço unitário</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Cachorro-quente</td>
+<td style="text-align: right;">1,10</td>
+</tr>
+<tr>
+<td style="text-align: center;">101</td>
+<td style="text-align: left;">Bauru simples</td>
+<td style="text-align: right;">1,30</td>
+</tr>
+<tr>
+<td style="text-align: center;">102</td>
+<td style="text-align: left;">Bauru com ovo</td>
+<td style="text-align: right;">1,50</td>
+</tr>
+<tr>
+<td style="text-align: center;">103</td>
+<td style="text-align: left;">Hamburger</td>
+<td style="text-align: right;">1,10</td>
+</tr>
+<tr>
+<td style="text-align: center;">104</td>
+<td style="text-align: left;">Cheeseburger</td>
+<td style="text-align: right;">1,30</td>
+</tr>
+<tr>
+<td style="text-align: center;">105</td>
+<td style="text-align: left;">Refrigerante</td>
+<td style="text-align: right;">1,00</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+</li>
+<li>
+<p>Um banco resolveu oferecer um crédito extraordinário a um conjunto de clientes em função do saldo deles no próprio banco, de acordo com a tabela abaixo. Construa um programa que, dado o saldo do cliente, informe qual o valor do crédito disponível</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Saldo mínimo</th>
+<th style="text-align: right;">Saldo máximo</th>
+<th style="text-align: center;">Crédito</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">R$ 0,00</td>
+<td style="text-align: right;">R$ 200,00</td>
+<td style="text-align: center;">Nenhum crédito</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 200,01</td>
+<td style="text-align: right;">R$ 1.000,00</td>
+<td style="text-align: center;">20% do saldo</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 1.000,01</td>
+<td style="text-align: right;">R$ 2.000,00</td>
+<td style="text-align: center;">30% do saldo</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 2.000,01</td>
+<td style="text-align: right;">R$ 10.000,00</td>
+<td style="text-align: center;">50% do saldo</td>
+</tr>
+<tr>
+<td style="text-align: right;">R$ 10.000,01</td>
+<td style="text-align: right;">Ilimitado</td>
+<td style="text-align: center;">100% do saldo</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+</li>
+<li>
+<p>O índice massa corporal (IMC) de uma pessoa é calculado como sendo a razão entre o peso (Kg) e o quadrado da altura (m). Construa um programa que receba o peso e a altura de uma pessoa e imprima seu resultado  de acordo com a tabela abaixo.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Limite inferior (incluindo)</th>
+<th style="text-align: right;">Limite superior (excluindo)</th>
+<th style="text-align: center;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0,00</td>
+<td style="text-align: right;">18,5</td>
+<td style="text-align: center;">Abaixo do peso</td>
+</tr>
+<tr>
+<td style="text-align: right;">18,5</td>
+<td style="text-align: right;">25,0</td>
+<td style="text-align: center;">Peso normal</td>
+</tr>
+<tr>
+<td style="text-align: right;">25,0</td>
+<td style="text-align: right;">30,0</td>
+<td style="text-align: center;">Sobrepeso</td>
+</tr>
+<tr>
+<td style="text-align: right;">30,0</td>
+<td style="text-align: right;">35,0</td>
+<td style="text-align: center;">Obesidade grau 1</td>
+</tr>
+<tr>
+<td style="text-align: right;">35,0</td>
+<td style="text-align: right;">40,0</td>
+<td style="text-align: center;">Obesidade grau 2</td>
+</tr>
+<tr>
+<td style="text-align: right;">40,0</td>
+<td style="text-align: right;">Ilimitado</td>
+<td style="text-align: center;">Obesidade grau 3</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+</li>
+<li>
+<p>Construa um programa que leia um número inteiro entre 1 e 7 e informe o dia da semana correspondente, sendo domingo o dia de número 1. Se o número não corresponder a um dia da semana, mostre uma mensagem de erro.</p>
+</li>
+<li>
+<p>Crie um programa que leia uma letra entre A e Z e imprima se a letra lida foi uma vogal ou uma consoante.</p>
+</li>
+<li>
+<p>Hoje os carros <em>flex</em>, que podem rodar com gasolina e/ou etanol, são comuns nas grandes cidades. Um problema que a maior parte dos donos de carros flex tem é decidir se vai abastecer com gasolina ou com etanol. Não adianta olhar, apenas, para o preço por litro (<span class="arithmatex">\(\text{R\$}~6,30\)</span> da gasolina contra <span class="arithmatex">\(\text{R\$}~4.00\)</span> do etanol por esses dias, por exemplo), porque o carro rodando com etanol gasta mais litros de combustível por Km rodado, e esse consumo varia de carro para carro. Por exemplo, um determinado carro pode fazer 18Km/litro com gasolina e 10Km/litro com etanol, enquanto outro faz 22Km/l contra 12Km/l. Você deve construir um programa que receba a distância que será percorrida pelo carro, o consumo em Km/l com gasolina e com etanol, os preços por litro da gasolina e do etanol e apresente para o usuário qual combustível é mais vantajoso (vai custar menos para fazer a viagem) e qual será o custo da viagem com esse combustível.</p>
+</li>
+<li>
+<p>Sobrou um dinheiro no final do mês e você tem diversas opções para investir esse dinheiro, variando as taxas (quanto ele aumenta por mês, com juros compostos ) e os prazos de investimento (quanto tempo ele vai ficar lá). Por exemplo, <span class="arithmatex">\(\text{R\$}~100.00\)</span> aplicados por 12 meses em uma taxa de 0,8% ao mês produzem <span class="arithmatex">\(\text{R\$}~110.03\)</span> no final do período. São tantas opções que o melhor a fazer é escrever um programa que receba o valor disponível para investir, as taxas e os prazos de duas aplicações e indique qual das duas é mais vantajosa (em qual você vai ter mais dinheiro no final do período de investimento)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+</li>
+<li>
+<p>Aproveitando a alta demanda, um hotel introduziu um esquema de cobrança de diárias que cobra mais de quem fica por mais tempo, e faz isso por meio de uma "taxa de serviços" que é acrescentada em cada dia que o hóspede fica no hotel. Essa taxa está representada na tabela abaixo. Faça um programa que leia o valor da diária e o número de dias que ele ficou hospedado e imprima o custo total da hospedagem.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Diárias</th>
+<th style="text-align: right;">Taxa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Até 3</td>
+<td style="text-align: right;">R$ 20,00</td>
+</tr>
+<tr>
+<td style="text-align: left;">Entre 3 e 7</td>
+<td style="text-align: right;">R$ 35,00</td>
+</tr>
+<tr>
+<td style="text-align: left;">Entre 7 e 10</td>
+<td style="text-align: right;">R$ 40,00</td>
+</tr>
+<tr>
+<td style="text-align: left;">Acima de 10</td>
+<td style="text-align: right;">R$ 50,00</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+</li>
+<li>
+<p>Uma operadora criou um plano de celular onde tudo é cobrado de forma escalonada. Para simplificar o problema, vamos nos ater apenas à conta de dados trafegados. A cobrança segue a seguinte lógica: o primeiro 1GiB tem um custo fixo de <span class="arithmatex">\(\text{R\$}~19.99\)</span> independente do tráfego. Os 2GiB seguintes custam <span class="arithmatex">\(\text{R\$}~24.99\)</span> por 1GiB cobrado de maneira proporcional. Por fim, o tráfego acima de 2048MiB é cobrado à razão de <span class="arithmatex">\(\text{R\$}~29.99\)</span>/1GiB, também de maneira proporcional. Faça um programa que receba o consumo de dados em um determinado mês, em GiB, e imprima o valor da conta. Por exemplo, se o consumo foi de 3,8GiB o valor da conta será de <span class="arithmatex">\(\text{R\$}~19.99\)</span> pelo primeiro GiB, mais <span class="arithmatex">\(\text{R\$}~24.99 \times 2\)</span> pelos 2GiB seguintes, mais <span class="arithmatex">\(\text{R\$}~29.99 \times 0.8\)</span> pelos 0,8GiB que restaram, totalizando <span class="arithmatex">\(\text{R\$}~79.97\)</span>. Mostre o valor final da conta com apenas 2 decimais.</p>
+</li>
+<li>
+<p>Determinada instituição de ensino avalia seus alunos em cada disciplina com base na frequência e nas notas obtidas em duas provas, a partir das quais é calculada a nota final da disciplina como sendo a média aritmética entre as duas provas. Para que um aluno seja aprovado na disciplina. Caso o aluno tenha uma frequência menor que 75% nas aulas, ele está automaticamente reprovado, independente da média que ele obteve. Se a frequência for igual ou superior a 75% e a média for maior ou igual a 6,00, ele está aprovado. Se a média for inferior a 4,00, ele está reprovado. No caso de <span class="arithmatex">\(4 \leq \text{média} &lt; 6\)</span>, o aluno deve fazer uma nova prova. Se nessa nova prova a nota for maior ou igual a 6,00, ele está aprovado com a média obtida nesta última prova; no caso de uma média menor que 6,00, ele está reprovado na disciplina tendo, como média, a maior nota entre a média original e a nota obtida na prova final.  Construa um programa que leia o total de aulas ministradas, o total de faltas do aluno, as notas necessárias; a partir desses dados, indique a média da disciplina (apenas nos casos em que a frequência é igual ou superior a 75%, e se ele foi reprovado por frequência, reprovado por nota, aprovado na prova final ou reprovado na prova final.</p>
+</li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Como desafio, implemente o papel-pedra-tesoura-lagarto-Spock. <a href="https://pt.wikipedia.org/wiki/Pedra-papel-tesoura-lagarto-Spock">Aqui</a> você tem a lista de quem ganha de quem.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Depois de <span class="arithmatex">\(n\)</span> períodos, com taxa de juros <span class="arithmatex">\(i\)</span> a cada período, é possível saber o valor futuro (<span class="arithmatex">\(FV\)</span>) a partir de um valor presente (<span class="arithmatex">\(PV\)</span>) e vice-versa a partir da fórmula <span class="arithmatex">\(FV=PV\times(1+i)^n\)</span>. Por exemplo, se <span class="arithmatex">\(PV=100\)</span>, <span class="arithmatex">\(n=12\)</span> e <span class="arithmatex">\(i=1%\)</span>, temos <span class="arithmatex">\(FV=100\times(1+1/100)^12=112.68\)</span>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../operacoes/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Operações aritméticas e de atribuição">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Operações aritméticas e de atribuição
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../repeticao/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Estruturas de repetição">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Estruturas de repetição
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

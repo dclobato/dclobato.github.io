@@ -1,0 +1,1285 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/algoritmos/">
+      
+      
+        <link rel="prev" href="../porqueaprenderaprogramar/">
+      
+      
+        <link rel="next" href="../desafios/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>O que são algoritmos? - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#o-que-sao-algoritmos" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              O que são algoritmos?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-projetar-um-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como projetar um algoritmo?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como projetar um algoritmo?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entendimento-do-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entendimento do problema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construcao-do-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construção do algoritmo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao-do-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução do algoritmo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avaliacao-do-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avaliação do resultado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-tamanho-dos-passos-e-a-estrutura-do-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      O tamanho dos passos e a estrutura do algoritmo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observações gerais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desafios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/03-tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/05-expressoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/selecao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#como-projetar-um-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Como projetar um algoritmo?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Como projetar um algoritmo?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#entendimento-do-problema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entendimento do problema
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#construcao-do-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Construção do algoritmo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#execucao-do-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Execução do algoritmo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avaliacao-do-resultado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avaliação do resultado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-tamanho-dos-passos-e-a-estrutura-do-algoritmo" class="md-nav__link">
+    <span class="md-ellipsis">
+      O tamanho dos passos e a estrutura do algoritmo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#observacoes-gerais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Observações gerais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="o-que-sao-algoritmos">O que são algoritmos?<a class="headerlink" href="#o-que-sao-algoritmos" title="Permanent link">&para;</a></h1>
+<p>Como já comentamos anteriormente, um algoritmo é, fundamentalmente, uma sequência de passos ou regras bem definida que resolve um problema ou executa uma tarefa específica. Ele serve como uma "receita", fornecendo um conjunto preciso de instruções que um computador pode executar para produzir determinado resultado.</p>
+<div class="admonition note inline">
+<p class="admonition-title">Crivo de Eratóstenes</p>
+<p>O matemático grego Eratóstenes de Cirene, que viveu entre 276 e 194 AEC, construiu um método simples e prático para encontrar números primos até um certo valor limite. Procure por esse método e, utilizando ele, encontre os números primos menores que 50.</p>
+</div>
+<p>O termo "algoritmo" não é novo, e foi criado em homenagem ao matemático <em>Abu Ja'far Muḥammad ibn Mūsā al-Khwārizmī</em>, que viveu durante o século IX da Era Comum. Na matemática, é comum possuir algoritmos para resolver diversas tarefas, como fatorar números, ou calcular o maior divisor comum entre dois números.</p>
+<p>As características chave de um algoritmo incluem:</p>
+<ul>
+<li><strong>Simplicidade e precisão</strong>: as ações devem ser simples e de fácil entendimento. Ações complexas devem ser divididas em passos menores que possam ser adequadamente executados. Não pode haver espaço para ambiguidade ou compreensão equivocada em qualquer ação ou operação;</li>
+<li><strong>Finitude</strong>: um algoritmo deve ter uma sequência finita de ações, garantindo que ele em algum momento acaba e produz um resultado. Isso é crucial para impedir repetições infinitas ou processos que nunca acabam;</li>
+<li><strong>Entrada, processamento e saída</strong>: todos os algoritmos possuem um <em>conjunto de entrada</em> (dados iniciais), <em>processamento</em> (instruções que transformam a entrada) e <em>saídas</em> (resultado do processamento). Essa estrutura permite que algoritmos manipulem dados e produzam resultados específicos ao seguir uma lógica pré-determinada que garante consistência e previsibilidade;</li>
+</ul>
+<div class="admonition example inline end">
+<p class="admonition-title">Cola no pai que é sucesso!</p>
+<p>Procure, depois, por vídeos de "Exact Instruction Challenge", ou "Desafio das Instruções Exatas" no YouTube e veja a importância de um algoritmo bem escrito. <a href="https://www.youtube.com/watch?v=I8IK-yRmtP8">Aqui</a> tem um exemplo interessante.</p>
+</div>
+<p>Além disso, os algoritmos podem ser expressos de diferentes formas, com diferentes graus de facilidade de compreensão e execução. As formas mais comuns são:</p>
+<ul>
+<li><strong>Linguagem natural</strong>: os passos são descritos utilizando sentenças normais do idioma do usuário;</li>
+<li><strong>Pseudcódigo</strong>: os são passos são descritos utilizando um vocabulário controlado e uma gramática mais simples que a linguagem natural, mas que mesmo assim ainda não pode ser executado pela máquina, e;</li>
+<li><strong>Fluxogramas</strong>: Um conjunto padronizado de formas geométricas é utilizado para indicar as operações que devem ser executadas e o que flui entre elas (dados intermediários).</li>
+</ul>
+<p>A incapacidade do computador de tratar ambiguidades nos obriga a ter a rigidez semântica: os passos devem estar claros e exatos, e isso acaba "jogando contra" adotarmos linguagem natural como forma de representar algoritmos.</p>
+<p>Veja, por exemplo, a sentença "<em>fui ouvir a banda tocar na janela</em>". Há, pelo menos, duas interpretações possíveis para essa sentença:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Fui até a janela e, de lá, ouvi a banda que estava tocando em algum lugar</th>
+<th style="text-align: center;">A banda estava tocando em alguma janela e eu pude ouví-la tocar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="" src="../img/banda2.jpeg" /></td>
+<td style="text-align: center;"><img alt="" src="../img/banda1.jpeg" /></td>
+</tr>
+</tbody>
+</table>
+<p>Mesmo que haja algum contexto, uma máquina (e até um ser humano) teria alguma dificuldade em decidir qual dos dois cenários é o correto e, mesmo que decidisse por um deles, seria impossível saber se era o correto ou não. Por isso a rigidez semântica e não ambiguidade é tão importante.</p>
+<p>Ao adotar pseudocódigo, nós conseguimos deixar de lado a ambiguidade, pois utilizamos uma linguagem intermediária que combina elementos da linguagem natural com estruturas mais formais e padronizadas. O pseudocódigo emprega um conjunto limitado de palavras-chave e estruturas predefinidas que possuem significados específicos e não dão margem a interpretações diversas. Por exemplo, ao invés de dizer "enquanto houver itens na lista, faça algo com eles", usamos uma estrutura como "ENQUANTO (condição) FAÇA (ação)", onde tanto a condição quanto a ação são claramente delimitadas.</p>
+<p>Esta abordagem elimina as nuances e sutilezas da linguagem cotidiana, criando instruções diretas e inequívocas. Cada comando tem uma única interpretação possível, o que torna o pseudocódigo muito mais preciso que a linguagem natural, embora ainda seja compreensível para pessoas sem conhecimento técnico profundo. Além disso, o pseudocódigo mantém uma estrutura lógica que facilita a posterior conversão para uma linguagem de programação real.</p>
+<p>Por exemplo, em vez de escrever "fui ouvir a banda tocar na janela", poderíamos escrever algo como:</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de pseudocódigo</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>SE (banda ESTIVER_NA janela) ENTÃO
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    ouvir banda
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>SENÃO
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    ir até janela
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>    ouvir banda
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>FIM_SE
+</span></code></pre></div></td></tr></table></div>
+<p>Neste caso, a estrutura <code>SE... ENTÃO... SENÃO... FIM_SE</code> deixa claro que há duas situações possíveis e quais ações devem ser tomadas em cada uma delas. Além disso, o uso de palavras como <code>ESTIVER_NA</code> e <code>ir até</code> ajuda a evitar interpretações ambíguas.</p>
+<p>Durante o curso, iremos adotar o fluxograma como forma de representação dos algoritmos. Isso nos permite uma representação visual do que precisa ser feito, ao mesmo tempo que mantém a simplicidade e precisão da solução e permite acompanhar os passos que devem ser executados.</p>
+<p>Os fluxogramas oferecem vantagens significativas sobre a linguagem natural e o pseudocódigo. Primeiramente, sua natureza visual facilita a compreensão imediata do fluxo lógico de um algoritmo. Ao utilizar símbolos padronizados conectados por setas, os fluxogramas criam um mapa visual do processo que permite identificar rapidamente a sequência de operações, pontos de decisão e trechos que se repetem.</p>
+<p>Esta representação gráfica é particularmente valiosa para pessoas com estilo de aprendizagem visual, que constituem grande parte da população. Um fluxograma bem construído permite que mesmo pessoas sem conhecimento técnico profundo possam compreender a lógica de um algoritmo, pois os símbolos intuitivos (como losangos para decisões e retângulos para processos) comunicam claramente a função de cada etapa.</p>
+<p>Além disso, os fluxogramas facilitam a identificação de problemas lógicos. Inconsistências como caminhos sem saída, repetições infinitas ou condições contraditórias tornam-se visualmente evidentes, permitindo correções antes mesmo da implementação. Esta característica é especialmente útil durante a fase de planejamento e projeto de algoritmos complexos.</p>
+<p>Outra vantagem importante dos fluxogramas é sua universalidade. Enquanto o pseudocódigo pode variar significativamente entre diferentes contextos e instituições, os símbolos de fluxograma são amplamente padronizados e reconhecidos internacionalmente. Isso significa que um fluxograma criado por uma pessoa pode ser facilmente compreendido por outra, independentemente de seu idioma nativo ou formação técnica.</p>
+<p>Em resumo, os fluxogramas oferecem uma combinação única de clareza visual, precisão e facilidade de comunicação, tornando-os uma escolha ideal para representar algoritmos de forma eficaz e compreensível.</p>
+<h2 id="como-projetar-um-algoritmo">Como projetar um algoritmo?<a class="headerlink" href="#como-projetar-um-algoritmo" title="Permanent link">&para;</a></h2>
+<p>Escrever um algoritmo e resolver um quebra-cabeça são atividades parecidas.  Cada peça do quebra-cabeça é uma atividade que precisa ser executada para resolver o problema, que só vai ser resolvido quando as peças corretas estiverem nos lugares corretos. Em geral, as atividades que podem ser feitas são conhecidas <em>a priori</em>, e o desafio repousa na escolha das peças necessárias, e na ordem em que elas devem ser usadas.</p>
+<p>O matemático (olha lá ela de novo, a matemática!) húngaro <strong>George Pólya</strong> (1887-1985) possui um livro chamado "<a href="https://www.google.com.br/books/edition/How_to_Solve_It/X3xsgXjTGgoC">A Arte de Resolver Problemas</a>" onde ele revela como o método matemático de demonstrar uma prova ou encontrar uma incógnita pode ajudar você a atacar qualquer problema que possa ser resolvido racionalmente. É exatamente isso que precisamos para projetar um algoritmo: encontrar uma forma de resolver problemas.</p>
+<p>A estratégia do Pólya pode ser resumida no gráfico abaixo<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. Trata-se de uma estratégia iterativa, em que a solução vai sendo construída aos pouquinhos. A ideia é que, a cada ciclo, melhoremos nosso entendimento sobre o problema e nos aproximemos da solução desejada.  É importante entender isso agora, no início: os algoritmois raramente ficam prontos na primeira iteração.  É comum fazer duas, três, cinco, dez versões da solução até chegar a um algoritmo correto.</p>
+<figure>
+<pre class="mermaid"><code>flowchart TD
+    0([Início])
+    9([Final]) 
+
+    0 --&gt; A --&gt; F
+    F -- Sim --&gt; B --&gt; C --&gt; D --&gt; E
+    F -- Não --&gt; A
+    E -- Sim --&gt; 9
+    E -- Não --&gt; F
+
+    A@{ shape: process, label: "Entender o problema" }
+    B@{ shape: process, label: "Construir uma solução" }
+    C@{ shape: process, label: "Executar a solução construída" }
+    D@{ shape: process, label: "Avaliar o resultado/situação" }
+    E@{ shape: question, label: "Problema&lt;br&gt;está&lt;br&gt;resolvido?" }
+    F@{ shape: question, label: "Problema&lt;br&gt;está&lt;br&gt;claro?" }</code></pre>
+<figcaption>
+<p>Algoritmo de Pólya para construir algoritmos (adaptado)</p>
+</figcaption>
+</figure>
+<h3 id="entendimento-do-problema">Entendimento do problema<a class="headerlink" href="#entendimento-do-problema" title="Permanent link">&para;</a></h3>
+<p>Ler o enunciado completo do problema é fundametal! A compreensão clara do vocabulário e a identificação precisa dos dados fornecidos são passos essenciais para a solução. Ao decifrar o problema, é crucial esclarecer possíveis dúvidas e destacar as informações chave que orientarão a resolução. Além disso, é fundamental identificar o resultado esperado para garantir que o raciocínio esteja alinhado com o objetivo da questão.</p>
+<p>Uma vez compreendido o enunciado, o próximo passo é determinar as ações que podem ser executadas por meio de um algoritmo. Pólya sugere que o solucionador analise quais operações, transformações ou estratégias podem ser aplicadas aos dados disponíveis para alcançar a solução. Isso envolve um raciocínio lógico e a construção de um plano de ação que direcione as etapas a serem seguidas.</p>
+<p>Ao se deparar com um problema, é útil perguntar se já houve alguma experiência prévia com questões semelhantes. "Já vi esse problema antes?" ou "conheço algum problema relacionado?" pode ser uma estratégia eficaz para recuperar soluções já conhecidas ou identificar padrões que ajudem a resolver a situação atual. Essa abordagem pode acelerar o processo de solução ao aproveitar conhecimentos e métodos previamente adquiridos</p>
+<p>Não adianta tentar economizar tempo nesta fase.</p>
+<h3 id="construcao-do-algoritmo">Construção do algoritmo<a class="headerlink" href="#construcao-do-algoritmo" title="Permanent link">&para;</a></h3>
+<p>É possível transformar o problema atual em um outro que já foi resolvido anteriormente? Muitas vezes, ao reformatar ou reformular a questão, é possível aplicar um método ou estratégia já conhecida. Isso pode ser feito, por exemplo, identificando semelhanças estruturais com problemas passados e adaptando as soluções previamente usadas.</p>
+<p>Caso o problema continue parecendo complicado, é importante avaliar se ele pode ser simplificado. Tente transformar o problema em um auxiliar, reduzindo a quantidade de variáveis ou complexidade envolvida. Nesse processo, pode-se começar a resolução pelos casos mais simples, aqueles que possuem menos variáveis ou que são mais fáceis de lidar. Esse método ajuda a quebrar a dificuldade em partes menores e mais manejáveis.</p>
+<p>Além disso, é possível "brincar" com a solução, isto é, experimentar diferentes combinações de ações para observar os efeitos das mudanças. Ao fazer isso, é possível entender melhor como as várias partes do problema interagem. Por fim, ao perceber padrões recorrentes ou estruturas similares durante a experimentação, o solucionador deve tentar descrever o algoritmo que organiza essas ações, o que pode ajudar a formalizar a solução e torná-la mais eficiente.</p>
+<h3 id="execucao-do-algoritmo">Execução do algoritmo<a class="headerlink" href="#execucao-do-algoritmo" title="Permanent link">&para;</a></h3>
+<p>De posse do algoritmo, aplique-o ao problema e verifique o resultado.  Não "invente" passos não previstos originalmente, nem tão pouco "assuma" alguma coisa que não foi explicitamente indicado no algoritmo ou na definição do problema. Lembre-se que, a máquina que vai executar a solução, não é capaz de "pensar", ou "achar": ela apenas executa o que lhe for mandado executar.</p>
+<h3 id="avaliacao-do-resultado">Avaliação do resultado<a class="headerlink" href="#avaliacao-do-resultado" title="Permanent link">&para;</a></h3>
+<p>A quarta - e talvez última - fase da resolução de problemas, envolve a avaliação da solução proposta. Cada vez que um passo é dado, que uma versão da solução é produzida, o solucionador aprende mais sobre o problema, ajustando e refinando a abordagem conforme necessário. Esse processo de realimentação contínua é essencial, pois permite identificar falhas ou áreas que precisam de mais atenção, além de proporcionar uma compreensão mais profunda do problema e das soluções possíveis.</p>
+<p>Quando estiver resolvendo um problema auxiliar, a estratégia é aumentar gradualmente a complexidade do problema, refinando a solução à medida que mais variáveis ou aspectos são introduzidos. Esse processo de escalonamento permite aproximar-se da solução final de forma mais controlada e estruturada, sem se perder na complexidade do problema original. Cada nova iteração permite uma melhor compreensão das interações e relações entre as variáveis, o que facilita a busca por uma solução mais eficaz.</p>
+<p>Se o resultado da avaliação não for bom (o problema não foi resolvido, a solução resolve só parcialmente o problema...) devemos voltar à fase de entendimento do problema e repetir as etapas anteriores, ajustar as estratégias utilizadas ou até mesmo reconsiderar o problema sob uma nova perspectiva. A repetição do ciclo de tentativas e ajustes é um componente chave da metodologia, permitindo que o solucionador se aproxime da solução de forma incremental e ajustada.</p>
+<h2 id="o-tamanho-dos-passos-e-a-estrutura-do-algoritmo">O tamanho dos passos e a estrutura do algoritmo<a class="headerlink" href="#o-tamanho-dos-passos-e-a-estrutura-do-algoritmo" title="Permanent link">&para;</a></h2>
+<p>Um dos grandes desafios na construção de algoritmos é definir quão detalhados devem ser os passos. Não existe uma regra de ouro para isso, mas a abordagem geralmente adotada é detalhar o suficiente para que o passo esteja descrito em termos das instruções que o agente que irá executar o algoritmo conhece. Se estivermos falando de um computador, os passos devem ser mapeados para uma (ou para um conjunto) de instruções da linguagem de programação que vai ser utilizada. Se estivermos definindo um algoritmo para um ser humano executar, os passos devem ser mapeados para tarefas elementares não ambíguas.</p>
+<p><img align="right" alt="Navegação por GPS" src="../img/navegacaogps.png" width="200" />Se você já utilizou um sistema de navegação baseado em GPS, como o que provavelmente está disponível no seu celular, você já viu e já seguiu um algoritmo. Ao traçar um caminho do seu local atual (dados de entrada) para o seu destino, o programa de navegação está criando uma sequencia finita de ordenada de passos que você precisa seguir (processamento) para resolver o seu problema (chegar ao destino). O caminho que o programa vai gerar não é o único: outras sequências finitas e ordenadas de passos (algoritmos) existem para resolver o problema (levá-lo do seu local atual até o seu destino).</p>
+<p>Aqui fica muito claro que:</p>
+<ul>
+<li>Os passos existem e devem ser seguidos, todos, na ordem correta. Trocar a ordem dos passos (virar à esquerda e depois à direita e não ao contrário) ou deixar de executar algum passo (não ter entrado à esquerda quando era a hora) não vai resolver o seu problema (vai te levar para o lugar errado);</li>
+<li>Os passos não possuem ambiguidade, ou seja, só podem ser interpretados e executados de uma única forma;</li>
+<li>O resultado final da execução do algoritmo, se mantivermos os valores de entrada, deve ser sempre ou mesmo, ou seja, ele precisa ser determinístico<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+<li>Os passos são finitos. Você começa em algum lugar e depois de um número finito de "siga em frente", "vire à esquerda" e "vire à direita" você chega ao seu destino, e;</li>
+<li>Os passos estão no tamanho certo. Cada passo que você deve executar está definido de forma concisa, completa e não ambígua com instruções que você conhece e é capaz de executar; via de regra, cada passo possui um, e somente um, verbo (ação).</li>
+</ul>
+<p>Então, deixando claro, os nosso algoritmos terão <em>grosso modo</em> três partes principais, a saber:</p>
+<ul>
+<li><strong>Entrada dos dados</strong>: é a parte (ou partes) onde o algoritmo recebe os dados do mundo exterior, ou seja, as entradas do usuário, os dados pela placa de rede, os sinais de rádio que serão modulados, ...;</li>
+<li><strong>Processamento dos dados</strong>: aqui é onde o trabalho pesado acontece, e os dados de entrada são transformados para que possamos atingir o objetivo proposto pelo algoritmo; em essência, ele consome os dados de entrada e produz os dados de saída, e;</li>
+<li><strong>Saída dos dados</strong>: é a parte (ou partes) onde o algoritmo coloca dados no mundo exterior, que seja como conteúdo de um arquivo, alguma informação apresentada na tela, algum sinal de áudio produzido, ...</li>
+</ul>
+<h2 id="observacoes-gerais">Observações gerais<a class="headerlink" href="#observacoes-gerais" title="Permanent link">&para;</a></h2>
+<p>Conforme você avançar nestes documentos, não tenha medo ou se sinta incapaz se os conceitos parecerem não se encaixar numa primeira leitura. Quando você estava aprendendo a falar, não era problema nos primeiros anos emitir alguns sons estranhos ou balbuciar as coisas. E foi normal precisar de seis ou mais meses para passar de um vocabulário restrito para sentenças, e três ou quatro anos para evoluir de sentenças para parágrafos e construções mais complexas.</p>
+<p>A idéia é que você não precisa de três ou quatro anos para aprender a construir algoritmos e programar e, por isso, vamos ensinar um bocado de coisa no início -- coisas que permitirão a você construir pequenos programas e, com o tempo e a experiência ("a repetição leva à fixação"), construir programas maiores e complexos.  É igual a aprender um novo idioma: é preciso tempo e prática para absorver e compreender as construções antes que elas se tornem naturais.</p>
+<p>Normalmente quando se está aprendendo a primeira linguagem de programação, há alguns momentos maravilhosos de "Ah há!", quando você percebe que enquanto estava batendo em uma pedra com talhadeira e martelo, você está, na verdade, esculpindo uma bela escultura.</p>
+<p>Se alguma coisa parecer especialmente complicada, não faz sentido fica acordado a noite toda encarando ele. Faça uma pausa, tire um cochilo, coma alguma coisa, converse com alguém sobre as suas dúvidas<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> e então volte ao problema com a mente descansada.  Eu tenho certeza que quando você aprender os conceitos de programação presentes neste livro, você vai olhar para trás perceber que eles eram simples e elegantes, e você apenas precisou de algum tempo para compreendê-los.</p>
+<p>Na próxima seção temos algums desafios lógicos para exercitarmos nossa capacidade de entender e resolver problemas.  Vamos lá?</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Há uma classes especial de algoritmos que não são <strong>determinísticos</strong>, e sim <strong>probabilísticos</strong>, mas estão fora do escopo deste texto.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Algumas vezes, só de ter que organizar as idéias para falar as dúvidas em voz alta pode ser suficiente para você perceber onde está o problema, ou mesmo a solução para ele.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Viu como fluxogramas são fáceis de entender?  Ainda nem explicamos como construí-los, mas já estamos apresentando um e seguindo o algoritmo representado nele <img alt="💖" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f496.svg" title=":sparkling_heart:" />.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../porqueaprenderaprogramar/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Porque aprender a programar?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Porque aprender a programar?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../desafios/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Desafios de lógica">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Desafios de lógica
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1280 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/fluxograma/">
+      
+      
+        <link rel="prev" href="../tiposdeprocessamento/">
+      
+      
+        <link rel="next" href="../c/01-historia/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Fluxogramas - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fluxogramas" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fluxogramas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algoritmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desafios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principais-simbolos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais símbolos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros-simbolos-usados-em-fluxogramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outros símbolos usados em fluxogramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-de-fluxogramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Fluxogramas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/03-tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/05-expressoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/selecao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principais-simbolos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principais símbolos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros-simbolos-usados-em-fluxogramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outros símbolos usados em fluxogramas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplos-de-fluxogramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplos de Fluxogramas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="fluxogramas">Fluxogramas<a class="headerlink" href="#fluxogramas" title="Permanent link">&para;</a></h1>
+<p>Um fluxograma é uma representação gráfica de um algoritmo (ou combinações de tipos de processamento) que utiliza símbolos predefinidos e linhas de conexão para ilustrar uma sequência de operações que conduzem a um resultado desejado. Esta ferramenta visual emprega símbolos específicos, como ovais (início/fim), retângulos (processos/ações), losangos (pontos de decisão) e setas (direção do fluxo de trabalho), cada um com significados particulares que ajudam a representar conceitos complexos em etapas simples e compreensíveis, mesmo por quem não é da área de informática.</p>
+<h2 id="principais-simbolos">Principais símbolos<a class="headerlink" href="#principais-simbolos" title="Permanent link">&para;</a></h2>
+<p>Os principais símbolos utilizados em fluxogramas são:</p>
+<ul>
+<li><strong>Terminal</strong>: Representa o início ou fim de um processo. Geralmente contém termos como "Início", "Começo" ou "Fim" e é posicionado no topo/esquerda (início) ou na parte inferior/direita (fim) do fluxograma.</li>
+</ul>
+<div class="admonition warning inline end">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Só pode haver um "Início" e um "Fim".</p>
+</div>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      A
+      B
+      A@{ shape: stadium, label: "Início" }
+      B@{ shape: stadium, label: "Fim" }</code></pre>
+<figcaption>
+<p>Símbolo para terminal</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Processo</strong>: Um dos símbolos mais comuns, representa uma etapa, tarefa, atividade ou operação no fluxo do processo. É considerado o componente básico de um fluxograma.</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      A
+      A@{ shape: process, label: "x &amp;larr; x + 1" }</code></pre>
+<figcaption>
+<p>Símbolo para processo</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Fluxo</strong>: Mostra a direção e a ordem do processo, conectando os vários símbolos do fluxograma. Também pode indicar retorno a determinados processos até que uma condição seja atendida. É possível e recomendado adicionar rótulos ao fluxo em um fluxograma. Os rótulos são utilizados principalmente para fornecer informações adicionais sobre a transição entre etapas ou para clarificar condições, como por exemplo em fluxos que saem de símbolos de decisão (losangos), para indicar claramente qual caminho seguir com base na resposta (como "Sim" ou "Não") ou para adicionar informações sobre condições específicas que devem ser atendidas para seguir determinado caminho.</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+    A --&gt; B -- Sim --&gt; C
+
+    A@{ shape: process, label: " " }
+    B@{ shape: process, label: " " }
+    C@{ shape: process, label: " " }
+    style A fill:#FFFFFF00, stroke:#FFFFFF00;
+    style B fill:#FFFFFF00, stroke:#FFFFFF00;
+    style C fill:#FFFFFF00, stroke:#FFFFFF00;</code></pre>
+<figcaption>
+<p>Símbolo para fluxo</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Decisão</strong>: Representa um ponto de decisão no fluxo do processo, quando há mais de um resultado possível para uma etapa específica. Geralmente contém perguntas de sim/não ou verdadeiro/falso, com caminhos diferentes dependendo da resposta.</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      A
+      A@{ shape: question, label: "saldo &gt; 10"}</code></pre>
+<figcaption>
+<p>Símbolo para decisão (testar se o saldo é maior que 10)</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Entrada</strong>: Representa operações de entrada de dados por meio da interação do usuário com o programa (o usuário digita alguma coisa, por exemplo)</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      A
+      A@{ shape: manual-input, label: " idade "}</code></pre>
+<figcaption>
+<p>Símbolo para entrada de dados (ler o valor de idade)</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Saída</strong>: Representa operações de saída de dados no terminal, como a exibição de resultados, ou em algum dispositivo de impressão.</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart TD
+      A
+      B
+      A@{ shape: display, label: "A"}
+      B@{ shape: doc, label: "B"}</code></pre>
+<figcaption>
+<p>Símbolos para saída de dados (mostrar o valor de A; imprimir o valor de B)</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Conector</strong>: Usado para conectar diferentes partes de um fluxograma, especialmente em diagramas complexos. Geralmente contém números ou letras para facilitar a referência.</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      Nada --&gt; A
+      Nada@{ shape: process, label: " " }
+      style Nada fill:#FFFFFF00,stroke:#FFFFFF00
+      A@{ shape: circle, label: "A"}
+
+      B --&gt; Nada2
+      Nada2@{ shape: process, label: " " }
+      style Nada2 fill:#FFFFFF00,stroke:#FFFFFF00
+      B@{ shape: circle, label: "A"}
+</code></pre>
+<figcaption>
+<p>Símbolo para conector (vá para o conector A, acima; ponto de chegada A, abaixo)</p>
+</figcaption>
+</figure>
+<h2 id="outros-simbolos-usados-em-fluxogramas">Outros símbolos usados em fluxogramas<a class="headerlink" href="#outros-simbolos-usados-em-fluxogramas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Armazenamento em memória secundária</strong>: Indica que determina informação está sendo armazenada ou recuperada da memória secundária, como por exemplo o disco rígido</li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart TD
+      A
+      B
+      A@{ shape: das, label: "Arquivo com as médias"}
+      B@{ shape: lin-cyl, label: "Arquivo com as médias"}</code></pre>
+<figcaption>
+<p>Símbolos para armazenamento em memória secundária</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Preparação condicional</strong>: Geralmente usado para representar uma "preparação" ou "inicialização" de uma condição. Isso significa que ele é usado para configurar valores ou realizar cálculos que serão usados posteriormente em uma decisão. </li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      A
+      A@{ shape: prepare, label: "Recuperar arquivos de notas fiscais"}</code></pre>
+<figcaption>
+<p>Símbolo para preparação condicional</p>
+</figcaption>
+</figure>
+<ul>
+<li><strong>Operação manual</strong>: Quando alguma tarefa precisa ser executada fora do programa, para que o programa possa ser executado, podemos utilizar o símbolo que indica uma operação manual. </li>
+</ul>
+<figure>
+<pre class="mermaid"><code>   flowchart LR
+      A
+      A@{ shape: trap-t, label: "Coletar provas dos alunos"}</code></pre>
+<figcaption>
+<p>Símbolo para preparação condicional</p>
+</figcaption>
+</figure>
+<h2 id="exemplos-de-fluxogramas">Exemplos de Fluxogramas<a class="headerlink" href="#exemplos-de-fluxogramas" title="Permanent link">&para;</a></h2>
+<p>Conhecendo os símbolos, podemos começar a construir fluxogramas para resolver determinados problemas. Vamos ver alguns exemplos de problemas e um possível fluxograma que resolva o problema (lembre-se que um problema pode ser resolvido de várias formas).</p>
+<p>O ideal é desenhar o fluxograma de cima para baixo, e da esquerda para a direita.  Em alguns casos, é aceitável fazendo apenas da esquerda para a direita.</p>
+<ul>
+<li>A divisão de dois números pode ser feita como uma sucessão de subtrações do valor do divisor do valor do dividendo. O número de divisões que puderam ser feitas antes de o dividendo ficar menor que zero é o quociente, e o que sobrou do dividendo é o resto da divisão. Faça um fluxograma que leia o dividendo e o divisor e apresente o quociente e o resto utilizando o método das subtrações sucessivas</li>
+</ul>
+<pre class="mermaid"><code>   flowchart TD
+      I([Início]) --&gt; A --&gt; B --&gt; C
+      C -- Sim --&gt; D --&gt; E --&gt; C
+      C -- Não --&gt; F --&gt; G --&gt; Z([Fim])
+
+      A@{ shape: manual-input, label: "dividendo&lt;br&gt;divisor" }
+      B@{ shape: process, label: "quociente &amp;larr; 0" }
+      C@{ shape: question, label: "dividendo &gt;= divisor?" }
+      D@{ shape: process, label: "dividendo &amp;larr; dividendo - divisor" }
+      E@{ shape: process, label: "quociente &amp;larr; quociente + 1" }
+      F@{ shape: process, label: "resto &amp;larr; dividendo" }
+      G@{ shape: curv-trap, label: "quociente&lt;br&gt;resto" }</code></pre>
+<ul>
+<li>Chico tem 150cm e cresce 2cm por ano, enquanto Zé tem 110cm e cresce 3cm por ano. Construa um fluxograma que calcule e imprima quantos anos são necessários para que Zé fique mais alto que Chico</li>
+</ul>
+<pre class="mermaid"><code>   flowchart TD
+      I([Início]) --&gt; A --&gt; B
+      B -- Sim --&gt; C --&gt; Z([Fim])
+      B -- Não --&gt; D --&gt; B
+
+      A@{ shape: process, label: "chico &amp;larr; 150&lt;br&gt;ze &amp;larr; 110&lt;br&gt;anos &amp;larr; 0" }
+      B@{ shape: question, label: "ze &gt; chico?" }
+      C@{ shape: curv-trap, label: "anos" }
+      D@{ shape: process, label: "ze &amp;larr; ze + 3&lt;br&gt;chico &amp;larr; chico + 2&lt;br&gt;anos &amp;larr; anos + 1" }</code></pre>
+<ul>
+<li>Uma empresa paga ao vendedor uma comissão calculada de acordo com o valor de suas vendas. Se o valor da venda de um corretor for de <span class="arithmatex">\(\text{R\$}~50000.00\)</span> ou mais, a comissão será de 12% do valor vendido. Se o valor da venda for maior que <span class="arithmatex">\(\text{R\$}~30000.00\)</span> e menor que <span class="arithmatex">\(\text{R\$}~50000.00\)</span>, a comissão é de 9,5%. Nos demais casos, a comissão é de 7%.  Leia o total de vendas de um vendedor e imprima a comissão devida pela empresa a ele.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    0([Início]) --&gt; A --&gt; B
+    B -- Sim --&gt; C --&gt; G
+    B -- Não --&gt; D
+    D -- Sim --&gt; E --&gt; G
+    D -- Não --&gt; F --&gt; G
+    subgraph Sub1[ ]
+    direction LR
+    H --&gt; I --&gt; Z([Fim])
+    end
+
+    A@{ shape: manual-input, label: "totalVendas" }
+    B@{ shape: question, label: "totalVendas&lt;br /&gt;&gt;= 50000" }
+    C@{ shape: process, label: "comissao &amp;larr; totalVendas * 12/100" }
+    D@{ shape: question, label: "totalVendas &lt;br /&gt;&gt; 30000" }
+    E@{ shape: process, label: "comissao &amp;larr; totalVendas * 9.5/100" }
+    F@{ shape: process, label: "comissao &amp;larr; totalVendas * 7/100" }
+    G@{ shape: circle, label: "A" }
+    H@{ shape: circle, label: "A" }
+    I@{ shape: display, label: "comissao" }
+    style Sub1 fill:#FFFFFF00, stroke:#FFFFFF00;</code></pre>
+<ul>
+<li>João e Maria são amigos desde que se conheceram na creche. Desde então, eles compartilham uma rotina de brincadeiras: todas as vezes que eles se encontram, eles jogam Cara ou Coroa com uma moeda, e quem ganhar tem o privilégio de decidir quais brincadeiras eles irão jogar durante o dia. Maria sempre escolhe cara, e João sempre escolhe coroa. Hoje em dia eles estão na faculdade, mas continuam sendo bons amigos. Sempre que se encontram, eles ainda jogam Cara ou Coroa, e o vencedor decide que filme assistir, ou em que restaurante jantar, e assim por diante. Ontem Maria contou a João que ela guarda um registro de todas as vezes que eles jogaram, desde os tempos da creche. João ficou espantado. Porém João está estudando Ciência da Computação e decidiu que essa era uma boa oportunidade para mostrar a Maria suas habilidades em programação, escrevendo um programa que mostrasse o número de vezes que cada um deles venceu ao longo de todos esses anos. Leia um inteiro N que indica o número de partidas jogadas, e depois N inteiros que indicam se Maria (0) ou João (1) ganhou a partida. Por fim, diga quantas partidas João ganhou, e quantas partidas Maria ganhou.</li>
+</ul>
+<pre class="mermaid"><code>flowchart TD
+    0([Início])
+    9([Final])    
+
+    0 --&gt; A --&gt; B --&gt; C
+    C -- Sim --&gt; I --&gt; 9
+    C -- Não --&gt; D --&gt; E
+    E -- Sim --&gt; F --&gt; J
+    E -- Não --&gt; H --&gt; K
+    L --&gt; G --&gt; C
+
+    A@{ shape: manual-input, label: "N" }
+    B@{ shape: process, label: "joaoVitorias &amp;larr; 0&lt;br /&gt;mariaVitorias &amp;larr; 0&lt;br /&gt;contador &amp;larr; 0" }
+    C@{ shape: question, label: "contador == N" }
+    D@{ shape: manual-input, label: "resultado" }
+    E@{ shape: question, label: "resultado == 1" }
+    F@{ shape: process, label: "joaoVitorias &amp;larr; joaoVitorias + 1" }
+    G@{ shape: process, label: "contador &amp;larr; contador + 1" }
+    H@{ shape: process, label: "mariaVitorias &amp;larr; mariaVitorias + 1" }
+    I@{ shape: display, label: "joaoVitorias&lt;br /&gt;mariaVitorias" }
+
+    J@{ shape: circle, label: "A"}
+    K@{ shape: circle, label: "A"}
+    L@{ shape: circle, label: "A"}</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../tiposdeprocessamento/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Tipos de processamento">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Tipos de processamento
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../c/01-historia/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Introdução e história">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Introdução e história
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

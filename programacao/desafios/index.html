@@ -1,0 +1,1542 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/desafios/">
+      
+      
+        <link rel="prev" href="../algoritmos/">
+      
+      
+        <link rel="next" href="../variaveis/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Desafios de lógica - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#desafios-de-logica" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Desafios de lógica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../algoritmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#as-tres-amigas" class="md-nav__link">
+    <span class="md-ellipsis">
+      As três amigas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-lobo-a-cabra-e-o-repolho" class="md-nav__link">
+    <span class="md-ellipsis">
+      O lobo, a cabra e o repolho
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cruzando-a-ponte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cruzando a ponte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-chapeus-dos-magicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os chapéus dos mágicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duas-portas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duas portas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-missionarios-e-os-canibais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os missionários e os canibais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/03-tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/05-expressoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/selecao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#as-tres-amigas" class="md-nav__link">
+    <span class="md-ellipsis">
+      As três amigas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o-lobo-a-cabra-e-o-repolho" class="md-nav__link">
+    <span class="md-ellipsis">
+      O lobo, a cabra e o repolho
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cruzando-a-ponte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cruzando a ponte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-chapeus-dos-magicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os chapéus dos mágicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duas-portas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duas portas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-missionarios-e-os-canibais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Os missionários e os canibais
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="desafios-de-logica">Desafios de lógica<a class="headerlink" href="#desafios-de-logica" title="Permanent link">&para;</a></h1>
+<p>Em cada uma das seções seguintes temos um desafio de lógica, para dar uma aquecida no cérebro. Tente resolvê-lo utilizando a estratégia proposta por Pólya, e que <a href="../algoritmos/#como-projetar-um-algoritmo">vimos anteriormente</a>.</p>
+<h2 id="as-tres-amigas">As três amigas<a class="headerlink" href="#as-tres-amigas" title="Permanent link">&para;</a></h2>
+<div class="admonition example inline end">
+<p class="admonition-title">Dica</p>
+<p>Comece eliminando possibilidades com base nas regras e tente atribuir cores ou opções uma por uma até encontrar uma combinação que funcione</p>
+</div>
+<p>Três amigas estavam andando. Seus nomes são Rosa, Violeta e Branca.</p>
+<p>Rosa disse:</p>
+<blockquote>
+<p>Olha só!  Estamos vestindo camisas de cores rosa, violeta e branca, mas nenhuma de nós está vestindo camisa com a cor do nosso nome.</p>
+</blockquote>
+<p>Ao que a amiga com camisa violeta respondeu:</p>
+<blockquote>
+<p>Isso é apenas uma coincidência, minha cara</p>
+</blockquote>
+<p>Qual a cor de camisa de cada amiga?</p>
+<details class="success">
+<summary>Resposta</summary>
+<p>Rosa afirma que nenhuma delas está vestindo a cor que corresponde ao próprio nome. Isso significa que Rosa não está vestindo rosa, Violeta não está vestindo violeta e Branca não está vestindo branco.</p>
+<p>A mulher vestindo a camisa violeta responde: "Isso é uma coincidência". Isso significa que a pessoa que falou essa frase concorda com a afirmação inicial; logo, não pode ser a Violeta, pois ela está vestindo a camisa violeta.</p>
+<p>Agora, vamos deduzir a cor da camisa de cada amiga:</p>
+<blockquote>
+<p>A Violeta não está usando a camisa violeta, então ela só pode estar usando a camisa rosa ou a branca. Se a Violeta estivesse usando a camisa rosa, então a Rosa teria que estar usando a camisa violeta (pois a Branca não pode usar a camisa branca). Mas sabemos que a amiga com a camisa violeta não é a Violeta. Portanto, a Violeta deve estar usando a camisa branca.</p>
+</blockquote>
+<p>Agora que sabemos que a Violeta está usando a camisa branca, podemos deduzir as cores das camisas das outras amigas:</p>
+<blockquote>
+<p>A Rosa não pode estar usando a camisa rosa, e como a camisa branca já está sendo usada pela Violeta, a Rosa deve estar usando a camisa violeta. Por fim, a Branca deve estar usando a camisa rosa, pois é a única cor restante.</p>
+</blockquote>
+<p>Assim, a distribuição das cores seria:</p>
+<ul>
+<li><strong>Rosa</strong>: violeta</li>
+<li><strong>Branca</strong>: rosa</li>
+<li><strong>Violeta</strong>: branco</li>
+</ul>
+</details>
+<h2 id="o-lobo-a-cabra-e-o-repolho">O lobo, a cabra e o repolho<a class="headerlink" href="#o-lobo-a-cabra-e-o-repolho" title="Permanent link">&para;</a></h2>
+<div class="admonition example inline">
+<p class="admonition-title">Dica</p>
+<p>Pense em desfazer temporariamente um movimento anterior para manter os pares problemáticos separados.</p>
+</div>
+<p>Imagine que um fazendeiro vive em uma pequena vila e precisa transportar, de sua fazenda, três itens: um lobo, uma cabra e um repolho gigante. Em um determinado dia, ele decide atravessar o rio que separa suas terras, pois do outro lado ele pretende aumentar a área plantada de repolho. Contudo, o único meio de travessia disponível é um barco velho e pequeno, que só tem capacidade para o próprio fazendeiro e mais um dos seus companheiros – seja o lobo, a cabra ou o repolho.</p>
+<p>O desafio, porém, não se limita à limitação de espaço do barco. Existem regras cruciais que o fazendeiro deve seguir para evitar desastres durante as travessias:</p>
+<p>Se o lobo ficar sozinho com a cabra, sem a presença do fazendeiro, o lobo aproveitaria a oportunidade para devorar a cabra.
+De maneira similar, se a cabra ficar sozinha com o repolho, ela não resistiria à tentação e comeria o repolho.
+Portanto, em cada momento – seja na margem de origem ou na margem de destino – o arranjo dos itens deve ser cuidadosamente planejado para que nunca se encontre uma situação em que o lobo e a cabra ou a cabra e o repolho fiquem juntos sem a supervisão do fazendeiro.</p>
+<p>Qual sequência de viagens pelo rio permitirá que o fazendeiro, utilizando seu modesto barco, transporte com segurança o lobo, a cabra e o repolho para o outro lado, garantindo que, em nenhum momento, ocorra uma situação de perigo?</p>
+<details class="success">
+<summary>Resposta</summary>
+<p>O fazendeiro precisa atravessar o rio com segurança, garantindo que nem o lobo coma a cabra, nem a cabra coma o repolho. Para isso, ele deve seguir a seguinte sequência de travessias.</p>
+<p>Vamos assumir a seguinte notação para a solução a seguir:</p>
+<ul>
+<li><strong>F</strong>: fazendeiro</li>
+<li><strong>L</strong>: lobo</li>
+<li><strong>C</strong>: cabra</li>
+<li><strong>R</strong>: repolho</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span>: barco</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: center;">Margem esquerda</th>
+<th style="text-align: center;">Margem direita</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Estado inicial</td>
+<td style="text-align: center;">FLCR<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro leva a cabra para a margem direita</td>
+<td style="text-align: center;">LR</td>
+<td style="text-align: center;">FC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro retorna sozinho para a margem esquerda</td>
+<td style="text-align: center;">FLR<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro leva o lobo para a margem direita</td>
+<td style="text-align: center;">R</td>
+<td style="text-align: center;">FLC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro traz a cabra de volta para a margem esquerda</td>
+<td style="text-align: center;">FCR<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">L</td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro leva o repolho para a margem direita</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">FLR<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro retorna sozinho para a margem esquerda</td>
+<td style="text-align: center;">FC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">LR</td>
+</tr>
+<tr>
+<td style="text-align: left;">O fazendeiro leva a cabra para a margem direita</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">FLCR<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+</tbody>
+</table>
+<p>Seguindo essa sequência de travessias, o fazendeiro consegue transportar com segurança o lobo, a cabra e o repolho para a outra margem do rio, sem que ocorra nenhuma situação de perigo em que o lobo fique sozinho com a cabra ou a cabra fique sozinha com o repolho</p>
+</details>
+<h2 id="cruzando-a-ponte">Cruzando a ponte<a class="headerlink" href="#cruzando-a-ponte" title="Permanent link">&para;</a></h2>
+<div class="admonition example inline end">
+<p class="admonition-title">Dica</p>
+<p>Tente reduzir o tempo gasto nas viagens de volta com a tocha otimizando quem faz a viagem de retorno.</p>
+</div>
+<p>Em uma noite escura, quatro amigos aventureiros precisam atravessar uma ponte velha para escapar de uma floresta cheia de perigos. No entanto, há vários desafios a serem superados. Primeiro, a ponte é extremamente frágil e só pode suportar no máximo duas pessoas ao mesmo tempo. Segundo, não há iluminação além de uma única tocha que eles precisam carregar para enxergar o caminho. E, para piorar, cada um dos quatro amigos caminha em velocidades diferentes devido à idade e condição física.</p>
+<p>Os tempos que cada um leva para atravessar a ponte individualmente são os seguintes:</p>
+<ul>
+<li>Abelardo, o mais ágil do grupo leva apenas 1 minuto.</li>
+<li>Benedito, o segundo mais rápido leva 2 minutos.</li>
+<li>Carlos, o terceiro, um pouco mais lento, precisa de 5 minutos.</li>
+<li>Dagoberto, o último, que é o mais velho e mais cansado, leva 10 minutos para atravessar.</li>
+</ul>
+<p>Quando duas pessoas atravessam juntas, elas devem se mover na velocidade da pessoa mais lenta. Além disso, a tocha deve ser levada sempre que alguém atravessar, pois sem ela ninguém consegue enxergar na escuridão.</p>
+<p>O objetivo é encontrar a estratégia mais rápida possível para que todos cheguem ao outro lado da ponte em segurança. Qual é o menor tempo necessário para completar a travessia e como deve ser organizada a sequência de idas e voltas?</p>
+<details class="success">
+<summary>Resposta</summary>
+<p>Vamos assumir a seguinte notação para as soluções a seguir:</p>
+<ul>
+<li><strong>A</strong>: Abelardo</li>
+<li><strong>B</strong>: Benedito</li>
+<li><strong>C</strong>: Carlos</li>
+<li><strong>D</strong>: Dagoberto</li>
+<li><img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" />: Tocha</li>
+</ul>
+<p><strong>Estratégia 1</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: center;">Antes da ponte</th>
+<th style="text-align: center;">Depois da ponte</th>
+<th style="text-align: right;">Tempo do passo</th>
+<th style="text-align: right;">Tempo acumulado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Situação inicial</td>
+<td style="text-align: center;">ABCD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Abelardo e Benedito atravessam</td>
+<td style="text-align: center;">CD</td>
+<td style="text-align: center;">AB<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abelardo retorna</td>
+<td style="text-align: center;">ACD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: center;">B</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Carlos e Dagoberto atravessam</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">BCD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr>
+<td style="text-align: left;">Benedito retorna</td>
+<td style="text-align: center;">AB<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: center;">CD</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abelardo e Benedito atravessam</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ABCD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>17</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Estratégia 2</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: center;">Antes da ponte</th>
+<th style="text-align: center;">Depois da ponte</th>
+<th style="text-align: right;">Tempo do passo</th>
+<th style="text-align: right;">Tempo acumulado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Situação inicial</td>
+<td style="text-align: center;">ABCD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Abelardo e Benedito atravessam</td>
+<td style="text-align: center;">CD</td>
+<td style="text-align: center;">AB<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td style="text-align: left;">Benedito retorna</td>
+<td style="text-align: center;">BCD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: center;">A</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Carlos e Dagoberto atravessam</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">ACD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abelardo retorna</td>
+<td style="text-align: center;">AB<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: center;">CD</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr>
+<td style="text-align: left;">Abelardo e Benedito atravessam</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ABCD<img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /></td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>17</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Em ambas as estratégias, a chave é usar os amigos mais rápidos para as viagens de retorno com a tocha e fazer com que os mais lentos atravessem juntos. Assim, a travessia de todos pode ser completada em 17 minutos, e essas duas variações são equivalentes em termos de tempo total.</p>
+</details>
+<h2 id="os-chapeus-dos-magicos">Os chapéus dos mágicos<a class="headerlink" href="#os-chapeus-dos-magicos" title="Permanent link">&para;</a></h2>
+<div class="admonition example inline">
+<p class="admonition-title">Dica</p>
+<p>Pense bem na lógica do raciocínio deles e no que o silêncio inicial pode significar.</p>
+</div>
+<p>Três mágicos estão sentados ao redor de uma mesa, cada um usando um chapéu que pode ser vermelho ou azul. Nenhum deles consegue ver o próprio chapéu, apenas os chapéus dos outros dois.</p>
+<p>O organizador do desafio lhes dá as seguintes informações:</p>
+<ul>
+<li>Pelo menos um dos três está usando um chapéu vermelho.</li>
+<li>Eles não podem se comunicar entre si de nenhuma forma além de pensar sobre o que estão vendo.</li>
+<li>Se conseguirem deduzir a cor do próprio chapéu, devem dizê-lo em voz alta assim que tiverem certeza.</li>
+</ul>
+<p>Os três mágicos olham ao redor, analisam o que veem e, após um breve silêncio, todos dizem ao mesmo tempo a cor do próprio chapéu com certeza absoluta. Como cada um deles conseguiu deduzir a cor do próprio chapéu e qual deve ser essa cor?</p>
+<details class="success">
+<summary>Resposta</summary>
+<p>Todos os três mágicos estão usando chapéus vermelhos.</p>
+<p><strong>Observação inicial</strong>
+Cada mágico sabe que há pelo menos um chapéu vermelho. Se algum deles visse os outros dois usando chapéus azuis, ele imediatamente concluiria que o seu próprio chapéu deve ser vermelho para satisfazer a condição.</p>
+<p><strong>Silêncio imediato</strong>
+Como ninguém falou imediatamente, nenhum dos mágicos viu dois chapéus azuis. Portanto, cada um observou que pelo menos um dos outros estava usando um chapéu vermelho.</p>
+<p><strong>Raciocínio recíproco</strong>
+Suponha que um mágico (digamos, o mágico A) veja que tanto B quanto C estão usando chapéus vermelhos. A pensa:</p>
+<blockquote>
+<p>"Se meu chapéu fosse azul, então B veria um chapéu azul (o meu) e um vermelho (o de C). Nesse cenário, B poderia ter uma dúvida, mas, se B tivesse visto dois chapéus azuis, ele falaria imediatamente. O fato de que ninguém falou logo significa que B não viu dois azuis. Agora, sabendo que B não conseguiu determinar de imediato, ele também deve estar passando pelo mesmo raciocínio, o que só seria possível se todos estivéssemos usando chapéus vermelhos."</p>
+</blockquote>
+<p><strong>Conclusão simultânea</strong>
+Esse raciocínio se aplica a cada mágico. Cada um, ao ver dois chapéus vermelhos e refletir sobre o silêncio dos outros, deduziu que seu próprio chapéu também devia ser vermelho. Assim, após o breve silêncio, todos falaram ao mesmo tempo: "vermelho."</p>
+<p>Dessa forma, cada mágico, usando o mesmo raciocínio lógico, concluiu corretamente que seu chapéu era vermelho.</p>
+</details>
+<!-- ## O cofre e o segredo
+
+!!! inline end tip "Dica"
+    Pense bem em como cada tentativa restringe as possibilidades e elimine números que não podem estar na solução.
+
+Um cofre está trancado com um código de quatro dígitos, e você precisa descobri-lo com base nas pistas deixadas por tentativas anteriores. Cada tentativa revelou quantos números estavam corretos e se estavam na posição certa ou não. Aqui estão as três tentativas registradas:
+
+- `1234`: somente um dos dígitos existe no código, mas na posição errada.
+- `5678`: exatamente dois dígitos existem no código e estão na posição certa.
+- `9012`: nenhum dos dígitos está existe no código.
+
+Com base nessas informações, qual é o código correto do cofre?
+-->
+
+<h2 id="duas-portas">Duas portas<a class="headerlink" href="#duas-portas" title="Permanent link">&para;</a></h2>
+<div class="admonition example inline">
+<p class="admonition-title">Dica</p>
+<p>Que tal fazer uma pergunta que force ambos os guardas a dar a mesma resposta sobre uma das portas?</p>
+</div>
+<p>Você está em uma sala com duas portas misteriosas. Uma delas leva à liberdade, enquanto a outra esconde um destino terrível. No entanto, você não sabe qual é qual. Ao lado de cada porta, há um guarda. Um deles sempre diz a verdade (o Cavaleiro), enquanto o outro sempre mente (o Trapaceiro). No entanto, você não sabe qual deles é qual, mas eles sabem.</p>
+<p>Para escapar com segurança, você pode fazer apenas uma única pergunta a um dos guardas. A resposta será um simples "sim" ou "não".</p>
+<p>Qual pergunta você deve fazer e como ela garante que você escolha a porta correta?</p>
+<details class="success">
+<summary>Resposta</summary>
+<p>A pergunta que você deve fazer a um dos guardas é:</p>
+<blockquote>
+<p>"Se eu perguntar ao outro guarda se a porta que ele está guardando leva à liberdade, ele responderia 'sim'?"</p>
+</blockquote>
+<p>Agora, vamos analisar as possíveis respostas e como elas indicam qual porta você deve escolher:</p>
+<ol>
+<li>
+<p>Se você perguntar ao Cavaleiro (que sempre diz a verdade):</p>
+<ul>
+<li>Se a porta do Cavaleiro leva à liberdade, o Trapaceiro mentiria e diria "não". Neste caso, o Cavaleiro responderia "não" à sua pergunta.</li>
+<li>Se a porta do Trapaceiro leva à liberdade, o Trapaceiro mentiria e diria "não". Neste caso, o Cavaleiro responderia "sim" à sua pergunta.</li>
+</ul>
+</li>
+<li>
+<p>Se você perguntar ao Trapaceiro (que sempre mente):</p>
+<ul>
+<li>Se a porta do Cavaleiro leva à liberdade, o Trapaceiro sabe que o Cavaleiro diria "sim". Mas, como o Trapaceiro mente, ele responderá "não" à sua pergunta.</li>
+<li>Se a porta do Trapaceiro leva à liberdade, o Trapaceiro sabe que o Cavaleiro diria "não". Mas, como o Trapaceiro mente, ele responderá "sim" à sua pergunta.</li>
+</ul>
+</li>
+</ol>
+<p>Em resumo:</p>
+<ul>
+<li>Se a resposta for "não", escolha a porta do guarda a quem você fez a pergunta.</li>
+<li>Se a resposta for "sim", escolha a porta do outro guarda.</li>
+</ul>
+</details>
+<h2 id="os-missionarios-e-os-canibais">Os missionários e os canibais<a class="headerlink" href="#os-missionarios-e-os-canibais" title="Permanent link">&para;</a></h2>
+<p>Três missionários e três canibais precisam curzar um rio. Eles têm a disposição um barco capaz de transportar duas pessoas. Por questões de segurança (e sobrevivência), em nenhum momento pode haver mais canibais que missionários em uma margem ou dentro do barco (é ok ter o mesmo número de canibais e missionários). Como eles devem se organizar para efetuar essa travessia?</p>
+<details class="success">
+<summary>Resposta</summary>
+<p>Vamos assumir a seguinte notação para a solução a seguir:</p>
+<ul>
+<li><strong>M</strong>: missionário</li>
+<li><strong>C</strong>: canibal</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span>: barco</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: center;">Margem esquerda</th>
+<th style="text-align: center;">Margem direita</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Estado inicial</td>
+<td style="text-align: center;">MMMCCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dois canibais atravessam para a direita</td>
+<td style="text-align: center;">MMMC</td>
+<td style="text-align: center;">CC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Um canibal retorna para a esquerda</td>
+<td style="text-align: center;">MMMCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dois canibais atravessam para a direita</td>
+<td style="text-align: center;">MMM</td>
+<td style="text-align: center;">CCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Um canibal retorna para a esquerda</td>
+<td style="text-align: center;">MMMC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">CC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dois missionários atravessam para a direita</td>
+<td style="text-align: center;">MC</td>
+<td style="text-align: center;">MMCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Um missionário e um canibal retornam para a esquerda</td>
+<td style="text-align: center;">MMCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">MC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dois missionários atravessam para a direita</td>
+<td style="text-align: center;">CC</td>
+<td style="text-align: center;">MMMC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Um canibal retorna para a esquerda</td>
+<td style="text-align: center;">CCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">MMM</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dois canibais atravessam para a direita</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">MMMCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Um canibal retorna para a esquerda</td>
+<td style="text-align: center;">CC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+<td style="text-align: center;">MMMC</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dois canibais atravessam para a direita</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">MMMCCC<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.081 0 5.833 17.686 17.15 13.93Zm-10.2 18.223L4.961 24H19.14l2.98-5.777z"/></svg></span></td>
+</tr>
+</tbody>
+</table>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../algoritmos/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: O que são algoritmos?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                O que são algoritmos?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../variaveis/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Variáveis">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Variáveis
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

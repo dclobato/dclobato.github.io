@@ -1,0 +1,1900 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/c/05-expressoes/">
+      
+      
+        <link rel="prev" href="../04-entrada_saida/">
+      
+      
+        <link rel="next" href="../06-fluxo/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Expressões e sentenças - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expressoes-e-operadores" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Expressões e sentenças
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desafios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expressoes-e-operadores-aritmeticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões e operadores aritméticos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores lógicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-relacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores relacionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-atribuicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de atribuição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#membros-e-ponteiros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Membros e ponteiros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precedencia-dos-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precedência dos operadores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expressoes-e-operadores-aritmeticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões e operadores aritméticos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores lógicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-relacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores relacionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-atribuicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de atribuição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#membros-e-ponteiros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Membros e ponteiros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outros
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precedencia-dos-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precedência dos operadores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="expressoes-e-operadores">Expressões e operadores<a class="headerlink" href="#expressoes-e-operadores" title="Permanent link">&para;</a></h1>
+<p>Nas subseções a seguir, letras minúsculas como <code>a</code> e <code>b</code> representam valores literais ou nomes de variáveis, o que for apropriado no contexto. Ao avaliar uma expressão, os seguintes operadores podem ser usados. <code>T</code> indica um tipo de dados.</p>
+<h2 id="expressoes-e-operadores-aritmeticos">Expressões e operadores aritméticos<a class="headerlink" href="#expressoes-e-operadores-aritmeticos" title="Permanent link">&para;</a></h2>
+<p>Uma expressão aritmética vai ser construída a partir de operadores aritméticos e variáveis ou constantes numéricas.</p>
+<pre class="mermaid"><code>graph LR
+  defoperando ==&gt; j2 ==&gt; operadoru ==&gt; j3 ==&gt; constante ==&gt; j4 ==&gt; finaloperando
+  j3 ==&gt; variavel ==&gt; j4
+  j2 ==&gt; j3
+
+  expressao ==&gt; operando1 ==&gt; j0 ==&gt; operadorb ==&gt; operando2 ==&gt; j1 ==&gt; finalexpressao
+  j1 ==&gt; j0
+
+  classDef rotulo fill:#ffffff,stroke:#ffffff
+  class expressao,finalexpressao,defoperando,finaloperando rotulo
+
+
+  expressao@{ label: "Expressão&lt;br /&gt;aritmética"}
+  operando1@{ shape: terminal, label: "Operando"}
+  operando2@{ shape: terminal, label: "Operando"}
+  operadorb@{ shape: terminal, label: "Operador aritmético&lt;br /&gt;binário"}
+  operadoru@{ shape: terminal, label: "Operador aritmético&lt;br /&gt;unário"}
+  finalexpressao@{label: " "}
+  j0@{ shape: sm-circ }
+  j1@{ shape: sm-circ }
+  j2@{ shape: sm-circ }
+  j3@{ shape: sm-circ }
+  j4@{ shape: sm-circ }
+  defoperando@{ label: "Operando" }
+  finaloperando@{ label: " " }
+  constante@{ shape: terminal, label: "Constante&lt;br /&gt;numérica"}
+  variavel@{ shape: terminal, label: "Variável&lt;br /&gt;numérica"}</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operador</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Adição</td>
+<td style="text-align: center;"><code>a + b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtração</td>
+<td style="text-align: center;"><code>a - b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Mais unário</td>
+<td style="text-align: center;"><code>+a</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menos unário (inverso aditivo)</td>
+<td style="text-align: center;"><code>-a</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiplicação</td>
+<td style="text-align: center;"><code>a * b</code></td>
+<td style="text-align: left;">O produto será do tipo com maior precisão entre os fatores</td>
+</tr>
+<tr>
+<td style="text-align: left;">Divisão</td>
+<td style="text-align: center;"><code>a / b</code></td>
+<td style="text-align: left;">O quociente será do tipo com maior precisão entre o divisor e o dividendo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Módulo</td>
+<td style="text-align: center;"><code>a % b</code></td>
+<td style="text-align: left;">Resto da divisão de <code>a</code> por <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Pré-incremento</td>
+<td style="text-align: center;"><code>++a</code></td>
+<td style="text-align: left;">Incrementa de um o valor de <code>a</code>, e depois utiliza o valor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pós-incremento</td>
+<td style="text-align: center;"><code>a++</code></td>
+<td style="text-align: left;">Utiliza o valor de <code>a</code>, e depois incrementa de um o valor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pré-decremento</td>
+<td style="text-align: center;"><code>--a</code></td>
+<td style="text-align: left;">Decrementa de um o valor de <code>a</code>, e depois utiliza o valor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pós-decremento</td>
+<td style="text-align: center;"><code>a--</code></td>
+<td style="text-align: left;">Utiliza o valor de <code>a</code>, e depois decrementa de um o valor</td>
+</tr>
+</tbody>
+</table>
+<p>A diferença entre o pré-incremento/decremento e o pós-incremento/decremento pode ser visto abaixo</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Pré-incremento</label><label for="__tabbed_1_2">Resultado pré-incremento</label><label for="__tabbed_1_3">Pós-incremento</label><label for="__tabbed_1_4">Resultado pós-incremento</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>5
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>6
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>6
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="p">);</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>5
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>5
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>6
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+<p>Quando os operandos são de tipos diferentes, mas compatíveis, o C faz uma conversão de tipo implícita, também conhecida como <strong>coerção</strong> ou <em>type juggling</em>. Nesse caso, dados de um ou mais subtipos podem ser convertidos em um supertipo se necessário.  Por exemplo, se um <code>int</code> for adicionado a um <code>float</code>, o <code>int</code> é implicitamente convertido em <code>float</code> e o resultado será do tipo <code>float</code>.</p>
+<pre class="mermaid"><code>flowchart TD
+  subgraph s1 [Tipos inteiros]
+    direction RL
+    A[int] --&gt; B[unsigned int] --&gt; C[long int] --&gt; D[unsigned&lt;br /&gt;long int] --&gt; E[long long&lt;br /&gt;int] --&gt; F[unsigned long&lt;br /&gt;long int] 
+  end
+  subgraph s2 [Tipos reais]
+    direction RL
+    G[float] --&gt; H[double] --&gt; I[long double]
+  end
+  s1 --&gt; s2</code></pre>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>A conversão implícita só acontece quando os tipos são diferentes. Então, ao efetuar a divisão de um inteiro por outro, o resultado será inteiro, a menos que seja feita a conversão explícita do dividendo ou do divisor para <code>float</code> ou <code>double</code>. <code>5/2</code> não é <code>2.5</code>, e sim <code>2</code>, pois <code>5</code> e <code>2</code> são do mesmo tipo (<code>int</code>), então o resultado será, também, do mesmo tipo (<code>int</code>).  Para que seja <code>2.5</code>, é preciso fazer <code>5.0/2</code> ou <code>5/2.0</code>.</p>
+<p>Não lembrar desse pequeno detalhe pode acabar produzindo resultados não esperados durante a execução dos programas.</p>
+<div class="admonition failure">
+<p class="admonition-title">Vai dar ruim!</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">     </span><span class="c1">// r = 5/2</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="admonition success">
+<p class="admonition-title">Vai dar bom!</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">     </span><span class="c1">// r = 5.0/2</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+</div>
+<h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TD
+  expressao ==&gt; j0 ==&gt; operando1 ==&gt; operadorl ==&gt; j0
+  operando1 ==&gt; finalexpressao
+
+  defoperando ==&gt; j1 ==&gt; j2
+  j1 ==&gt; nao ==&gt; j2
+  j2 ==&gt; constantel ==&gt; j3
+  j2 ==&gt; variavell ==&gt; j3
+  j2 ==&gt; expressaor ==&gt; j3
+  j3 ==&gt; finaloperando
+
+  classDef rotulo fill:#ffffff,stroke:#ffffff
+  class expressao,finalexpressao,defoperando,finaloperando rotulo
+
+  expressao@{ label: "Expressão&lt;br /&gt;lógica"}
+  nao@{ shape: terminal, label: "**NÃO**"}
+  operando1@{ shape: terminal, label: "Operando&lt;br /&gt;lógico"}
+  operadorl@{ shape: terminal, label: "Operador&lt;br /&gt;lógico"}
+  finalexpressao@{label: " "}
+  j0@{ shape: sm-circ }
+  j1@{ shape: sm-circ }
+  j2@{ shape: sm-circ }
+  j3@{ shape: sm-circ }
+  defoperando@{ label: "Operando&lt;br /&gt;lógico" }
+  finaloperando@{ label: " " }
+  constantel@{ shape: terminal, label: "Constante&lt;br /&gt;lógica"}
+  variavell@{ shape: terminal, label: "Variável&lt;br /&gt;lógica"}
+  expressaor@{ shape: terminal, label: "Expressão&lt;br /&gt;relacional"}
+</code></pre>
+<p>Operadores lógicos retornam um valor do tipo <code>bool</code>, indicando o resultado da operação.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NOT (<span class="arithmatex">\(\lnot\)</span>)</td>
+<td style="text-align: center;"><code>!a</code></td>
+<td style="text-align: left;">Nega o valor de <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">AND (<span class="arithmatex">\(\land\)</span>)</td>
+<td style="text-align: center;"><code>a &amp;&amp; b</code></td>
+<td style="text-align: left;">Será verdadeiro apenas quando <code>a</code> e <code>b</code> forem verdadeiros; em todos os outros casos, falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">OR (<span class="arithmatex">\(\lor\)</span>)</td>
+<td style="text-align: center;"><code>a || b</code></td>
+<td style="text-align: left;">Será falso apenas quando <code>a</code> e <code>b</code> forem falsos; em todos os outros casos, verdadeiro</td>
+</tr>
+</tbody>
+</table>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>AND</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center>
+<center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>OR</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center>
+<center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>NOT</strong></th>
+<th style="text-align: center;">a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Em C, a avaliação de operadores lógicos como <code>&amp;&amp;</code> (E lógico) e <code>||</code> (OU lógico) segue uma estratégia conhecida como "curto-circuito". Esse mecanismo otimiza a execução do código ao interromper a avaliação de uma expressão lógica assim que o resultado final pode ser determinado de forma inequívoca.</p>
+<p>No caso do operador <code>&amp;&amp;</code>, a avaliação ocorre da esquerda para a direita. Se o primeiro operando for avaliado como falso, o resultado final da expressão será necessariamente falso, independentemente do valor do segundo operando. Portanto, o segundo operando não é avaliado, evitando cálculos desnecessários e possíveis efeitos colaterais. Um exemplo prático seria a verificação de um ponteiro antes de acessar a memória que ele aponta: <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ptr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span></code>. Se <code>ptr</code> for <code>NULL</code>, a segunda parte da condição (<code class="language-c highlight"><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span></code>) não será avaliada, evitando um erro de acesso à memória inválida.</p>
+<p>De forma semelhante, o operador <code>||</code> também utiliza o curto-circuito. Se o primeiro operando for avaliado como verdadeiro, o resultado final da expressão será necessariamente verdadeiro, independentemente do valor do segundo operando. Logo, o segundo operando não é avaliado. Um exemplo comum é a verificação de múltiplas condições alternativas: <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">opcao</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">opcao</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">opcao</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">)</span></code>. Se <code>opcao</code> for igual a <code>a</code>, as outras comparações não serão realizadas.</p>
+<p>Essa característica dos operadores lógicos em C não apenas melhora a eficiência do código, mas também permite escrever expressões mais seguras, prevenindo erros que poderiam ocorrer se todos os operandos fossem avaliados indiscriminadamente.</p>
+<h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph LR
+  expressaor ==&gt; j0 ==&gt; expressaoa1 ==&gt; operadorr1 ==&gt; expressaoa2 ==&gt; j1 ==&gt; finalexpressaor
+  j0 ==&gt; expressaol1 ==&gt; operadorr1 ==&gt; expressaol2 ==&gt; j1
+
+  expressaol ==&gt; j2 ==&gt; constantec ==&gt; j3 ==&gt; finalexpressaol
+  j2 ==&gt; variavelc ==&gt; j3
+
+
+  classDef rotulo fill:#ffffff,stroke:#ffffff
+  class expressaor,expressaol,finalexpressaor,finalexpressaol rotulo
+
+
+  expressaor@{ label: "Expressão&lt;br /&gt;relacional"}
+  finalexpressaor@{label: " "}
+  expressaol@{ label: "Expressão&lt;br /&gt;literal"}
+  finalexpressaol@{label: " "}
+  expressaoa1@{ shape: terminal, label: "Expressão&lt;br /&gt;aritmética"}
+  expressaoa2@{ shape: terminal, label: "Expressão&lt;br /&gt;aritmética"}
+  expressaol1@{ shape: terminal, label: "Expressão&lt;br /&gt;literal"}
+  expressaol2@{ shape: terminal, label: "Expressão&lt;br /&gt;literal"}
+  operadorr1@{ shape: terminal, label: "Operador&lt;br /&gt;relacional"}
+  j0@{ shape: sm-circ }
+  j1@{ shape: sm-circ }
+  j2@{ shape: sm-circ }
+  j3@{ shape: sm-circ }
+  constantec@{ shape: terminal, label: "Constante&lt;br /&gt;caracter"}
+  variavelc@{ shape: terminal, label: "Variável&lt;br /&gt;caracter"}</code></pre>
+<div class="admonition warning inline end">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Em C, o operador de igualdade é um sinal de igual duplo (<code>==</code>).  O sinal de igual simples é utilizado para atribuição, como vamos ver em breve</p>
+</div>
+<p>Os operadores relacionais retornam um valor do tipo <code>bool</code> que indica se a relação é verdadeira ou falsa.    </p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Igual a</td>
+<td style="text-align: center;"><code>a == b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Não igual a<br>(diferente de)</td>
+<td style="text-align: center;"><code>a != b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maior que</td>
+<td style="text-align: center;"><code>a &gt; b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menor que</td>
+<td style="text-align: center;"><code>a &lt; b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maior ou igual a</td>
+<td style="text-align: center;"><code>a &gt;= b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menor ou igual a</td>
+<td style="text-align: center;"><code>a &lt;= b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Se você quer saber se um número está entre outros dois, a expressão usada na matemática (<span class="arithmatex">\(10 &lt; n &lt; 50\)</span>) não vai funcionar em C. não funcionará. Se você usar essa expressão, o compilador vai avaliar a primeira parte (<span class="arithmatex">\(10 &lt; n\)</span>) e, o resultado dessa comparação será comparado com 50.</p>
+<p>A forma correta envolve o operador <strong>AND</strong> (<code class="language-c highlight"><span class="o">&amp;&amp;</span></code>): <code class="language-c highlight"><span class="mi">10</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50</span></code>.</p>
+</div>
+<h2 id="operadores-de-bit">Operadores de bit<a class="headerlink" href="#operadores-de-bit" title="Permanent link">&para;</a></h2>
+<div class="admonition note inline end">
+<p class="admonition-title">Você sabia?</p>
+<p>Os operadores de deslocamento podem ser usados para efetuar multiplicação e divisão.</p>
+<p>Suponha que temos um número inteiro <code>a = 5</code>. Em representação binária, 5 é <code>00000101</code>. Agora, vamos realizar um deslocamento à esquerda de 2 bits (<code>a &lt;&lt; 2</code>). O que teremos é os bits de <code>a</code> "empurrados" 2 posições para a esquerda, resultando em <code>00010100</code>. Os bits vazios à direita são preenchidos com zeros. Como <code>00010100</code> em binário corresponde a 20 em decimal, <code>5 &lt;&lt; 2</code> resulta em 20.</p>
+<p>Uso mesmo número a = 5 (binário <code>00000101</code>), um deslocamento à direita de 1 bit (<code>a &gt;&gt; 1</code>) resulta em <code>0000010</code>. Para números sem sinal (<code>unsigned</code>), o bit vazio à esquerda é preenchido com zero. Para números com sinal (<code>signed</code>), o bit mais significativo (bit de sinal) é replicado. Como <code>0000010</code> em binário é 2 em decimal, temos que <code>5 &gt;&gt; 1</code> resulta em 2.</p>
+<p>Resumo:</p>
+<ul>
+<li><code>a &lt;&lt; b</code>: Multiplica <code>a</code> por <span class="arithmatex">\(2^b\)</span>.</li>
+<li><code>a &gt;&gt; b</code>: Divide <code>a</code> por <span class="arithmatex">\(2^b\)</span> (com comportamento diferente para números negativos).</li>
+</ul>
+</div>
+<p>Os operadores de bit operam sobre os valores binários da variáveis.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NOT</td>
+<td style="text-align: center;"><code>~a</code></td>
+<td style="text-align: left;">Inverte os bits de <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">AND</td>
+<td style="text-align: center;"><code>a &amp; b</code></td>
+<td style="text-align: left;">Efetua a operação AND bit-a-bit sobre os operandos <code>a</code> e <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;"><code>a | b</code></td>
+<td style="text-align: left;">Efetua a operação OR bit-a-bit sobre os operandos <code>a</code> e <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">XOR</td>
+<td style="text-align: center;"><code>a ^ b</code></td>
+<td style="text-align: left;">Efetua a operação OR bit-a-bit sobre os operandos <code>a</code> e <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à esquerda</td>
+<td style="text-align: center;"><code>a &lt;&lt; b</code></td>
+<td style="text-align: left;">Desloca os bits de <code>a</code> para a esquerda por <code>b</code> posições. Os bits à direita são preenchidos com zeros</td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à direita</td>
+<td style="text-align: center;"><code>a &gt;&gt; b</code></td>
+<td style="text-align: left;">Desloca os bits de <code>a</code> para a direita por <code>b</code> posições. O comportamento dos bits à esquerda depende do tipo de <code>a</code>: se <code>a</code> for <code>signed</code>, o bit de sinal é replicado (deslocamento aritmético); se <code>a</code> for <code>unsigned</code>, os bits à esquerda são preenchidos com zeros (deslocamento lógico)</td>
+</tr>
+</tbody>
+</table>
+<p>O operador XOR (OU-exclusivo) retorna verdadeiro apenas quando <code>a != b</code>.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>XOR</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<h2 id="operadores-de-atribuicao">Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph LR
+  atrib1 ==&gt; identificador ==&gt; seta ==&gt; expressao ==&gt; pontovirgula ==&gt; finalatrib1
+
+  defexpressao ==&gt; j0 ==&gt; expressaoa ==&gt; j1 ==&gt; finalexpressao
+  j0 ==&gt; expressaol ==&gt; j1
+  j0 ==&gt; expressaolit ==&gt; j1
+
+  classDef rotulo fill:#ffffff,stroke:#ffffff
+  class atrib1,finalatrib1,defexpressao,finalexpressao rotulo
+
+  atrib1@{ label: "Atribuição"}
+  finalatrib1@{ label: " "}
+  defexpressao@{ label: "Expressão"}
+  finalexpressao@{label: " "}
+
+  expressao@{ shape: terminal, label: "Expressão"}
+  expressaoa@{ shape: terminal, label: "Expressão&lt;br /&gt;aritmética"}
+  expressaol@{ shape: terminal, label: "Expressão&lt;br /&gt;lógica"}
+  expressaolit@{ shape: terminal, label: "Expressão&lt;br /&gt;literal"}
+  j0@{ shape: sm-circ }
+  j1@{ shape: sm-circ }
+  identificador@{ shape: terminal, label: "**Identificador**" }
+  seta@{ shape: circle, label: "**&amp;larr;**" }
+  pontovirgula@{ shape: circle, label: "**;**" }</code></pre>
+<p>Para operadores combinados na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span>, a operação equivalente é <span class="arithmatex">\(a = a \circledcirc b\)</span>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Atribuição</td>
+<td style="text-align: center;"><code>a = b</code></td>
+<td style="text-align: left;">Atribui o valor de <code>b</code> à variável <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Adição combinada</td>
+<td style="text-align: center;"><code>a += b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a + b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Subtração combinada</td>
+<td style="text-align: center;"><code>a -= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a - b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Multiplicação combinada</td>
+<td style="text-align: center;"><code>a *= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a * b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Divisão combinada</td>
+<td style="text-align: center;"><code>a /= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a / b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Módulo combinado</td>
+<td style="text-align: center;"><code>a %= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a % b</code> (resto da divisão)</td>
+</tr>
+<tr>
+<td style="text-align: center;">AND bit-a-bit combinado</td>
+<td style="text-align: center;"><code>a &amp;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &amp; b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">OR bit-a-bit combinado</td>
+<td style="text-align: center;"><code>a |= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a | b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">XOR bit-a-bit combinado</td>
+<td style="text-align: center;"><code>a ^= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a ^ b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à esquerda combinado</td>
+<td style="text-align: center;"><code>a &lt;&lt;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &lt;&lt; b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à direita combinado</td>
+<td style="text-align: center;"><code>a &gt;&gt;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &gt;&gt; b</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="membros-e-ponteiros">Membros e ponteiros<a class="headerlink" href="#membros-e-ponteiros" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Indireção</td>
+<td style="text-align: center;"><code>*a</code></td>
+<td style="text-align: left;">Objeto apontado por <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Endereço de</td>
+<td style="text-align: center;"><code>&amp;a</code></td>
+<td style="text-align: left;">Endereço de memória do objeto <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Dereferenciamento de estrutura</td>
+<td style="text-align: center;"><code>a-&gt;b</code></td>
+<td style="text-align: left;">Membro <code>b</code> do objeto apontado por <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Referenciamento de estrutura</td>
+<td style="text-align: center;"><code>a.b</code></td>
+<td style="text-align: left;">Membro <code>b</code> do objeto <code>a</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="outros">Outros<a class="headerlink" href="#outros" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Condicional ternário</td>
+<td style="text-align: center;"><code>a ? b : c</code></td>
+<td style="text-align: left;">Se <code>a</code> for verdadeiro, retorna <code>b</code>; caso contrário, <code>c</code><br><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Bom %s!&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">hora</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">12</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;dia&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;tarde&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Tamanho de</td>
+<td style="text-align: center;"><code>sizeof a</code><br><code>sizeof (T)</code></td>
+<td style="text-align: left;">Retorna o tamanho do objeto <code>a</code> ou do tipo <code>T</code> em número de <code>chars</code>. Ou seja, <code>sizeof (char)</code> é sempre igual a 1. Como em muitos casos o tamanho do caracter (<code>sizeof (char)</code>) é igual a 8 bits, ou seja, 1 byte, <code>sizeof (T)</code> retorna o tamanho em bytes ocupado por uma variável do tipo <code>T</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Conversão explícita</td>
+<td style="text-align: center;"><code>(T)a</code></td>
+<td style="text-align: left;">Converte o valor de <code>a</code> para o tipo <code>T</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="precedencia-dos-operadores">Precedência dos operadores<a class="headerlink" href="#precedencia-dos-operadores" title="Permanent link">&para;</a></h2>
+<p>Da hora de avaliar uma expressão, seja ela aritmética, de bit ou lógica, os diversos operadores presentes precisam ser avaliados na ordem correta de precedência. Já fazemos isso quando nós mesmos resolvemos uma expressão aritmética no papel: primeiro as potências e raízes, depois os produtos e quocientes, e assim sucessivamente.</p>
+<p>A tabela abaixo mostra os operadores ordenados de forma decrescente de prioridade (primeiro os do início, depois os do final), se possuem um (unários) ou dois (binários) operandos, e se são avaliados da esquerda para a direita (&rarr;) ou da direita para a esquerda (&larr;).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Operandos</th>
+<th style="text-align: center;">Sentido da avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>() [] -&gt; .</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>- ++ -- ! &amp; * ~ (tipo) sizeof</code></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">&larr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>* / %</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>+ -</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&lt;&lt;  &gt;&gt;</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&lt; &lt;= &gt;= &gt;</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>== !=</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&amp;</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>^</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>|</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&amp;&amp;</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>||</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&rarr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>? :</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&larr;</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>=  op =</code></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">&larr;</td>
+</tr>
+</tbody>
+</table>
+<p>Na última linha <code>op=</code> representa os operadores na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span> listados em seção <a href="#operadores-de-atribuicao">anterior</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../04-entrada_saida/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Entrada e saída">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Entrada e saída
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-fluxo/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Controle de fluxo">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Controle de fluxo
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

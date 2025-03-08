@@ -1,0 +1,1108 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/exercicios/operacoes/">
+      
+      
+        <link rel="prev" href="../exercicios/">
+      
+      
+        <link rel="next" href="../selecao/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Operações aritméticas e de atribuição - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#operacoes-aritmeticas-e-de-atribuicao" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Operações aritméticas e de atribuição
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desafios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/03-tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/05-expressoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selecao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="operacoes-aritmeticas-e-de-atribuicao">Operações aritméticas e de atribuição<a class="headerlink" href="#operacoes-aritmeticas-e-de-atribuicao" title="Permanent link">&para;</a></h1>
+<ol>
+<li>
+<p>Faça um programa que calcule a área (A) de um círculo de raio r informado pelo usuário. Apresente a área com 2 casas decimais (<span class="arithmatex">\(A = \pi r^2\)</span>)</p>
+</li>
+<li>
+<p>Faça um programa que calcule a área de um triângulo a partir do comprimento da base e da altura. A área pode ser calculada como metade do produto entre a base e a altura</p>
+</li>
+<li>
+<p>Faça um programa que leia o raio r de uma esfera, calcule e imprima o seu volume. A fórmula para o volume de uma esfera é <span class="arithmatex">\(V = \dfrac{4}{3}\pi r^3\)</span></p>
+</li>
+<li>
+<p>Faça um programa que calcule a área de um retângulo a partir do comprimento de duas arestas adjacentes informadas pelo usuário. A área é o produto entre o comprimento das arestas</p>
+</li>
+<li>
+<p>Faça um programa que calcule a média entre três números informados pelo usuário</p>
+</li>
+<li>
+<p>O custo final ao consumidor de um veículo é a soma do custo de fabricação com o lucro do distribuidor e os impostos, ambos aplicados sobre o custo de fabricação. Faça um programa que calcule o custo final ao consumidor de um veículo a partir do custo de fabricação, e considerando que o lucro do distribuidor é de 15%, e a carga tributária total é de 48%</p>
+</li>
+<li>
+<p>Faça um programa que receba a temperatura em graus Celsius e apresente o resultado da conversão dessa temperatura em Kelvin e graus Fahrenheit. A fórmula para conversão é <span class="arithmatex">\(F = 1.8 \times C + 32\)</span> e <span class="arithmatex">\(K = C + 273.15\)</span></p>
+</li>
+<li>
+<p>Faça um programa que calcule a quantidade de litros de combustível gastos em uma viagem. O usuário vai informar o consumo do veículo, em Km/l, a velocidade média no percurso e o tempo de viagem. A distância percorrida é o resultado do produto entre a velocidade média e o tempo de viagem. O consumo pode ser calculado pela razão entre a distância e o consumo.</p>
+</li>
+<li>
+<p>Construa um programa que leia a distância percorrida em Km, e o tempo necessário para percorrê-la em minutos, e apresente a velocidade média em metros por segundo (m/s)</p>
+</li>
+<li>
+<p>O sistema de avaliação de determinada disciplina, é composto por três provas. A primeira prova tem peso 2, a segunda tem peso 3 e a terceira tem peso 5. Faça um algoritmo para calcular a média final de um aluno desta disciplina.</p>
+</li>
+<li>
+<p>Escreva um algoritmo que, lendo o mês e o ano de nascimento, determine o número de dias que uma pessoa já viveu. Considere que um mês tenha 30 dias.</p>
+</li>
+<li>
+<p>Uma empresa paga aos seus funcionários um salário que depende do total de horas trabalhadas no mês. Você deve fazer um programa que leia a quantidade de horas que o funcionário trabalhou, o valor de cada hora trabalhada e o percentual de desconto a ser aplicado no salário (imposto de renda, contribuição social, vale transporte, essas coisas).  Calcule e imprima o salário bruto, o valor do desconto e o salário líquido (bruto – descontos)</p>
+</li>
+<li>
+<p>Uma empresa precisa calcular a capacidade de uma lata cilíndrica que será usada para transportar um determinado líquido. Faça um programa que receba as dimensões do cilindro (raio da base e altura), calcule e imprima a capacidade da lata cilíndrica em <span class="arithmatex">\(cm^3\)</span>.</p>
+</li>
+<li>
+<p>Faça um programa que leia a velocidade de um veículo em m/s e apresente a velocidade em Km/h (1m/s = 3,6Km/h)</p>
+</li>
+<li>
+<p>Leia um número com três algarismos (entre 0 e 999) e imprima o número com os algarismos na ordem inversa, ou seja, o algarismo da unidade vira o da centena, e o da centena vira o da unidade. Por exemplo, "562" torna-se "265".</p>
+</li>
+<li>
+<p>Uma empresa produz três tipos de peças mecânicas: parafusos, porcas e arruelas. Para cada uma delas, a empresa dá um desconto sobre o preço de tabela que são, respectivamente, 10%, 20% e 30%. Escreva um programa que leia o preço de cada item, a quantidade vendida de cada um deles, e o total a ser pago.</p>
+</li>
+<li>
+<p>Quando temos um número que gostaríamos de proteger contra erros de anotação (por exemplo, RG ou número de matrícula) utilizamos os chamados "dígitos verificadores". Determinada aplicação precisa calcular o dígito verificador de um número com 4 algarismos (ABCD). O dígito verificador é calculado como o resto da divisão por 7 da soma do algarismo multiplicado pela sua posição. Por exemplo, o número 7155 tem como dígito verificador o valor 4, pois <span class="arithmatex">\(7 \times 4 + 1 \times 3 + 5 \times 2 + 5 \times 1=46\)</span> e o resto da divisão de 46 por 7 é igual a 4. Construa um programa que leia um número com até quatro algarismos (entre 0 e 9999), calcule e imprima o dígito verificador.</p>
+</li>
+<li>
+<p>Para que uma pessoa possa ser indicada para cirurgia bariátrica, entre outros fatores, ela deve ter um IMC maior ou igual a 40. O IMC é calculado como sendo a razão entre o peso (Kg) e o quadrado da altura (m). Construa um programa que receba o peso e a altura de uma pessoa e imprima seu IMC.</p>
+</li>
+<li>
+<p>Dois cabos de energia precisam passar por dentro de um conduíte circular. O condutor de cada cabo possui um raio, <span class="arithmatex">\(R_1\)</span> e <span class="arithmatex">\(R_2\)</span>. Construa um programa que calcule o menor diâmetro de conduíte que deve ser comprado para que seja possível passar os dois cabos com uma folga de 10%</p>
+</li>
+<li>
+<p>Na maior parte das linguagens de programação, temos disponíveis funções para calcular apenas os logaritmos em base 10 e base e. Usando a propriedade que <span class="arithmatex">\(\log_x⁡y=\dfrac{\log_a⁡y}{\log_a⁡x}\)</span>, faça um programa que leia <span class="arithmatex">\(x\)</span> e <span class="arithmatex">\(y\)</span> e calcule <span class="arithmatex">\(\log_x⁡y\)</span>.</p>
+</li>
+<li>
+<p>Faça um programa que leia dois valores inteiros em duas variáveis distintas, troque o conteúdo das duas variáveis e apresente os valores originais das variáveis e os valores trocados.</p>
+</li>
+<li>
+<p>O latão é uma liga composta 70% de cobre e 30% de zinco. Faça um programa que leia o preço do kg de cobre, o preço do kg de zinco e a quantidade de latão que o usuário deseja produzir. A partir dessas informações, imprima qual a massa necessária de cobre, de zinco e o custo total da massa de latão produzida.</p>
+</li>
+<li>
+<p>Uma pessoa possui um terreno com forma retangular e deseja saber qual é a maior distância que ele pode percorrer dentro do terreno em linha reta.  Faça um programa que leia a largura e a profundidade do terreno, calcule e imprima a maior distância que pode ser percorrida em linha reta dentro desse terreno</p>
+</li>
+<li>
+<p>No Brasil, os cidadãos são obrigados a votar. Aqueles que não desejam votar em nenhum dos candidatos disponíveis acabam escolhendo votar em branco ou votar nulo. Faça um programa que leia o total de eleitores de um município, o total de votos brancos e o total de votos nulos e apresente o percentual de votos brancos e nulos registrados</p>
+</li>
+<li>
+<p>O peso ideal de um sujeito do sexo masculino pode ser estimado a partir da fórmula <span class="arithmatex">\((72.7 \times h)-58\)</span>, onde <span class="arithmatex">\(h\)</span> é a altura em metros. Faça um programa que leia a altura de um indivíduo e imprima o peso ideal estimado.</p>
+</li>
+<li>
+<p>O sistema tributário em um determinado país fictício chamado Brasilos não é para amadores. Há uma infinidade de taxas e alíquotas de impostos que precisam ser calculadas em função do produto que está sendo vendido.  Por exemplo, um carro paga uma alíquota de 45% no preço final, que por sua vez é composto pela soma dos custos das diversas matérias primas que são usadas: 5% para plásticos biodegradáveis, 9% para metais reciclados, 21% para plásticos não recicláveis e 32% para metais não recicláveis. Faça um programa que receba os custos das matérias primas usadas para a construção de um carro e calcule o preço final do veículo e com qual preço ele deve ser vendido para que haja um lucro de 8% para o fabricante.</p>
+</li>
+<li>
+<p>O ponto em que o céu parece encontrar a terra ou o mar depende do local onde está o observador e da sua altura (quanto mais alta a pessoa, maior a distância). A linha do horizonte só pode ser vista em seu formato original, ligeiramente curvo<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> , em mar aberto ou numa vasta planície sem nenhum relevo. Grosso modo, a distância percebida do horizonte pode ser calculada a partir da fórmula <span class="arithmatex">\(d=\sqrt{2hR+h^2}\)</span>, onde <span class="arithmatex">\(d\)</span> é a distância, <span class="arithmatex">\(R\)</span> é o raio médio da Terra, e <span class="arithmatex">\(h\)</span> é altura da observação. Considerando um raio médio da Terra de 6371km, construa um programa que, dada a altura de uma pessoa (em metros) calcule qual a distância percebida até o horizonte. Para efeito de comparação, uma pessoa com 1,84m enxerga o horizonte a 4842m.</p>
+</li>
+<li>
+<p>Toda a vez que ocorre uma transmissão sem fio, há perda de parte da energia transmitida, chamada atenuação. Um dessas atenuações é a chamada perda no espaço livre (FSPL), que pode ser obtida a partir da fórmula <span class="arithmatex">\(\text{FSPL}=32.5 + 20\times\log d + 20 \times \log f\)</span>, onde a distância <span class="arithmatex">\(d\)</span> é dada em km, e a frequência <span class="arithmatex">\(f\)</span> é dada em MHz.  Faça um programa que calcule qual é a perda de espaço livre para uma determinada frequência em determinada distância, ambos fornecidos pelo usuário.</p>
+</li>
+<li>
+<p>Na matemática, mais especificamente na topologia algébrica, a Característica de Euler (ou Número de Euler, ou Característica de Euler-Poicaré) é uma invariante topológica, ou seja, um número que descreve a forma ou estrutura de um espaço topológico independentemente de como ele é dobrado, e geralmente é denotado pela letra grega minúscula chi<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> (<span class="arithmatex">\(\chi\)</span>). A característica <span class="arithmatex">\(\chi\)</span> foi definida, por Euler, para as superfícies de um poliedro de acordo com a fórmula <span class="arithmatex">\(\chi=V-E+F\)</span>, onde <span class="arithmatex">\(V\)</span>, <span class="arithmatex">\(E\)</span> e <span class="arithmatex">\(F\)</span> representam, respectivamente, o número de vértices, arestas e faces. Nos poliedros convexos, <span class="arithmatex">\(\chi=2\)</span>. Por exemplo, em um tetraedro (pirâmide de base triangular), temos 4 vértices, 6 arestas e 4 faces, ou seja, <span class="arithmatex">\(4-6+4=2\)</span>. Construa um programa que receba o número de faces e de arestas de um poliedro convexo e retorne o número de vértices.</p>
+</li>
+<li>
+<p>O cálculo da data da Páscoa, também conhecido como <em>Computus</em> em latim, é fundamental no calendário cristão desde os primórdios da cristandade. No final da antiguidade, a comunidade cristã recebia a data da Páscoa por meio de um anúncio papal, mas a partir do Século III, a Igreja começou a valorizar um sistema que permitisse ao clero determinar de forma independente e consistente a data sem depender da mensagem papal. Definiu-se, então, que a Páscoa seria celebrada no primeiro domingo após a primeira lua cheia que ocorre depois do equinócio da Primavera no hemisfério norte (ou do outono no hemisfério sul), ou seja, é equivalente à antiga regra de que seria o primeiro Domingo após o 14º dia do mês lunar de Nissan. Essa data pode ser verificada em tabelas, ou então calculada. Para efetuar o cálculo da data, há vários algoritmos, sendo que um dos mais recentes foi proposto por Jean Meesus em 1991<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>, e pode ser resumido pelas seguintes operações ("\" indica a divisão inteira, ou seja, <span class="arithmatex">\(7\backslash3 = 2\)</span>):</p>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Algoritmo de Jean Meesus</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>a &lt;- resto da divisão de ANO por 19
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>b &lt;- dois primeiro dígitos do ANO (por exemplo, 19 para o ano de 1976)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>c &lt;- dois últimos dígitos do ANO (por exemplo, 76 para o ano de 1976)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>d &lt;- b \ 4
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>e &lt;- resto da divisão de b por 4
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>f &lt;- (b + 8) \ 25
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>g &lt;- (b - f + 1) \ 3
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>h &lt;- resto da divisão de (19a + b - d - g + 15) por 30
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>i &lt;- c \ 4
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>k &lt;- resto da divisão de c por 4
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>L &lt;- resto da divisão de (32 + 2e + 2i - h - k) por 7
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>m &lt;- (a + 11h + 22L) \ 451
+</span></code></pre></div></td></tr></table></div>
+<p>Por fim, o mês podia ser calculado como <span class="arithmatex">\((h + L - 7m + 114) \backslash 31\)</span>, e o dia como o resto da divisão de <span class="arithmatex">\(1 + (h + L - 7m + 114)\)</span> por 31. Construa um programa que leia o ano, e indique a data da Páscoa naquele ano, no formato dd/mm/aaaa.</p>
+</li>
+<li>
+<p><img align="right" alt="Diagrama unifilar" src="../img/voltage-divider.webp" width="150" />Em eletrônica, a regra do divisor de tensão, ou simplesmente o divisor de tensão, é uma técnica de projeto utilizada para criar uma tensão elétrica (<span class="arithmatex">\(V_{out}\)</span>) que seja proporcional à outra tensão (<span class="arithmatex">\(V_{in}\)</span>). Uma forma de fazer isso é com um circuito composto por dois resistores em série, tal como no diagrama unifilar ao lado. A tensão de saída, <span class="arithmatex">\(V_{out}\)</span>, é dada pela equação <span class="arithmatex">\(V_{out}=\dfrac{R_2}{R_1+R_2}\times V_{in}\)</span>. Construa um programa que receba a tensão de entrada, <span class="arithmatex">\(V_{in}\)</span>, e a tensão de saída desejada, <span class="arithmatex">\(V_{out}\)</span>, e calcule a relação necessária entre <span class="arithmatex">\(R_1\)</span> e <span class="arithmatex">\(R_2\)</span> para que o divisor possa ser construído. Por exemplo, se <span class="arithmatex">\(V_{in} = 5\text V\)</span>, e <span class="arithmatex">\(V_{out} = 2,5\text V\)</span>, então <span class="arithmatex">\(\dfrac{R_1}{R_2} = 1\)</span>.</p>
+</li>
+<li>
+<p>A lei de Ohm, descoberta e formulada por Georg Simon Ohm, relaciona as três grandezas elétricas principais e demonstra como elas estão intrinsecamente ligadas. Com ela, sabemos que a corrente que passa por um circuito é diretamente proporcional à tensão, e inversamente proporcional à resistência, ou seja, <span class="arithmatex">\(I=V/R\)</span>. Construa um programa que receba a corrente (em amperes) e a tensão (em volts), e calcule a resistência do circuito (em ohms).</p>
+</li>
+<li>
+<p>Em algumas situações, é preciso converter um valor que esteja em uma faixa para outro. Por exemplo, um conversor analógico para digital pode fazer uma conversão utilizando 1024 níveis (0 a 1023), mas precisamos que os valores estejam entre 0 e 99 para serem usados. No exemplo anterior, um resultado de 300 na conversão de analógico para digital corresponde a um valor de aproximadamente 29 na escala de 0 a 99. Construa um programa que leia os limites inferior e superior da escala original, o valor lido na escala original (de entrada), os limites superior e inferior da escala de modificada (de destino), e calcule e apresente o valor originalmente lido convertido para a escala de destino.</p>
+</li>
+</ol>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Assumindo que a Terra não seja plana...&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Pronuncia-se igual a "aqui", mas sem o "a"&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>MEEUS, J.. <strong>Astronomical Algorithms</strong>. Richmond, Virginia: Willmann-Bell, 1991.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../exercicios/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Exercícios selecionados">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Exercícios selecionados
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../selecao/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Estruturas de seleção">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Estruturas de seleção
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

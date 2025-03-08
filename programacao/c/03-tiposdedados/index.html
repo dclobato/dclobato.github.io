@@ -1,0 +1,1572 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/c/03-tiposdedados/">
+      
+      
+        <link rel="prev" href="../02-criacao/">
+      
+      
+        <link rel="next" href="../04-entrada_saida/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Tipos de dados - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/mermaid.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tipos-de-dados-em-c" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tipos de dados
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    O que são algoritmos?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desafios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variaveis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A linguagem de programação C
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem de programação C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-historia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introdução e história
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-criacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criação de um programa em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos principais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-define" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando #define
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando const
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencias-de-escape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequências de escape
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arranjos-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arranjos (arrays)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ponteiros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ponteiros
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-expressoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-fluxo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipos-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipos principais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constantes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constantes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Constantes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usando-define" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando #define
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usando-const" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando const
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequencias-de-escape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequências de escape
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arranjos-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arranjos (arrays)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ponteiros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ponteiros
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tipos-de-dados-em-c">Tipos de dados em C<a class="headerlink" href="#tipos-de-dados-em-c" title="Permanent link">&para;</a></h1>
+<p>No C, os tipos de dados definem a semântica, características de armazenamento e operações permitidas para elementos de dados, sendo expressos na sintaxe através de <strong>declarações de variáveis</strong>; a linguagem oferece tipos aritméticos básicos (inteiros e reais) e sintaxe para construir arranjos (<em>arrays</em>) e tipos compostos.</p>
+<p>O valor máximo que um determinado tipo de dados por armazenar depende de fatores como sistema operacional e tipo de processador. Uma forma de verificar os limites na máquina que você está usando, é verificar os valores disponíveis na biblioteca <code>limits.h</code> (veja <a href="../biblioteca_c/#limitsh">aqui</a>).</p>
+<h2 id="tipos-principais">Tipos principais<a class="headerlink" href="#tipos-principais" title="Permanent link">&para;</a></h2>
+<p>A linguagem C fornece quatro especificadores de tipos dados aritméticos: <code class="language-c highlight"><span class="kt">char</span></code>, <code class="language-c highlight"><span class="kt">int</span></code>, <code class="language-c highlight"><span class="kt">float</span></code> e <code class="language-c highlight"><span class="kt">double</span></code> (além do tipo lógico <code class="language-c highlight"><span class="kt">bool</span></code>), e os modificados <code class="language-c highlight"><span class="kt">signed</span></code>, <code class="language-c highlight"><span class="kt">unsigned</span></code>, <code class="language-c highlight"><span class="kt">short</span></code> e <code class="language-c highlight"><span class="kt">long</span></code>. A combinação dos tipos com os modificadores produz os seguintes tipos de dados.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Detalhes</th>
+<th style="text-align: right;"><em>bits</em></th>
+<th style="text-align: left;">Sufixo para constantes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">bool</span></code></td>
+<td style="text-align: left;">Tipo booleano, adicionado no C23</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">char</span></code></td>
+<td style="text-align: left;">Menor unidade endereçável da máquina que pode conter conjunto de caracteres básicos.</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 8\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">char</span></code></td>
+<td style="text-align: left;">O mesmo tamanho de <code>char</code>, com valores positivos e negativos</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 8\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span></code></td>
+<td style="text-align: left;">O mesmo tamanho de <code>char</code>, apenas valores positivos</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 8\)</span></td>
+<td style="text-align: left;"><code>u</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">short</span></code><br /><code class="language-c highlight"><span class="kt">short</span><span class="w"> </span><span class="kt">int</span></code><br /><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">short</span></code><br /><code>signed short int</code></td>
+<td style="text-align: left;">Tipo inteiro curto com sinal, com valores positivos e negativos</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 16\)</span></td>
+<td style="text-align: left;"><code>h</code> ou <code>H</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span></code><br /><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro curto sem sinal (apenas valores positivos)</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 16\)</span></td>
+<td style="text-align: left;"><code>uh</code> ou <code>UH</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">int</span></code><br /><code class="language-c highlight"><span class="kt">signed</span></code><br /><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro com sinal</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 16\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">unsigned</span></code><br /><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro sem sinal (apenas valores positivos)</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 16\)</span></td>
+<td style="text-align: left;"><code>u</code> ou <code>U</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">long</span></code><br /><code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code><br /><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro longo com sinal, com valores positivos e negativos</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 32\)</span></td>
+<td style="text-align: left;"><code>l</code> ou <code>L</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro longo sem sinal (apenas valores positivos)</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 32\)</span></td>
+<td style="text-align: left;"><code>ul</code> ou <code>UL</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code><br /><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-c highlight"><span class="kt">signed</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro longo longo com sinal, com valores positivos e negativos</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 64\)</span></td>
+<td style="text-align: left;"><code>ll</code> ou <code>LL</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-c highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code></td>
+<td style="text-align: left;">Tipo inteiro longo longo sem sinal (apenas valores positivos)</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 64\)</span></td>
+<td style="text-align: left;"><code>ull</code> ou <code>ULL</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">float</span></code></td>
+<td style="text-align: left;">Ponto flutuante de precisão simples</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 32\)</span></td>
+<td style="text-align: left;"><code>f</code> ou <code>F</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">double</span></code></td>
+<td style="text-align: left;">Ponto flutuante de precisão dupla</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 64\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">double</span></code></td>
+<td style="text-align: left;">Ponto flutuante de precisão estendida</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 64\)</span></td>
+<td style="text-align: left;"><code>l</code> ou <code>L</code></td>
+</tr>
+</tbody>
+</table>
+<p>Os valores mínimos e máximos de cada tipo de dados pode ser, também, consultado na biblioteca <code>limits.h</code></p>
+<p>A relação entre os modificadores obriga que <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não seja menor que <code class="language-c highlight"><span class="kt">long</span></code>, que não é menor que <code class="language-c highlight"><span class="kt">int</span></code>, que não é menor que <code class="language-c highlight"><span class="kt">short</span></code>. O menor tamanho é do tipo <code class="language-c highlight"><span class="kt">char</span></code>.</p>
+<p>O tipo <code class="language-c highlight"><span class="kt">int</span></code> deve ser o tipo inteiro que o processador alvo do programa compilado é mais eficiente manipulando. Isso permite grande flexibilidade: por exemplo, todos os tipos podem ser de 64 bits.</p>
+<p>O padrão C99 também adicionou os tipos complexos <code class="language-c highlight"><span class="kt">float</span><span class="w"> </span><span class="kt">_Complex</span></code>, <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="kt">_Complex</span></code>, <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="kt">_Complex</span></code>. Os tipos imaginários <code class="language-c highlight"><span class="kt">float</span><span class="w"> </span><span class="k">_Imaginary</span></code>, <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="k">_Imaginary</span></code> e <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="k">_Imaginary</span></code> foram adicionados no padrão C11, junto com a biblioteca <code class="language-c highlight"><span class="o">&lt;</span><span class="k">complex</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code> que permite acesso aos tipos complexo e imaginário.</p>
+<p>O tipo <code class="language-c highlight"><span class="kt">bool</span></code> foi introduzido no padrão C99 (<code class="language-c highlight"><span class="o">&lt;</span><span class="n">stdbool</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code>), e melhorado no C23, mas é importante notar que antes disso, inteiros eram usados para representar valores booleanos (<code>0</code> para falso e qualquer outro valor para verdadeiro).</p>
+<div class="admonition note">
+<p class="admonition-title">Tipos de tamanho fixo</p>
+<p>Os tipos inteiros em C foram projetados para tornar o código portátil entre máquinas com diferentes tamanhos de palavra, o que significa que cada tipo pode ter diferentes intervalos de valores dependendo da arquitetura. No entanto, essa variação pode ser problemática quando um programa precisa operar com um intervalo específico de inteiros ou um tamanho fixo de armazenamento, independentemente da máquina em que será executado. A partir da versão C99 foram introduzidas definições de tipos que permitem declarar inteiros com tamanhos exatos, garantindo que o código-fonte do programa permaneça independente da arquitetura subjacente. Os tipos são os seguintes:</p>
+<ul>
+<li><strong>int<span class="arithmatex">\(b\)</span>_t</strong>: inteiro com exatamente <span class="arithmatex">\(b\)</span> bits e com sinal</li>
+<li><strong>uint<span class="arithmatex">\(b\)</span>_t</strong>: inteiro com exatamente <span class="arithmatex">\(b\)</span> bits e sem sinal</li>
+</ul>
+<p>Se não for necessário um tamanho específico, mas o menor tipo capaz de guardar um número de <span class="arithmatex">\(b\)</span> bits, pode-se usar os seguintes tipos:</p>
+<ul>
+<li><strong>int_least<span class="arithmatex">\(b\)</span>_t</strong>: inteiro com pelo menos <span class="arithmatex">\(b\)</span> bits e com sinal</li>
+<li><strong>uint_least<span class="arithmatex">\(b\)</span>_t</strong>: inteiro com pelo menos <span class="arithmatex">\(b\)</span> bits e sem sinal</li>
+</ul>
+<p>Por questões de projeto do hardware do computador, alguns tamanhos podem ter um desempenho maior ou menor. Para isso, foram criados os tipos abaixo para representar os tipos de acesso mais rápido com pelo menos <span class="arithmatex">\(b\)</span> bits. </p>
+<ul>
+<li><strong>int_fast<span class="arithmatex">\(b\)</span>_t</strong>: inteiro de acesso mais rápido com pelo menos <span class="arithmatex">\(b\)</span> bits e com sinal</li>
+<li><strong>uint_fast<span class="arithmatex">\(b\)</span>_t</strong>: inteiro de acesso mais rápido com pelo menos <span class="arithmatex">\(b\)</span> bits e sem sinal</li>
+</ul>
+<p>Para todos os casos, <span class="arithmatex">\(b \in \{8, 16, 32, 64\}\)</span>.  Se por acaso a arquitetura não tiver um determinado tamanho, o tipo não estará definido no compilador, e um erro vai aparecer durante a compilação.</p>
+<p>Mais detalhes podem ser obtidos <a href="https://en.cppreference.com/w/c/types/integer">aqui</a> ou <a href="https://www.gnu.org/software/libc/manual/html_node/Integers.html#Integers">aqui</a>.</p>
+</div>
+<h2 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h2>
+<p>Uma constante é um nome dado à variável cujos valores não podem ser alterados ou modificados. Uma constante é muito semelhante a variáveis em C, mas com a principal diferença que só pode ter o valor definido uma única vez, durante a declaração da variável. Isso significa que, uma vez que atribuímos um valor à constante, não podemos mudá-lo durante toda a execução do programa &mdash; ele permanece fixo.</p>
+<div class="admonition warning inline end">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Na prática, o uso de <code class="language-c highlight"><span class="k">const</span></code> é preferível na grande maioria dos casos devido à segurança de tipo, possibilidade de depuração e escopo mais restrito. Use <code class="language-c highlight"><span class="cp">#define</span></code> apenas se voce tiver uma razão muito forte para tal.</p>
+</div>
+<p>Constantes podem ser definidas de duas formas: com o uso da chamada de pré-processador <code class="language-c highlight"><span class="cp">#define</span></code>, ou com o uso da palavra chave <code class="language-c highlight"><span class="k">const</span></code> antes do tipo da variável durante a sua declaração. Do ponto de vista prático, as duas formas são equivalentes, apesar de "por baixo dos panos" serem completamente diferentes.</p>
+<h3 id="usando-define">Usando <code>#define</code><a class="headerlink" href="#usando-define" title="Permanent link">&para;</a></h3>
+<p>A diretiva <code class="language-c highlight"><span class="cp">#define</span></code> é processada pelo pré-processador antes da compilação. O pré-processador substitui todas as ocorrências do nome da constante pelo seu valor antes do código ser compilado. Isso significa que:</p>
+<ul>
+<li>A constante não tem um tipo associado. O valor substituído depende do contexto em que aparece no código;</li>
+<li>Como a substituição ocorre antes da análise do código pelo compilador, erros podem ser mais difíceis de detectar, e;</li>
+<li>Não ocupa espaço na memória, pois não é armazenada como uma variável real. Apenas ocorre uma substituição textual;</li>
+</ul>
+<p>Exemplo:
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de constante com #define</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="cp">#define PI 3.14159</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">raio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">raio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">raio</span><span class="p">;</span><span class="w"> </span><span class="c1">// O pré-processador substitui PI por 3.14159</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Área: %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>No código acima, o pré-processador transforma <code>PI * raio * raio</code> em <code>3.14159 * raio * raio</code> antes da compilação.</p>
+<h3 id="usando-const">Usando <code>const</code><a class="headerlink" href="#usando-const" title="Permanent link">&para;</a></h3>
+<p>O uso de <code class="language-c highlight"><span class="k">const</span></code> define uma variável que é tratada como uma constante pelo compilador. Diferente de <code class="language-c highlight"><span class="cp">#define</span></code>, essa constante tem um tipo definido e ocupa espaço na memória (a menos que o compilador otimize e substitua seu uso diretamente).</p>
+<ul>
+<li>A constante tem um tipo de dado explícito, permitindo verificações de tipo pelo compilador;</li>
+<li>Pode ter um escopo definido, ao contrário de <code class="language-c highlight"><span class="cp">#define</span></code>, que é global por padrão, e;</li>
+<li>Pode ser usada para ponteiros, arranjos e outras estruturas de dados.</li>
+</ul>
+<p>Exemplo:
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de constante com const</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span><span class="w"> </span><span class="c1">// Constante com tipo definido</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">raio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">raio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">raio</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Área: %f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">area</span><span class="p">);</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<p>Aqui, <code>PI</code> é tratado como uma variável que não pode ser modificada. Diferente de <code class="language-c highlight"><span class="cp">#define</span></code>, ele tem um tipo e ocupa uma posição de memória.</p>
+<h2 id="sequencias-de-escape">Sequências de escape<a class="headerlink" href="#sequencias-de-escape" title="Permanent link">&para;</a></h2>
+<p>Alguns caracteres podem ser representados como <strong>sequências de escape</strong>: são conjuntos de dois ou mais caracteres que, na realidade, representam apenas um caractere. Um exemplo de sequência de escape é o <code class="language-c highlight"><span class="err">\</span><span class="n">n</span></code>, utilizado para representar o final de uma linha.</p>
+<p>Qualquer caracter pode ser representado pela sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">ooo</span></code>, onde <code>ooo</code> é o número octal do caracter na tabela ASCII<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Outra possibilidade é representar o caracter utilizando a sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">xhh</span></code>, onde <code>hh</code> é o número hexadecimal do caracter na tabela ASCII. Assim, a letra <code>A</code> pode ser armazenada como <code>A</code>, ou como <code class="language-c highlight"><span class="err">\</span><span class="mi">101</span></code>, que é a representação em octal do valor 65 associado à letra A maiúscula na tabela ASCII, ou como <code class="language-c highlight"><span class="err">\</span><span class="n">x41</span></code>, que é a representação em hexadecimal de 65.</p>
+<p>Há algumas sequências de escape já definidas na linguagem C, para os caracteres mais comuns que não podem ser diretamente digitados.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Sequência</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">a</span></code></td>
+<td style="text-align: left;">Alerta (bipe, sino)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">b</span></code></td>
+<td style="text-align: left;">Backspace</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">f</span></code></td>
+<td style="text-align: left;">Avanço/quebra de página</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">n</span></code></td>
+<td style="text-align: left;">Avanço de linha</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">r</span></code></td>
+<td style="text-align: left;">Retorno de carro</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">t</span></code></td>
+<td style="text-align: left;">Tabulação horizontal</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">v</span></code></td>
+<td style="text-align: left;">Tabulação vertical</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span>\</code></td>
+<td style="text-align: left;">Barra invertida (<em>backslash</em>)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\&#39;</span></code></td>
+<td style="text-align: left;">Apóstrofo, ou aspas simples</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="s">&quot;</span></code></td>
+<td style="text-align: left;">Aspas duplas</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="o">?</span></code></td>
+<td style="text-align: left;">Ponto de interrogação</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">nnn</span></code></td>
+<td style="text-align: left;">O byte cujo valor numérico está representado como o número octal <em>ooo</em></td>
+</tr>
+<tr>
+<td style="text-align: center;"><code class="language-c highlight"><span class="err">\</span><span class="n">xhh</span></code></td>
+<td style="text-align: left;">O byte cujo valor numérico está representado como o número hexadecimal <em>hh</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="estruturas">Estruturas<a class="headerlink" href="#estruturas" title="Permanent link">&para;</a></h2>
+<p>Estruturas agregam o armazenamento de múltiplos itens de dados, de mesmo tipo ou não, em um único bloco de memória referenciado por uma única variável. O exemplo abaixo cria uma estrutura chamada <code>aniversario</code> para armazenar o nome e a data de nascimento de uma pessoa; em seguida, temos a declaração de uma variável chamada <code>Abelardo</code> do tipo <code class="language-c highlight"><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span></code></p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de estrutura em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">nome</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">dia</span><span class="p">;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mes</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ano</span><span class="p">;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">};</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="arranjos-arrays">Arranjos (<em>arrays</em>)<a class="headerlink" href="#arranjos-arrays" title="Permanent link">&para;</a></h2>
+<p>Para cada tipo <code>T</code>, exceto o tipo <code>void</code>, existe um tipo "arranjo de <span class="arithmatex">\(N\)</span> elementos do tipo <code>T</code>". Um arranjo é uma coleção de valores, todos do mesmo tipo, armazenados de forma contígua na memória.  Os elementos que compõem um arranjo de tamanho <span class="arithmatex">\(N\)</span> são indexados por inteiros que variam de <code>0</code> até <code>N-1</code>. Por exemplo</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de arranjo unidimensional em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">faltas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo com 10 elementos, cada </span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">                 </span><span class="c1">// um do tipo inteiro</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">c</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span><span class="w">  </span><span class="c1">// O quarto elemento do arranjo recebe</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">           </span><span class="c1">// o valor 8</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Arranjos com mais de uma dimensão (as vezes chamados de <em>matrizes</em>) são definidos como um "arranjo de arranjo ...", e todas as dimensões, exceto a mais externa, precisam ser valores constantes.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de arranjo bidimensional em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">][</span><span class="mi">8</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo de 10 elementos, cada um do tipo</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">               </span><span class="c1">// &#39;arranjo de 8 elementos inteiros&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="ponteiros">Ponteiros<a class="headerlink" href="#ponteiros" title="Permanent link">&para;</a></h2>
+<p>Um ponteiro do tipo "ponteiro para <code>T</code>" é um tipo de dados que guarda um endereço de memória onde está armazenado um elemento do tipo <code>T</code>. Cada tipo de dado <code>T</code> tem um tipo de dados correspondente "ponteiro para <code>T</code>".</p>
+<p>Ponteiros são declarados com o uso de um asterísco (<code>*</code>) depois da declaração de tipo, e antecedendo o nome da variável.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de ponteiros em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">letra</span><span class="p">;</span><span class="w">   </span><span class="c1">// &#39;letra&#39; guarda um endereço de memória onde está</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo char</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kt">long</span><span class="w"> </span><span class="o">*</span><span class="n">salario</span><span class="p">;</span><span class="w"> </span><span class="c1">// &#39;salario&#39; guarda um endereço de memória onde está</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo float</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">faltas</span><span class="p">;</span><span class="w">   </span><span class="c1">// &#39;faltas&#39; guarda um endereço de memória onde está</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">               </span><span class="c1">// armazenada uma variável do tipo int</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Os ponteiros podem armazenar endereços de variáveis do tipo "arranjo de <code>T</code>" ou para estruturas, como no exemplo</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Ponteiros para arranjos e para estruturas em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// Ponteiro para um arranjo de 10 valores inteiros</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">struct</span><span class="w"> </span><span class="nc">nodo</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span><span class="k">struct</span><span class="w"> </span><span class="nc">nodo</span><span class="w"> </span><span class="o">*</span><span class="n">proximo</span><span class="p">;</span><span class="w">  </span><span class="c1">// Ponteiro (endereço de memória que guarda</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">                           </span><span class="c1">//  uma variável do tipo) para &#39;struct nodo&#39;</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">};</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Ponteiros também podem ser declarados para variáveis do tipo "ponteiro para <code>T</code>", dando origem ao tipo "ponteiro para ponteiro para <code>T</code>", ou seja, uma variável que guarda um endereço de memória onde está armazenado um endereço de memória de uma variável do tipo <code>T</code> (uma indireção dupla). Os ponteiros para ponteiros são declarados com <code>**</code>.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração de ponteiro para ponteiro para inteiro</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">i</span><span class="p">;</span><span class="w">  </span><span class="c1">// Um ponteiro para ponteiro para inteiro</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Em C, os operadores <code>*</code> e <code>&amp;</code> desempenham papéis cruciais na manipulação de ponteiros, permitindo aos programadores interagir diretamente com a memória.</p>
+<p>O operador <code>*</code>, quando usado com um ponteiro, é conhecido como <strong>operador de indireção</strong> ou <strong>dereferência</strong>. Ele permite acessar o valor armazenado na posição de memória para a qual o ponteiro aponta. Em outras palavras, se um ponteiro <code>p</code> armazena o endereço de uma variável inteira <code>x</code>, então <code>*p</code> retorna o valor armazenado na variável <code>x</code>. Esse mecanismo é fundamental para modificar o valor de uma variável indiretamente, através de seu endereço de memória.</p>
+<p>Por outro lado, o operador <code>&amp;</code> é o <strong>operador de endereço</strong>. Ele retorna o endereço de memória de uma variável. Ao aplicar <code>&amp;</code> a uma variável, obtemos um ponteiro para essa variável. Por exemplo, se <code>x</code> é uma variável inteira, então <code>&amp;x</code> retorna o endereço de memória onde <code>x</code> está armazenado. Esse operador é essencial para inicializar ponteiros, permitindo que eles apontem para variáveis específicas.</p>
+<p>A combinação de <code>*</code> e <code>&amp;</code> possibilita a manipulação eficiente da memória, permitindo a criação de estruturas de dados dinâmicas e a implementação de algoritmos que exigem acesso direto à memória.</p>
+<p>Veja o exemplo a seguir</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ponteiros.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">   </span><span class="c1">// Variável inteira comum</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ponteiro para a variável &#39;valor&#39;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">;</span><span class="w"> </span><span class="c1">// Ponteiro para o ponteiro &#39;ptr&#39;</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="c1">// Exibindo os valores e endereços</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de valor: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">);</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por ptr (o que esta guardado no endereco guardado em ptr): %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">);</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por ptr_ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">ptr_ptr</span><span class="p">);</span>
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Valor apontado por *ptr_ptr: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="p">);</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Endereço de ptr_ptr: %p</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr_ptr</span><span class="p">);</span>
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a>
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Valor: 10
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Endereco de valor: 00000067953ffb4c
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Valor apontado por ptr (o que esta guardado no endereco guardado em ptr): 10
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Endereco de ptr: 00000067953ffb40
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Valor apontado por ptr_ptr: 00000067953ffb4c
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Valor apontado por *ptr_ptr: 10
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Endereco de ptr_ptr: 00000067953ffb38
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Inicialmente, declaramos uma variável inteira chamada <code>valor</code> e a inicializamos com o valor 10. Em seguida, declaramos um ponteiro para inteiro chamado <code>ptr</code> e o inicializamos com o endereço de memória da variável <code>valor</code>, utilizando o operador <code>&amp;</code>. Nesse ponto, <code>ptr</code> "aponta" para <code>valor</code>, ou seja, armazena o endereço de memória onde <code>valor</code> está armazenado. Em seguida declaramos um ponteiro para ponteiro para inteiro chamado <code>ptr_ptr</code> e o inicializamos com o endereço de memória do ponteiro <code>ptr</code>. Agora, <code>ptr_ptr</code> "aponta" para <code>ptr</code>, armazenando o endereço de memória onde <code>ptr</code> está armazenado.</p>
+<p>Perceba que <code>ptr_ptr</code> guarda um endereço de memória que armazena um endereço de memória para inteiro. Por isso é necessário obter o endereço da variável <code>ptr</code> com <code>&amp;ptr</code>, ao invés de simplesmente fazer <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span></code>. A operação de atribuição <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ptr</span></code> está semânticamente incorreta, pois estamos atribuindo uma variável do tipo "ponteiro para inteiro" para uma variável do tipo "ponteiro para ponteiro para inteiro".</p>
+<p>A manipulação de ponteiros em C é frequentemente considerada um dos aspectos mais desafiadores da linguagem, gerando debates intensos entre programadores sobre sua complexidade. Essa característica fundamental da linguagem C tanto possibilita operações poderosas quanto introduz riscos significativos de erros. É importante entender que um "ponteiro para <code>T</code>" é uma variável como outra qualquer, que guarda um determinado valor (endereço de uma posição de memória) de um determinado tipo (posição de memória ocupada por um <code>T</code>). O fato de o "tipo" ser um "ponteiro para <code>T</code>" não faz a variável ser diferente de uma variável que guarda, por exemplo, um valor inteiro.</p>
+<p>A complexidade dos ponteiros em C manifesta-se principalmente através dos problemas que podem surgir quando mal utilizados. Um dos exemplos mais claros é a ocorrência de vazamentos de memória (<em>memory leaks</em>), que acontecem quando um programador, utilizando ponteiros, aloca memória dinamicamente, mas esquece de devolver essa memória ao sistema operacional antes de finalizar as atividade. Esse problema pode degradar o desempenho do programa ao longo do tempo, consumindo recursos do sistema de forma progressiva. Além disso, se o programar devolver a memória ao sistema operacional e tentar acessar a memória em seguida, temos um "ponteiro pendente" (<em>dangling pointer</em>): um ponteiro que aponta para uma área de memória que já foi liberada. As consequências disso não são previsíveis.</p>
+<p>Outro problema grave são as violações de acesso (<em>access violations</em>), que ocorrem quando um ponteiro tenta acessar um endereço de memória inexistente ou para o qual o programa não tem permissão. Como ponteiros são essencialmente números inteiros que podem ser manipulados através de aritmética, erros nos cálculos podem fazer com que apontem para locais desconhecidos na memória. Apontar para um local desconhecido ou sem autorização não é problema: o problema vai acontecer quando o ponteiros for dereferenciado.</p>
+<p>A aritmética de ponteiros, embora elegante e extremamente útil, é apontada como causa de uma falha de segurança importante na linguagem C. Teoricamente, a aritmética de ponteiros deve ser usada apenas dentro dos limites de um objeto alocado. Isso significa que, se você tem um arranjo de 10 elementos, você deve ajustar o ponteiro apenas para acessar esses 10 elementos. No entanto, C não realiza verificações automáticas de limites. Se um programador, por erro ou malícia, ajustar um ponteiro para além dos limites do objeto alocado, o sistema não impedirá essa ação, e quando um ponteiro ultrapassa os limites, ele pode sobrescrever dados de outros objetos que estão armazenados em áreas de memória adjacentes. Isso pode levar a corrupção de dados, falhas no programa ou vulnerabilidades de segurança, como a execução de código arbitrário.</p>
+<p>Por outro lado, a manipulação de ponteiros permite que os programadores escrevam código altamente eficiente, pois eles podem acessar e modificar dados diretamente na memória. Isso é particularmente útil em aplicações que exigem alto desempenho, como jogos e sistemas embarcados. Eles permitem a criação de estruturas de dados dinâmicas, como listas ligadas e árvores, que podem crescer ou diminuir de tamanho conforme necessário.</p>
+<p>Especialmente em sistemas embarcados, ou quando escrevendo programas que precisam manipular diretamente o <em>hardware</em> da máquina, os ponteiros são essenciais: eles permitem que os programadores leiam e escrevam em endereços de memória específicos que correspondem a registradores de <em>hardware</em>.</p>
+<p>Por fim, é só por causa da existência dos ponteiros que é possível passar parâmetros para funções por referência, permitindo que a função modifique os valores originais das variáveis.</p>
+<p>Uma abordagem disciplinada pode eliminar a maioria dos problemas: inicializar sempre os ponteiros, verificar se são nulos antes de dereferenciá-los e implementar uma estratégia clara de limpeza de memória</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>O <em>Código Padrão Americano para o Intercâmbio de Informação</em> (ou, no original, <em>American Standard Code for Information Interchange</em>) é um sistema de representação de letras, algarismos e sinais de pontuação e de controle codificados em um número binário entre 0 e 127. Esses códigos cobrem 95 sinais gráficos (letras do alfabeto latino, algarismos arábicos, sinais de pontuação e sinais matemáticos) e 33 sinais de controle. Como um byte tem 8 bits, sobra um bit no código ASCII que pode ser usado de diferentes formas, para representar outras caracteres não cobertos pela tabela ASCII original.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../02-criacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Criação de um programa em C">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Criação de um programa em C
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../04-entrada_saida/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Entrada e saída">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Entrada e saída
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
