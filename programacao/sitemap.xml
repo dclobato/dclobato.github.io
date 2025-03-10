@@ -2,86 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://dclobato.github.io/programacao/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/algoritmos/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
+    </url>
+    <url>
+         <loc>https://dclobato.github.io/programacao/bibliografia/</loc>
+         <lastmod>2025-03-10</lastmod>
+    </url>
+    <url>
+         <loc>https://dclobato.github.io/programacao/boas_praticas/</loc>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/desafios/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/fluxograma/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/porqueaprenderaprogramar/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/tiposdeprocessamento/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/variaveis/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/biblioteca_c/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/criacao/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/entrada_saida/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/expressoes/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/fluxo/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/funcoes/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/historia/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/c/tiposdedados/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/exercicios/competicao/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/exercicios/exercicios/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/exercicios/operacoes/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/exercicios/repeticao/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/exercicios/selecao/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
     <url>
          <loc>https://dclobato.github.io/programacao/python/biblioteca_python/</loc>
-         <lastmod>2025-03-08</lastmod>
+         <lastmod>2025-03-10</lastmod>
     </url>
 </urlset>
