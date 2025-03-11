@@ -206,6 +206,7 @@
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -1156,6 +1157,8 @@
               </div>
             
           
+
+
           
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
@@ -1167,9 +1170,9 @@
   <h1>Boas práticas de programação</h1>
 
 <p>"Uncle Bob", um dos autores do Manifesto Ágil, usou a figura abaixo no livro "<em>Clean Code: A Handbook of Agile Software Craftsmanship</em>". A figura mostra uma métrica interessante para medir a qualidade de um software: o número de "mas-que-po**a-é-essa/minuto"<sup id="fnref:0"><a class="footnote-ref" href="#fn:0">1</a></sup>. </p>
-<p><center>
-<img alt="What-The-F**ks/Minute" src="../img/wtfpm.png" width="400" />
-</center></p>
+<p><center></p>
+<p><img alt="What-The-F**ks/Minute" src="../img/wtfpm.png" width="400" /></p>
+<p></center></p>
 <p>Ao analisar um código escrito por um programador, podemos ter alguns sentimentos sobre o código, entre eles:</p>
 <ul>
 <li>Indignação, por um código que não é necessário ("mas que po**a é essa!?")</li>
@@ -1197,7 +1200,7 @@
 <li>Um pequeno conjunto de comandos que implemente determinada tarefa pode ficar agrupados, com uma linha em branco que o separe o grupo de outros comandos, e com um comentário sobre o que o aquele grupo de comandos faz.</li>
 </ul>
 <p>É possível fazer a formatação automática de código fonte utilizando alguns aplicativos (<code>astyle</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup>, por exemplo) ou dentro da própria IDE (CLion ou PyCharm, por exemplo).</p>
-<p>Para o <code>astyle</code>, o seguinte conjunto de parâmetros faz uma formatação de acordo com as recomendações acima:</p>
+<p>Para o <code>astyle</code>, o seguinte conjunto de parâmetros faz uma formatação de acordo com as recomendações acima<sup id="fnref:A"><a class="footnote-ref" href="#fn:A">3</a></sup>:</p>
 <table>
 <thead>
 <tr>
@@ -1248,7 +1251,7 @@
 </tr>
 <tr>
 <td style="text-align: center;">-xW</td>
-<td style="text-align: left;">Endenta blocos do pré-processador</td>
+<td style="text-align: left;">Indenta blocos do pré-processador</td>
 </tr>
 <tr>
 <td style="text-align: center;">-xV</td>
@@ -1276,8 +1279,8 @@
 </tr>
 </tbody>
 </table>
-<p>Para o código fonte em Python, existe a PEP 8 (guia de estilo para código Python<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>), e devem ser seguidas, especialmente se o código será desenvolvido de forma colaborativa. Uma mudança aceitável em alguns contextos é utilizar 2 espaços ao invés de 4 espaços para indentação do bloco. Se for esse o caso, é possível configurar o PyCharm para ignorar essa violação adicionando E111 e E114 aos erros que devem ser ignorados em <code>Settings &gt; Editor &gt; Inspections &gt; PEP 8 Coding Style Violations</code>.</p>
-<p>Aqui um belo <strong>contra exemplo</strong> de o que fazer com o seu código<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup>:</p>
+<p>Para o código fonte em Python, existe a PEP 8 (guia de estilo para código Python<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup>), e devem ser seguidas, especialmente se o código será desenvolvido de forma colaborativa. Uma mudança aceitável em alguns contextos é utilizar 2 espaços ao invés de 4 espaços para indentação do bloco. Se for esse o caso, é possível configurar o PyCharm para ignorar essa violação adicionando E111 e E114 aos erros que devem ser ignorados em <code>Settings &gt; Editor &gt; Inspections &gt; PEP 8 Coding Style Violations</code>.</p>
+<p>Aqui um belo <strong>contra exemplo</strong> de o que fazer com o seu código<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1335,68 +1338,40 @@
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span>
-<span class="normal"><a href="#__codelineno-1-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>                                            @
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>                                          @@@@@
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>                                         @@@@@@@
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a>                                          @@@@@
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a>                                     @@@@@@@@@@@@@  @
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>                               @@@ @@@@@@@@@@@@@@@@@@@  @@
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>                                @@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>                            @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>           @@ @@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>           @@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>         @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>      @  @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a>      @  @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a>         @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>           @@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a>           @@ @@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20"></a>                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21"></a>                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22"></a>                            @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23"></a>                                @@@@@@@@@@@@@@@@@@@@@@@@@@@
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24"></a>                               @@@ @@@@@@@@@@@@@@@@@@@  @@
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25"></a>                                     @@@@@@@@@@@@@  @
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26"></a>                                          @@@@@
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27"></a>                                         @@@@@@@
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28"></a>                                          @@@@@
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29"></a>                                            @    
-</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>                                            @
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                                          @@@@@
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                                         @@@@@@@
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                                          @@@@@
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>                                     @@@@@@@@@@@@@  @
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>                               @@@ @@@@@@@@@@@@@@@@@@@  @@
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                                @@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                            @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>           @@ @@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>           @@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>         @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>      @  @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>      @  @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>         @@@@@@@@@@@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>           @@@@@@@@@@@   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>           @@ @@@@        @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>                           @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>                            @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                            @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>                                @@@@@@@@@@@@@@@@@@@@@@@@@@@
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>                               @@@ @@@@@@@@@@@@@@@@@@@  @@
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>                                     @@@@@@@@@@@@@  @
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>                                          @@@@@
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>                                         @@@@@@@
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>                                          @@@@@
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>                                            @    
+</span></code></pre></div>
 </div>
 </div>
 </div>
-<p>Ou então o código abaixo<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup>:</p>
+<p>Ou então o código abaixo<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">6</a></sup>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1442,38 +1417,23 @@
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>            .-&quot;&quot;&quot;-.    .-&quot;&quot;&quot;-.
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>           /       `..&#39;       \
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>          ;  ___      _     _  ;
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>          |   |   |  / \| ||_  |
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a>          ;  _|_  |__\_/|/ |_  ;
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>           \        _         /
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>            \__ \_// \| |    /
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>        _   /  | | \_/\_/  /&#39;
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>       | \  \/_/\        /&#39;
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a>       \_\| / __ `\    /&#39;
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a>          \/_/__\  `\/&#39;     .--=&#39;/~\
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a>   ____,__/__,_____,______)/   /{~}}}
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a>   -,-----,--\--,-----,---,\&#39;-&#39; {{~}}
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a>           __/\_            &#39;--=.\}/
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a>          /_/ |\\
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a>               \/
-</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>            .-&quot;&quot;&quot;-.    .-&quot;&quot;&quot;-.
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>           /       `..&#39;       \
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>          ;  ___      _     _  ;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>          |   |   |  / \| ||_  |
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>          ;  _|_  |__\_/|/ |_  ;
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>           \        _         /
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            \__ \_// \| |    /
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        _   /  | | \_/\_/  /&#39;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>       | \  \/_/\        /&#39;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>       \_\| / __ `\    /&#39;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>          \/_/__\  `\/&#39;     .--=&#39;/~\
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>   ____,__/__,_____,______)/   /{~}}}
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>   -,-----,--\--,-----,---,\&#39;-&#39; {{~}}
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>           __/\_            &#39;--=.\}/
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>          /_/ |\\
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>               \/
+</span></code></pre></div>
 </div>
 </div>
 </div>
@@ -1484,7 +1444,7 @@
 <li>O que ela faz?</li>
 <li>O que é usado?</li>
 </ul>
-<p>As variáveis devem possuir um padrão de nome. Muitos programadores utilizam Pascal Case<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">6</a></sup> com o padrão <code>&lt;modificador&gt;&lt;tipo&gt;&lt;nome&gt;</code>. Essa padronização é muito parecida com a notação Húngara<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">7</a></sup>. Para linguagens com tipagem estática (C, C++, Java...) a notação Húngara é redundante, pois o compilador é capaz e identificar os tipos e verificá-los. Por outro lado, nas linguagens com tipagem dinâmica (Python, Perl, PHP...) a notação Húngara pode ajudar a padronizar os nomes de variáveis de uma forma concisa e precisa para os programadores.</p>
+<p>As variáveis devem possuir um padrão de nome. Muitos programadores utilizam Pascal Case<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">7</a></sup> com o padrão <code>&lt;modificador&gt;&lt;tipo&gt;&lt;nome&gt;</code>. Essa padronização é muito parecida com a notação Húngara<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">8</a></sup>. Para linguagens com tipagem estática (C, C++, Java...) a notação Húngara é redundante, pois o compilador é capaz e identificar os tipos e verificá-los. Por outro lado, nas linguagens com tipagem dinâmica (Python, Perl, PHP...) a notação Húngara pode ajudar a padronizar os nomes de variáveis de uma forma concisa e precisa para os programadores.</p>
 <p>O <code>&lt;tipo&gt;</code> indica o tipo base da variável, de acordo com o quadro abaixo</p>
 <table>
 <thead>
@@ -1758,20 +1718,23 @@
 <li id="fn:1">
 <p><a href="https://astyle.sourceforge.net/">https://astyle.sourceforge.net/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
+<li id="fn:A">
+<p>Colocando tudo em uma linha, só pra fazer o <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span>, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-v">V</kbd></span>: <code>-A1 --indent=spaces=4 --indent-switches --indent-col1-comments --break-blocks --pad-header --unpad-paren --align-pointer=name --add-braces ---max-code-length=76 --indent-preproc-block --attach-closing-while --indent-preproc-define --pad-oper --delete-empty-lines --break-one-line-headers --convert-tabs</code>&#160;<a class="footnote-backref" href="#fnref:A" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
 <li id="fn:2">
-<p><a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written">https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written">https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://ideone.com/I0HTec">https://ideone.com/I0HTec</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p><a href="https://ideone.com/I0HTec">https://ideone.com/I0HTec</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Pascal Case é quando as diversas palavras que compõem um nome são escritas com os espaços removidos e utilizando caixa alta para todas as primeiras letras das palavras (<code>AquiUmExemploDePascalCase</code>). Há outras opções como Camel Case (<code>aquiUmExemploDeCamelCase</code>) e Snake Case (<code>aqui_um_exemplo_de_snake_case</code>).&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p>Pascal Case é quando as diversas palavras que compõem um nome são escritas com os espaços removidos e utilizando caixa alta para todas as primeiras letras das palavras (<code>AquiUmExemploDePascalCase</code>). Há outras opções como Camel Case (<code>aquiUmExemploDeCamelCase</code>) e Snake Case (<code>aqui_um_exemplo_de_snake_case</code>).&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://en.wikipedia.org/wiki/Hungarian_notation">https://en.wikipedia.org/wiki/Hungarian_notation</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Hungarian_notation">https://en.wikipedia.org/wiki/Hungarian_notation</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1782,6 +1745,38 @@
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última atualização">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de março de 2025 20:22:07">11 de março de 2025 20:22:07</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criado em">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="10 de março de 2025 11:25:55">10 de março de 2025 11:25:55</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 

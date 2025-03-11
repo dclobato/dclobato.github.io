@@ -206,6 +206,7 @@
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
+
             
               
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
@@ -1056,6 +1057,8 @@
               </div>
             
           
+
+
           
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
@@ -1116,15 +1119,13 @@
 </div>
 <p>A linguagem C suporta dois tipos principais de comentários.</p>
 <p>O primeiro tipo são os <strong>comentários de linha única</strong>, que começam com duas barras (<code class="language-c highlight"><span class="c1">//</span></code>) e se estendem até o final da linha. Tudo que estiver após essas duas barras será ignorado pelo compilador durante o processo de compilação. Por exemplo, podemos escrever a linha abaixo em qualquer parte do código, e o compilador simplesmente ignorará esse texto.</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// Este é um comentário de linha única</span>
-</span></code></pre></div></td></tr></table></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Este é um comentário de linha única</span>
+</span></code></pre></div>
 <p>O segundo tipo são os <strong>comentários de múltiplas linhas</strong>, também conhecidos como comentários em bloco. Estes começam com a sequência <code class="language-c highlight"><span class="cm">/*</span></code> e terminam com <code class="language-c highlight"><span class="o">*/</span></code>. Todo o texto entre esses delimitadores é considerado um comentário, independentemente de quantas linhas ele ocupe, como no exemplo abaixo.</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cm">/* Este comentário pode se estender por várias</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="cm">   linhas e explicar detalhadamente o funcionamento</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="cm">   de determinado trecho de código */</span>
-</span></code></pre></div></td></tr></table></div>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* Este comentário pode se estender por várias</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm">   linhas e explicar detalhadamente o funcionamento</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">   de determinado trecho de código */</span>
+</span></code></pre></div>
 <p>Os comentários são utilizados por diversas razões importantes no desenvolvimento de software:</p>
 <ul>
 <li>Eles tornam o código mais legível para referência futura, o que é especialmente útil quando o programador precisa revisitar seu próprio código após um longo período;</li>
@@ -1234,7 +1235,7 @@
 <pre class="mermaid"><code>graph LR
   Obj1 --&gt; Link --&gt; Exec
 
-  Obj1@{ shape: doc, label: "**Código objeto**&lt;br /&gt;(.o)" }
+  Obj1@{ shape: doc, label: "**Código objeto**&lt;br&gt;(.o)" }
   Link@{ shape: process, label: "Link-edição" }
   Exec@{ shape: doc, label: "**Programa executável**&lt;br /&gt;(.exe)" }</code></pre>
 <p>Imagine que os arquivos objeto .o são como peças de um quebra-cabeça: cada um tem uma parte do programa, mas eles precisam ser conectados para formar o todo. A link-edição é a etapa final do processo, onde o linkeditor (linker) combina todos os arquivos-objeto gerados e as bibliotecas necessárias em um único arquivo executável. O linker realiza as seguintes tarefas:</p>
@@ -1243,7 +1244,7 @@
 <li>Se o programa utiliza funções externas, como as da biblioteca padrão do C (<code>stdio.h</code>, <code>math.h</code>), o linker adiciona os arquivos correspondentes ao executável final, e;</li>
 <li>Gera o arquivo executável final</li>
 </ul>
-<p>O arquivo executável gerado pode ser executado diretamente pelo sistema operacional.</p>
+<p>O arquivo gerado pode ser executado diretamente pelo sistema operacional.</p>
 
 
 
@@ -1251,6 +1252,38 @@
 
 
 
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última atualização">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de março de 2025 20:22:07">11 de março de 2025 20:22:07</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criado em">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41">8 de março de 2025 15:40:41</span>
+  </span>
+
+    
+    
+    
+  </aside>
 
 
 
