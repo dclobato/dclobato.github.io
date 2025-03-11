@@ -438,6 +438,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../testedemesa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teste de mesa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -462,10 +483,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -477,8 +498,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             A linguagem de programação C
           </label>
@@ -671,10 +692,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -686,8 +707,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Exercícios selecionados
           </label>
@@ -1145,7 +1166,7 @@
 
   <h1>Boas práticas de programação</h1>
 
-<p>"Uncle Bob", um dos autores do Manifesto Ágil, usou a figura abaixo no livro "<em>Clean Code: A Handbook of Agile Software Craftsmanship</em>". A figura mostra uma métrica interessante para medir a qualidade de um software: o número de "mas-que-po**a-é-essa/minuto" . </p>
+<p>"Uncle Bob", um dos autores do Manifesto Ágil, usou a figura abaixo no livro "<em>Clean Code: A Handbook of Agile Software Craftsmanship</em>". A figura mostra uma métrica interessante para medir a qualidade de um software: o número de "mas-que-po**a-é-essa/minuto"<sup id="fnref:0"><a class="footnote-ref" href="#fn:0">1</a></sup>. </p>
 <p><center>
 <img alt="What-The-F**ks/Minute" src="../img/wtfpm.png" width="400" />
 </center></p>
@@ -1175,7 +1196,7 @@
 <li>Uso sempre o delimitador de bloco, mesmo que haja apenas um comando no bloco;</li>
 <li>Um pequeno conjunto de comandos que implemente determinada tarefa pode ficar agrupados, com uma linha em branco que o separe o grupo de outros comandos, e com um comentário sobre o que o aquele grupo de comandos faz.</li>
 </ul>
-<p>É possível fazer a formatação automática de código fonte utilizando alguns aplicativos (<code>astyle</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>, por exemplo) ou dentro da própria IDE (CLion ou PyCharm, por exemplo).</p>
+<p>É possível fazer a formatação automática de código fonte utilizando alguns aplicativos (<code>astyle</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup>, por exemplo) ou dentro da própria IDE (CLion ou PyCharm, por exemplo).</p>
 <p>Para o <code>astyle</code>, o seguinte conjunto de parâmetros faz uma formatação de acordo com as recomendações acima:</p>
 <table>
 <thead>
@@ -1255,8 +1276,8 @@
 </tr>
 </tbody>
 </table>
-<p>Para o código fonte em Python, existe a PEP 8 (guia de estilo para código Python<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>), e devem ser seguidas, especialmente se o código será desenvolvido de forma colaborativa. Uma mudança aceitável em alguns contextos é utilizar 2 espaços ao invés de 4 espaços para indentação do bloco. Se for esse o caso, é possível configurar o PyCharm para ignorar essa violação adicionando E111 e E114 aos erros que devem ser ignorados em <code>Settings &gt; Editor &gt; Inspections &gt; PEP 8 Coding Style Violations</code>.</p>
-<p>Aqui um belo <strong>contra exemplo</strong> de o que fazer com o seu código<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>:</p>
+<p>Para o código fonte em Python, existe a PEP 8 (guia de estilo para código Python<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">3</a></sup>), e devem ser seguidas, especialmente se o código será desenvolvido de forma colaborativa. Uma mudança aceitável em alguns contextos é utilizar 2 espaços ao invés de 4 espaços para indentação do bloco. Se for esse o caso, é possível configurar o PyCharm para ignorar essa violação adicionando E111 e E114 aos erros que devem ser ignorados em <code>Settings &gt; Editor &gt; Inspections &gt; PEP 8 Coding Style Violations</code>.</p>
+<p>Aqui um belo <strong>contra exemplo</strong> de o que fazer com o seu código<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">4</a></sup>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1375,7 +1396,7 @@
 </div>
 </div>
 </div>
-<p>Ou então o código abaixo<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>:</p>
+<p>Ou então o código abaixo<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">5</a></sup>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1463,7 +1484,7 @@
 <li>O que ela faz?</li>
 <li>O que é usado?</li>
 </ul>
-<p>As variáveis devem possuir um padrão de nome. Muitos programadores utilizam Pascal Case<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup> com o padrão <code>&lt;modificador&gt;&lt;tipo&gt;&lt;nome&gt;</code>. Essa padronização é muito parecida com a notação Húngara<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup>. Para linguagens com tipagem estática (C, C++, Java...) a notação Húngara é redundante, pois o compilador é capaz e identificar os tipos e verificá-los. Por outro lado, nas linguagens com tipagem dinâmica (Python, Perl, PHP...) a notação Húngara pode ajudar a padronizar os nomes de variáveis de uma forma concisa e precisa para os programadores.</p>
+<p>As variáveis devem possuir um padrão de nome. Muitos programadores utilizam Pascal Case<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">6</a></sup> com o padrão <code>&lt;modificador&gt;&lt;tipo&gt;&lt;nome&gt;</code>. Essa padronização é muito parecida com a notação Húngara<sup id="fnref:6"><a class="footnote-ref" href="#fn:6">7</a></sup>. Para linguagens com tipagem estática (C, C++, Java...) a notação Húngara é redundante, pois o compilador é capaz e identificar os tipos e verificá-los. Por outro lado, nas linguagens com tipagem dinâmica (Python, Perl, PHP...) a notação Húngara pode ajudar a padronizar os nomes de variáveis de uma forma concisa e precisa para os programadores.</p>
 <p>O <code>&lt;tipo&gt;</code> indica o tipo base da variável, de acordo com o quadro abaixo</p>
 <table>
 <thead>
@@ -1552,8 +1573,8 @@
 <h2 id="cabecalhos-de-funcoes">Cabeçalhos de funções<a class="headerlink" href="#cabecalhos-de-funcoes" title="Permanent link">&para;</a></h2>
 <p>Para cada função que vai ser criada, é importante descrevê-la corretamente para facilitar a manutenção do código. Por isso, recomenda-se que cada protótipo de função (e idealmente a implementação) seja precedido de um bloco de comentário contendo, no mínimo, o nome da função, o que ela faz, quais parâmetros recebe, o que ela retorna, e quais erros podem ser retornados.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>A maior parte das IDEs é capaz de gerar automaticamente esse cabeçalho, portanto não existe razão para não documentar corretamente todas as funções!</p>
+<p class="admonition-title"> </p>
+<p>A maior parte das IDEs é capaz de gerar automaticamente esse cabeçalho, portanto <strong>não existe razão para não documentar corretamente todas as funções!</strong></p>
 </div>
 <p>O padrão a ser adotado depende de como a documentação vai ser gerada. Para as IDEs, o formato é indiferente, pois elas geralmente suportam vários formatos de docstring. Abaixo, exemplo de documentação de uma função tanto no padrão do Doxygen quanto do Sphinx.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Doxygen</label><label for="__tabbed_3_2">Sphinx</label></div>
@@ -1731,23 +1752,26 @@
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:0">
+<p>No original <em>WTF/Minute</em>&#160;<a class="footnote-backref" href="#fnref:0" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:1">
-<p><a href="https://astyle.sourceforge.net/">https://astyle.sourceforge.net/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://astyle.sourceforge.net/">https://astyle.sourceforge.net/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p><a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://peps.python.org/pep-0008/">https://peps.python.org/pep-0008/</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
-<p><a href="https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written">https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p><a href="https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written">https://www.quora.com/What-is-are-the-best-obfuscated-C-code-you-have-ever-written</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:4">
-<p><a href="https://ideone.com/I0HTec">https://ideone.com/I0HTec</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p><a href="https://ideone.com/I0HTec">https://ideone.com/I0HTec</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 <li id="fn:5">
-<p>Pascal Case é quando as diversas palavras que compõem um nome são escritas com os espaços removidos e utilizando caixa alta para todas as primeiras letras das palavras (<code>AquiUmExemploDePascalCase</code>). Há outras opções como Camel Case (<code>aquiUmExemploDeCamelCase</code>) e Snake Case (<code>aqui_um_exemplo_de_snake_case</code>).&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+<p>Pascal Case é quando as diversas palavras que compõem um nome são escritas com os espaços removidos e utilizando caixa alta para todas as primeiras letras das palavras (<code>AquiUmExemploDePascalCase</code>). Há outras opções como Camel Case (<code>aquiUmExemploDeCamelCase</code>) e Snake Case (<code>aqui_um_exemplo_de_snake_case</code>).&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 <li id="fn:6">
-<p><a href="https://en.wikipedia.org/wiki/Hungarian_notation">https://en.wikipedia.org/wiki/Hungarian_notation</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Hungarian_notation">https://en.wikipedia.org/wiki/Hungarian_notation</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 7 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1826,7 +1850,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2011 - 2025 Daniel Corrêa Lobato
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://dclobato.github.io/programacao">Notas de aula de programação em C e Python</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://lattes.cnpq.br/2389356405672150">Daniel Corrêa Lobato</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></a></p>
     </div>
   
   
