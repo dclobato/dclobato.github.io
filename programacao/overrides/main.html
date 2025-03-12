@@ -2,7 +2,7 @@
 {% block site_nav %}
 {{ super() }}
 {% if page and page.file and page.file.src_path == "index.md" %}
-    <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="navigation">
     <div class="md-sidebar__scrollwrap">
         <div class="md-sidebar__inner">
         <nav class="md-nav md-nav--secondary md-nav--integrated" aria-label="Recently updated" data-md-level="0">
@@ -21,11 +21,9 @@
                 <a class="md-nav__link" href="{{ file.url }}" style="display:block">
                     {{ file.page.title }}
                     <br/>
-                    <small>
                     <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago">
-                        <span class="timeago" datetime="{{ file.page.meta.git_revision_date_localized_raw_iso_datetime }}" locale="en"></span>
+                        <span class="timeago" datetime="{{ file.page.meta.git_revision_date_localized_raw_iso_datetime }}" locale="pt_BR"></span>
                     </span>
-                    </small>
                 </a>
                 </li>
             {% endfor %}
@@ -33,6 +31,6 @@
         </nav>
         </div>
     </div>
-    </div>
+</div>
 {% endif %}
 {% endblock %}
