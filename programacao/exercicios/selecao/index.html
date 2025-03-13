@@ -73,7 +73,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -131,19 +131,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo claro"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo escuro"  type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Mudar para modo claro" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para modo escuro"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Mudar para modo escuro" for="__palette_2" hidden>
+      <label class="md-header__button md-icon" title="Ativar modo escuro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -151,9 +141,9 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Mudar para o modo preferido pelo sistema operacional"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo claro"  type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Mudar para o modo preferido pelo sistema operacional" for="__palette_0" hidden>
+      <label class="md-header__button md-icon" title="Ativar modo claro" for="__palette_0" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
       </label>
     
@@ -1070,6 +1060,9 @@
 <p>O ingresso em uma universidade acontece por meio de um processo seletivo com duas fases. Na primeira fase, o certame composto por três provas (P1, P2 e P3). A nota final do candidato é calculada pela média entre as três provas. Passam para a segunda fase aqueles alunos com média superior a seis, desde que não tenha zerado nenhuma das provas. Faça um programa que leia as três notas e indique se o candidato foi aprovado ou não para a segunda fase.</p>
 </li>
 <li>
+<p>Construa um programa que leia uma data qualquer na forma de dia, mês e ano como números, e imprima o próximo dia. Considere que fevereiro possui, sempre, 28 dias.</p>
+</li>
+<li>
 <p>Determinado país possui um sistema monetário com cédulas de 100, 50, 20, 10, 5, 2 e 1 dinheiros, e não há divisões centesimais ("centavos"). Uma loja deseja fazer o troco utilizando a menor quantidade possível de cédulas (há um suprimento muito grande de cada uma das células). Construa um programa que receba o valor da compra, o valor pago pelo cliente (sempre maior que o valor da compra) e calcule o troco que deve ser dado, indicando quantas cédulas de cada valor devem ser usadas.</p>
 </li>
 <li>
@@ -1263,6 +1256,9 @@
 <li>
 <p>Determinada instituição de ensino avalia seus alunos em cada disciplina com base na frequência e nas notas obtidas em duas provas, a partir das quais é calculada a nota final da disciplina como sendo a média aritmética entre as duas provas. Para que um aluno seja aprovado na disciplina. Caso o aluno tenha uma frequência menor que 75% nas aulas, ele está automaticamente reprovado, independente da média que ele obteve. Se a frequência for igual ou superior a 75% e a média for maior ou igual a 6,00, ele está aprovado. Se a média for inferior a 4,00, ele está reprovado. No caso de <span class="arithmatex">\(4 \leq \text{média} &lt; 6\)</span>, o aluno deve fazer uma nova prova. Se nessa nova prova a nota for maior ou igual a 6,00, ele está aprovado com a média obtida nesta última prova; no caso de uma média menor que 6,00, ele está reprovado na disciplina tendo, como média, a maior nota entre a média original e a nota obtida na prova final.  Construa um programa que leia o total de aulas ministradas, o total de faltas do aluno, as notas necessárias; a partir desses dados, indique a média da disciplina (apenas nos casos em que a frequência é igual ou superior a 75%, e se ele foi reprovado por frequência, reprovado por nota, aprovado na prova final ou reprovado na prova final.</p>
 </li>
+<li>
+<p>Uma empresa de logística possui um grande armazém retangular utilizado para armazenar contêineres retangulares de dimensões fixas: A metros de largura, B metros de comprimento, e C metros de altura. O armazém é representado por uma área retangular horizontal de X metros de largura e Y metros de comprimento. O pé direito do armazém é Z metros, o que significa que os contêineres podem ser empilhados verticalmente, desde que a altura total da pilha não ultrapasse esse limite. Os contêineres podem ser dispostos no armazem de forma que sua largura e comprimento estejam alinhados com a largura e comprimento do armazém, ou alinhando largura do contêiner com o comprimento do armazém, e o comprimento do contêiner com a largura do armazem (girá-lo no sentido horário/anti-horário sobre o eixo da altura). Escreva um programa que leia as medidas dos contêineres e do armazem e determine a quantidade máxima de contêineres que podem ser armazenados dentro do armazém, obedecendo às restrições impostas.</p>
+</li>
 </ol>
 <div class="footnote">
 <hr />
@@ -1286,6 +1282,8 @@
     
   
   
+    
+  
 
 
   <aside class="md-source-file">
@@ -1295,10 +1293,19 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="12 de março de 2025 03:22:19">12 de março de 2025 03:22:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="13 de março de 2025 02:43:42">13 de março de 2025 02:43:42</span>
   </span>
 
     
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criado em">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41">8 de março de 2025 15:40:41</span>
+  </span>
+
     
     
       

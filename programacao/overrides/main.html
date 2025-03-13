@@ -5,8 +5,8 @@
     <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="navigation">
     <div class="md-sidebar__scrollwrap">
         <div class="md-sidebar__inner">
-        <nav class="md-nav md-nav--secondary md-nav--integrated" aria-label="Recently updated" data-md-level="0">
-            <div class="md-nav__title">Recently updated</div>
+        <nav class="md-nav md-nav--secondary md-nav--integrated" aria-label="Mudanças recentes" data-md-level="0">
+            <div class="md-nav__title">Mudanças recentes</div>
             <ul class="md-nav__list" data-md-scrollfix>
             {% for file in (
                 pages
@@ -21,11 +21,9 @@
                 <a class="md-nav__link" href="{{ file.url }}" style="display:block">
                     {{ file.page.title }}
                     <br/>
-                    <small>
                     <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago">
                         <span class="timeago" datetime="{{ file.page.meta.git_revision_date_localized_raw_iso_datetime }}" locale="pt_BR"></span>
                     </span>
-                    </small>
                 </a>
                 </li>
             {% endfor %}
