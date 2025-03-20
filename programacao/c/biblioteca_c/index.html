@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -2204,76 +2204,94 @@
 <tr>
 <th style="text-align: left;">Máscara</th>
 <th style="text-align: left;">Significado</th>
+<th style="text-align: left;">Tipo de dados associado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;"><code>%c</code></td>
 <td style="text-align: left;">Caractere</td>
+<td style="text-align: left;"><code>char</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%d</code> ou <code>%i</code></td>
 <td style="text-align: left;">Número decimal inteiro com sinal (base 10)</td>
+<td style="text-align: left;"><code>int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%ld</code></td>
 <td style="text-align: left;">Número decimal inteiro longo com sinal (base 10)</td>
+<td style="text-align: left;"><code>long int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%lld</code></td>
 <td style="text-align: left;">Número decimal inteiro longo longo com sinal (base 10)</td>
+<td style="text-align: left;"><code>long long int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%lu</code></td>
 <td style="text-align: left;">Número decimal inteiro longo sem sinal (base 10)</td>
+<td style="text-align: left;"><code>long unsigned int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%llu</code></td>
 <td style="text-align: left;">Número decimal inteiro longo longo sem sinal (base 10)</td>
+<td style="text-align: left;"><code>long long unsigned int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%e</code> ou <code>%E</code></td>
 <td style="text-align: left;">Número de ponto flutuante com notação exponencial</td>
+<td style="text-align: left;"><code>float</code> ou <code>double</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%f</code></td>
 <td style="text-align: left;">Número de ponto flutuante (decimal)</td>
+<td style="text-align: left;"><code>float</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%lf</code></td>
 <td style="text-align: left;">Número de ponto flutuante de precisão dupla (double)</td>
+<td style="text-align: left;"><code>double</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%Lf</code></td>
-<td style="text-align: left;">Número de ponto flutuante de precisão estendida (long double)</td>
+<td style="text-align: left;">Número de ponto flutuante de precisão estendida</td>
+<td style="text-align: left;"><code>long double</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%g</code> ou <code>%G</code></td>
 <td style="text-align: left;">Escolhe automaticamente <code>%e</code> ou <code>%f</code> com base no valor</td>
+<td style="text-align: left;"><code>float</code> ou <code>double</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%o</code></td>
 <td style="text-align: left;">Número octal (base 8)</td>
+<td style="text-align: left;"><code>int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%s</code></td>
 <td style="text-align: left;">Cadeia de caracteres (string)</td>
+<td style="text-align: left;"><code>char *</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%u</code></td>
 <td style="text-align: left;">Número decimal inteiro sem sinal (base 10)</td>
+<td style="text-align: left;"><code>unsigned int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%x</code> ou <code>%X</code></td>
 <td style="text-align: left;">Número hexadecimal (base 16)</td>
+<td style="text-align: left;"><code>unsigned int</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%p</code></td>
 <td style="text-align: left;">Endereço de ponteiro (em hexadecimal)</td>
+<td style="text-align: left;"><code>void *</code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code>%%</code></td>
 <td style="text-align: left;">Caractere literal <code>%</code></td>
+<td style="text-align: left;">N/A</td>
 </tr>
 </tbody>
 </table>
@@ -2392,7 +2410,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="10 de março de 2025 15:06:49">10 de março de 2025 15:06:49</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="20 de março de 2025 13:19:15">20 de março de 2025 13:19:15</span>
   </span>
 
     
