@@ -3,7 +3,7 @@
 int main() {
     int numero, digito1, digito2, digito3, digito4, soma, digito_verificador;
     
-    printf("Digite um número com até 4 algarismos: ");
+    printf("Digite um numero com ate 4 algarismos: ");
     scanf("%d", &numero);
 
     digito1 = numero / 1000;  // Extrai o milhar
@@ -15,7 +15,7 @@ int main() {
 
     digito_verificador = soma % 7;
 
-    printf("O dígito verificador é: %d\n", digito_verificador);
+    printf("O digito verificador e: %d\n", digito_verificador);
 
     return 0;
 }
