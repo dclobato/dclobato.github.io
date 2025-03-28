@@ -10,28 +10,28 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/variaveis/">
+        <link rel="canonical" href="https://dclobato.github.io/programacao/algoritmos/testedemesa/">
       
       
-        <link rel="prev" href="../desafios/">
+        <link rel="prev" href="../fluxograma/">
       
       
-        <link rel="next" href="../tiposdeprocessamento/">
+        <link rel="next" href="../../c/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Variáveis - Programação de computadores</title>
+        <title>Teste de mesa - Programação de computadores</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../css/mermaid.css">
+      <link rel="stylesheet" href="../../css/mermaid.css">
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#variaveis" class="md-skip">
+        <a href="#metodologia-de-execucao" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -108,7 +108,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href=".." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Variáveis
+              Teste de mesa
             
           </span>
         </div>
@@ -230,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -248,7 +248,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../porqueaprenderaprogramar/" class="md-nav__link">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -295,6 +295,12 @@
     
       
         
+          
+        
+      
+        
+      
+        
       
         
       
@@ -312,8 +318,10 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Algoritmos
@@ -321,8 +329,14 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
@@ -331,26 +345,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../algoritmos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    O que são algoritmos?
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -379,31 +373,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Variáveis
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../variaveis/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -413,46 +386,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Nesta página
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#atributos-ciclo-de-vida-e-escopo" class="md-nav__link">
-    <span class="md-ellipsis">
-      Atributos, ciclo de vida e escopo
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tipagem-estatica-ou-dinamica" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tipagem estática ou dinâmica
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -480,15 +413,8 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
+              
+                
   
   
   
@@ -507,15 +433,35 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
     
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
+  <span class="md-ellipsis">
+    Teste de mesa
+    
+  </span>
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../testedemesa/" class="md-nav__link">
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -525,6 +471,79 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metodologia-de-execucao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Metodologia de Execução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemplo-pratico-de-teste-de-mesa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo Prático de Teste de Mesa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vantagens-e-limitacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens e Limitações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-em-casos-complexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicação em Casos Complexos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -538,6 +557,8 @@
     
     
       
+        
+          
         
       
         
@@ -559,49 +580,37 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../c/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
-    A linguagem de programação C
+    A linguagem C
     
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            A linguagem de programação C
+            A linguagem C
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../c/historia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Introdução e história
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -610,7 +619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/criacao/" class="md-nav__link">
+      <a href="../../c/criacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,51 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/tiposdedados/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tipos de dados
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../c/entrada_saida/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Entrada e saída
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../c/expressoes/" class="md-nav__link">
+      <a href="../../c/expressoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -698,7 +663,51 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/fluxo/" class="md-nav__link">
+      <a href="../../c/tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/fluxo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -720,7 +729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/biblioteca_c/" class="md-nav__link">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,6 +761,8 @@
     
       
         
+          
+        
       
         
       
@@ -768,11 +779,13 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../exercicios/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Exercícios selecionados
@@ -780,37 +793,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Exercícios selecionados
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../exercicios/exercicios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercícios selecionados
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -819,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/operacoes/" class="md-nav__link">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/selecao/" class="md-nav__link">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -863,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/repeticao/" class="md-nav__link">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -885,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/competicao/" class="md-nav__link">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -914,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../boas_praticas/" class="md-nav__link">
+      <a href="../../boas_praticas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -935,7 +934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bibliografia/" class="md-nav__link">
+      <a href="../../bibliografia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -968,8 +967,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -978,18 +975,45 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#atributos-ciclo-de-vida-e-escopo" class="md-nav__link">
+  <a href="#metodologia-de-execucao" class="md-nav__link">
     <span class="md-ellipsis">
-      Atributos, ciclo de vida e escopo
+      Metodologia de Execução
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tipagem-estatica-ou-dinamica" class="md-nav__link">
+  <a href="#exemplo-pratico-de-teste-de-mesa" class="md-nav__link">
     <span class="md-ellipsis">
-      Tipagem estática ou dinâmica
+      Exemplo Prático de Teste de Mesa
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vantagens-e-limitacoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vantagens e Limitações
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-em-casos-complexos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicação em Casos Complexos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
     </span>
   </a>
   
@@ -1013,54 +1037,179 @@
 
 
 
-<h1 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h1>
-<p>Variáveis são a base para qualquer processamento computacional, funcionando como os contêineres que armazenam os dados com os quais o programa trabalha</p>
-<p>Durante a execução de qualquer tipo de programa, os computadores estão manipulando informações parciais ou finais. Para que essas informações fiquem disponíveis e possam ser processadas ou mesmo apresentadas, o computador precisa guardá-las em sua memória. Para acessar individualmente cada uma destas informações, a princípio, seria necessário saber o que está guardado lá (um número? uma palavra?) e a posição inicial deste conjunto de bytes na memória. Isso seria muito complicado para o programador, além de engessar demais o programa (as informações teriam que estar, sempre, nos mesmos lugares da memória).</p>
-<p>Para contornar esta situação criou-se o conceito de variável, que é uma entidade destinada a guardar uma informação.</p>
-<p><img align="right" alt="Variável" src="../img/variaveis.jpeg" width="200" />Podemos pensar nas variáveis como caixas etiquetadas em uma sala. Cada caixa (variável) tem uma etiqueta (nome) que nos permite encontrá-la facilmente, um tipo específico de conteúdo que pode armazenar (tipo de dado), e o conteúdo em si (valor). Assim como não colocaríamos líquidos em uma caixa de papelão, cada variável só pode armazenar dados compatíveis com seu tipo.</p>
-<p>Os nome de uma variável é um identificador simbólico que permite ao programador referenciar a informação armazenada sem precisar lidar diretamente com endereços de memória.</p>
-<h2 id="atributos-ciclo-de-vida-e-escopo">Atributos, ciclo de vida e escopo<a class="headerlink" href="#atributos-ciclo-de-vida-e-escopo" title="Permanent link">&para;</a></h2>
-<p>Uma variável possui três atributos fundamentais: um <strong>nome</strong>, um <strong>tipo de dado</strong> associado à mesma e a <strong>informação</strong> por ela guardada.</p>
-<p>O ciclo de vida de uma variável geralmente envolve quatro etapas principais: declaração, onde informamos ao computador que precisamos de um espaço na memória; inicialização, quando atribuímos um valor inicial à variável; utilização, quando lemos ou modificamos seu valor durante a execução do programa; e, em algumas linguagens, destruição, quando a memória ocupada pela variável é liberada para reutilização. Entender este ciclo é fundamental para usar variáveis de forma eficiente e evitar erros comuns.</p>
-<p>Além dos atributos básicos, as variáveis também possuem um escopo, que determina onde no programa elas podem ser acessadas. Variáveis locais são visíveis apenas dentro do trecho de código (função ou bloco) onde foram declaradas, enquanto variáveis globais podem ser acessadas em todo o programa. O gerenciamento adequado do escopo é crucial para evitar conflitos de nomes e garantir que os dados sejam acessíveis apenas onde necessário.</p>
-<h2 id="tipagem-estatica-ou-dinamica">Tipagem estática ou dinâmica<a class="headerlink" href="#tipagem-estatica-ou-dinamica" title="Permanent link">&para;</a></h2>
-<p>Algumas linguagens de programação permitem que se defina uma variável sem indicar explicitamente o seu tipo; outras linguagens, por sua vez, obrigam que o programador indique explicitamente o tipo de dados que vai ser guardado na variável.</p>
-<p>As linguagens que exigem declaração explícita de tipos são conhecidas como <strong>linguagens de tipagem estática</strong>. Nelas, o programador deve informar previamente qual tipo de dado cada variável irá armazenar, como números inteiros, números decimais, texto ou valores lógicos. Exemplos dessas linguagens incluem C, C++, Java e TypeScript. Esta abordagem oferece várias vantagens significativas. Primeiramente, ela permite que o compilador detecte erros de tipo durante a compilação, antes mesmo do programa ser executado. Por exemplo, se um programador tentar armazenar texto em uma variável declarada como número, o compilador identificará esse erro imediatamente. Isso resulta em programas mais robustos e confiáveis, pois muitos erros são capturados precocemente no processo de desenvolvimento.</p>
-<p>Além disso, a tipagem estática frequentemente leva a um melhor desempenho do programa. Como o compilador conhece antecipadamente os tipos de todas as variáveis, ele pode otimizar o código gerado, alocando a quantidade exata de memória necessária e escolhendo as instruções mais eficientes para manipular cada tipo de dado. Isso é particularmente importante em sistemas com recursos limitados ou aplicações que exigem alta performance.</p>
-<p>Por outro lado, as <strong>linguagens de tipagem dinâmica</strong>, como Python, JavaScript, Ruby e PHP, não exigem que o programador declare explicitamente os tipos das variáveis. Nestas linguagens, o tipo é inferido automaticamente com base no valor atribuído à variável e pode mudar durante a execução do programa. Esta flexibilidade torna a programação mais ágil e intuitiva para muitos desenvolvedores, especialmente iniciantes. O código tende a ser mais conciso, pois elimina a necessidade de declarações de tipo, e o desenvolvimento pode ser mais rápido, já que há menos detalhes técnicos para se preocupar inicialmente.</p>
-<p>A tipagem dinâmica também facilita certos padrões de programação e manipulação de dados heterogêneos. Por exemplo, uma lista em Python pode conter elementos de diferentes tipos sem problemas, enquanto em linguagens de tipagem estática isso geralmente requer soluções mais complexas. Esta flexibilidade é particularmente útil em cenários como processamento de dados, prototipagem rápida e desenvolvimento web.</p>
-<p>No entanto, esta liberdade vem com um custo. Erros de tipo em linguagens dinâmicas só são descobertos durante a execução do programa, potencialmente resultando em falhas inesperadas em produção. Além disso, sem declarações explícitas de tipo, o código pode se tornar menos autodocumentado, dificultando a compreensão de qual tipo de dado uma função espera receber ou retornar.</p>
-<p>Algumas linguagens modernas, como Kotlin, Swift e Scala, adotam uma <strong>abordagem híbrida conhecida como "inferência de tipo"</strong>. Nestas linguagens, o programador pode optar por declarar explicitamente os tipos ou deixar que o compilador os infira automaticamente. Isso oferece um equilíbrio entre a segurança da tipagem estática e a conveniência da tipagem dinâmica, permitindo código conciso sem sacrificar a verificação de tipos em tempo de compilação.</p>
-<p>Para ilustrar estes conceitos na prática, vejamos exemplos simples em duas linguagens populares:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">C</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">variaveis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Em Python (tipagem dinâmica)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Declaração e inicialização em uma única etapa</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">contador</span> <span class="o">=</span> <span class="n">contador</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># Utilização - incrementando o valor</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">mensagem</span> <span class="o">=</span> <span class="s2">&quot;O valor é: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>  <span class="c1"># Utilização em outra variável</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">del</span> <span class="n">contador</span>  <span class="c1"># Destruição da variável</span>
-</span></code></pre></div></td></tr></table></div>
+  <h1>Teste de mesa</h1>
+
+<p>O <strong>teste de mesa</strong>, também conhecido como <strong>rastreamento manual</strong> ou <strong>simulação de algoritmo</strong>, é uma técnica sistemática utilizada no desenvolvimento e análise de algoritmos para verificar sua correção, comportamento e desempenho. Consiste na execução manual e metódica de um algoritmo, passo a passo, acompanhando as alterações nos valores das variáveis, expressões condicionais e fluxo de controle durante todo o processo. Esta técnica permite ao programador ou analista compreender em detalhes a dinâmica interna do algoritmo, identificando possíveis erros de lógica, inconsistências ou comportamentos inesperados antes da implementação em código-fonte.</p>
+<p>A importância do teste de mesa vai além do simples processo de verificação de correção, pois ele facilita a compreensão dos conceitos algorítmicos fundamentais e, em contextos profissionais, funciona como uma etapa preliminar de depuração, economizando tempo significativo que seria despendido na correção de erros durante fases posteriores do desenvolvimento de software.</p>
+<h2 id="metodologia-de-execucao">Metodologia de Execução<a class="headerlink" href="#metodologia-de-execucao" title="Permanent link">&para;</a></h2>
+<p>A execução de um teste de mesa segue um conjunto bem definido de passos que podem ser resumidos  nas seguintes etapas:</p>
+<ol>
+<li>
+<p><strong>Preparação</strong>: Inicialmente, elabora-se uma tabela onde as colunas representam as variáveis do algoritmo e cada linha corresponderá a um estado de execução. Adicionalmente, deve-se reservar uma coluna para indicar a linha ou instrução do algoritmo que está sendo executada.</p>
+</li>
+<li>
+<p><strong>Inicialização</strong>: Registram-se os valores iniciais das variáveis, tipicamente parâmetros de entrada ou valores iniciais explicitamente declarados no algoritmo.</p>
+</li>
+<li>
+<p><strong>Execução sequencial</strong>: Para cada instrução do algoritmo, registra-se na tabela o novo estado das variáveis afetadas. Em estruturas condicionais, deve-se avaliar a expressão lógica e seguir o fluxo correspondente (verdadeiro ou falso). Em estruturas iterativas, cada iteração gerará uma ou mais linhas na tabela.</p>
+</li>
+<li>
+<p><strong>Análise de saída</strong>: Ao término da execução, analisa-se o estado final das variáveis, especialmente aquelas designadas como saída do algoritmo, verificando se correspondem ao resultado esperado para os dados de entrada fornecidos.</p>
+</li>
+<li>
+<p><strong>Validação</strong>: Compara-se o resultado obtido com o resultado esperado para os casos de teste selecionados, validando assim o comportamento do algoritmo.</p>
+</li>
+</ol>
+<h2 id="exemplo-pratico-de-teste-de-mesa">Exemplo Prático de Teste de Mesa<a class="headerlink" href="#exemplo-pratico-de-teste-de-mesa" title="Permanent link">&para;</a></h2>
+<p>Para ilustrar concretamente a aplicação de um teste de mesa, consideremos um algoritmo simples que calcula o valor fatorial de um número inteiro não-negativo:</p>
+<pre class="mermaid"><code>flowchart TD
+  A --&gt; B --&gt; C --&gt; D --&gt; E
+  E -- Sim --&gt; F --&gt; G --&gt; E
+  E -- Não --&gt; H ----&gt; Z
+  A@{ shape: stadium, label: "Início" }
+  B@{ shape: manual-input, label: "   n   &lt;br&gt;(0)"}
+  C@{ shape: process, label: "fat &amp;larr; 1&lt;br&gt;(1)" }
+  D@{ shape: process, label: "i &amp;larr; 1&lt;br&gt;(2)" }
+  E@{ shape: question, label: "i &lt;= n&lt;br&gt;(3)"}
+  F@{ shape: process, label: "fat &amp;larr; fat * i&lt;br&gt;(4)" }
+  G@{ shape: process, label: "i &amp;larr; i + 1&lt;br&gt;(5)" }
+  H@{ shape: display, label: "fat&lt;br&gt;(6)"}
+  Z@{ shape: stadium, label: "Fim" }</code></pre>
+<p>Quando realizamos um teste de mesa para este algoritmo com a entrada <code>n = 4</code>, produzimos a tabela a seguir, onde é possível ver o estado das variáveis após cada instrução relevante:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Passo</th>
+<th style="text-align: center;"><code>n</code></th>
+<th style="text-align: center;"><code>i</code></th>
+<th style="text-align: center;"><code>fat</code></th>
+<th style="text-align: left;">Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: left;">Valor de entrada</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Inicialização de <code>fat</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Inicialização de <code>i</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3-4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: left;">Primeira iteração (<code>fat = 1 * 1</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Incremento de <code>i</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3-4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><strong>2</strong></td>
+<td style="text-align: left;">Segunda iteração (<code>fat = 1 * 2</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Incremento de <code>i</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3-4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><strong>6</strong></td>
+<td style="text-align: left;">Terceira iteração (<code>fat = 2 * 3</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>4</strong></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Incremento de <code>i</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3-4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>24</strong></td>
+<td style="text-align: left;">Quarta iteração (<code>fat = 6 * 4</code>)</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">Incremento de <code>i</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">Condição falsa (<code>5 &gt; 4</code>), sai do loop</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: left;">Retorna valor de <code>fat</code></td>
+</tr>
+</tbody>
+</table>
+<p>Através desta simulação manual, verificamos que o algoritmo produz corretamente o valor 24 para o fatorial de 4, o que confere com o resultado esperado matematicamente (<span class="arithmatex">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>).</p>
+<div class="admonition note">
+<p class="admonition-title"> </p>
+<p>Para um teste de mesa funcionar, é necessário seguir o algoritmo tal qual ele está descrito. Não é permitido fazer "ajustes" nas operações, ou assumir alguma coisa que não está explicitamente indicado no algoritmo.</p>
 </div>
-<div class="tabbed-block">
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">variaveis.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">// Em C (tipagem estática)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">  </span><span class="c1">// Declaração com tipo explícito e inicialização</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">contador</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">contador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="c1">// Utilização - incrementando o valor</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;O valor e: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">contador</span><span class="p">)</span><span class="w">  </span><span class="c1">// Utilização</span>
-</span></code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-<p>A escolha entre tipagem estática e dinâmica frequentemente depende do contexto do projeto, das preferências da equipe e dos requisitos específicos da aplicação. Projetos que priorizam robustez, desempenho e manutenção a longo prazo geralmente se beneficiam da tipagem estática, enquanto aqueles que valorizam agilidade, flexibilidade e prototipagem rápida podem preferir a tipagem dinâmica.</p>
-<p>Ao utilizar variáveis, o mesmo código pode ser reutilizado para diferentes entradas, tornando os programas mais versáteis e reutilizáveis: ao invés de criar um algoritmo que funcione apenas com valores específicos, podemos usar variáveis para criar soluções genéricas que funcionam com qualquer conjunto de dados válido. Por exemplo, um algoritmo para calcular a área de um retângulo pode usar variáveis para comprimento e largura, permitindo que o mesmo algoritmo calcule a área de qualquer retângulo, não apenas um com dimensões predefinidas. Sem variáveis, não teríamos como capturar e utilizar dados fornecidos pelo usuário durante a execução do programa.</p>
-<p>As variáveis também facilitam a manutenção e atualização dos algoritmos. Se precisarmos alterar um valor usado em várias partes do algoritmo, podemos simplesmente modificar o valor da variável correspondente em um único lugar, em vez de procurar e alterar cada ocorrência desse valor no código.</p>
+<h2 id="vantagens-e-limitacoes">Vantagens e Limitações<a class="headerlink" href="#vantagens-e-limitacoes" title="Permanent link">&para;</a></h2>
+<p>O teste de mesa apresenta vantagens significativas no processo de desenvolvimento de algoritmos:</p>
+<ol>
+<li><strong>Compreensão profunda</strong>: Proporciona uma compreensão detalhada do comportamento interno do algoritmo.</li>
+<li><strong>Detecção precoce de erros</strong>: Permite identificar problemas lógicos antes da implementação em código-fonte.</li>
+<li><strong>Ferramenta didática</strong>: Facilita o ensino e aprendizado de conceitos algorítmicos.</li>
+<li><strong>Independência de ambiente</strong>: Pode ser realizado sem necessidade de ferramentas computacionais específicas.</li>
+</ol>
+<p>Entretanto, esta técnica também apresenta limitações importantes:</p>
+<ol>
+<li><strong>Escalabilidade</strong>: Torna-se impraticável para algoritmos complexos ou com grande volume de iterações.</li>
+<li><strong>Propensão a erros</strong>: A execução manual está sujeita a falhas humanas, especialmente em algoritmos extensos.</li>
+<li><strong>Consumo de tempo</strong>: Pode ser um processo demorado, mesmo para algoritmos relativamente simples.</li>
+</ol>
+<h2 id="aplicacao-em-casos-complexos">Aplicação em Casos Complexos<a class="headerlink" href="#aplicacao-em-casos-complexos" title="Permanent link">&para;</a></h2>
+<p>Em algoritmos mais complexos, é recomendável realizar o teste de mesa com casos de entrada cuidadosamente selecionados, priorizando:</p>
+<ol>
+<li><strong>Casos típicos</strong>: Representativos do uso normal esperado do algoritmo.</li>
+<li><strong>Casos limítrofes</strong>: Valores extremos ou no limite do domínio de entrada.</li>
+<li><strong>Casos especiais</strong>: Entradas que podem provocar comportamentos particulares no algoritmo.</li>
+</ol>
+<p>Considere, por exemplo, o algoritmo para calculo de fatorial discutido anteriormente. Seria pertinente realizar testes de mesa para situações como, por exemplo, n valendo 0 ou n valendo um número negativo.</p>
+<h2 id="conclusao">Conclusão<a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h2>
+<p>O teste de mesa constitui uma ferramenta metodológica fundamental no desenvolvimento algorítmico, proporcionando uma verificação sistemática e detalhada do comportamento dos algoritmos. Apesar de suas limitações em termos de escalabilidade e tempo de execução, continua sendo uma técnica inestimável, especialmente nas fases iniciais de desenvolvimento e no contexto educacional. A capacidade de rastrear manualmente a execução de um algoritmo não apenas valida sua correção, mas também promove uma compreensão mais profunda dos princípios fundamentais da programação e da lógica computacional.</p>
+<p>Em um cenário onde as ferramentas automáticas de depuração são cada vez mais sofisticadas, o teste de mesa mantém sua relevância como uma prática que desenvolve o raciocínio algorítmico e a intuição do programador, habilidades essenciais para o desenvolvimento de software de alta qualidade e desempenho.</p>
 
 
 
@@ -1083,7 +1232,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41">8 de março de 2025 15:40:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="28 de março de 2025 20:21:21">28 de março de 2025 20:21:21</span>
   </span>
 
     
@@ -1093,7 +1242,7 @@
     <span class="md-icon" title="Criado em">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41">8 de março de 2025 15:40:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de março de 2025 02:29:35">11 de março de 2025 02:29:35</span>
   </span>
 
     
@@ -1144,7 +1293,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../desafios/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Desafios de lógica">
+          <a href="../fluxograma/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Fluxogramas">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1154,20 +1303,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Desafios de lógica
+                Fluxogramas
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tiposdeprocessamento/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Tipos de processamento">
+          <a href="../../c/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Introdução e história">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Tipos de processamento
+                Introdução e história
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1220,16 +1369,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
-        <script src="../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

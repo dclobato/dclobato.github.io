@@ -10,28 +10,28 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/testedemesa/">
+        <link rel="canonical" href="https://dclobato.github.io/programacao/algoritmos/tiposdeprocessamento/">
       
       
-        <link rel="prev" href="../fluxograma/">
+        <link rel="prev" href="../variaveis/">
       
       
-        <link rel="next" href="../c/historia/">
+        <link rel="next" href="../fluxograma/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>Teste de mesa - Programação de computadores</title>
+        <title>Tipos de processamento - Programação de computadores</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../css/mermaid.css">
+      <link rel="stylesheet" href="../../css/mermaid.css">
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -92,7 +92,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metodologia-de-execucao" class="md-skip">
+        <a href="#tipos-de-processamento" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -108,7 +108,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href=".." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Teste de mesa
+              Tipos de processamento
             
           </span>
         </div>
@@ -230,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -248,7 +248,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -269,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../porqueaprenderaprogramar/" class="md-nav__link">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -287,31 +287,41 @@
       
   
   
+    
   
   
+  
     
     
       
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Algoritmos
@@ -319,36 +329,22 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Algoritmos
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../algoritmos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    O que são algoritmos?
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -399,14 +395,170 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tiposdeprocessamento/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
     Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-e-saida" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada e saída
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-sequenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas sequenciais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-condicionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas condicionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estruturas-de-repeticao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estruturas de repetição
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estruturas de repetição">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determinada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determinada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indeterminada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reuso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reuso
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxograma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testedemesa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Teste de mesa
     
   </span>
   
@@ -430,135 +582,11 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../fluxograma/" class="md-nav__link">
+    
+    
+      
         
-  
-  <span class="md-ellipsis">
-    Fluxogramas
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
           
-  
-  <span class="md-ellipsis">
-    Teste de mesa
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    Teste de mesa
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Nesta página
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#metodologia-de-execucao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Metodologia de Execução
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exemplo-pratico-de-teste-de-mesa" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exemplo Prático de Teste de Mesa
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#vantagens-e-limitacoes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vantagens e Limitações
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aplicacao-em-casos-complexos" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aplicação em Casos Complexos
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    <span class="md-ellipsis">
-      Conclusão
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
         
       
         
@@ -580,49 +608,37 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../c/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
-    A linguagem de programação C
+    A linguagem C
     
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            A linguagem de programação C
+            A linguagem C
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../c/historia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Introdução e história
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -631,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/criacao/" class="md-nav__link">
+      <a href="../../c/criacao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,51 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/tiposdedados/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tipos de dados
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../c/entrada_saida/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Entrada e saída
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../c/expressoes/" class="md-nav__link">
+      <a href="../../c/expressoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -719,7 +691,51 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/fluxo/" class="md-nav__link">
+      <a href="../../c/tiposdedados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/entrada_saida/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/fluxo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -741,7 +757,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/biblioteca_c/" class="md-nav__link">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -773,6 +789,8 @@
     
       
         
+          
+        
       
         
       
@@ -789,11 +807,13 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../exercicios/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Exercícios selecionados
@@ -801,37 +821,23 @@
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Exercícios selecionados
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../exercicios/exercicios/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercícios selecionados
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -840,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/operacoes/" class="md-nav__link">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -862,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/selecao/" class="md-nav__link">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -884,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/repeticao/" class="md-nav__link">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,7 +912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/competicao/" class="md-nav__link">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -935,7 +941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../boas_praticas/" class="md-nav__link">
+      <a href="../../boas_praticas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -956,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bibliografia/" class="md-nav__link">
+      <a href="../../bibliografia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -989,6 +995,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -997,45 +1005,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#metodologia-de-execucao" class="md-nav__link">
+  <a href="#entrada-e-saida" class="md-nav__link">
     <span class="md-ellipsis">
-      Metodologia de Execução
+      Entrada e saída
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplo-pratico-de-teste-de-mesa" class="md-nav__link">
+  <a href="#estruturas-sequenciais" class="md-nav__link">
     <span class="md-ellipsis">
-      Exemplo Prático de Teste de Mesa
+      Estruturas sequenciais
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#vantagens-e-limitacoes" class="md-nav__link">
+  <a href="#estruturas-condicionais" class="md-nav__link">
     <span class="md-ellipsis">
-      Vantagens e Limitações
+      Estruturas condicionais
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#aplicacao-em-casos-complexos" class="md-nav__link">
+  <a href="#estruturas-de-repeticao" class="md-nav__link">
     <span class="md-ellipsis">
-      Aplicação em Casos Complexos
+      Estruturas de repetição
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Estruturas de repetição">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determinada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Determinada
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#indeterminada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Indeterminada
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
+  <a href="#reuso" class="md-nav__link">
     <span class="md-ellipsis">
-      Conclusão
+      Reuso
     </span>
   </a>
   
@@ -1059,179 +1091,50 @@
 
 
 
-  <h1>Teste de mesa</h1>
-
-<p>O <strong>teste de mesa</strong>, também conhecido como <strong>rastreamento manual</strong> ou <strong>simulação de algoritmo</strong>, é uma técnica sistemática utilizada no desenvolvimento e análise de algoritmos para verificar sua correção, comportamento e desempenho. Consiste na execução manual e metódica de um algoritmo, passo a passo, acompanhando as alterações nos valores das variáveis, expressões condicionais e fluxo de controle durante todo o processo. Esta técnica permite ao programador ou analista compreender em detalhes a dinâmica interna do algoritmo, identificando possíveis erros de lógica, inconsistências ou comportamentos inesperados antes da implementação em código-fonte.</p>
-<p>A importância do teste de mesa vai além do simples processo de verificação de correção, pois ele facilita a compreensão dos conceitos algorítmicos fundamentais e, em contextos profissionais, funciona como uma etapa preliminar de depuração, economizando tempo significativo que seria despendido na correção de erros durante fases posteriores do desenvolvimento de software.</p>
-<h2 id="metodologia-de-execucao">Metodologia de Execução<a class="headerlink" href="#metodologia-de-execucao" title="Permanent link">&para;</a></h2>
-<p>A execução de um teste de mesa segue um conjunto bem definido de passos que podem ser resumidos  nas seguintes etapas:</p>
-<ol>
-<li>
-<p><strong>Preparação</strong>: Inicialmente, elabora-se uma tabela onde as colunas representam as variáveis do algoritmo e cada linha corresponderá a um estado de execução. Adicionalmente, deve-se reservar uma coluna para indicar a linha ou instrução do algoritmo que está sendo executada.</p>
-</li>
-<li>
-<p><strong>Inicialização</strong>: Registram-se os valores iniciais das variáveis, tipicamente parâmetros de entrada ou valores iniciais explicitamente declarados no algoritmo.</p>
-</li>
-<li>
-<p><strong>Execução sequencial</strong>: Para cada instrução do algoritmo, registra-se na tabela o novo estado das variáveis afetadas. Em estruturas condicionais, deve-se avaliar a expressão lógica e seguir o fluxo correspondente (verdadeiro ou falso). Em estruturas iterativas, cada iteração gerará uma ou mais linhas na tabela.</p>
-</li>
-<li>
-<p><strong>Análise de saída</strong>: Ao término da execução, analisa-se o estado final das variáveis, especialmente aquelas designadas como saída do algoritmo, verificando se correspondem ao resultado esperado para os dados de entrada fornecidos.</p>
-</li>
-<li>
-<p><strong>Validação</strong>: Compara-se o resultado obtido com o resultado esperado para os casos de teste selecionados, validando assim o comportamento do algoritmo.</p>
-</li>
-</ol>
-<h2 id="exemplo-pratico-de-teste-de-mesa">Exemplo Prático de Teste de Mesa<a class="headerlink" href="#exemplo-pratico-de-teste-de-mesa" title="Permanent link">&para;</a></h2>
-<p>Para ilustrar concretamente a aplicação de um teste de mesa, consideremos um algoritmo simples que calcula o valor fatorial de um número inteiro não-negativo:</p>
-<pre class="mermaid"><code>flowchart TD
-  A --&gt; B --&gt; C --&gt; D --&gt; E
-  E -- Sim --&gt; F --&gt; G --&gt; E
-  E -- Não --&gt; H ----&gt; Z
-  A@{ shape: stadium, label: "Início" }
-  B@{ shape: manual-input, label: "   n   &lt;br&gt;(0)"}
-  C@{ shape: process, label: "fat &amp;larr; 1&lt;br&gt;(1)" }
-  D@{ shape: process, label: "i &amp;larr; 1&lt;br&gt;(2)" }
-  E@{ shape: question, label: "i &lt;= n&lt;br&gt;(3)"}
-  F@{ shape: process, label: "fat &amp;larr; fat * i&lt;br&gt;(4)" }
-  G@{ shape: process, label: "i &amp;larr; i + 1&lt;br&gt;(5)" }
-  H@{ shape: display, label: "fat&lt;br&gt;(6)"}
-  Z@{ shape: stadium, label: "Fim" }</code></pre>
-<p>Quando realizamos um teste de mesa para este algoritmo com a entrada <code>n = 4</code>, produzimos a tabela a seguir, onde é possível ver o estado das variáveis após cada instrução relevante:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Passo</th>
-<th style="text-align: center;"><code>n</code></th>
-<th style="text-align: center;"><code>i</code></th>
-<th style="text-align: center;"><code>fat</code></th>
-<th style="text-align: left;">Observação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><strong>4</strong></td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: left;">Valor de entrada</td>
-</tr>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">-</td>
-<td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: left;">Inicialização de <code>fat</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Inicialização de <code>i</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3-4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;"><strong>1</strong></td>
-<td style="text-align: left;">Primeira iteração (<code>fat = 1 * 1</code>)</td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Incremento de <code>i</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3-4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;"><strong>2</strong></td>
-<td style="text-align: left;">Segunda iteração (<code>fat = 1 * 2</code>)</td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>3</strong></td>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Incremento de <code>i</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3-4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;"><strong>6</strong></td>
-<td style="text-align: left;">Terceira iteração (<code>fat = 2 * 3</code>)</td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>4</strong></td>
-<td style="text-align: center;">6</td>
-<td style="text-align: left;">Incremento de <code>i</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3-4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>24</strong></td>
-<td style="text-align: left;">Quarta iteração (<code>fat = 6 * 4</code>)</td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;"><strong>5</strong></td>
-<td style="text-align: center;">24</td>
-<td style="text-align: left;">Incremento de <code>i</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">24</td>
-<td style="text-align: left;">Condição falsa (<code>5 &gt; 4</code>), sai do loop</td>
-</tr>
-<tr>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">24</td>
-<td style="text-align: left;">Retorna valor de <code>fat</code></td>
-</tr>
-</tbody>
-</table>
-<p>Através desta simulação manual, verificamos que o algoritmo produz corretamente o valor 24 para o fatorial de 4, o que confere com o resultado esperado matematicamente (<span class="arithmatex">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>).</p>
-<div class="admonition note">
-<p class="admonition-title"> </p>
-<p>Para um teste de mesa funcionar, é necessário seguir o algoritmo tal qual ele está descrito. Não é permitido fazer "ajustes" nas operações, ou assumir alguma coisa que não está explicitamente indicado no algoritmo.</p>
-</div>
-<h2 id="vantagens-e-limitacoes">Vantagens e Limitações<a class="headerlink" href="#vantagens-e-limitacoes" title="Permanent link">&para;</a></h2>
-<p>O teste de mesa apresenta vantagens significativas no processo de desenvolvimento de algoritmos:</p>
-<ol>
-<li><strong>Compreensão profunda</strong>: Proporciona uma compreensão detalhada do comportamento interno do algoritmo.</li>
-<li><strong>Detecção precoce de erros</strong>: Permite identificar problemas lógicos antes da implementação em código-fonte.</li>
-<li><strong>Ferramenta didática</strong>: Facilita o ensino e aprendizado de conceitos algorítmicos.</li>
-<li><strong>Independência de ambiente</strong>: Pode ser realizado sem necessidade de ferramentas computacionais específicas.</li>
-</ol>
-<p>Entretanto, esta técnica também apresenta limitações importantes:</p>
-<ol>
-<li><strong>Escalabilidade</strong>: Torna-se impraticável para algoritmos complexos ou com grande volume de iterações.</li>
-<li><strong>Propensão a erros</strong>: A execução manual está sujeita a falhas humanas, especialmente em algoritmos extensos.</li>
-<li><strong>Consumo de tempo</strong>: Pode ser um processo demorado, mesmo para algoritmos relativamente simples.</li>
-</ol>
-<h2 id="aplicacao-em-casos-complexos">Aplicação em Casos Complexos<a class="headerlink" href="#aplicacao-em-casos-complexos" title="Permanent link">&para;</a></h2>
-<p>Em algoritmos mais complexos, é recomendável realizar o teste de mesa com casos de entrada cuidadosamente selecionados, priorizando:</p>
-<ol>
-<li><strong>Casos típicos</strong>: Representativos do uso normal esperado do algoritmo.</li>
-<li><strong>Casos limítrofes</strong>: Valores extremos ou no limite do domínio de entrada.</li>
-<li><strong>Casos especiais</strong>: Entradas que podem provocar comportamentos particulares no algoritmo.</li>
-</ol>
-<p>Considere, por exemplo, o algoritmo para calculo de fatorial discutido anteriormente. Seria pertinente realizar testes de mesa para situações como, por exemplo, n valendo 0 ou n valendo um número negativo.</p>
-<h2 id="conclusao">Conclusão<a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h2>
-<p>O teste de mesa constitui uma ferramenta metodológica fundamental no desenvolvimento algorítmico, proporcionando uma verificação sistemática e detalhada do comportamento dos algoritmos. Apesar de suas limitações em termos de escalabilidade e tempo de execução, continua sendo uma técnica inestimável, especialmente nas fases iniciais de desenvolvimento e no contexto educacional. A capacidade de rastrear manualmente a execução de um algoritmo não apenas valida sua correção, mas também promove uma compreensão mais profunda dos princípios fundamentais da programação e da lógica computacional.</p>
-<p>Em um cenário onde as ferramentas automáticas de depuração são cada vez mais sofisticadas, o teste de mesa mantém sua relevância como uma prática que desenvolve o raciocínio algorítmico e a intuição do programador, habilidades essenciais para o desenvolvimento de software de alta qualidade e desempenho.</p>
+<h1 id="tipos-de-processamento">Tipos de processamento<a class="headerlink" href="#tipos-de-processamento" title="Permanent link">&para;</a></h1>
+<p>Há alguns padrões conceituais de baixo nível que usamos para construir programas. Esses construtores não aparecem apenas nos programas em C ou Python - eles são parte de qualquer linguagem de programação, de alto ou baixo nível.</p>
+<ul>
+<li><strong>entrada</strong>: obtém dados do mundo exterior. Isso pode significar ler o conteúdo de um arquivo, ou mesmo de um sensor como microfone ou GPS. Nos primeiros programas que faremos, a entrada será obtida a partir do usuário digitando dados em um teclado;</li>
+<li><strong>saída</strong>: mostra o resultado de um programa na tela, em um arquivo ou mesmo em um dispositivo como alto-falantes ou impressoras;</li>
+<li><strong>estruturas sequenciais</strong>: executa sentenças, uma após a outra, na ordem em que são encontradas no programa;</li>
+<li><strong>estruturas condicionais</strong>: verifica se determinadas condições são satisfeitas e então executa ou deixa de executar um conjunto de sentenças;</li>
+<li><strong>estruturas de repetição</strong>: executa um conjunto de sentenças de forma repetitiva, geralmente com alguma variação;</li>
+<li><strong>reuso</strong>: escrever um conjunto de instruções, atribuir-lhe um nome, e então reutilizar esse conjunto no programa ou em outros programas.</li>
+</ul>
+<p>Parece ser muito simples para ser verdade, e é. É mais ou menos como dizer que para andar basta "colocar um pé na frente do outro". A "arte" de escrever programas é compor e misturar esses elementos básicos várias vezes de forma a produzir algo útil para o usuário.</p>
+<h2 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h2>
+<p>A entrada e saída são como as portas de comunicação entre o computador e o mundo exterior. Imagine que você está em uma sala fechada e precisa se comunicar com alguém do lado de fora. Você precisaria de uma forma de receber mensagens (entrada) e enviar suas respostas (saída).</p>
+<p>Na entrada, o computador recebe informações que serão processadas. Por exemplo, quando você usa uma calculadora, os números que você digita são a entrada. O computador precisa dessas informações para realizar os cálculos. A saída é o resultado que o computador nos mostra depois de processar as informações. Na calculadora, seria o resultado da operação matemática exibido na tela. Sem saída, não teríamos como saber o que o computador fez com nossas informações.</p>
+<p>Por exemplo:</p>
+<ul>
+<li>Se quisermos criar um sistema para uma loja que calcule o troco de uma venda, precisaríamos do valor da compra e o valor pago pelo cliente (entrada) para produzirmos o valor do troco que deve ser devolvido (saída);</li>
+<li>Imagine que você está jogando um videogame. A entrada seria o que você faz no controle: apertar botões, mover o joystick. O jogo recebe esses comandos e os usa para fazer as coisas acontecerem na tela. A saída é tudo o que você vê e ouve: os gráficos, os sons, a música. É como o jogo te mostra o que está acontecendo. Ou;</li>
+<li>Se um programa pede sua idade e você digita "15", essa informação é uma entrada. Se o programa responde "Você terá 20 anos em 5 anos", essa é a saída</li>
+</ul>
+<h2 id="estruturas-sequenciais">Estruturas sequenciais<a class="headerlink" href="#estruturas-sequenciais" title="Permanent link">&para;</a></h2>
+<p>Aqui, as instruções são executadas, umas depois das outras, na exata ordem em que aparecem no algoritmo; ou seja, a ordem na qual as instruções estão escritas pode influenciar no resultado final. Lembra da ordem das viradas (esquerda, direita) no guia de navegação?</p>
+<p>Pense em uma receita de bolo. Cada passo precisa ser seguido na ordem correta para que o bolo dê certo. Primeiro, você mistura os ingredientes secos, depois os molhados, e assim por diante. Se você inverter a ordem, o bolo pode não ficar bom.</p>
+<p>Nos programas de computador, o processamento sequencial funciona da mesma forma. As instruções são executadas linha por linha, de cima para baixo. Se você mudar a ordem das linhas, o resultado do programa pode ser diferente.</p>
+<h2 id="estruturas-condicionais">Estruturas condicionais<a class="headerlink" href="#estruturas-condicionais" title="Permanent link">&para;</a></h2>
+<p>Nele, o conjunto de instruções que vai ser executado depende do resultado da avaliação de uma expressão lógica (um teste); uma expressão que avalie como verdadeira, vai disparar a execução de um determinado conjunto de instruções e, opcionalmente, outro conjunto pode ser executado se a expressão avaliar como falsa.</p>
+<p>O processamento condicional é como tomar decisões no dia a dia. Você analisa uma situação e, com base nela, decide o que fazer. Por exemplo: "Se estiver chovendo, vou levar um guarda-chuva; caso contrário, deixo ele em casa.".</p>
+<p>Ou imagine que você está jogando um jogo e precisa passar por uma porta. A porta só abre se você tiver a chave certa. A chave é como uma condição: se você tiver a chave, a porta abre (verdadeiro); se não tiver, a porta permanece fechada (falso).</p>
+<p>Na vida real, tomamos decisões o tempo todo. Se você está com fome, come algo; se não está, continua suas atividades. Se seu celular está com pouca bateria, você o carrega; se não, continua usando normalmente. Esse tipo de processamento é fundamental para criar programas que se adaptam a diferentes situações.</p>
+<h2 id="estruturas-de-repeticao">Estruturas de repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Permanent link">&para;</a></h2>
+<p>Algum conjunto de instruções que precise ser executado mais de uma vez pode ser organizado como um processamento com repetição. O número de vezes que o conjunto de instruções vai ser executado pode ser definido <em>a priori</em> (repetição determinada), ou a parada pode ser determinada pela avaliação de uma expressão lógica (repetição indeterminada).</p>
+<h3 id="determinada">Determinada<a class="headerlink" href="#determinada" title="Permanent link">&para;</a></h3>
+<p>A repetição determinada ocorre quando sabemos de antemão quantas vezes um conjunto de instruções será executado. Imagine que você precisa enviar a mesma mensagem para 5 amigos diferentes. Você sabe desde o início que a ação de "enviar mensagem" será repetida 5 vezes, uma para cada amigo. Ou se você está fazendo 20 flexões, sabe que o movimento de subir e descer será repetido exatamente 20 vezes.</p>
+<p>Outro exemplo prático seria um programa que imprime os números de 1 a 5 na tela. Como sabemos que ele vai repetir esse processo exatamente cinco vezes, usamos uma repetição determinada.</p>
+<h3 id="indeterminada">Indeterminada<a class="headerlink" href="#indeterminada" title="Permanent link">&para;</a></h3>
+<p>Na repetição indeterminada, não sabemos exatamente quantas vezes as instruções serão executadas, pois a decisão se as instruções continuam a ser repetidas ou não de uma condição que pode mudar durante a execução das instruções.</p>
+<p>Imagine um jogo onde um personagem continua andando enquanto não encontrar um obstáculo. Como não sabemos quantos passos ele dará antes de parar, o número de repetições é desconhecido. O programa deve verificar constantemente se a condição de parada foi atingida. Ou quando você está jogando um videogame, você continua jogando até perder todas as suas vidas. Você não sabe exatamente quantas rodadas vai jogar - podem ser 3, podem ser 30, dependendo do seu desempenho.</p>
+<p>Na vida real, muitas atividades seguem esse padrão: estudar até entender o conteúdo, procurar as chaves até encontrá-las, tentar resolver um quebra-cabeça até conseguir, lavar os pratos até todos estarem lavados.</p>
+<h2 id="reuso">Reuso<a class="headerlink" href="#reuso" title="Permanent link">&para;</a></h2>
+<p>O reuso de trechos de programas dá origem às funções e procedimentos: pequenas "máquinas" especializadas que realizam tarefas específicas. Eles nos permitem escrever uma sequência de instruções uma vez e reutilizá-la sempre que necessário, sem precisar reescrever tudo novamente.</p>
+<p>Imagine que você tem uma receita de molho de tomate que usa em vários pratos diferentes: lasanha, espaguete, pizza. Em vez de escrever a receita completa do molho cada vez que faz um desses pratos, você simplesmente diz "prepare o molho de tomate" e segue a receita que já conhece.</p>
+<p>Na escola, você aprende fórmulas matemáticas que pode aplicar em diferentes problemas. A fórmula para calcular a área de um círculo (<span class="arithmatex">\(\pi r^2\)</span>) é sempre a mesma, independentemente do tamanho do círculo. Você não precisa redescobrir a fórmula toda vez - apenas a aplica quando necessário.</p>
+<p>As funções geralmente retornam um valor após realizar sua tarefa. Por exemplo, uma função que calcula a área de um círculo recebe o raio como entrada e retorna a área calculada. Os procedimentos, por outro lado, realizam uma tarefa sem necessariamente retornar um valor, como um procedimento para imprimir um documento.</p>
+<p>Usar funções e procedimentos torna o trabalho mais organizado e eficiente, permitindo que tarefas complexas sejam divididas em partes menores e mais gerenciáveis. Além disso, se precisarmos modificar como uma tarefa é realizada, só precisamos alterar a função correspondente, e todas as partes do sistema que a utilizam serão automaticamente atualizadas.</p>
 
 
 
@@ -1254,7 +1157,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="13 de março de 2025 02:43:42">13 de março de 2025 02:43:42</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="28 de março de 2025 20:21:21">28 de março de 2025 20:21:21</span>
   </span>
 
     
@@ -1264,7 +1167,7 @@
     <span class="md-icon" title="Criado em">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de março de 2025 02:29:35">11 de março de 2025 02:29:35</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41">8 de março de 2025 15:40:41</span>
   </span>
 
     
@@ -1315,7 +1218,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../fluxograma/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Fluxogramas">
+          <a href="../variaveis/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Variáveis">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1325,20 +1228,20 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Fluxogramas
+                Variáveis
               </div>
             </div>
           </a>
         
         
           
-          <a href="../c/historia/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Introdução e história">
+          <a href="../fluxograma/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Fluxogramas">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Introdução e história
+                Fluxogramas
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1391,16 +1294,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
-        <script src="../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
