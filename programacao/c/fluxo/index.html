@@ -1289,9 +1289,18 @@
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condição</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="c1">// bloco de código a ser executado se a condição for verdadeira</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// bloco de código a ser executado se a condição for verdadeira</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>   flowchart LR
+      A --&gt; B
+      B -- Sim --&gt; C --&gt; D
+      B -- Não ----&gt; D
+
+      A@{ shape: stadium, label: "Início" }
+      B@{ shape: question, label: "condição" }
+      C@{ shape: process, label: "a" }
+      D@{ shape: stadium, label: "Fim" }</code></pre>
 <div class="admonition note inline end">
 <p class="admonition-title"> </p>
 <p>A condição pode ser qualquer expressão <a href="../expressoes/#operadores-logicos">lógica</a> ou <a href="../expressoes/#operadores-relacionais">relacional</a>.</p>
@@ -1303,11 +1312,21 @@
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
 <span class="normal"><a href="#__codelineno-3-4">4</a></span>
 <span class="normal"><a href="#__codelineno-3-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condição</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="c1">// bloco de código a ser executado se a condição for verdadeira</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// bloco de código a ser executado se a condição for verdadeira</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="c1">// bloco de código a ser executado se a condição for falsa</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="c1">// bloco de código a ser executado se a condição for falsa</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>   flowchart LR
+      A --&gt; B
+      B -- Sim --&gt; C --&gt; E
+      B -- Não --&gt; D --&gt; E
+
+      A@{ shape: stadium, label: "Início" }
+      B@{ shape: question, label: "condição" }
+      C@{ shape: process, label: "a" }
+      D@{ shape: process, label: "b" }
+      E@{ shape: stadium, label: "Fim" }</code></pre>
 <p>Os blocos <code class="language-c highlight"><span class="k">if</span></code> podem ser aninhados, permitindo criar lógicas de decisão mais complexas:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
@@ -1515,9 +1534,18 @@
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condição</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="c1">// bloco de código a ser repetido</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">    </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// bloco de código a ser repetido</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>   flowchart LR
+      A --&gt; B 
+      B -- Sim --&gt; C --&gt; B
+      B -- Não ----&gt; D
+
+      A@{ shape: stadium, label: "Início" }
+      B@{ shape: question, label: "condição" }
+      C@{ shape: process, label: "a" }
+      D@{ shape: stadium, label: "Fim" }</code></pre>
 <p>A condição é avaliada antes de cada iteração. Se for falsa na primeira verificação, o bloco não será executado nenhuma vez.</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de uso da estrutura `while`</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
@@ -1544,12 +1572,21 @@
 </span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>A estrutura <code class="language-c highlight"><span class="k">do</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="k">while</span></code> é semelhante, mas garante que o bloco seja executado <strong>pelo menos uma vez</strong>, pois a condição é avaliada após a execução do bloco. Sua sintaxe é:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<p><div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="c1">// bloco de código a ser repetido</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="c1">// bloco de código a ser repetido</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">condição</span><span class="p">);</span>
 </span></code></pre></div></td></tr></table></div>
+<pre class="mermaid"><code>   flowchart LR
+      A --&gt; B --&gt; C
+      C -- Sim --&gt;  B
+      C -- Não --&gt; D
+
+      A@{ shape: stadium, label: "Início" }
+      B@{ shape: process, label: "a" }
+      C@{ shape: question, label: "condição" }
+      D@{ shape: stadium, label: "Fim" }</code></pre></p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de uso da estrutura `do {} while`</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
@@ -1677,7 +1714,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="28 de março de 2025 20:21:21">28 de março de 2025 20:21:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="29 de março de 2025 01:52:22">29 de março de 2025 01:52:22</span>
   </span>
 
     

@@ -1181,10 +1181,10 @@
 <ul>
 <li>Coloque um comando (<em>statement</em>) por linha. Em C, os <em>statements</em> são finalizados por um ponto-e-vírgula (<code>;</code>);</li>
 <li>O código deve ser explícito, sem obfuscação. Escrever os comandos da forma mais clara possível, evitando otimizações que o compilador pode aplicar;</li>
-<li>Utilize sempre espaços para fazer a endentação do código. Algumas linguagens onde a endentação importa (Python e COBOL, por exemplo), há diferença entre fazê-la com TAB ou com espaços;</li>
+<li>Utilize sempre espaços para fazer a indentação do código. Algumas linguagens onde a indentação importa (Python e COBOL, por exemplo), há diferença entre fazê-la com TAB ou com espaços;</li>
 <li>Lembre-se de que nem todo mundo possui um monitor de 25" ultra wide, então mantenha o seu código limitado a 72 (estourando 80) colunas. Se o <em>statement</em> não couber nessa largura, quebre-o utilizando o método da linguagem (no caso de C, uma barra invertida no final da linha);</li>
-<li>Nos comandos que trabalham com blocos de comandos (<code class="language-c highlight"><span class="k">for</span></code>, <code class="language-c highlight"><span class="k">while</span></code>, <code class="language-c highlight"><span class="k">do</span><span class="w"> </span><span class="k">while</span></code>, <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="k">else</span></code>) faça a endentação do código para que seja fácil identificar o que faz parte de cada bloco;</li>
-<li>Uso sempre o delimitador de bloco, mesmo que haja apenas um comando no bloco;</li>
+<li>Nos comandos que trabalham com blocos de comandos (<code class="language-c highlight"><span class="k">for</span></code>, <code class="language-c highlight"><span class="k">while</span></code>, <code class="language-c highlight"><span class="k">do</span><span class="w"> </span><span class="k">while</span></code>, <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="k">else</span></code>) faça a indentação do código para que seja fácil identificar o que faz parte de cada bloco, mesmo que a linguagem não obrigue;</li>
+<li>Se a linguagem utilizada tiver, use sempre o delimitador de bloco, mesmo que haja apenas um comando no bloco;</li>
 <li>Um pequeno conjunto de comandos que implemente determinada tarefa pode ficar agrupados, com uma linha em branco que o separe o grupo de outros comandos, e com um comentário sobre o que o aquele grupo de comandos faz.</li>
 </ul>
 <p>É possível fazer a formatação automática de código fonte utilizando alguns aplicativos (<code>astyle</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">2</a></sup>, por exemplo) ou dentro da própria IDE (CLion ou PyCharm, por exemplo).</p>
@@ -1203,15 +1203,15 @@
 </tr>
 <tr>
 <td style="text-align: center;">-s2</td>
-<td style="text-align: left;">Utiliza 2 espaços para endentação</td>
+<td style="text-align: left;">Utiliza 2 espaços para indentação</td>
 </tr>
 <tr>
 <td style="text-align: center;">-S</td>
-<td style="text-align: left;">Endenta o case do bloco switch</td>
+<td style="text-align: left;">Indenta o case do bloco switch</td>
 </tr>
 <tr>
 <td style="text-align: center;">-Y</td>
-<td style="text-align: left;">Endenta os comentários em linha para o nível do bloco</td>
+<td style="text-align: left;">Indenta os comentários em linha para o nível do bloco</td>
 </tr>
 <tr>
 <td style="text-align: center;">-f</td>
@@ -1247,7 +1247,7 @@
 </tr>
 <tr>
 <td style="text-align: center;">-w</td>
-<td style="text-align: left;">Endenta definições do pré-processador que terminem com barra invertida (<code class="language-c highlight">\</code>)</td>
+<td style="text-align: left;">Indenta definições do pré-processador que terminem com barra invertida (<code class="language-c highlight">\</code>)</td>
 </tr>
 <tr>
 <td style="text-align: center;">-p</td>
@@ -1267,7 +1267,7 @@
 </tr>
 </tbody>
 </table>
-<p>Para o código fonte em Python, existe a PEP 8 (guia de estilo para código Python<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup>), e devem ser seguidas, especialmente se o código será desenvolvido de forma colaborativa. Uma mudança aceitável em alguns contextos é utilizar 2 espaços ao invés de 4 espaços para indentação do bloco. Se for esse o caso, é possível configurar o PyCharm para ignorar essa violação adicionando E111 e E114 aos erros que devem ser ignorados em <code>Settings &gt; Editor &gt; Inspections &gt; PEP 8 Coding Style Violations</code>.</p>
+<p>Para o código fonte em Python, existe a PEP 8 (guia de estilo para código Python<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">4</a></sup>), e devem ser seguidas, especialmente se o código será desenvolvido de forma colaborativa. Uma mudança aceitável em alguns contextos é utilizar 2 espaços ao invés de 4 espaços para indentação do bloco<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">9</a></sup>.</p>
 <p>Aqui um belo <strong>contra exemplo</strong> de o que fazer com o seu código<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">5</a></sup>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
@@ -1497,9 +1497,13 @@
 <p>Essa estratégia é especialmente útil por duas razões:</p>
 <ul>
 <li>O programador sabe rapidamente onde encontrar a função ou documentação dela, e;</li>
-<li>Alguns ambientes de desenvolvimento – como o CLion e o Code-Blocks – possuem mecanismos de "auto-completar" nome de variáveis e funções.</li>
+<li>Grande parte dos ambientes integrados de desenvolvimento possuem mecanismos de "auto-completar" nome de variáveis e funções.</li>
 </ul>
 <h2 id="nomenclatura-de-constantes">Nomenclatura de constantes<a class="headerlink" href="#nomenclatura-de-constantes" title="Permanent link">&para;</a></h2>
+<div class="admonition note inline end">
+<p class="admonition-title"> </p>
+<p>Nem todas as linguagens suportam variáveis constantes. Python é um exemplo.</p>
+</div>
 <p>As constantes definidas por meio de macro substituição (<code class="language-c highlight"><span class="cp">#define</span></code>) devem possuir nomes que façam sentido e devem ser escritas em Snake Case all caps (<code class="language-c highlight"><span class="cp">#define MAX_ITENS 20</span></code>).</p>
 <p>Quando a constante for definida com o modificador <code class="language-c highlight"><span class="k">const</span></code>, deve ser precedida das letras que identificam o tipo e o modificador, mas também escritas em Snake Case all caps (<code class="language-c highlight"><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">iMAX_ITENS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span></code>)</p>
 <h2 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
@@ -1726,6 +1730,9 @@
 <li id="fn:6">
 <p><a href="https://en.wikipedia.org/wiki/Hungarian_notation">https://en.wikipedia.org/wiki/Hungarian_notation</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 8 in the text">&#8617;</a></p>
 </li>
+<li id="fn:7">
+<p>Se isso for desejado, é possível configurar o PyCharm para ignorar essa violação adicionando E111 e E114 aos erros que devem ser ignorados em <code>Settings &gt; Editor &gt; Inspections &gt; PEP 8 Coding Style Violations</code>.&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
 </ol>
 </div>
 
@@ -1750,7 +1757,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="28 de março de 2025 20:21:21">28 de março de 2025 20:21:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="29 de março de 2025 01:52:22">29 de março de 2025 01:52:22</span>
   </span>
 
     
