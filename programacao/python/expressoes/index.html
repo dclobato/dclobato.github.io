@@ -1,0 +1,2098 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/python/expressoes/">
+      
+      
+        <link rel="prev" href="../criacao/">
+      
+      
+        <link rel="next" href="../oo/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+    
+    
+      
+        <title>Expressões e sentenças - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/mermaid.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-R7W0FB8ZZ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-R7W0FB8ZZ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-R7W0FB8ZZ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expressoes-e-operadores-em-python" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Expressões e sentenças
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Ativar modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Ativar modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../algoritmos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/desafios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/variaveis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/fluxograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/testedemesa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de mesa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../c/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    A linguagem C
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/criacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criando um programa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/expressoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/tiposdedados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/entrada_saida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/fluxo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    A linguagem Python
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criando um programa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expressoes-e-operadores-aritmeticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões e operadores aritméticos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores lógicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-relacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores relacionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-atribuicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de atribuição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-de-fatiamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operador de fatiamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outros operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precedencia-dos-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precedência dos operadores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Orientação a objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiposdedados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ducktyping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Duck typing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../exercicios/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../boas_praticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boas práticas de programação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#expressoes-e-operadores-aritmeticos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Expressões e operadores aritméticos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-logicos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores lógicos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-relacionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores relacionais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-bit" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de bit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operadores-de-atribuicao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operadores de atribuição
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operador-de-fatiamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Operador de fatiamento
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outros-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Outros operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#precedencia-dos-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precedência dos operadores
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="expressoes-e-operadores-em-python">Expressões e operadores em Python<a class="headerlink" href="#expressoes-e-operadores-em-python" title="Permanent link">&para;</a></h1>
+<p>Nas subseções a seguir, letras minúsculas como <code>a</code> e <code>b</code> representam valores literais ou nomes de variáveis, o que for apropriado no contexto. Ao avaliar uma expressão, os seguintes operadores podem ser usados.</p>
+<h2 id="expressoes-e-operadores-aritmeticos">Expressões e operadores aritméticos<a class="headerlink" href="#expressoes-e-operadores-aritmeticos" title="Permanent link">&para;</a></h2>
+<p>Uma expressão aritmética em Python é construída a partir de operadores aritméticos e variáveis ou constantes numéricas. Python suporta uma ampla gama de operadores aritméticos, alguns semelhantes aos de C e outros específicos da linguagem.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operador</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Adição</td>
+<td style="text-align: center;"><code>a + b</code></td>
+<td style="text-align: left;">Também usado para concatenação de sequências</td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtração</td>
+<td style="text-align: center;"><code>a - b</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Mais unário</td>
+<td style="text-align: center;"><code>+a</code></td>
+<td style="text-align: left;">Geralmente não altera o valor de <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menos unário (inverso aditivo)</td>
+<td style="text-align: center;"><code>-a</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiplicação</td>
+<td style="text-align: center;"><code>a * b</code></td>
+<td style="text-align: left;">Também usado para repetição de sequências (<code>"abc" * 3</code> resulta em <code>"abcabcabc"</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Divisão</td>
+<td style="text-align: center;"><code>a / b</code></td>
+<td style="text-align: left;">Sempre resulta em um número de ponto flutuante, mesmo quando os operandos são inteiros</td>
+</tr>
+<tr>
+<td style="text-align: left;">Divisão inteira</td>
+<td style="text-align: center;"><code>a // b</code></td>
+<td style="text-align: left;">Retorna o maior inteiro menor ou igual ao quociente (arredonda para baixo)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Módulo</td>
+<td style="text-align: center;"><code>a % b</code></td>
+<td style="text-align: left;">Resto da divisão de <code>a</code> por <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Exponenciação</td>
+<td style="text-align: center;"><code>a ** b</code></td>
+<td style="text-align: left;">Eleva <code>a</code> à potência de <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<p>Diferentemente de C, Python não possui operadores de incremento/decremento (<code>++</code> ou <code>--</code>). Para aumentar ou diminuir o valor de uma variável, deve-se usar operadores de atribuição combinada como <code class="language-python highlight"><span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span></code> ou <code class="language-python highlight"><span class="n">a</span> <span class="o">-=</span> <span class="mi">1</span></code>.</p>
+<p>No que diz respeito à conversão de tipos em operações aritméticas, Python também realiza coerção de tipos, mas com regras ligeiramente diferentes das de C:</p>
+<ol>
+<li>Se qualquer operando for um número complexo, o resultado será complexo</li>
+<li>Se qualquer operando for um número de ponto flutuante, o resultado será de ponto flutuante</li>
+<li>Se todos os operandos forem inteiros, o resultado será inteiro, exceto para a divisão normal (<code>/</code>), que sempre retorna um número de ponto flutuante</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Uma diferença significativa em relação ao C é o comportamento da divisão. Em Python 3, a divisão com o operador <code>/</code> sempre resulta em um número de ponto flutuante, mesmo quando os operandos são inteiros. Para obter uma divisão inteira (semelhante à divisão inteira em C), use o operador <code>//</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Resulta em 2.5</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Resulta em 2</span>
+</span></code></pre></div>
+<p>Isso elimina uma fonte comum de erros que existe em C, onde a divisão de inteiros pode silenciosamente truncar o resultado.</p>
+</div>
+<h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
+<p>Python usa palavras-chave em vez de símbolos para operadores lógicos, o que torna o código mais legível.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NOT</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="ow">not</span> <span class="n">a</span></code></td>
+<td style="text-align: left;">Nega o valor de <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">AND</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Será verdadeiro apenas quando <code>a</code> e <code>b</code> forem verdadeiros</td>
+</tr>
+<tr>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Será falso apenas quando <code>a</code> e <code>b</code> forem falsos</td>
+</tr>
+</tbody>
+</table>
+<p>As tabelas de verdade são idênticas às de C:</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>AND</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center>
+<center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>OR</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center>
+<center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>NOT</strong></th>
+<th style="text-align: center;">a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Assim como em C, Python também implementa avaliação de curto-circuito para os operadores lógicos:</p>
+<ul>
+<li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code>, se <code>a</code> for falso, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
+<li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span></code>, se <code>a</code> for verdadeiro, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
+</ul>
+<p>Uma diferença significativa em relação ao C é que os operadores lógicos em Python não retornam necessariamente valores booleanos (<code>True</code> ou <code>False</code>), mas sim o último valor avaliado. Isso permite construções concisas como:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Se entrada_do_usuario for vazia, nome será &quot;Anônimo&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">nome</span> <span class="o">=</span> <span class="n">entrada_do_usuario</span> <span class="ow">or</span> <span class="s2">&quot;Anônimo&quot;</span>
+</span></code></pre></div>
+<p>Em Python, os seguintes valores são considerados falsos:</p>
+<ul>
+<li><code class="language-python highlight"><span class="kc">False</span></code></li>
+<li><code class="language-python highlight"><span class="kc">None</span></code></li>
+<li>Zero de qualquer tipo numérico: <code>0</code>, <code>0.0</code>, <code>0j</code></li>
+<li>Sequências vazias: <code>''</code>, <code>[]</code>, <code>()</code></li>
+<li>Dicionários vazios: <code>{}</code></li>
+<li>Conjuntos vazios: <code>set()</code></li>
+</ul>
+<p>Todos os outros valores são considerados verdadeiros.</p>
+<h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
+<p>Python oferece os mesmos operadores relacionais que C, com algumas adições úteis.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Igual a</td>
+<td style="text-align: center;"><code>a == b</code></td>
+<td style="text-align: left;"><code>a</code> igual a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Não igual a<br>(diferente de)</td>
+<td style="text-align: center;"><code>a != b</code></td>
+<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maior que</td>
+<td style="text-align: center;"><code>a &gt; b</code></td>
+<td style="text-align: left;"><code>a</code> maior que <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menor que</td>
+<td style="text-align: center;"><code>a &lt; b</code></td>
+<td style="text-align: left;"><code>a</code> menor que <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maior ou igual a</td>
+<td style="text-align: center;"><code>a &gt;= b</code></td>
+<td style="text-align: left;"><code>a</code> maior ou igual a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menor ou igual a</td>
+<td style="text-align: center;"><code>a &lt;= b</code></td>
+<td style="text-align: left;"><code>a</code> menor ou igual a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Identidade</td>
+<td style="text-align: center;"><code>a is b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> referem-se ao mesmo objeto em memória</td>
+</tr>
+<tr>
+<td style="text-align: left;">Não identidade</td>
+<td style="text-align: center;"><code>a is not b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> não referem-se ao mesmo objeto</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contém</td>
+<td style="text-align: center;"><code>a in b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> está contido em <code>b</code> (para sequências e coleções)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Não contém</td>
+<td style="text-align: center;"><code>a not in b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> não está contido em <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Uma característica poderosa de Python é que os operadores relacionais podem ser encadeados, o que não é possível em C. Por exemplo:</p>
+<div class="language-python highlight"><span class="filename">Encadeamento de operadores relacionais</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Em Python, isso funciona como esperado</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n está entre 10 e 50&quot;</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Equivalente a:</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n está entre 10 e 50&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Os operadores <code class="language-python highlight"><span class="ow">is</span></code> e <code class="language-python highlight"><span class="ow">is</span> <span class="ow">not</span></code> verificam a identidade do objeto, não o valor. Isso é diferente de <code>==</code> e <code>!=</code>, que verificam a igualdade de valor:</p>
+<div class="language-python highlight"><span class="filename">Identidade vs igualdade</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">c</span> <span class="o">=</span> <span class="n">a</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># True, pois os valores são iguais</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># False, pois são objetos diferentes em memória</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">c</span><span class="p">)</span>  <span class="c1"># True, pois a e c referem-se ao mesmo objeto</span>
+</span></code></pre></div>
+<p>Os operadores <code class="language-python highlight"><span class="ow">in</span></code> e <code class="language-python highlight"><span class="ow">not</span> <span class="ow">in</span></code> são usados para verificar a pertinência em coleções:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>        <span class="c1"># True</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;python&#39;</span><span class="p">)</span>          <span class="c1"># False</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chave&#39;</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;chave&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">})</span> <span class="c1"># True, verifica as chaves do dicionário</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Diferentemente de C, em Python não há confusão possível entre o operador de atribuição (<code>=</code>) e o operador de igualdade (<code>==</code>) em expressões condicionais, pois atribuições não são expressões que retornam valores. Uma atribuição dentro de uma condição resultará em erro de sintaxe:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Isso causará um erro de sintaxe em Python</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isso não funciona em Python&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<h2 id="operadores-de-bit">Operadores de bit<a class="headerlink" href="#operadores-de-bit" title="Permanent link">&para;</a></h2>
+<p>Python suporta os mesmos operadores de bit que C.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">NOT</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="o">~</span><span class="n">a</span></code></td>
+<td style="text-align: left;">Inverte os bits de <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">AND</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Efetua a operação AND bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;">OR</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">|</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Efetua a operação OR bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;">XOR</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">^</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Efetua a operação XOR bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à esquerda</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Desloca os bits para a esquerda</td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à direita</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span></code></td>
+<td style="text-align: left;">Desloca os bits para a direita</td>
+</tr>
+</tbody>
+</table>
+<p>Em Python, esses operadores funcionam primariamente com inteiros, embora alguns como <code class="language-python highlight"><span class="o">&amp;</span></code>, <code class="language-python highlight"><span class="o">|</span></code>, e <code class="language-python highlight"><span class="o">^</span></code> também sejam sobrecarregados para trabalhar com o tipo <code>set</code> (conjunto), realizando operações de interseção, união e diferença simétrica, respectivamente.</p>
+<p>Os operadores de deslocamento têm o mesmo efeito de multiplicação e divisão por potências de 2, como em C:</p>
+<ul>
+<li><code class="language-python highlight"><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span></code> é equivalente a <code class="language-python highlight"><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span></code></li>
+<li><code class="language-python highlight"><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span></code> é equivalente a <code class="language-python highlight"><span class="n">a</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span></code></li>
+</ul>
+<p>Uma diferença notável é que Python suporta inteiros de precisão arbitrária, então você não precisa se preocupar com <em>overflow</em> em operações de deslocamento.</p>
+<h2 id="operadores-de-atribuicao">Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permanent link">&para;</a></h2>
+<p>Python oferece operadores de atribuição combinada semelhantes aos de C.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Atribuição</td>
+<td style="text-align: center;"><code>a = b</code></td>
+<td style="text-align: left;">Atribui o valor de <code>b</code> à variável <code>a</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Adição combinada</td>
+<td style="text-align: center;"><code>a += b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a + b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Subtração combinada</td>
+<td style="text-align: center;"><code>a -= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a - b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Multiplicação combinada</td>
+<td style="text-align: center;"><code>a *= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a * b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Divisão combinada</td>
+<td style="text-align: center;"><code>a /= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a / b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Divisão inteira combinada</td>
+<td style="text-align: center;"><code>a //= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a // b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Módulo combinado</td>
+<td style="text-align: center;"><code>a %= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a % b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Exponenciação combinada</td>
+<td style="text-align: center;"><code>a **= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a ** b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">AND bit-a-bit combinado</td>
+<td style="text-align: center;"><code>a &amp;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &amp; b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">OR bit-a-bit combinado</td>
+<td style="text-align: center;"><code>a |= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a | b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">XOR bit-a-bit combinado</td>
+<td style="text-align: center;"><code>a ^= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a ^ b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à esquerda combinado</td>
+<td style="text-align: center;"><code>a &lt;&lt;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &lt;&lt; b</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Deslocamento à direita combinado</td>
+<td style="text-align: center;"><code>a &gt;&gt;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &gt;&gt; b</code></td>
+</tr>
+</tbody>
+</table>
+<p>Python também suporta atribuição múltipla e atribuição de desempacotamento, recursos que não existem em C:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Atribuição múltipla</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Troca de valores sem variável temporária</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># Desempacotamento de sequência</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="c1"># Desempacotamento com resto (Python 3.0+)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="n">primeiro</span><span class="p">,</span> <span class="o">*</span><span class="n">resto</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>  <span class="c1"># primeiro = 1, resto = [2, 3, 4, 5]</span>
+</span></code></pre></div>
+<p>Python 3.8 introduziu o operador de atribuição walrus (<code class="language-python highlight"><span class="o">:=</span></code>), que permite atribuir valores a variáveis como parte de uma expressão:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Sem o operador walrus</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">obter_dados</span><span class="p">()</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">processar</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Com o operador walrus</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="k">if</span> <span class="n">data</span> <span class="o">:=</span> <span class="n">obter_dados</span><span class="p">():</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">processar</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="operador-de-fatiamento">Operador de fatiamento<a class="headerlink" href="#operador-de-fatiamento" title="Permanent link">&para;</a></h2>
+<p>O operador de fatiamento é uma característica poderosa de Python que não existe em C:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>     <span class="c1"># [1, 2, 3]</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>     <span class="c1"># [0, 2, 4]</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>    <span class="c1"># [5, 4, 3, 2, 1, 0] (invertido)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>O operador de fatiamento (<code class="language-python highlight"><span class="n">a</span><span class="p">[</span><span class="n">b</span><span class="p">:</span><span class="n">c</span><span class="p">:</span><span class="n">d</span><span class="p">]</span></code>) funciona selecionando, de <code class="language-python highlight"><span class="n">a</span></code>, os elementos de <code class="language-python highlight"><span class="n">b</span></code> até antes de <code class="language-python highlight"><span class="n">c</span></code>, <code class="language-python highlight"><span class="n">d</span></code> a <code class="language-python highlight"><span class="n">d</span></code>.</p>
+<p>Em Python, os índices negativos contam a partir do final da sequência. O índice <code>-1</code> representa o último elemento, <code>-2</code> o penúltimo e assim sucessivamente. Quando utilizamos estes índices negativos em operações de fatiamento, podemos manipular sequências de formas bastante elegantes. Consideremos o seguinte exemplo:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Programação de Redes de Computadores&quot;</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Fatiamento simples com índices negativos</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:])</span>         <span class="c1"># Extrai os 10 últimos caracteres</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">12</span><span class="p">])</span>      <span class="c1"># Extrai uma seção do meio usando índices negativos</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[:</span><span class="o">-</span><span class="mi">15</span><span class="p">])</span>         <span class="c1"># Do início até 15 caracteres antes do final</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>     <span class="c1"># Do caractere -20 até -5 pulando de 2 em 2</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>         <span class="c1"># Inverte a string completa</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Computadores
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Redes de Co
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Programação de Redes de
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>d ooaçmar
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>serodatupmoC ed sedeR ed oãçamargorP
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Os índices negativos são particularmente úteis quando você precisa trabalhar com o final de uma sequência sem conhecer seu tamanho exato, tornando o código mais elegante e adaptável a diferentes entradas.</p>
+<h2 id="outros-operadores">Outros operadores<a class="headerlink" href="#outros-operadores" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Operador ternário</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="k">else</span> <span class="n">c</span></code></td>
+<td style="text-align: left;">Retorna <code>a</code> se <code>b</code> for verdadeiro, senão retorna <code>c</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Criação de função lambda</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="k">lambda</span> <span class="n">params</span><span class="p">:</span> <span class="n">expr</span></code></td>
+<td style="text-align: left;">Cria uma função anônima</td>
+</tr>
+<tr>
+<td style="text-align: center;">Compreensão de lista</td>
+<td style="text-align: center;"><code class="language-python highlight"><span class="p">[</span><span class="n">expr</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span></code></td>
+<td style="text-align: left;">Cria uma lista aplicando <code class="language-python highlight"><span class="n">expr</span></code> a cada <code class="language-python highlight"><span class="n">item</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>O operador ternário em Python é expresso de forma diferente de C:</p>
+<p><div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">resultado</span> <span class="o">=</span> <span class="s2">&quot;positivo&quot;</span> <span class="k">if</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;negativo ou zero&quot;</span>
+</span></code></pre></div>
+<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;positivo&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;negativo ou zero&quot;</span><span class="p">;</span>
+</span></code></pre></div></p>
+<h2 id="precedencia-dos-operadores">Precedência dos operadores<a class="headerlink" href="#precedencia-dos-operadores" title="Permanent link">&para;</a></h2>
+<p>Assim como em C, Python segue uma ordem específica ao avaliar expressões com múltiplos operadores. A tabela abaixo mostra os operadores em ordem decrescente de prioridade (do mais alto para o mais baixo).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>()</code> <code>[]</code> <code>.</code></td>
+<td style="text-align: left;">Chamadas, indexação, atributos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>**</code></td>
+<td style="text-align: left;">Exponenciação</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>+x</code> <code>-x</code> <code>~x</code></td>
+<td style="text-align: left;">Unários positivo, negativo, NOT bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>*</code> <code>/</code> <code>//</code> <code>%</code></td>
+<td style="text-align: left;">Multiplicação, divisão, div. inteira, módulo</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>+</code> <code>-</code></td>
+<td style="text-align: left;">Adição, subtração</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&lt;&lt;</code> <code>&gt;&gt;</code></td>
+<td style="text-align: left;">Deslocamentos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>&amp;</code></td>
+<td style="text-align: left;">AND bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>^</code></td>
+<td style="text-align: left;">XOR bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>\|</code></td>
+<td style="text-align: left;">OR bit-a-bit</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>==</code> <code>!=</code> <code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code> <code>is</code> <code>is not</code> <code>in</code> <code>not in</code></td>
+<td style="text-align: left;">Comparações, igualdade, identidade, pertinência</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>not</code></td>
+<td style="text-align: left;">NOT lógico</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>and</code></td>
+<td style="text-align: left;">AND lógico</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>or</code></td>
+<td style="text-align: left;">OR lógico</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>:=</code></td>
+<td style="text-align: left;">Atribuição de expressão (Python 3.8+)</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>lambda</code></td>
+<td style="text-align: left;">Expressão lambda</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>if</code> <code>else</code></td>
+<td style="text-align: left;">Operador condicional</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>=</code> <code>+=</code> <code>-=</code> etc.</td>
+<td style="text-align: left;">Atribuição</td>
+</tr>
+</tbody>
+</table>
+<p>Quando os operadores têm a mesma precedência, a associatividade determina a ordem de avaliação. A maioria dos operadores em Python associa da esquerda para a direita, exceto a exponenciação (<code>**</code>) que associa da direita para a esquerda.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Exemplos que demonstram precedência</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>          <span class="c1"># 14 (multiplicação antes da adição)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">((</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 20 (parênteses alteram a precedência)</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>         <span class="c1"># 512 (2 ** 9, a exponenciação associa da direita para a esquerda)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>   <span class="c1"># False (NOT tem precedência sobre OR)</span>
+</span></code></pre></div>
+<p>A clara compreensão da precedência de operadores é fundamental para escrever expressões complexas corretamente, mas em caso de dúvida, é sempre recomendável usar parênteses para tornar a intenção explícita – uma prática que também melhora a legibilidade do código.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última atualização">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34">31 de março de 2025 00:49:34</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criado em">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34">31 de março de 2025 00:49:34</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contribuidores">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      Daniel Correa Lobato
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../criacao/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Criando um programa">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Criando um programa
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../oo/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Orientação a objetos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Orientação a objetos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://dclobato.github.io/programacao">Notas de aula de programação em C e Python</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://lattes.cnpq.br/2389356405672150">Daniel Corrêa Lobato</a> está licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/TINF-IFSP-RioPreto" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

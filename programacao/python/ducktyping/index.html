@@ -10,26 +10,28 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/bibliografia/">
+        <link rel="canonical" href="https://dclobato.github.io/programacao/python/ducktyping/">
       
       
-        <link rel="prev" href="../boas_praticas/">
+        <link rel="prev" href="../tiposdedados/">
       
       
+        <link rel="next" href="../../exercicios/">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
     
     
       
-        <title>Bibliografia - Programação de computadores</title>
+        <title>Duck typing - Programação de computadores</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,13 +50,13 @@
       
     
     
-      <link rel="stylesheet" href="../css/mermaid.css">
+      <link rel="stylesheet" href="../../css/mermaid.css">
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -89,6 +91,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#o-sistema-de-tipos-dinamico-de-python" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -101,7 +108,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href=".." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -121,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bibliografia
+              Duck typing
             
           </span>
         </div>
@@ -223,7 +230,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -241,7 +248,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -263,7 +270,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../porqueaprenderaprogramar/" class="md-nav__link">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
         
   
   
@@ -313,7 +320,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../algoritmos/" class="md-nav__link ">
+            <a href="../../algoritmos/" class="md-nav__link ">
               
   
   
@@ -348,7 +355,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../algoritmos/desafios/" class="md-nav__link">
+      <a href="../../algoritmos/desafios/" class="md-nav__link">
         
   
   
@@ -371,7 +378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../algoritmos/variaveis/" class="md-nav__link">
+      <a href="../../algoritmos/variaveis/" class="md-nav__link">
         
   
   
@@ -394,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../algoritmos/tiposdeprocessamento/" class="md-nav__link">
+      <a href="../../algoritmos/tiposdeprocessamento/" class="md-nav__link">
         
   
   
@@ -417,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../algoritmos/fluxograma/" class="md-nav__link">
+      <a href="../../algoritmos/fluxograma/" class="md-nav__link">
         
   
   
@@ -440,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../algoritmos/testedemesa/" class="md-nav__link">
+      <a href="../../algoritmos/testedemesa/" class="md-nav__link">
         
   
   
@@ -500,7 +507,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../c/" class="md-nav__link ">
+            <a href="../../c/" class="md-nav__link ">
               
   
   
@@ -535,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/criacao/" class="md-nav__link">
+      <a href="../../c/criacao/" class="md-nav__link">
         
   
   
@@ -558,7 +565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/expressoes/" class="md-nav__link">
+      <a href="../../c/expressoes/" class="md-nav__link">
         
   
   
@@ -581,7 +588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/tiposdedados/" class="md-nav__link">
+      <a href="../../c/tiposdedados/" class="md-nav__link">
         
   
   
@@ -604,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/entrada_saida/" class="md-nav__link">
+      <a href="../../c/entrada_saida/" class="md-nav__link">
         
   
   
@@ -627,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/fluxo/" class="md-nav__link">
+      <a href="../../c/fluxo/" class="md-nav__link">
         
   
   
@@ -650,7 +657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c/biblioteca_c/" class="md-nav__link">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
         
   
   
@@ -677,6 +684,8 @@
       
   
   
+    
+  
   
   
     
@@ -700,15 +709,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../python/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -727,7 +736,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             A linguagem Python
@@ -743,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/criacao/" class="md-nav__link">
+      <a href="../criacao/" class="md-nav__link">
         
   
   
@@ -766,7 +775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/expressoes/" class="md-nav__link">
+      <a href="../expressoes/" class="md-nav__link">
         
   
   
@@ -789,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/oo/" class="md-nav__link">
+      <a href="../oo/" class="md-nav__link">
         
   
   
@@ -812,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/tiposdedados/" class="md-nav__link">
+      <a href="../tiposdedados/" class="md-nav__link">
         
   
   
@@ -832,10 +841,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../python/ducktyping/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Duck typing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -846,6 +877,37 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipagem-dinamica-vs-duck-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipagem Dinâmica vs. Duck Typing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -891,7 +953,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../exercicios/" class="md-nav__link ">
+            <a href="../../exercicios/" class="md-nav__link ">
               
   
   
@@ -926,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/operacoes/" class="md-nav__link">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
         
   
   
@@ -949,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/selecao/" class="md-nav__link">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
         
   
   
@@ -972,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/repeticao/" class="md-nav__link">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
         
   
   
@@ -995,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercicios/competicao/" class="md-nav__link">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
         
   
   
@@ -1025,7 +1087,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../boas_praticas/" class="md-nav__link">
+      <a href="../../boas_praticas/" class="md-nav__link">
         
   
   
@@ -1044,17 +1106,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../bibliografia/" class="md-nav__link">
         
   
   
@@ -1065,7 +1120,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1089,6 +1143,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tipagem-dinamica-vs-duck-typing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tipagem Dinâmica vs. Duck Typing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1106,57 +1179,97 @@
 
 
 
-  <h1>Bibliografia</h1>
-
-<p>Esta é parte de bibliografia consultada para construir este documento. Para você, pode ser um ponto de partida pra te ajudar a estudar e se aprofundar em alguns dos assuntos cobertos aqui.</p>
-<div class="admonition note">
-<p class="admonition-title"> </p>
-<p>Algumas das referências estão disponíveis online, em sites públicos na Internet, e outras estão disponíveis na Biblioteca Virtual que você pode acessar pelo <a href="https://suap.ifsp.edu.br/">SUAP</a>.</p>
-</div>
-<ul>
-<li>ALUÍSIO, S. <strong>Manual de Boas Práticas de Programação</strong>. São Paulo: Instituto de Ciências Matemáticas e de Computação da Universidade de São Paulo, 2010.</li>
-<li>ANICHE, M. <strong>Introdução à programação em C</strong>. 1. ed. São Paulo: Casa do Código, 2015 (Acesso via <a href="https://plataforma.bvirtual.com.br/Acervo/Publicacao/212826">Biblioteca Virtual</a>)</li>
-<li>ASCENCIO, A. F. G.; CAMPOS, E. A. V. <strong>Fundamentos da programação de computadores: algoritmos, PASCAL, C/C++ (padrão ANSI) e JAVA</strong>. 3. ed. São Paulo: Pearson Education, 2012. (Acesso via <a href="https://plataforma.bvirtual.com.br/Acervo/Publicacao/3272">Biblioteca Virtual</a>)</li>
-<li>BATISTA, E. J. S. <strong>Pensamento Computacional: teoria e prática</strong>. 1. ed. Campo Grande: Editora da UFMS, 2024. Disponível em: <a href="https://repositorio.ufms.br/handle/123456789/8876">https://repositorio.ufms.br/handle/123456789/8876</a>. Acesso em: 11 mar. 2025.</li>
-<li>BEECHER, K. <strong>Bad Programming Practices 101: Become a Better Coder by Learning How (Not) to Program</strong>. 1. ed. Nova Iorque: Apress, 2018.</li>
-<li>BHARGAVA, A. Y. <strong>Entendendo Algoritmos: Um Guia Ilustrado Para Programadores e Outros Curiosos</strong>. 1. ed. São Paulo: Novatec, 2018.</li>
-<li>CRUZ, F. <strong>Python: escreva seus primeiros programas</strong>. 1. ed. São Paulo: Casa do Código, 2015. (Acesso via <a href="https://plataforma.bvirtual.com.br/Acervo/Publicacao/212658">Biblioteca Virtual</a>)</li>
-<li>DOWNEY, A.; MEYERS, C.; ELKNER, J. <strong>How to Think Like a Computer Scientist: Learning With Python</strong>. 1. ed. Wellesley: Green Tea Press, 2002.</li>
-<li>DÜRR, C.; VIE, J.-J. <strong>Competitive Programming in Python: 128 Algorithms to Develop Your Coding Skills</strong>. 1. ed. Cambridge: Cambridge University Press, 2021.</li>
-<li>FEOFILOFF, P. <strong>Algoritmos em Linguagem C</strong>. 1. ed. Rio de Janeiro: Elsevier, 2009.</li>
-<li>FORBELLONE, A. L. V.; EBERSPÄCHER, H. F. <strong>Lógica de programação: a construção de algoritmos e estruturas de dados com aplicações em Python</strong>. 4. ed. São Paulo: Pearson Education, 2022. (Acesso via <a href="https://plataforma.bvirtual.com.br/Acervo/Publicacao/200078">Biblioteca Virtual</a>)</li>
-<li>FORTES, G.; SILVA, L. S. <strong>Aprenda a programar com Python: Descomplicando o desenvolvimento de software</strong>. 1. ed. São Paulo: Casa do Código, 2022. (Acesso via <a href="https://plataforma.bvirtual.com.br/Acervo/Publicacao/212865">Biblioteca Virtual</a>)</li>
-<li>GOODLIFFE, P. <strong>Becoming a Better Programmer: A Handbook for People Who Care About Code</strong>. 1. ed. Sebastopol: O'Reilly, 2015.</li>
-<li>GRIES, P.; CAMPBELL, J.; MONTOJO, J. <strong>Practical Programming: An Introduction to Computer Science Using Python 3.6</strong>. 3. ed. Raleigh: Pragmatic Programmers, 2017.</li>
-<li>KELLEY, A.; POHL, I. <strong>A Book on C</strong>. 4. ed. Indianapolis: Addison-Wesley, 2001.</li>
-<li>KERNIGHAN, B. W.; RITCHIE, D. M. <strong>The C Programming Language</strong>. 2. ed. Englewood Cliffs: Prentice Hall, 2010.</li>
-<li>KLEMENS, B. <strong>21st Century C: C Tips From the New School</strong>. 1. ed. Sebastopol: O'Reilly, 2013.</li>
-<li>KULIKOV, A.; PEVZNER, P. <strong>Learning Algorithms Through Programming and Puzzle Solving</strong>. San Diego: Active Learning Technologies, 2018.</li>
-<li>LAAKSONEN, A. <strong>Guide to Competitive Programming: Learning and Improving Algorithms Through Contests</strong>. 1. ed. Cham: Springer, 2017.</li>
-<li>LIMA, J. V. F. <strong>Fundamentos de programação na Ciência de Dados</strong>. 1. ed. Santa Maria: Editora da UFSM, 2023. Disponível em: <a href="http://repositorio.ufsm.br/handle/1/32354">http://repositorio.ufsm.br/handle/1/32354</a>. Acesso em: 11 mar. 2025.</li>
-<li>LONG, S. <strong>Learn to code with C</strong>. 1. ed. Cambridge: Raspberry Pi (Trading) Ltd, 2016.</li>
-<li>LOPES, A.; AUGUSTO, C. <strong>Introdução à programação: 500 algoritmos resolvidos</strong>. 1. ed. Rio de Janeiro: Elsevier, 2002.</li>
-<li>MANZANO, J. A. N. G.; OLIVEIRA, J. F. <strong>Algoritmos: lógica para desenvolvimento de programação de computadores</strong>. 28. ed. São Paulo: Érica, 2016.</li>
-<li>MEDINA, M.; FERTIG, C. <strong>Algoritmos e programação: teoria e prática</strong>. 1. ed. São Paulo: Novatec, 2005.</li>
-<li>O'REGAN, G. <strong>A Brief History of Computing</strong>. 3. ed. Cham: Springer, 2021.</li>
-<li>ORAM, A.; WILSON, G. (ed.). <strong>Beautiful Code: Leading Programmers Explain How They Think</strong>. Sebastopol: O'Reilly Media, 2007.</li>
-<li>OUALLINE, S. <strong>Practical C Programming</strong>. 1. ed. Sebastopol: O'Reilly, 1997</li>
-<li>PARREIRA, F. et al. <strong>Introdução a algoritmos</strong>. 1. ed. Santa Maria: Editora UFSM, 2017. Disponível em: <a href="http://repositorio.ufsm.br/handle/1/15820">http://repositorio.ufsm.br/handle/1/15820</a>. Acesso em: 11 mar. 2025.</li>
-<li>PASCHOALINI, G. R. <strong>Princípios de lógica de programação</strong>. 1. ed. São Paulo: Editora SENAI-SP, [s.d.].</li>
-<li>PETERS, T. <strong>The Zen of Python</strong>. 2004. Disponível em: <a href="https://www.python.org/dev/peps/pep-0020/">https://www.python.org/dev/peps/pep-0020/</a>. Acesso em: 11 mar. 2025.</li>
-<li>ROBERTS, E. S. <strong>The Art and Science of C: A Library Based Introduction to Computer Science</strong>. 1. ed. [S.l.]: Addison-Wesley, 1995.</li>
-<li>ROMANO, F. <strong>Learn Python Programming: A Beginner's Guide to Learning the Fundamentals of Python Language to Write Efficient, High-Quality Code</strong>. 2. ed. Birmingham: Packt Publishing, 2018.</li>
-<li>SALVETTI, D. D.; BARBOSA, L. M. <strong>Algoritmos</strong>. 1. ed. São Paulo: Pearson Education, 1999.</li>
-<li>SANTOS, A. C. <strong>Algoritmos e estruturas de dados I</strong>. 1. ed. [S.l.]: Editora da UFAL, 2014. Disponível em: <a href="https://educapes.capes.gov.br/handle/capes/176522">https://educapes.capes.gov.br/handle/capes/176522</a>. Acesso em: 11 mar. 2025.</li>
-<li>SMITH, G. <strong>Everything You Need to Ace Computer Science and Coding in One Big Fat Notebook: The Complete Middle School Study Guide</strong>. 1. ed. Nova Iorque: Workman Publishing, 2020.</li>
-<li>SOUZA, B. J.; DIAS JR, J. J. L.; FORMIGA, A. A. <strong>Introdução à programação</strong>. v. 1.0.2. João Pessoa: Editora da UFPB, 2014. Disponível em: <a href="https://github.com/ufpb-computacao/introducao-a-programacao-livro">https://github.com/ufpb-computacao/introducao-a-programacao-livro</a>. Acesso em: 11 mar. 2025.</li>
-<li>SOUZA, J. N. <strong>Lógica para ciência da computação: fundamentos de linguagem, semântica e sistemas de dedução</strong>. 1. ed. Rio de Janeiro: Campus, 2002.</li>
-<li>TEIXEIRA, R. F. S. <strong>Introdução a Algoritmos</strong>. 1. ed. Campo Grande: Editora da UFMS, 2019. (Universidade Aberta do Brasil).</li>
-<li>UEHARA, R. <strong>First Course in Algorithms Through Puzzles</strong>. 1. ed. Cingapura: Springer, 2019.</li>
-<li>VAN ROSSUM, G.; WARSAW, B.; COGHLAN, N. <strong>Style Guide for Python Code</strong>. 2001. Disponível em: <a href="https://www.python.org/dev/peps/pep-0008/">https://www.python.org/dev/peps/pep-0008/</a>. Acesso em: 11 mar. 2025.</li>
-<li>WAZLAWICK, R. S. <strong>História da computação</strong>. 1. ed. Rio de Janeiro: Elsevier, 2016.</li>
-<li>WAZLAWICK, R. S. <strong>Introdução a Algoritmos e Programação com Python: Uma abordagem dirigida por testes</strong>. 1. ed. Rio de Janeiro: Elsevier, 2018.</li>
-</ul>
+<h1 id="o-sistema-de-tipos-dinamico-de-python">O sistema de tipos dinâmico de Python<a class="headerlink" href="#o-sistema-de-tipos-dinamico-de-python" title="Permanent link">&para;</a></h1>
+<p>Uma das diferenças fundamentais entre C e Python é o sistema de tipos. Em C, o tipo de uma variável é determinado em tempo de compilação e não pode mudar. Em Python, o tipo é determinado em tempo de execução e pode mudar.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Variável inicialmente do tipo int</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;int&#39;&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># Mesma variável agora do tipo str</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;dez&quot;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;str&#39;&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># E agora uma lista</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;list&#39;&gt;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Python 3.5 introduziu anotações de tipo (<em>type hints</em>), que permitem indicar os tipos esperados, mas são apenas sugestões e não afetam a execução do programa:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">somar</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Isso funciona, mesmo que estejamos passando strings</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">somar</span><span class="p">(</span><span class="s2">&quot;Hello, &quot;</span><span class="p">,</span> <span class="s2">&quot;World!&quot;</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>  <span class="c1"># &quot;Hello, World!&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Para verificação estática de tipos, ferramentas externas como mypy podem ser usadas.</p>
+<h2 id="tipagem-dinamica-vs-duck-typing">Tipagem Dinâmica vs. Duck Typing<a class="headerlink" href="#tipagem-dinamica-vs-duck-typing" title="Permanent link">&para;</a></h2>
+<p>Python segue o princípio "<em>duck typing</em>": "se parece com um pato, nada como um pato e grasna como um pato, então provavelmente é um pato". Isso significa que o tipo específico de um objeto é menos importante que os métodos e propriedades que ele possui.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Pato</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quack!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">nadar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Splash!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">class</span><span class="w"> </span><span class="nc">Robot</span><span class="p">:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">quack</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bip quack!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">nadar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Motor ativado, navegando!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">fazer_pato_agir</span><span class="p">(</span><span class="n">pato</span><span class="p">):</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>    <span class="c1"># Não importa se é um Pato real ou um Robot,</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>    <span class="c1"># desde que implemente quack() e nadar()</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>    <span class="n">pato</span><span class="o">.</span><span class="n">quack</span><span class="p">()</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a>    <span class="n">pato</span><span class="o">.</span><span class="n">nadar</span><span class="p">()</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="n">donald</span> <span class="o">=</span> <span class="n">Pato</span><span class="p">()</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="n">r2d2</span> <span class="o">=</span> <span class="n">Robot</span><span class="p">()</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a>
+</span><span id="__span-2-24"><a id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="n">fazer_pato_agir</span><span class="p">(</span><span class="n">donald</span><span class="p">)</span>  <span class="c1"># Funciona</span>
+</span><span id="__span-2-25"><a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="n">fazer_pato_agir</span><span class="p">(</span><span class="n">r2d2</span><span class="p">)</span>    <span class="c1"># Também funciona!</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Este modelo de programação é muito diferente do sistema de tipos estático de C, permitindo maior flexibilidade e polimorfismo. Embora falte o controle estrito sobre memória e tipos oferecido por C, Python compensa com maior legibilidade, segurança e produtividade para muitos tipos de aplicações.</p>
 
 
 
@@ -1179,7 +1292,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="12 de março de 2025 03:22:19">12 de março de 2025 03:22:19</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34">31 de março de 2025 00:49:34</span>
   </span>
 
     
@@ -1189,7 +1302,7 @@
     <span class="md-icon" title="Criado em">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="10 de março de 2025 11:25:55">10 de março de 2025 11:25:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34">31 de março de 2025 00:49:34</span>
   </span>
 
     
@@ -1240,7 +1353,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
         
           
-          <a href="../boas_praticas/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Boas práticas de programação">
+          <a href="../tiposdedados/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Tipos de dados">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1250,11 +1363,27 @@
                 Anterior
               </span>
               <div class="md-ellipsis">
-                Boas práticas de programação
+                Tipos de dados
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../../exercicios/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Exercícios selecionados">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Exercícios selecionados
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
@@ -1302,16 +1431,16 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../js/katex.js"></script>
+        <script src="../../js/katex.js"></script>
       
-        <script src="../js/timeago.min.js"></script>
+        <script src="../../js/timeago.min.js"></script>
       
-        <script src="../js/timeago_mkdocs_material.js"></script>
+        <script src="../../js/timeago_mkdocs_material.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
