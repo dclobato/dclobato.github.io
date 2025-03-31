@@ -1867,6 +1867,7 @@
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="n">strcmp</span><span class="p">(</span><span class="s">&quot;abc&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;def&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Retorna valor negativo (a &lt; d)</span>
 </span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="n">strcmp</span><span class="p">(</span><span class="s">&quot;xyz&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;abc&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Retorna valor positivo (x &gt; a)</span>
 </span></code></pre></div>
+<p>Na <a href="../biblioteca_c/#stringh">biblioteca de códigos</a> temos as principais operações disponíveis com cadeias de caracteres disponíveis na biblioteca <code>string.h</code></p>
 <h2 id="estruturas">Estruturas<a class="headerlink" href="#estruturas" title="Permanent link">&para;</a></h2>
 <p>Estruturas agregam o armazenamento de múltiplos itens de dados, de mesmo tipo ou não, em um único bloco de memória referenciado por uma única variável. O exemplo abaixo cria uma estrutura chamada <code>aniversario</code> para armazenar o nome e a data de nascimento de uma pessoa; em seguida, temos a declaração de uma variável chamada <code>Abelardo</code> do tipo <code class="language-c highlight"><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span></code></p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de estrutura em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
@@ -2044,7 +2045,7 @@
 <p>Uma abordagem disciplinada pode eliminar a maioria dos problemas: inicializar sempre os ponteiros, verificar se são nulos antes de dereferenciá-los e implementar uma estratégia clara de limpeza de memória</p>
 <h3 id="acessando-estruturas-via-ponteiros">Acessando estruturas via Ponteiros<a class="headerlink" href="#acessando-estruturas-via-ponteiros" title="Permanent link">&para;</a></h3>
 <p>Quando trabalhamos com ponteiros para estruturas, o acesso aos membros é feito de maneira diferente. Existem duas formas de fazer isso:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Operador seta (-&gt;)</label><label for="__tabbed_2_2">Usando o operador Ponto com Desreferenciação</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Operador seta (-&gt;)</label><label for="__tabbed_2_2">Usando o operador ponto com desreferenciação</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
@@ -2088,8 +2089,9 @@
 <p>Assim, a comparação <code>senha1 == senha2</code> se torna uma comparação entre dois endereços de memória:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">senha1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">senha2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Compara &amp;senha1[0] com &amp;senha2[0]</span>
 </span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="c1">// Este código nunca será executado se senha1</span>
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="c1">// e senha2 são arrays diferentes</span>
-</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="p">}</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="c1">// e senha2 são arrays diferentes, mesmo que possuam</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="c1">// os mesmos elementos</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Cada arranjo (ou qualquer variável) declarado em C recebe seu próprio espaço de memória. Mesmo que dois arranjos contenham exatamente os mesmos valores, eles ocupam posições diferentes na memória. Portanto, a comparação <code>senha1 == senha2</code> está verificando se o endereço onde <code>senha1</code> está armazenado é igual ao endereço onde <code>senha2</code> está armazenado, o que obviamente retornará falso, mesmo que o conteúdo em ambos os endereços seja idêntico.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Programa</label><label for="__tabbed_3_2">Resultado da execução</label></div>
@@ -2241,7 +2243,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="29 de março de 2025 01:52:22">29 de março de 2025 01:52:22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 12:17:26">31 de março de 2025 12:17:26</span>
   </span>
 
     
