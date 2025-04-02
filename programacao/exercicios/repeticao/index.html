@@ -20,11 +20,11 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
     
     
       
-        <title>Estruturas de repetição - Programação de computadores</title>
+        <title>Estruturas de repetição e arranjos - Programação de computadores</title>
       
     
     
@@ -128,7 +128,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Estruturas de repetição
+              Estruturas de repetição e arranjos
             
           </span>
         </div>
@@ -166,11 +166,13 @@
     
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -202,6 +204,7 @@
     </div>
   </div>
 </div>
+      
     
     
   </nav>
@@ -995,7 +998,7 @@
   
   
   <span class="md-ellipsis">
-    Estruturas de repetição
+    Estruturas de repetição e arranjos
     
   </span>
   
@@ -1125,7 +1128,7 @@
 <p>Chico tem 150 cm e cresce 2cm por ano, enquanto Zé tem 110cm e cresce 3cm por ano. Faça um programa que calcule e imprima quantos anos são necessários para que Zé fique mais alto que Chico.</p>
 </li>
 <li>
-<p>Faça um programa que leia as notas de um aluno e calcule a média das notas. Não se sabe, de antemão, o número de notas a serem lidas, e a leitura deve encerrar quando uma nota negativa for informada.</p>
+<p>Faça um programa que leia as notas de um aluno e calcule a média das notas. Não se sabe, de antemão, o número de notas a serem lidas, e a leitura deve encerrar quando uma nota negativa for informada (a nota negativa não deve ser usada no cômputo da média).</p>
 </li>
 <li>
 <p>Na matemática, um número perfeito é aquele no qual a soma dos seus divisores positivos próprios (excluindo-o) é igual ao próprio número. Por exemplo, 6 é perfeito, pois <span class="arithmatex">\(1 + 2 + 3 = 6\)</span>. Escreva um programa que leia um número inteiro positivo menor ou igual a <span class="arithmatex">\(10^8\)</span> e indique se o número é perfeito ou não.</p>
@@ -1187,6 +1190,9 @@
 <p>Faça um programa que imprima os primeiros 20 números inteiros que quando divididos por 11 produzem 5 de resto.</p>
 </li>
 <li>
+<p>Construa um programa que imprima uma tabela de conversão de temperatura entre graus Celsius (<span class="arithmatex">\(C\)</span>), graus Fahrenheit (<span class="arithmatex">\(F\)</span>) e Kelvin (<span class="arithmatex">\(K\)</span>). A tabela deve englobar as temperaturas entre -40 a +40oC, com intervalo de 2oC entre cada uma delas. As fórmulas são <span class="arithmatex">\(F = C \times \frac{9}{5}  + 32\)</span> e <span class="arithmatex">\(K = C + 273.15\)</span></p>
+</li>
+<li>
 <p>Escreva um programa que leia o número <span class="arithmatex">\(n\)</span> de termos de uma progressão aritmética, o primeiro termo (<span class="arithmatex">\(a_1\)</span>) da progressão e a razão <span class="arithmatex">\(r\)</span> da progressão e escreva os <span class="arithmatex">\(n\)</span> termos desta progressão, bem como a soma dos elementos.</p>
 </li>
 <li>
@@ -1204,6 +1210,163 @@
 <li>
 <p>Na bolsa de valores, um investidor normalmente faz "preço médio" de um papel. A ideia é tentar entrar no papel em preços diferentes, exatamente para tê-lo na carteira com um preço que seja a média do preço dele ao longo de determinado tempo. O preço médio é calculado como uma média ponderada dos preços de compra. Quando um papel é vendido, calcula-se o LAIR (lucro antes do imposto de renda) como sendo a diferença entre o preço de venda e o preço médio de compra. Sobre o lucro da operação, o investidor paga 15% de imposto de renda, mas legislação permite que sejam alienados (vendidos) até <span class="arithmatex">\(R\$~20000.00\)</span> por mês sem que seja necessário pagar imposto de renda sobre o lucro. Por exemplo, se forem compradas 100 ações de determinado papel a 10.00, e 300 ações a 7.00, o preço médio é de <span class="arithmatex">\(\dfrac{100\times10+300\times7}{100+300}=7.75\)</span>. Se as 400 ações fossem vendidas a 10,00, o LAIR seria de 900,00 e não haveria imposto a pagar. Construa um programa que leia um inteiro N dizendo quantas compras foram feitas, N pares de valores indicando quantas ações foram compradas e a que preço, e um valor que indica o preço de venda (assuma que todas as ações compradas foram vendidas); a partir disso, calcule e imprima o LAIR e o valor do imposto a ser pago.</p>
 </li>
+<li>
+<p>Um bit de paridade é um mecanismo simples para detectar erros na transmissão de dados em uma linha de comunicação não-confiável. A ideia básica é adicionar um bit a cada 7 bits transmitidos, para permitir que um bit errado seja detectado. O bit de paridade pode ser calculado tanto para paridade par quanto para paridade ímpar. Se for escolhida a paridade par, o bit de paridade é escolhido de forma que o total de bits 1 transmitidos (os 7 bits de dado mais o bit de paridade) seja um número par. Na escolha da paridade ímpar, o processo é análogo (total de bits 1 deve ser ímpar).  Escreva um programa que permita ao usuário escolher se ele quer paridade par ou ímpar e, em seguida, receba um número não conhecido <em>a priori</em> de sequências de sete dígitos 0 ou 1 (representando os bits), calcule e imprima a paridade correspondente aos bits recebidos. O programa deve parar quando a sequência de bits contiver um número diferente de 7 bits.</p>
+</li>
+<li>
+<p>O "Jogo do Pin" era uma das brincadeiras mais populares do programa "Domingo no Parque", apresentado por Silvio Santos. A dinâmica era simples, mas exigia atenção e raciocínio rápido dos participantes. Uma pessoa da plateia era escolhida para participar e deveria contar de 1 a 30 (ou até um número definido por Silvio Santos), em voz alta. Sempre que a contagem chegasse a um número múltiplo de 4, o participante deveria substituir o número por "Pin". Construa um programa que receba o limite superior da contagem, e escreva a sequência de "números e pins" para ganhar o Jogo do Pin.</p>
+</li>
+<li>
+<p>O método de Newton, também conhecido como método de Newton-Raphson, é um algoritmo iterativo muito eficiente para encontrar aproximações para as raízes (ou zeros) de uma função real. Ele pode ser adaptado para calcular a raiz quadrada de um número de forma bastante eficaz. O método de Newton se baseia na ideia de aproximar a raiz de uma função por meio de retas tangentes ao gráfico da função (veja abaixo o gráfico para a estimativa de $\sqrt{10}). A cada iteração, uma nova aproximação é calculada, que se torna cada vez mais precisa. Para calcular a raiz quadrada de um número <span class="arithmatex">\(a\)</span>, podemos usar a fórmula iterativa <span class="arithmatex">\(x_{n+1} = \frac{1}{2} \times (x_n + \frac{a}{x_n})\)</span> onde <span class="arithmatex">\(x_0\)</span> é uma estimativa inicial para a raiz quadrada de <span class="arithmatex">\(a\)</span>, e <span class="arithmatex">\(x_{n+1}\)</span> é a próxima aproximação da raiz quadrada. O algoritmo é interrompido quando <span class="arithmatex">\(x_n - x_{n-1} &lt; \varepsilon\)</span>. O valor de <span class="arithmatex">\(\varepsilon\)</span> deve ser definido pelo usuário, tipicamente variando entre <span class="arithmatex">\(10^{-6}\)</span> e <span class="arithmatex">\(10^{-9}\)</span>. Construa um programa que receba o valor de <span class="arithmatex">\(a\)</span>, de <span class="arithmatex">\(x_0\)</span> e de <span class="arithmatex">\(\varepsilon\)</span> e mostre a aproximação de <span class="arithmatex">\(\sqrt{a}\)</span> com 8 casas decimais.</p>
+<p><img align="center" alt="Raiz de 10 pelo método de Newton" src="../img/raiz_de_10.png" /></p>
+</li>
+<li>
+<p>O maior divisor comum (MDC) entre dos inteiros positivos, <span class="arithmatex">\(n\)</span> e <span class="arithmatex">\(m\)</span>, é o maior número, <span class="arithmatex">\(d\)</span>, que divide tanto <span class="arithmatex">\(n\)</span> quanto <span class="arithmatex">\(m\)</span> sem deixar resto.  Há vários algoritmos que podem ser usados para resolver esse problema, incluindo o representado no fluxograma abaixo.</p>
+<pre class="mermaid"><code>graph TD;
+Inicio --&gt; A
+A --&gt; B
+B -- Sim --&gt; C --&gt; E
+B -- Não --&gt; D --&gt; E
+E -- Sim --&gt; F --&gt; E
+E -- Não --&gt; G --&gt; Fim
+
+Inicio@{shape: terminal}
+A@{shape: manual-input, label: "n, m"}
+B@{shape: decision, label: "m &lt; n"}
+C@{shape: process, label: "d &amp;larr; m"}
+D@{shape: process, label: "d &amp;larr; n"}
+E@{shape: decision, label: "m MOD d &amp;ne; 0&lt;br /&gt;ou&lt;br /&gt;n MOD d &amp;ne; 0" }
+F@{shape: process, label: "d &amp;larr; d - 1"}
+G@{shape: display, label: "d"}
+Fim@{shape: terminal}</code></pre>
+<p>Escreva um programa que leia dois inteiros positivos e, utilizando o algoritmo acima, calcule e imprima o MDC entre eles.</p>
+</li>
+<li>
+<p>Escreva um programa que converta e imprima um número binário (base 2) com até 16 bits para o seu equivalente decimal (base 10). O seu programa deve ler o número como uma cadeia de caracteres e calcular o número decimal equivalente processando cada dígito do número binário.</p>
+</li>
+<li>
+<p>Repita o exercício anterior considerando que a entrada é um número hexadecimal (base 16) com até 4 dígitos. Caso você não lembre, a base 16 possui os dígitos <span class="arithmatex">\(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\}\)</span>.</p>
+</li>
+<li>
+<p>Em experimentos científicos, é comum analisarmos um conjunto de dados <span class="arithmatex">\(x = \{x_0, x_1, x_2, ..., x_n \}\)</span>. Nesses casos, pode ser útil remover os outliers (valores atípicos) antes de realizar outros cálculos. Um valor <span class="arithmatex">\(x_i\)</span> é considerado um outlier se:</p>
+<div class="arithmatex">\[
+x_i &lt; (\bar{x} - 3s) \quad \text{ou} \quad x_i &gt; (\bar{x} + 3s)
+\]</div>
+<p>onde:</p>
+<div class="arithmatex">\[
+s = \sqrt{\sum_{i=0}^n{\frac{(x_i - \bar{x})^2}{n-1}}} \quad \text{(desvio padrão amostral)}\\
+\bar{x} = \dfrac{\sum_{i=0}^n{x_i}}{n} \quad \text{(média amostral)}
+\]</div>
+<p>A regra dos "3 desvios padrão" é uma heurística comum para identificar outliers em distribuições aproximadamente normais. Construa um programa que leia o número <span class="arithmatex">\(n\)</span> de valores reais a serem lidos (<span class="arithmatex">\(2 &lt; n &lt; 100\)</span>), leia os <span class="arithmatex">\(n\)</span> valores, e imprima os <em>outliers</em>.</p>
+</li>
+<li>
+<p>"Ais, enter, inis, omber, uft" é uma brincadeira de linguagem que transforma palavras substituindo as vogais por "ais", "enter", "inis", "omber" e "uft", criando uma espécie de "idioma secreto". A partir de uma palavra comum, cada uma das vogais na palavra original é substituída por uma das cinco sequências: "ais", "enter", "inis", "omber" e "uft". Por exemplo, <strong>banana</strong> vira <strong>baisnaisnais</strong>, <strong>livro</strong> vira <strong>linisvromber</strong> e <strong>computador</strong> vira <strong>caismpufttaisdomberr</strong>. Construa um programa que leia uma palavra com até 20 caracteres e apresente a palavra transformada. Antes de transformar a palavra, converta todas as letras para minúsculas.</p>
+</li>
+<li>
+<p>Uma lista de valores <span class="arithmatex">\(x = \{x_0, x_1, x_2..., x_n\}\)</span> é considerada ordenada de forma ascendente se, para todo o índice <span class="arithmatex">\(i\)</span> no intervalo <span class="arithmatex">\([0, n-1]\)</span>, a condição <span class="arithmatex">\(x_i \leq x_{i+1}\)</span> for satisfeita. Construa um programa que leia um conjunto de <span class="arithmatex">\(n\)</span> valores inteiros (<span class="arithmatex">\(1 &lt; n &lt; 100\)</span>) e diga se os valores compõem ou não uma lista ordenada de forma ascendente.</p>
+</li>
+<li>
+<p>Nos celulares de antigamente, para enviar uma mensagem de texto, era preciso "digitar" a mensagem usando apenas o teclado numérico. Isso era possível porque, para cada uma das teclas numéricas (0, 1, 2, 3, 4, 5, 6, 7, 8 e 9) existia um conjunto de símbolos associado, de acordo com a tabela abaixo:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tecla</th>
+<th style="text-align: left;">Símbolos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><code>.</code> <code>,</code> <code>?</code> <code>!</code> <code>:</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><code>A</code> <code>B</code> <code>C</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><code>D</code> <code>E</code> <code>F</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><code>G</code> <code>H</code> <code>I</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><code>J</code> <code>K</code> <code>L</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><code>M</code> <code>N</code> <code>O</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;"><code>P</code> <code>Q</code> <code>R</code> <code>S</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><code>T</code> <code>U</code> <code>V</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;"><code>W</code> <code>X</code> <code>Y</code> <code>Z</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">Espaço</td>
+</tr>
+</tbody>
+</table>
+<p>Para escrever, por exemplo, <code>BOLA</code>, era preciso apertar <code>22 666 555 2</code>. Construa um programa onde o usuário digita uma frase com até 20 caracteres e a sequência de teclas correspondente é apresentada na tela. Ignore qualquer símbolo presente na frase do usuário e que não exista na tabela anterior.</p>
+</li>
+<li>
+<p><img align="right" width="200" src="../img/scrabble.jpg"><strong><em>Scrabble</em></strong> é um jogo de tabuleiro criado em 1938, durante a Grande Depressão, pelo norte americano <a href="https://pt.wikipedia.org/wiki/Alfred_Mosher_Butts">Alfred Butts</a>. Nele, dois a quatro jogadores procuram marcar pontos formando palavras interligadas, usando pedras com letras num quadro dividido em 225 casas (15 x 15). Cada letra possui uma pontuação, que é inversamente proporcional à frequência relativa dessas letras nas palavras presentes no idioma do jogo (a pontuação das letras no jogo vendido nos países que falam inglês é diferente da pontuação das letras no jogo vendido nos países que falam francês, por exemplo). No caso do português, a tabela de pontos é a seguinte<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pontos</th>
+<th style="text-align: left;">Letras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;"><code>A</code> <code>E</code> <code>I</code> <code>O</code> <code>S</code> <code>U</code> <code>M</code> <code>R</code> <code>T</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;"><code>D</code> <code>L</code> <code>C</code> <code>P</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;"><code>N</code> <code>B</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;"><code>F</code> <code>G</code> <code>H</code> <code>V</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;"><code>J</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;"><code>Q</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><code>X</code> <code>Z</code></td>
+</tr>
+</tbody>
+</table>
+<p>Por exemplo, se alguém jogar a palavra <code>CADERNO</code>, vai fazer 11 pontos<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. Construa um programa que leia uma palavra com até 15 letras e calcule a pontuação da palavra utilizando a tabela acima. Letras que não estão presentes na tabela acima e outros símbolos possuem valor zero.</p>
+</li>
+<li>
+<p>O <em>run-length encoding</em> (RLE) é um método de compressão de dados sem perdas que visa reduzir o tamanho de arquivos que contêm sequências repetidas de dados. Ele é particularmente eficaz em arquivos com padrões repetitivos, como imagens monocromáticas ou arquivos de texto simples. O RLE funciona substituindo sequências de dados idênticos por um código que indica o valor do dado e o número de vezes que ele se repete. Em vez de armazenar cada valor repetido individualmente, o RLE armazena apenas o valor e a contagem. Por exemplo, a sequência <code>AAAAABBBCCDAA</code> pode ser compactada como <code>5A3B2C1D2A</code>. Neste exemplo, <code>5A</code> significa que o caractere <code>A</code> se repete 5 vezes, <code>3B</code> significa que o caractere <code>B</code> se repete 3 vezes e assim por diante. Construa um programa que receba uma cadeia de caracteres com até 100 símbolos e imprima a cadeia compactada em RLE.</p>
+</li>
+<li>
+<p>Baseado no problema anterior, construa um programa que receba uma cadeia de caracteres compactada em RLE com até 100 símbolos e imprima a cadeia de caracteres original. Considere que, na cadeia compactada em RLE, cada símbolo pode se repetir, no máximo, 9 vezes.</p>
+</li>
 </ol>
 <div class="footnote">
 <hr />
@@ -1213,6 +1376,12 @@
 </li>
 <li id="fn:2">
 <p>Apesar de métodos de Monte Carlo serem úteis para a solução de vários problemas em matemática e física que não podem ser resolvidos de forma analítica, a adoção deste método para a estimativa do valor de <span class="arithmatex">\(\pi\)</span> é bem lento. Para calcular cada dígito significativo depois da vírgula são necessárias dez vezes mais pontos aleatórios que os necessários para calcular o dígito anterior.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>Marcas diacríticas (letras acentuadas, por exemplo) são ignoradas. <code>K</code>, <code>W</code> e <code>Y</code> estão ausentes, pois <a href="https://www.academia.org.br/artigos/novas-letras-k-w-e-y">não eram letras oficiais</a> até o Acordo Ortográfico de 1990, depois de o jogo ter sido introduzido no Brasil.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>Tem alguns outros detalhes na regra de pontuação, como por exemplo, em qual lugar do tabuleiro a palavra foi formada, mas vamos simplificar.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1238,7 +1407,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="13 de março de 2025 02:43:42">13 de março de 2025 02:43:42</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2 de abril de 2025 03:33:06">2 de abril de 2025 03:33:06</span>
   </span>
 
     
