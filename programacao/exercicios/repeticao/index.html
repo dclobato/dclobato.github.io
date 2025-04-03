@@ -1152,15 +1152,15 @@
 <p>Em uma chácara, há várias galinhas e porcos. Escreva um programa que solicite ao usuário o total de cabeças e o total de pés, e determine quantas galinhas e quantos porcos há na chácara.</p>
 </li>
 <li>
-<p>Produza uma aproximação do valor de <span class="arithmatex">\(\pi\)</span> utilizando a série de Gregory-Leibniz (abaixo). O cálculo deve parar quando a diferença ente <span class="arithmatex">\(\pi\)</span> calculado até o terno <span class="arithmatex">\(n\)</span> e o calculado até o termo <span class="arithmatex">\(n+1\)</span> for menor que <span class="arithmatex">\(10^{-5}\)</span>. Imprima o valor calculado de <span class="arithmatex">\(\pi\)</span> e o número de termos que foram utilizados no cálculo da série. Cuidado com a alternância de sinal entre os termos da série.</p>
+<p>Produza uma aproximação do valor de <span class="arithmatex">\(\pi\)</span> utilizando a série de <a href="https://pt.wikipedia.org/wiki/Gottfried_Leibniz">Gregory-Leibniz</a> (abaixo). O cálculo deve parar quando a diferença ente <span class="arithmatex">\(\pi\)</span> calculado até o terno <span class="arithmatex">\(n\)</span> e o calculado até o termo <span class="arithmatex">\(n+1\)</span> for menor que <span class="arithmatex">\(10^{-5}\)</span>. Imprima o valor calculado de <span class="arithmatex">\(\pi\)</span> e o número de termos que foram utilizados no cálculo da série. Cuidado com a alternância de sinal entre os termos da série.</p>
 <div class="arithmatex">\[
-\pi \approxeq 4 - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7}  + \dfrac{4}{9} \ldots
+\pi = 4 - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7}  + \dfrac{4}{9} \ldots
 \]</div>
 </li>
 <li>
-<p>Outra forma de obter uma aproximação do valor de π é por meio da série de Nilakantha (abaixo). Obtenha uma aproximação de <span class="arithmatex">\(\pi\)</span> com o uso dela. O cálculo deve parar quando a diferença ente <span class="arithmatex">\(\pi\)</span> calculado até terno <span class="arithmatex">\(n\)</span> e o calculado até o termo <span class="arithmatex">\(n+1\)</span> for menor que <span class="arithmatex">\(10^{-5}\)</span>. Imprima o valor calculado de <span class="arithmatex">\(\pi\)</span> e o número de termos que foram utilizados no cálculo da série. Cuidado com a alternância de sinal entre os termos da série.</p>
+<p>Outra forma de obter uma aproximação do valor de π é por meio da série de <a href="https://pt.wikipedia.org/wiki/Nilakantha_Somayaji">Nilakantha</a> (abaixo). Obtenha uma aproximação de <span class="arithmatex">\(\pi\)</span> com o uso dela. O cálculo deve parar quando a diferença ente <span class="arithmatex">\(\pi\)</span> calculado até terno <span class="arithmatex">\(n\)</span> e o calculado até o termo <span class="arithmatex">\(n+1\)</span> for menor que <span class="arithmatex">\(10^{-5}\)</span>. Imprima o valor calculado de <span class="arithmatex">\(\pi\)</span> e o número de termos que foram utilizados no cálculo da série. Cuidado com a alternância de sinal entre os termos da série.</p>
 <div class="arithmatex">\[
-\pi \approxeq 3 + \dfrac{4}{2 \times 3 \times 4} - \dfrac{4}{4 \times 5 \times 6} + \dfrac{4}{6 \times 7 \times 8}  - \dfrac{4}{8 \times 9 \times 10} \ldots
+\pi = 3 + \dfrac{4}{2 \times 3 \times 4} - \dfrac{4}{4 \times 5 \times 6} + \dfrac{4}{6 \times 7 \times 8}  - \dfrac{4}{8 \times 9 \times 10} \ldots
 \]</div>
 </li>
 <li>
@@ -1184,7 +1184,7 @@
 </span></code></pre></div>
 </li>
 <li>
-<p>Construa um programa que leia um número inteiro <span class="arithmatex">\(N\)</span>, calcule e mostre o maior quadrado menor ou igual a <span class="arithmatex">\(N\)</span>. Por exemplo, se <span class="arithmatex">\(N\)</span> for igual a 38, o maior quadrado é 36.</p>
+<p>Construa um programa que leia um número inteiro <span class="arithmatex">\(n\)</span>, calcule e mostre o maior quadrado menor ou igual a <span class="arithmatex">\(n\)</span>. Por exemplo, se <span class="arithmatex">\(n\)</span> for igual a 38, o maior quadrado é 36.</p>
 </li>
 <li>
 <p>Faça um programa que imprima os primeiros 20 números inteiros que quando divididos por 11 produzem 5 de resto.</p>
@@ -1208,7 +1208,11 @@
 <p>O voleibol é um esporte disputado em uma quadra dividida ao meio por uma rede, com dois times de 6 jogadores cada, onde o objetivo é fazer a bola passar sobre a rede de modo a que a bola toque no chão dentro da quadra adversária, ao mesmo tempo que se evita que os adversários consigam fazer o mesmo. O jogo começa com o saque de um dos times. Logo depois do saque, a bola deve ultrapassar a rede e seguir ao campo do adversário onde os jogadores tentam evitar que a bola entre no seu campo usando qualquer parte do corpo. O jogador pode rebater a bola para que ela passe para o campo adversário sendo permitidos dar três toques na bola antes que ela passe, sempre alternando os jogadores que dão os toques. Caso a bola caia, é ponto do time adversário. O jogador não pode encostar na rede e, caso isso ocorra, o ponto será para o outro time. O mesmo jogador não pode dar 2 ou mais toques seguidos na bola, exceção no caso do toque de Bloqueio. Cada partida é dividida em sets que terminam quando uma das duas equipes conquista 25 pontos. Deve haver também uma diferença de no mínimo dois pontos com relação ao placar do adversário - caso contrário, a disputa prossegue até que tal diferença seja atingida. O vencedor é a equipe que ganhar, primeiro, três sets. Você deve construir um programa que, a cada indicação de ponto feita (1 para o primeiro time, e 2 para o segundo time), indique o placar atual. Quando faltar um ponto para um time vencer um set, escreva "set point" e, quando um time vencer, escreva o número do time que ganhou.</p>
 </li>
 <li>
-<p>Na bolsa de valores, um investidor normalmente faz "preço médio" de um papel. A ideia é tentar entrar no papel em preços diferentes, exatamente para tê-lo na carteira com um preço que seja a média do preço dele ao longo de determinado tempo. O preço médio é calculado como uma média ponderada dos preços de compra. Quando um papel é vendido, calcula-se o LAIR (lucro antes do imposto de renda) como sendo a diferença entre o preço de venda e o preço médio de compra. Sobre o lucro da operação, o investidor paga 15% de imposto de renda, mas legislação permite que sejam alienados (vendidos) até <span class="arithmatex">\(R\$~20000.00\)</span> por mês sem que seja necessário pagar imposto de renda sobre o lucro. Por exemplo, se forem compradas 100 ações de determinado papel a 10.00, e 300 ações a 7.00, o preço médio é de <span class="arithmatex">\(\dfrac{100\times10+300\times7}{100+300}=7.75\)</span>. Se as 400 ações fossem vendidas a 10,00, o LAIR seria de 900,00 e não haveria imposto a pagar. Construa um programa que leia um inteiro N dizendo quantas compras foram feitas, N pares de valores indicando quantas ações foram compradas e a que preço, e um valor que indica o preço de venda (assuma que todas as ações compradas foram vendidas); a partir disso, calcule e imprima o LAIR e o valor do imposto a ser pago.</p>
+<p>Na bolsa de valores, um investidor normalmente faz "preço médio" de um papel. A ideia é tentar entrar no papel em preços diferentes, exatamente para tê-lo na carteira com um preço que seja a média do preço dele ao longo de determinado tempo. O preço médio é calculado como uma média ponderada dos preços de compra. Quando um papel é vendido, calcula-se o LAIR (lucro antes do imposto de renda) como sendo a diferença entre o preço de venda e o preço médio de compra. Sobre o lucro da operação, o investidor paga 15% de imposto de renda, mas legislação permite que sejam alienados (vendidos) até <span class="arithmatex">\(R\$~20000.00\)</span> por mês sem que seja necessário pagar imposto de renda sobre o lucro. Por exemplo, se forem compradas 100 ações de determinado papel a 10.00, e 300 ações a 7.00, o preço médio é:</p>
+<div class="arithmatex">\[
+\dfrac{100\times10+300\times7}{100+300}=7.75
+\]</div>
+<p>Se as 400 ações fossem vendidas a 10,00, o LAIR seria de 900,00 e não haveria imposto a pagar. Construa um programa que leia um inteiro N dizendo quantas compras foram feitas, N pares de valores indicando quantas ações foram compradas e a que preço, e um valor que indica o preço de venda (assuma que todas as ações compradas foram vendidas); a partir disso, calcule e imprima o LAIR e o valor do imposto a ser pago.</p>
 </li>
 <li>
 <p>Um bit de paridade é um mecanismo simples para detectar erros na transmissão de dados em uma linha de comunicação não-confiável. A ideia básica é adicionar um bit a cada 7 bits transmitidos, para permitir que um bit errado seja detectado. O bit de paridade pode ser calculado tanto para paridade par quanto para paridade ímpar. Se for escolhida a paridade par, o bit de paridade é escolhido de forma que o total de bits 1 transmitidos (os 7 bits de dado mais o bit de paridade) seja um número par. Na escolha da paridade ímpar, o processo é análogo (total de bits 1 deve ser ímpar).  Escreva um programa que permita ao usuário escolher se ele quer paridade par ou ímpar e, em seguida, receba um número não conhecido <em>a priori</em> de sequências de sete dígitos 0 ou 1 (representando os bits), calcule e imprima a paridade correspondente aos bits recebidos. O programa deve parar quando a sequência de bits contiver menos de 7 bits.</p>
@@ -1248,7 +1252,7 @@ Fim@{shape: terminal}</code></pre>
 <p>Repita o exercício anterior considerando que a entrada é um número hexadecimal (base 16) com até 4 dígitos. Caso você não lembre, a base 16 possui os dígitos <span class="arithmatex">\(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\}\)</span>.</p>
 </li>
 <li>
-<p>Em experimentos científicos, é comum analisarmos um conjunto de dados <span class="arithmatex">\(x = \{x_0, x_1, x_2, ..., x_n \}\)</span>. Nesses casos, pode ser útil remover os outliers (valores atípicos) antes de realizar outros cálculos. Um valor <span class="arithmatex">\(x_i\)</span> é considerado um outlier se:</p>
+<p>Em experimentos científicos, é comum analisarmos um conjunto de dados <span class="arithmatex">\(x = \{x_0, x_1, x_2, ..., x_n \}\)</span>. Nesses casos, pode ser útil remover os <em>outliers</em> (valores atípicos) antes de realizar outros cálculos. Um valor <span class="arithmatex">\(x_i\)</span> é considerado um <em>outlier</em> se:</p>
 <div class="arithmatex">\[
 x_i &lt; (\bar{x} - 3s) \quad \text{ou} \quad x_i &gt; (\bar{x} + 3s)
 \]</div>
@@ -1257,10 +1261,10 @@ x_i &lt; (\bar{x} - 3s) \quad \text{ou} \quad x_i &gt; (\bar{x} + 3s)
 s = \sqrt{\sum_{i=0}^n{\frac{(x_i - \bar{x})^2}{n-1}}} \quad \text{(desvio padrão amostral)}\\
 \bar{x} = \dfrac{\sum_{i=0}^n{x_i}}{n} \quad \text{(média amostral)}
 \]</div>
-<p>A regra dos "3 desvios padrão" é uma heurística comum para identificar outliers em distribuições aproximadamente normais. Construa um programa que leia o número <span class="arithmatex">\(n\)</span> de valores reais a serem lidos (<span class="arithmatex">\(2 &lt; n &lt; 100\)</span>), leia os <span class="arithmatex">\(n\)</span> valores, e imprima os <em>outliers</em>.</p>
+<p>A "Regra dos 3 Sigmas" é uma heurística comum para identificar <em>outliers</em> em distribuições aproximadamente normais. Construa um programa que leia o número <span class="arithmatex">\(n\)</span> de valores reais a serem lidos (<span class="arithmatex">\(2 &lt; n &lt; 100\)</span>), leia os <span class="arithmatex">\(n\)</span> valores, e imprima os <em>outliers</em>.</p>
 </li>
 <li>
-<p>"Ais, enter, inis, omber, uft" é uma brincadeira de linguagem que transforma palavras substituindo as vogais por "ais", "enter", "inis", "omber" e "uft", criando uma espécie de "idioma secreto". A partir de uma palavra comum, cada uma das vogais na palavra original é substituída por uma das cinco sequências: "ais", "enter", "inis", "omber" e "uft". Por exemplo, <strong>banana</strong> vira <strong>baisnaisnais</strong>, <strong>livro</strong> vira <strong>linisvromber</strong> e <strong>computador</strong> vira <strong>combermpufttaisdomberr</strong>. Construa um programa que leia uma palavra com até 20 caracteres e apresente a palavra transformada. Antes de transformar a palavra, converta todas as letras para minúsculas.</p>
+<p>"Ais, enter, inis, omber, uft" é uma brincadeira de linguagem que transforma palavras substituindo as vogais por "ais", "enter", "inis", "omber" e "uft", criando uma espécie de "idioma secreto". A partir de uma palavra comum, cada uma das vogais na palavra original é substituída por uma das cinco sequências: "ais", "enter", "inis", "omber" e "uft". Por exemplo, <strong>BAnANa</strong> vira <strong>baisnaisnais</strong>, <strong>liVRo</strong> vira <strong>linisvromber</strong> e <strong>comPUtadOR</strong> vira <strong>combermpufttaisdomberr</strong>. Construa um programa que leia uma palavra com até 20 caracteres e apresente a palavra transformada. Antes de transformar a palavra, converta todas as letras para minúsculas.</p>
 </li>
 <li>
 <p>Uma lista de valores <span class="arithmatex">\(x = \{x_0, x_1, x_2..., x_n\}\)</span> é considerada ordenada de forma ascendente se, para todo o índice <span class="arithmatex">\(i\)</span> no intervalo <span class="arithmatex">\([0, n-1]\)</span>, a condição <span class="arithmatex">\(x_i \leq x_{i+1}\)</span> for satisfeita. Construa um programa que leia um conjunto de <span class="arithmatex">\(n\)</span> valores inteiros (<span class="arithmatex">\(1 &lt; n &lt; 100\)</span>) e diga se os valores compõem ou não uma lista ordenada de forma ascendente.</p>
@@ -1407,7 +1411,7 @@ s = \sqrt{\sum_{i=0}^n{\frac{(x_i - \bar{x})^2}{n-1}}} \quad \text{(desvio padr�
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2 de abril de 2025 15:26:00">2 de abril de 2025 15:26:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="3 de abril de 2025 01:18:40">3 de abril de 2025 01:18:40</span>
   </span>
 
     

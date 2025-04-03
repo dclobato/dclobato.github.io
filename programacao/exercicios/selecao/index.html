@@ -1181,7 +1181,7 @@
 <p>Faça um programa que leia o número de um mês do primeiro semestre do ano (1 a 6) e escreva o nome correspondente. Seu programa deve avisar o usuário se ele digitar um valor fora da faixa possível.</p>
 </li>
 <li>
-<p>Construa um programa que leia três valores (A, B e C) e diga se a soma de A com B é menor, maior ou igual a C.</p>
+<p>Construa um programa que leia três valores (<span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> e <span class="arithmatex">\(c\)</span>) e diga se a soma de <span class="arithmatex">\(a\)</span> com <span class="arithmatex">\(b\)</span> é menor, maior ou igual a <span class="arithmatex">\(c\)</span>.</p>
 </li>
 <li>
 <p>Determinada empresa dá descontos para mulheres maiores de 45 anos e para jovens de qualquer sexo com menos de 18 anos. Faça um programa que leia o sexo e a idade de uma pessoa e diga se ela tem ou não direito a algum desconto</p>
@@ -1247,7 +1247,7 @@
 </tbody>
 </table>
 <p></center></p>
-<p>Por exemplo, alguém que ganha <span class="arithmatex">\(\text{R\$}~5000.00\)</span> vai pagar <span class="arithmatex">\(\text{R\$}~505.64\)</span> de imposto, pois <span class="arithmatex">\(5000 \times \dfrac{27,5}{100}-869,36=505,64\)</span>.</p>
+<p>Por exemplo, alguém que ganha <span class="arithmatex">\(\text{R\$}~5000.00\)</span> vai pagar <span class="arithmatex">\(\text{R\$}~505.64\)</span> de imposto, pois <span class="arithmatex">\(5000 \times \frac{27.5}{100}-869.36=505.64\)</span>.</p>
 </li>
 <li>
 <p>O sistema de avaliação de determinada disciplina, é composto por três provas. A primeira prova tem peso 2, a segunda tem peso 3 e a terceira tem peso 5. Faça um algoritmo para calcular a média final de um aluno desta disciplina e dizer se ele foi aprovado (média maior ou igual a seis), se deve fazer prova final (média maior que quatro e menor que 6) ou se foi reprovado (média menor ou igual a 4).</p>
@@ -1363,40 +1363,33 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: right;">Limite inferior (incluindo)</th>
-<th style="text-align: right;">Limite superior (excluindo)</th>
+<th style="text-align: center;">IMC</th>
 <th style="text-align: center;">Resultado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: right;">0,00</td>
-<td style="text-align: right;">18,5</td>
+<td style="text-align: center;"><span class="arithmatex">\([0, 18.5)\)</span></td>
 <td style="text-align: center;">Abaixo do peso</td>
 </tr>
 <tr>
-<td style="text-align: right;">18,5</td>
-<td style="text-align: right;">25,0</td>
+<td style="text-align: center;"><span class="arithmatex">\([18.5, 25)\)</span></td>
 <td style="text-align: center;">Peso normal</td>
 </tr>
 <tr>
-<td style="text-align: right;">25,0</td>
-<td style="text-align: right;">30,0</td>
+<td style="text-align: center;"><span class="arithmatex">\([25, 30)\)</span></td>
 <td style="text-align: center;">Sobrepeso</td>
 </tr>
 <tr>
-<td style="text-align: right;">30,0</td>
-<td style="text-align: right;">35,0</td>
+<td style="text-align: center;"><span class="arithmatex">\([30, 35)\)</span></td>
 <td style="text-align: center;">Obesidade grau 1</td>
 </tr>
 <tr>
-<td style="text-align: right;">35,0</td>
-<td style="text-align: right;">40,0</td>
+<td style="text-align: center;"><span class="arithmatex">\([35, 40)\)</span></td>
 <td style="text-align: center;">Obesidade grau 2</td>
 </tr>
 <tr>
-<td style="text-align: right;">40,0</td>
-<td style="text-align: right;">Ilimitado</td>
+<td style="text-align: center;"><span class="arithmatex">\(\geq 40\)</span></td>
 <td style="text-align: center;">Obesidade grau 3</td>
 </tr>
 </tbody>
@@ -1410,7 +1403,7 @@
 <p>Crie um programa que leia uma letra entre A e Z e imprima se a letra lida foi uma vogal ou uma consoante.</p>
 </li>
 <li>
-<p>Hoje os carros <em>flex</em>, que podem rodar com gasolina e/ou etanol, são comuns nas grandes cidades. Um problema que a maior parte dos donos de carros flex tem é decidir se vai abastecer com gasolina ou com etanol. Não adianta olhar, apenas, para o preço por litro (<span class="arithmatex">\(\text{R\$}~6,30\)</span> da gasolina contra <span class="arithmatex">\(\text{R\$}~4.00\)</span> do etanol por esses dias, por exemplo), porque o carro rodando com etanol gasta mais litros de combustível por Km rodado, e esse consumo varia de carro para carro. Por exemplo, um determinado carro pode fazer 18Km/litro com gasolina e 10Km/litro com etanol, enquanto outro faz 22Km/l contra 12Km/l. Você deve construir um programa que receba a distância que será percorrida pelo carro, o consumo em Km/l com gasolina e com etanol, os preços por litro da gasolina e do etanol e apresente para o usuário qual combustível é mais vantajoso (vai custar menos para fazer a viagem) e qual será o custo da viagem com esse combustível.</p>
+<p>Hoje os carros <em>flex</em>, que podem rodar com gasolina e/ou etanol, são comuns nas grandes cidades. Um problema que a maior parte dos donos de carros flex tem é decidir se vai abastecer com gasolina ou com etanol. Não adianta olhar, apenas, para o preço por litro (<span class="arithmatex">\(\text{R\$}~6.30\)</span> da gasolina contra <span class="arithmatex">\(\text{R\$}~4.00\)</span> do etanol por esses dias, por exemplo), porque o carro rodando com etanol gasta mais litros de combustível por Km rodado, e esse consumo varia de carro para carro. Por exemplo, um determinado carro pode fazer 18Km/litro com gasolina e 10Km/litro com etanol, enquanto outro faz 22Km/l contra 12Km/l. Você deve construir um programa que receba a distância que será percorrida pelo carro, o consumo em Km/l com gasolina e com etanol, os preços por litro da gasolina e do etanol e apresente para o usuário qual combustível é mais vantajoso (vai custar menos para fazer a viagem) e qual será o custo da viagem com esse combustível.</p>
 </li>
 <li>
 <p>Sobrou um dinheiro no final do mês e você tem diversas opções para investir esse dinheiro, variando as taxas (quanto ele aumenta por mês, com juros compostos ) e os prazos de investimento (quanto tempo ele vai ficar lá). Por exemplo, <span class="arithmatex">\(\text{R\$}~100.00\)</span> aplicados por 12 meses em uma taxa de 0,8% ao mês produzem <span class="arithmatex">\(\text{R\$}~110.03\)</span> no final do período. São tantas opções que o melhor a fazer é escrever um programa que receba o valor disponível para investir, as taxas e os prazos de duas aplicações e indique qual das duas é mais vantajosa (em qual você vai ter mais dinheiro no final do período de investimento)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
@@ -1421,25 +1414,25 @@
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Diárias</th>
+<th style="text-align: right;">Diárias</th>
 <th style="text-align: right;">Taxa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Até 3</td>
+<td style="text-align: right;"><span class="arithmatex">\(&lt;3\)</span></td>
 <td style="text-align: right;">R$ 20,00</td>
 </tr>
 <tr>
-<td style="text-align: left;">Entre 3 e 7</td>
+<td style="text-align: right;"><span class="arithmatex">\([3, 7)\)</span></td>
 <td style="text-align: right;">R$ 35,00</td>
 </tr>
 <tr>
-<td style="text-align: left;">Entre 7 e 10</td>
+<td style="text-align: right;"><span class="arithmatex">\([7, 10)\)</span></td>
 <td style="text-align: right;">R$ 40,00</td>
 </tr>
 <tr>
-<td style="text-align: left;">Acima de 10</td>
+<td style="text-align: right;"><span class="arithmatex">\(\geq 10\)</span></td>
 <td style="text-align: right;">R$ 50,00</td>
 </tr>
 </tbody>
@@ -1456,68 +1449,58 @@
 <p>Uma empresa de logística possui um grande armazém retangular utilizado para armazenar contêineres retangulares de dimensões fixas: A metros de largura, B metros de comprimento, e C metros de altura. O armazém é representado por uma área retangular horizontal de X metros de largura e Y metros de comprimento. O pé direito do armazém é Z metros, o que significa que os contêineres podem ser empilhados verticalmente, desde que a altura total da pilha não ultrapasse esse limite. Os contêineres podem ser dispostos no armazem de forma que sua largura e comprimento estejam alinhados com a largura e comprimento do armazém, ou alinhando largura do contêiner com o comprimento do armazém, e o comprimento do contêiner com a largura do armazem (girá-lo no sentido horário/anti-horário sobre o eixo da altura). Escreva um programa que leia as medidas dos contêineres e do armazem e determine a quantidade máxima de contêineres que podem ser armazenados dentro do armazém, obedecendo às restrições impostas.</p>
 </li>
 <li>
-<p>Dizem que o período de um ano humano corresponde a sete anos caninos. O problema é que essa conversão ignora que um cachorro chega à fase adulta em aproximadamente dois anos. Assim, algumas pessoas acham melhor contar cada um dos dois primeiros anos humanos como dez anos e meio caninos, e então contar cada ano adicional como quatro anos caninos. Escreva um programa que faça a conversão entre anos caninos e anos humanos. Seu programa deve escrever uma mensagem de erro se o usuário digitar uma idade negativa.</p>
+<p><img align="right" alt="Cachorrinho" src="../img/cachorro.png" width="150" />Dizem que o período de um ano humano corresponde a sete anos caninos. O problema é que essa conversão ignora que um cachorro chega à fase adulta em aproximadamente dois anos. Assim, algumas pessoas acham melhor contar cada um dos dois primeiros anos humanos como dez anos e meio caninos, e então contar cada ano adicional como quatro anos caninos. Escreva um programa que faça a conversão entre anos caninos e anos humanos. Seu programa deve escrever uma mensagem de erro se o usuário digitar uma idade negativa.</p>
 </li>
 <li>
 <p>Escreva um programa que receba o número de arestas de um polígono regular com até 10 arestas e escreva o nome do polígono em função do <a href="https://brasilescola.uol.com.br/matematica/poligonos.htm">número de lados</a>. Se o usuário digitar um número menor que 3 ou maior que 10, escreva uma mensagem de erro.</p>
 </li>
 <li>
-<p>O horóscopo chinês atribui animais aos anos em um ciclo de 12 anos de acordo com a tabela abaixo.  O padrão se repete nos anos anteriores e posteriores aos indicados na tabela (2012 é ano do Dragão, e 1999 é ano do Coelho. Escreva um programa que leia o ano de nascimento de um usuário (pode ser qualquer ano maior que 1900) e retorne o animal associado.</p>
+<p>O horóscopo chinês atribui animais aos anos em um ciclo de 12 anos de acordo com a tabela abaixo.  O padrão se repete nos anos anteriores e posteriores aos indicados na tabela (2024 foi ano do Dragão, e 1999 foi ano do Coelho). Escreva um programa que leia o ano de nascimento de um usuário (pode ser qualquer ano maior que 1900) e retorne o animal associado.</p>
 <p><center></p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Ano</th>
 <th style="text-align: left;">Animal</th>
+<th style="text-align: center;">Ano</th>
+<th style="text-align: left;">Animal</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">2000</td>
+<td style="text-align: center;">2012</td>
 <td style="text-align: left;">Dragão</td>
-</tr>
-<tr>
-<td style="text-align: center;">2001</td>
-<td style="text-align: left;">Cobra</td>
-</tr>
-<tr>
-<td style="text-align: center;">2002</td>
-<td style="text-align: left;">Cavalo</td>
-</tr>
-<tr>
-<td style="text-align: center;">2003</td>
-<td style="text-align: left;">Carneiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">2004</td>
-<td style="text-align: left;">Macaco</td>
-</tr>
-<tr>
-<td style="text-align: center;">2005</td>
-<td style="text-align: left;">Galo</td>
-</tr>
-<tr>
-<td style="text-align: center;">2006</td>
+<td style="text-align: center;">2018</td>
 <td style="text-align: left;">Cão</td>
 </tr>
 <tr>
-<td style="text-align: center;">2007</td>
+<td style="text-align: center;">2013</td>
+<td style="text-align: left;">Cobra</td>
+<td style="text-align: center;">2019</td>
 <td style="text-align: left;">Porco</td>
 </tr>
 <tr>
-<td style="text-align: center;">2008</td>
+<td style="text-align: center;">2014</td>
+<td style="text-align: left;">Cavalo</td>
+<td style="text-align: center;">2020</td>
 <td style="text-align: left;">Rato</td>
 </tr>
 <tr>
-<td style="text-align: center;">2009</td>
+<td style="text-align: center;">2015</td>
+<td style="text-align: left;">Carneiro</td>
+<td style="text-align: center;">2021</td>
 <td style="text-align: left;">Boi</td>
 </tr>
 <tr>
-<td style="text-align: center;">2010</td>
+<td style="text-align: center;">2016</td>
+<td style="text-align: left;">Macaco</td>
+<td style="text-align: center;">2022</td>
 <td style="text-align: left;">Tigre</td>
 </tr>
 <tr>
-<td style="text-align: center;">2011</td>
+<td style="text-align: center;">2017</td>
+<td style="text-align: left;">Galo</td>
+<td style="text-align: center;">2023</td>
 <td style="text-align: left;">Coelho</td>
 </tr>
 </tbody>
@@ -1525,10 +1508,14 @@
 <p></center></p>
 </li>
 <li>
-<p>Construa um programa que receba os coeficientes <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> e <span class="arithmatex">\(c\)</span> de uma equação do segundo grau <span class="arithmatex">\(\left (ax^2+bx+c=0 \right)\)</span> e escreva as raízes reais <span class="arithmatex">\(\left ( r = \dfrac{-b \pm \sqrt{\Delta}}{2a}; \Delta=b^2-4ac\right )\)</span>.  Se não houver raízes reais <span class="arithmatex">\(\left (\Delta &lt; 0\right )\)</span>, ou se as raízes forem iguais <span class="arithmatex">\(\left (\Delta = 0\right )\)</span>, escreva uma mensagem informando isso.</p>
+<p>Construa um programa que receba os coeficientes <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> e <span class="arithmatex">\(c\)</span> de uma equação do segundo grau <span class="arithmatex">\(\left (ax^2+bx+c=0 \right)\)</span> e escreva as raízes reais <span class="arithmatex">\(r\)</span>.  Se não houver raízes reais <span class="arithmatex">\(\left (\Delta &lt; 0\right )\)</span>, ou se houver apenas uma raíz real  <span class="arithmatex">\(\left (\Delta = 0\right )\)</span>, escreva uma mensagem informando isso.</p>
+<div class="arithmatex">\[
+r = \dfrac{-b \pm \sqrt{\Delta}}{2a} \quad \Delta = b^2-4ac
+\]</div>
 </li>
 <li>
 <p>O comprimento de onda da luz visível situa-se entre 380 e 750 nanômetros. Embora o espectro seja contínuo, costumamos dividi-lo em seis faixas de cores principais, conforme a tabela abaixo. Radiação com comprimentos de onda inferiores a 380nm é classificada como ultravioleta, enquanto comprimentos de onda superiores a 750nm correspondem à radiação infravermelha. Escreva um programa que leia um comprimento de onda informado pelo usuário (entre 100 e 1.000.000nm) e indique qual a "cor" desse comprimento de onda.</p>
+<p><img align="left" width="200" src="../img/arcoiris.jpg"></p>
 <p><center></p>
 <table>
 <thead>
@@ -1585,19 +1572,26 @@ d = \left( \text{ano} + \left\lfloor \frac{\text{ano} - 1}{4} \right\rfloor - \l
 <ul>
 <li>Número único (1 até 36)</li>
 <li>Vermelho ou preto</li>
-<li>Ímpar ou par (0 não é considerado par!)</li>
+<li>Ímpar ou par (0 não é considerado par na roleta!)</li>
 <li>1 a 18 ou 19 a 36</li>
 </ul>
-<p>Escreva um programa que gere um número aleatório entre 0 e 36, e indique quais apostas ganharam. Se o número sorteado for 0, quem ganha é apenas a banca.  Por exemplo, se o número 21 for sorteado, ganhou quem apostou:</p>
-<ul>
-<li>No próprio 21</li>
-<li>No vermelho</li>
-<li>No ímpar</li>
-<li>No 19 a 36</li>
-</ul>
 <p><center></p>
+<figure>
 <p><img alt="Roleta" src="../img/roleta.png" width="400" /></p>
+<figcaption>
+<p><small>Uma mesa do jogo de Roleta. License: CC BY-NC-ND 4.0</small></p>
+</figcaption>
+</figure>
 <p></center></p>
+<p>Escreva um programa que gere um número aleatório entre 0 e 36, e indique quais apostas ganharam. Se o número sorteado for 0, quem ganha é apenas a banca.  Por exemplo, se o número 21 for sorteado, o seu programa deve mostrar:</p>
+<div class="language-text highlight"><span class="filename">Resultado do sorteio do número 21</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Gira roleta, gira roleta... 21!
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Ganhou quem apostou:
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  - 21
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  - Vermelho
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  - Ímpar
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  - 19 a 36
+</span></code></pre></div>
 </li>
 <li>
 <p>Para que três segmentos de reta, com comprimentos <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> e <span class="arithmatex">\(c\)</span>, possam formar um triângulo, a soma dos comprimentos de quaisquer dois lados deve ser maior do que o comprimento do terceiro lado. Matematicamente, isso significa que:</p>
@@ -1640,7 +1634,7 @@ d = \left( \text{ano} + \left\lfloor \frac{\text{ano} - 1}{4} \right\rfloor - \l
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2 de abril de 2025 15:26:00">2 de abril de 2025 15:26:00</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="3 de abril de 2025 01:18:40">3 de abril de 2025 01:18:40</span>
   </span>
 
     
