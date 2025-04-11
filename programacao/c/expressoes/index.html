@@ -1378,6 +1378,96 @@
 </tr>
 </tbody>
 </table>
+<p>No pré-incremento (<code class="language-c highlight"><span class="o">++</span><span class="n">x</span></code>) ou pré-decremento (<code class="language-c highlight"><span class="o">--</span><span class="n">x</span></code>), o valor da variável é alterado antes de ser utilizado na expressão. Já no pós-incremento (<code class="language-c highlight"><span class="n">x</span><span class="o">++</span></code>) ou pós-decremento (<code class="language-c highlight"><span class="n">x</span><span class="o">--</span></code>), o valor original da variável é usado na expressão antes que o incremento ou decremento ocorra. Essa diferença, embora sutil, pode gerar resultados distintos em operações combinadas, como atribuições ou chamadas de funções. Por exemplo:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">++</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="c1">// y será 6, x também será 6</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// y será 5, x será 6</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Embora muitas vezes ambas as versões levem ao mesmo resultado quando usadas isoladamente, seu uso dentro de expressões compostas exige atenção. Veja o exemplo a seguir:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">--</span><span class="p">;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;a = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;b = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;c = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">c</span><span class="p">);</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Vamos analisar a linha <code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">--</span><span class="p">;</span></code></p>
+<p>Valores iniciais:
+  - <code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span></code>
+  - <code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span></code></p>
+<p>Vamos por partes, respeitando a ordem de avaliação dos operadores. Os operadores de pré-incremento/decremento (<code class="language-c highlight"><span class="o">++</span><span class="n">x</span></code>, <code class="language-c highlight"><span class="o">--</span><span class="n">x</span></code>) têm maior precedência que operadores aritméticos como <code class="language-c highlight"><span class="o">+</span></code> e <code class="language-c highlight"><span class="o">-</span></code>, e os operadores pós-incremento/decremento (<code class="language-c highlight"><span class="n">x</span><span class="o">++</span></code>, <code class="language-c highlight"><span class="n">x</span><span class="o">--</span></code>) também têm alta precedência (mas menor que os prefixados).</p>
+<p>A avaliação acontece da esquerda para a direita, levando em conta as alterações de valores no tempo certo (antes ou depois da utilização):</p>
+<ol>
+<li><code class="language-c highlight"><span class="n">a</span><span class="o">++</span></code>:</li>
+<li>Usa o valor atual de <code class="language-c highlight"><span class="n">a</span></code> (que é 5) na expressão  </li>
+<li>
+<p>Depois incrementa a para 6</p>
+</li>
+<li>
+<p><code class="language-c highlight"><span class="o">--</span><span class="n">b</span></code>:</p>
+</li>
+<li>Primeiro decrementa <code class="language-c highlight"><span class="n">b</span></code> de 10 para 9  </li>
+<li>
+<p>Depois usa esse valor (9) na expressão</p>
+</li>
+<li>
+<p><code class="language-c highlight"><span class="o">++</span><span class="n">a</span></code>: </p>
+</li>
+<li>Primeiro incrementa <code class="language-c highlight"><span class="n">a</span></code> de 6 para 7  </li>
+<li>
+<p>Depois usa esse valor (7) na expressão</p>
+</li>
+<li>
+<p><code class="language-c highlight"><span class="n">b</span><span class="o">--</span></code>: </p>
+</li>
+<li>Usa o valor atual de <code class="language-c highlight"><span class="n">b</span></code> (que é 9) na expressão  </li>
+<li>Depois decrementa <code class="language-c highlight"><span class="n">b</span></code> para 8</li>
+</ol>
+<p>Substituindo os valores na expressão:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w">       </span><span class="c1">// (a++)  </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span><span class="w">       </span><span class="c1">// (--b)  </span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w">       </span><span class="c1">// (++a)  </span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">      </span><span class="c1">// (b--)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Resultado final</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span>
+</span></code></pre></div></td></tr></table></div>
+<p>E os valores das variáveis no fim são:
+    - <code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span></code> (foi incrementado duas vezes)
+    - <code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span></code> (foi decrementado duas vezes)
+    - <code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span></code></p>
 <p>Quando os operandos são de tipos diferentes, mas compatíveis, o C faz uma conversão de tipo implícita, também conhecida como <strong>coerção</strong> ou <em>type juggling</em>. Nesse caso, dados de um ou mais subtipos podem ser convertidos em um supertipo se necessário.  Por exemplo, se um <code>int</code> for adicionado a um <code>float</code>, o <code>int</code> é implicitamente convertido em <code>float</code> e o resultado será do tipo <code>float</code>.</p>
 <pre class="mermaid"><code>flowchart TD
   subgraph s1 [Tipos inteiros]
@@ -1395,20 +1485,20 @@
 <p>Não lembrar desse pequeno detalhe pode acabar produzindo resultados não esperados durante a execução dos programas.</p>
 <div class="admonition failure">
 <p class="admonition-title">Incorreto</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">     </span><span class="c1">// r = 5/2</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">     </span><span class="c1">// r = 5/2</span>
 </span></code></pre></div>
 </div>
 <div class="admonition success">
 <p class="admonition-title">Correto</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">     </span><span class="c1">// r = 5.0/2</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="p">;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">     </span><span class="c1">// r = 5.0/2</span>
 </span></code></pre></div>
 </div>
 </div>
@@ -1440,151 +1530,64 @@
 </tr>
 </tbody>
 </table>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">a</th>
-<th style="text-align: center;"><strong>AND</strong></th>
-<th style="text-align: center;">b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center>
-<center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">a</th>
-<th style="text-align: center;"><strong>OR</strong></th>
-<th style="text-align: center;">b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center>
-<center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"><strong>NOT</strong></th>
-<th style="text-align: center;">a</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<center>
+
+| a | **AND** | b |
+| :--: | :--: | :--: |
+| Verdadeiro | **Verdadeiro** | Verdadeiro |
+| Verdadeiro | **Falso**      | Falso      |
+| Falso      | **Falso**      | Verdadeiro |
+| Falso      | **Falso**      | Falso      |
+
+</center>
+<center>
+
+| a | **OR** | b |
+| :--: | :--: | :--: |
+| Verdadeiro | **Verdadeiro** | Verdadeiro |
+| Verdadeiro | **Verdadeiro** | Falso      |
+| Falso      | **Verdadeiro** | Verdadeiro |
+| Falso      | **Falso**      | Falso      |
+
+</center>
+<center>
+
+| **NOT** | a |
+| :--: | :--: |
+| **Falso**      | Verdadeiro |
+| **Verdadeiro** | Falso      |
+
+</center>
+
 <p>Em C, a avaliação de operadores lógicos como <code>&amp;&amp;</code> (E lógico) e <code>||</code> (OU lógico) segue uma estratégia conhecida como "curto-circuito". Esse mecanismo otimiza a execução do código ao interromper a avaliação de uma expressão lógica assim que o resultado final pode ser determinado de forma inequívoca.</p>
 <p>No caso do operador <code>&amp;&amp;</code>, a avaliação ocorre da esquerda para a direita. Se o primeiro operando for avaliado como falso, o resultado final da expressão será necessariamente falso, independentemente do valor do segundo operando. Portanto, o segundo operando não é avaliado, evitando cálculos desnecessários e possíveis efeitos colaterais. Um exemplo prático seria a verificação de um ponteiro antes de acessar a memória que ele aponta: <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ptr</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span></code>. Se <code>ptr</code> for <code>NULL</code>, a segunda parte da condição (<code class="language-c highlight"><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">10</span></code>) não será avaliada, evitando um erro de acesso à memória inválida.</p>
 <p>De forma semelhante, o operador <code>||</code> também utiliza o curto-circuito. Se o primeiro operando for avaliado como verdadeiro, o resultado final da expressão será necessariamente verdadeiro, independentemente do valor do segundo operando. Logo, o segundo operando não é avaliado. Um exemplo comum é a verificação de múltiplas condições alternativas: <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">opcao</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">opcao</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;b&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">opcao</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;c&#39;</span><span class="p">)</span></code>. Se <code>opcao</code> for igual a <code>a</code>, as outras comparações não serão realizadas.</p>
 <p>Essa característica dos operadores lógicos em C não apenas melhora a eficiência do código, mas também permite escrever expressões mais seguras, prevenindo erros que poderiam ocorrer se todos os operandos fossem avaliados indiscriminadamente.</p>
 <h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
 <p>Os operadores relacionais retornam um valor do tipo <code class="language-c highlight"><span class="kt">bool</span></code> que indica se a relação é verdadeira ou falsa.    </p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Operação</th>
-<th style="text-align: center;">Sintaxe</th>
-<th style="text-align: left;">Exemplo e/ou observações</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Igual a</td>
-<td style="text-align: center;"><code>a == b</code></td>
-<td style="text-align: left;"><code>a</code> igual a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Não igual a<br>(diferente de)</td>
-<td style="text-align: center;"><code>a != b</code></td>
-<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Maior que</td>
-<td style="text-align: center;"><code>a &gt; b</code></td>
-<td style="text-align: left;"><code>a</code> maior que <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Menor que</td>
-<td style="text-align: center;"><code>a &lt; b</code></td>
-<td style="text-align: left;"><code>a</code> menor que <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Maior ou igual a</td>
-<td style="text-align: center;"><code>a &gt;= b</code></td>
-<td style="text-align: left;"><code>a</code> maior ou igual a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Menor ou igual a</td>
-<td style="text-align: center;"><code>a &lt;= b</code></td>
-<td style="text-align: left;"><code>a</code> menor ou igual a <code>b</code></td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<center>
+
+| Operação | Sintaxe | Exemplo e/ou observações
+| :-- | :--: | :--|
+| Igual a | `a == b` | `a` igual a `b` |
+| Não igual a<br>(diferente de) | `a != b` | `a` não igual (diferente) a `b` |
+| Maior que | `a > b` | `a` maior que `b` |
+| Menor que | `a < b` | `a` menor que `b`  |
+| Maior ou igual a | `a >= b` | `a` maior ou igual a `b` |
+| Menor ou igual a | `a <= b` | `a` menor ou igual a `b` |
+
+</center>
+
 <p>Em C, o operador de igualdade é um sinal de igual duplo (<code class="language-c highlight"><span class="o">==</span></code>), enquanto o sinal de igual simples (<code class="language-c highlight"><span class="o">=</span></code>) é utilizado para atribuição. No início, é comum confundir os sinais, então <strong>cuidado e atenção!</strong> Se você acidentalmente usar <code class="language-c highlight"><span class="o">=</span></code> em vez de <code class="language-c highlight"><span class="o">==</span></code> dentro de uma condição, poderá ter resultados inesperados.</p>
 <p>Por exemplo, a expressão abaixo não verifica se <code>a</code> é igual a <code>b</code>, mas sim atribui <code>b</code> a <code>a</code>. Como a atribuição retorna o valor atribuído, a condição será verdadeira sempre que <code>b</code> for diferente de zero:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// ERRO: deveria ser &quot;a == b&quot;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A condição é verdadeira!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// ERRO: deveria ser &quot;a == b&quot;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A condição é verdadeira!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>Se <code>b</code> for diferente de zero, <code>a</code> receberá <code>b</code>, e a condição será avaliada como verdadeira. Esse erro pode causar um comportamento inesperado no código. Para verificar a igualdade corretamente, sempre use <code class="language-c highlight"><span class="o">==</span></code>:</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Comparação correta</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A condição é verdadeira!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// Comparação correta</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;A condição é verdadeira!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
@@ -1646,39 +1649,17 @@
 </tbody>
 </table>
 <p>O operador XOR (OU-exclusivo) retorna verdadeiro apenas quando <code>a != b</code>.</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">a</th>
-<th style="text-align: center;"><strong>XOR</strong></th>
-<th style="text-align: center;">b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<center>
+
+| a | **XOR** | b |
+| :--: | :--: | :--: |
+| Verdadeiro | **Falso**      | Verdadeiro |
+| Verdadeiro | **Verdadeiro** | Falso      |
+| Falso      | **Verdadeiro** | Verdadeiro |
+| Falso      | **Falso**      | Falso      |
+
+</center>
+
 <h2 id="operadores-de-atribuicao">Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permanent link">&para;</a></h2>
 <p>Para operadores combinados na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span>, a operação equivalente é <span class="arithmatex">\(a = a \circledcirc b\)</span>.</p>
 <table>
@@ -1908,7 +1889,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="28 de março de 2025 20:21:21">28 de março de 2025 20:21:21</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de abril de 2025 13:21:25">11 de abril de 2025 13:21:25</span>
   </span>
 
     

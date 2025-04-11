@@ -1412,92 +1412,35 @@
 </tbody>
 </table>
 <p>As tabelas de verdade são idênticas às de C:</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">a</th>
-<th style="text-align: center;"><strong>AND</strong></th>
-<th style="text-align: center;">b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center>
-<center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">a</th>
-<th style="text-align: center;"><strong>OR</strong></th>
-<th style="text-align: center;">b</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Verdadeiro</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;">Falso</td>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center>
-<center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"><strong>NOT</strong></th>
-<th style="text-align: center;">a</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>Falso</strong></td>
-<td style="text-align: center;">Verdadeiro</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Verdadeiro</strong></td>
-<td style="text-align: center;">Falso</td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<center>
+
+| a | **AND** | b |
+| :--: | :--: | :--: |
+| Verdadeiro | **Verdadeiro** | Verdadeiro |
+| Verdadeiro | **Falso**      | Falso      |
+| Falso      | **Falso**      | Verdadeiro |
+| Falso      | **Falso**      | Falso      |
+
+</center>
+<center>
+
+| a | **OR** | b |
+| :--: | :--: | :--: |
+| Verdadeiro | **Verdadeiro** | Verdadeiro |
+| Verdadeiro | **Verdadeiro** | Falso      |
+| Falso      | **Verdadeiro** | Verdadeiro |
+| Falso      | **Falso**      | Falso      |
+
+</center>
+<center>
+
+| **NOT** | a |
+| :--: | :--: |
+| **Falso**      | Verdadeiro |
+| **Verdadeiro** | Falso      |
+
+</center>
+
 <p>Assim como em C, Python também implementa avaliação de curto-circuito para os operadores lógicos:</p>
 <ul>
 <li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code>, se <code>a</code> for falso, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
@@ -1519,69 +1462,23 @@
 <p>Todos os outros valores são considerados verdadeiros.</p>
 <h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
 <p>Python oferece os mesmos operadores relacionais que C, com algumas adições úteis.</p>
-<p><center></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Operação</th>
-<th style="text-align: center;">Sintaxe</th>
-<th style="text-align: left;">Exemplo e/ou observações</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Igual a</td>
-<td style="text-align: center;"><code>a == b</code></td>
-<td style="text-align: left;"><code>a</code> igual a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Não igual a<br>(diferente de)</td>
-<td style="text-align: center;"><code>a != b</code></td>
-<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Maior que</td>
-<td style="text-align: center;"><code>a &gt; b</code></td>
-<td style="text-align: left;"><code>a</code> maior que <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Menor que</td>
-<td style="text-align: center;"><code>a &lt; b</code></td>
-<td style="text-align: left;"><code>a</code> menor que <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Maior ou igual a</td>
-<td style="text-align: center;"><code>a &gt;= b</code></td>
-<td style="text-align: left;"><code>a</code> maior ou igual a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Menor ou igual a</td>
-<td style="text-align: center;"><code>a &lt;= b</code></td>
-<td style="text-align: left;"><code>a</code> menor ou igual a <code>b</code></td>
-</tr>
-<tr>
-<td style="text-align: left;">Identidade</td>
-<td style="text-align: center;"><code>a is b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> referem-se ao mesmo objeto em memória</td>
-</tr>
-<tr>
-<td style="text-align: left;">Não identidade</td>
-<td style="text-align: center;"><code>a is not b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> não referem-se ao mesmo objeto</td>
-</tr>
-<tr>
-<td style="text-align: left;">Contém</td>
-<td style="text-align: center;"><code>a in b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> está contido em <code>b</code> (para sequências e coleções)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Não contém</td>
-<td style="text-align: center;"><code>a not in b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> não está contido em <code>b</code></td>
-</tr>
-</tbody>
-</table>
-<p></center></p>
+<center>
+
+| Operação | Sintaxe | Exemplo e/ou observações
+| :-- | :--: | :--|
+| Igual a | `a == b` | `a` igual a `b` |
+| Não igual a<br>(diferente de) | `a != b` | `a` não igual (diferente) a `b` |
+| Maior que | `a > b` | `a` maior que `b` |
+| Menor que | `a < b` | `a` menor que `b`  |
+| Maior ou igual a | `a >= b` | `a` maior ou igual a `b` |
+| Menor ou igual a | `a <= b` | `a` menor ou igual a `b` |
+| Identidade | `a is b` | Verifica se `a` e `b` referem-se ao mesmo objeto em memória |
+| Não identidade | `a is not b` | Verifica se `a` e `b` não referem-se ao mesmo objeto |
+| Contém | `a in b` | Verifica se `a` está contido em `b` (para sequências e coleções) |
+| Não contém | `a not in b` | Verifica se `a` não está contido em `b` |
+
+</center>
+
 <p>Uma característica poderosa de Python é que os operadores relacionais podem ser encadeados, o que não é possível em C. Por exemplo:</p>
 <div class="language-python highlight"><span class="filename">Encadeamento de operadores relacionais</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Em Python, isso funciona como esperado</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>

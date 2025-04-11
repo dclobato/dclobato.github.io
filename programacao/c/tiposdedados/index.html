@@ -1564,6 +1564,12 @@
 <p>O tipo <code class="language-c highlight"><span class="kt">int</span></code> deve ser o tipo inteiro que o processador alvo do programa compilado é mais eficiente manipulando. Isso permite grande flexibilidade: por exemplo, todos os tipos podem ser de 64 bits.</p>
 <p>O padrão C99 também adicionou os tipos complexos <code class="language-c highlight"><span class="kt">float</span><span class="w"> </span><span class="kt">_Complex</span></code>, <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="kt">_Complex</span></code>, <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="kt">_Complex</span></code>. Os tipos imaginários <code class="language-c highlight"><span class="kt">float</span><span class="w"> </span><span class="k">_Imaginary</span></code>, <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="k">_Imaginary</span></code> e <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="k">_Imaginary</span></code> foram adicionados no padrão C11, junto com a biblioteca <code class="language-c highlight"><span class="o">&lt;</span><span class="k">complex</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code> que permite acesso aos tipos complexo e imaginário.</p>
 <p>O tipo <code class="language-c highlight"><span class="kt">bool</span></code> foi introduzido no padrão C99 (<code class="language-c highlight"><span class="o">&lt;</span><span class="n">stdbool</span><span class="p">.</span><span class="n">h</span><span class="o">&gt;</span></code>), e melhorado no C23, mas é importante notar que antes disso, inteiros eram usados para representar valores booleanos (<code>0</code> para falso e qualquer outro valor para verdadeiro).</p>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>O que acontece se eu tentar colocar um número maior que o maior valor que determinado tipo de dado por armazenar? É como tentar colocar um tênis tamanho 45 numa caixa de sapato feita para tamanho 38.</p>
+<p>A linguagem C não avisa com um erros de compilação ou de execução sobre isso. Ela simplesmente dá a volta nos números. Isso se chama <strong><em>overflow</em></strong>.</p>
+<p>O mesmo vale para valores menores que o menor valor que o tipo consegue armazenar: acontece o <strong><em>underflow</em></strong> &mdash; número "passa do fundo" e volta para o lado positivo.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Tipos de tamanho fixo</p>
 <p>Os tipos inteiros em C foram projetados para tornar o código portátil entre máquinas com diferentes tamanhos de palavra, o que significa que cada tipo pode ter diferentes intervalos de valores dependendo da arquitetura. No entanto, essa variação pode ser problemática quando um programa precisa operar com um intervalo específico de inteiros ou um tamanho fixo de armazenamento, independentemente da máquina em que será executado. A partir da versão C99 foram introduzidas definições de tipos que permitem declarar inteiros com tamanhos exatos, garantindo que o código-fonte do programa permaneça independente da arquitetura subjacente. Os tipos são os seguintes:</p>
@@ -2246,7 +2252,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 12:17:26">31 de março de 2025 12:17:26</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de abril de 2025 13:21:25">11 de abril de 2025 13:21:25</span>
   </span>
 
     
