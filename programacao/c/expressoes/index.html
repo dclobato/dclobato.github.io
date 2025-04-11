@@ -1379,7 +1379,7 @@
 </tbody>
 </table>
 <p>No pré-incremento (<code class="language-c highlight"><span class="o">++</span><span class="n">x</span></code>) ou pré-decremento (<code class="language-c highlight"><span class="o">--</span><span class="n">x</span></code>), o valor da variável é alterado antes de ser utilizado na expressão. Já no pós-incremento (<code class="language-c highlight"><span class="n">x</span><span class="o">++</span></code>) ou pós-decremento (<code class="language-c highlight"><span class="n">x</span><span class="o">--</span></code>), o valor original da variável é usado na expressão antes que o incremento ou decremento ocorra. Essa diferença, embora sutil, pode gerar resultados distintos em operações combinadas, como atribuições ou chamadas de funções. Por exemplo:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
@@ -1390,7 +1390,7 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// y será 5, x será 6</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Embora muitas vezes ambas as versões levem ao mesmo resultado quando usadas isoladamente, seu uso dentro de expressões compostas exige atenção. Veja o exemplo a seguir:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -1421,39 +1421,45 @@
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Vamos analisar a linha <code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">--</span><span class="p">;</span></code></p>
-<p>Valores iniciais:
-  - <code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span></code>
-  - <code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span></code></p>
+<p>Valores iniciais:</p>
+<ul>
+<li><code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span></code></li>
+<li><code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span></code></li>
+</ul>
 <p>Vamos por partes, respeitando a ordem de avaliação dos operadores. Os operadores de pré-incremento/decremento (<code class="language-c highlight"><span class="o">++</span><span class="n">x</span></code>, <code class="language-c highlight"><span class="o">--</span><span class="n">x</span></code>) têm maior precedência que operadores aritméticos como <code class="language-c highlight"><span class="o">+</span></code> e <code class="language-c highlight"><span class="o">-</span></code>, e os operadores pós-incremento/decremento (<code class="language-c highlight"><span class="n">x</span><span class="o">++</span></code>, <code class="language-c highlight"><span class="n">x</span><span class="o">--</span></code>) também têm alta precedência (mas menor que os prefixados).</p>
 <p>A avaliação acontece da esquerda para a direita, levando em conta as alterações de valores no tempo certo (antes ou depois da utilização):</p>
 <ol>
-<li><code class="language-c highlight"><span class="n">a</span><span class="o">++</span></code>:</li>
-<li>Usa o valor atual de <code class="language-c highlight"><span class="n">a</span></code> (que é 5) na expressão  </li>
 <li>
-<p>Depois incrementa a para 6</p>
+<p><code class="language-c highlight"><span class="n">a</span><span class="o">++</span></code>:</p>
+<ul>
+<li>Usa o valor atual de <code class="language-c highlight"><span class="n">a</span></code> (que é 5) na expressão  </li>
+<li>Depois incrementa a para 6</li>
+</ul>
 </li>
 <li>
 <p><code class="language-c highlight"><span class="o">--</span><span class="n">b</span></code>:</p>
-</li>
+<ul>
 <li>Primeiro decrementa <code class="language-c highlight"><span class="n">b</span></code> de 10 para 9  </li>
-<li>
-<p>Depois usa esse valor (9) na expressão</p>
+<li>Depois usa esse valor (9) na expressão</li>
+</ul>
 </li>
 <li>
 <p><code class="language-c highlight"><span class="o">++</span><span class="n">a</span></code>: </p>
-</li>
+<ul>
 <li>Primeiro incrementa <code class="language-c highlight"><span class="n">a</span></code> de 6 para 7  </li>
-<li>
-<p>Depois usa esse valor (7) na expressão</p>
+<li>Depois usa esse valor (7) na expressão</li>
+</ul>
 </li>
 <li>
 <p><code class="language-c highlight"><span class="n">b</span><span class="o">--</span></code>: </p>
-</li>
+<ul>
 <li>Usa o valor atual de <code class="language-c highlight"><span class="n">b</span></code> (que é 9) na expressão  </li>
 <li>Depois decrementa <code class="language-c highlight"><span class="n">b</span></code> para 8</li>
+</ul>
+</li>
 </ol>
 <p>Substituindo os valores na expressão:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w">       </span><span class="c1">// (a++)  </span>
@@ -1461,13 +1467,14 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w">       </span><span class="c1">// (++a)  </span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">      </span><span class="c1">// (b--)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Resultado final</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Resultado final</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a>c = 5 + 9 + 7 - 9 = 12
 </span></code></pre></div></td></tr></table></div>
-<p>E os valores das variáveis no fim são:
-    - <code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span></code> (foi incrementado duas vezes)
-    - <code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span></code> (foi decrementado duas vezes)
-    - <code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span></code></p>
+<p>E os valores das variáveis no fim são:</p>
+<ul>
+<li><code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span></code> (foi incrementado duas vezes)</li>
+<li><code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span></code> (foi decrementado duas vezes)</li>
+<li><code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span></code></li>
+</ul>
 <p>Quando os operandos são de tipos diferentes, mas compatíveis, o C faz uma conversão de tipo implícita, também conhecida como <strong>coerção</strong> ou <em>type juggling</em>. Nesse caso, dados de um ou mais subtipos podem ser convertidos em um supertipo se necessário.  Por exemplo, se um <code>int</code> for adicionado a um <code>float</code>, o <code>int</code> é implicitamente convertido em <code>float</code> e o resultado será do tipo <code>float</code>.</p>
 <pre class="mermaid"><code>flowchart TD
   subgraph s1 [Tipos inteiros]
@@ -1889,7 +1896,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de abril de 2025 13:21:25">11 de abril de 2025 13:21:25</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de abril de 2025 13:28:13">11 de abril de 2025 13:28:13</span>
   </span>
 
     
