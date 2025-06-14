@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -1974,55 +1974,181 @@
 </span><span id="__span-3-40"><a id="__codelineno-3-40" name="__codelineno-3-40"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="mascaras-de-formatacao-para-printf-e-scanf">Máscaras de formatação para printf e scanf<a class="headerlink" href="#mascaras-de-formatacao-para-printf-e-scanf" title="Permanent link">&para;</a></h2>
-<center>
-
-| Máscara | Significado | Tipo de dados associado |
-| :--- | :--- | :--- |
-| `%c` | Caractere | `char` |
-| `%d` ou `%i` | Número decimal inteiro com sinal (base 10) | `int` |
-| `%ld` | Número decimal inteiro longo com sinal (base 10) | `long int` |
-| `%lld` | Número decimal inteiro longo longo com sinal (base 10) | `long long int` |
-| `%lu` | Número decimal inteiro longo sem sinal (base 10) | `long unsigned int` |
-| `%llu` | Número decimal inteiro longo longo sem sinal (base 10) | `long long unsigned int` |
-| `%e` ou `%E` | Número de ponto flutuante com notação exponencial | `float` ou `double` |
-| `%f` | Número de ponto flutuante (decimal) | `float` |
-| `%lf` | Número de ponto flutuante de precisão dupla (double) | `double` |
-| `%Lf` | Número de ponto flutuante de precisão estendida | `long double` |
-| `%g` ou `%G` | Escolhe automaticamente `%e` ou `%f` com base no valor | `float` ou `double` |
-| `%o` | Número octal (base 8) | `int` |
-| `%s` | Cadeia de caracteres (string) | `char *` |
-| `%u` | Número decimal inteiro sem sinal (base 10) | `unsigned int` |
-| `%x` ou `%X` | Número hexadecimal (base 16) | `unsigned int` |
-| `%p` | Endereço de ponteiro (em hexadecimal) | `void *` |
-| `%%` | Caractere literal `%` | N/A |
-
-</center>
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Máscara</th>
+<th style="text-align: left;">Significado</th>
+<th style="text-align: left;">Tipo de dados associado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>%c</code></td>
+<td style="text-align: left;">Caractere</td>
+<td style="text-align: left;"><code>char</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%d</code> ou <code>%i</code></td>
+<td style="text-align: left;">Número decimal inteiro com sinal (base 10)</td>
+<td style="text-align: left;"><code>int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%ld</code></td>
+<td style="text-align: left;">Número decimal inteiro longo com sinal (base 10)</td>
+<td style="text-align: left;"><code>long int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%lld</code></td>
+<td style="text-align: left;">Número decimal inteiro longo longo com sinal (base 10)</td>
+<td style="text-align: left;"><code>long long int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%lu</code></td>
+<td style="text-align: left;">Número decimal inteiro longo sem sinal (base 10)</td>
+<td style="text-align: left;"><code>long unsigned int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%llu</code></td>
+<td style="text-align: left;">Número decimal inteiro longo longo sem sinal (base 10)</td>
+<td style="text-align: left;"><code>long long unsigned int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%e</code> ou <code>%E</code></td>
+<td style="text-align: left;">Número de ponto flutuante com notação exponencial</td>
+<td style="text-align: left;"><code>float</code> ou <code>double</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%f</code></td>
+<td style="text-align: left;">Número de ponto flutuante (decimal)</td>
+<td style="text-align: left;"><code>float</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%lf</code></td>
+<td style="text-align: left;">Número de ponto flutuante de precisão dupla (double)</td>
+<td style="text-align: left;"><code>double</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%Lf</code></td>
+<td style="text-align: left;">Número de ponto flutuante de precisão estendida</td>
+<td style="text-align: left;"><code>long double</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%g</code> ou <code>%G</code></td>
+<td style="text-align: left;">Escolhe automaticamente <code>%e</code> ou <code>%f</code> com base no valor</td>
+<td style="text-align: left;"><code>float</code> ou <code>double</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%o</code></td>
+<td style="text-align: left;">Número octal (base 8)</td>
+<td style="text-align: left;"><code>int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%s</code></td>
+<td style="text-align: left;">Cadeia de caracteres (string)</td>
+<td style="text-align: left;"><code>char *</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%u</code></td>
+<td style="text-align: left;">Número decimal inteiro sem sinal (base 10)</td>
+<td style="text-align: left;"><code>unsigned int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%x</code> ou <code>%X</code></td>
+<td style="text-align: left;">Número hexadecimal (base 16)</td>
+<td style="text-align: left;"><code>unsigned int</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%p</code></td>
+<td style="text-align: left;">Endereço de ponteiro (em hexadecimal)</td>
+<td style="text-align: left;"><code>void *</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%%</code></td>
+<td style="text-align: left;">Caractere literal <code>%</code></td>
+<td style="text-align: left;">N/A</td>
+</tr>
+</tbody>
+</table>
 <h2 id="modificadores-para-alinhamento-e-tamanho">Modificadores para alinhamento e tamanho<a class="headerlink" href="#modificadores-para-alinhamento-e-tamanho" title="Permanent link">&para;</a></h2>
-<center>
-
-| Exemplo | Resultado[^2] |
-| :--- | ---: |
-| `#!c printf("[%3d]", 0);` | `[__0]` |
-| `#!c printf("[%3d]", 123456789);` | `[123456789]` |
-| `#!c printf("[%3d]", -10);` | `[-10]` |
-| `#!c printf("[%3d]", -123456789);` | `[-123456789]` |
-| `#!c printf("[%-3d]", 0);` | `[0__]` |
-| `#!c printf("[%-3d]", 123456789);` | `[123456789]` |
-| `#!c printf("[%-3d]", -10);` | `[-10]` |
-| `#!c printf("[%-3d]", -123456789);` | `[-123456789]` |
-| `#!c printf("[%03d]", 0);` | `[000]` |
-| `#!c printf("[%03d]", 1);` | `[001]` |
-| `#!c printf("[%03d]", 123456789);` | `[123456789]` |
-| `#!c printf("[%03d]", -10);` | `[-10]` |
-| `#!c printf("[%03d]", -123456789);` | `[-123456789]` |
-| `#!c printf("[%+5d]", 10);` | `[__+10]` |
-| `#!c printf("[%-+5d]", 10);` | `[+10__]` |
-| `#!c printf("[%6.2f]", 6.4);` | `[__6.40]` |
-| `#!c printf("[%.2f]", 6.4);` | `[6.40]` |
-
-</center>
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Exemplo</th>
+<th style="text-align: right;">Resultado<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[__0]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123456789</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[123456789]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-10</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[-10]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-123456789</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[-123456789]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%-3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[0__]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%-3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123456789</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[123456789]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%-3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-10</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[-10]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%-3d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-123456789</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[-123456789]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%03d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[000]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%03d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[001]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%03d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123456789</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[123456789]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%03d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-10</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[-10]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%03d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-123456789</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[-123456789]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%+5d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[__+10]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%-+5d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[+10__]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%6.2f]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">6.4</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[__6.40]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%.2f]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">6.4</span><span class="p">);</span></code></td>
+<td style="text-align: right;"><code>[6.40]</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="numeros-aleatorios">Números aleatórios<a class="headerlink" href="#numeros-aleatorios" title="Permanent link">&para;</a></h2>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">aleatorios.h</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -2463,27 +2589,87 @@
 </tbody>
 </table>
 <h3 id="mathh"><code>math.h</code><a class="headerlink" href="#mathh" title="Permanent link">&para;</a></h3>
-<center>
-
-| Macro | Valor | Descrição |
-| :- | -: | :- |
-| `M_E` | $e$ | Base dos logaritmos naturais |
-| `M_LOG2E` | $\log_2e$ | Logaritmo de *e* na base 2 |
-| `M_LOG10E` | $\log_{10}e$ | Logaritmo de *e* na base 10 |
-| `M_LN2` | $\ln 2$ | Logaritmo natural de 2 |
-| `M_LN10` | $\ln 10$ | Logaritmo natural de 10 |
-| `M_PI` | $\pi$ | Constante pi (razão entre a circunferência e o diâmetro de um círculo) |
-| `M_PI_2` | $\dfrac{\pi}{2}$ | Metade de pi |
-| `M_PI_4` | $\dfrac{\pi}{4}$ | Um quarto de pi |
-| `M_1_PI` | $\dfrac{1}{\pi}$ | Inverso de pi |
-| `M_2_PI` | $\dfrac{2}{\pi}$ | Duas vezes o inverso de pi |
-| `M_2_SQRTPI` | $\dfrac{2}{\sqrt{\pi}}$ | Duas vezes o inverso da raiz quadrada de pi |
-| `M_SQRT2` | $\sqrt{2}$ | Raiz quadrada de 2 |
-| `M_SQRT1_2` | $\dfrac{1}{\sqrt{2}}$ | Inverso da raiz quadrada de 2 |
-| `INFINITY` | $\infty$ | Representa o infinito (positivo) |
-
-</center>
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Macro</th>
+<th style="text-align: right;">Valor</th>
+<th style="text-align: left;">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>M_E</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(e\)</span></td>
+<td style="text-align: left;">Base dos logaritmos naturais</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_LOG2E</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\log_2e\)</span></td>
+<td style="text-align: left;">Logaritmo de <em>e</em> na base 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_LOG10E</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\log_{10}e\)</span></td>
+<td style="text-align: left;">Logaritmo de <em>e</em> na base 10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_LN2</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\ln 2\)</span></td>
+<td style="text-align: left;">Logaritmo natural de 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_LN10</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\ln 10\)</span></td>
+<td style="text-align: left;">Logaritmo natural de 10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_PI</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\pi\)</span></td>
+<td style="text-align: left;">Constante pi (razão entre a circunferência e o diâmetro de um círculo)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_PI_2</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\dfrac{\pi}{2}\)</span></td>
+<td style="text-align: left;">Metade de pi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_PI_4</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\dfrac{\pi}{4}\)</span></td>
+<td style="text-align: left;">Um quarto de pi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_1_PI</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\dfrac{1}{\pi}\)</span></td>
+<td style="text-align: left;">Inverso de pi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_2_PI</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\dfrac{2}{\pi}\)</span></td>
+<td style="text-align: left;">Duas vezes o inverso de pi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_2_SQRTPI</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\dfrac{2}{\sqrt{\pi}}\)</span></td>
+<td style="text-align: left;">Duas vezes o inverso da raiz quadrada de pi</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_SQRT2</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\sqrt{2}\)</span></td>
+<td style="text-align: left;">Raiz quadrada de 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>M_SQRT1_2</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\dfrac{1}{\sqrt{2}}\)</span></td>
+<td style="text-align: left;">Inverso da raiz quadrada de 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>INFINITY</code></td>
+<td style="text-align: right;"><span class="arithmatex">\(\infty\)</span></td>
+<td style="text-align: left;">Representa o infinito (positivo)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="funcoes-relevantes">Funções relevantes<a class="headerlink" href="#funcoes-relevantes" title="Permanent link">&para;</a></h2>
 <h3 id="mathh_1"><code>math.h</code><a class="headerlink" href="#mathh_1" title="Permanent link">&para;</a></h3>
 <p>A biblioteca <code>math.h</code> contém funções matemáticas comuns, como operações de potência, raiz, trigonometria e logaritmos. Algumas das principais funções incluem:</p>
@@ -2685,7 +2871,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="29 de março de 2025 01:52:22">29 de março de 2025 01:52:22</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="14 de junho de 2025 01:49:22 -03">14 de junho de 2025 01:49:22</span>
   </span>
 
     
@@ -2695,7 +2881,7 @@
     <span class="md-icon" title="Criado em">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41">8 de março de 2025 15:40:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de março de 2025 15:40:41 -03">8 de março de 2025 15:40:41</span>
   </span>
 
     
@@ -2824,10 +3010,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       
