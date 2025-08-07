@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -708,6 +708,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -969,6 +975,75 @@
   
   <span class="md-ellipsis">
     Duck typing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrada_saida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em Python
     
   </span>
   
@@ -1412,35 +1487,86 @@
 </tbody>
 </table>
 <p>As tabelas de verdade são idênticas às de C:</p>
-<center>
-
-| a | **AND** | b |
-| :--: | :--: | :--: |
-| Verdadeiro | **Verdadeiro** | Verdadeiro |
-| Verdadeiro | **Falso**      | Falso      |
-| Falso      | **Falso**      | Verdadeiro |
-| Falso      | **Falso**      | Falso      |
-
-</center>
-<center>
-
-| a | **OR** | b |
-| :--: | :--: | :--: |
-| Verdadeiro | **Verdadeiro** | Verdadeiro |
-| Verdadeiro | **Verdadeiro** | Falso      |
-| Falso      | **Verdadeiro** | Verdadeiro |
-| Falso      | **Falso**      | Falso      |
-
-</center>
-<center>
-
-| **NOT** | a |
-| :--: | :--: |
-| **Falso**      | Verdadeiro |
-| **Verdadeiro** | Falso      |
-
-</center>
-
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>AND</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">a</th>
+<th style="text-align: center;"><strong>OR</strong></th>
+<th style="text-align: center;">b</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Verdadeiro</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;">Falso</td>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>NOT</strong></th>
+<th style="text-align: center;">a</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>Falso</strong></td>
+<td style="text-align: center;">Verdadeiro</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Verdadeiro</strong></td>
+<td style="text-align: center;">Falso</td>
+</tr>
+</tbody>
+</table>
 <p>Assim como em C, Python também implementa avaliação de curto-circuito para os operadores lógicos:</p>
 <ul>
 <li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code>, se <code>a</code> for falso, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
@@ -1462,23 +1588,67 @@
 <p>Todos os outros valores são considerados verdadeiros.</p>
 <h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
 <p>Python oferece os mesmos operadores relacionais que C, com algumas adições úteis.</p>
-<center>
-
-| Operação | Sintaxe | Exemplo e/ou observações
-| :-- | :--: | :--|
-| Igual a | `a == b` | `a` igual a `b` |
-| Não igual a<br>(diferente de) | `a != b` | `a` não igual (diferente) a `b` |
-| Maior que | `a > b` | `a` maior que `b` |
-| Menor que | `a < b` | `a` menor que `b`  |
-| Maior ou igual a | `a >= b` | `a` maior ou igual a `b` |
-| Menor ou igual a | `a <= b` | `a` menor ou igual a `b` |
-| Identidade | `a is b` | Verifica se `a` e `b` referem-se ao mesmo objeto em memória |
-| Não identidade | `a is not b` | Verifica se `a` e `b` não referem-se ao mesmo objeto |
-| Contém | `a in b` | Verifica se `a` está contido em `b` (para sequências e coleções) |
-| Não contém | `a not in b` | Verifica se `a` não está contido em `b` |
-
-</center>
-
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operação</th>
+<th style="text-align: center;">Sintaxe</th>
+<th style="text-align: left;">Exemplo e/ou observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Igual a</td>
+<td style="text-align: center;"><code>a == b</code></td>
+<td style="text-align: left;"><code>a</code> igual a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Não igual a<br>(diferente de)</td>
+<td style="text-align: center;"><code>a != b</code></td>
+<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maior que</td>
+<td style="text-align: center;"><code>a &gt; b</code></td>
+<td style="text-align: left;"><code>a</code> maior que <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menor que</td>
+<td style="text-align: center;"><code>a &lt; b</code></td>
+<td style="text-align: left;"><code>a</code> menor que <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maior ou igual a</td>
+<td style="text-align: center;"><code>a &gt;= b</code></td>
+<td style="text-align: left;"><code>a</code> maior ou igual a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Menor ou igual a</td>
+<td style="text-align: center;"><code>a &lt;= b</code></td>
+<td style="text-align: left;"><code>a</code> menor ou igual a <code>b</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Identidade</td>
+<td style="text-align: center;"><code>a is b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> referem-se ao mesmo objeto em memória</td>
+</tr>
+<tr>
+<td style="text-align: left;">Não identidade</td>
+<td style="text-align: center;"><code>a is not b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> não referem-se ao mesmo objeto</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contém</td>
+<td style="text-align: center;"><code>a in b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> está contido em <code>b</code> (para sequências e coleções)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Não contém</td>
+<td style="text-align: center;"><code>a not in b</code></td>
+<td style="text-align: left;">Verifica se <code>a</code> não está contido em <code>b</code></td>
+</tr>
+</tbody>
+</table>
 <p>Uma característica poderosa de Python é que os operadores relacionais podem ser encadeados, o que não é possível em C. Por exemplo:</p>
 <div class="language-python highlight"><span class="filename">Encadeamento de operadores relacionais</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Em Python, isso funciona como esperado</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
@@ -1839,7 +2009,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34 -03">31 de março de 2025 00:49:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="7 de agosto de 2025 13:14:55 -03">7 de agosto de 2025 13:14:55</span>
   </span>
 
     
@@ -1961,7 +2131,7 @@
       
     
     <a href="https://github.com/TINF-IFSP-RioPreto" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -1981,7 +2151,7 @@
       <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       
