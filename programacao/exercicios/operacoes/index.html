@@ -966,6 +966,8 @@
       
         
       
+        
+      
     
     
     
@@ -1075,6 +1077,29 @@
   
   <span class="md-ellipsis">
     Estruturas de repetição e arranjos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diversos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assuntos diversos
     
   </span>
   
@@ -1345,6 +1370,30 @@
 <li>
 <p>O custo de uma corrida de táxi é calculado a partir de um valor fixo inicial ("bandeirada") acrescido de um determinado valor por cada 250m percorridos. Construa um programa que leia o valor da "bandeirada", o valor a cada 250m percorrido e a distância percorrida para, então, calcular e imprimir o valor total da corrida.</p>
 </li>
+<li>
+<p>Em matemática, todo número natural elevado ao cubo pode ser obtido somando <span class="arithmatex">\(n\)</span> números ímpares consecutivos. Por exemplo, 
+<span class="arithmatex">\(3^3 = 27\)</span>, e <span class="arithmatex">\(27=7+9+11\)</span>. Construa um programa que leia um número inteiro positivo <span class="arithmatex">\(n\)</span> informado pelo usuário para, depois, calcular e exibir na tela quais são os <span class="arithmatex">\(n\)</span> números ímpares consecutivos cuja soma resulta em <span class="arithmatex">\(n^3\)</span>.</p>
+</li>
+<li>
+<p>Um número <span class="arithmatex">\(i\)</span> é congruente módulo <span class="arithmatex">\(m\)</span> a <span class="arithmatex">\(j\)</span> se <span class="arithmatex">\(i \bmod m =j \bmod n\)</span>. Por exemplo, <span class="arithmatex">\(21\)</span> é congruente módulo <span class="arithmatex">\(13\)</span> a <span class="arithmatex">\(60\)</span>, pois <span class="arithmatex">\(21 \bmod 13 = 8 = 60 \bmod 21\)</span>. Construa um programa que leia os valores de <span class="arithmatex">\(n\)</span>, <span class="arithmatex">\(j\)</span> e <span class="arithmatex">\(m\)</span>, e imprima os primeiros <span class="arithmatex">\(n\)</span> primeiros naturais congruentes a <span class="arithmatex">\(j\)</span> módulo <span class="arithmatex">\(m\)</span>.</p>
+</li>
+<li>
+<p>O Futebol Americano é cheio de estatísticas. Uma delas é a chamada <em>Passer Rating</em>, uma espécie de nota geral do <em>quarterback</em>. A fórmula adotada pela NFL inclui quatro variáveis calculadas a partir de cinco parâmetros: tentativas de passe (ATT), passes completos (CMP), jardas passadas (YDS), passes para touchdown(TD) e interceptações(INT). Cada uma dessas variáveis é dimensionada para um valor entre 0 e 2,375, sendo 1,0 estatisticamente médio (com base em dados da liga entre 1960 e 1970). Quando a fórmula foi criada, uma classificação de 66,7 indicava um desempenho médio e uma classificação acima de 100 indicava um desempenho excelente. No entanto, o desempenho de passes tem melhorado constantemente desde então e, em 2024, a classificação média da liga era de <a href="https://www.pro-football-reference.com/years/2024/#all_passing">92,3</a>. As variáveis são calculadas da seguinte forma<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>:</p>
+<div class="arithmatex">\[
+a = \left  ({\text{CMP} \over \text{ATT}} - 0.3 \right ) \times 5 \\
+b = \left ({\text{YDS} \over \text{ATT}} - 3 \right ) \times 0.25 \\
+c = \left ({\text{TD} \over \text{ATT}} \right ) \times 20 \\
+d = 2.375 - \left ({\text{INT} \over \text{ATT}} \times 25 \right )
+\]</div>
+<p>Se alguma das variáveis for maior que 2,375, ela é ajustada para 2,375; se o resultado de alguma for negativo, ela é ajustada para zero. Por fim, o <em>passer rating</em> é calculado:</p>
+<div class="arithmatex">\[
+\text{Passer Rating} = \left ({a +  b + c + d \over 6} \right ) \times 100
+\]</div>
+<p>Construa um programa que leia os cinco parâmetros (ATT, CMP, YDS, TD e INT), calcule e imprima o <em>passer rating</em> de um determinado jogador.</p>
+</li>
+<li>
+<p>Escreva um programa que receba três número inteiros que representam o dia, o mes e o ano, representando uma data, e imprima o dia seguinte à data informada. Por exemplo, se for informado dia 31 de dezembro (12) de 2024, o programa deve mostrar 01/01/2025.</p>
+</li>
 </ol>
 <div class="footnote">
 <hr />
@@ -1360,6 +1409,9 @@
 </li>
 <li id="fn:4">
 <p>Pelo menos, é o que querem nos fazer acreditar <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:" />&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>Detalhes disponíveis <a href="https://web.archive.org/web/20151003213325/http://www.profootballhof.com/history/release.aspx?release_id=1303">aqui</a>.&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1385,7 +1437,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="3 de abril de 2025 01:18:40 -03">3 de abril de 2025 01:18:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de agosto de 2025 03:14:54 -03">18 de agosto de 2025 03:14:54</span>
   </span>
 
     

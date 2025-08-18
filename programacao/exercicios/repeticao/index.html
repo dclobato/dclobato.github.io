@@ -16,7 +16,7 @@
         <link rel="prev" href="../selecao/">
       
       
-        <link rel="next" href="../competicao/">
+        <link rel="next" href="../diversos/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -966,6 +966,8 @@
       
         
       
+        
+      
     
     
     
@@ -1080,6 +1082,29 @@
 
       </a>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diversos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assuntos diversos
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1446,6 +1471,57 @@ s = \sqrt{\frac{\sum_{i=0}^n{(x_i - \bar{x})^2}}{n-1}} \quad \text{(desvio padr�
 <li>
 <p>Baseado no problema anterior, construa um programa que receba uma cadeia de caracteres compactada em RLE com até 100 símbolos e imprima a cadeia de caracteres original. Considere que, na cadeia compactada em RLE, cada símbolo pode se repetir, no máximo, 9 vezes.</p>
 </li>
+<li>
+<p>O álbum de figurinhas é um clássico desafio de coleção. Cada criança tenta completar seu álbum, mas frequentemente fica com figurinhas repetidas. Construa um programa que leia duas listas de números inteiros representando as figurinhas que duas crianças diferentes possuem (a figurinha de número <code>-1</code> indica que acabaram as figurinhas de uma criança) e informe quais figurinhas cada criança possui repetidas e quais figurinhas uma criança tem e a outra não (possibilitando troca).</p>
+</li>
+<li>
+<p>Dada uma cadeia de caracteres com até 200 símbolos, construa um programa que conte quantas vezes cada caractere aparece na cadeia. O programa deve exibir todos os caracteres distintos encontrados, juntamente com suas respectivas frequências, em ordem decrescente de ocorrência.</p>
+</li>
+<li>
+<p>Construa um programa que leia pares de palavras correspondentes (palavra em português e sua tradução em inglês). Os pares acabam quando for digitado a palavra <code>parar</code> em português e <code>parar</code> em inglês também. Após a leitura, o usuário poderá digitar uma frase curta em português, e o programa deverá exibir a tradução aproximada da frase, trocando apenas as palavras que foram cadastradas. Se não houver uma tradução para determinada palavra, a palavra em português deve ser apresentada.</p>
+</li>
+<li>
+<p>Uma professora deseja calcular estatísticas de notas da turma; para isso, construa um programa que leia uma sequência de pares contendo o nome de um aluno e uma nota obtida em alguma prova, sendo o nome e a nota separados por pelo menos um espaço em branco; devem ser inseridos entre 2 e 20 alunos, cada um podendo ter um número ilimitado de notas, que variam de 0 a 10; a leitura deve continuar até que o usuário digite o nome <code>fim</code> e a nota <code>-1</code>, momento em que o programa deve parar de ler entradas, calcular e apresentar a média das notas de cada aluno, além de indicar o nome do aluno com a maior média e o nome do aluno com a menor média.</p>
+</li>
+<li>
+<p>Você já deve ter visto na barraca de pastel da feira uma tabela com o custo de diferentes quantidades de pastel: 1 custa <span class="arithmatex">\(R\$~12.00\)</span>; 2 custam <span class="arithmatex">\(R\$~24.00\)</span>; 3 custam <span class="arithmatex">\(R\$~36.00\)</span> e assim sucessivamente. Escreva um programa que leia o valor unitário do pastel e imprima uma tabela com o valor a ser pago para 1, 2, 3, ..., 19 e 20 pastéis de acordo com o modelo abaixo.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Quanto custa um pastel? 11.00
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Qtd de pastéis |     R$
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>---------------+-------
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>             1 |  11.00
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>             2 |  22.00
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>               : 
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            19 | 209.00
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            20 | 220.00
+</span></code></pre></div>
+</li>
+<li>
+<p>Elabore um programa que simule uma agenda telefônica com as seguintes funcionalidades, acessíveis por meio de um menu interativo:</p>
+<ol>
+<li><strong>Cadastrar contato</strong>: Solicite ao usuário que informe um nome e um número de telefone. O novo contato deve ser adicionado à agenda.</li>
+<li><strong>Listar contatos</strong>: Mostre todos os contatos cadastrados, exibindo o nome e o telefone de cada um, organizados em ordem alfabética pelo nome.</li>
+<li><strong>Remover contato</strong>: Peça ao usuário que digite o nome de um contato. Caso o contato exista na agenda, ele deve ser removido. Se não for encontrado, apresente uma mensagem informando que o contato não existe.</li>
+<li><strong>Buscar telefone</strong>: Solicite ao usuário que informe o nome de um contato. Se houver um registro correspondente, exiba o número de telefone associado. Caso o contato não exista, mostre uma mensagem apropriada.</li>
+</ol>
+<p>O menu deve ser exibido repetidamente até que o usuário decida encerrar o programa.</p>
+</li>
+<li>
+<p>Os saltos ornamentais foram introduzidos nos Jogos Olímpicos em 1904. Nesta modalidade, os atletas realizam saltos de plataformas elevadas ou trampolins, executando movimentos estéticos durante a queda. Cada salto é avaliado por sete juízes, que atribuem uma nota de <a href="https://web.archive.org/web/20100618053849/http://www.fina.org/H2O/index.php?option=com_content&amp;view=article&amp;id=305:d-8-judging&amp;catid=84:diving-rules&amp;Itemid=184">0 a 10</a>, considerando aspectos como aproximação, partida, elevação, execução e entrada na água. Além disso, antes da apresentação, é definido o grau de dificuldade do salto, que varia entre <a href="https://web.archive.org/web/20150913161738/http://www.fina.org/project/docs/rules/rules_dA2.pdf">1,2 e 3,8</a>, conforme a complexidade dos movimentos realizados (mortais, piruetas, entre outros). A nota final do salto é calculada da seguinte forma:</p>
+<ul>
+<li>São somadas as notas dos sete juízes, desconsiderando as duas maiores e as duas menores notas.</li>
+<li>Essa soma é então multiplicada pelo grau de dificuldade do salto.</li>
+</ul>
+<p>Por exemplo, para um salto com grau de dificuldade 2,0 e notas dos juízes 6,0; 5,0; 5,0; 5,0; 5,0; 5,0; e 4,0, a nota final será 30,0. Construa um programa que leia o grau de dificuldade do salto, leia as sete notas dos juízes para, por fim, calcular e apresentar a nota final do salto conforme o método descrito.</p>
+</li>
+<li>
+<p>Em teoria dos números, a sequência de Padovan é a sequência de inteiros <span class="arithmatex">\(P(n)\)</span> definida pelos valores iniciais <span class="arithmatex">\(P(0) = P(1) = P(2) = 1\)</span>, e a relação de recorrência <span class="arithmatex">\(P(n) = P(n-2) + P(n-3)\)</span>.  Os primeiros valores de <span class="arithmatex">\(P(n)\)</span> são 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 49, 65, 86 e 114. Construa um programa que receba <span class="arithmatex">\(n\)</span> e retorne <span class="arithmatex">\(P(n)\)</span>.</p>
+</li>
+<li>
+<p>Fizz buzz é um jogo de palavras em grupo para crianças que as ensina sobre divisão. Os jogadores se revezam para contar incrementalmente, substituindo qualquer número divisível por três pela palavra "fizz", e qualquer número divisível por cinco pela palavra "buzz", e qualquer número divisível por três e cinco pela palavra "fizzbuzz".  Escreva um programa que receba um valor natural <span class="arithmatex">\(n\)</span> e imprima os primeiros <span class="arithmatex">\(n\)</span> números aplicando as regras do "Fizz Buzz".  Por exemplo, se <span class="arithmatex">\(n=16\)</span>, o seu programa deve mostrar:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16
+</span></code></pre></div>
+</li>
 </ol>
 <div class="footnote">
 <hr />
@@ -1489,7 +1565,7 @@ s = \sqrt{\frac{\sum_{i=0}^n{(x_i - \bar{x})^2}}{n-1}} \quad \text{(desvio padr�
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="14 de agosto de 2025 01:55:41 -03">14 de agosto de 2025 01:55:41</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de agosto de 2025 03:14:54 -03">18 de agosto de 2025 03:14:54</span>
   </span>
 
     
@@ -1567,13 +1643,13 @@ s = \sqrt{\frac{\sum_{i=0}^n{(x_i - \bar{x})^2}}{n-1}} \quad \text{(desvio padr�
         
         
           
-          <a href="../competicao/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Questões de competicao">
+          <a href="../diversos/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Assuntos diversos">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Questões de competicao
+                Assuntos diversos
               </div>
             </div>
             <div class="md-footer__button md-icon">
