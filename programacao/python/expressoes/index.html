@@ -890,15 +890,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#outros-operadores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Outros operadores
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#precedencia-dos-operadores" class="md-nav__link">
     <span class="md-ellipsis">
       Precedência dos operadores
@@ -1367,15 +1358,6 @@
   <a href="#operador-de-fatiamento" class="md-nav__link">
     <span class="md-ellipsis">
       Operador de fatiamento
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#outros-operadores" class="md-nav__link">
-    <span class="md-ellipsis">
-      Outros operadores
     </span>
   </a>
   
@@ -1892,38 +1874,6 @@
 </div>
 </div>
 <p>Os índices negativos são particularmente úteis quando você precisa trabalhar com o final de uma sequência sem conhecer seu tamanho exato, tornando o código mais elegante e adaptável a diferentes entradas.</p>
-<h2 id="outros-operadores">Outros operadores<a class="headerlink" href="#outros-operadores" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Operação</th>
-<th style="text-align: center;">Sintaxe</th>
-<th style="text-align: left;">Exemplo e/ou observações</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Operador ternário</td>
-<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="k">if</span> <span class="n">b</span> <span class="k">else</span> <span class="n">c</span></code></td>
-<td style="text-align: left;">Retorna <code>a</code> se <code>b</code> for verdadeiro, senão retorna <code>c</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">Criação de função lambda</td>
-<td style="text-align: center;"><code class="language-python highlight"><span class="k">lambda</span> <span class="n">params</span><span class="p">:</span> <span class="n">expr</span></code></td>
-<td style="text-align: left;">Cria uma função anônima</td>
-</tr>
-<tr>
-<td style="text-align: center;">Compreensão de lista</td>
-<td style="text-align: center;"><code class="language-python highlight"><span class="p">[</span><span class="n">expr</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">iterable</span><span class="p">]</span></code></td>
-<td style="text-align: left;">Cria uma lista aplicando <code class="language-python highlight"><span class="n">expr</span></code> a cada <code class="language-python highlight"><span class="n">item</span></code></td>
-</tr>
-</tbody>
-</table>
-<p>O operador ternário em Python é expresso de forma diferente de C:</p>
-<p><div class="language-python highlight"><span class="filename">Python</span><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">resultado</span> <span class="o">=</span> <span class="s2">&quot;positivo&quot;</span> <span class="k">if</span> <span class="n">numero</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;negativo ou zero&quot;</span>
-</span></code></pre></div>
-<div class="language-c highlight"><span class="filename">C</span><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">numero</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s">&quot;positivo&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s">&quot;negativo ou zero&quot;</span><span class="p">;</span>
-</span></code></pre></div></p>
 <h2 id="precedencia-dos-operadores">Precedência dos operadores<a class="headerlink" href="#precedencia-dos-operadores" title="Permanent link">&para;</a></h2>
 <p>Assim como em C, Python segue uma ordem específica ao avaliar expressões com múltiplos operadores. A tabela abaixo mostra os operadores em ordem decrescente de prioridade (do mais alto para o mais baixo).</p>
 <table>
@@ -2005,11 +1955,11 @@
 </tbody>
 </table>
 <p>Quando os operadores têm a mesma precedência, a associatividade determina a ordem de avaliação. A maioria dos operadores em Python associa da esquerda para a direita, exceto a exponenciação (<code>**</code>) que associa da direita para a esquerda.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Exemplos que demonstram precedência</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>          <span class="c1"># 14 (multiplicação antes da adição)</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">((</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 20 (parênteses alteram a precedência)</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>         <span class="c1"># 512 (2 ** 9, a exponenciação associa da direita para a esquerda)</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>   <span class="c1"># False (NOT tem precedência sobre OR)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Exemplos que demonstram precedência</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>          <span class="c1"># 14 (multiplicação antes da adição)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">print</span><span class="p">((</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 20 (parênteses alteram a precedência)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>         <span class="c1"># 512 (2 ** 9, a exponenciação associa da direita para a esquerda)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>   <span class="c1"># False (NOT tem precedência sobre OR)</span>
 </span></code></pre></div>
 <p>A clara compreensão da precedência de operadores é fundamental para escrever expressões complexas corretamente, mas em caso de dúvida, é sempre recomendável usar parênteses para tornar a intenção explícita – uma prática que também melhora a legibilidade do código.</p>
 
@@ -2034,7 +1984,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="7 de agosto de 2025 13:14:55 -03">7 de agosto de 2025 13:14:55</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de agosto de 2025 00:40:47 -03">19 de agosto de 2025 00:40:47</span>
   </span>
 
     
