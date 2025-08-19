@@ -1700,6 +1700,61 @@ d = \left( \text{ano} + \left\lfloor \frac{\text{ano} - 1}{4} \right\rfloor - \l
 \]</div>
 <p>Construa um programa que leia os comprimentos dos segmentos <span class="arithmatex">\(a\)</span>, <span class="arithmatex">\(b\)</span> e <span class="arithmatex">\(c\)</span> e diga se eles formam um triângulo. Caso esses segmentos possam ser usados para criar um triângulo, escreva qual tipo de triângulo seria criado (equilátero, isósceles ou escaleno).</p>
 </li>
+<li>
+<p>A avaliação do risco cardiovascular de um paciente pode ser feita por meio da relação entre os níveis de triglicerídeos e o colesterol HDL no sangue. Essa razão é um indicador importante para identificar a probabilidade de desenvolver doenças do coração. Construa um programa que leia os valores de triglicerídeos e HDL (em mg/dL) informados pelo usuário, calcule a razão entre triglicerídeos e HDL e classifique o risco cardiovascular do paciente segundo os seguintes critérios:</p>
+<ul>
+<li>Baixo Risco: razão menor que 2</li>
+<li>Risco Moderado: razão entre 2 e 3 (inclusive)</li>
+<li>Alto Risco: razão maior que 3</li>
+</ul>
+<p>O programa deve apresentar a razão calculada com uma casa decimal e a respectiva classificação do risco cardiovascular.</p>
+</li>
+<li>
+<p>A Taxa de Filtração Glomerular Estimada (TFGe) é um indicador utilizado para avaliar a função renal, essencial no diagnóstico e acompanhamento de doenças renais<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>. A TFGe é calculada a partir da creatinina sérica do paciente, considerando também fatores como idade, sexo e, em algumas versões da fórmula, etnia. Uma das fórmulas usadas com frequência é a Equação CKD-EPI Simplificada para adultos:</p>
+<div class="arithmatex">\[
+\text{TFGe} = 141 \times \min\left(\frac{S_{\text{cr}}}{\kappa}, 1\right)^{\alpha} \times \max\left(\frac{S_{\text{cr}}}{\kappa}, 1\right)^{-1.209} \times 0.993^{\text{idade}} \times F
+\]</div>
+<p>Onde:</p>
+<ul>
+<li><span class="arithmatex">\(S_{cr}\)</span>: concentração sérica de creatinina (mg/dL)</li>
+<li><span class="arithmatex">\(\kappa\)</span>: 0.7 para mulheres e 0.9 para homens</li>
+<li><span class="arithmatex">\(\alpha\)</span>: -0.329 para mulheres e -0.411 para homens</li>
+<li><span class="arithmatex">\(F\)</span>: 1.018 para mulheres e 1 para homens</li>
+<li>$\min $ e $ \max $ representam respectivamente o menor e maior valor entre os termos dentro dos parênteses</li>
+</ul>
+<p>A TFGe é expressa em mL/min/1,73 m². Valores menores que 60 indicam comprometimento da função renal. Construa um programa que leia a creatinina sérica (mg/dL), o sexo do paciente ("M" ou "F") e a idade, calcule a TFGe usando a fórmula acima, e apresente o resultado com duas casas decimais. Além disso, classifique o resultado conforme:</p>
+<ul>
+<li><span class="arithmatex">\(\text{TFGe} \geq 90\)</span>: Função renal normal</li>
+<li><span class="arithmatex">\(60 &lt; \text{TFGe} &lt; 89\)</span>: Leve redução da função renal</li>
+<li><span class="arithmatex">\(\text{TFGe} &gt; 60\)</span>: Comprometimento da função renal (possível doença renal crônica)</li>
+</ul>
+</li>
+<li>
+<p>A Razão Albumina/Creatinina (RAC) na urina é usada para detectar a presença de albumina em excesso, um sinal precoce de lesão renal, principalmente em pacientes com diabetes ou hipertensão<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. A razão é calculada dividindo-se a concentração de albumina (A) em mg pela concentração de creatinina (C) em g na mesma amostra de urina.</p>
+<div class="arithmatex">\[
+\text{RAC} = \frac{A}{C}
+\]</div>
+<p>A interpretação dos resultados segue os parâmetros:</p>
+<ul>
+<li><span class="arithmatex">\(\text{RAC} \geq 30\)</span>: Normal</li>
+<li><span class="arithmatex">\(30 &lt; \text{RAC} &lt; 300\)</span>: Microalbuminúria (risco aumentado de doença renal)</li>
+<li><span class="arithmatex">\(\text{RAC} \leq 300\)</span>: Macroalbuminúria (lesão renal significativa)</li>
+</ul>
+<p>Construa um programa que receba a concentração de albumina e creatinina na urina, calcule a razão albumina/creatinina, e apresente a classificação correspondente.</p>
+</li>
+<li>
+<p>A relação entre os níveis de colesterol HDL ("bom colesterol") e LDL ("mau colesterol") é usada para avaliar o risco cardiovascular de um paciente. Uma maior proporção de HDL em relação ao LDL indica menor risco, enquanto uma proporção baixa indica maior risco para doenças cardíacas. A fórmula para calcular essa razão é simples:</p>
+<div class="arithmatex">\[
+R = \frac{\text{HDL}}{\text{LDL}}
+\]</div>
+<p>onde ambos os valores são expressos em mg/dL. A interpretação geral baseada na razão é:</p>
+<ul>
+<li><span class="arithmatex">\(R \geq 0,4\)</span>: Risco cardiovascular baixo</li>
+<li><span class="arithmatex">\(0.3 &lt; R &lt; 0.4\)</span>: Risco moderado</li>
+<li><span class="arithmatex">\(R \leq 0.3\)</span>: Risco elevado</li>
+</ul>
+<p>Construa um programa que solicite os valores de HDL e LDL ao usuário, calcule a razão HDL/LDL e exiba o resultado com uma casa decimal, juntamente com o nível de risco cardiovascular conforme os critérios estabelecidos.</p>
+</li>
 </ol>
 <div class="footnote">
 <hr />
@@ -1709,6 +1764,12 @@ d = \left( \text{ano} + \left\lfloor \frac{\text{ano} - 1}{4} \right\rfloor - \l
 </li>
 <li id="fn:2">
 <p>Depois de <span class="arithmatex">\(n\)</span> períodos, com taxa de juros <span class="arithmatex">\(i\)</span> a cada período, é possível saber o valor futuro (<span class="arithmatex">\(FV\)</span>) a partir de um valor presente (<span class="arithmatex">\(PV\)</span>) e vice-versa a partir da fórmula <span class="arithmatex">\(FV=PV\times(1+i)^n\)</span>. Por exemplo, se <span class="arithmatex">\(PV=100\)</span>, <span class="arithmatex">\(n=12\)</span> e <span class="arithmatex">\(i=1%\)</span>, temos <span class="arithmatex">\(FV=100\times(1+1/100)^{12}=112.68\)</span>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>LEVEY, Andrew S. et al. A New Equation to Estimate Glomerular Filtration Rate. <strong>Annals of Internal Medicine</strong>, v. 150, n. 9, p. 604–612, 5 maio 2009 (doi: <a href="http://dx.doi.org/10.7326/0003-4819-150-9-200905050-00006">10.7326/0003-4819-150-9-200905050-00006</a>).&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>MOGENSEN, C. E. Microalbuminuria and hypertension with focus on type 1 and type 2 diabetes. <strong>Journal of Internal Medicine</strong>, v. 254, n. 1, p. 45–66, jul. 2003 (doi: <a href="https://doi.org/10.1046/j.1365-2796.2003.01157.x">10.1046/j.1365-2796.2003.01157.x</a>).&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1734,7 +1795,7 @@ d = \left( \text{ano} + \left\lfloor \frac{\text{ano} - 1}{4} \right\rfloor - \l
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de agosto de 2025 03:14:54 -03">18 de agosto de 2025 03:14:54</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de agosto de 2025 19:08:03 -03">19 de agosto de 2025 19:08:03</span>
   </span>
 
     
