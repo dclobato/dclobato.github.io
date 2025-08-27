@@ -1131,6 +1131,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compilacao-de-expressoes-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilação de expressões regulares
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1583,6 +1592,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#compilacao-de-expressoes-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compilação de expressões regulares
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1853,6 +1871,14 @@
 </div>
 </div>
 </div>
+<p><strong>Uso típico</strong>: análise detalhada onde você precisa tanto do conteúdo quanto da localização das correspondências, processamento de arquivos de configuração, ou situações onde diferentes correspondências requerem tratamentos específicos baseados em sua posição ou contexto.</p>
+<p>Vantagens sobre <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">()</span></code>:</p>
+<ul>
+<li>Acesso às posições das correspondências no texto original</li>
+<li>Informações completas sobre grupos capturados e não capturados</li>
+<li>Eficiência de memória (iterador lazy, não cria lista completa)</li>
+<li>Flexibilidade para processamento condicional baseado na posição</li>
+</ul>
 <h3 id="resplit-divisao-por-padrao"><code>re.split()</code> - Divisão por Padrão<a class="headerlink" href="#resplit-divisao-por-padrao" title="Permanent link">&para;</a></h3>
 <p>O método <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">()</span></code> divide uma <em>string</em> usando um padrão como delimitador, oferecendo mais flexibilidade que o método convencional <code>str.split()</code>.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
@@ -2025,6 +2051,32 @@
 </div>
 </div>
 </div>
+<h2 id="compilacao-de-expressoes-regulares">Compilação de expressões regulares<a class="headerlink" href="#compilacao-de-expressoes-regulares" title="Permanent link">&para;</a></h2>
+<p>Ao trabalhar com expressões regulares em Python, o módulo <code class="language-python highlight"><span class="n">re</span></code> oferece diversas funções que aceitam padrões de forma direta em <em>strings</em>, como <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">()</span></code> ou <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">()</span></code>. Por trás dessas funções, o Python compila internamente o padrão em um objeto eficiente, e mantém um <em>cache</em> para reutilizar essas compilações, o que costuma ser suficiente para códigos simples ou que fazem poucas chamadas.</p>
+<p>No entanto, existe a função <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span></code>, que permite compilar explicitamente uma expressão regular em um objeto padrão reutilizável. Essa prática traz vantagens importantes quando o mesmo padrão é utilizado muitas vezes no programa, pois impede que o padrão seja recompilado a cada uso, otimizando o desempenho.</p>
+<p>Além do ganho de desempenho, o uso de <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span></code> melhora a legibilidade do código, pois permite definir o padrão uma única vez, atribuindo-o a uma variável, e reutilizá-lo com métodos como <code class="language-python highlight"><span class="o">.</span><span class="n">search</span><span class="p">()</span></code>, <code class="language-python highlight"><span class="o">.</span><span class="n">match</span><span class="p">()</span></code> e <code class="language-python highlight"><span class="o">.</span><span class="n">findall</span><span class="p">()</span></code>, facilitando a manutenção e organização do código.</p>
+<p>Outro benefício relevante é a facilidade para aplicar sinalizadores (<em>flags</em>), como <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span></code> para ignorar maiúsculas e minúsculas, diretamente na compilação, evitando repetição.</p>
+<p>Por exemplo, ao compilar um padrão para encontrar números no formato <code>dd-dddd</code>, o código ficaria assim:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="n">padrao</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">padrao</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Telefone: 12-3456&quot;</span><span class="p">))</span>  <span class="c1"># Retorna um objeto Match</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">padrao</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Número: 98-7654&quot;</span><span class="p">))</span>   <span class="c1"># Retorna um objeto Match</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Resumindo, usar <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span></code> é especialmente recomendado quando:</p>
+<ul>
+<li>Uma mesma expressão regular será usada repetidamente em diferentes partes do código;</li>
+<li>Há necessidade de otimizar desempenho, principalmente em loops ou processos que repetem buscas com o mesmo padrão;</li>
+<li>Deseja-se código mais organizado e claro, com padrões separados da lógica que os usa;</li>
+<li>Quer-se aplicar flags de forma centralizada na construção do padrão.</li>
+</ul>
+<p>Para códigos simples e usos pontuais, o <em>cache</em> interno do Python já oferece uma otimização adequada, e usar diretamente <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">()</span></code> e similares com <em>strings</em> é aceitável.</p>
 
 
 
@@ -2047,7 +2099,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="27 de agosto de 2025 18:42:49 -03">27 de agosto de 2025 18:42:49</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="27 de agosto de 2025 19:01:14 -03">27 de agosto de 2025 19:01:14</span>
   </span>
 
     
