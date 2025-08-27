@@ -1,0 +1,2207 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
+      
+      
+        <link rel="canonical" href="https://dclobato.github.io/programacao/python/expressoes_regulares/">
+      
+      
+        <link rel="prev" href="../fluxo/">
+      
+      
+        <link rel="next" href="../biblioteca_python/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Expressões regulares - Programação de computadores</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lato";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/mermaid.css">
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-R7W0FB8ZZ7"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-R7W0FB8ZZ7",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-R7W0FB8ZZ7",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#expressoes-regulares-identificacao-de-padroes-em-texto" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Programação de computadores" class="md-header__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programação de computadores
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Expressões regulares
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Ativar modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Ativar modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programação de computadores" class="md-nav__button md-logo" aria-label="Programação de computadores" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programação de computadores
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Apresentação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../porqueaprenderaprogramar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Porque aprender a programar?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../algoritmos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Algoritmos
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Algoritmos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/desafios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Desafios de lógica
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/variaveis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Variáveis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/tiposdeprocessamento/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de processamento
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/fluxograma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Fluxogramas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algoritmos/testedemesa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Teste de mesa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../c/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    A linguagem C
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem C
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/criacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criando um programa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/expressoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/tiposdedados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/entrada_saida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/fluxo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/biblioteca_c/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    A linguagem Python
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            A linguagem Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../criacao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Criando um programa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../expressoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressões e sentenças
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Orientação a objetos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiposdedados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de dados
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ducktyping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Duck typing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrada_saida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Entrada e saída
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluxo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Controle de fluxo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Expressões regulares
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Expressões regulares
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicao-e-funcionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição e Funcionalidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacoes-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicações Práticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe-basica-em-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe Básica em Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxe Básica em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literais-e-metacaracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literais e Metacaracteres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes de Caracteres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intervalos-e-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intervalos e Ranges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantificadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantificadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agrupamento-e-captura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agrupamento e Captura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-principais-do-modulo-re" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos Principais do Módulo re
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos Principais do Módulo re">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rematch-correspondencia-no-inicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.match() - Correspondência no Início
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refullmatch-correspondencia-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.fullmatch() - Correspondência Completa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refinditer-iterador-de-correspondencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.finditer() - Iterador de Correspondências
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resplit-divisao-por-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.split() - Divisão por Padrão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resub-substituicao-por-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.sub() - Substituição por Padrão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resubn-substituicao-com-contador" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.subn() - Substituição com Contador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos Match
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../biblioteca_python/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Biblioteca de códigos em Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../exercicios/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Exercícios selecionados
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Exercícios selecionados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/operacoes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Operações aritméticas e de atribuição
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/selecao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estruturas de seleção
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/repeticao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estruturas de repetição e arranjos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/diversos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assuntos diversos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios/competicao/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Questões de competicao
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../boas_praticas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Boas práticas de programação
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bibliografia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Bibliografia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Nesta página">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definicao-e-funcionalidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      Definição e Funcionalidade
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacoes-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicações Práticas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sintaxe-basica-em-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sintaxe Básica em Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sintaxe Básica em Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#literais-e-metacaracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Literais e Metacaracteres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes de Caracteres
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intervalos-e-ranges" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intervalos e Ranges
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quantificadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quantificadores
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agrupamento-e-captura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agrupamento e Captura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metodos-principais-do-modulo-re" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métodos Principais do Módulo re
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métodos Principais do Módulo re">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rematch-correspondencia-no-inicio" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.match() - Correspondência no Início
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refullmatch-correspondencia-completa" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.fullmatch() - Correspondência Completa
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refinditer-iterador-de-correspondencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.finditer() - Iterador de Correspondências
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resplit-divisao-por-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.split() - Divisão por Padrão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resub-substituicao-por-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.sub() - Substituição por Padrão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resubn-substituicao-com-contador" class="md-nav__link">
+    <span class="md-ellipsis">
+      re.subn() - Substituição com Contador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objetos-match" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetos Match
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+
+
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="expressoes-regulares-identificacao-de-padroes-em-texto">Expressões Regulares: Identificação de Padrões em Texto<a class="headerlink" href="#expressoes-regulares-identificacao-de-padroes-em-texto" title="Permanent link">&para;</a></h1>
+<p>Em muitas situações, é necessário identificar padrões dentro de um texto de forma eficiente. Um exemplo prático está na análise de fórmulas químicas: ao receber a representação de uma substância como <span class="arithmatex">\(H_2O\)</span> ou <span class="arithmatex">\(C_6H_{12}O_6\)</span>, pode ser necessário extrair os símbolos dos elementos químicos que a compõem. Realizar essa tarefa manualmente ou com operações básicas de manipulação de <em>strings</em> pode ser trabalhoso e sujeito a erros.</p>
+<p>Este texto contém uma introdução ao assunto. Existem livros inteiros dedicados às expressões regulares, e um dos melhores é em português: o <a href="https://www.piazinho.com.br/">Livro do Piazinho</a>, do Aurélio Marinho Jargas.</p>
+<p>Para testar expressões regulares, e ver se elas fazem o que você gostaria que elas fizessem, também há <em>sites</em> muito bons, entre eles o <a href="https://regexr.com/">RegExr</a>, o <a href="https://regexr.com/playground">Regex Learn</a>, o <a href="https://regex101.com/">Regular Expressions 101</a> e uma área especial no site do <a href="https://www.piazinho.com.br/ed5/exemplos.html">Livro do Piazinho</a>.</p>
+<h2 id="definicao-e-funcionalidade">Definição e Funcionalidade<a class="headerlink" href="#definicao-e-funcionalidade" title="Permanent link">&para;</a></h2>
+<p>Expressões regulares constituem uma <strong>linguagem formal para definição de padrões em cadeias de caracteres</strong>. Elas permitem especificar, de maneira concisa, regras capazes de localizar, extrair ou validar informações em um texto. No cenário da identificação de elementos químicos, é possível definir um padrão que reconheça símbolos químicos — uma letra maiúscula seguida, opcionalmente, de uma ou mais letras minúsculas — e utilizá-lo para extrair todos os elementos presentes em uma fórmula.</p>
+<p>Em Python, o módulo <code class="language-python highlight"><span class="n">re</span></code> implementa o suporte completo a expressões regulares, oferecendo funções para busca, substituição e extração de padrões. Métodos convencionais de varredura de <em>strings</em>, baseados em verificações sequenciais de cada caractere, são extensos e pouco flexíveis comparados à elegância e eficiência das expressões regulares.</p>
+<h2 id="aplicacoes-praticas">Aplicações Práticas<a class="headerlink" href="#aplicacoes-praticas" title="Permanent link">&para;</a></h2>
+<p>O uso de expressões regulares transcende a análise de fórmulas químicas, sendo aplicável em diversos contextos:</p>
+<ul>
+<li><strong>Validação de dados</strong>: verificação de formatos como endereços de e-mail, números de telefone ou CPF pode ser realizada diretamente com padrões específicos.</li>
+<li><strong>Processamento de <em>logs</em></strong>: extração de informações relevantes como endereços IP, códigos de status HTTP ou <em>timestamps</em> de arquivos de registro, independentemente da formatação específica.</li>
+<li><strong>Extração textual</strong>: localização sistemática de referências numéricas, unidades de medida ou palavras-chave em documentos extensos.</li>
+</ul>
+<p>Em todos esses casos, as expressões regulares atuam como uma ferramenta fundamental para descrever padrões de texto de maneira compacta e reutilizável, evitando o desenvolvimento de rotinas manuais específicas e proporcionando maior robustez ao código.</p>
+<h2 id="sintaxe-basica-em-python">Sintaxe Básica em Python<a class="headerlink" href="#sintaxe-basica-em-python" title="Permanent link">&para;</a></h2>
+<h3 id="literais-e-metacaracteres">Literais e Metacaracteres<a class="headerlink" href="#literais-e-metacaracteres" title="Permanent link">&para;</a></h3>
+<p>Os elementos mais simples em uma expressão regular são os <strong>literais</strong>: caracteres que correspondem exatamente a si mesmos no texto. Por exemplo, o padrão <code>casa</code> encontra a sequência "casa" no texto de entrada. O módulo <code class="language-python highlight"><span class="n">re</span></code> oferece funções fundamentais como <code>re.search()</code> para localizar a primeira ocorrência e <code>re.findall()</code> para encontrar todas as ocorrências.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;A casa amarela tem uma porta azul&quot;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># re.search retorna Match object</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;casa&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>         <span class="c1"># &lt;re.Match object; span=(2, 6), match=&#39;casa&#39;&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="o">.</span><span class="n">group</span><span class="p">())</span> <span class="c1"># &#39;casa&#39; (aqui sim temos o literal)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># re.findall retorna lista com os literais</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">todas</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">todas</span><span class="p">)</span>             <span class="c1"># [&#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;, &#39;a&#39;]</span>
+</span></code></pre></div></td></tr></table></div>
+<p>No caso de buscas por literais:</p>
+<ul>
+<li><code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">()</span></code>: retorna um <em>Match object</em> quando encontra o padrão, não o literal diretamente. Para acessar o literal encontrado, é necessário usar o método <code class="language-python highlight"><span class="o">.</span><span class="n">group</span><span class="p">()</span></code>. Quando não encontra, retorna <code class="language-python highlight"><span class="kc">None</span></code>.</li>
+<li><code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">()</span></code>: retorna uma lista contendo os literais encontrados. Quando não encontra nada, retorna uma lista vazia (<code class="language-python highlight"><span class="p">[]</span></code>).</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">O que é esse <code>r</code> na frente da <em>string</em> da linha 10?</p>
+<p>Em Python, além das <em>f-strings</em>, usadas para formatação, temos as <em>raw strings</em>, usadas quando queremos que uma <em>string</em> seja interpretada literalmente (<em>as is</em>): caracteres de escape como <code class="language-python highlight">\<span class="n">n</span></code>, <code class="language-python highlight">\<span class="n">t</span></code> ou <code class="language-python highlight">\\</code> são tratados como caracteres comuns, não como comandos especiais. Isso é especialmente útil para representar expressões regulares, que frequentemente contêm barras invertidas, como veremos a seguir.</p>
+</div>
+<p>Nas expressões regulares, os <strong>metacaracteres</strong> são símbolos especiais que não representam a si mesmos, mas possuem uma função particular ao definir padrões. Em outras palavras, eles têm um significado diferente do literal que aparece na string.</p>
+<p>No Python, os metacaracteres fundamentais são:</p>
+<ul>
+<li>
+<p><code class="language-python highlight"><span class="o">^</span></code>: indica o início da string (ou de uma linha, dependendo do modo usado).
+    Exemplo: <code>^a</code> corresponde a qualquer <em>string</em> que comece com a letra <code>a</code>.
+    <code>^Python</code> encontra <code>Python é ótimo</code>, mas não <code>Eu uso Python</code>.</p>
+</li>
+<li>
+<p><code class="language-python highlight"><span class="err">$</span></code>: indica o final da string (ou de uma linha).
+    Exemplo: <code>a$</code> corresponde a qualquer <em>string</em> que termine com a letra <code>a</code>.
+    <code>Python$</code> encontra <code>Eu programo em Python</code>, mas não <code>Python é ótimo</code>.</p>
+</li>
+<li>
+<p><code class="language-python highlight"><span class="o">.</span></code>: representa qualquer caractere, exceto quebra de linha (por padrão).
+    Exemplo: <code>a.b</code> corresponde a <code>aab</code>, <code>acb</code>, <code>a_b</code> ou <code>a3b</code>, mas não a <code>ab</code>.
+    Muito útil quando você sabe a estrutura, mas não o caractere específico.</p>
+</li>
+<li>
+<p><code class="language-python highlight">\</code>: o caractere de escape. Transforma símbolos especiais em literais.
+    Exemplo: <code>\.</code> corresponde a um ponto literal na string (como em <code>exemplo.com</code>).
+    <code>\$</code> encontra o símbolo de cifrão, não o final da string.</p>
+</li>
+<li>
+<p><code class="language-python highlight"><span class="o">|</span></code>: operador de alternativa (OR lógico). Permite escolher entre opções.
+    Exemplo: <code>gato|cachorro</code> encontra tanto <code>gato</code> quanto <code>cachorro</code>.
+    <code>(jpg|png|gif)$</code> valida extensões de arquivos de imagem.</p>
+</li>
+<li>
+<p><code class="language-python highlight"><span class="p">()</span></code>: cria grupos para captura ou aplicação de operadores.
+    Exemplo: <code>(Python|Java)</code> agrupa as alternativas.
+    Permite extrair partes específicas do padrão encontrado.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Note que metacaracteres são diferentes de quantificadores (<code>*</code>, <code>+</code>, <code>?</code>, <code>{}</code>), que controlam repetições, e classes predefinidas (<code>\d</code>, <code>\w</code>, <code>\s</code>), que são atalhos para conjuntos comuns de caracteres. Cada categoria tem seu papel específico na construção de padrões eficazes.</p>
+</div>
+<h3 id="classes-de-caracteres">Classes de Caracteres<a class="headerlink" href="#classes-de-caracteres" title="Permanent link">&para;</a></h3>
+<p><strong>Classes de caracteres</strong> permitem especificar conjuntos de caracteres válidos usando colchetes. A expressão <code class="language-python highlight"><span class="p">[</span><span class="n">aeiou</span><span class="p">]</span></code> corresponde a qualquer vogal, enquanto <code class="language-python highlight"><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span></code> corresponde a qualquer dígito. O símbolo <code class="language-python highlight"><span class="o">^</span></code> dentro da classe nega o conjunto: <code class="language-python highlight"><span class="p">[</span><span class="o">^</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span></code> corresponde a qualquer caractere que não seja dígito.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Encontrar qualquer vogal</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">vogais</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[aeiouAEIOU]&#39;</span><span class="p">,</span> <span class="s2">&quot;Expressões Regulares&quot;</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Encontrar caracteres que não são letras</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">nao_letras</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z]&#39;</span><span class="p">,</span> <span class="s2">&quot;Python 3.9!&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Existem <strong>classes predefinidas</strong> convenientes: <code>\d</code> (dígitos), <code>\w</code> (caracteres alfanuméricos), <code>\s</code> (espaços em branco) e suas versões negadas <code>\D</code>, <code>\W</code>, <code>\S</code>.</p>
+<h3 id="intervalos-e-ranges">Intervalos e Ranges<a class="headerlink" href="#intervalos-e-ranges" title="Permanent link">&para;</a></h3>
+<p><strong>Intervalos</strong> dentro de classes de caracteres utilizam o hífen para definir sequências: <code class="language-python highlight"><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="p">]</span></code> representa letras minúsculas, <code class="language-python highlight"><span class="p">[</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="p">]</span></code> maiúsculas, <code class="language-python highlight"><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span></code> dígitos. Múltiplos intervalos podem ser combinados: <code class="language-python highlight"><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">zA</span><span class="o">-</span><span class="n">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span></code> aceita letras e números.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Validar se uma string começa com uma letra ou um número</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]&#39;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="s2">&quot;Python3&quot;</span><span class="p">)</span>  <span class="c1"># Retorna match</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="quantificadores">Quantificadores<a class="headerlink" href="#quantificadores" title="Permanent link">&para;</a></h3>
+<p><strong>Quantificadores</strong> especificam a quantidade de repetições do elemento anterior:</p>
+<ul>
+<li><code class="language-python highlight"><span class="o">*</span></code>: zero ou mais ocorrências</li>
+<li><code class="language-python highlight"><span class="o">+</span></code>: uma ou mais ocorrências  </li>
+<li><code class="language-python highlight"><span class="err">?</span></code>: zero ou uma ocorrência (opcional)</li>
+<li><code class="language-python highlight"><span class="p">{</span><span class="n">n</span><span class="p">}</span></code>: exatamente <span class="arithmatex">\(n\)</span> ocorrências</li>
+<li><code class="language-python highlight"><span class="p">{</span><span class="n">n</span><span class="p">,}</span></code>: <span class="arithmatex">\(n\)</span> ou mais ocorrências</li>
+<li><code class="language-python highlight"><span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">}</span></code>: entre <span class="arithmatex">\(n\)</span> e <span class="arithmatex">\(m\)</span> ocorrências</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Diferentes quantificadores em ação</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">telefone</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1"> \d{4,5}-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;11 9876-5432&quot;</span><span class="p">)</span>  <span class="c1"># 2 dígitos, espaço, 4 ou 5 dígitos, hífen, 4 dígitos</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">email</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+@\w+\.\w+&#39;</span><span class="p">,</span> <span class="s2">&quot;usuario@dominio.com&quot;</span><span class="p">)</span>     <span class="c1"># Um ou mais caracteres alfanuméricos</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">codigo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[A-Z]</span><span class="si">{3}</span><span class="s1">\d?&#39;</span><span class="p">,</span> <span class="s2">&quot;ABC1 DEF XYZ2&quot;</span><span class="p">)</span>          <span class="c1"># 3 letras maiúsculas seguidas de dígito opcional</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="agrupamento-e-captura">Agrupamento e Captura<a class="headerlink" href="#agrupamento-e-captura" title="Permanent link">&para;</a></h3>
+<p><strong>Parênteses</strong> criam grupos que podem ser referenciados e extraídos separadamente. Os grupos numerados começam em 1 e podem ser acessados através do método <code>.group()</code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Extrair partes específicas de um padrão</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="s2">&quot;25/12/2023&quot;</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="n">dia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># &#39;25&#39;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="n">mes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># &#39;12&#39;</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="n">ano</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># &#39;2023&#39;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="n">completa</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># &#39;25/12/2023&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Grupos nomeados</strong> utilizam a sintaxe <code>(?P&lt;nome&gt;...)</code> para maior clareza:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Uso de grupos nomeados para melhor legibilidade</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">elemento</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?P&lt;simbolo&gt;[A-Z][a-z]*)(?P&lt;numero&gt;\d*)&#39;</span><span class="p">,</span> <span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">if</span> <span class="n">elemento</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="n">simbolo</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;simbolo&#39;</span><span class="p">)</span>  <span class="c1"># &#39;H&#39;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="n">numero</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;numero&#39;</span><span class="p">)</span>    <span class="c1"># &#39;2&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Esta sintaxe fundamental permite construir padrões sofisticados para resolver problemas complexos de processamento textual de forma concisa e eficiente.</p>
+<h2 id="metodos-principais-do-modulo-re">Métodos Principais do Módulo <code>re</code><a class="headerlink" href="#metodos-principais-do-modulo-re" title="Permanent link">&para;</a></h2>
+<p>Além das funções <code>re.search()</code> e <code>re.findall()</code> já apresentadas, o módulo <code>re</code> oferece outros métodos essenciais para manipulação de texto baseada em padrões.</p>
+<h3 id="rematch-correspondencia-no-inicio"><code>re.match()</code> - Correspondência no Início<a class="headerlink" href="#rematch-correspondencia-no-inicio" title="Permanent link">&para;</a></h3>
+<p>O método <code>re.match()</code> verifica se o padrão corresponde <strong>apenas no início</strong> da <em>string</em>. Se a correspondência não começar na primeira posição, retorna <code>None</code>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python é uma linguagem poderosa&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">resultado1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>    <span class="c1"># Encontra (início da string)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">resultado2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;linguagem&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span> <span class="c1"># None (não está no início)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">if</span> <span class="n">resultado1</span><span class="p">:</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Encontrado: </span><span class="si">{</span><span class="n">resultado1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Python&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Uso típico</strong>: validação de formatos que devem seguir estrutura específica desde o início, como códigos de identificação ou protocolos de URL.</p>
+<h3 id="refullmatch-correspondencia-completa"><code>re.fullmatch()</code> - Correspondência Completa<a class="headerlink" href="#refullmatch-correspondencia-completa" title="Permanent link">&para;</a></h3>
+<p>O método <code>re.fullmatch()</code> exige que o padrão corresponda <strong>exatamente</strong> a toda a <em>string</em>, do início ao fim. É mais restritivo que <code>re.match()</code>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span>
+<span class="normal"><a href="#__codelineno-7-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Validação rigorosa de formato</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;usuario@dominio.com&quot;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">padrao_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+@\w+\.\w+&#39;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">resultado1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>           <span class="c1"># Match completo</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="n">resultado2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="s2">&quot;email: &quot;</span> <span class="o">+</span> <span class="n">email</span><span class="p">)</span> <span class="c1"># None (texto extra)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">if</span> <span class="n">resultado1</span><span class="p">:</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Email válido!&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Uso típico</strong>: validação estrita onde a <em>string</em> deve conter apenas o padrão especificado, sem caracteres extras.</p>
+<div class="admonition note">
+<p class="admonition-title"><code>re.match</code> e <code>re.fullmatch</code> podem ser substituidos pelo <code>re.search</code> com o uso dos metacaracteres <code>^</code> e <code>$</code>?</p>
+<p>Tecnicamente, sim, você pode substituir <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span></code> por <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span></code> com esses metacaracteres. Mas qual a diferença prática?</p>
+<p>Apesar de equivalentes quanto ao resultado, existem alguns pontos importantes:</p>
+<ul>
+<li><strong>Legibilidade e intenção clara</strong>: <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span></code> deixa imediatamente explícito que esperamos a string toda como dígitos.</li>
+<li><strong>Consistência de API</strong>: O Python fornece <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">match</span></code>, <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span></code>, <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span></code> e <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">findall</span></code> justamente para expressar intenções distintas sem precisar decorar âncoras sempre. São os chamados <em>conveniences methods</em> (métodos de conveniência) que tornam o código mais legível e intencionalmente claro.</li>
+<li><strong>Manutenção de código</strong>: Usar <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span></code>  evita erros caso alguém esqueça de incluir os dois metacaracteres (<code>^</code> e <code>$</code>) no padrão.</li>
+<li><strong>Desempenho</strong>: Os métodos específicos são otimizados internamente. <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">()</span></code> pode parar imediatamente se não encontrar correspondência no início; <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">()</span></code> é otimizado para validação completa, e; <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">()</span></code> com âncoras precisa processar os metacaracteres adicionais.</li>
+</ul>
+</div>
+<h3 id="refinditer-iterador-de-correspondencias"><code>re.finditer()</code> - Iterador de Correspondências<a class="headerlink" href="#refinditer-iterador-de-correspondencias" title="Permanent link">&para;</a></h3>
+<p>O método <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">()</span></code> retorna um iterador que produz objetos <code>Match</code> para cada correspondência encontrada no texto. Diferentemente de <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">()</span></code> que retorna apenas as <em>strings</em> correspondentes, <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">()</span></code> preserva informações detalhadas sobre cada correspondência. Isso é útil quando se deseja não apenas as strings encontradas, mas também dados adicionais sobre a posição ou para iterar eficientemente sobre grandes volumes de texto sem carregar todas as correspondências na memória.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Exemplo de uso</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Os preços são: R$ 25,90, R$ 150,00 e R$ 8,75&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;R\$\s*(\d+),(\d</span><span class="si">{2}</span><span class="s1">)&#39;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1"># Usando re.findall() - só os grupos capturados</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">valores_findall</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;findall():&quot;</span><span class="p">,</span> <span class="n">valores_findall</span><span class="p">)</span>  <span class="c1"># [(&#39;25&#39;, &#39;90&#39;), (&#39;150&#39;, &#39;00&#39;), (&#39;8&#39;, &#39;75&#39;)]</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="c1"># Usando re.finditer() - objetos Match completos</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">):</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a>    <span class="n">preco_completo</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Toda a correspondência</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>    <span class="n">reais</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># Primeiro grupo (parte antes da vírgula)</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="n">centavos</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># Segundo grupo (parte após a vírgula)</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="n">posicao</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>           <span class="c1"># Posição no texto</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Preço: </span><span class="si">{</span><span class="n">preco_completo</span><span class="si">}</span><span class="s2"> | Posição: </span><span class="si">{</span><span class="n">posicao</span><span class="si">}</span><span class="s2"> | Reais: </span><span class="si">{</span><span class="n">reais</span><span class="si">}</span><span class="s2"> | Centavos: </span><span class="si">{</span><span class="n">centavos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>findall(): [(&#39;25&#39;, &#39;90&#39;), (&#39;150&#39;, &#39;00&#39;), (&#39;8&#39;, &#39;75&#39;)]
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Preço: R$ 25,90 | Posição: (15, 23) | Reais: 25 | Centavos: 90
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Preço: R$ 150,00 | Posição: (25, 34) | Reais: 150 | Centavos: 00
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Preço: R$ 8,75 | Posição: (37, 44) | Reais: 8 | Centavos: 75
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="resplit-divisao-por-padrao"><code>re.split()</code> - Divisão por Padrão<a class="headerlink" href="#resplit-divisao-por-padrao" title="Permanent link">&para;</a></h3>
+<p>O método <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">()</span></code> divide uma <em>string</em> usando um padrão como delimitador, oferecendo mais flexibilidade que o método convencional <code>str.split()</code>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># Divisão usando múltiplos delimitadores</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python,Java;C++|JavaScript&quot;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">linguagens</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[,;|]&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">linguagens</span><span class="p">)</span>  <span class="c1"># [&#39;Python&#39;, &#39;Java&#39;, &#39;C++&#39;, &#39;JavaScript&#39;]</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1"># Divisão por espaços variáveis</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;palavra1    palavra2  palavra3&quot;</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">palavras</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="n">frase</span><span class="p">)</span>  <span class="c1"># \s+ = um ou mais espaços</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">palavras</span><span class="p">)</span>  <span class="c1"># [&#39;palavra1&#39;, &#39;palavra2&#39;, &#39;palavra3&#39;]</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="c1"># Limitando o número de divisões</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">dados</span> <span class="o">=</span> <span class="s2">&quot;nome:idade:cidade:pais&quot;</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="n">campos</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">dados</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">campos</span><span class="p">)</span>  <span class="c1"># [&#39;nome&#39;, &#39;idade&#39;, &#39;cidade:pais&#39;]</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Uso típico</strong>: processamento de dados com delimitadores variáveis ou múltiplos, parsing de arquivos CSV malformados, ou limpeza de texto com espaçamento inconsistente.</p>
+<h3 id="resub-substituicao-por-padrao"><code>re.sub()</code> - Substituição por Padrão<a class="headerlink" href="#resub-substituicao-por-padrao" title="Permanent link">&para;</a></h3>
+<p>O método <code>re.sub()</code> substitui todas as ocorrências de um padrão por uma <em>string</em> de substituição ou resultado de uma função.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span>
+<span class="normal"><a href="#__codelineno-11-20">20</a></span>
+<span class="normal"><a href="#__codelineno-11-21">21</a></span>
+<span class="normal"><a href="#__codelineno-11-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Substituição simples</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Contato: (11) 99999-8888 ou (21) 88888-7777&quot;</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">texto_limpo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[()-]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>  <span class="c1"># Remove parênteses e hífens</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto_limpo</span><span class="p">)</span>  <span class="c1"># &quot;Contato: 11 999998888 ou 21 888887777&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="c1"># Substituição com grupos de captura</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="n">datas</span> <span class="o">=</span> <span class="s2">&quot;25/12/2023 e 31/01/2024&quot;</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="n">datas_americanas</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\2/\1/\3&#39;</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">datas_americanas</span><span class="p">)</span>  <span class="c1"># &quot;12/25/2023 e 01/31/2024&quot;</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="c1"># Limitando substituições</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="n">codigo</span> <span class="o">=</span> <span class="s2">&quot;var x = 10; var y = 20; var z = 30;&quot;</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="n">novo_codigo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="s1">&#39;let&#39;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Apenas as 2 primeiras</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">novo_codigo</span><span class="p">)</span>  <span class="c1"># &quot;let x = 10; let y = 20; var z = 30;&quot;</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a>
+</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="c1"># Substituição com função personalizada</span>
+</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="k">def</span><span class="w"> </span><span class="nf">maiuscula_match</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a>    <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19"></a>
+</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;python java c++&quot;</span>
+</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">maiuscula_match</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>  <span class="c1"># &quot;PYTHON JAVA C++&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Características importantes:</strong></p>
+<ul>
+<li><strong>Grupos numerados</strong>: <code>\1</code>, <code>\2</code>, <code>\3</code> referenciam grupos capturados na substituição</li>
+<li><strong>Parâmetro <code>count</code></strong>: limita o número de substituições realizadas</li>
+<li><strong>Função de substituição</strong>: permite lógica personalizada baseada no <em>match</em> encontrado</li>
+</ul>
+<h3 id="resubn-substituicao-com-contador"><code>re.subn()</code> - Substituição com Contador<a class="headerlink" href="#resubn-substituicao-com-contador" title="Permanent link">&para;</a></h3>
+<p>Variante de <code>re.sub()</code> que retorna uma tupla contendo o texto modificado e o número de substituições realizadas:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Erro 404, erro 500, erro 403&quot;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">resultado</span><span class="p">,</span> <span class="n">num_substituicoes</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;erro&#39;</span><span class="p">,</span> <span class="s1">&#39;código&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Texto: </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>           <span class="c1"># &quot;código 404, código 500, código 403&quot;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Substituições: </span><span class="si">{</span><span class="n">num_substituicoes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 3</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="objetos-match">Objetos <code>Match</code><a class="headerlink" href="#objetos-match" title="Permanent link">&para;</a></h2>
+<p>Quando uma função como <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">()</span></code> ou <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">()</span></code> encontra uma correspondência, ela retorna um objeto do tipo <code>Match</code>. Esse objeto contém informações detalhadas sobre a ocorrência encontrada e métodos para extrair dados específicos dessa correspondência.</p>
+<p>Os principais ,étodos e propriedades principais do objeto <code>Match</code> são:</p>
+<ul>
+<li><code class="language-python highlight"><span class="o">.</span><span class="n">group</span><span class="p">()</span></code>: retorna o texto exato que correspondeu ao padrão. Se o padrão casa com "Python" em "Python é ótimo", <code class="language-python highlight"><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span></code> retorna "Python". Pode receber um número ou nome para recuperar grupos capturados, ou seja, <code class="language-python highlight"><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span></code> retorna o conteúdo do primeiro grupo entre parênteses;</li>
+<li><code class="language-python highlight"><span class="o">.</span><span class="n">start</span><span class="p">()</span></code>: retorna o índice (posição) do início da correspondência na string original;</li>
+<li><code class="language-python highlight"><span class="o">.</span><span class="n">end</span><span class="p">()</span></code>: retorna o índice logo após o fim da correspondência na string original;</li>
+<li><code class="language-python highlight"><span class="o">.</span><span class="n">span</span><span class="p">()</span></code>: retorna uma tupla <code>(início, fim)</code> indicando os índices da <em>substring</em> que correspondeu ao padrão. É equivalente a <code class="language-python highlight"><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">start</span><span class="p">(),</span> <span class="n">match</span><span class="o">.</span><span class="n">end</span><span class="p">())</span></code>;</li>
+<li><code class="language-python highlight"><span class="o">.</span><span class="n">groups</span><span class="p">()</span></code>: retorna uma tupla com todos os grupos capturados pela expressão regular, na ordem;</li>
+<li><code class="language-python highlight"><span class="o">.</span><span class="n">groupdict</span><span class="p">()</span></code>: retorna um dicionário com grupos nomeados capturados, onde as chaves são os nomes dos grupos e os valores são as strings capturadas;</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Exemplo mais detalhado: extrair e localizar endereços de email</label><label for="__tabbed_2_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="s2">Contatos da empresa:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="s2">CEO: joao.silva@empresa.com</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="s2">Suporte: ajuda@suporte.empresa.com  </span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="s2">Vendas: vendas123@empresa.com</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="n">padrao_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+(?:\.\w+)*)@([\w.]+)&#39;</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">match</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="n">texto</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a>    <span class="n">email_completo</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a>    <span class="n">usuario</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a>    <span class="n">dominio</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a>    <span class="n">inicio</span><span class="p">,</span> <span class="n">fim</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Completo: </span><span class="si">{</span><span class="n">email_completo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Usuário: </span><span class="si">{</span><span class="n">usuario</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Domínio: </span><span class="si">{</span><span class="n">dominio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Posição: caracteres </span><span class="si">{</span><span class="n">inicio</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">fim</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21"></a>    <span class="nb">print</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Email 1:
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>  Completo: joao.silva@empresa.com
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>  Usuário: joao.silva
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>  Domínio: empresa.com
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>  Posição: caracteres 27-49
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>Email 2:
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>  Completo: ajuda@suporte.empresa.com
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>  Usuário: ajuda
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>  Domínio: suporte.empresa.com
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>  Posição: caracteres 59-84
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>Email 3:
+</span><span id="__span-14-14"><a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>  Completo: vendas123@empresa.com
+</span><span id="__span-14-15"><a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>  Usuário: vendas123
+</span><span id="__span-14-16"><a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>  Domínio: empresa.com
+</span><span id="__span-14-17"><a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>  Posição: caracteres 95-116
+</span></code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Última atualização">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="27 de agosto de 2025 18:42:49 -03">27 de agosto de 2025 18:42:49</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Criado em">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="27 de agosto de 2025 18:42:49 -03">27 de agosto de 2025 18:42:49</span>
+  </span>
+
+    
+    
+      
+  
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contribuidores">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"/></svg>
+      
+    </span>
+    <nav>
+      Daniel Correa Lobato
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Rodapé" >
+        
+          
+          <a href="../fluxo/" class="md-footer__link md-footer__link--prev" aria-label="Anterior: Controle de fluxo">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Anterior
+              </span>
+              <div class="md-ellipsis">
+                Controle de fluxo
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../biblioteca_python/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Biblioteca de códigos em Python">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Próximo
+              </span>
+              <div class="md-ellipsis">
+                Biblioteca de códigos em Python
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://dclobato.github.io/programacao">Notas de aula de programação em C e Python</a> por <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="http://lattes.cnpq.br/2389356405672150">Daniel Corrêa Lobato</a> está licenciado sob <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""></a></p>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/TINF-IFSP-RioPreto" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../js/katex.js"></script>
+      
+        <script src="../../js/timeago.min.js"></script>
+      
+        <script src="../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>
