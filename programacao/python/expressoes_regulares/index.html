@@ -1140,6 +1140,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ganancioso-vs-nao-ganancioso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ganancioso vs Não Ganancioso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags-de-compilacao-em-expressoes-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flags de Compilação em Expressões Regulares
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1596,6 +1614,24 @@
   <a href="#compilacao-de-expressoes-regulares" class="md-nav__link">
     <span class="md-ellipsis">
       Compilação de expressões regulares
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ganancioso-vs-nao-ganancioso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ganancioso vs Não Ganancioso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flags-de-compilacao-em-expressoes-regulares" class="md-nav__link">
+    <span class="md-ellipsis">
+      Flags de Compilação em Expressões Regulares
     </span>
   </a>
   
@@ -2074,9 +2110,46 @@
 <li>Uma mesma expressão regular será usada repetidamente em diferentes partes do código;</li>
 <li>Há necessidade de otimizar desempenho, principalmente em loops ou processos que repetem buscas com o mesmo padrão;</li>
 <li>Deseja-se código mais organizado e claro, com padrões separados da lógica que os usa;</li>
-<li>Quer-se aplicar flags de forma centralizada na construção do padrão.</li>
+<li>Quer-se aplicar <em>flags</em> de forma centralizada na construção do padrão.</li>
 </ul>
 <p>Para códigos simples e usos pontuais, o <em>cache</em> interno do Python já oferece uma otimização adequada, e usar diretamente <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">()</span></code> e similares com <em>strings</em> é aceitável.</p>
+<h2 id="ganancioso-vs-nao-ganancioso">Ganancioso vs Não Ganancioso<a class="headerlink" href="#ganancioso-vs-nao-ganancioso" title="Permanent link">&para;</a></h2>
+<p>Ao usar repetidores em expressões regulares, como o quantificador <code>*</code>, por padrão o motor tenta consumir o máximo possível de caracteres que satisfazem o padrão. Esse comportamento é chamado de <em>greedy</em> (ganancioso) e pode causar resultados inesperados, especialmente ao tentar capturar delimitadores balanceados, como tags HTML.</p>
+<p>Por exemplo, considere a string:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&#39;</span>
+</span></code></pre></div>
+<p>Se usarmos a expressão regular <code>&lt;.*&gt;</code> para tentar capturar uma única tag HTML, o padrão vai casar desde o primeiro <code>&lt;</code> até o último <code>&gt;</code>, devido à natureza gananciosa do <code>.*</code>. Para resolver isso, podemos usar quantificadores não gananciosos (non-greedy), adicionando um ponto de interrogação após o quantificador, como <code>*?</code>, <code>+?</code>, <code>??</code>, ou <code>{m,n}?</code>. Eles fazem com que o motor tente casar o menor texto possível que satisfaça o padrão.</p>
+<p>Veja a diferença nos dois casos a seguir:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Ganancioso vs Não Ganancioso</label><label for="__tabbed_3_2">Resultado</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&#39;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>&lt;html&gt;
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>O quantificador <code>.*</code> consumiu tudo o que pôde, e só então buscou o <code>&gt;</code> correspondente, causando a captura de toda a substring em vez de uma única tag. Mudar para <code>.*?</code> faz o padrão casar a menor <em>substring</em> começando com <code>&lt;</code> e terminando no próximo <code>&gt;</code>, fazendo o motor verificar a presença do <code>&gt;</code> após o menor segmento possível entre os delimitadores, avançando um caractere por vez até encontrar uma correspondência.</p>
+<h2 id="flags-de-compilacao-em-expressoes-regulares">Flags de Compilação em Expressões Regulares<a class="headerlink" href="#flags-de-compilacao-em-expressoes-regulares" title="Permanent link">&para;</a></h2>
+<p>No módulo <code class="language-python highlight"><span class="n">re</span></code> do Python, as flags de compilação permitem alterar como a expressão regular opera, modificando comportamentos da correspondência. <em>Flags</em> podem ser passadas como argumentos ao compilar o padrão, usando <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span></code>, ou diretamente nas funções de busca, como <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">,</span> <span class="n">flags</span><span class="o">=...</span><span class="p">)</span></code>. Cada <em>flag</em> tem um nome longo e uma forma abreviada (geralmente uma letra maiúscula). É possível combinar várias flags usando o operador <em>bitwise OR</em> (<code>|</code>).</p>
+<p>Aqui está um resumo das flags mais comuns:</p>
+<ul>
+<li><code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span></code> ou <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">I</span></code>: Realiza comparações sem diferenciar maiúsculas e minúsculas;</li>
+<li><code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span></code> ou <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">M</span></code>: Faz com que os metacaracteres <code>^</code> e <code>$</code> casem no começo e fim de cada linha, não apenas no início e fim da <em>string</em> inteira;</li>
+<li><code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span></code> ou <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">S</span></code>: O metacaractere <code>.</code> passa a casar qualquer caractere, incluindo quebras de linha;</li>
+<li><code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">ASCII</span></code> ou <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">A</span></code>: Faz com que certos metacaracteres (<code>\w</code>, <code>\d</code>, <code>\s</code>) funcionem apenas com caracteres ASCII, e não Unicode.</li>
+</ul>
+<p>O uso adequado das <em>flags</em> é fundamental para controlar o comportamento do seu padrão e garantir que ele corresponda exatamente ao que você deseja, especialmente em textos complexos ou multilinhas.</p>
 
 
 
@@ -2099,7 +2172,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="1 de setembro de 2025 11:54:49 -03">1 de setembro de 2025 11:54:49</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2 de setembro de 2025 20:01:44 -03">2 de setembro de 2025 20:01:44</span>
   </span>
 
     
