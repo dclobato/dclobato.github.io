@@ -1048,6 +1048,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#modificadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificadores
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1536,6 +1545,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#modificadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modificadores
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1772,14 +1790,41 @@
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Encontrar caracteres que não são letras</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">nao_letras</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^a-zA-Z]&#39;</span><span class="p">,</span> <span class="s2">&quot;Python 3.9!&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Existem <strong>classes predefinidas</strong> convenientes: <code>\d</code> (dígitos), <code>\w</code> (caracteres alfanuméricos), <code>\s</code> (espaços em branco) e suas versões negadas <code>\D</code>, <code>\W</code>, <code>\S</code>.</p>
+<p><strong>Classes predefinidas</strong> oferecem atalhos úteis para padrões comuns em expressões regulares. Por exemplo, <code>\d</code> corresponde a qualquer dígito (equivalente a <code>[0-9]</code>), <code>\w</code> corresponde a caracteres alfanuméricos (letras, dígitos e sublinhado, como <code>[a-zA-Z0-9_]</code>), e <code>\s</code> corresponde a espaços em branco (espaços, tabulações, quebras de linha). Suas versões negadas, <code>\D</code>, <code>\W</code> e <code>\S</code>, correspondem a caracteres que não são dígitos, alfanuméricos ou espaços, respectivamente. Outra classe importante é <code>\b</code>, que marca uma fronteira de palavra, garantindo que uma correspondência ocorra apenas no início ou fim de uma palavra, diferente de <code>^</code> e <code>$</code>, que ancoram o início e o fim de uma linha ou texto.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># Encontrar todos os dígitos em um texto</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">digitos</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d&#39;</span><span class="p">,</span> <span class="s2">&quot;Python 3.9 lançado em 2020!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">digitos</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;3&#39;, &#39;9&#39;, &#39;2&#39;, &#39;0&#39;, &#39;2&#39;, &#39;0&#39;]</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># Encontrar palavras que começam com &#39;Py&#39;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">palavras</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\bPy\w+&#39;</span><span class="p">,</span> <span class="s2">&quot;Python é poderoso, PyCharm também!&quot;</span><span class="p">)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">palavras</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;Python&#39;, &#39;PyCharm&#39;]</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># Encontrar caracteres que não são alfanuméricos</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="n">nao_alfanumericos</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\W&#39;</span><span class="p">,</span> <span class="s2">&quot;Python 3.9! #teste&quot;</span><span class="p">)</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">nao_alfanumericos</span><span class="p">)</span>  <span class="c1"># Saída: [&#39; &#39;, &#39;.&#39;, &#39;!&#39;, &#39; &#39;, &#39;#&#39;]</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Esses atalhos simplificam a escrita de expressões regulares e tornam o código mais legível, especialmente em padrões complexos.</p>
 <h3 id="intervalos-e-ranges">Intervalos e Ranges<a class="headerlink" href="#intervalos-e-ranges" title="Permanent link">&para;</a></h3>
 <p><strong>Intervalos</strong> dentro de classes de caracteres utilizam o hífen para definir sequências: <code class="language-python highlight"><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">z</span><span class="p">]</span></code> representa letras minúsculas, <code class="language-python highlight"><span class="p">[</span><span class="n">A</span><span class="o">-</span><span class="n">Z</span><span class="p">]</span></code> maiúsculas, <code class="language-python highlight"><span class="p">[</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span></code> dígitos. Múltiplos intervalos podem ser combinados: <code class="language-python highlight"><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">zA</span><span class="o">-</span><span class="n">Z0</span><span class="o">-</span><span class="mi">9</span><span class="p">]</span></code> aceita letras e números.</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Validar se uma string começa com uma letra ou um número</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]&#39;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="s2">&quot;Python3&quot;</span><span class="p">)</span>  <span class="c1"># Retorna match</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Validar se uma string começa com uma letra ou um número</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]&#39;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="s2">&quot;Python3&quot;</span><span class="p">)</span>  <span class="c1"># Retorna match</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="quantificadores">Quantificadores<a class="headerlink" href="#quantificadores" title="Permanent link">&para;</a></h3>
 <p><strong>Quantificadores</strong> especificam a quantidade de repetições do elemento anterior:</p>
@@ -1791,82 +1836,118 @@
 <li><code class="language-python highlight"><span class="p">{</span><span class="n">n</span><span class="p">,}</span></code>: <span class="arithmatex">\(n\)</span> ou mais ocorrências</li>
 <li><code class="language-python highlight"><span class="p">{</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">}</span></code>: entre <span class="arithmatex">\(n\)</span> e <span class="arithmatex">\(m\)</span> ocorrências</li>
 </ul>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span>
-<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Diferentes quantificadores em ação</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">telefone</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1"> \d{4,5}-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;11 9876-5432&quot;</span><span class="p">)</span>  <span class="c1"># 2 dígitos, espaço, 4 ou 5 dígitos, hífen, 4 dígitos</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">email</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+@\w+\.\w+&#39;</span><span class="p">,</span> <span class="s2">&quot;usuario@dominio.com&quot;</span><span class="p">)</span>     <span class="c1"># Um ou mais caracteres alfanuméricos</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">codigo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[A-Z]</span><span class="si">{3}</span><span class="s1">\d?&#39;</span><span class="p">,</span> <span class="s2">&quot;ABC1 DEF XYZ2&quot;</span><span class="p">)</span>          <span class="c1"># 3 letras maiúsculas seguidas de dígito opcional</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="agrupamento-e-captura">Agrupamento e Captura<a class="headerlink" href="#agrupamento-e-captura" title="Permanent link">&para;</a></h3>
-<p><strong>Parênteses</strong> criam grupos que podem ser referenciados e extraídos separadamente. Os grupos numerados começam em 1 e podem ser acessados através do método <code>.group()</code>:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span>
-<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Extrair partes específicas de um padrão</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="s2">&quot;25/12/2023&quot;</span><span class="p">)</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">if</span> <span class="n">data</span><span class="p">:</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="n">dia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># &#39;25&#39;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="n">mes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># &#39;12&#39;</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="n">ano</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># &#39;2023&#39;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="n">completa</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># &#39;25/12/2023&#39;</span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Diferentes quantificadores em ação</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">telefone</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1"> \d{4,5}-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s2">&quot;11 9876-5432&quot;</span><span class="p">)</span>  <span class="c1"># 2 dígitos, espaço, 4 ou 5 dígitos, hífen, 4 dígitos</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="n">email</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+@\w+\.\w+&#39;</span><span class="p">,</span> <span class="s2">&quot;usuario@dominio.com&quot;</span><span class="p">)</span>     <span class="c1"># Um ou mais caracteres alfanuméricos</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">codigo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[A-Z]</span><span class="si">{3}</span><span class="s1">\d?&#39;</span><span class="p">,</span> <span class="s2">&quot;ABC1 DEF XYZ2&quot;</span><span class="p">)</span>          <span class="c1"># 3 letras maiúsculas seguidas de dígito opcional</span>
 </span></code></pre></div></td></tr></table></div>
-<p><strong>Grupos nomeados</strong> utilizam a sintaxe <code>(?P&lt;nome&gt;...)</code> para maior clareza:</p>
+<h3 id="agrupamento-e-captura">Agrupamento e Captura<a class="headerlink" href="#agrupamento-e-captura" title="Permanent link">&para;</a></h3>
+<p><strong>Parênteses</strong> criam grupos que podem ser referenciados e extraídos separadamente. Os grupos numerados começam em 1 e podem ser acessados através do método <code>.group()</code>:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Uso de grupos nomeados para melhor legibilidade</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">elemento</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?P&lt;simbolo&gt;[A-Z][a-z]*)(?P&lt;numero&gt;\d*)&#39;</span><span class="p">,</span> <span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">if</span> <span class="n">elemento</span><span class="p">:</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="n">simbolo</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;simbolo&#39;</span><span class="p">)</span>  <span class="c1"># &#39;H&#39;</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="n">numero</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;numero&#39;</span><span class="p">)</span>    <span class="c1"># &#39;2&#39;</span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Extrair partes específicas de um padrão</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="s2">&quot;25/12/2023&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="k">if</span> <span class="n">data</span><span class="p">:</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="n">dia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>    <span class="c1"># &#39;25&#39;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5"></a>    <span class="n">mes</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>    <span class="c1"># &#39;12&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="n">ano</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># &#39;2023&#39;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="n">completa</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># &#39;25/12/2023&#39;</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Esta sintaxe fundamental permite construir padrões sofisticados para resolver problemas complexos de processamento textual de forma concisa e eficiente.</p>
-<h2 id="metodos-principais-do-modulo-re">Métodos Principais do Módulo <code>re</code><a class="headerlink" href="#metodos-principais-do-modulo-re" title="Permanent link">&para;</a></h2>
-<p>Além das funções <code>re.search()</code> e <code>re.findall()</code> já apresentadas, o módulo <code>re</code> oferece outros métodos essenciais para manipulação de texto baseada em padrões.</p>
-<h3 id="rematch-correspondencia-no-inicio"><code>re.match()</code> - Correspondência no Início<a class="headerlink" href="#rematch-correspondencia-no-inicio" title="Permanent link">&para;</a></h3>
-<p>O método <code>re.match()</code> verifica se o padrão corresponde <strong>apenas no início</strong> da <em>string</em>. Se a correspondência não começar na primeira posição, retorna <code>None</code>.</p>
+<p><strong>Grupos nomeados</strong> utilizam a sintaxe <code>(?P&lt;nome&gt;...)</code> para maior clareza:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
-<span class="normal"><a href="#__codelineno-6-5">5</a></span>
-<span class="normal"><a href="#__codelineno-6-6">6</a></span>
-<span class="normal"><a href="#__codelineno-6-7">7</a></span>
-<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python é uma linguagem poderosa&quot;</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">resultado1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>    <span class="c1"># Encontra (início da string)</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">resultado2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;linguagem&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span> <span class="c1"># None (não está no início)</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="k">if</span> <span class="n">resultado1</span><span class="p">:</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Encontrado: </span><span class="si">{</span><span class="n">resultado1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Python&quot;</span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># Uso de grupos nomeados para melhor legibilidade</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">elemento</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?P&lt;simbolo&gt;[A-Z][a-z]*)(?P&lt;numero&gt;\d*)&#39;</span><span class="p">,</span> <span class="s2">&quot;H2O&quot;</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">if</span> <span class="n">elemento</span><span class="p">:</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="n">simbolo</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;simbolo&#39;</span><span class="p">)</span>  <span class="c1"># &#39;H&#39;</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="n">numero</span> <span class="o">=</span> <span class="n">elemento</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;numero&#39;</span><span class="p">)</span>    <span class="c1"># &#39;2&#39;</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Esta sintaxe fundamental permite construir padrões sofisticados para resolver problemas complexos de processamento textual de forma concisa e eficiente.</p>
+<h3 id="modificadores">Modificadores<a class="headerlink" href="#modificadores" title="Permanent link">&para;</a></h3>
+<p><strong>Modificadores</strong> em expressões regulares são usados para alterar o comportamento padrão de uma busca, permitindo maior flexibilidade ao processar padrões. Um modificador comum é <code>(?i)</code>, que torna a correspondência de caracteres insensível a maiúsculas e minúsculas (<em>case-insensitive</em>). Por exemplo, ao usar <code>(?i)</code> no início de uma expressão, a regex <code class="language-python highlight"><span class="p">(</span><span class="err">?</span><span class="n">i</span><span class="p">)</span><span class="n">python</span></code> corresponderá a <code>Python</code>, <code>PYTHON</code> ou qualquer variação de capitalização. Isso é especialmente útil quando o texto de entrada pode ter formatos inconsistentes, como em nomes ou palavras-chave.</p>
+<p>Outro modificador útil é <code>(?m)</code>, que ativa o modo multilinha, alterando o comportamento dos metacaracteres <code>^</code> e <code>$</code> para corresponder ao início e fim de cada linha, em vez de apenas ao início e fim do texto inteiro. Por exemplo, em uma string com várias linhas, a regex <code class="language-python highlight"><span class="p">(</span><span class="err">?</span><span class="n">m</span><span class="p">)</span><span class="o">^</span><span class="n">teste</span></code> encontrará <code>teste</code> no início de qualquer linha.</p>
+<p>O modificador <code>(?s)</code> (ou <em>dotall</em>) faz com que o metacaractere <code>.</code> (ponto) corresponda a qualquer caractere, incluindo quebras de linha (<code>\n</code>), o que não ocorre por padrão. Isso é útil ao trabalhar com textos que abrangem várias linhas e você deseja que o <code>.</code> capture tudo, como em extração de blocos de texto.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1"># Usando (?i) para busca case-insensitive</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python, PYTHON, pYtHoN&quot;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">case_insensitive</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?i)python&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">case_insensitive</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;Python&#39;, &#39;PYTHON&#39;, &#39;pYtHoN&#39;]</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1"># Usando (?m) para correspondência no início de linhas</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">texto_multilinha</span> <span class="o">=</span> <span class="s2">&quot;teste inicial</span><span class="se">\n</span><span class="s2">outro teste</span><span class="se">\n</span><span class="s2">final&quot;</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">multilinha</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?m)^teste&#39;</span><span class="p">,</span> <span class="n">texto_multilinha</span><span class="p">)</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">multilinha</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;teste&#39;]</span>
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="c1"># Usando (?s) para permitir que &#39;.&#39; inclua quebras de linha</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Primeira linha</span><span class="se">\n</span><span class="s2">Segunda linha&quot;</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="n">dotall</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?s)Primeira.+Segunda&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">dotall</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;Primeira linha\nSegunda&#39;]</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="metodos-principais-do-modulo-re">Métodos Principais do Módulo <code>re</code><a class="headerlink" href="#metodos-principais-do-modulo-re" title="Permanent link">&para;</a></h2>
+<p>Além das funções <code>re.search()</code> e <code>re.findall()</code> já apresentadas, o módulo <code>re</code> oferece outros métodos essenciais para manipulação de texto baseada em padrões.</p>
+<h3 id="rematch-correspondencia-no-inicio"><code>re.match()</code> - Correspondência no Início<a class="headerlink" href="#rematch-correspondencia-no-inicio" title="Permanent link">&para;</a></h3>
+<p>O método <code>re.match()</code> verifica se o padrão corresponde <strong>apenas no início</strong> da <em>string</em>. Se a correspondência não começar na primeira posição, retorna <code>None</code>.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python é uma linguagem poderosa&quot;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">resultado1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>    <span class="c1"># Encontra (início da string)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">resultado2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;linguagem&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span> <span class="c1"># None (não está no início)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="k">if</span> <span class="n">resultado1</span><span class="p">:</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Encontrado: </span><span class="si">{</span><span class="n">resultado1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># &quot;Python&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Uso típico</strong>: validação de formatos que devem seguir estrutura específica desde o início, como códigos de identificação ou protocolos de URL.</p>
 <h3 id="refullmatch-correspondencia-completa"><code>re.fullmatch()</code> - Correspondência Completa<a class="headerlink" href="#refullmatch-correspondencia-completa" title="Permanent link">&para;</a></h3>
 <p>O método <code>re.fullmatch()</code> exige que o padrão corresponda <strong>exatamente</strong> a toda a <em>string</em>, do início ao fim. É mais restritivo que <code>re.match()</code>.</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span>
-<span class="normal"><a href="#__codelineno-7-6">6</a></span>
-<span class="normal"><a href="#__codelineno-7-7">7</a></span>
-<span class="normal"><a href="#__codelineno-7-8">8</a></span>
-<span class="normal"><a href="#__codelineno-7-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Validação rigorosa de formato</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;usuario@dominio.com&quot;</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">padrao_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+@\w+\.\w+&#39;</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">resultado1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>           <span class="c1"># Match completo</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="n">resultado2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="s2">&quot;email: &quot;</span> <span class="o">+</span> <span class="n">email</span><span class="p">)</span> <span class="c1"># None (texto extra)</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="k">if</span> <span class="n">resultado1</span><span class="p">:</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Email válido!&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span>
+<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Validação rigorosa de formato</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;usuario@dominio.com&quot;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">padrao_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+@\w+\.\w+&#39;</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="n">resultado1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>           <span class="c1"># Match completo</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="n">resultado2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">fullmatch</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="s2">&quot;email: &quot;</span> <span class="o">+</span> <span class="n">email</span><span class="p">)</span> <span class="c1"># None (texto extra)</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="k">if</span> <span class="n">resultado1</span><span class="p">:</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Email válido!&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Uso típico</strong>: validação estrita onde a <em>string</em> deve conter apenas o padrão especificado, sem caracteres extras.</p>
 <div class="admonition note">
@@ -1885,42 +1966,42 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Exemplo de uso</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Os preços são: R$ 25,90, R$ 150,00 e R$ 8,75&quot;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;R\$\s*(\d+),(\d</span><span class="si">{2}</span><span class="s1">)&#39;</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="c1"># Usando re.findall() - só os grupos capturados</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">valores_findall</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;findall():&quot;</span><span class="p">,</span> <span class="n">valores_findall</span><span class="p">)</span>  <span class="c1"># [(&#39;25&#39;, &#39;90&#39;), (&#39;150&#39;, &#39;00&#39;), (&#39;8&#39;, &#39;75&#39;)]</span>
-</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="c1"># Usando re.finditer() - objetos Match completos</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">):</span>
-</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a>    <span class="n">preco_completo</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Toda a correspondência</span>
-</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a>    <span class="n">reais</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># Primeiro grupo (parte antes da vírgula)</span>
-</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a>    <span class="n">centavos</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># Segundo grupo (parte após a vírgula)</span>
-</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>    <span class="n">posicao</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>           <span class="c1"># Posição no texto</span>
-</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a>
-</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Preço: </span><span class="si">{</span><span class="n">preco_completo</span><span class="si">}</span><span class="s2"> | Posição: </span><span class="si">{</span><span class="n">posicao</span><span class="si">}</span><span class="s2"> | Reais: </span><span class="si">{</span><span class="n">reais</span><span class="si">}</span><span class="s2"> | Centavos: </span><span class="si">{</span><span class="n">centavos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Os preços são: R$ 25,90, R$ 150,00 e R$ 8,75&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;R\$\s*(\d+),(\d</span><span class="si">{2}</span><span class="s1">)&#39;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1"># Usando re.findall() - só os grupos capturados</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="n">valores_findall</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;findall():&quot;</span><span class="p">,</span> <span class="n">valores_findall</span><span class="p">)</span>  <span class="c1"># [(&#39;25&#39;, &#39;90&#39;), (&#39;150&#39;, &#39;00&#39;), (&#39;8&#39;, &#39;75&#39;)]</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c1"># Usando re.finditer() - objetos Match completos</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">texto</span><span class="p">):</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>    <span class="n">preco_completo</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Toda a correspondência</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a>    <span class="n">reais</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># Primeiro grupo (parte antes da vírgula)</span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a>    <span class="n">centavos</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># Segundo grupo (parte após a vírgula)</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a>    <span class="n">posicao</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>           <span class="c1"># Posição no texto</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Preço: </span><span class="si">{</span><span class="n">preco_completo</span><span class="si">}</span><span class="s2"> | Posição: </span><span class="si">{</span><span class="n">posicao</span><span class="si">}</span><span class="s2"> | Reais: </span><span class="si">{</span><span class="n">reais</span><span class="si">}</span><span class="s2"> | Centavos: </span><span class="si">{</span><span class="n">centavos</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>findall(): [(&#39;25&#39;, &#39;90&#39;), (&#39;150&#39;, &#39;00&#39;), (&#39;8&#39;, &#39;75&#39;)]
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Preço: R$ 25,90 | Posição: (15, 23) | Reais: 25 | Centavos: 90
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Preço: R$ 150,00 | Posição: (25, 34) | Reais: 150 | Centavos: 00
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Preço: R$ 8,75 | Posição: (37, 44) | Reais: 8 | Centavos: 75
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>findall(): [(&#39;25&#39;, &#39;90&#39;), (&#39;150&#39;, &#39;00&#39;), (&#39;8&#39;, &#39;75&#39;)]
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Preço: R$ 25,90 | Posição: (15, 23) | Reais: 25 | Centavos: 90
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Preço: R$ 150,00 | Posição: (25, 34) | Reais: 150 | Centavos: 00
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Preço: R$ 8,75 | Posição: (37, 44) | Reais: 8 | Centavos: 75
 </span></code></pre></div>
 </div>
 </div>
@@ -1935,80 +2016,80 @@
 </ul>
 <h3 id="resplit-divisao-por-padrao"><code>re.split()</code> - Divisão por Padrão<a class="headerlink" href="#resplit-divisao-por-padrao" title="Permanent link">&para;</a></h3>
 <p>O método <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">()</span></code> divide uma <em>string</em> usando um padrão como delimitador, oferecendo mais flexibilidade que o método convencional <code>str.split()</code>.</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span>
-<span class="normal"><a href="#__codelineno-10-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># Divisão usando múltiplos delimitadores</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python,Java;C++|JavaScript&quot;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">linguagens</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[,;|]&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">linguagens</span><span class="p">)</span>  <span class="c1"># [&#39;Python&#39;, &#39;Java&#39;, &#39;C++&#39;, &#39;JavaScript&#39;]</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c1"># Divisão por espaços variáveis</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;palavra1    palavra2  palavra3&quot;</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">palavras</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="n">frase</span><span class="p">)</span>  <span class="c1"># \s+ = um ou mais espaços</span>
-</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">palavras</span><span class="p">)</span>  <span class="c1"># [&#39;palavra1&#39;, &#39;palavra2&#39;, &#39;palavra3&#39;]</span>
-</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a>
-</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="c1"># Limitando o número de divisões</span>
-</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">dados</span> <span class="o">=</span> <span class="s2">&quot;nome:idade:cidade:pais&quot;</span>
-</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="n">campos</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">dados</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">campos</span><span class="p">)</span>  <span class="c1"># [&#39;nome&#39;, &#39;idade&#39;, &#39;cidade:pais&#39;]</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># Divisão usando múltiplos delimitadores</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Python,Java;C++|JavaScript&quot;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">linguagens</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[,;|]&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">linguagens</span><span class="p">)</span>  <span class="c1"># [&#39;Python&#39;, &#39;Java&#39;, &#39;C++&#39;, &#39;JavaScript&#39;]</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="c1"># Divisão por espaços variáveis</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;palavra1    palavra2  palavra3&quot;</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="n">palavras</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="n">frase</span><span class="p">)</span>  <span class="c1"># \s+ = um ou mais espaços</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">palavras</span><span class="p">)</span>  <span class="c1"># [&#39;palavra1&#39;, &#39;palavra2&#39;, &#39;palavra3&#39;]</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="c1"># Limitando o número de divisões</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="n">dados</span> <span class="o">=</span> <span class="s2">&quot;nome:idade:cidade:pais&quot;</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="n">campos</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">dados</span><span class="p">,</span> <span class="n">maxsplit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">campos</span><span class="p">)</span>  <span class="c1"># [&#39;nome&#39;, &#39;idade&#39;, &#39;cidade:pais&#39;]</span>
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Uso típico</strong>: processamento de dados com delimitadores variáveis ou múltiplos, parsing de arquivos CSV malformados, ou limpeza de texto com espaçamento inconsistente.</p>
 <h3 id="resub-substituicao-por-padrao"><code>re.sub()</code> - Substituição por Padrão<a class="headerlink" href="#resub-substituicao-por-padrao" title="Permanent link">&para;</a></h3>
 <p>O método <code>re.sub()</code> substitui todas as ocorrências de um padrão por uma <em>string</em> de substituição ou resultado de uma função.</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-11-10">10</a></span>
-<span class="normal"><a href="#__codelineno-11-11">11</a></span>
-<span class="normal"><a href="#__codelineno-11-12">12</a></span>
-<span class="normal"><a href="#__codelineno-11-13">13</a></span>
-<span class="normal"><a href="#__codelineno-11-14">14</a></span>
-<span class="normal"><a href="#__codelineno-11-15">15</a></span>
-<span class="normal"><a href="#__codelineno-11-16">16</a></span>
-<span class="normal"><a href="#__codelineno-11-17">17</a></span>
-<span class="normal"><a href="#__codelineno-11-18">18</a></span>
-<span class="normal"><a href="#__codelineno-11-19">19</a></span>
-<span class="normal"><a href="#__codelineno-11-20">20</a></span>
-<span class="normal"><a href="#__codelineno-11-21">21</a></span>
-<span class="normal"><a href="#__codelineno-11-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Substituição simples</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Contato: (11) 99999-8888 ou (21) 88888-7777&quot;</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">texto_limpo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[()-]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>  <span class="c1"># Remove parênteses e hífens</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto_limpo</span><span class="p">)</span>  <span class="c1"># &quot;Contato: 11 999998888 ou 21 888887777&quot;</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="c1"># Substituição com grupos de captura</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="n">datas</span> <span class="o">=</span> <span class="s2">&quot;25/12/2023 e 31/01/2024&quot;</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="n">datas_americanas</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\2/\1/\3&#39;</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span>
-</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">datas_americanas</span><span class="p">)</span>  <span class="c1"># &quot;12/25/2023 e 01/31/2024&quot;</span>
-</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10"></a>
-</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="c1"># Limitando substituições</span>
-</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="n">codigo</span> <span class="o">=</span> <span class="s2">&quot;var x = 10; var y = 20; var z = 30;&quot;</span>
-</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="n">novo_codigo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="s1">&#39;let&#39;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Apenas as 2 primeiras</span>
-</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">novo_codigo</span><span class="p">)</span>  <span class="c1"># &quot;let x = 10; let y = 20; var z = 30;&quot;</span>
-</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15"></a>
-</span><span id="__span-11-16"><a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="c1"># Substituição com função personalizada</span>
-</span><span id="__span-11-17"><a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="k">def</span><span class="w"> </span><span class="nf">maiuscula_match</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-</span><span id="__span-11-18"><a id="__codelineno-11-18" name="__codelineno-11-18"></a>    <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
-</span><span id="__span-11-19"><a id="__codelineno-11-19" name="__codelineno-11-19"></a>
-</span><span id="__span-11-20"><a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;python java c++&quot;</span>
-</span><span id="__span-11-21"><a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">maiuscula_match</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
-</span><span id="__span-11-22"><a id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>  <span class="c1"># &quot;PYTHON JAVA C++&quot;</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span>
+<span class="normal"><a href="#__codelineno-13-18">18</a></span>
+<span class="normal"><a href="#__codelineno-13-19">19</a></span>
+<span class="normal"><a href="#__codelineno-13-20">20</a></span>
+<span class="normal"><a href="#__codelineno-13-21">21</a></span>
+<span class="normal"><a href="#__codelineno-13-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1"># Substituição simples</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Contato: (11) 99999-8888 ou (21) 88888-7777&quot;</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">texto_limpo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[()-]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>  <span class="c1"># Remove parênteses e hífens</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto_limpo</span><span class="p">)</span>  <span class="c1"># &quot;Contato: 11 999998888 ou 21 888887777&quot;</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="c1"># Substituição com grupos de captura</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="n">datas</span> <span class="o">=</span> <span class="s2">&quot;25/12/2023 e 31/01/2024&quot;</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="n">datas_americanas</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{2}</span><span class="s1">)/(\d</span><span class="si">{4}</span><span class="s1">)&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;\2/\1/\3&#39;</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">datas_americanas</span><span class="p">)</span>  <span class="c1"># &quot;12/25/2023 e 01/31/2024&quot;</span>
+</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="c1"># Limitando substituições</span>
+</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="n">codigo</span> <span class="o">=</span> <span class="s2">&quot;var x = 10; var y = 20; var z = 30;&quot;</span>
+</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="n">novo_codigo</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;var&#39;</span><span class="p">,</span> <span class="s1">&#39;let&#39;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># Apenas as 2 primeiras</span>
+</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="nb">print</span><span class="p">(</span><span class="n">novo_codigo</span><span class="p">)</span>  <span class="c1"># &quot;let x = 10; let y = 20; var z = 30;&quot;</span>
+</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15"></a>
+</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="c1"># Substituição com função personalizada</span>
+</span><span id="__span-13-17"><a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="k">def</span><span class="w"> </span><span class="nf">maiuscula_match</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+</span><span id="__span-13-18"><a id="__codelineno-13-18" name="__codelineno-13-18"></a>    <span class="k">return</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</span><span id="__span-13-19"><a id="__codelineno-13-19" name="__codelineno-13-19"></a>
+</span><span id="__span-13-20"><a id="__codelineno-13-20" name="__codelineno-13-20"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;python java c++&quot;</span>
+</span><span id="__span-13-21"><a id="__codelineno-13-21" name="__codelineno-13-21"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\w+&#39;</span><span class="p">,</span> <span class="n">maiuscula_match</span><span class="p">,</span> <span class="n">texto</span><span class="p">)</span>
+</span><span id="__span-13-22"><a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>  <span class="c1"># &quot;PYTHON JAVA C++&quot;</span>
 </span></code></pre></div></td></tr></table></div>
 <p><strong>Características importantes:</strong></p>
 <ul>
@@ -2018,13 +2099,13 @@
 </ul>
 <h3 id="resubn-substituicao-com-contador"><code>re.subn()</code> - Substituição com Contador<a class="headerlink" href="#resubn-substituicao-com-contador" title="Permanent link">&para;</a></h3>
 <p>Variante de <code>re.sub()</code> que retorna uma tupla contendo o texto modificado e o número de substituições realizadas:</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Erro 404, erro 500, erro 403&quot;</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">resultado</span><span class="p">,</span> <span class="n">num_substituicoes</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;erro&#39;</span><span class="p">,</span> <span class="s1">&#39;código&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Texto: </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>           <span class="c1"># &quot;código 404, código 500, código 403&quot;</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Substituições: </span><span class="si">{</span><span class="n">num_substituicoes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 3</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Erro 404, erro 500, erro 403&quot;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="n">resultado</span><span class="p">,</span> <span class="n">num_substituicoes</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">subn</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;erro&#39;</span><span class="p">,</span> <span class="s1">&#39;código&#39;</span><span class="p">,</span> <span class="n">texto</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Texto: </span><span class="si">{</span><span class="n">resultado</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>           <span class="c1"># &quot;código 404, código 500, código 403&quot;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Substituições: </span><span class="si">{</span><span class="n">num_substituicoes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># 3</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="lookahead-em-expressoes-regulares">Lookahead em Expressões Regulares<a class="headerlink" href="#lookahead-em-expressoes-regulares" title="Permanent link">&para;</a></h2>
 <p>O <em>lookahead</em> é uma técnica de correspondência em expressões regulares utilizada para verificar se um determinado padrão está imediatamente à frente (à direita) do ponto de busca, sem consumir esses caracteres na <em>string</em>. Isso significa que o lookahead funciona como uma "assertiva de largura zero": ele determina se o padrão futuro existe ou não, mas não faz parte do resultado extraído.</p>
@@ -2035,47 +2116,21 @@
 </ul>
 <p>Vejamos alguns exemplos</p>
 <p><strong>Exemplo 1</strong> - Encontrar apenas números seguidos por <code>.jpg</code> (por exemplo, nomes de arquivos como <code>123.jpg</code>, mas não <code>123.png</code>).</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span>
-<span class="normal"><a href="#__codelineno-13-3">3</a></span>
-<span class="normal"><a href="#__codelineno-13-4">4</a></span>
-<span class="normal"><a href="#__codelineno-13-5">5</a></span>
-<span class="normal"><a href="#__codelineno-13-6">6</a></span>
-<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="n">arquivos</span> <span class="o">=</span> <span class="s2">&quot;foto1.jpg, foto2.png, imagem123.jpg, imagem4.jpeg&quot;</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\d+(?=\.jpg)&#39;</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">arquivos</span><span class="p">)</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;1&#39;, &#39;123&#39;]</span>
-</span></code></pre></div></td></tr></table></div>
-<p><strong>Exemplo 2</strong> - Encontrar palavras <code>error</code> não seguidas de números (excluindo logs com códigos, como <code>error123</code>).</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span>
-<span class="normal"><a href="#__codelineno-14-3">3</a></span>
-<span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span>
-<span class="normal"><a href="#__codelineno-14-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="n">mensagens</span> <span class="o">=</span> <span class="s2">&quot;error, error404, error critical, error500, error fatal&quot;</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;error(?!\d)&#39;</span>
-</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">mensagens</span><span class="p">)</span>
-</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;error&#39;, &#39;error&#39;, &#39;error&#39;]</span>
-</span></code></pre></div></td></tr></table></div>
-<p><strong>Exemplo 3</strong> - Filtrar emails apenas de domínios ".com"</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
 <span class="normal"><a href="#__codelineno-15-3">3</a></span>
 <span class="normal"><a href="#__codelineno-15-4">4</a></span>
 <span class="normal"><a href="#__codelineno-15-5">5</a></span>
-<span class="normal"><a href="#__codelineno-15-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="n">emails</span> <span class="o">=</span> <span class="s2">&quot;alice@exemplo.com, bob@exemplo.net, carla@exemplo.com, dave@exemplo.org&quot;</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+(?=@exemplo\.com)&#39;</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;alice&#39;, &#39;carla&#39;]</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="n">arquivos</span> <span class="o">=</span> <span class="s2">&quot;foto1.jpg, foto2.png, imagem123.jpg, imagem4.jpeg&quot;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\d+(?=\.jpg)&#39;</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">arquivos</span><span class="p">)</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;1&#39;, &#39;123&#39;]</span>
 </span></code></pre></div></td></tr></table></div>
-<p><strong>Exemplo 4</strong> - Validar senha com, por exemplo, pelo menos 8 caracteres, incluindo pelo menos um dígito.</p>
+<p><strong>Exemplo 2</strong> - Encontrar palavras <code>error</code> não seguidas de números (excluindo logs com códigos, como <code>error123</code>).</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
 <span class="normal"><a href="#__codelineno-16-2">2</a></span>
 <span class="normal"><a href="#__codelineno-16-3">3</a></span>
@@ -2083,10 +2138,36 @@
 <span class="normal"><a href="#__codelineno-16-5">5</a></span>
 <span class="normal"><a href="#__codelineno-16-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2"></a>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">senha</span> <span class="o">=</span> <span class="s2">&quot;abcde123&quot;</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(?=.*\d).{8,}$&#39;</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">senha</span><span class="p">)</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">resultado</span><span class="p">))</span>  <span class="c1"># Saída: True</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="n">mensagens</span> <span class="o">=</span> <span class="s2">&quot;error, error404, error critical, error500, error fatal&quot;</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;error(?!\d)&#39;</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">mensagens</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;error&#39;, &#39;error&#39;, &#39;error&#39;]</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Exemplo 3</strong> - Filtrar emails apenas de domínios ".com"</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span>
+<span class="normal"><a href="#__codelineno-17-4">4</a></span>
+<span class="normal"><a href="#__codelineno-17-5">5</a></span>
+<span class="normal"><a href="#__codelineno-17-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="n">emails</span> <span class="o">=</span> <span class="s2">&quot;alice@exemplo.com, bob@exemplo.net, carla@exemplo.com, dave@exemplo.org&quot;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\w+(?=@exemplo\.com)&#39;</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="n">matches</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">emails</span><span class="p">)</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span>  <span class="c1"># Saída: [&#39;alice&#39;, &#39;carla&#39;]</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>Exemplo 4</strong> - Validar senha com, por exemplo, pelo menos 8 caracteres, incluindo pelo menos um dígito.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
+<span class="normal"><a href="#__codelineno-18-2">2</a></span>
+<span class="normal"><a href="#__codelineno-18-3">3</a></span>
+<span class="normal"><a href="#__codelineno-18-4">4</a></span>
+<span class="normal"><a href="#__codelineno-18-5">5</a></span>
+<span class="normal"><a href="#__codelineno-18-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="n">senha</span> <span class="o">=</span> <span class="s2">&quot;abcde123&quot;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;^(?=.*\d).{8,}$&#39;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">senha</span><span class="p">)</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="n">resultado</span><span class="p">))</span>  <span class="c1"># Saída: True</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Em resumo, lookahead permite criar regras sofisticadas de correspondência — seja para filtrar, validar ou extrair dados sob condições contextuais, sem que parte da condição apareça no resultado extraído. Isso garante buscas precisas e grande flexibilidade nas manipulações de texto e dados de entrada.</p>
 <div class="admonition note">
@@ -2116,67 +2197,67 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Exemplo mais detalhado: extrair e localizar endereços de email</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-17-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-17-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-17-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-17-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-17-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-17-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-17-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-17-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-17-10">10</a></span>
-<span class="normal"><a href="#__codelineno-17-11">11</a></span>
-<span class="normal"><a href="#__codelineno-17-12">12</a></span>
-<span class="normal"><a href="#__codelineno-17-13">13</a></span>
-<span class="normal"><a href="#__codelineno-17-14">14</a></span>
-<span class="normal"><a href="#__codelineno-17-15">15</a></span>
-<span class="normal"><a href="#__codelineno-17-16">16</a></span>
-<span class="normal"><a href="#__codelineno-17-17">17</a></span>
-<span class="normal"><a href="#__codelineno-17-18">18</a></span>
-<span class="normal"><a href="#__codelineno-17-19">19</a></span>
-<span class="normal"><a href="#__codelineno-17-20">20</a></span>
-<span class="normal"><a href="#__codelineno-17-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="s2">Contatos da empresa:</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="s2">CEO: joao.silva@empresa.com</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="s2">Suporte: ajuda@suporte.empresa.com  </span>
-</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="s2">Vendas: vendas123@empresa.com</span>
-</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="s2">&quot;&quot;&quot;</span>
-</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7"></a>
-</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="n">padrao_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+(?:\.\w+)*)@([\w.]+)&#39;</span>
-</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a>
-</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">match</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="n">texto</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11"></a>    <span class="n">email_completo</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12"></a>    <span class="n">usuario</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13"></a>    <span class="n">dominio</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14"></a>    <span class="n">inicio</span><span class="p">,</span> <span class="n">fim</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
-</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15"></a>
-</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
-</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Completo: </span><span class="si">{</span><span class="n">email_completo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Usuário: </span><span class="si">{</span><span class="n">usuario</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Domínio: </span><span class="si">{</span><span class="n">dominio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Posição: caracteres </span><span class="si">{</span><span class="n">inicio</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">fim</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21"></a>    <span class="nb">print</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-19-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-19-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-19-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-19-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-19-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-19-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-19-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-19-10">10</a></span>
+<span class="normal"><a href="#__codelineno-19-11">11</a></span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span>
+<span class="normal"><a href="#__codelineno-19-13">13</a></span>
+<span class="normal"><a href="#__codelineno-19-14">14</a></span>
+<span class="normal"><a href="#__codelineno-19-15">15</a></span>
+<span class="normal"><a href="#__codelineno-19-16">16</a></span>
+<span class="normal"><a href="#__codelineno-19-17">17</a></span>
+<span class="normal"><a href="#__codelineno-19-18">18</a></span>
+<span class="normal"><a href="#__codelineno-19-19">19</a></span>
+<span class="normal"><a href="#__codelineno-19-20">20</a></span>
+<span class="normal"><a href="#__codelineno-19-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="s2">Contatos da empresa:</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="s2">CEO: joao.silva@empresa.com</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="s2">Suporte: ajuda@suporte.empresa.com  </span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="s2">Vendas: vendas123@empresa.com</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="n">padrao_email</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;(\w+(?:\.\w+)*)@([\w.]+)&#39;</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">match</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">padrao_email</span><span class="p">,</span> <span class="n">texto</span><span class="p">),</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a>    <span class="n">email_completo</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12"></a>    <span class="n">usuario</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13"></a>    <span class="n">dominio</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14"></a>    <span class="n">inicio</span><span class="p">,</span> <span class="n">fim</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">span</span><span class="p">()</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Email </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:&quot;</span><span class="p">)</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Completo: </span><span class="si">{</span><span class="n">email_completo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Usuário: </span><span class="si">{</span><span class="n">usuario</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Domínio: </span><span class="si">{</span><span class="n">dominio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Posição: caracteres </span><span class="si">{</span><span class="n">inicio</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">fim</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21"></a>    <span class="nb">print</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Email 1:
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>  Completo: joao.silva@empresa.com
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  Usuário: joao.silva
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>  Domínio: empresa.com
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>  Posição: caracteres 27-49
-</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
-</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>Email 2:
-</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>  Completo: ajuda@suporte.empresa.com
-</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>  Usuário: ajuda
-</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>  Domínio: suporte.empresa.com
-</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>  Posição: caracteres 59-84
-</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
-</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>Email 3:
-</span><span id="__span-18-14"><a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a>  Completo: vendas123@empresa.com
-</span><span id="__span-18-15"><a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>  Usuário: vendas123
-</span><span id="__span-18-16"><a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>  Domínio: empresa.com
-</span><span id="__span-18-17"><a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>  Posição: caracteres 95-116
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Email 1:
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>  Completo: joao.silva@empresa.com
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>  Usuário: joao.silva
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>  Domínio: empresa.com
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>  Posição: caracteres 27-49
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>Email 2:
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>  Completo: ajuda@suporte.empresa.com
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>  Usuário: ajuda
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>  Domínio: suporte.empresa.com
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>  Posição: caracteres 59-84
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>Email 3:
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>  Completo: vendas123@empresa.com
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>  Usuário: vendas123
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>  Domínio: empresa.com
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>  Posição: caracteres 95-116
 </span></code></pre></div>
 </div>
 </div>
@@ -2187,17 +2268,17 @@
 <p>Além do ganho de desempenho, o uso de <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span></code> melhora a legibilidade do código, pois permite definir o padrão uma única vez, atribuindo-o a uma variável, e reutilizá-lo com métodos como <code class="language-python highlight"><span class="o">.</span><span class="n">search</span><span class="p">()</span></code>, <code class="language-python highlight"><span class="o">.</span><span class="n">match</span><span class="p">()</span></code> e <code class="language-python highlight"><span class="o">.</span><span class="n">findall</span><span class="p">()</span></code>, facilitando a manutenção e organização do código.</p>
 <p>Outro benefício relevante é a facilidade para aplicar sinalizadores (<em>flags</em>), como <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span></code> para ignorar maiúsculas e minúsculas, diretamente na compilação, evitando repetição.</p>
 <p>Por exemplo, ao compilar um padrão para encontrar números no formato <code>dd-dddd</code>, o código ficaria assim:</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
-<span class="normal"><a href="#__codelineno-19-2">2</a></span>
-<span class="normal"><a href="#__codelineno-19-3">3</a></span>
-<span class="normal"><a href="#__codelineno-19-4">4</a></span>
-<span class="normal"><a href="#__codelineno-19-5">5</a></span>
-<span class="normal"><a href="#__codelineno-19-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="n">padrao</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">padrao</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Telefone: 12-3456&quot;</span><span class="p">))</span>  <span class="c1"># Retorna um objeto Match</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">padrao</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Número: 98-7654&quot;</span><span class="p">))</span>   <span class="c1"># Retorna um objeto Match</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span>
+<span class="normal"><a href="#__codelineno-21-3">3</a></span>
+<span class="normal"><a href="#__codelineno-21-4">4</a></span>
+<span class="normal"><a href="#__codelineno-21-5">5</a></span>
+<span class="normal"><a href="#__codelineno-21-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="n">padrao</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{4}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">padrao</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Telefone: 12-3456&quot;</span><span class="p">))</span>  <span class="c1"># Retorna um objeto Match</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">padrao</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Número: 98-7654&quot;</span><span class="p">))</span>   <span class="c1"># Retorna um objeto Match</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Resumindo, usar <code class="language-python highlight"><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span></code> é especialmente recomendado quando:</p>
 <ul>
@@ -2210,25 +2291,25 @@
 <h2 id="ganancioso-vs-nao-ganancioso">Ganancioso vs Não Ganancioso<a class="headerlink" href="#ganancioso-vs-nao-ganancioso" title="Permanent link">&para;</a></h2>
 <p>Ao usar repetidores em expressões regulares, como o quantificador <code>*</code>, por padrão o motor tenta consumir o máximo possível de caracteres que satisfazem o padrão. Esse comportamento é chamado de <em>greedy</em> (ganancioso) e pode causar resultados inesperados, especialmente ao tentar capturar delimitadores balanceados, como tags HTML.</p>
 <p>Por exemplo, considere a string:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&#39;</span>
 </span></code></pre></div>
 <p>Se usarmos a expressão regular <code>&lt;.*&gt;</code> para tentar capturar uma única tag HTML, o padrão vai casar desde o primeiro <code>&lt;</code> até o último <code>&gt;</code>, devido à natureza gananciosa do <code>.*</code>. Para resolver isso, podemos usar quantificadores não gananciosos (non-greedy), adicionando um ponto de interrogação após o quantificador, como <code>*?</code>, <code>+?</code>, <code>??</code>, ou <code>{m,n}?</code>. Eles fazem com que o motor tente casar o menor texto possível que satisfaça o padrão.</p>
 <p>Veja a diferença nos dois casos a seguir:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Ganancioso vs Não Ganancioso</label><label for="__tabbed_3_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
-<span class="normal"><a href="#__codelineno-21-2">2</a></span>
-<span class="normal"><a href="#__codelineno-21-3">3</a></span>
-<span class="normal"><a href="#__codelineno-21-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&#39;</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
-</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span>
+<span class="normal"><a href="#__codelineno-23-2">2</a></span>
+<span class="normal"><a href="#__codelineno-23-3">3</a></span>
+<span class="normal"><a href="#__codelineno-23-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;&#39;</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;
-</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>&lt;html&gt;
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>&lt;html&gt;&lt;head&gt;&lt;title&gt;Title&lt;/title&gt;
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>&lt;html&gt;
 </span></code></pre></div>
 </div>
 </div>
@@ -2266,7 +2347,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de setembro de 2025 02:43:32 -03">8 de setembro de 2025 02:43:32</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="8 de setembro de 2025 14:02:52 -03">8 de setembro de 2025 14:02:52</span>
   </span>
 
     
