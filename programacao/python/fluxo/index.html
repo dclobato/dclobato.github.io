@@ -10,7 +10,7 @@
         <meta name="author" content="Daniel Corrêa Lobato <daniel.lobato@ifsp.edu.br>">
       
       
-        <link rel="canonical" href="https://dclobato.github.io/programacao/python/fluxo/">
+        <link rel="canonical" href="https://sites.lobato.org/programacao/python/fluxo/">
       
       
         <link rel="prev" href="../entrada_saida/">
@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e53b48f4.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
@@ -83,7 +83,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="orange">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -141,7 +141,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="orange"  aria-label="Ativar modo escuro"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="orange"  aria-label="Ativar modo escuro"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Ativar modo escuro" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
@@ -1074,6 +1074,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tratamento-de-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamento de Exceções
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tratamento de Exceções">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloco-tryexcept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloco try/except
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloco-tryexceptelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloco try/except/else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloco-tryfinally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloco try/finally
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levantando-excecoes-com-raise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levantando exceções com raise
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excecoes-definidas-pelo-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceções Definidas pelo Usuário
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1517,6 +1577,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tratamento-de-excecoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tratamento de Exceções
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tratamento de Exceções">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bloco-tryexcept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloco try/except
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloco-tryexceptelse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloco try/except/else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloco-tryfinally" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bloco try/finally
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#levantando-excecoes-com-raise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Levantando exceções com raise
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excecoes-definidas-pelo-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exceções Definidas pelo Usuário
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1925,6 +2045,260 @@
 </span></code></pre></div></td></tr></table></div>
 <p>Neste exemplo, o primeiro loop imprime apenas os números ímpares de 0 a 9, pois o comando continue pula a iteração quando i é par. O segundo loop imprime os números de 0 a 4, pois o comando break interrompe o loop quando i é igual a 5.</p>
 <p>Estes comandos são particularmente úteis em situações onde é necessário interromper uma iteração ou todo o <em>loop</em> com base em condições específicas, evitando a necessidade de lógicas condicionais mais complexas.</p>
+<h2 id="tratamento-de-excecoes">Tratamento de Exceções<a class="headerlink" href="#tratamento-de-excecoes" title="Permanent link">&para;</a></h2>
+<p>Em qualquer programa, situações inesperadas podem ocorrer: arquivos que não existem, dados em formato incorreto, conexões interrompidas, entre outras. Se não forem tratadas, essas condições anômalas resultam em erros que interrompem a execução do programa de forma abrupta. O tratamento de exceções é o mecanismo que o Python oferece para lidar com esses cenários de maneira controlada.</p>
+<p>Mais do que apenas capturar erros, o tratamento de exceções permite separar a lógica principal do programa da lógica de contingência, mantendo o código mais limpo e robusto. Em comparação com linguagens como C, onde o tratamento de erros frequentemente se baseia em códigos de retorno, o Python adota uma abordagem mais expressiva e legível, utilizando blocos <code class="language-python highlight"><span class="k">try</span></code> e <code class="language-python highlight"><span class="k">except</span></code>.</p>
+<p>Nas seções seguintes, exploraremos as variações dessa estrutura, incluindo a execução de blocos alternativos com <code class="language-python highlight"><span class="k">else</span></code>, a garantia de limpeza de recursos com <code class="language-python highlight"><span class="k">finally</span></code> e a criação de erros personalizados com a instrução <code class="language-python highlight"><span class="k">raise</span></code>.</p>
+<h3 id="bloco-tryexcept">Bloco <code>try/except</code><a class="headerlink" href="#bloco-tryexcept" title="Permanent link">&para;</a></h3>
+<p>O bloco <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">except</span></code> constitui a base do tratamento de exceções em Python. Ele permite que um trecho de código seja executado sob observação, e caso uma exceção ocorra, o fluxo seja redirecionado para um bloco específico de tratamento. Esse mecanismo substitui a necessidade de verificações condicionais extensivas, permitindo que o programador se concentre na lógica principal enquanto delega ao <code class="language-python highlight"><span class="k">except</span></code> a responsabilidade de lidar com falhas eventuais.</p>
+<p>Um exemplo clássico é a conversão de uma entrada do usuário em número inteiro. Se o usuário digitar algo que não seja número, ocorre uma exceção do tipo <code class="language-python highlight"><span class="ne">ValueError</span></code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-23-10">10</a></span>
+<span class="normal"><a href="#__codelineno-23-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a>    <span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número inteiro: &quot;</span><span class="p">)</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a>    <span class="k">if</span> <span class="n">entrada</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nenhum valor foi informado.&quot;</span><span class="p">)</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a>        <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Você digitou o número </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro: entrada inválida. Por favor, digite um número inteiro.&quot;</span><span class="p">)</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Entrada interrompida pelo usuário.&quot;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Algumas das principais exceções que podem ocorrer durante a execução de um programa em Python estão resumidas na tabela a seguir.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Exceção</th>
+<th style="text-align: left;">Descrição</th>
+<th style="text-align: left;">Exemplo que gera a exceção</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">AssertionError</span></code></td>
+<td style="text-align: left;">Ocorre quando uma asserção falha.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="k">assert</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">3</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">AttributeError</span></code></td>
+<td style="text-align: left;">Ocorre quando se acessa atributo inexistente em um objeto.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="s2">&quot;texto&quot;</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">Exception</span></code></td>
+<td style="text-align: left;">Classe base para todas as exceções não relacionadas ao sistema.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Erro genérico&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">FileNotFoundError</span></code></td>
+<td style="text-align: left;">Ocorre quando se tenta abrir arquivo inexistente.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;arquivo_inexistente.txt&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">ImportError</span></code></td>
+<td style="text-align: left;">Ocorre quando uma importação de módulo falha.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="kn">import</span><span class="w"> </span><span class="nn">modulo_inexistente</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">IndexError</span></code></td>
+<td style="text-align: left;">Ocorre quando o índice de uma sequência está fora do intervalo válido.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">][</span><span class="mi">5</span><span class="p">]</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">KeyError</span></code></td>
+<td style="text-align: left;">Ocorre quando se acessa uma chave inexistente em um dicionário.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">MemoryError</span></code></td>
+<td style="text-align: left;">Ocorre quando falta memória para executar uma operação.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">ModuleNotFoundError</span></code></td>
+<td style="text-align: left;">Subclasse de <code class="language-python highlight"><span class="ne">ImportError</span></code>. Módulo não foi encontrado.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="kn">import</span><span class="w"> </span><span class="nn">nao_existe</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">NameError</span></code></td>
+<td style="text-align: left;">Ocorre quando uma variável ou nome não está definido.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">OverflowError</span></code></td>
+<td style="text-align: left;">Ocorre quando resultado numérico excede limite do tipo.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="p">;</span> <span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">PermissionError</span></code></td>
+<td style="text-align: left;">Ocorre quando não há permissão para acessar um recurso.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/root/arquivo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">RuntimeError</span></code></td>
+<td style="text-align: left;">Ocorre quando detecta erro que não se encaixa em outras categorias.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Falha genérica&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">StopIteration</span></code></td>
+<td style="text-align: left;">Usada para sinalizar o fim de um iterador.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">([]))</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">TypeError</span></code></td>
+<td style="text-align: left;">Ocorre quando uma operação é aplicada a um tipo inadequado.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="s2">&quot;texto&quot;</span> <span class="o">+</span> <span class="mi">5</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">ValueError</span></code></td>
+<td style="text-align: left;">Ocorre quando uma função recebe argumento de tipo correto, mas valor inválido.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span></code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code class="language-python highlight"><span class="ne">ZeroDivisionError</span></code></td>
+<td style="text-align: left;">Ocorre quando há tentativa de divisão por zero.</td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bloco-tryexceptelse">Bloco <code>try/except/else</code><a class="headerlink" href="#bloco-tryexceptelse" title="Permanent link">&para;</a></h3>
+<p>Em alguns casos, é importante distinguir entre o código que deve ser executado em situação normal e o que deve ser executado apenas se nenhuma exceção ocorrer. O else dentro de um bloco <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">else</span></code> cumpre esse papel: ele <strong>é executado somente quando não há erros no bloco <code class="language-python highlight"><span class="k">try</span></code></strong>. Essa construção torna o código mais claro, já que separa o tratamento de exceções da lógica que depende do sucesso da execução.</p>
+<p>Um exemplo é a leitura de um arquivo. Caso a abertura ocorra sem problemas, o programa lê o conteúdo no bloco <code class="language-python highlight"><span class="k">else</span></code>. Caso contrário, o erro é tratado pelo <code class="language-python highlight"><span class="k">except</span></code>:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
+<span class="normal"><a href="#__codelineno-24-2">2</a></span>
+<span class="normal"><a href="#__codelineno-24-3">3</a></span>
+<span class="normal"><a href="#__codelineno-24-4">4</a></span>
+<span class="normal"><a href="#__codelineno-24-5">5</a></span>
+<span class="normal"><a href="#__codelineno-24-6">6</a></span>
+<span class="normal"><a href="#__codelineno-24-7">7</a></span>
+<span class="normal"><a href="#__codelineno-24-8">8</a></span>
+<span class="normal"><a href="#__codelineno-24-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a>    <span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;dados.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O arquivo não foi encontrado.&quot;</span><span class="p">)</span>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a>    <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conteúdo do arquivo:&quot;</span><span class="p">)</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a>    <span class="n">arquivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Neste caso, o bloco <code class="language-python highlight"><span class="k">else</span></code> contém a lógica de leitura do arquivo e só será executado se nenhuma exceção tiver ocorrido durante a abertura do arquivo no bloco <code class="language-python highlight"><span class="k">try</span></code>.</p>
+<h3 id="bloco-tryfinally">Bloco <code>try/finally</code><a class="headerlink" href="#bloco-tryfinally" title="Permanent link">&para;</a></h3>
+<p>Em muitas situações, o programa precisa executar uma ação final, mesmo que tenha ocorrido erro. Esse comportamento é importante para liberar recursos ou registrar informações antes do término da execução. O Python utiliza a cláusula <code class="language-python highlight"><span class="k">finally</span></code> para esse fim.</p>
+<p>O bloco <code>finally</code> é <strong>sempre executado, independentemente de o código do <code class="language-python highlight"><span class="k">try</span></code> ter gerado exceção</strong>. Essa característica garante previsibilidade no comportamento do programa.</p>
+<p>Um exemplo simples é o uso de mensagens de <em>log</em> ou de encerramento de operações:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span>
+<span class="normal"><a href="#__codelineno-25-4">4</a></span>
+<span class="normal"><a href="#__codelineno-25-5">5</a></span>
+<span class="normal"><a href="#__codelineno-25-6">6</a></span>
+<span class="normal"><a href="#__codelineno-25-7">7</a></span>
+<span class="normal"><a href="#__codelineno-25-8">8</a></span>
+<span class="normal"><a href="#__codelineno-25-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">dividir</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2"></a>    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3"></a>        <span class="n">resultado</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5"></a>    <span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encerrando operação de divisão.&quot;</span><span class="p">)</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7"></a>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="n">dividir</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9"></a><span class="n">dividir</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Saída esperada:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Resultado: 5.0
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>Encerrando operação de divisão.
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>Encerrando operação de divisão.
+</span></code></pre></div>
+<p>No primeiro caso, o cálculo é bem-sucedido e o <code class="language-python highlight"><span class="k">finally</span></code> imprime a mensagem de encerramento. No segundo caso, ocorre uma exceção (<code class="language-python highlight"><span class="ne">ZeroDivisionError</span></code>), mas o bloco <code class="language-python highlight"><span class="k">finally</span></code> ainda assim é executado.</p>
+<p>Esse padrão é útil sempre que um programa precisa garantir uma etapa de finalização independentemente de erros no fluxo principal.</p>
+<p>Em operações com arquivos, a prática recomendada é usar a instrução <code class="language-python highlight"><span class="k">with</span> <span class="nb">open</span><span class="p">()</span></code> em vez de <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">finally</span></code>. O gerenciador de contexto (<code class="language-python highlight"><span class="k">with</span></code>) fecha o arquivo automaticamente, mesmo em caso de erro. Exemplo:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
+<span class="normal"><a href="#__codelineno-27-2">2</a></span>
+<span class="normal"><a href="#__codelineno-27-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;dados.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Esse código é equivalente a usar <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">finally</span></code>, mas mais conciso e seguro.</p>
+<h3 id="levantando-excecoes-com-raise">Levantando exceções com raise<a class="headerlink" href="#levantando-excecoes-com-raise" title="Permanent link">&para;</a></h3>
+<p>Além de capturar exceções, o programador pode decidir levantar (<code class="language-python highlight"><span class="k">raise</span></code>) suas próprias exceções quando detecta condições inadequadas no programa. O comando <code class="language-python highlight"><span class="k">raise</span></code> permite sinalizar explicitamente que algo saiu do esperado, interrompendo o fluxo normal e acionando os mecanismos de tratamento. Essa prática é essencial em programas de maior escala, pois contribui para a legibilidade e para a robustez do código, deixando claro quais situações são consideradas inválidas.</p>
+<p>Por exemplo, uma pessoa não pode ter uma idade negativa. Assim, se houvesse uma função onde fosse possível definir a idade de uma pessoa, e fosse informada uma idade negativa, a função poderia levantar uma exceção para ser tratada no programa, como no exemplo de código a seguir:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
+<span class="normal"><a href="#__codelineno-28-2">2</a></span>
+<span class="normal"><a href="#__codelineno-28-3">3</a></span>
+<span class="normal"><a href="#__codelineno-28-4">4</a></span>
+<span class="normal"><a href="#__codelineno-28-5">5</a></span>
+<span class="normal"><a href="#__codelineno-28-6">6</a></span>
+<span class="normal"><a href="#__codelineno-28-7">7</a></span>
+<span class="normal"><a href="#__codelineno-28-8">8</a></span>
+<span class="normal"><a href="#__codelineno-28-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">definir_idade</span><span class="p">(</span><span class="n">idade</span><span class="p">):</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a>    <span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Idade negativa não é permitida.&quot;</span><span class="p">)</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade definida:&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">)</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5"></a>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7"></a>    <span class="n">definir_idade</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8"></a><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">erro</span><span class="p">:</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro:&quot;</span><span class="p">,</span> <span class="n">erro</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h3 id="excecoes-definidas-pelo-usuario">Exceções Definidas pelo Usuário<a class="headerlink" href="#excecoes-definidas-pelo-usuario" title="Permanent link">&para;</a></h3>
+<p>Além das exceções fornecidas pela própria linguagem, o Python permite que o programador defina suas próprias classes de exceções. Esse recurso é útil quando o programa precisa sinalizar erros que não se enquadram nas categorias existentes. Com exceções personalizadas, o código se torna mais legível, pois a exceção expressa diretamente a condição específica que ocorreu.</p>
+<p>Uma exceção definida pelo usuário deve herdar da classe <code class="language-python highlight"><span class="ne">Exception</span></code> (ou de alguma de suas subclasses). Normalmente, cria-se uma nova classe que pode conter apenas um nome descritivo ou, se necessário, incluir atributos adicionais para armazenar informações sobre o erro.</p>
+<p>O exemplo abaixo mostra a definição de uma exceção chamada <code>SaldoInsuficienteError</code>. Ela é usada em uma função que simula saques em uma conta bancária:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-29-10">10</a></span>
+<span class="normal"><a href="#__codelineno-29-11">11</a></span>
+<span class="normal"><a href="#__codelineno-29-12">12</a></span>
+<span class="normal"><a href="#__codelineno-29-13">13</a></span>
+<span class="normal"><a href="#__codelineno-29-14">14</a></span>
+<span class="normal"><a href="#__codelineno-29-15">15</a></span>
+<span class="normal"><a href="#__codelineno-29-16">16</a></span>
+<span class="normal"><a href="#__codelineno-29-17">17</a></span>
+<span class="normal"><a href="#__codelineno-29-18">18</a></span>
+<span class="normal"><a href="#__codelineno-29-19">19</a></span>
+<span class="normal"><a href="#__codelineno-29-20">20</a></span>
+<span class="normal"><a href="#__codelineno-29-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SaldoInsuficienteError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Exceção lançada quando o saldo é insuficiente para a operação.&quot;&quot;&quot;</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a>    <span class="k">pass</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">ContaBancaria</span><span class="p">:</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">saldo_inicial</span><span class="p">):</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">=</span> <span class="n">saldo_inicial</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8"></a>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">sacar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+</span><span id="__span-29-10"><a id="__codelineno-29-10" name="__codelineno-29-10"></a>        <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span><span class="p">:</span>
+</span><span id="__span-29-11"><a id="__codelineno-29-11" name="__codelineno-29-11"></a>            <span class="k">raise</span> <span class="n">SaldoInsuficienteError</span><span class="p">(</span><span class="s2">&quot;Saldo insuficiente para o saque.&quot;</span><span class="p">)</span>
+</span><span id="__span-29-12"><a id="__codelineno-29-12" name="__codelineno-29-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">-=</span> <span class="n">valor</span>
+</span><span id="__span-29-13"><a id="__codelineno-29-13" name="__codelineno-29-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saque de </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2"> realizado. Saldo atual: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">saldo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-29-14"><a id="__codelineno-29-14" name="__codelineno-29-14"></a>
+</span><span id="__span-29-15"><a id="__codelineno-29-15" name="__codelineno-29-15"></a><span class="c1"># Exemplo de uso</span>
+</span><span id="__span-29-16"><a id="__codelineno-29-16" name="__codelineno-29-16"></a><span class="n">conta</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-29-17"><a id="__codelineno-29-17" name="__codelineno-29-17"></a>
+</span><span id="__span-29-18"><a id="__codelineno-29-18" name="__codelineno-29-18"></a><span class="k">try</span><span class="p">:</span>
+</span><span id="__span-29-19"><a id="__codelineno-29-19" name="__codelineno-29-19"></a>    <span class="n">conta</span><span class="o">.</span><span class="n">sacar</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
+</span><span id="__span-29-20"><a id="__codelineno-29-20" name="__codelineno-29-20"></a><span class="k">except</span> <span class="n">SaldoInsuficienteError</span> <span class="k">as</span> <span class="n">erro</span><span class="p">:</span>
+</span><span id="__span-29-21"><a id="__codelineno-29-21" name="__codelineno-29-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro:&quot;</span><span class="p">,</span> <span class="n">erro</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Nesse código, a função <code>sacar</code> verifica se há saldo suficiente. Caso contrário, levanta a exceção <code>SaldoInsuficienteError</code>. O bloco <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">except</span></code> captura a exceção e imprime a mensagem de erro.</p>
+<p>Esse mecanismo é útil porque separa claramente os diferentes tipos de erro. Se o programa lançasse apenas um <code class="language-python highlight"><span class="ne">ValueError</span></code> ou <code class="language-python highlight"><span class="ne">RuntimeError</span></code>, o desenvolvedor teria dificuldade em identificar a causa específica da falha. Com exceções personalizadas, o tratamento de erros se torna mais organizado, pois cada condição anômala pode ser representada por uma classe própria.</p>
 
 
 
@@ -1947,7 +2321,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="16 de agosto de 2025 19:11:31 -03">16 de agosto de 2025 19:11:31</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de setembro de 2025 02:41:45 -03">24 de setembro de 2025 02:41:45</span>
   </span>
 
     
@@ -2070,7 +2444,7 @@
       
     
     <a href="https://github.com/TINF-IFSP-RioPreto" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
     </a>
   
 </div>
@@ -2090,7 +2464,7 @@
       <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       
