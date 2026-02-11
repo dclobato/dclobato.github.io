@@ -1,0 +1,19 @@
+## Tipagem estática ou dinâmica
+
+Algumas linguagens de programação permitem que se defina uma variável sem indicar explicitamente o seu tipo; outras linguagens, por sua vez, obrigam que o programador indique explicitamente o tipo de dados que vai ser guardado na variável.
+
+As linguagens que exigem declaração explícita de tipos são conhecidas como **linguagens de tipagem estática**. Nelas, o programador deve informar previamente qual tipo de dado cada variável irá armazenar, como números inteiros, números decimais, texto ou valores lógicos. Exemplos dessas linguagens incluem C, C++, Java e TypeScript. Esta abordagem oferece várias vantagens significativas. Primeiramente, ela permite que o compilador detecte erros de tipo durante a compilação, antes mesmo do programa ser executado. Por exemplo, se um programador tentar armazenar texto em uma variável declarada como número, o compilador identificará esse erro imediatamente. Isso resulta em programas mais robustos e confiáveis, pois muitos erros são capturados precocemente no processo de desenvolvimento.
+
+Além disso, a tipagem estática frequentemente leva a um melhor desempenho do programa. Como o compilador conhece antecipadamente os tipos de todas as variáveis, ele pode otimizar o código gerado, alocando a quantidade exata de memória necessária e escolhendo as instruções mais eficientes para manipular cada tipo de dado. Isso é particularmente importante em sistemas com recursos limitados ou aplicações que exigem alta performance.
+
+Por outro lado, as **linguagens de tipagem dinâmica**, como Python, JavaScript, Ruby e PHP, não exigem que o programador declare explicitamente os tipos das variáveis. Nestas linguagens, o tipo é inferido automaticamente com base no valor atribuído à variável e pode mudar durante a execução do programa. Esta flexibilidade torna a programação mais ágil e intuitiva para muitos desenvolvedores, especialmente iniciantes. O código tende a ser mais conciso, pois elimina a necessidade de declarações de tipo, e o desenvolvimento pode ser mais rápido, já que há menos detalhes técnicos para se preocupar inicialmente.
+
+A tipagem dinâmica também facilita certos padrões de programação e manipulação de dados heterogêneos. Por exemplo, uma lista em Python pode conter elementos de diferentes tipos sem problemas, enquanto em linguagens de tipagem estática isso geralmente requer soluções mais complexas. Esta flexibilidade é particularmente útil em cenários como processamento de dados, prototipagem rápida e desenvolvimento web.
+
+No entanto, esta liberdade vem com um custo. Erros de tipo em linguagens dinâmicas só são descobertos durante a execução do programa, potencialmente resultando em falhas inesperadas em produção. Além disso, sem declarações explícitas de tipo, o código pode se tornar menos autodocumentado, dificultando a compreensão de qual tipo de dado uma função espera receber ou retornar.
+
+Algumas linguagens modernas, como Kotlin, Swift e Scala[^1], adotam uma **abordagem híbrida conhecida como "inferência de tipo"**. Nestas linguagens, o programador pode optar por declarar explicitamente os tipos ou deixar que o compilador os infira automaticamente. Isso oferece um equilíbrio entre a segurança da tipagem estática e a conveniência da tipagem dinâmica, permitindo código conciso sem sacrificar a verificação de tipos em tempo de compilação.
+
+A escolha entre tipagem estática e dinâmica frequentemente depende do contexto do projeto, das preferências da equipe e dos requisitos específicos da aplicação. Projetos que priorizam robustez, desempenho e manutenção a longo prazo geralmente se beneficiam da tipagem estática, enquanto aqueles que valorizam agilidade, flexibilidade e prototipagem rápida podem preferir a tipagem dinâmica.
+
+[^1]: E mais recentemente Python
