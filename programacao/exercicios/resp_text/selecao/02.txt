@@ -1,0 +1,6 @@
+p > q = F
+q >= r = F
+r > p = V
+(p < q) \land (p < r) = V
+(p > q) \lor (r > q) = V
+\lnot(\lnot(p > q) \land \lnot(r > q)) = V

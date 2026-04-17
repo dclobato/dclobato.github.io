@@ -15,8 +15,8 @@ int main()
 
     percentual_desconto /= 100;
     bruto = horas * valor_hora;
-    desconto = recebe * percentual_desconto;
-    liquido = recebe - desconto;
+    desconto = bruto * percentual_desconto;
+    liquido = bruto - desconto;
 
     printf("Salario bruto..... R$ %10.2f\n", bruto);
     printf("Total de descontos R$ %10.2f\n", desconto);

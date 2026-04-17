@@ -6,6 +6,7 @@ int main() {
     printf("Digite o raio do primeiro cabo (em mm): ");
     scanf("%lf", &R1);
     
+    printf("Digite o raio do segundo cabo (em mm): ");
     scanf("%lf", &R2);
 
     D_min = 2 * R1 + 2 * R2;

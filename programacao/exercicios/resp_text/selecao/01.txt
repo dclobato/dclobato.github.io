@@ -1,0 +1,4 @@
+(A \lor B) \land \lnot C = F
+(A \oplus B) \lor (\lnot C \land D) = F
+(A \land B) \oplus (\lnot C \lor D) = F
+(\lnot A \lor B) \land (C \oplus D) = V
