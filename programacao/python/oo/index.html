@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1821,11 +1821,11 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="c1"># Método da classe</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">apresentar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Olá, meu nome é </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e tenho </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos.&quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"Olá, meu nome é </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> e tenho </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">idade</span><span class="si">}</span><span class="s2"> anos."</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="c1"># Criando objetos (instâncias) da classe Pessoa</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">pessoa1</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">pessoa2</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Carlos&quot;</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="n">pessoa1</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Ana"</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="n">pessoa2</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Carlos"</span><span class="p">,</span> <span class="mi">35</span><span class="p">)</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="c1"># Chamando métodos e acessando propriedades</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">pessoa1</span><span class="o">.</span><span class="n">apresentar</span><span class="p">())</span>  <span class="c1"># Olá, meu nome é Ana e tenho 28 anos.</span>
@@ -1874,14 +1874,14 @@
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6"></a>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">depositar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span> <span class="o">+=</span> <span class="n">valor</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__registrar_transacao</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Depósito: +R$</span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__registrar_transacao</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Depósito: +R$</span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_saldo</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11"></a>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">__registrar_transacao</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">descricao</span><span class="p">):</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">__historico</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">descricao</span><span class="p">)</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14"></a>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1"># Uso da classe</span>
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">conta</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">(</span><span class="s2">&quot;João Silva&quot;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">conta</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">(</span><span class="s2">"João Silva"</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 </span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">conta</span><span class="o">.</span><span class="n">depositar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
 </span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18"></a>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">conta</span><span class="o">.</span><span class="n">titular</span><span class="p">)</span>    <span class="c1"># João Silva - acesso normal</span>
@@ -1923,18 +1923,18 @@
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="c1"># Subclasses</span>
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="k">class</span><span class="w"> </span><span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">fazer_som</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="k">return</span> <span class="s2">&quot;Au au!&quot;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="k">return</span> <span class="s2">"Au au!"</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="k">class</span><span class="w"> </span><span class="nc">Gato</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
 </span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">fazer_som</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>        <span class="k">return</span> <span class="s2">&quot;Miau!&quot;</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>        <span class="k">return</span> <span class="s2">"Miau!"</span>
 </span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a>
 </span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1"># Uso das classes</span>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="n">rex</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">)</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">mimi</span> <span class="o">=</span> <span class="n">Gato</span><span class="p">(</span><span class="s2">&quot;Mimi&quot;</span><span class="p">)</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="n">rex</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">"Rex"</span><span class="p">)</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="n">mimi</span> <span class="o">=</span> <span class="n">Gato</span><span class="p">(</span><span class="s2">"Mimi"</span><span class="p">)</span>
 </span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21"></a>
-</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">rex</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">rex</span><span class="o">.</span><span class="n">fazer_som</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Rex: Au au!</span>
-</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">mimi</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">mimi</span><span class="o">.</span><span class="n">fazer_som</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Mimi: Miau!</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">rex</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">rex</span><span class="o">.</span><span class="n">fazer_som</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Rex: Au au!</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">mimi</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">mimi</span><span class="o">.</span><span class="n">fazer_som</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Mimi: Miau!</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Python também suporta herança múltipla, permitindo que uma classe herde de várias superclasses.</p>
 <h3 id="polimorfismo">Polimorfismo<a class="headerlink" href="#polimorfismo" title="Permanent link">&para;</a></h3>
@@ -1947,7 +1947,7 @@
 <span class="normal"><a href="#__codelineno-3-6">6</a></span>
 <span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fazer_animal_emitir_som</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>    <span class="c1"># Qualquer objeto que tenha um método fazer_som funcionará aqui</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="o">.</span><span class="n">nome</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="n">animal</span><span class="o">.</span><span class="n">fazer_som</span><span class="p">())</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">animal</span><span class="o">.</span><span class="n">nome</span> <span class="o">+</span> <span class="s2">": "</span> <span class="o">+</span> <span class="n">animal</span><span class="o">.</span><span class="n">fazer_som</span><span class="p">())</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1"># A mesma função funciona para diferentes tipos de animais</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">fazer_animal_emitir_som</span><span class="p">(</span><span class="n">rex</span><span class="p">)</span>  <span class="c1"># Rex: Au au!</span>
@@ -2002,7 +2002,7 @@
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">novo_nome</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">novo_nome</span><span class="p">:</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_nome</span> <span class="o">=</span> <span class="n">novo_nome</span>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Nome deve ser uma string não vazia&quot;</span><span class="p">)</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Nome deve ser uma string não vazia"</span><span class="p">)</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="c1"># Getter para idade</span>
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_idade</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2013,10 +2013,10 @@
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nova_idade</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">nova_idade</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">:</span>
 </span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_idade</span> <span class="o">=</span> <span class="n">nova_idade</span>
 </span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Idade deve ser um inteiro entre 0 e 150&quot;</span><span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Idade deve ser um inteiro entre 0 e 150"</span><span class="p">)</span>
 </span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27"></a>
 </span><span id="__span-4-28"><a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="c1"># Uso</span>
-</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+</span><span id="__span-4-29"><a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Ana"</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
 </span><span id="__span-4-30"><a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_nome</span><span class="p">())</span>    <span class="c1"># Ana</span>
 </span><span id="__span-4-31"><a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="n">p</span><span class="o">.</span><span class="n">set_idade</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span>
 </span><span id="__span-4-32"><a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_idade</span><span class="p">())</span>   <span class="c1"># 29</span>
@@ -2086,7 +2086,7 @@
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">valor</span><span class="p">:</span>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_nome</span> <span class="o">=</span> <span class="n">valor</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Nome deve ser uma string não vazia&quot;</span><span class="p">)</span>
+</span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Nome deve ser uma string não vazia"</span><span class="p">)</span>
 </span><span id="__span-5-18"><a id="__codelineno-5-18" name="__codelineno-5-18"></a>
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="c1"># Getter para idade</span>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20"></a>    <span class="nd">@property</span>
@@ -2099,7 +2099,7 @@
 </span><span id="__span-5-27"><a id="__codelineno-5-27" name="__codelineno-5-27"></a>        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">valor</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">valor</span> <span class="o">&lt;=</span> <span class="mi">150</span><span class="p">:</span>
 </span><span id="__span-5-28"><a id="__codelineno-5-28" name="__codelineno-5-28"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">_idade</span> <span class="o">=</span> <span class="n">valor</span>
 </span><span id="__span-5-29"><a id="__codelineno-5-29" name="__codelineno-5-29"></a>        <span class="k">else</span><span class="p">:</span>
-</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Idade deve ser um inteiro entre 0 e 150&quot;</span><span class="p">)</span>
+</span><span id="__span-5-30"><a id="__codelineno-5-30" name="__codelineno-5-30"></a>            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Idade deve ser um inteiro entre 0 e 150"</span><span class="p">)</span>
 </span><span id="__span-5-31"><a id="__codelineno-5-31" name="__codelineno-5-31"></a>
 </span><span id="__span-5-32"><a id="__codelineno-5-32" name="__codelineno-5-32"></a>    <span class="c1"># Propriedade somente leitura (apenas getter)</span>
 </span><span id="__span-5-33"><a id="__codelineno-5-33" name="__codelineno-5-33"></a>    <span class="nd">@property</span>
@@ -2107,7 +2107,7 @@
 </span><span id="__span-5-35"><a id="__codelineno-5-35" name="__codelineno-5-35"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_idade</span> <span class="o">&gt;=</span> <span class="mi">18</span>
 </span><span id="__span-5-36"><a id="__codelineno-5-36" name="__codelineno-5-36"></a>
 </span><span id="__span-5-37"><a id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="c1"># Uso</span>
-</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+</span><span id="__span-5-38"><a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Ana"</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
 </span><span id="__span-5-39"><a id="__codelineno-5-39" name="__codelineno-5-39"></a><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">nome</span><span class="p">)</span>        <span class="c1"># Ana - acesso como atributo</span>
 </span><span id="__span-5-40"><a id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="n">p</span><span class="o">.</span><span class="n">idade</span> <span class="o">=</span> <span class="mi">29</span>         <span class="c1"># Chama o setter</span>
 </span><span id="__span-5-41"><a id="__codelineno-5-41" name="__codelineno-5-41"></a><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">idade</span><span class="p">)</span>       <span class="c1"># 29</span>
@@ -2176,9 +2176,9 @@
 </span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24"></a>
 </span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25"></a><span class="c1"># Tentativa de modificar atributos</span>
 </span><span id="__span-6-26"><a id="__codelineno-6-26" name="__codelineno-6-26"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>    <span class="n">c</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Erro! Não existe setter para &#39;area&#39;</span>
+</span><span id="__span-6-27"><a id="__codelineno-6-27" name="__codelineno-6-27"></a>    <span class="n">c</span><span class="o">.</span><span class="n">area</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># Erro! Não existe setter para 'area'</span>
 </span><span id="__span-6-28"><a id="__codelineno-6-28" name="__codelineno-6-28"></a><span class="k">except</span> <span class="ne">AttributeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Não é possível modificar a área diretamente.&quot;</span><span class="p">)</span>
+</span><span id="__span-6-29"><a id="__codelineno-6-29" name="__codelineno-6-29"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Não é possível modificar a área diretamente."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="vantagens-dos-getters-e-setters">Vantagens dos <em>getters</em> e <em>setters</em><a class="headerlink" href="#vantagens-dos-getters-e-setters" title="Permanent link">&para;</a></h3>
 <p>O uso de <em>getters</em> e <em>setters</em>, especialmente com <code class="language-python highlight"><span class="nd">@property</span></code>, oferece várias vantagens:</p>
@@ -2217,9 +2217,9 @@
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a>    <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="n">idade</span><span class="p">:</span> <span class="nb">int</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>  <span class="c1"># Pessoa(nome=&#39;Alice&#39;, idade=25)</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>  <span class="c1"># Pessoa(nome='Alice', idade=25)</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># True</span>
 </span></code></pre></div></td></tr></table></div>
 <p>O exemplo acima define uma <em>dataclass</em> chamada <code>Pessoa</code> com dois atributos: <code>nome</code> e <code>idade</code>. O método <code class="language-python highlight"><span class="fm">__repr__</span></code> gerado automaticamente facilita a exibição do conteúdo da instância, bem como o método <code class="language-python highlight"><span class="fm">__eq__</span></code> para comparar instâncias de uma classe de dados.  </p>
@@ -2235,7 +2235,7 @@
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="n">nome</span><span class="p">:</span> <span class="nb">str</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a>    <span class="n">idade</span><span class="p">:</span> <span class="nb">int</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Pessoa</span><span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="c1"># p.idade = 30  # Gera erro: frozen instance cannot be modified</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Apesar de sua simplicidade, uma <em>dataclass</em> ainda pode ter métodos personalizados, como qualquer classe tradicional em Python. Além disso, é possível utilizar herança, como em qualquer outro tipo de classe.  </p>
@@ -2265,16 +2265,16 @@
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>    <span class="n">especie</span><span class="p">:</span> <span class="nb">str</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">falar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> faz barulho!&quot;</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> faz barulho!"</span>
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>
 </span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="nd">@dataclass</span>
 </span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="k">class</span><span class="w"> </span><span class="nc">Cachorro</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
 </span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13"></a>    <span class="n">cor</span><span class="p">:</span> <span class="nb">str</span>
 </span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14"></a>
 </span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">falar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> diz au au!&quot;</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="si">}</span><span class="s2"> diz au au!"</span>
 </span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17"></a>
-</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">&quot;Rex&quot;</span><span class="p">,</span> <span class="s2">&quot;Cachorro&quot;</span><span class="p">,</span> <span class="s2">&quot;Marrom&quot;</span><span class="p">)</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">"Rex"</span><span class="p">,</span> <span class="s2">"Cachorro"</span><span class="p">,</span> <span class="s2">"Marrom"</span><span class="p">)</span>
 </span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">cachorro</span><span class="o">.</span><span class="n">falar</span><span class="p">())</span>  <span class="c1"># Rex diz au au!</span>
 </span></code></pre></div></td></tr></table></div>
 <p>No exemplo acima, <code>Cachorro</code> herda de <code>Animal</code> e sobrescreve o método <code>falar</code>. Essa flexibilidade permite que as <em>dataclasses</em> sejam utilizadas em sistemas onde a simplicidade de armazenamento de dados ainda é necessária, mas com a possibilidade de estender comportamentos através de herança.</p>
@@ -2444,7 +2444,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       

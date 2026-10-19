@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1846,8 +1846,8 @@
 <li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span></code>, se <code>a</code> for verdadeiro, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
 </ul>
 <p>Uma diferença significativa em relação ao C é que os operadores lógicos em Python não retornam necessariamente valores booleanos (<code>True</code> ou <code>False</code>), mas sim o último valor avaliado. Isso permite construções concisas como:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Se entrada_do_usuario for vazia, nome será &quot;Anônimo&quot;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">nome</span> <span class="o">=</span> <span class="n">entrada_do_usuario</span> <span class="ow">or</span> <span class="s2">&quot;Anônimo&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Se entrada_do_usuario for vazia, nome será "Anônimo"</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">nome</span> <span class="o">=</span> <span class="n">entrada_do_usuario</span> <span class="ow">or</span> <span class="s2">"Anônimo"</span>
 </span></code></pre></div>
 <p>Em Python, os seguintes valores são considerados falsos:</p>
 <ul>
@@ -1925,11 +1925,11 @@
 <p>Uma característica poderosa de Python é que os operadores relacionais podem ser encadeados, o que não é possível em C. Por exemplo:</p>
 <div class="language-python highlight"><span class="filename">Encadeamento de operadores relacionais</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Em Python, isso funciona como esperado</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n está entre 10 e 50&quot;</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"n está entre 10 e 50"</span><span class="p">)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Equivalente a:</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n está entre 10 e 50&quot;</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"n está entre 10 e 50"</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Os operadores <code class="language-python highlight"><span class="ow">is</span></code> e <code class="language-python highlight"><span class="ow">is</span> <span class="ow">not</span></code> verificam a identidade do objeto, não o valor. Isso é diferente de <code>==</code> e <code>!=</code>, que verificam a igualdade de valor:</p>
 <div class="language-python highlight"><span class="filename">Identidade vs igualdade</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -1942,15 +1942,15 @@
 </span></code></pre></div>
 <p>Os operadores <code class="language-python highlight"><span class="ow">in</span></code> e <code class="language-python highlight"><span class="ow">not</span> <span class="ow">in</span></code> são usados para verificar a pertinência em coleções:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">3</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>        <span class="c1"># True</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">in</span> <span class="s1">&#39;python&#39;</span><span class="p">)</span>          <span class="c1"># False</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chave&#39;</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">&#39;chave&#39;</span><span class="p">:</span> <span class="mi">42</span><span class="p">})</span> <span class="c1"># True, verifica as chaves do dicionário</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'a'</span> <span class="ow">in</span> <span class="s1">'python'</span><span class="p">)</span>          <span class="c1"># False</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'chave'</span> <span class="ow">in</span> <span class="p">{</span><span class="s1">'chave'</span><span class="p">:</span> <span class="mi">42</span><span class="p">})</span> <span class="c1"># True, verifica as chaves do dicionário</span>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Diferentemente de C, em Python não há confusão possível entre o operador de atribuição (<code>=</code>) e o operador de igualdade (<code>==</code>) em expressões condicionais, pois atribuições não são expressões que retornam valores. Uma atribuição dentro de uma condição resultará em erro de sintaxe:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Isso causará um erro de sintaxe em Python</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">):</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Isso não funciona em Python&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Isso não funciona em Python"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <h2 id="operadores-de-bit">Operadores de bit<a class="headerlink" href="#operadores-de-bit" title="Permanent link">&para;</a></h2>
@@ -2119,7 +2119,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">&quot;Programação de Redes de Computadores&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">"Programação de Redes de Computadores"</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1"># Fatiamento simples com índices negativos</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:])</span>         <span class="c1"># Extrai os 10 últimos caracteres</span>
@@ -2394,7 +2394,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       

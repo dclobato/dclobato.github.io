@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1963,12 +1963,12 @@
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
 <span class="normal"><a href="#__codelineno-2-4">4</a></span>
 <span class="normal"><a href="#__codelineno-2-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este é um bloco&quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Este é um bloco"</span><span class="p">)</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fora do bloco&quot;</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Fora do bloco"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Neste exemplo, o bloco associado ao <code class="language-python highlight"><span class="k">if</span></code> contém duas instruções (<code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este é um bloco&quot;</span><span class="p">)</span></code> e <code class="language-python highlight"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span></code>). A última instrução <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fora do bloco&quot;</span><span class="p">)</span></code> está fora do bloco porque não está indentada -- a indentação substitui o papel das chaves em outras linguagens.</p>
+<p>Neste exemplo, o bloco associado ao <code class="language-python highlight"><span class="k">if</span></code> contém duas instruções (<code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">"Este é um bloco"</span><span class="p">)</span></code> e <code class="language-python highlight"><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span></code>). A última instrução <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">"Fora do bloco"</span><span class="p">)</span></code> está fora do bloco porque não está indentada -- a indentação substitui o papel das chaves em outras linguagens.</p>
 <p>O conceito de escopo em Python segue regras conhecidas como <strong>LEGB</strong> (<em>Local, Enclosing, Global, Built-in</em>). O escopo de uma variável determina onde ela pode ser acessada dentro do programa:</p>
 <ul>
 <li><strong>Local (L)</strong>: Variáveis declaradas dentro de uma função são locais e só podem ser acessadas dentro dela.</li>
@@ -2038,22 +2038,22 @@
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>  <span class="c1"># definida dentro do if</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dentro do if:&quot;</span><span class="p">)</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># acessa a variável global</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># acessa a variável do if</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Dentro do if:"</span><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"x ="</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># acessa a variável global</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"y ="</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># acessa a variável do if</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8"></a>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a>        <span class="n">z</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># variável local da função</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dentro da função:&quot;</span><span class="p">)</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># ainda acessa variável global</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># acessa variável definida no if</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;z =&quot;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>  <span class="c1"># acessa variável local da função</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Dentro da função:"</span><span class="p">)</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"x ="</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># ainda acessa variável global</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"y ="</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># acessa variável definida no if</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"z ="</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>  <span class="c1"># acessa variável local da função</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15"></a>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16"></a>    <span class="n">funcao</span><span class="p">()</span>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17"></a>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Fora do if:&quot;</span><span class="p">)</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x =&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># continua acessível</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># continua acessível (if não cria escopo!)</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Fora do if:"</span><span class="p">)</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"x ="</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>  <span class="c1"># continua acessível</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"y ="</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>  <span class="c1"># continua acessível (if não cria escopo!)</span>
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="c1"># print(z)       # ERRO: z não existe aqui, pois só vive dentro da função</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
@@ -2070,7 +2070,7 @@
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Fora do if:
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>x = 10
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>y = 20
-</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>NameError: name &#39;z&#39; is not defined
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>NameError: name 'z' is not defined
 </span></code></pre></div>
 </div>
 </div>
@@ -2088,7 +2088,7 @@
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade&quot;</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Você é maior de idade"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="uso-de-else">Uso de else<a class="headerlink" href="#uso-de-else" title="Permanent link">&para;</a></h4>
 <p>A estrutura pode ser expandida com o uso de <code class="language-python highlight"><span class="k">else</span></code>, permitindo a execução de um bloco alternativo quando a condição for falsa:</p>
@@ -2098,9 +2098,9 @@
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
 <span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">16</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é maior de idade&quot;</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Você é maior de idade"</span><span class="p">)</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="k">else</span><span class="p">:</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Você é menor de idade&quot;</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Você é menor de idade"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h4 id="uso-de-elif">Uso de elif<a class="headerlink" href="#uso-de-elif" title="Permanent link">&para;</a></h4>
 <p>O Python também apresenta o comando <code class="language-python highlight"><span class="k">elif</span></code> (abreviação de <code class="language-python highlight"><span class="k">else</span> <span class="k">if</span></code>), que permite o encadeamento de múltiplas condições sem a necessidade de aninhar vários <code class="language-python highlight"><span class="k">if</span><span class="o">-</span><span class="k">else</span></code>:</p>
@@ -2115,14 +2115,14 @@
 <span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-9-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">nota</span> <span class="o">=</span> <span class="mi">75</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">if</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">&quot;A&quot;</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">"A"</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="k">elif</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">80</span><span class="p">:</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">&quot;B&quot;</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">"B"</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="k">elif</span> <span class="n">nota</span> <span class="o">&gt;=</span> <span class="mi">70</span><span class="p">:</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">"C"</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="k">else</span><span class="p">:</span>
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">&quot;D&quot;</span>
-</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conceito:&quot;</span><span class="p">,</span> <span class="n">conceito</span><span class="p">)</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="n">conceito</span> <span class="o">=</span> <span class="s2">"D"</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Conceito:"</span><span class="p">,</span> <span class="n">conceito</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Esse encadeamento torna o código mais organizado e legível em situações de decisão múltipla.</p>
 <h3 id="operador-ternario">Operador Ternário<a class="headerlink" href="#operador-ternario" title="Permanent link">&para;</a></h3>
@@ -2130,7 +2130,7 @@
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Operador ternário</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
 <span class="normal"><a href="#__codelineno-10-2">2</a></span>
 <span class="normal"><a href="#__codelineno-10-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">17</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;adulto&quot;</span> <span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="k">else</span> <span class="s2">&quot;menor de idade&quot;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">status</span> <span class="o">=</span> <span class="s2">"adulto"</span> <span class="k">if</span> <span class="n">idade</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="k">else</span> <span class="s2">"menor de idade"</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Neste exemplo, <code class="language-python highlight"><span class="n">status</span></code> receberá o valor "adulto" se <code class="language-python highlight"><span class="n">idade</span></code> for maior ou igual a 18. Caso contrário, receberá "menor de idade". O operador ternário é útil em situações simples, principalmente quando queremos atribuir valores de maneira compacta e direta.</p>
@@ -2149,7 +2149,7 @@
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a>    <span class="k">case</span> <span class="n">padrao2</span><span class="p">:</span>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>        <span class="c1"># bloco para caso padrao2</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>        <span class="c1"># bloco &quot;default&quot;, executado se nenhum padrão corresponder</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a>        <span class="c1"># bloco "default", executado se nenhum padrão corresponder</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Um exemplo simples pode ser visto abaixo:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de match-case</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
@@ -2174,21 +2174,21 @@
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="k">match</span> <span class="n">dia</span><span class="p">:</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Domingo&quot;</span><span class="p">)</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Domingo"</span><span class="p">)</span>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segunda-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Segunda-feira"</span><span class="p">)</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a>    <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Terça-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Terça-feira"</span><span class="p">)</span>
 </span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a>    <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quarta-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Quarta-feira"</span><span class="p">)</span>
 </span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a>    <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quinta-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Quinta-feira"</span><span class="p">)</span>
 </span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a>    <span class="k">case</span> <span class="mi">6</span><span class="p">:</span>
-</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sexta-feira&quot;</span><span class="p">)</span>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Sexta-feira"</span><span class="p">)</span>
 </span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16"></a>    <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>
-</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sábado&quot;</span><span class="p">)</span>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Sábado"</span><span class="p">)</span>
 </span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18"></a>    <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
-</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dia inválido&quot;</span><span class="p">)</span>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Dia inválido"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Neste código:</p>
 <ul>
@@ -2209,11 +2209,11 @@
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="k">match</span> <span class="n">ponto</span><span class="p">:</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>    <span class="k">case</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ponto sobre o eixo Y em </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ponto sobre o eixo Y em </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6"></a>    <span class="k">case</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ponto sobre o eixo X em </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ponto sobre o eixo X em </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a>    <span class="k">case</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ponto em (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Ponto em (</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">)"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="estruturas-iterativas">Estruturas Iterativas<a class="headerlink" href="#estruturas-iterativas" title="Permanent link">&para;</a></h2>
 <h3 id="iteracao-vs-interacao">Iteração vs. Interação<a class="headerlink" href="#iteracao-vs-interacao" title="Permanent link">&para;</a></h3>
@@ -2231,9 +2231,9 @@
 <ul>
 <li><code class="language-python highlight"><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span></code>: <code>i</code> é menor que 10?</li>
 <li><code class="language-python highlight"><span class="n">contador</span> <span class="o">!=</span> <span class="mi">0</span></code>: <code>contador</code> é diferente de zero?</li>
-<li><code class="language-python highlight"><span class="n">nome</span> <span class="o">==</span> <span class="s2">&quot;admin&quot;</span></code>: <code>nome</code> é igual a <code>admin</code>?</li>
-<li><code class="language-python highlight"><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">senha</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span></code>: <code>i</code> é menor que 10 E <code>senha</code> não está vazia?</li>
-<li><code class="language-python highlight"><span class="n">continuar</span> <span class="o">==</span> <span class="s1">&#39;S&#39;</span> <span class="ow">or</span> <span class="n">continuar</span> <span class="o">==</span> <span class="s1">&#39;s&#39;</span></code>: <code>continuar</code> é <code>S</code> ou <code>s</code>?</li>
+<li><code class="language-python highlight"><span class="n">nome</span> <span class="o">==</span> <span class="s2">"admin"</span></code>: <code>nome</code> é igual a <code>admin</code>?</li>
+<li><code class="language-python highlight"><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="ow">and</span> <span class="n">senha</span> <span class="o">!=</span> <span class="s2">""</span></code>: <code>i</code> é menor que 10 E <code>senha</code> não está vazia?</li>
+<li><code class="language-python highlight"><span class="n">continuar</span> <span class="o">==</span> <span class="s1">'S'</span> <span class="ow">or</span> <span class="n">continuar</span> <span class="o">==</span> <span class="s1">'s'</span></code>: <code>continuar</code> é <code>S</code> ou <code>s</code>?</li>
 </ul>
 <p>Enquanto a condição for verdadeira, o laço continua executando. Quando a condição se tornar falsa, o laço para.</p>
 <p>Uma característica importante dos laços é quando a condição é verificada. Existem duas possibilidades principais:</p>
@@ -2291,9 +2291,9 @@
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
 <span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">]</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="k">for</span> <span class="n">indice</span><span class="p">,</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista</span><span class="p">):</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteração </span><span class="si">{</span><span class="n">indice</span><span class="si">}</span><span class="s2">: valor = </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteração </span><span class="si">{</span><span class="n">indice</span><span class="si">}</span><span class="s2">: valor = </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2310,9 +2310,9 @@
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
-<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">]</span>
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="k">for</span> <span class="n">indice</span><span class="p">,</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iteração </span><span class="si">{</span><span class="n">indice</span><span class="si">}</span><span class="s2">: valor = </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Iteração </span><span class="si">{</span><span class="n">indice</span><span class="si">}</span><span class="s2">: valor = </span><span class="si">{</span><span class="n">elemento</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2361,10 +2361,10 @@
 <span class="normal"><a href="#__codelineno-21-3">3</a></span>
 <span class="normal"><a href="#__codelineno-21-4">4</a></span>
 <span class="normal"><a href="#__codelineno-21-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a>    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite S para sair: &quot;</span><span class="p">)</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a>    <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">&quot;S&quot;</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2"></a>    <span class="n">resposta</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Digite S para sair: "</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3"></a>    <span class="k">if</span> <span class="n">resposta</span> <span class="o">==</span> <span class="s2">"S"</span><span class="p">:</span>
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4"></a>        <span class="k">break</span>
-</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Programa encerrado&quot;</span><span class="p">)</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Programa encerrado"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2381,10 +2381,10 @@
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">resposta</span><span class="p">;</span>
 </span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Digite S para sair: &quot;</span><span class="p">);</span>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot; %c&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">resposta</span><span class="p">);</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">resposta</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">&#39;S&#39;</span><span class="p">);</span>
-</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Programa encerrado!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Digite S para sair: "</span><span class="p">);</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">" %c"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">resposta</span><span class="p">);</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">resposta</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="sc">'S'</span><span class="p">);</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Programa encerrado!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
 </span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
@@ -2417,14 +2417,14 @@
 </span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a>
 </span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeros</span><span class="p">):</span>
-</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Verificando índice </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">numeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Verificando índice </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">numeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a>
 </span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a>    <span class="k">if</span> <span class="n">numeros</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">procurado</span><span class="p">:</span>
-</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Encontrado! </span><span class="si">{</span><span class="n">procurado</span><span class="si">}</span><span class="s2"> está no índice </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Encontrado! </span><span class="si">{</span><span class="n">procurado</span><span class="si">}</span><span class="s2"> está no índice </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a>        <span class="k">break</span>  <span class="c1"># Para de procurar assim que encontra</span>
 </span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 </span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13"></a>
-</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Busca finalizada&quot;</span><span class="p">)</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Busca finalizada"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2455,7 +2455,7 @@
 </span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5"></a>    <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Se for ímpar</span>
 </span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6"></a>        <span class="k">continue</span>  <span class="c1"># Pula para a próxima iteração</span>
 </span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
-</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fim da contagem&quot;</span><span class="p">)</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Fim da contagem"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -2487,16 +2487,16 @@
 <span class="normal"><a href="#__codelineno-27-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-27-10">10</a></span>
 <span class="normal"><a href="#__codelineno-27-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um número inteiro: &quot;</span><span class="p">)</span>
-</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3"></a>    <span class="k">if</span> <span class="n">entrada</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
-</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nenhum valor foi informado.&quot;</span><span class="p">)</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2"></a>    <span class="n">entrada</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Digite um número inteiro: "</span><span class="p">)</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3"></a>    <span class="k">if</span> <span class="n">entrada</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Nenhum valor foi informado."</span><span class="p">)</span>
 </span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5"></a>    <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6"></a>        <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">entrada</span><span class="p">)</span>
-</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Você digitou o número </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Você digitou o número </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
 </span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro: entrada inválida. Por favor, digite um número inteiro.&quot;</span><span class="p">)</span>
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Erro: entrada inválida. Por favor, digite um número inteiro."</span><span class="p">)</span>
 </span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Entrada interrompida pelo usuário.&quot;</span><span class="p">)</span>
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Entrada interrompida pelo usuário."</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Algumas das principais exceções que podem ocorrer durante a execução de um programa em Python estão resumidas na tabela a seguir.</p>
 <table>
@@ -2516,17 +2516,17 @@
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">AttributeError</span></code></td>
 <td style="text-align: left;">Ocorre quando se acessa atributo inexistente em um objeto.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="s2">&quot;texto&quot;</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="s2">"texto"</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"x"</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">Exception</span></code></td>
 <td style="text-align: left;">Classe base para todas as exceções não relacionadas ao sistema.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Erro genérico&quot;</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"Erro genérico"</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">FileNotFoundError</span></code></td>
 <td style="text-align: left;">Ocorre quando se tenta abrir arquivo inexistente.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;arquivo_inexistente.txt&quot;</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">open</span><span class="p">(</span><span class="s2">"arquivo_inexistente.txt"</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">ImportError</span></code></td>
@@ -2541,12 +2541,12 @@
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">KeyError</span></code></td>
 <td style="text-align: left;">Ocorre quando se acessa uma chave inexistente em um dicionário.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}[</span><span class="s2">"b"</span><span class="p">]</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">MemoryError</span></code></td>
 <td style="text-align: left;">Ocorre quando falta memória para executar uma operação.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="n">x</span> <span class="o">=</span> <span class="s2">"a"</span> <span class="o">*</span> <span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">20</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">ModuleNotFoundError</span></code></td>
@@ -2566,12 +2566,12 @@
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">PermissionError</span></code></td>
 <td style="text-align: left;">Ocorre quando não há permissão para acessar um recurso.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/root/arquivo.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">open</span><span class="p">(</span><span class="s2">"/root/arquivo.txt"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">RuntimeError</span></code></td>
 <td style="text-align: left;">Ocorre quando detecta erro que não se encaixa em outras categorias.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Falha genérica&quot;</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Falha genérica"</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">StopIteration</span></code></td>
@@ -2581,12 +2581,12 @@
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">TypeError</span></code></td>
 <td style="text-align: left;">Ocorre quando uma operação é aplicada a um tipo inadequado.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="s2">&quot;texto&quot;</span> <span class="o">+</span> <span class="mi">5</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="s2">"texto"</span> <span class="o">+</span> <span class="mi">5</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">ValueError</span></code></td>
 <td style="text-align: left;">Ocorre quando uma função recebe argumento de tipo correto, mas valor inválido.</td>
-<td style="text-align: left;"><code class="language-python highlight"><span class="nb">int</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)</span></code></td>
+<td style="text-align: left;"><code class="language-python highlight"><span class="nb">int</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">)</span></code></td>
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-python highlight"><span class="ne">ZeroDivisionError</span></code></td>
@@ -2607,12 +2607,12 @@
 <span class="normal"><a href="#__codelineno-28-7">7</a></span>
 <span class="normal"><a href="#__codelineno-28-8">8</a></span>
 <span class="normal"><a href="#__codelineno-28-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a>    <span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;dados.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2"></a>    <span class="n">arquivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"dados.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span>
 </span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
-</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O arquivo não foi encontrado.&quot;</span><span class="p">)</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"O arquivo não foi encontrado."</span><span class="p">)</span>
 </span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="k">else</span><span class="p">:</span>
 </span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6"></a>    <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conteúdo do arquivo:&quot;</span><span class="p">)</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Conteúdo do arquivo:"</span><span class="p">)</span>
 </span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
 </span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9"></a>    <span class="n">arquivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
@@ -2632,9 +2632,9 @@
 <span class="normal"><a href="#__codelineno-29-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">dividir</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
 </span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2"></a>    <span class="k">try</span><span class="p">:</span>
 </span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3"></a>        <span class="n">resultado</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Resultado:"</span><span class="p">,</span> <span class="n">resultado</span><span class="p">)</span>
 </span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5"></a>    <span class="k">finally</span><span class="p">:</span>
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Encerrando operação de divisão.&quot;</span><span class="p">)</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Encerrando operação de divisão."</span><span class="p">)</span>
 </span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7"></a>
 </span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8"></a><span class="n">dividir</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9"></a><span class="n">dividir</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -2649,7 +2649,7 @@
 <p>Em operações com arquivos, a prática recomendada é usar a instrução <code class="language-python highlight"><span class="k">with</span> <span class="nb">open</span><span class="p">()</span></code> em vez de <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">finally</span></code>. O gerenciador de contexto (<code class="language-python highlight"><span class="k">with</span></code>) fecha o arquivo automaticamente, mesmo em caso de erro. Exemplo:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1">1</a></span>
 <span class="normal"><a href="#__codelineno-31-2">2</a></span>
-<span class="normal"><a href="#__codelineno-31-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;dados.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
+<span class="normal"><a href="#__codelineno-31-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"dados.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
 </span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2"></a>    <span class="n">conteudo</span> <span class="o">=</span> <span class="n">arquivo</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -2667,13 +2667,13 @@
 <span class="normal"><a href="#__codelineno-32-8">8</a></span>
 <span class="normal"><a href="#__codelineno-32-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">definir_idade</span><span class="p">(</span><span class="n">idade</span><span class="p">):</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2"></a>    <span class="k">if</span> <span class="n">idade</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Idade negativa não é permitida.&quot;</span><span class="p">)</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Idade definida:&quot;</span><span class="p">,</span> <span class="n">idade</span><span class="p">)</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Idade negativa não é permitida."</span><span class="p">)</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Idade definida:"</span><span class="p">,</span> <span class="n">idade</span><span class="p">)</span>
 </span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5"></a>
 </span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="k">try</span><span class="p">:</span>
 </span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7"></a>    <span class="n">definir_idade</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
 </span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">erro</span><span class="p">:</span>
-</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro:&quot;</span><span class="p">,</span> <span class="n">erro</span><span class="p">)</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Erro:"</span><span class="p">,</span> <span class="n">erro</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="excecoes-definidas-pelo-usuario">Exceções Definidas pelo Usuário<a class="headerlink" href="#excecoes-definidas-pelo-usuario" title="Permanent link">&para;</a></h3>
 <p>Além das exceções fornecidas pela própria linguagem, o Python permite que o programador defina suas próprias classes de exceções. Esse recurso é útil quando o programa precisa sinalizar erros que não se enquadram nas categorias existentes. Com exceções personalizadas, o código se torna mais legível, pois a exceção expressa diretamente a condição específica que ocorreu.</p>
@@ -2700,7 +2700,7 @@
 <span class="normal"><a href="#__codelineno-33-19">19</a></span>
 <span class="normal"><a href="#__codelineno-33-20">20</a></span>
 <span class="normal"><a href="#__codelineno-33-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">SaldoInsuficienteError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Exceção lançada quando o saldo é insuficiente para a operação.&quot;&quot;&quot;</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">    </span><span class="sd">"""Exceção lançada quando o saldo é insuficiente para a operação."""</span>
 </span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3"></a>    <span class="k">pass</span>
 </span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4"></a>
 </span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">ContaBancaria</span><span class="p">:</span>
@@ -2709,9 +2709,9 @@
 </span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8"></a>
 </span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">sacar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
 </span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10"></a>        <span class="k">if</span> <span class="n">valor</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span><span class="p">:</span>
-</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11"></a>            <span class="k">raise</span> <span class="n">SaldoInsuficienteError</span><span class="p">(</span><span class="s2">&quot;Saldo insuficiente para o saque.&quot;</span><span class="p">)</span>
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11"></a>            <span class="k">raise</span> <span class="n">SaldoInsuficienteError</span><span class="p">(</span><span class="s2">"Saldo insuficiente para o saque."</span><span class="p">)</span>
 </span><span id="__span-33-12"><a id="__codelineno-33-12" name="__codelineno-33-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">saldo</span> <span class="o">-=</span> <span class="n">valor</span>
-</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saque de </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2"> realizado. Saldo atual: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">saldo</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-33-13"><a id="__codelineno-33-13" name="__codelineno-33-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Saque de </span><span class="si">{</span><span class="n">valor</span><span class="si">}</span><span class="s2"> realizado. Saldo atual: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">saldo</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14"></a>
 </span><span id="__span-33-15"><a id="__codelineno-33-15" name="__codelineno-33-15"></a><span class="c1"># Exemplo de uso</span>
 </span><span id="__span-33-16"><a id="__codelineno-33-16" name="__codelineno-33-16"></a><span class="n">conta</span> <span class="o">=</span> <span class="n">ContaBancaria</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -2719,7 +2719,7 @@
 </span><span id="__span-33-18"><a id="__codelineno-33-18" name="__codelineno-33-18"></a><span class="k">try</span><span class="p">:</span>
 </span><span id="__span-33-19"><a id="__codelineno-33-19" name="__codelineno-33-19"></a>    <span class="n">conta</span><span class="o">.</span><span class="n">sacar</span><span class="p">(</span><span class="mi">150</span><span class="p">)</span>
 </span><span id="__span-33-20"><a id="__codelineno-33-20" name="__codelineno-33-20"></a><span class="k">except</span> <span class="n">SaldoInsuficienteError</span> <span class="k">as</span> <span class="n">erro</span><span class="p">:</span>
-</span><span id="__span-33-21"><a id="__codelineno-33-21" name="__codelineno-33-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erro:&quot;</span><span class="p">,</span> <span class="n">erro</span><span class="p">)</span>
+</span><span id="__span-33-21"><a id="__codelineno-33-21" name="__codelineno-33-21"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Erro:"</span><span class="p">,</span> <span class="n">erro</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Nesse código, a função <code>sacar</code> verifica se há saldo suficiente. Caso contrário, levanta a exceção <code>SaldoInsuficienteError</code>. O bloco <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">except</span></code> captura a exceção e imprime a mensagem de erro.</p>
 <p>Esse mecanismo é útil porque separa claramente os diferentes tipos de erro. Se o programa lançasse apenas um <code class="language-python highlight"><span class="ne">ValueError</span></code> ou <code class="language-python highlight"><span class="ne">RuntimeError</span></code>, o desenvolvedor teria dificuldade em identificar a causa específica da falha. Com exceções personalizadas, o tratamento de erros se torna mais organizado, pois cada condição anômala pode ser representada por uma classe própria.</p>
@@ -2889,7 +2889,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       

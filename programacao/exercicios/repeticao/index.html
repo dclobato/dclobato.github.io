@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1457,361 +1457,46 @@
 
 <h1 id="estruturas-de-repeticao">Estruturas de repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Permanent link">&para;</a></h1>
 <ol>
-<li>
-<p>Chico tem 150 cm e cresce 2cm por ano, enquanto Zé tem 110cm e cresce 3cm por ano. Faça um programa que calcule e imprima quantos anos são necessários para que Zé fique mais alto que Chico.</p>
-</li>
-<li>
-<p>Faça um programa que leia as notas de um aluno e calcule a média das notas. Não se sabe, de antemão, o número de notas a serem lidas, e a leitura deve encerrar quando uma nota negativa for informada (a nota negativa não deve ser usada no cômputo da média).</p>
-</li>
-<li>
-<p>Na matemática, um número perfeito é aquele no qual a soma dos seus divisores positivos próprios (excluindo-o) é igual ao próprio número. Por exemplo, 6 é perfeito, pois <span class="arithmatex">\(1 + 2 + 3 = 6\)</span>. Escreva um programa que leia um número inteiro positivo menor ou igual a <span class="arithmatex">\(10^8\)</span> e indique se o número é perfeito ou não.</p>
-</li>
-<li>
-<p>Faça um programa que imprima os múltiplos positivos de 7, menores que 1000</p>
-</li>
-<li>
-<p>Determinado material radioativo tem meia-vida de 70 segundos (tempo necessário para que a massa da amostra se reduza à metade). Faça um programa que leia a massa inicial e diga quanto tempo (em dias, horas, minutos e segundos) é necessário para que reste menos de 0,02g do material.</p>
-</li>
-<li>
-<p>A sequência de Fibonacci é formada pelos números 0, 1, 1, 2, 3, 5, 8, 13, 21... (o número da vez é a soma dos dois anteriores, sendo que o primeiro vale zero, e o segundo vale um). Faça um programa que imprima a sequência de Fibonacci até o n-ésimo termo, informado pelo usuário.</p>
-</li>
-<li>
-<p>Faça um programa que leia o número de andares de um prédio e, em seguida, para cada andar do prédio, leia o número de pessoas que saíram e o número de pessoas que entram naquele andar. Considere que o elevador está no térreo e inicialmente vazio. O elevador nunca pode ter mais de 7 pessoas simultaneamente dentro dele. Se, em algum momento, houver mais de 7 pessoas no elevador, imprima uma mensagem e deixe apenas 7 pessoas dentro dele. Imprima o número de pessoas que chegaram ao último andar.</p>
-</li>
-<li>
-<p>Escreva um programa que receba um número inteiro, com qualquer quantidade de dígitos, e escreva na tela os dígitos que compõem o número de trás para a frente. Por exemplo, se for digitado o valor "4532", o programa deve imprimir "dois três cinco quatro".</p>
-</li>
-<li>
-<p>Em uma chácara, há várias galinhas e porcos. Escreva um programa que solicite ao usuário o total de cabeças e o total de pés, e determine quantas galinhas e quantos porcos há na chácara.</p>
-</li>
-<li>
-<p>Produza uma aproximação do valor de <span class="arithmatex">\(\pi\)</span> utilizando a série de <a href="https://pt.wikipedia.org/wiki/Gottfried_Leibniz">Gregory-Leibniz</a> (abaixo). O cálculo deve parar quando a diferença ente <span class="arithmatex">\(\pi\)</span> calculado até o terno <span class="arithmatex">\(n\)</span> e o calculado até o termo <span class="arithmatex">\(n+1\)</span> for menor que <span class="arithmatex">\(10^{-5}\)</span>. Imprima o valor calculado de <span class="arithmatex">\(\pi\)</span> e o número de termos que foram utilizados no cálculo da série. Cuidado com a alternância de sinal entre os termos da série.</p>
-<div class="arithmatex">\[
-\pi = 4 - \dfrac{4}{3} + \dfrac{4}{5} - \dfrac{4}{7}  + \dfrac{4}{9} \ldots
-\]</div>
-</li>
-<li>
-<p>Outra forma de obter uma aproximação do valor de π é por meio da série de <a href="https://pt.wikipedia.org/wiki/Nilakantha_Somayaji">Nilakantha</a> (abaixo). Obtenha uma aproximação de <span class="arithmatex">\(\pi\)</span> com o uso dela. O cálculo deve parar quando a diferença ente <span class="arithmatex">\(\pi\)</span> calculado até terno <span class="arithmatex">\(n\)</span> e o calculado até o termo <span class="arithmatex">\(n+1\)</span> for menor que <span class="arithmatex">\(10^{-5}\)</span>. Imprima o valor calculado de <span class="arithmatex">\(\pi\)</span> e o número de termos que foram utilizados no cálculo da série. Cuidado com a alternância de sinal entre os termos da série.</p>
-<div class="arithmatex">\[
-\pi = 3 + \dfrac{4}{2 \times 3 \times 4} - \dfrac{4}{4 \times 5 \times 6} + \dfrac{4}{6 \times 7 \times 8}  - \dfrac{4}{8 \times 9 \times 10} \ldots
-\]</div>
-</li>
-<li>
-<p>Métodos de Monte Carlo são métodos estatísticos que sem baseiam em amostragens aleatórias para a obtenção de resultados numéricos. Nesses métodos, dada uma probabilidade <span class="arithmatex">\(p\)</span> que determinado evento ocorra em certas condições, um computador pode ser usado para gerar essas condições por várias vezes. O número de vezes que o evento ocorreu dividido pelo número de vezes que a condição foi gerada deve ser aproximadamente igual a <span class="arithmatex">\(p\)</span>. Por exemplo, vamos considerar um disco de raio 1 inscrito em um quadrado de lado 2. É possível gerar pontos aleatórios dentro do quadrado e contar quantos caem dentro do disco. A razão entre o número de pontos dentro do círculo e o total de pontos gerados é uma aproximação de <span class="arithmatex">\(\pi\)</span>. Observe que, como podemos dividir o disco em quatro seções iguais (ou quadrantes), cada uma inscrita em um quadrado de lado 1 (ver figura abaixo<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> ), podemos limitar esse teste ao quadrado de lado 1 e multiplicar o número resultante por quatro. Construa um programa que faça a estimativa do valor de <span class="arithmatex">\(\pi\)</span> utilizando este método com 1.000.000 de pontos aleatórios<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
-<figure>
-<p><img align="center" alt="Estimativa de pi" src="../img/pi_motecarlo.webp" width="250" /></p>
-<figcaption>
-<p>Estimando o valor de <span class="arithmatex">\(\pi\)</span> com lançamentos aleatórios</p>
-</figcaption>
-</figure>
-</li>
-<li>
-<p>Determinada universidade fez uma pesquisa entre os alunos para saber o quanto eles usam o restaurante. Faça um programa que leia um conjunto de respostas de alunos e imprima o total absoluto e em termos percentuais, de alunos que usaram o restaurante: a) menos de 10 vezes; b) mais de 10 e menos de 25 vezes, e; c) 25 vezes ou mais durante o mês. O programa deve parar de ler respostas quando for digitado o valor -1.</p>
-</li>
-<li>
-<p>Construa um programa que leia a largura L e a altura A de um retângulo e desenhe-o na tela. Por exemplo, se o usuário pedir largura 10 e altura 4, o seguinte retângulo deve ser desenhado na tela</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>+--------+
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>|        |
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>|        |
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>+--------+
-</span></code></pre></div>
-</li>
-<li>
-<p>Construa um programa que leia um número inteiro <span class="arithmatex">\(n\)</span>, calcule e mostre o maior quadrado menor ou igual a <span class="arithmatex">\(n\)</span>. Por exemplo, se <span class="arithmatex">\(n\)</span> for igual a 38, o maior quadrado é 36.</p>
-</li>
-<li>
-<p>Faça um programa que imprima os primeiros 20 números inteiros que quando divididos por 11 produzem 5 de resto.</p>
-</li>
-<li>
-<p>Construa um programa que imprima uma tabela de conversão de temperatura entre graus Celsius (<span class="arithmatex">\(C\)</span>), graus Fahrenheit (<span class="arithmatex">\(F\)</span>) e Kelvin (<span class="arithmatex">\(K\)</span>). A tabela deve englobar as temperaturas entre -40 a +40oC, com intervalo de 2oC entre cada uma delas. As fórmulas são <span class="arithmatex">\(F = C \times \frac{9}{5}  + 32\)</span> e <span class="arithmatex">\(K = C + 273.15\)</span></p>
-</li>
-<li>
-<p>Escreva um programa que leia o número <span class="arithmatex">\(n\)</span> de termos de uma progressão aritmética, o primeiro termo (<span class="arithmatex">\(a_1\)</span>) da progressão e a razão <span class="arithmatex">\(r\)</span> da progressão e escreva os <span class="arithmatex">\(n\)</span> termos desta progressão, bem como a soma dos elementos.</p>
-</li>
-<li>
-<p>A divisão de dois números pode ser feita como uma sucessão de subtrações do valor do divisor do valor do dividendo. O número de divisões que puderam ser feitas antes de o dividendo ficar menor que zero é o quociente, e o que sobrou do dividendo é o resto da divisão. Faça um programa que leia o dividendo e o divisor e apresente o quociente e o resto utilizando o método das subtrações sucessivas.</p>
-</li>
-<li>
-<p>Faça um programa que leia valores inteiros positivos e diga, no final, quantos números pares foram lidos, quantos números ímpares foram lidos, o maior número lido e o menor número lido. A entrada de dados para com a digitação do valor -1.</p>
-</li>
-<li>
-<p>Faça um programa que imprima os primeiros 100 números inteiros que não são múltiplos de 7 ou que terminam em 7 (1, 2, 3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 15, 16, 18, ...)</p>
-</li>
-<li>
-<p>O voleibol é um esporte disputado em uma quadra dividida ao meio por uma rede, com dois times de 6 jogadores cada, onde o objetivo é fazer a bola passar sobre a rede de modo a que a bola toque no chão dentro da quadra adversária, ao mesmo tempo que se evita que os adversários consigam fazer o mesmo. O jogo começa com o saque de um dos times. Logo depois do saque, a bola deve ultrapassar a rede e seguir ao campo do adversário onde os jogadores tentam evitar que a bola entre no seu campo usando qualquer parte do corpo. O jogador pode rebater a bola para que ela passe para o campo adversário sendo permitidos dar três toques na bola antes que ela passe, sempre alternando os jogadores que dão os toques. Caso a bola caia, é ponto do time adversário. O jogador não pode encostar na rede e, caso isso ocorra, o ponto será para o outro time. O mesmo jogador não pode dar 2 ou mais toques seguidos na bola, exceção no caso do toque de Bloqueio. Cada partida é dividida em sets que terminam quando uma das duas equipes conquista 25 pontos. Deve haver também uma diferença de no mínimo dois pontos com relação ao placar do adversário - caso contrário, a disputa prossegue até que tal diferença seja atingida. O vencedor é a equipe que ganhar, primeiro, três sets. Você deve construir um programa que, a cada indicação de ponto feita (1 para o primeiro time, e 2 para o segundo time), indique o placar atual. Quando faltar um ponto para um time vencer um set, escreva "set point" e, quando um time vencer, escreva o número do time que ganhou.</p>
-</li>
-<li>
-<p>Na bolsa de valores, um investidor normalmente faz "preço médio" de um papel. A ideia é tentar entrar no papel em preços diferentes, exatamente para tê-lo na carteira com um preço que seja a média do preço dele ao longo de determinado tempo. O preço médio é calculado como uma média ponderada dos preços de compra. Quando um papel é vendido, calcula-se o LAIR (lucro antes do imposto de renda) como sendo a diferença entre o preço de venda e o preço médio de compra. Sobre o lucro da operação, o investidor paga 15% de imposto de renda, mas legislação permite que sejam alienados (vendidos) até <span class="arithmatex">\(R\$~20000.00\)</span> por mês sem que seja necessário pagar imposto de renda sobre o lucro. Por exemplo, se forem compradas 100 ações de determinado papel a 10.00, e 300 ações a 7.00, o preço médio é:</p>
-<div class="arithmatex">\[
-\dfrac{100\times10+300\times7}{100+300}=7.75
-\]</div>
-<p>Se as 400 ações fossem vendidas a 10,00, o LAIR seria de 900,00 e não haveria imposto a pagar. Construa um programa que leia um inteiro N dizendo quantas compras foram feitas, N pares de valores indicando quantas ações foram compradas e a que preço, e um valor que indica o preço de venda (assuma que todas as ações compradas foram vendidas); a partir disso, calcule e imprima o LAIR e o valor do imposto a ser pago.</p>
-</li>
-<li>
-<p>Um bit de paridade é um mecanismo simples para detectar erros na transmissão de dados em uma linha de comunicação não-confiável. A ideia básica é adicionar um bit a cada 7 bits transmitidos, para permitir que um bit errado seja detectado. O bit de paridade pode ser calculado tanto para paridade par quanto para paridade ímpar. Se for escolhida a paridade par, o bit de paridade é escolhido de forma que o total de bits 1 transmitidos (os 7 bits de dado mais o bit de paridade) seja um número par. Na escolha da paridade ímpar, o processo é análogo (total de bits 1 deve ser ímpar).  Escreva um programa que permita ao usuário escolher se ele quer paridade par ou ímpar e, em seguida, receba um número não conhecido <em>a priori</em> de sequências de sete dígitos 0 ou 1 (representando os bits), calcule e imprima a paridade correspondente aos bits recebidos. O programa deve parar quando a sequência de bits contiver menos de 7 bits.</p>
-</li>
-<li>
-<p>O "Jogo do Pin" era uma das brincadeiras mais populares do programa "Domingo no Parque", apresentado por Silvio Santos. A dinâmica era simples, mas exigia atenção e raciocínio rápido dos participantes. Uma pessoa da plateia era escolhida para participar e deveria contar de 1 a 30 (ou até um número definido por Silvio Santos), em voz alta. Sempre que a contagem chegasse a um número múltiplo de 4, o participante deveria substituir o número por "Pin". Construa um programa que receba o limite superior da contagem, e escreva a sequência de "números e pins" para ganhar o Jogo do Pin.</p>
-</li>
-<li>
-<p>O método de Newton, também conhecido como método de Newton-Raphson, é um algoritmo iterativo muito eficiente para encontrar aproximações para as raízes (ou zeros) de uma função real. Ele pode ser adaptado para calcular a raiz quadrada de um número de forma bastante eficaz. O método de Newton se baseia na ideia de aproximar a raiz de uma função por meio de retas tangentes ao gráfico da função (veja abaixo o gráfico para a estimativa de <span class="arithmatex">\(\sqrt{10}\)</span>). A cada iteração, uma nova aproximação é calculada, que se torna cada vez mais precisa. Para calcular a raiz quadrada de um número <span class="arithmatex">\(a\)</span>, podemos usar a fórmula iterativa <span class="arithmatex">\(x_{n+1} = \frac{1}{2} \times (x_n + \frac{a}{x_n})\)</span> onde <span class="arithmatex">\(x_0\)</span> é uma estimativa inicial para a raiz quadrada de <span class="arithmatex">\(a\)</span>, e <span class="arithmatex">\(x_{n+1}\)</span> é a próxima aproximação da raiz quadrada. O algoritmo é interrompido quando <span class="arithmatex">\(x_n - x_{n-1} &lt; \varepsilon\)</span>. O valor de <span class="arithmatex">\(\varepsilon\)</span> deve ser definido pelo usuário, tipicamente variando entre <span class="arithmatex">\(10^{-6}\)</span> e <span class="arithmatex">\(10^{-9}\)</span>. Construa um programa que receba o valor de <span class="arithmatex">\(a\)</span>, de <span class="arithmatex">\(x_0\)</span> e de <span class="arithmatex">\(\varepsilon\)</span> e mostre a aproximação de <span class="arithmatex">\(\sqrt{a}\)</span> com 8 casas decimais. As iterações devem parar quando <span class="arithmatex">\(\varepsilon &lt; 10^{-7}\)</span>.</p>
-<p><img align="center" alt="Raiz de 10 pelo método de Newton" src="../img/raiz_de_10.png" /></p>
-</li>
-<li>
-<p>O maior divisor comum (MDC) entre dos inteiros positivos, <span class="arithmatex">\(n\)</span> e <span class="arithmatex">\(m\)</span>, é o maior número, <span class="arithmatex">\(d\)</span>, que divide tanto <span class="arithmatex">\(n\)</span> quanto <span class="arithmatex">\(m\)</span> sem deixar resto.  Há vários algoritmos que podem ser usados para resolver esse problema, incluindo o representado no fluxograma abaixo.</p>
-<pre class="mermaid"><code>graph TD;
-Inicio --&gt; A
-A --&gt; B
-B -- Sim --&gt; C --&gt; E
-B -- Não --&gt; D --&gt; E
-E -- Sim --&gt; F --&gt; E
-E -- Não --&gt; G --&gt; Fim
-
-Inicio@{shape: terminal}
-A@{shape: manual-input, label: "n, m"}
-B@{shape: decision, label: "m &lt; n"}
-C@{shape: process, label: "d &amp;larr; m"}
-D@{shape: process, label: "d &amp;larr; n"}
-E@{shape: decision, label: "m MOD d &amp;ne; 0&lt;br /&gt;ou&lt;br /&gt;n MOD d &amp;ne; 0" }
-F@{shape: process, label: "d &amp;larr; d - 1"}
-G@{shape: display, label: "d"}
-Fim@{shape: terminal}</code></pre>
-<p>Escreva um programa que leia dois inteiros positivos e, utilizando o algoritmo acima, calcule e imprima o MDC entre eles.</p>
-</li>
-<li>
-<p>Escreva um programa que converta e imprima um número binário (base 2) com até 16 bits para o seu equivalente decimal (base 10). O seu programa deve ler o número como uma cadeia de caracteres e calcular o número decimal equivalente processando cada dígito do número binário.</p>
-</li>
-<li>
-<p>Repita o exercício anterior considerando que a entrada é um número hexadecimal (base 16) com até 4 dígitos. Caso você não lembre, a base 16 possui os dígitos <span class="arithmatex">\(\{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\}\)</span>.</p>
-</li>
-<li>
-<p>Em experimentos científicos, é comum analisarmos um conjunto de dados <span class="arithmatex">\(x = \{x_0, x_1, x_2, ..., x_n \}\)</span>. Nesses casos, pode ser útil remover os <em>outliers</em> (valores atípicos) antes de realizar outros cálculos. Um valor <span class="arithmatex">\(x_i\)</span> é considerado um <em>outlier</em> se:</p>
-<div class="arithmatex">\[
-x_i &lt; (\bar{x} - 3s) \quad \text{ou} \quad x_i &gt; (\bar{x} + 3s)
-\]</div>
-<p>onde:</p>
-<div class="arithmatex">\[
-s = \sqrt{\frac{\sum_{i=0}^n{(x_i - \bar{x})^2}}{n-1}} \quad \text{(desvio padrão amostral)}\\
-\bar{x} = \dfrac{\sum_{i=0}^n{x_i}}{n} \quad \text{(média amostral)}
-\]</div>
-<p>A "Regra dos 3 Sigmas" é uma heurística comum para identificar <em>outliers</em> em distribuições aproximadamente normais. Construa um programa que leia o número <span class="arithmatex">\(n\)</span> de valores reais a serem lidos (<span class="arithmatex">\(2 &lt; n &lt; 100\)</span>), leia os <span class="arithmatex">\(n\)</span> valores, e imprima os <em>outliers</em>.</p>
-</li>
-<li>
-<p>"Ais, enter, inis, omber, ufter" é uma brincadeira de linguagem que transforma palavras substituindo as vogais por "ais", "enter", "inis", "omber" e "ufter", criando uma espécie de "idioma secreto"<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>. A partir de uma palavra comum, cada uma das vogais na palavra original é substituída por uma das cinco sequências: "ais", "enter", "inis", "omber" e "ufter". Por exemplo, <code>banana</code> vira <code>bAISnAISnAIS</code>, <code>livro</code> vira <code>lINISvrOMBER</code> e <code>computador</code> vira <code>cOMBERmpUFTERtAISdOMBERr</code>. Construa um programa que leia uma palavra com até 20 caracteres e apresente a palavra transformada. Antes de transformar a palavra, converta todas as letras para minúsculas.</p>
-</li>
-<li>
-<p>Uma lista de valores <span class="arithmatex">\(x = \{x_0, x_1, x_2..., x_n\}\)</span> é considerada ordenada de forma ascendente se, para todo o índice <span class="arithmatex">\(i\)</span> no intervalo <span class="arithmatex">\([0, n-1]\)</span>, a condição <span class="arithmatex">\(x_i \leq x_{i+1}\)</span> for satisfeita. Construa um programa que leia um conjunto de <span class="arithmatex">\(n\)</span> valores inteiros (<span class="arithmatex">\(1 &lt; n &lt; 100\)</span>) e diga se os valores compõem ou não uma lista ordenada de forma ascendente.</p>
-</li>
-<li>
-<p>Nos celulares de antigamente, para enviar uma mensagem de texto, era preciso "digitar" a mensagem usando apenas o teclado numérico. Isso era possível porque, para cada uma das teclas numéricas (0, 1, 2, 3, 4, 5, 6, 7, 8 e 9) existia um conjunto de símbolos associado, de acordo com a tabela abaixo:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Tecla</th>
-<th style="text-align: left;">Símbolos</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>.</code> <code>,</code> <code>?</code> <code>!</code> <code>:</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>A</code> <code>B</code> <code>C</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>D</code> <code>E</code> <code>F</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>G</code> <code>H</code> <code>I</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;"><code>J</code> <code>K</code> <code>L</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">6</td>
-<td style="text-align: left;"><code>M</code> <code>N</code> <code>O</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">7</td>
-<td style="text-align: left;"><code>P</code> <code>Q</code> <code>R</code> <code>S</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">8</td>
-<td style="text-align: left;"><code>T</code> <code>U</code> <code>V</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">9</td>
-<td style="text-align: left;"><code>W</code> <code>X</code> <code>Y</code> <code>Z</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">0</td>
-<td style="text-align: left;">Espaço</td>
-</tr>
-</tbody>
-</table>
-<p>Para escrever, por exemplo, <code>BOLA</code>, era preciso apertar <code>22 666 555 2</code>. Construa um programa onde o usuário digita uma frase com até 20 caracteres e a sequência de teclas correspondente é apresentada na tela. Ignore qualquer símbolo presente na frase do usuário e que não exista na tabela anterior.</p>
-</li>
-<li>
-<p><img align="right" width="200" src="../img/scrabble.jpg"><strong><em>Scrabble</em></strong> é um jogo de tabuleiro criado em 1938, durante a Grande Depressão, pelo norte americano <a href="https://pt.wikipedia.org/wiki/Alfred_Mosher_Butts">Alfred Butts</a>. Nele, dois a quatro jogadores procuram marcar pontos formando palavras interligadas, usando pedras com letras num quadro dividido em 225 casas (15 x 15). Cada letra possui uma pontuação, que é inversamente proporcional à frequência relativa dessas letras nas palavras presentes no idioma do jogo (a pontuação das letras no jogo vendido nos países que falam inglês é diferente da pontuação das letras no jogo vendido nos países que falam francês, por exemplo). No caso do português, a tabela de pontos é a seguinte<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Pontos</th>
-<th style="text-align: left;">Letras</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: left;"><code>A</code> <code>E</code> <code>I</code> <code>O</code> <code>S</code> <code>U</code> <code>M</code> <code>R</code> <code>T</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: left;"><code>D</code> <code>L</code> <code>C</code> <code>P</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: left;"><code>N</code> <code>B</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: left;"><code>F</code> <code>G</code> <code>H</code> <code>V</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: left;"><code>J</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">6</td>
-<td style="text-align: left;"><code>Q</code></td>
-</tr>
-<tr>
-<td style="text-align: center;">8</td>
-<td style="text-align: left;"><code>X</code> <code>Z</code></td>
-</tr>
-</tbody>
-</table>
-<p>Por exemplo, se alguém jogar a palavra <code>CADERNO</code>, vai fazer 11 pontos<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>. Construa um programa que leia uma palavra com até 15 letras e calcule a pontuação da palavra utilizando a tabela acima. Letras que não estão presentes na tabela acima e outros símbolos possuem valor zero.</p>
-</li>
-<li>
-<p>O <em>run-length encoding</em> (RLE) é um método de compressão de dados sem perdas que visa reduzir o tamanho de arquivos que contêm sequências repetidas de dados. Ele é particularmente eficaz em arquivos com padrões repetitivos, como imagens monocromáticas ou arquivos de texto simples. O RLE funciona substituindo sequências de dados idênticos por um código que indica o valor do dado e o número de vezes que ele se repete. Em vez de armazenar cada valor repetido individualmente, o RLE armazena apenas o valor e a contagem. Por exemplo, a sequência <code>AAAAABBBCCDAA</code> pode ser compactada como <code>5A3B2C1D2A</code>. Neste exemplo, <code>5A</code> significa que o caractere <code>A</code> se repete 5 vezes, <code>3B</code> significa que o caractere <code>B</code> se repete 3 vezes e assim por diante. Construa um programa que receba uma cadeia de caracteres com até 100 símbolos e imprima a cadeia compactada em RLE.</p>
-</li>
-<li>
-<p>Baseado no problema anterior, construa um programa que receba uma cadeia de caracteres compactada em RLE com até 100 símbolos e imprima a cadeia de caracteres original. Considere que, na cadeia compactada em RLE, cada símbolo pode se repetir, no máximo, 9 vezes.</p>
-</li>
-<li>
-<p><img align="right" width="200" src="../img/figurinhas.jpg">O álbum de figurinhas é um clássico desafio de coleção. Cada criança tenta completar seu álbum, mas frequentemente fica com figurinhas repetidas. Construa um programa que leia duas listas de números inteiros representando as figurinhas que duas crianças diferentes possuem (a figurinha de número <code>-1</code> indica que acabaram as figurinhas de uma criança) e informe quais figurinhas cada criança possui repetidas e quais figurinhas uma criança tem e a outra não (possibilitando troca).</p>
-</li>
-<li>
-<p>Modifique a questão anterior para que o programa leia o número total de figurinhas do álbum, e depois imprima, para cada criança, uma relatório parecido com a do exemplo abaixo:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Quantas figurinhas tem no álbum? 10
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Quais figurinhas a criança 1 tem (-1 para parar)
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>1
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>1
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>2
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>6
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>6
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>6
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>8
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>9
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>10
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>-1
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Quais figurinhas a criança 2 tem (-1 para parar)
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>2
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>3
-</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>3
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>4
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>6
-</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>6
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>7
-</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>10
-</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>-1
-</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>Criança 1
-</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>Figurinhas que faltam: 3, 4, 5, 7
-</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>Figurinhas repetida: 1 (1), 6 (2)
-</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>Figurinhas que pode pegar da Criança 2: 3
-</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
-</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>Criança 2
-</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>Figurinhas que faltam: 1, 5, 8, 9
-</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>Figurinhas repetida: 3 (1), 6 (1)
-</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>Figurinhas que pode pegar da Criança 1: 1
-</span></code></pre></div>
-</li>
-<li>
-<p>Dada uma cadeia de caracteres com até 200 símbolos, construa um programa que conte quantas vezes cada caractere aparece na cadeia. O programa deve exibir todos os caracteres distintos encontrados, juntamente com suas respectivas frequências, em ordem decrescente de ocorrência.</p>
-</li>
-<li>
-<p>Construa um programa que leia pares de palavras correspondentes (palavra em português e sua tradução em inglês). Os pares acabam quando for digitado a palavra <code>parar</code> em português e <code>parar</code> em inglês também. Após a leitura, o usuário poderá digitar uma frase curta em português, e o programa deverá exibir a tradução aproximada da frase, trocando apenas as palavras que foram cadastradas. Se não houver uma tradução para determinada palavra, a palavra em português deve ser apresentada.</p>
-</li>
-<li>
-<p>Uma professora deseja calcular estatísticas de notas da turma; para isso, construa um programa que leia uma sequência de pares contendo o nome de um aluno e uma nota obtida em alguma prova, sendo o nome e a nota separados por pelo menos um espaço em branco; devem ser inseridos entre 2 e 20 alunos, cada um podendo ter um número ilimitado de notas, que variam de 0 a 10; a leitura deve continuar até que o usuário digite o nome <code>fim</code> e a nota <code>-1</code>, momento em que o programa deve parar de ler entradas, calcular e apresentar a média das notas de cada aluno, além de indicar o nome do aluno com a maior média e o nome do aluno com a menor média.</p>
-</li>
-<li>
-<p>Você já deve ter visto na barraca de pastel da feira uma tabela com o custo de diferentes quantidades de pastel: 1 custa <span class="arithmatex">\(R\$~12.00\)</span>; 2 custam <span class="arithmatex">\(R\$~24.00\)</span>; 3 custam <span class="arithmatex">\(R\$~36.00\)</span> e assim sucessivamente. Escreva um programa que leia o valor unitário do pastel e imprima uma tabela com o valor a ser pago para 1, 2, 3, ..., 19 e 20 pastéis de acordo com o modelo abaixo.</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Quanto custa um pastel? 11.00
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Qtd de pastéis |     R$
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>---------------+-------
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>             1 |  11.00
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>             2 |  22.00
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>               : 
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            19 | 209.00
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            20 | 220.00
-</span></code></pre></div>
-</li>
-<li>
-<p>Elabore um programa que simule uma agenda telefônica com as seguintes funcionalidades, acessíveis por meio de um menu interativo:</p>
-<ol>
-<li><strong>Cadastrar contato</strong>: Solicite ao usuário que informe um nome e um número de telefone. O novo contato deve ser adicionado à agenda.</li>
-<li><strong>Listar contatos</strong>: Mostre todos os contatos cadastrados, exibindo o nome e o telefone de cada um, organizados em ordem alfabética pelo nome.</li>
-<li><strong>Remover contato</strong>: Peça ao usuário que digite o nome de um contato. Caso o contato exista na agenda, ele deve ser removido. Se não for encontrado, apresente uma mensagem informando que o contato não existe.</li>
-<li><strong>Buscar telefone</strong>: Solicite ao usuário que informe o nome de um contato. Se houver um registro correspondente, exiba o número de telefone associado. Caso o contato não exista, mostre uma mensagem apropriada.</li>
+<li>A caderneta do professor Zenão (<a href="https://arena.onlinejudge.com.br/problems/299">Arena</a>)</li>
+<li>Os cristais de Nlogônia (<a href="https://arena.onlinejudge.com.br/problems/216">Arena</a>)</li>
+<li>O isótopo de Nlogônia (<a href="https://arena.onlinejudge.com.br/problems/99">Arena</a>)</li>
+<li>Sequência de Fibonacci (<a href="https://arena.onlinejudge.com.br/problems/251">Arena</a>)</li>
+<li>Pânico no elevador (<a href="https://arena.onlinejudge.com.br/problems/98">Arena</a>)</li>
+<li>A falha do Agente Epaminondas (<a href="https://arena.onlinejudge.com.br/problems/71">Arena</a>)</li>
+<li>O Portal de Leibniz (<a href="https://arena.onlinejudge.com.br/problems/70">Arena</a>)</li>
+<li>A Série de Nilakantha (<a href="https://arena.onlinejudge.com.br/problems/252">Arena</a>)</li>
+<li>O Festival de Dardos de Monte Carlo (<a href="https://arena.onlinejudge.com.br/problems/60">Arena</a>)</li>
+<li>A moldura de Nlogônia (<a href="https://arena.onlinejudge.com.br/problems/245">Arena</a>)</li>
+<li>Praça quadrada de Nlogônia (<a href="https://arena.onlinejudge.com.br/problems/249">Arena</a>)</li>
+<li>O General e a formação perfeita (<a href="https://arena.onlinejudge.com.br/problems/97">Arena</a>)</li>
+<li>Progressão aritmética (<a href="https://arena.onlinejudge.com.br/problems/250">Arena</a>)</li>
+<li>Pane na Fábrica de Nlogônia (<a href="https://arena.onlinejudge.com.br/problems/68">Arena</a>)</li>
+<li>Análise de desempenho do Arena (<a href="https://arena.onlinejudge.com.br/problems/67">Arena</a>)</li>
+<li>Continuando a Investir (<a href="https://arena.onlinejudge.com.br/problems/193">Arena</a>)</li>
+<li>Transmissão em Alfa Centauri (<a href="https://arena.onlinejudge.com.br/problems/66">Arena</a>)</li>
+<li>O clássico jogo do Pin (<a href="https://arena.onlinejudge.com.br/problems/95">Arena</a>)</li>
+<li>O legado de Newton (<a href="https://arena.onlinejudge.com.br/problems/59">Arena</a>)</li>
+<li>MDC (<a href="https://arena.onlinejudge.com.br/problems/94">Arena</a>)</li>
+<li>O código dos Karas (<a href="https://arena.onlinejudge.com.br/problems/57">Arena</a>)</li>
+<li>O resgate do tijolão (<a href="https://arena.onlinejudge.com.br/problems/56">Arena</a>)</li>
+<li>Compressão espacial para transmissão intergaláctica (<a href="https://arena.onlinejudge.com.br/problems/53">Arena</a>)</li>
+<li>Descompressão espacial e recepção na Terra (<a href="https://arena.onlinejudge.com.br/problems/54">Arena</a>)</li>
+<li>O grande acordo das figurinhas (<a href="https://arena.onlinejudge.com.br/problems/52">Arena</a>)</li>
+<li>O criptograma de Vigenère (<a href="https://arena.onlinejudge.com.br/problems/51">Arena</a>)</li>
+<li>O dicionário de Nlogônia (<a href="https://arena.onlinejudge.com.br/problems/211">Arena</a>)</li>
+<li>O diário de classe assíncrono (<a href="https://arena.onlinejudge.com.br/problems/47">Arena</a>)</li>
+<li>A tabela de pastéis do Sr. Kim (<a href="https://arena.onlinejudge.com.br/problems/50">Arena</a>)</li>
+<li>O salto perfeito (<a href="https://arena.onlinejudge.com.br/problems/46">Arena</a>)</li>
+<li>O motor de dobra de Zorgon (<a href="https://arena.onlinejudge.com.br/problems/48">Arena</a>)</li>
+<li>Uso do restaurante universitário (<a href="https://arena.onlinejudge.com.br/problems/372">Arena</a>)</li>
+<li>Postes dourados (<a href="https://arena.onlinejudge.com.br/problems/300">Arena</a>)</li>
+<li>Bilhetes da sorte (<a href="https://arena.onlinejudge.com.br/problems/301">Arena</a>)</li>
+<li>O apito silencioso (<a href="https://arena.onlinejudge.com.br/problems/212">Arena</a>)</li>
+<li>Anomalias no observatório (<a href="https://arena.onlinejudge.com.br/problems/58">Arena</a>)</li>
+<li>O grande campeonato de palavras (<a href="https://arena.onlinejudge.com.br/problems/55">Arena</a>)</li>
+<li>Agenda telefônica (<a href="https://arena.onlinejudge.com.br/problems/303">Arena</a>)</li>
+<li>Tabela de conversão de temperaturas (<a href="https://arena.onlinejudge.com.br/problems/373">Arena</a>)</li>
 </ol>
-<p>O menu deve ser exibido repetidamente até que o usuário decida encerrar o programa.</p>
-</li>
-<li>
-<p>Os saltos ornamentais foram introduzidos nos Jogos Olímpicos em 1904. Nesta modalidade, os atletas realizam saltos de plataformas elevadas ou trampolins, executando movimentos estéticos durante a queda. Cada salto é avaliado por sete juízes, que atribuem uma nota de <a href="https://web.archive.org/web/20100618053849/http://www.fina.org/H2O/index.php?option=com_content&amp;view=article&amp;id=305:d-8-judging&amp;catid=84:diving-rules&amp;Itemid=184">0 a 10</a>, considerando aspectos como aproximação, partida, elevação, execução e entrada na água. Além disso, antes da apresentação, é definido o grau de dificuldade do salto, que varia entre <a href="https://web.archive.org/web/20150913161738/http://www.fina.org/project/docs/rules/rules_dA2.pdf">1,2 e 3,8</a>, conforme a complexidade dos movimentos realizados (mortais, piruetas, entre outros). A nota final do salto é calculada da seguinte forma:</p>
-<ul>
-<li>São somadas as notas dos sete juízes, desconsiderando as duas maiores e as duas menores notas.</li>
-<li>Essa soma é então multiplicada pelo grau de dificuldade do salto.</li>
-</ul>
-<p>Por exemplo, para um salto com grau de dificuldade 2,0 e notas dos juízes 6,0; 5,0; 5,0; 5,0; 5,0; 5,0; e 4,0, a nota final será 30,0. Construa um programa que leia o grau de dificuldade do salto, leia as sete notas dos juízes para, por fim, calcular e apresentar a nota final do salto conforme o método descrito.</p>
-</li>
-<li>
-<p>Em teoria dos números, a sequência de Padovan é a sequência de inteiros <span class="arithmatex">\(P(n)\)</span> definida pelos valores iniciais <span class="arithmatex">\(P(0) = P(1) = P(2) = 1\)</span>, e a relação de recorrência <span class="arithmatex">\(P(n) = P(n-2) + P(n-3)\)</span>.  Os primeiros valores de <span class="arithmatex">\(P(n)\)</span> são 1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37, 49, 65, 86 e 114. Construa um programa que receba <span class="arithmatex">\(n\)</span> e retorne <span class="arithmatex">\(P(n)\)</span>.</p>
-</li>
-<li>
-<p>Fizz buzz é um jogo de palavras em grupo para crianças que as ensina sobre divisão. Os jogadores se revezam para contar incrementalmente, substituindo qualquer número divisível por três pela palavra "fizz", e qualquer número divisível por cinco pela palavra "buzz", e qualquer número divisível por três e cinco pela palavra "fizzbuzz".  Escreva um programa que receba um valor natural <span class="arithmatex">\(n\)</span> e imprima os primeiros <span class="arithmatex">\(n\)</span> números aplicando as regras do "Fizz Buzz".  Por exemplo, se <span class="arithmatex">\(n=16\)</span>, o seu programa deve mostrar:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16
-</span></code></pre></div>
-</li>
-</ol>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="https://www.r-bloggers.com/happy-pi-day-now-go-estimate-it/">https://www.r-bloggers.com/happy-pi-day-now-go-estimate-it/</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:2">
-<p>Apesar de métodos de Monte Carlo serem úteis para a solução de vários problemas em matemática e física que não podem ser resolvidos de forma analítica, a adoção deste método para a estimativa do valor de <span class="arithmatex">\(\pi\)</span> é bem lento. Para calcular cada dígito significativo depois da vírgula são necessárias dez vezes mais pontos aleatórios que os necessários para calcular o dígito anterior.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:3">
-<p>Marcas diacríticas (letras acentuadas, por exemplo) são ignoradas. <code>K</code>, <code>W</code> e <code>Y</code> estão ausentes, pois <a href="https://www.academia.org.br/artigos/novas-letras-k-w-e-y">não eram letras oficiais</a> até o Acordo Ortográfico de 1990, depois de o jogo ter sido introduzido no Brasil.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:4">
-<p>Tem alguns outros detalhes na regra de pontuação, como por exemplo, em qual lugar do tabuleiro a palavra foi formada, mas vamos simplificar.&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-<li id="fn:5">
-<p>A cifra apareceu pela primeira vez na obra "<a href="https://www.skoob.com.br/a-droga-da-obediencia-1135ed1539.html">A Droga da Obediência</a>", de Pedro Bandeira (BANDEIRA, P.. <strong>A Droga da Obediência</strong>. 1.ed. São Paulo: Moderna, 1984.)&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 
 
@@ -1834,7 +1519,7 @@ s = \sqrt{\frac{\sum_{i=0}^n{(x_i - \bar{x})^2}}{n-1}} \quad \text{(desvio padr�
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de agosto de 2025 01:26:36 -03">19 de agosto de 2025 01:26:36</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de outubro de 2026 01:11:49 -03">19 de outubro de 2026 01:11:49</span>
   </span>
 
     
@@ -1978,7 +1663,7 @@ s = \sqrt{\frac{\sum_{i=0}^n{(x_i - \bar{x})^2}}{n-1}} \quad \text{(desvio padr�
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.footer", "header.autohide", "content.code.copy", "navigation.tracking", "navigation.indexes", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../js/katex.js"></script>
       
