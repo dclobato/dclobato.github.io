@@ -1,0 +1,19 @@
+Acrescentar leituras e saídas mais eficientes
+
+Problema 299
+
+    for v in  sys.stdin:
+        v = v.rstrip('\r\n')
+
+Wall time
+277 ms
+Peak memory
+4092 KB
+
+
+    for v in sys.stdin.readlines():
+
+Wall time
+331 ms
+Peak memory
+113996 KB    
