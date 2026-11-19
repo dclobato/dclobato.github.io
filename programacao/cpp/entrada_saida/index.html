@@ -602,6 +602,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -770,6 +774,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c/strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cadeias de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../c/entrada_saida/" class="md-nav__link">
         
   
@@ -834,6 +866,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/estruturas_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estruturas de dados
   
 
     
@@ -1541,6 +1601,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dicas-para-juizes-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dicas para juízes online
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicas para juízes online">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escreva-apenas-o-que-foi-pedido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escreva apenas o que foi pedido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#entrada-e-saida-mais-rapidas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1548,6 +1631,22 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problemas-interativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemas interativos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1960,6 +2059,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2184,6 +2287,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulação de JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/fluxo/" class="md-nav__link">
         
   
@@ -2220,6 +2351,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/memoria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerenciamento de memória
   
 
     
@@ -2930,6 +3089,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dicas-para-juizes-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dicas para juízes online
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dicas para juízes online">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#escreva-apenas-o-que-foi-pedido" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Escreva apenas o que foi pedido
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#entrada-e-saida-mais-rapidas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2937,6 +3119,22 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problemas-interativos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problemas interativos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4378,17 +4576,17 @@
 <p>O redirecionamento com <code>&gt;</code> afeta apenas <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code>: as mensagens enviadas para <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cerr</span></code> continuam aparecendo na tela. Isso é proposital, para que mensagens de erro não se misturem com os resultados. A saída de erros pode ser redirecionada separadamente, com <code>2&gt;</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>C:\Users\danie&gt;programa.exe &lt; entrada.txt &gt; saida.txt 2&gt; erros.txt
 </span></code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">Testando programas com redirecionamento</p>
-<p>Em competições e juízes <em>online</em>, os programas recebem a entrada exatamente dessa forma: o juiz redireciona um arquivo para a entrada padrão do programa e compara a saída padrão com a resposta esperada. Por isso:</p>
+<p>O redirecionamento é muito útil para testar programas: guarde os exemplos de entrada do enunciado em arquivos e teste com <code>programa &lt; exemplo.txt</code>, em vez de digitar os dados a cada execução. É também exatamente assim que os juízes <em>online</em> executam os programas: a entrada de cada caso de teste é redirecionada para a entrada padrão, e a saída padrão é comparada com a saída esperada.</p>
+<h2 id="dicas-para-juizes-online">Dicas para juízes <em>online</em><a class="headerlink" href="#dicas-para-juizes-online" title="Permanent link">&para;</a></h2>
+<h3 id="escreva-apenas-o-que-foi-pedido">Escreva apenas o que foi pedido<a class="headerlink" href="#escreva-apenas-o-que-foi-pedido" title="Permanent link">&para;</a></h3>
+<p>O juiz compara a saída do programa, caractere por caractere, com a saída esperada. Por isso:</p>
 <ul>
-<li>Guarde os exemplos de entrada do enunciado em arquivos e teste com <code>programa &lt; exemplo.txt</code>, em vez de digitar os dados toda vez;</li>
-<li><strong>Não escreva mensagens como "Digite um número"</strong>: elas vão para a saída e fazem a resposta ser considerada errada. Se quiser mensagens de depuração, envie-as para <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cerr</span></code>, que não é comparada pelo juiz, e;</li>
-<li>Siga exatamente o formato de saída pedido, inclusive espaços e quebras de linha.</li>
+<li><strong>Não escreva mensagens como "Digite um número"</strong>: elas vão para a saída e fazem a resposta ser considerada errada. Se quiser mensagens de depuração, envie-as para <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cerr</span></code>, que normalmente não é comparada pelo juiz (mas o ideal é removê-las antes de enviar), e;</li>
+<li>Siga exatamente o formato de saída pedido, inclusive espaços, quebras de linha e a quantidade de casas decimais, que pode ser controlada com as ferramentas da seção sobre <a href="#formatacao-da-saida">formatação da saída</a>.</li>
 </ul>
-</div>
-<h2 id="entrada-e-saida-mais-rapidas">Entrada e saída mais rápidas<a class="headerlink" href="#entrada-e-saida-mais-rapidas" title="Permanent link">&para;</a></h2>
-<p>Por padrão, os fluxos de C++ são sincronizados com outra biblioteca de entrada e saída que também faz parte da linguagem, e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cin</span></code> esvazia o <em>buffer</em> de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> antes de cada leitura. Essas duas garantias deixam a entrada e a saída mais lentas. Em programas que leem ou escrevem centenas de milhares de valores, como muitos problemas de competições, a diferença pode ser decisiva. As duas linhas abaixo, no início de <code class="language-cpp highlight"><span class="n">main</span></code>, desligam essas garantias:</p>
+<p>Também preste atenção ao formato da entrada: a quantidade de valores pode ser informada no início, a entrada pode terminar com uma linha especial, ou o programa pode precisar ler até o final da entrada. A seção <a href="#lendo-uma-quantidade-desconhecida-de-valores">Lendo uma quantidade desconhecida de valores</a> mostra como tratar cada caso.</p>
+<h3 id="entrada-e-saida-mais-rapidas">Entrada e saída mais rápidas<a class="headerlink" href="#entrada-e-saida-mais-rapidas" title="Permanent link">&para;</a></h3>
+<p>Por padrão, os fluxos de C++ são sincronizados com outra biblioteca de entrada e saída que também faz parte da linguagem, e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cin</span></code> esvazia o <em>buffer</em> de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> antes de cada leitura. Essas duas garantias deixam a entrada e a saída mais lentas. Em programas que leem ou escrevem centenas de milhares de valores, como muitos problemas de competições, a diferença pode ser decisiva: no ambiente do Arena, ler 1 milhão de inteiros levou cerca de 0,26 segundo com os fluxos padrão, e cerca de 0,065 segundo depois de desligar essas garantias. As duas linhas abaixo, no início de <code class="language-cpp highlight"><span class="n">main</span></code>, fazem isso:</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Leitura rápida</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-68-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-68-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-68-3"> 3</a></span>
@@ -4427,9 +4625,11 @@
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Depois de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span></code>, <strong>não misture</strong> <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cin</span></code>/<code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> com as funções de entrada e saída do cabeçalho <code>&lt;cstdio&gt;</code> no mesmo programa: a ordem dos dados lidos e escritos pode ficar trocada. Também evite <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code>, que esvazia o <em>buffer</em> a cada linha e anula boa parte do ganho de velocidade; use <code>'\n'</code>.</p>
-<p>A exceção são os <strong>problemas interativos</strong>, em que o programa conversa com o juiz: cada resposta precisa chegar ao juiz antes que o programa leia a próxima pergunta. Nesses problemas, esvazie o <em>buffer</em> depois de cada resposta, com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">flush</span></code> (ou <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code>).</p>
+<p>Depois de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">)</span></code>, <strong>não misture</strong> <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cin</span></code>/<code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> com as funções de entrada e saída do cabeçalho <code>&lt;cstdio&gt;</code> no mesmo programa: a ordem dos dados lidos e escritos pode ficar trocada.</p>
 </div>
+<p>Na saída, o cuidado mais importante é <strong>evitar <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code></strong>: além da quebra de linha, ele esvazia o <em>buffer</em>, gravando imediatamente o que foi escrito, e isso anula a vantagem de acumular a saída. No ambiente do Arena, escrever 1 milhão de linhas levou cerca de 0,77 segundo com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code>, e cerca de 0,04 segundo com <code>'\n'</code>.</p>
+<h3 id="problemas-interativos">Problemas interativos<a class="headerlink" href="#problemas-interativos" title="Permanent link">&para;</a></h3>
+<p>Em alguns problemas, o programa conversa com o juiz: escreve uma pergunta, lê a resposta, escreve outra pergunta, e assim por diante. Como a saída fica acumulada no <em>buffer</em>, a pergunta pode não chegar ao juiz antes de o programa tentar ler a resposta, e os dois ficam esperando um pelo outro até o tempo limite estourar. Nesses problemas, esvazie o <em>buffer</em> depois de cada pergunta, com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">flush</span></code> (ou com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">endl</span></code>, que aqui é exatamente o que se quer). O enunciado de um problema interativo costuma lembrar desse detalhe.</p>
 
 
 
@@ -4452,7 +4652,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:40:09 -03">19 de novembro de 2026 02:40:09</span>
   </span>
 
     

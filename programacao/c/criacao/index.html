@@ -604,6 +604,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -720,6 +724,17 @@
       Nesta página
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#o-primeiro-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O primeiro programa
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
@@ -882,6 +897,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cadeias de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../entrada_saida/" class="md-nav__link">
         
   
@@ -946,6 +989,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estruturas_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estruturas de dados
   
 
     
@@ -1678,6 +1749,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1902,6 +1977,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulação de JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/fluxo/" class="md-nav__link">
         
   
@@ -1938,6 +2041,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/memoria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerenciamento de memória
   
 
     
@@ -2316,6 +2447,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#o-primeiro-programa" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O primeiro programa
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2402,32 +2544,59 @@
 <pre class="mermaid"><code>graph TD
   Fonte1 --&gt; Preprocessamento1 --&gt; Processado1
   Fonte2 --&gt; Preprocessamento2 --&gt; Processado2
-  BibEstat1 --&gt; Compilador1
-  BibEstat2 --&gt; Compilador1
+  Cabecalhos --&gt; Preprocessamento1
+  Cabecalhos --&gt; Preprocessamento2
   Processado1 --&gt; Compilador1 --&gt; Obj1
-  Processado2 --&gt; Compilador2
-  BibEstat1 --&gt; Compilador2 --&gt; Obj2
+  Processado2 --&gt; Compilador2 --&gt; Obj2
+  Obj1 --&gt; Link
   Obj2 --&gt; Link
-  Obj1 --&gt; Link --&gt; Exec
+  Bib1 --&gt; Link
+  Bib2 --&gt; Link
+  Link --&gt; Exec
 
-  Fonte1@{ shape: doc, label: "**Código fonte**&lt;br /&gt;(.c, .h)" }
-  Fonte2@{ shape: doc, label: "**Código fonte**&lt;br /&gt;(.c, .h)" }
+  Fonte1@{ shape: doc, label: "**Código fonte**&lt;br /&gt;(.c)" }
+  Fonte2@{ shape: doc, label: "**Código fonte**&lt;br /&gt;(.c)" }
+  Cabecalhos@{ shape: docs, label: "**Arquivos de cabeçalho**&lt;br /&gt;(.h)" }
   Preprocessamento1@{ shape: process, label: "Pré-processamento" }
   Preprocessamento2@{ shape: process, label: "Pré-processamento" }
   Processado1@{ shape: doc, label: "**Código pré-processado**&lt;br /&gt;(.i)" }
   Processado2@{ shape: doc, label: "**Código pré-processado**&lt;br /&gt;(.i)" }
-  BibEstat1@{ shape: lin-doc, label: "**Biblioteca B1**&lt;br /&gt;(.so)" }
-  BibEstat2@{ shape: lin-doc, label: "**Biblioteca B2**&lt;br /&gt;(.so)" }
   Compilador1@{shape: process, label: "Compilação e montagem" }
   Compilador2@{shape: process, label: "Compilação e montagem" }
   Obj1@{ shape: doc, label: "**Código objeto**&lt;br /&gt;(.o)" }
   Obj2@{ shape: doc, label: "**Código objeto**&lt;br /&gt;(.o)" }
+  Bib1@{ shape: lin-doc, label: "**Biblioteca padrão**&lt;br /&gt;(libc, libm)" }
+  Bib2@{ shape: lin-doc, label: "**Outras bibliotecas**&lt;br /&gt;(.a, .so, .dll)" }
   Link@{ shape: process, label: "Link-edição" }
   Exec@{ shape: doc, label: "**Programa executável**&lt;br /&gt;(.exe)" }</code></pre>
-<p>Vamos discutir de maneira simplificada cada uma delas.</p>
+<p>Antes de discutir cada uma delas, vamos ver como é um programa completo em C.</p>
+<h2 id="o-primeiro-programa">O primeiro programa<a class="headerlink" href="#o-primeiro-programa" title="Permanent link">&para;</a></h2>
+<p>O programa abaixo escreve uma mensagem na tela:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ola.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Olá, mundo!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Mesmo um programa tão pequeno tem os elementos que vão aparecer em todos os outros:</p>
+<ul>
+<li><code class="language-c highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span></code> é uma <strong>diretiva do pré-processador</strong>, que inclui no programa as declarações da biblioteca de entrada e saída (<em>standard input/output</em>), onde está a função <code class="language-c highlight"><span class="n">printf</span></code>;</li>
+<li><code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code> é a definição da função <code class="language-c highlight"><span class="n">main</span></code>, por onde a execução do programa começa. O <code class="language-c highlight"><span class="kt">int</span></code> indica que ela devolve um número inteiro ao sistema operacional, e o <code class="language-c highlight"><span class="kt">void</span></code> entre os parênteses indica que ela não recebe parâmetros. As instruções da função ficam entre as chaves;</li>
+<li><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">"Olá, mundo!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span></code> escreve o texto entre aspas na tela. O <code>\n</code> é uma sequência de escape que representa a quebra de linha, e o ponto e vírgula encerra a instrução, e;</li>
+<li><code class="language-c highlight"><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></code> encerra a função <code class="language-c highlight"><span class="n">main</span></code> e informa ao sistema operacional que o programa terminou com sucesso. Qualquer outro valor indica que houve um erro.</li>
+</ul>
+<p>O restante desta página mostra o caminho entre esse arquivo de texto e um programa que o computador consegue executar.</p>
 <h2 id="edicao-do-codigo-fonte">Edição do código fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
-<p>Analisando friamente, podemos utilizar qualquer editor de textos para escrever um programa em linguagem C (ou qualquer outra linguagem, como Python, Java ou TypeScript).  O problema é que a nossa produtividade (linhas de código que escrevemos pelo esforço dispendido) não vai ser boa.</p>
-<p>Um editor de texto está preparado para editar qualquer tipo de texto. Ele não foi pensando para escrever programas, então faltam algumas coisas importantes, como por exemplo a integração com um compilador, um ambiente para executar o programa, ferramentas para auxiliar a resolver erros que aparecem durante a execução ou compilação do programa.  O ideal é que façamos o desenvolvimento dentro de um IDE.</p>
+<p>Analisando friamente, podemos utilizar qualquer editor de textos para escrever um programa em linguagem C (ou em qualquer outra linguagem).  O problema é que a nossa produtividade (linhas de código que escrevemos pelo esforço despendido) não vai ser boa.</p>
+<p>Um editor de texto está preparado para editar qualquer tipo de texto. Ele não foi pensado para escrever programas, então faltam algumas coisas importantes, como por exemplo a integração com um compilador, um ambiente para executar o programa, ferramentas para auxiliar a resolver erros que aparecem durante a execução ou compilação do programa.  O ideal é que façamos o desenvolvimento dentro de um IDE.</p>
 <p>Um Ambiente Integrado de Desenvolvimento (IDE, do inglês <em>Integrated Development Environment</em>) é um software que reúne diversas ferramentas essenciais para a programação em um único local, facilitando o desenvolvimento de aplicações. Ele geralmente inclui um editor de código, um compilador ou interpretador, um depurador e outros recursos que auxiliam na escrita, teste e manutenção do código. Eles surgiram para simplificar o processo de programação, que anteriormente exigia que os desenvolvedores escrevessem código em um editor de texto, salvassem o arquivo, acionassem o compilador separadamente e depois retornassem ao editor para corrigir eventuais erros.</p>
 <p>Entretanto, o uso de Ambientes Integrados de Desenvolvimento (IDEs) durante o aprendizado de programação é um tópico que gera debates intensos entre desenvolvedores e educadores. Por um lado, as IDEs oferecem uma série de benefícios que podem acelerar o processo de aprendizado e desenvolvimento. Elas fornecem suporte contextual, realce de sintaxe, autocompletar e depuração integrada, o que ajuda a evitar erros e aumenta a produtividade. Além disso, muitas IDEs são projetadas para simplificar o aprendizado, oferecendo uma curva de aprendizado mais suave para iniciantes.</p>
 <p>No entanto, há argumentos significativos contra o uso de IDEs durante o aprendizado inicial. Uma das principais preocupações é que as IDEs podem desviar o foco do aluno da linguagem em si para a ferramenta. Recursos como autocompletar e sugestões automáticas podem evitar que os estudantes compreendam completamente a sintaxe e a lógica por trás do código. Além disso, a dependência excessiva em IDEs pode criar dificuldades quando se trabalha em ambientes mais simples ou diferentes, o que é uma habilidade crucial em muitos contextos profissionais.</p>
@@ -2439,6 +2608,11 @@
 <p>Tela principal da IDE Dev-CPP (Embarcadero)</p>
 </figcaption>
 </figure>
+<div class="admonition tip">
+<p class="admonition-title">Qual é a versão do meu compilador?</p>
+<p>Uma IDE é apenas a "casca" em volta do compilador, e muitas delas trazem um compilador embutido. O Dev-CPP, por exemplo, traz uma versão antiga do GCC (a 9), que se comporta de forma diferente das versões usadas nos juízes <em>online</em> em alguns casos importantes, como a <a href="../funcoes/#declaracao-e-definicao">chamada de funções não declaradas</a>. Outra combinação que funciona bem é o <a href="https://code.visualstudio.com/">Visual Studio Code</a> com a extensão C/C++ e um GCC recente, instalado no Windows por meio do <a href="https://www.msys2.org/">MSYS2</a> ou, no Linux, pelo gerenciador de pacotes da distribuição.</p>
+<p>Para saber a versão do compilador, abra um terminal e digite <code>gcc --version</code>. Na Maratona SBC de Programação e no ICPC, os programas são compilados com o GCC 13.2 e o comando <code>gcc -g -O2 -std=gnu11 -static ... -lm</code>; no <a href="https://arena.onlinejudge.com.br/">Arena</a>, com o GCC 14.2 e o comando <code>gcc -std=c17 -O2 -D_GNU_SOURCE ... -lm</code>. Os exemplos deste texto foram testados nesses dois ambientes.</p>
+</div>
 <h3 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h3>
 <p>Os comentários em linguagem C são elementos não executáveis que fornecem descrições e explicações adicionais dentro do código-fonte. Eles desempenham um papel fundamental na documentação do programa, tornando-o mais legível e compreensível tanto para o próprio desenvolvedor quanto para outros programadores que possam trabalhar com o código no futuro.</p>
 <div class="admonition note inline end">
@@ -2447,12 +2621,12 @@
 </div>
 <p>A linguagem C suporta dois tipos principais de comentários.</p>
 <p>O primeiro tipo são os <strong>comentários de linha única</strong>, que começam com duas barras (<code class="language-c highlight"><span class="c1">//</span></code>) e se estendem até o final da linha. Tudo que estiver após essas duas barras será ignorado pelo compilador durante o processo de compilação. Por exemplo, podemos escrever a linha abaixo em qualquer parte do código, e o compilador simplesmente ignorará esse texto.</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Este é um comentário de linha única</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">// Este é um comentário de linha única</span>
 </span></code></pre></div>
 <p>O segundo tipo são os <strong>comentários de múltiplas linhas</strong>, também conhecidos como comentários em bloco. Estes começam com a sequência <code class="language-c highlight"><span class="cm">/*</span></code> e terminam com <code class="language-c highlight"><span class="o">*/</span></code>. Todo o texto entre esses delimitadores é considerado um comentário, independentemente de quantas linhas ele ocupe, como no exemplo abaixo.</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cm">/* Este comentário pode se estender por várias</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="cm">   linhas e explicar detalhadamente o funcionamento</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="cm">   de determinado trecho de código */</span>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cm">/* Este comentário pode se estender por várias</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="cm">   linhas e explicar detalhadamente o funcionamento</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="cm">   de determinado trecho de código */</span>
 </span></code></pre></div>
 <p>Os comentários são utilizados por diversas razões importantes no desenvolvimento de software:</p>
 <ul>
@@ -2471,8 +2645,10 @@
 
 <pre class="mermaid"><code>graph LR
   Fonte1 --&gt; Preprocessamento1 --&gt; Processado1
+  Cabecalhos --&gt; Preprocessamento1
 
-  Fonte1@{ shape: doc, label: "**Código fonte**&lt;br /&gt;(.c, .h)" }
+  Fonte1@{ shape: doc, label: "**Código fonte**&lt;br /&gt;(.c)" }
+  Cabecalhos@{ shape: docs, label: "**Arquivos de cabeçalho**&lt;br /&gt;(.h)" }
   Preprocessamento1@{ shape: process, label: "Pré-processamento" }
   Processado1@{ shape: doc, label: "**Código pré-processado**&lt;br /&gt;(.i)" }</code></pre>
 <p>A segunda etapa é o pré-processamento, feita pelo pré-processador, um programa que "prepara" o código antes da compilação propriamente dita.</p>
@@ -2480,9 +2656,9 @@
 <p>Durante esta fase:</p>
 <ul>
 <li>As macros são expandidas;</li>
-<li>Os arquivos de cabeçalho (.h) são incluídos no arquivo-fonte;</li>
-<li>Espaços desnecessários são removidos, e;</li>
-<li>Comentários são eliminados</li>
+<li>Os arquivos de cabeçalho (.h) são incluídos no arquivo fonte;</li>
+<li>Os trechos de compilação condicional (<code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#if</span></code>) são mantidos ou descartados, e;</li>
+<li>Os comentários são eliminados.</li>
 </ul>
 <p>O resultado é uma versão do código fonte "limpa". Este arquivo, normalmente com extensão <code>.i</code>, contém todo o código-fonte original mais o conteúdo dos arquivos incluídos e as macros expandidas, gerando um arquivo significativamente maior que o original.</p>
 <p>As principais diretivas de pré-compilação são:</p>
@@ -2491,67 +2667,72 @@
 <p><code class="language-c highlight"><span class="cp">#include</span></code>: substituem declarações de inclusão de arquivos, como arquivos de cabeçalho (.h). Isso permite que funções e definições externas sejam incorporadas ao código. Por exemplo, ao escrever <code class="language-c highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span></code>, estamos pedindo para incluir o conteúdo do arquivo de cabeçalho <code>stdio.h</code> (que contém declarações de funções como <code>printf()</code>) no nosso código;</p>
 </li>
 <li>
-<p><code class="language-c highlight"><span class="cp">#define</span></code>: realizam substituições de macros, que podem ser valores constantes ou pequenas funções inline. Se usarmos, por exemplo, <code class="language-c highlight"><span class="cp">#define PI 3.14</span></code>, o pré-processador substituirá todas as ocorrências de <code>PI</code> no código por <code>3.14</code>. Ao fazermos <code class="language-c highlight"><span class="cp">#define QUADRADO(x) ((x) * (x))</span></code> o pré-processador substitui todas as ocorrências de <code>QUADRADO(valor)</code> pela expressão <code>(valor * valor)</code> antes da compilação. A diretiva pode ser usada também apenas para a definição de um símbolo (<code class="language-c highlight"><span class="cp">#define DEBUG</span></code>, por exemplo) que pode ter a existência verificada (<code class="language-c highlight"><span class="cp">#ifdef DEBUG</span></code>, por exemplo);</p>
+<p><code class="language-c highlight"><span class="cp">#define</span></code>: realizam substituições de macros, que podem ser valores constantes ou pequenas funções inline. Se usarmos, por exemplo, <code class="language-c highlight"><span class="cp">#define PI 3.14</span></code>, o pré-processador substituirá todas as ocorrências de <code>PI</code> no código por <code>3.14</code>. Ao fazermos <code class="language-c highlight"><span class="cp">#define QUADRADO(x) ((x) * (x))</span></code>, o pré-processador substitui todas as ocorrências de <code>QUADRADO(valor)</code> pela expressão <code>((valor) * (valor))</code> antes da compilação. A diretiva pode ser usada também apenas para a definição de um símbolo (<code class="language-c highlight"><span class="cp">#define DEBUG</span></code>, por exemplo) que pode ter a existência verificada (<code class="language-c highlight"><span class="cp">#ifdef DEBUG</span></code>, por exemplo);</p>
 </li>
 <li>
-<p><code class="language-c highlight"><span class="cp">#undef</span></code>: remove faz com que o símbolo ou macro seja apagada da tabela interna. A partir deste ponto, o compilador não conhece mais esta macro;</p>
+<p><code class="language-c highlight"><span class="cp">#undef</span></code>: remove a definição de um símbolo ou de uma macro. A partir desse ponto, o pré-processador não conhece mais essa macro;</p>
 </li>
 <li>
 <p><code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#ifndef</span></code> e outras relacionadas: permitem compilar trechos específicos do código com base em definições previamente estabelecidas. Isso é extremamente útil quando estamos escrevendo um programa que deve rodar em mais de uma arquitetura e, dependendo da arquitetura vai utilizar uma biblioteca ou outra, por exemplo.</p>
 </li>
 </ul>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplos de uso de diretivas de compilação</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="cp">#define max(A, B) ((A &gt; B) ? (A) : (B))</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="cp">#define min(A, B) ((A &lt; B) ? (A) : (B))</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="cp">#define DEBUG</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="w"> </span><span class="p">()</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="p">{</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">maior</span><span class="p">;</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="cp">#ifdef DEBUG</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">  </span><span class="n">printf</span><span class="p">(</span><span class="s">"Depurando o programa"</span><span class="p">);</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="cp">#endif</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">  </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">  </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">  </span><span class="n">maior</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16"></a>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">  </span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">"Entre %d e %d, o maior é %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">maior</span><span class="p">);</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="p">}</span>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplos de uso de diretivas de compilação</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="cp">#define DEBUG</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="cp">#define QUADRADO(x) ((x) * (x))</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="cp">#define MAIOR(a, b) (((a) &gt; (b)) ? (a) : (b))</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="p">{</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="cp">#ifdef DEBUG</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Depurando o programa</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="cp">#endif</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Entre %d e %d, o maior é %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">MAIOR</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">));</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"QUADRADO(x + 1) = %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">QUADRADO</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">));</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Depurando o programa
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Entre 5 e 7, o maior é 7
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>QUADRADO(x + 1) = 36
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Os parênteses em volta de cada parâmetro e da expressão inteira são essenciais. Sem eles, com <code class="language-c highlight"><span class="cp">#define QUADRADO(x) x * x</span></code>, a expressão <code>QUADRADO(x + 1)</code> seria substituída por <code>x + 1 * x + 1</code>, que vale 11, e não 36.</p>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>Uma macro não é uma função: o pré-processador apenas substitui o texto, e cada argumento aparece no resultado tantas vezes quantas o parâmetro aparece na macro. Em <code>QUADRADO(i++)</code>, a substituição gera <code>((i++) * (i++))</code>, que incrementa <code>i</code> duas vezes na mesma expressão, o que é comportamento indefinido (o compilador avisa: <code>operation on 'i' may be undefined</code>). Para cálculos, prefira escrever <a href="../funcoes/">funções</a>; para valores constantes, <code class="language-c highlight"><span class="k">const</span></code> é uma alternativa às macros, como mostra a seção sobre <a href="../tiposdedados/#constantes">constantes</a>.</p>
+</div>
 <h2 id="compilacao-e-montagem">Compilação e montagem<a class="headerlink" href="#compilacao-e-montagem" title="Permanent link">&para;</a></h2>
 <!-- gcc -S arquivo.c -->
 <!-- gcc -c arquivo.c -->
 
 <pre class="mermaid"><code>graph LR
-  BibEstat1 --&gt; Compilador1
-  BibEstat2 --&gt; Compilador1
   Processado1 --&gt; Compilador1 --&gt; Obj1
 
   Processado1@{ shape: doc, label: "**Código pré-processado**&lt;br /&gt;(.i)" }
-  BibEstat1@{ shape: lin-doc, label: "**Biblioteca B1**&lt;br /&gt;(.so)" }
-  BibEstat2@{ shape: lin-doc, label: "**Biblioteca B2**&lt;br /&gt;(.so)" }
   Compilador1@{shape: process, label: "Compilação e montagem" }
   Obj1@{ shape: doc, label: "**Código objeto**&lt;br /&gt;(.o)" }</code></pre>
 <p>Nesta etapa, o compilador realiza a análise sintática e semântica do código pré-processado. Ele verifica se o código está escrito corretamente, seguindo as regras da linguagem C, como parênteses não fechados, falta de ponto e vírgula, entre outros erros sintáticos.</p>
@@ -2559,19 +2740,53 @@
 <p>O código em <em>assembly</em> resultante vai conter instruções específicas para a arquitetura do processador (como x86 ou ARM) que será utilizado.</p>
 <p>A etapa de montagem transforma o código assembly em código-objeto, que está em linguagem de máquina, porém ainda não está pronto para ser executado. O código binário resultante ainda não pode ser executado porque pode depender de funções ou variáveis definidas em outros lugares (como em outro arquivo <code>.c</code> ou em bibliotecas externas). Cada arquivo <code>.c</code> gera seu próprio arquivo objeto, de extensão <code>.o</code>, nessa etapa.</p>
 <p>A parte do compilador que faz essa conversão é o montador, ou <em>assembler</em>.</p>
+<p>Na prática, não executamos cada etapa separadamente: um único comando faz o pré-processamento, a compilação, a montagem e a link-edição. Com o GCC, o comando é <code>gcc</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gcc -std=c17 -Wall -Wextra -o ola ola.c
+</span></code></pre></div>
+<p>Cada parte do comando tem um papel:</p>
+<ul>
+<li><code>-std=c17</code>: indica a versão do padrão da linguagem que deve ser usada. Sem essa opção, o compilador usa uma versão padrão, que varia de acordo com a versão do próprio compilador (no GCC 13 e no GCC 14, é o <code>gnu17</code>: o C17 com as extensões do GCC). As versões com <code>gnu</code> no nome, como o <code>gnu11</code> usado na Maratona, aceitam recursos que não fazem parte do C padrão; com <code>c17</code>, o compilador segue o padrão à risca, o que ajuda a escrever programas que funcionam em qualquer compilador;</li>
+<li><code>-Wall -Wextra</code>: ativam a maior parte dos <strong>avisos</strong> (<em>warnings</em>) do compilador. Um aviso não impede a geração do programa, mas indica um trecho de código suspeito, que provavelmente contém um erro;</li>
+<li><code>-o ola</code>: define o nome do arquivo executável gerado (no Windows, <code>ola.exe</code>), e;</li>
+<li><code>ola.c</code>: o arquivo fonte a ser compilado. Um programa dividido em vários arquivos é compilado com todos eles no mesmo comando, como mostra a seção sobre <a href="../funcoes/#organizando-funcoes-em-varios-arquivos">funções</a>.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Leve os avisos a sério</p>
+<p>Os avisos do compilador são uma das ferramentas mais eficientes para encontrar erros antes mesmo de executar o programa. Compile sempre com <code>-Wall -Wextra</code> e trate cada aviso como um erro a ser corrigido: na grande maioria das vezes, o compilador está certo. Alguns avisos de versões antigas do GCC, como o de chamar uma função não declarada, viraram erros nas versões novas.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Vendo cada etapa separadamente</p>
+<p>É possível pedir ao <code>gcc</code> que pare depois de cada etapa, o que ajuda a entender o processo:</p>
+<ul>
+<li><code>gcc -E ola.c -o ola.i</code>: só o pré-processamento;</li>
+<li><code>gcc -S ola.c</code>: pré-processamento e compilação, gerando o <em>assembly</em> (<code>ola.s</code>);</li>
+<li><code>gcc -c ola.c</code>: pré-processamento, compilação e montagem, gerando o código objeto (<code>ola.o</code>), e;</li>
+<li><code>gcc ola.o -o ola</code>: só a link-edição, a partir do código objeto.</li>
+</ul>
+</div>
 <h2 id="link-edicao">Link-edição<a class="headerlink" href="#link-edicao" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>graph LR
   Obj1 --&gt; Link --&gt; Exec
+  Bib1 --&gt; Link
 
   Obj1@{ shape: doc, label: "**Código objeto**&lt;br&gt;(.o)" }
+  Bib1@{ shape: lin-doc, label: "**Bibliotecas**&lt;br /&gt;(libc, libm, .a, .so, .dll)" }
   Link@{ shape: process, label: "Link-edição" }
   Exec@{ shape: doc, label: "**Programa executável**&lt;br /&gt;(.exe)" }</code></pre>
 <p>Imagine que os arquivos objeto .o são como peças de um quebra-cabeça: cada um tem uma parte do programa, mas eles precisam ser conectados para formar o todo. A link-edição é a etapa final do processo, onde o linkeditor (linker) combina todos os arquivos-objeto gerados e as bibliotecas necessárias em um único arquivo executável. O linker realiza as seguintes tarefas:</p>
 <ul>
 <li>Resolve referências entre os diferentes módulos do programa, garantindo que todas as referências a funções e variáveis estejam devidamente definidas e resolvidas;</li>
-<li>Se o programa utiliza funções externas, como as da biblioteca padrão do C (<code>stdio.h</code>, <code>math.h</code>), o linker adiciona os arquivos correspondentes ao executável final, e;</li>
-<li>Gera o arquivo executável final</li>
+<li>Adiciona ao executável o código das bibliotecas usadas pelo programa. As funções da biblioteca padrão, como <code class="language-c highlight"><span class="n">printf</span></code> e <code class="language-c highlight"><span class="n">strlen</span></code>, ficam na biblioteca <code>libc</code>, que o comando <code>gcc</code> inclui automaticamente, e;</li>
+<li>Gera o arquivo executável final.</li>
 </ul>
+<p>Se alguma função foi declarada e usada, mas não foi definida em nenhum arquivo objeto ou biblioteca, o linker interrompe o processo com um erro de "referência indefinida" (<em>undefined reference</em>). Esse erro aparece mesmo quando o código de cada arquivo está correto, porque o problema não está em nenhum arquivo isolado, e sim na ligação entre eles.</p>
+<div class="admonition warning">
+<p class="admonition-title">Veja bem, preste atenção!</p>
+<p>No Linux, as funções matemáticas de <code>math.h</code>, como <code class="language-c highlight"><span class="n">sqrt</span></code>, <code class="language-c highlight"><span class="n">pow</span></code> e <code class="language-c highlight"><span class="n">log</span></code>, ficam em uma biblioteca separada, a <code>libm</code>, que <strong>não</strong> é incluída automaticamente. Incluir o cabeçalho <code>math.h</code> não basta: é preciso pedir a biblioteca ao linker, com a opção <code>-lm</code> no <strong>final</strong> do comando:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>gcc -std=c17 -Wall -Wextra -o raiz raiz.c -lm
+</span></code></pre></div>
+<p>Sem o <code>-lm</code>, o programa compila, mas a link-edição falha com <code>undefined reference to 'sqrt'</code>. Os juízes <em>online</em> incluem essa opção nos seus comandos de compilação.</p>
+</div>
 <p>O arquivo gerado pode ser executado diretamente pelo sistema operacional.</p>
 
 
@@ -2595,7 +2810,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de março de 2025 20:22:07 -03">11 de março de 2025 20:22:07</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
   </span>
 
     

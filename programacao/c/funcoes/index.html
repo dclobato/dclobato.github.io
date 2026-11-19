@@ -16,7 +16,7 @@
         <link rel="prev" href="../fluxo/">
       
       
-        <link rel="next" href="../biblioteca_c/">
+        <link rel="next" href="../estruturas_dados/">
       
       
         
@@ -604,6 +604,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -752,6 +756,34 @@
     
   
     Ponteiros e memória
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cadeias de caracteres
   
 
     
@@ -1182,6 +1214,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estruturas_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estruturas de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1906,6 +1966,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2130,6 +2194,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulação de JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/fluxo/" class="md-nav__link">
         
   
@@ -2166,6 +2258,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/memoria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerenciamento de memória
   
 
     
@@ -2853,7 +2973,7 @@
 
 <h1 id="funcoes">Funções<a class="headerlink" href="#funcoes" title="Permanent link">&para;</a></h1>
 <p>À medida que os programas crescem, escrever tudo dentro de <code class="language-c highlight"><span class="n">main</span></code> deixa de ser viável: o código fica longo, difícil de entender, e trechos parecidos começam a se repetir em vários lugares. <strong>Funções</strong> resolvem esses problemas. Uma função é um bloco de código com um nome, que recebe dados de entrada (os <strong>parâmetros</strong>), executa uma tarefa e, opcionalmente, devolve um resultado (o <strong>valor de retorno</strong>). Depois de escrita, ela pode ser chamada quantas vezes for necessário, de qualquer parte do programa.</p>
-<p>Dividir um programa em funções traz várias vantagens:</p>
+<p>A ideia de dar um nome a um trecho de um algoritmo para reutilizá-lo, na forma de funções e procedimentos, foi apresentada na seção sobre <a href="../../algoritmos/tiposdeprocessamento/#reuso">reuso</a>. Dividir um programa em funções traz várias vantagens:</p>
 <ul>
 <li><strong>Reutilização</strong>: um trecho de código escrito uma vez pode ser usado em vários lugares, sem repetição;</li>
 <li><strong>Legibilidade</strong>: um nome bem escolhido, como <code>calcula_media</code> ou <code>le_matriz</code>, explica o que um trecho de código faz, sem que seja preciso ler cada linha dele;</li>
@@ -3630,7 +3750,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>A função <code>mostra</code> só aceita matrizes com exatamente <code>COLUNAS</code> colunas. A função <code>traco</code> usa um parâmetro de <strong>tamanho variável</strong>: as dimensões são dadas por um parâmetro anterior (<code>n</code>), e a função funciona com matrizes quadradas de qualquer tamanho. Nesse caso, o parâmetro com o tamanho precisa vir <strong>antes</strong> da matriz na lista. Arranjos de tamanho variável fazem parte da linguagem desde o C99; a partir do C11, o suporte a eles passou a ser opcional, mas o GCC os aceita.</p>
 <h3 id="cadeias-de-caracteres">Cadeias de caracteres<a class="headerlink" href="#cadeias-de-caracteres" title="Permanent link">&para;</a></h3>
-<p><a href="../tiposdedados/#cadeias-de-caracteres">Cadeias de caracteres</a> são arranjos de <code class="language-c highlight"><span class="kt">char</span></code>, e seguem as mesmas regras: a função recebe o endereço do primeiro caractere, e pode alterar a cadeia original. A diferença é que não é preciso passar o tamanho, porque o final da cadeia é marcado pelo caractere nulo (<code>'\0'</code>):</p>
+<p><a href="../strings/">Cadeias de caracteres</a> são arranjos de <code class="language-c highlight"><span class="kt">char</span></code>, e seguem as mesmas regras: a função recebe o endereço do primeiro caractere, e pode alterar a cadeia original. A diferença é que não é preciso passar o tamanho, porque o final da cadeia é marcado pelo caractere nulo (<code>'\0'</code>):</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Passando cadeias de caracteres para funções</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
@@ -4476,7 +4596,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
   </span>
 
     
@@ -4554,13 +4674,13 @@
         
         
           
-          <a href="../biblioteca_c/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Biblioteca de códigos em C">
+          <a href="../estruturas_dados/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Estruturas de dados">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Biblioteca de códigos em C
+                Estruturas de dados
               </div>
             </div>
             <div class="md-footer__button md-icon">

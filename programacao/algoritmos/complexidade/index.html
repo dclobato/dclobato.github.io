@@ -660,6 +660,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#as-operacoes-aritmeticas-do-dia-a-dia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As operações aritméticas do dia a dia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#melhor-caso-pior-caso-e-caso-medio" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -757,6 +768,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -943,6 +958,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../c/strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cadeias de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../c/entrada_saida/" class="md-nav__link">
         
   
@@ -1007,6 +1050,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../c/estruturas_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estruturas de dados
   
 
     
@@ -1739,6 +1810,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1963,6 +2038,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulação de JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/fluxo/" class="md-nav__link">
         
   
@@ -1999,6 +2102,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/memoria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerenciamento de memória
   
 
     
@@ -2455,6 +2586,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#as-operacoes-aritmeticas-do-dia-a-dia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        As operações aritméticas do dia a dia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#melhor-caso-pior-caso-e-caso-medio" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2643,7 +2785,7 @@
 <li><strong>Fique apenas com o termo dominante:</strong> <span class="arithmatex">\(n^2 + 100n + 7\)</span> é <span class="arithmatex">\(O(n^2)\)</span>, e <span class="arithmatex">\(n + \log n\)</span> é <span class="arithmatex">\(O(n)\)</span>;</li>
 <li><strong>Trechos em sequência se somam</strong>, e o maior deles domina: um laço <span class="arithmatex">\(O(n)\)</span> seguido de um laço <span class="arithmatex">\(O(n^2)\)</span> resulta em <span class="arithmatex">\(O(n + n^2) = O(n^2)\)</span>;</li>
 <li><strong>Trechos aninhados se multiplicam:</strong> um laço que executa <span class="arithmatex">\(n\)</span> vezes, contendo outro laço que executa <span class="arithmatex">\(n\)</span> vezes, resulta em <span class="arithmatex">\(O(n \cdot n) = O(n^2)\)</span>; se o laço interno executa <span class="arithmatex">\(\log n\)</span> vezes, o resultado é <span class="arithmatex">\(O(n \log n)\)</span>, e;</li>
-<li><strong>Operações simples são <span class="arithmatex">\(O(1)\)</span>:</strong> atribuições, operações aritméticas, comparações e o acesso a uma posição de um arranjo levam um tempo constante, que não depende de <span class="arithmatex">\(n\)</span>.</li>
+<li><strong>Operações simples são <span class="arithmatex">\(O(1)\)</span>:</strong> atribuições, operações aritméticas, comparações e o acesso a uma posição de um arranjo levam um tempo constante, que não depende de <span class="arithmatex">\(n\)</span>. No caso das operações aritméticas, isso vale porque os números guardados em uma variável têm um tamanho fixo (32 ou 64 bits, por exemplo); com números de tamanho arbitrário, a história é outra, como mostra a seção sobre as <a href="#as-operacoes-aritmeticas-do-dia-a-dia">operações aritméticas</a>.</li>
 </ul>
 <h3 id="cotas-inferiores-e-exatas-e">Cotas inferiores e exatas: Ω e Θ<a class="headerlink" href="#cotas-inferiores-e-exatas-e" title="Permanent link">&para;</a></h3>
 <p>A notação O dá um limite <strong>superior</strong>: ela diz que <span class="arithmatex">\(f(n)\)</span> cresce <strong>no máximo</strong> como <span class="arithmatex">\(g(n)\)</span>. Há outras duas notações, definidas da mesma forma:</p>
@@ -2839,6 +2981,100 @@
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13"></a>FIM_ENQUANTO
 </span></code></pre></div></td></tr></table></div>
 <p>O mesmo raciocínio vale para um laço em que a variável de controle é multiplicada (ou dividida) por um valor fixo a cada repetição, como <code>i ← i * 2</code>: ele executa <span class="arithmatex">\(O(\log n)\)</span> vezes. Na notação O, a base do logaritmo não importa, porque logaritmos em bases diferentes diferem apenas por uma constante multiplicativa: <span class="arithmatex">\(\log_2 n = \frac{\log_{10} n}{\log_{10} 2} \approx 3{,}32 \cdot \log_{10} n\)</span>.</p>
+<h2 id="as-operacoes-aritmeticas-do-dia-a-dia">As operações aritméticas do dia a dia<a class="headerlink" href="#as-operacoes-aritmeticas-do-dia-a-dia" title="Permanent link">&para;</a></h2>
+<p>As contas que aprendemos na escola também são algoritmos, e podem ser analisadas da mesma forma. Neste caso, o <strong>tamanho da entrada</strong> é a quantidade de dígitos <span class="arithmatex">\(n\)</span> dos números, e não o valor deles: um número de valor <span class="arithmatex">\(N\)</span> tem cerca de <span class="arithmatex">\(\log_{10} N\)</span> dígitos.</p>
+<p>Na <a href="https://pt.wikipedia.org/wiki/Adi%C3%A7%C3%A3o">adição</a> feita no papel, somamos os números coluna a coluna, da direita para a esquerda, levando o "vai-um" para a coluna seguinte. Cada coluna dá um trabalho constante (somar dois dígitos e o vai-um), e há <span class="arithmatex">\(n\)</span> colunas: o algoritmo é <span class="arithmatex">\(O(n)\)</span>. A <a href="https://pt.wikipedia.org/wiki/Subtra%C3%A7%C3%A3o">subtração</a> com empréstimo funciona do mesmo jeito, e também é <span class="arithmatex">\(O(n)\)</span>.</p>
+<p>Na <a href="https://pt.wikipedia.org/wiki/Multiplica%C3%A7%C3%A3o">multiplicação</a> longa, cada dígito do segundo número é multiplicado por todos os dígitos do primeiro, e os resultados parciais são somados. Para multiplicar dois números com 4 dígitos, como <span class="arithmatex">\(1234 \times 5678\)</span>, são feitas <span class="arithmatex">\(4 \times 4 = 16\)</span> multiplicações de um dígito; com <span class="arithmatex">\(n\)</span> dígitos, são <span class="arithmatex">\(n^2\)</span>: o algoritmo é <span class="arithmatex">\(O(n^2)\)</span>. Durante muito tempo, acreditou-se que não era possível fazer melhor. Em 1960, o matemático Andrey Kolmogorov chegou a propor, em um seminário, que <span class="arithmatex">\(O(n^2)\)</span> era o limite, e um estudante do seminário, Anatoly Karatsuba, encontrou em poucos dias um algoritmo mais rápido. O <a href="https://pt.wikipedia.org/wiki/Algoritmo_de_Karatsuba">algoritmo de Karatsuba</a> divide cada número em duas metades e, com um truque algébrico, faz <strong>três</strong> multiplicações de números com metade do tamanho, em vez de quatro. Repetindo a divisão até chegar a números de um dígito, o total de operações é <span class="arithmatex">\(O(n^{\log_2 3}) \approx O(n^{1{,}585})\)</span>. Desde então, foram encontrados algoritmos cada vez mais rápidos, até o de Harvey e van der Hoeven, de 2019, que é <span class="arithmatex">\(O(n \log n)\)</span>; ele só compensa, porém, para números com uma quantidade astronômica de dígitos.</p>
+<p>A divisão longa, feita no papel, é <span class="arithmatex">\(O(n^2)\)</span>. Há algoritmos que transformam a divisão em uma sequência de multiplicações, usando o <a href="https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Newton%E2%80%93Raphson">método de Newton-Raphson</a> para calcular o inverso do divisor: com eles, dividir custa o mesmo que multiplicar. O mesmo método calcula <a href="https://pt.wikipedia.org/wiki/Raiz_quadrada">raízes quadradas</a> com o custo de uma multiplicação.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operação</th>
+<th style="text-align: left;">Entrada</th>
+<th style="text-align: left;">Saída</th>
+<th style="text-align: left;">Algoritmo</th>
+<th style="text-align: center;">Complexidade</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Adição</td>
+<td style="text-align: left;">Dois números com <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;">Um número com até <span class="arithmatex">\(n + 1\)</span> dígitos</td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Addition#Carry">Usual, com vai-um</a><sup id="fnref2:en"><a class="footnote-ref" href="#fn:en">1</a></sup></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtração</td>
+<td style="text-align: left;">Dois números com <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;">Um número com até <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Subtraction#American_method">Usual, com empréstimo</a><sup id="fnref3:en"><a class="footnote-ref" href="#fn:en">1</a></sup></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiplicação</td>
+<td style="text-align: left;">Dois números com <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;">Um número com até <span class="arithmatex">\(2n\)</span> dígitos</td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Multiplication_algorithm#Long_multiplication">Multiplicação longa</a><sup id="fnref4:en"><a class="footnote-ref" href="#fn:en">1</a></sup></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://pt.wikipedia.org/wiki/Algoritmo_de_Karatsuba">Algoritmo de Karatsuba</a> (1960)</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^{1{,}585})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Toom%E2%80%93Cook_multiplication">Algoritmo de Toom-Cook</a><sup id="fnref5:en"><a class="footnote-ref" href="#fn:en">1</a></sup> (Toom-3, 1963)</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^{1{,}465})\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Sch%C3%B6nhage%E2%80%93Strassen_algorithm">Algoritmo de Schönhage-Strassen</a><sup id="fnref6:en"><a class="footnote-ref" href="#fn:en">1</a></sup> (1971)</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n \log n \log \log n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Multiplication_algorithm#Further_improvements">Algoritmo de Harvey e van der Hoeven</a><sup id="fnref7:en"><a class="footnote-ref" href="#fn:en">1</a></sup> (2019)</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n \log n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Divisão</td>
+<td style="text-align: left;">Dois números com <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;">Um número com até <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Division_algorithm#Long_division">Divisão longa</a><sup id="fnref8:en"><a class="footnote-ref" href="#fn:en">1</a></sup></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n^2)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><a href="https://en.wikipedia.org/wiki/Division_algorithm#Newton%E2%80%93Raphson_division">Divisão de Newton-Raphson</a><sup id="fnref9:en"><a class="footnote-ref" href="#fn:en">1</a></sup></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(M(n))\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Raiz quadrada</td>
+<td style="text-align: left;">Um número com <span class="arithmatex">\(n\)</span> dígitos</td>
+<td style="text-align: left;">Um número com até <span class="arithmatex">\(\lceil n/2 \rceil\)</span> dígitos</td>
+<td style="text-align: left;"><a href="https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Newton%E2%80%93Raphson">Método de Newton</a></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(M(n))\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Na tabela, <span class="arithmatex">\(M(n)\)</span> é a complexidade do algoritmo de multiplicação escolhido: com a multiplicação longa, <span class="arithmatex">\(O(M(n)) = O(n^2)\)</span>; com o algoritmo de Karatsuba, <span class="arithmatex">\(O(n^{1{,}585})\)</span>. O artigo <a href="https://en.wikipedia.org/wiki/Computational_complexity_of_mathematical_operations#Arithmetic_functions"><em>Computational complexity of mathematical operations</em></a><sup id="fnref:en"><a class="footnote-ref" href="#fn:en">1</a></sup> reúne a complexidade de muitas outras operações.</p>
+<div class="admonition note">
+<p class="admonition-title">Isso importa na prática?</p>
+<p>Em um programa, a maior parte das contas é feita com números de tamanho fixo, como inteiros de 32 ou 64 bits, que o processador soma, subtrai e multiplica em uma única instrução. Para esses números, <span class="arithmatex">\(n\)</span> não cresce, e as operações são <span class="arithmatex">\(O(1)\)</span>, como diz a regra apresentada anteriormente.</p>
+<p>Mas há situações em que os números têm milhares ou milhões de dígitos, e são representados com <a href="https://pt.wikipedia.org/wiki/Aritm%C3%A9tica_de_precis%C3%A3o_arbitr%C3%A1ria">aritmética de precisão arbitrária</a>: a criptografia usa números com centenas de dígitos, e os recordes de cálculo das casas decimais de <span class="arithmatex">\(\pi\)</span> trabalham com trilhões de dígitos. Algumas linguagens de programação usam esse tipo de aritmética em todos os inteiros. Nesses casos, a escolha do algoritmo de multiplicação faz uma diferença enorme, e as bibliotecas trocam de algoritmo conforme o tamanho dos números: a multiplicação longa para números pequenos, Karatsuba e Toom-Cook para os médios e algoritmos baseados em transformadas de Fourier, como o de Schönhage-Strassen, para os muito grandes.</p>
+</div>
 <h2 id="melhor-caso-pior-caso-e-caso-medio">Melhor caso, pior caso e caso médio<a class="headerlink" href="#melhor-caso-pior-caso-e-caso-medio" title="Permanent link">&para;</a></h2>
 <p>O número de operações de um algoritmo nem sempre depende só do tamanho da entrada: depende também dos valores. Na busca sequencial, em que os elementos são examinados um a um até que o procurado seja encontrado:</p>
 <ul>
@@ -2903,6 +3139,14 @@
 <li>Uma operação que parece simples no código pode esconder um laço. Verificar se um valor está em uma lista, remover o primeiro elemento de uma lista ou concatenar cadeias de caracteres longas podem custar <span class="arithmatex">\(O(n)\)</span> cada. Uma dessas operações dentro de um laço que executa <span class="arithmatex">\(n\)</span> vezes transforma um algoritmo que parecia <span class="arithmatex">\(O(n)\)</span> em <span class="arithmatex">\(O(n^2)\)</span>. As seções de cada linguagem indicam a complexidade das operações das principais estruturas de dados.</li>
 </ul>
 </div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:en">
+<p>Artigo da Wikipédia em inglês, porque não há artigo correspondente em português.&#160;<a class="footnote-backref" href="#fnref:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:en" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:en" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -2925,7 +3169,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 00:57:49 -03">19 de novembro de 2026 00:57:49</span>
   </span>
 
     

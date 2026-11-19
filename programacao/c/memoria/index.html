@@ -16,7 +16,7 @@
         <link rel="prev" href="../tiposdedados/">
       
       
-        <link rel="next" href="../entrada_saida/">
+        <link rel="next" href="../strings/">
       
       
         
@@ -604,6 +604,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1009,6 +1013,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../strings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cadeias de caracteres
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../entrada_saida/" class="md-nav__link">
         
   
@@ -1073,6 +1105,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estruturas_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estruturas de dados
   
 
     
@@ -1805,6 +1865,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2029,6 +2093,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../python/json/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manipulação de JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../python/fluxo/" class="md-nav__link">
         
   
@@ -2065,6 +2157,34 @@
     
   
     Funções
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/memoria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gerenciamento de memória
   
 
     
@@ -2859,7 +2979,7 @@
 </div>
 <p>A linguagem <strong>não verifica</strong> se um ponteiro (ou um índice) está dentro dos limites do arranjo. <code class="language-c highlight"><span class="n">v</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span></code>, <code class="language-c highlight"><span class="n">v</span><span class="p">[</span><span class="mi">-1</span><span class="p">]</span></code> ou <code class="language-c highlight"><span class="o">*</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span></code> compilam normalmente, e acessam a memória que estiver naquela posição, que pode pertencer a outra variável. O resultado é <strong>comportamento indefinido</strong>: o programa pode escrever valores sem sentido, alterar outras variáveis, ser encerrado, ou parecer funcionar.</p>
 <h3 id="por-que-o-operador-nao-funciona-para-cadeias">Por que o operador <code>==</code> não funciona para cadeias?<a class="headerlink" href="#por-que-o-operador-nao-funciona-para-cadeias" title="Permanent link">&para;</a></h3>
-<p>Como <a href="../tiposdedados/#cadeias-de-caracteres">cadeias de caracteres</a> são arranjos de <code class="language-c highlight"><span class="kt">char</span></code>, o decaimento também explica por que não é possível compará-las com <code>==</code>. Na expressão <code>senha1 == senha2</code>, os dois arranjos são convertidos em ponteiros para os seus primeiros elementos, e o que se compara são os <strong>endereços</strong> onde os arranjos começam, e não os caracteres guardados neles:</p>
+<p>Como <a href="../strings/">cadeias de caracteres</a> são arranjos de <code class="language-c highlight"><span class="kt">char</span></code>, o decaimento também explica por que não é possível compará-las com <code>==</code>. Na expressão <code>senha1 == senha2</code>, os dois arranjos são convertidos em ponteiros para os seus primeiros elementos, e o que se compara são os <strong>endereços</strong> onde os arranjos começam, e não os caracteres guardados neles:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">char</span><span class="w"> </span><span class="n">senha1</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"secreta"</span><span class="p">;</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kt">char</span><span class="w"> </span><span class="n">senha2</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"secreta"</span><span class="p">;</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -3642,6 +3762,10 @@
 <p>A manipulação de ponteiros é frequentemente considerada o aspecto mais desafiador da linguagem. Os ponteiros possibilitam operações poderosas, mas também introduzem riscos significativos: como a linguagem não verifica se um endereço é válido, nem se um acesso está dentro dos limites de um bloco, os erros de memória não são detectados automaticamente. Acessos fora dos limites, além de causar resultados imprevisíveis, são uma das principais fontes de falhas de segurança em programas: um acesso além do final de um arranjo pode sobrescrever outras variáveis do programa e, nos casos mais graves, permitir a execução de código arbitrário.</p>
 <p>Por outro lado, os ponteiros permitem que os programas acessem e modifiquem dados diretamente na memória, sem cópias, o que é essencial em aplicações que exigem alto desempenho, como jogos, sistemas operacionais e sistemas embarcados. Eles permitem a criação de estruturas de dados dinâmicas, como listas ligadas e árvores, que crescem e diminuem conforme a necessidade. Em sistemas embarcados, ou em programas que manipulam diretamente o <em>hardware</em>, os ponteiros permitem ler e escrever em endereços específicos que correspondem a registradores dos dispositivos. E é por meio deles que uma função consegue alterar as variáveis de quem a chamou, como mostra a seção sobre <a href="../funcoes/#passagem-de-parametros">passagem de parâmetros</a>.</p>
 <p>Uma abordagem disciplinada elimina a maioria dos problemas: inicializar sempre os ponteiros, verificar se são nulos antes de dereferenciá-los, ter uma estratégia clara para a liberação da memória e testar os programas com as ferramentas de verificação.</p>
+<div class="admonition info">
+<p class="admonition-title">Comparando com outras linguagens</p>
+<p>A página <a href="../../memoria_comparacao/">Gerenciamento de memória em C, C++ e Python</a> compara a forma como cada uma dessas linguagens gerencia a memória, com um mesmo programa escrito nas três.</p>
+</div>
 
 
 
@@ -3664,7 +3788,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:48:51 -03">19 de novembro de 2026 02:48:51</span>
   </span>
 
     
@@ -3742,13 +3866,13 @@
         
         
           
-          <a href="../entrada_saida/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Entrada e saída">
+          <a href="../strings/" class="md-footer__link md-footer__link--next" aria-label="Próximo: Cadeias de caracteres">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Próximo
               </span>
               <div class="md-ellipsis">
-                Entrada e saída
+                Cadeias de caracteres
               </div>
             </div>
             <div class="md-footer__button md-icon">
