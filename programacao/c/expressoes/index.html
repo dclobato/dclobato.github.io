@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -764,6 +764,17 @@
   
     <nav class="md-nav" aria-label="Expressões e operadores aritméticos">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#promocoes-e-conversoes-entre-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoções e conversões entre tipos
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#divisao-e-resto-com-numeros-negativos" class="md-nav__link">
@@ -2387,7 +2398,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2501,6 +2512,17 @@
   
     <nav class="md-nav" aria-label="Expressões e operadores aritméticos">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#promocoes-e-conversoes-entre-tipos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Promoções e conversões entre tipos
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#divisao-e-resto-com-numeros-negativos" class="md-nav__link">
@@ -2676,22 +2698,22 @@
 <tr>
 <td style="text-align: left;">Pré-incremento</td>
 <td style="text-align: center;"><code>++a</code></td>
-<td style="text-align: left;">Incrementa de um o valor de <code>a</code>, e depois utiliza o valor</td>
+<td style="text-align: left;">Incrementa em uma unidade o valor de <code>a</code> e depois utiliza o valor</td>
 </tr>
 <tr>
 <td style="text-align: left;">Pós-incremento</td>
 <td style="text-align: center;"><code>a++</code></td>
-<td style="text-align: left;">Utiliza o valor de <code>a</code>, e depois incrementa de um o valor</td>
+<td style="text-align: left;">Utiliza o valor de <code>a</code> e depois o incrementa em uma unidade</td>
 </tr>
 <tr>
 <td style="text-align: left;">Pré-decremento</td>
 <td style="text-align: center;"><code>--a</code></td>
-<td style="text-align: left;">Decrementa de um o valor de <code>a</code>, e depois utiliza o valor</td>
+<td style="text-align: left;">Decrementa em uma unidade o valor de <code>a</code> e depois utiliza o valor</td>
 </tr>
 <tr>
 <td style="text-align: left;">Pós-decremento</td>
 <td style="text-align: center;"><code>a--</code></td>
-<td style="text-align: left;">Utiliza o valor de <code>a</code>, e depois decrementa de um o valor</td>
+<td style="text-align: left;">Utiliza o valor de <code>a</code> e depois o decrementa em uma unidade</td>
 </tr>
 </tbody>
 </table>
@@ -2707,7 +2729,7 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="c1">// y será 5, x será 6</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Embora muitas vezes ambas as versões levem ao mesmo resultado quando usadas isoladamente, seu uso dentro de expressões compostas exige atenção. Veja o exemplo a seguir:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">incremento.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -2752,13 +2774,13 @@
 <p>Vamos analisar a linha <code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">b</span><span class="p">;</span></code>, com os valores iniciais <code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span></code> e <code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span></code>:</p>
 <ol>
 <li><code class="language-c highlight"><span class="n">a</span><span class="o">++</span></code> usa o valor atual de <code>a</code> (5) na expressão, e <code>a</code> passa a valer 6;</li>
-<li><code class="language-c highlight"><span class="o">--</span><span class="n">b</span></code> decrementa <code>b</code> de 10 para 9, e usa esse valor (9) na expressão, e;</li>
+<li><code class="language-c highlight"><span class="o">--</span><span class="n">b</span></code> decrementa <code>b</code> de 10 para 9, e usa esse valor (9) na expressão;</li>
 <li>A soma é <code class="language-c highlight"><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span></code>, e <code>c</code> recebe 14.</li>
 </ol>
 <p>No fim, <code class="language-c highlight"><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span></code>, <code class="language-c highlight"><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span></code> e <code class="language-c highlight"><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">14</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Cada variável foi alterada <strong>uma única vez</strong> na expressão acima. Quando a mesma variável é alterada mais de uma vez na mesma expressão, ou é alterada e também lida em outra parte da expressão, o resultado é <strong>comportamento indefinido</strong>: o padrão da linguagem não diz em que ordem as partes da expressão são avaliadas, nem em que momento exato o incremento acontece, e cada compilador pode produzir um resultado diferente. Expressões como as abaixo <strong>não têm um resultado correto</strong>, e não devem ser escritas:</p>
+<p>Nas expressões abaixo, a mesma variável é modificada mais de uma vez, ou é modificada e lida para outro cálculo, <strong>sem sequenciamento</strong> entre essas operações. Isso é <strong>comportamento indefinido</strong>: a linguagem não estabelece um resultado válido. A presença de duas alterações na mesma expressão, por si só, não basta para caracterizar o erro: operadores como <code>&amp;&amp;</code>, <code>||</code> e vírgula podem estabelecer uma sequência entre elas.</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">--</span><span class="p">;</span><span class="w">   </span><span class="c1">// a e b alterados duas vezes</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                     </span><span class="c1">// i alterado duas vezes</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">;</span><span class="w">                  </span><span class="c1">// i lido e alterado</span>
@@ -2766,20 +2788,31 @@
 </span></code></pre></div>
 <p>O compilador avisa sobre esses casos quando usado com <code>-Wall</code> (<code>operation on 'a' may be undefined</code>). Se você precisar incrementar uma variável e usar o valor, faça isso em instruções separadas.</p>
 </div>
-<p>Quando os operandos são de tipos diferentes, mas compatíveis, o C faz uma conversão de tipo implícita, também conhecida como <strong>coerção</strong> ou <em>type juggling</em>. Nesse caso, dados de um ou mais subtipos podem ser convertidos em um supertipo se necessário.  Por exemplo, se um <code>int</code> for adicionado a um <code>float</code>, o <code>int</code> é implicitamente convertido em <code>float</code> e o resultado será do tipo <code>float</code>.</p>
-<pre class="mermaid"><code>flowchart TD
-  subgraph s1 [Tipos inteiros]
-    direction RL
-    A[int] --&gt; B[unsigned int] --&gt; C[long int] --&gt; D[unsigned&lt;br /&gt;long int] --&gt; E[long long&lt;br /&gt;int] --&gt; F[unsigned long&lt;br /&gt;long int] 
-  end
-  subgraph s2 [Tipos reais]
-    direction RL
-    G[float] --&gt; H[double] --&gt; I[long double]
-  end
-  s1 --&gt; s2</code></pre>
+<h3 id="promocoes-e-conversoes-entre-tipos">Promoções e conversões entre tipos<a class="headerlink" href="#promocoes-e-conversoes-entre-tipos" title="Permanent link">&para;</a></h3>
+<p>Antes de muitas operações, C realiza <strong>promoções inteiras</strong>: valores de tipos
+como <code>char</code> e <code>short</code> são convertidos para <code>int</code>, se todos os valores do tipo
+couberem nele, ou para <code>unsigned int</code> caso contrário. Isso pode acontecer
+mesmo quando os dois operandos têm o mesmo tipo. Nos ambientes com
+<code>unsigned char</code> de 8 bits e <code>int</code> de 32 bits, somar dois valores
+<code>unsigned char</code> produz um <code>int</code>; o resultado só volta a ser um byte se for
+convertido ou atribuído a uma variável desse tipo.</p>
+<p>As operações aritméticas também aplicam regras para encontrar um tipo comum
+entre os operandos. Por exemplo, na soma de um <code>int</code> com um <code>double</code>, o inteiro
+é convertido para <code>double</code>. Para tipos inteiros, a escolha depende da ordem
+dos tipos e dos intervalos que cada um representa: não existe uma simples
+escada em que todo tipo com sinal é convertido para o seguinte sem sinal.</p>
+<div class="admonition warning">
+<p class="admonition-title">Misturar inteiros com e sem sinal</p>
+<p>Na comparação <code class="language-c highlight"><span class="mi">-1</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">1u</span></code>, os operandos são <code>int</code> e <code>unsigned int</code>.
+O <code>-1</code> é convertido para <code>unsigned int</code> e passa a valer <code>UINT_MAX</code>;
+por isso, a comparação é falsa. Isso também merece atenção ao comparar
+índices com tamanhos obtidos por <code>sizeof</code> ou <code>strlen</code>, que usam <code>size_t</code>,
+um tipo inteiro sem sinal. Verifique valores negativos antes de convertê-los
+e use tipos adequados ao intervalo dos dados.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>A conversão implícita só acontece quando os tipos são diferentes. Então, ao efetuar a divisão de um inteiro por outro, o resultado será inteiro, a menos que seja feita a conversão explícita do dividendo ou do divisor para <code>float</code> ou <code>double</code>. <code>5/2</code> não é <code>2.5</code>, e sim <code>2</code>, pois <code>5</code> e <code>2</code> são do mesmo tipo (<code>int</code>), então o resultado será, também, do mesmo tipo (<code>int</code>).  Para que seja <code>2.5</code>, é preciso fazer <code>5.0/2</code> ou <code>5/2.0</code>.</p>
+<p>Na divisão entre inteiros, o resultado também é inteiro. Guardá-lo depois em uma variável <code>float</code> ou <code>double</code> não recupera a parte fracionária descartada. <code>5/2</code> vale <code>2</code>; para obter <code>2.5</code>, use <code>5.0/2</code>, <code>5/2.0</code> ou converta um dos operandos antes da divisão.</p>
 <p>Não lembrar desse pequeno detalhe pode acabar produzindo resultados não esperados durante a execução dos programas.</p>
 <div class="admonition failure">
 <p class="admonition-title">Incorreto</p>
@@ -2802,7 +2835,7 @@
 </div>
 <h3 id="divisao-e-resto-com-numeros-negativos">Divisão e resto com números negativos<a class="headerlink" href="#divisao-e-resto-com-numeros-negativos" title="Permanent link">&para;</a></h3>
 <p>Na divisão entre inteiros, o resultado é <strong>truncado em direção ao zero</strong>: a parte fracionária é simplesmente descartada. O resto (<code>%</code>) é definido de forma que <code>(a / b) * b + a % b</code> seja igual a <code>a</code>, e por isso ele tem sempre o <strong>mesmo sinal do dividendo</strong>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">negativos.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
@@ -2839,14 +2872,24 @@
 </div>
 </div>
 </div>
-<p>Na matemática, o resto da divisão de <span class="arithmatex">\(-7\)</span> por <span class="arithmatex">\(3\)</span> é <span class="arithmatex">\(2\)</span>, e não <span class="arithmatex">\(-1\)</span>. Quando o dividendo pode ser negativo e o resto precisa ficar entre <span class="arithmatex">\(0\)</span> e <span class="arithmatex">\(m - 1\)</span> (como em cálculos com dias da semana, horários ou aritmética modular), use a expressão <code>((n % m) + m) % m</code>, como na última linha do exemplo. Para verificar se um número é ímpar, prefira <code>n % 2 != 0</code> a <code>n % 2 == 1</code>, que falha com números negativos.</p>
+<p>Na divisão euclidiana com divisor positivo, o resto da divisão de <span class="arithmatex">\(-7\)</span> por
+<span class="arithmatex">\(3\)</span> é <span class="arithmatex">\(2\)</span>. Quando precisamos desse resto não negativo, uma forma comum é
+<code>((n % m) + m) % m</code>, como na última linha do exemplo. Essa expressão exige
+<code>m &gt; 0</code> e que a soma intermediária caiba no tipo. Para evitar que a soma
+transborde quando <code>m</code> for grande, calcule <code>r = n % m</code> e some <code>m</code> apenas se
+<code>r &lt; 0</code>. Para verificar se um número é ímpar, prefira <code>n % 2 != 0</code> a
+<code>n % 2 == 1</code>, que falha com números negativos.</p>
 <div class="admonition failure">
 <p class="admonition-title">Divisão por zero</p>
-<p>A divisão inteira por zero (<code>a / 0</code> ou <code>a % 0</code>) é <strong>comportamento indefinido</strong>: normalmente, o programa é encerrado com o erro <code>Floating point exception</code>, apesar de não haver nenhum número real envolvido. Sempre que o divisor puder ser zero, teste-o antes de dividir. Com números reais, a divisão por zero não encerra o programa: o resultado é um valor especial: <code>1.0 / 0.0</code> é escrito como <code>inf</code> (infinito), <code>-1.0 / 0.0</code> como <code>-inf</code>, e <code>0.0 / 0.0</code> como <code>nan</code> ou <code>-nan</code> (<em>not a number</em>, "não é um número").</p>
+<p>No C17, a regra geral é que a divisão por zero tem <strong>comportamento indefinido</strong>, inclusive com operandos de ponto flutuante. Implementações que seguem as regras adicionais de IEC 60559/IEEE 754, com o tratamento padrão das exceções, podem produzir <code>inf</code>, <code>-inf</code> ou <code>nan</code> em operações com números reais; isso não é uma garantia para qualquer implementação de C. Com inteiros, também é inválida uma divisão cujo quociente não cabe no tipo: em máquinas com <code>int</code> de 32 bits, <code>INT_MIN / -1</code> e <code>INT_MIN % -1</code> têm comportamento indefinido. Verifique esses casos antes da operação.</p>
 </div>
 <h3 id="arredondamento-exato-com-aritmetica-inteira">Arredondamento exato com aritmética inteira<a class="headerlink" href="#arredondamento-exato-com-aritmetica-inteira" title="Permanent link">&para;</a></h3>
-<p>Para calcular e formatar uma razão <span class="arithmatex">\(A/B\)</span> (ou um percentual <span class="arithmatex">\(100 \times A/B\)</span>) com exatamente <span class="arithmatex">\(K\)</span> casas decimais, evitando erros de precisão do tipo <code>double</code> e as regras de arredondamento para o par mais próximo (<em>round half to even</em>) padrão do <code>printf</code>, utilizamos aritmética inteira escalonada.</p>
-<p>Definimos o fator de escala como <span class="arithmatex">\(S = 10^K\)</span> para razões simples, ou <span class="arithmatex">\(S = 10^{K+2}\)</span> para valores percentuais. Ao multiplicar o valor exato por <span class="arithmatex">\(S\)</span>, reduzimos o problema a encontrar o inteiro <span class="arithmatex">\(q\)</span> mais próximo de <span class="arithmatex">\(\frac{S \cdot A}{B}\)</span>, arredondando empates exatos na metade (<span class="arithmatex">\(0,5\)</span>) para cima (<em>round half up</em>).</p>
+<p>Para calcular e formatar uma razão <span class="arithmatex">\(A/B\)</span> (ou um percentual <span class="arithmatex">\(100 \times A/B\)</span>)
+com exatamente <span class="arithmatex">\(K\)</span> casas decimais, podemos usar aritmética inteira escalonada.
+Assim, definimos o arredondamento sem depender da aproximação de <code>double</code>
+nem do modo de arredondamento usado na formatação de ponto flutuante.</p>
+<p>Para esta fórmula, assumimos <span class="arithmatex">\(A \ge 0\)</span>, <span class="arithmatex">\(B &gt; 0\)</span> e <span class="arithmatex">\(K \ge 0\)</span>.
+Definimos o fator de escala como <span class="arithmatex">\(S = 10^K\)</span> para razões simples, ou <span class="arithmatex">\(S = 10^{K+2}\)</span> para valores percentuais. Ao multiplicar o valor exato por <span class="arithmatex">\(S\)</span>, reduzimos o problema a encontrar o inteiro <span class="arithmatex">\(q\)</span> mais próximo de <span class="arithmatex">\(\frac{S \cdot A}{B}\)</span>, arredondando empates exatos na metade (<span class="arithmatex">\(0,5\)</span>) para cima (<em>round half up</em>).</p>
 <p>A fórmula geral utilizando divisão inteira é:</p>
 <div class="arithmatex">\[q = \left\lfloor \frac{2 \cdot S \cdot A + B}{2B} \right\rfloor\]</div>
 <p>Na aritmética modular, escrevendo <span class="arithmatex">\(S \cdot A = aB + r\)</span> com <span class="arithmatex">\(0 \le r \lt B\)</span>, a expressão garante que:</p>
@@ -2854,7 +2897,14 @@
 <li><span class="arithmatex">\(q = a\)</span>, se <span class="arithmatex">\(2r \lt B\)</span>;</li>
 <li><span class="arithmatex">\(q = a + 1\)</span>, se <span class="arithmatex">\(2r \ge B\)</span>.</li>
 </ul>
-<p>Em C, deve-se atentar aos limites dos tipos primitivos. Como o numerador <span class="arithmatex">\(2 \cdot S \cdot A + B\)</span> frequentemente ultrapassa o limite de um inteiro de 32 bits (<span class="arithmatex">\(\approx 2 \times 10^9\)</span>), é indispensável utilizar inteiros de 64 bits (<code>long long</code> ou <code>int64_t</code>) — ou até <code>__int128_t</code> caso <span class="arithmatex">\(S \cdot A\)</span> exceda <span class="arithmatex">\(10^{18}\)</span>. Para imprimir o resultado (assumindo <span class="arithmatex">\(K \gt 0\)</span>), separa-se a parte inteira (<code>q / S</code>) e a parte fracionária (<code>q % S</code>), preenchendo esta última com zeros à esquerda até completar <span class="arithmatex">\(K\)</span> dígitos (por exemplo, <code>printf("%lld.%0*lld\n", q / S, K, q % S)</code>).</p>
+<p>Em C, todos os cálculos intermediários precisam caber no tipo escolhido,
+incluindo <span class="arithmatex">\(2 \cdot S \cdot A + B\)</span>, <span class="arithmatex">\(2B\)</span> e a própria potência usada em <span class="arithmatex">\(S\)</span>.
+Use <code>long long</code> quando seus limites forem suficientes. O tipo <code>__int128</code>,
+oferecido por alguns compiladores, é uma extensão e não faz parte do C17.
+Para imprimir com <code>long long</code> e <span class="arithmatex">\(K &gt; 0\)</span>, separe a parte inteira (<code>q / S</code>)
+da fracionária (<code>q % S</code>) e preencha esta última com zeros à esquerda até
+completar <span class="arithmatex">\(K\)</span> dígitos, como em <code>printf("%lld.%0*lld\n", q / S, K, q % S)</code>.
+Para <span class="arithmatex">\(K = 0\)</span>, imprima apenas a parte inteira.</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -2879,8 +2929,13 @@
 </span><span id="__span-8-22"><a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
-<p>Em C, <strong>não há um tipo lógico separado</strong> nas expressões: qualquer valor numérico pode ser usado como condição, e a regra é que <strong>zero é falso e qualquer valor diferente de zero é verdadeiro</strong>. Por isso, <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> é o mesmo que <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></code>, e <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span></code> é o mesmo que <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></code>. Os operadores lógicos e relacionais devolvem um valor do tipo <code class="language-c highlight"><span class="kt">int</span></code>: <strong>1</strong> para verdadeiro e <strong>0</strong> para falso.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código fonte</label><label for="__tabbed_3_2">Saída</label></div>
+<p>Em C, as condições não precisam ter o tipo <code>bool</code>: qualquer valor numérico
+ou ponteiro pode ser usado. <strong>Zero é falso e qualquer valor numérico diferente
+de zero é verdadeiro</strong>; para ponteiros, o ponteiro nulo é falso. Por isso,
+<code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="p">)</span></code> é equivalente a <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></code>, e <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="p">)</span></code>, a
+<code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></code>. Os operadores lógicos e relacionais devolvem <code>int</code>:
+<strong>1</strong> para verdadeiro e <strong>0</strong> para falso.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código-fonte</label><label for="__tabbed_3_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">verdade.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
@@ -3055,7 +3110,7 @@
 <tr>
 <td style="text-align: left;">Não igual a<br>(diferente de)</td>
 <td style="text-align: center;"><code>a != b</code></td>
-<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
+<td style="text-align: left;"><code>a</code> diferente de <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Maior que</td>
@@ -3092,7 +3147,7 @@
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Se você quer saber se um número está entre outros dois, a expressão usada na matemática (<span class="arithmatex">\(10 &lt; n &lt; 50\)</span>) não vai funcionar em C. Se você usar essa expressão, o compilador vai avaliar a primeira parte (<span class="arithmatex">\(10 &lt; n\)</span>) e, o resultado dessa comparação será comparado com 50.</p>
+<p>Se você quer saber se um número está entre outros dois, a expressão usada na matemática (<span class="arithmatex">\(10 &lt; n &lt; 50\)</span>) não vai funcionar em C. Se você usar essa expressão, o compilador vai avaliar a primeira parte (<span class="arithmatex">\(10 &lt; n\)</span>) e o resultado dessa comparação será comparado com 50.</p>
 <p>A forma correta envolve o operador <strong>AND</strong> (<code class="language-c highlight"><span class="o">&amp;&amp;</span></code>): <code class="language-c highlight"><span class="mi">10</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">50</span></code>.</p>
 </div>
 <div class="admonition warning">
@@ -3109,15 +3164,18 @@
 <div class="admonition note inline end">
 <p class="admonition-title">Você sabia?</p>
 <p>Os operadores de deslocamento podem ser usados para efetuar multiplicação e divisão.</p>
-<p>Suponha que temos um número inteiro <code>a = 5</code>. Em representação binária, 5 é <code>00000101</code>. Agora, vamos realizar um deslocamento à esquerda de 2 bits (<code>a &lt;&lt; 2</code>). O que teremos é os bits de <code>a</code> "empurrados" 2 posições para a esquerda, resultando em <code>00010100</code>. Os bits vazios à direita são preenchidos com zeros. Como <code>00010100</code> em binário corresponde a 20 em decimal, <code>5 &lt;&lt; 2</code> resulta em 20.</p>
-<p>Usando o mesmo número a = 5 (binário <code>00000101</code>), um deslocamento à direita de 1 bit (<code>a &gt;&gt; 1</code>) resulta em <code>0000010</code>. Para números sem sinal (<code>unsigned</code>), o bit vazio à esquerda é preenchido com zero. Para números com sinal (<code>signed</code>), o bit mais significativo (bit de sinal) é replicado. Como <code>0000010</code> em binário é 2 em decimal, temos que <code>5 &gt;&gt; 1</code> resulta em 2.</p>
+<p>Suponha que temos um número inteiro <code>a = 5</code>. Em representação binária, 5 é <code>00000101</code>. Agora, vamos realizar um deslocamento à esquerda de 2 bits (<code>a &lt;&lt; 2</code>). O resultado são os bits de <code>a</code> "empurrados" 2 posições para a esquerda, resultando em <code>00010100</code>. Os bits vazios à direita são preenchidos com zeros. Como <code>00010100</code> em binário corresponde a 20 em decimal, <code>5 &lt;&lt; 2</code> resulta em 20.</p>
+<p>Usando o mesmo número <code>a = 5</code> (binário <code>00000101</code>), um deslocamento à direita de 1 bit (<code>a &gt;&gt; 1</code>) resulta em <code>00000010</code>, que vale 2. Para valores sem sinal ou valores com sinal não negativos, o resultado corresponde à divisão inteira por uma potência de 2. No C17, deslocar um valor com sinal negativo para a direita tem resultado definido pela implementação; no GCC, o bit de sinal é replicado.</p>
 <p>Resumo:</p>
 <ul>
-<li><code>a &lt;&lt; b</code>: Multiplica <code>a</code> por <span class="arithmatex">\(2^b\)</span> (deslocar números negativos para a esquerda, ou deslocar por uma quantidade maior ou igual ao número de bits do tipo, é comportamento indefinido), e;</li>
-<li><code>a &gt;&gt; b</code>: Divide <code>a</code> por <span class="arithmatex">\(2^b\)</span> (com comportamento diferente para números negativos).</li>
+<li><code>a &lt;&lt; b</code>: para valores sem sinal, multiplica por <span class="arithmatex">\(2^b\)</span> com redução ao intervalo do tipo; para valores com sinal, exige <code>a &gt;= 0</code> e resultado representável nesse tipo;</li>
+<li><code>a &gt;&gt; b</code>: divide por <span class="arithmatex">\(2^b\)</span> para valores sem sinal ou com sinal não negativos. Para valores com sinal negativos, consulte as regras da implementação.</li>
 </ul>
+<p>Nos dois operadores, <code>b</code> precisa ser não negativo e menor que a largura
+do operando esquerdo <strong>após as promoções inteiras</strong>. Para manipular máscaras
+de bits, prefira tipos sem sinal e confira a largura antes de deslocar.</p>
 </div>
-<p>Os operadores de bit operam sobre os valores binários da variáveis.</p>
+<p>Os operadores de bit operam sobre os valores binários das variáveis.</p>
 <table>
 <thead>
 <tr>
@@ -3135,17 +3193,17 @@
 <tr>
 <td style="text-align: center;">AND</td>
 <td style="text-align: center;"><code>a &amp; b</code></td>
-<td style="text-align: left;">Efetua a operação AND bit-a-bit sobre os operandos <code>a</code> e <code>b</code></td>
+<td style="text-align: left;">Efetua a operação AND bit a bit sobre os operandos <code>a</code> e <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">OR</td>
-<td style="text-align: center;"><code>a | b</code></td>
-<td style="text-align: left;">Efetua a operação OR bit-a-bit sobre os operandos <code>a</code> e <code>b</code></td>
+<td style="text-align: center;"><code>a &#124; b</code></td>
+<td style="text-align: left;">Efetua a operação OR bit a bit sobre os operandos <code>a</code> e <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">XOR</td>
 <td style="text-align: center;"><code>a ^ b</code></td>
-<td style="text-align: left;">Efetua a operação XOR (OU-exclusivo) bit-a-bit sobre os operandos <code>a</code> e <code>b</code></td>
+<td style="text-align: left;">Efetua a operação XOR (OU-exclusivo) bit a bit sobre os operandos <code>a</code> e <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">Deslocamento à esquerda</td>
@@ -3159,7 +3217,13 @@
 </tr>
 </tbody>
 </table>
-<p>O operador XOR (OU-exclusivo) retorna verdadeiro apenas quando <code>a != b</code>.</p>
+<p>O operador XOR (OU-exclusivo) compara <strong>cada par de bits</strong>: o bit do resultado
+vale 1 quando os bits correspondentes são diferentes. A tabela abaixo vale
+para operandos booleanos, representados por 0 e 1. Para inteiros em geral,
+o resultado não se limita a 0 ou 1: <code class="language-c highlight"><span class="mi">5</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="mi">3</span></code> vale 6.</p>
+<p>O símbolo <code>^</code> não calcula potências. Para números reais, use a função <code>pow</code>
+de <code>math.h</code>; para potências inteiras exatas, use multiplicações com um tipo
+capaz de representar os resultados intermediários.</p>
 <table>
 <thead>
 <tr>
@@ -3192,7 +3256,10 @@
 </tbody>
 </table>
 <h2 id="operadores-de-atribuicao">Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permanent link">&para;</a></h2>
-<p>Para operadores combinados na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span>, a operação equivalente é <span class="arithmatex">\(a = a \circledcirc b\)</span>.</p>
+<p>Para operadores combinados na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span>, o cálculo corresponde
+a <span class="arithmatex">\(a = a \circledcirc b\)</span>, mas o destino é avaliado apenas uma vez.
+Por exemplo, <code>v[i++] += 2</code> incrementa <code>i</code> uma vez; não o reescreva como
+<code>v[i++] = v[i++] + 2</code>, que tem comportamento indefinido.</p>
 <table>
 <thead>
 <tr>
@@ -3233,17 +3300,17 @@
 <td style="text-align: left;">Equivalente a <code>a = a % b</code> (resto da divisão)</td>
 </tr>
 <tr>
-<td style="text-align: center;">AND bit-a-bit combinado</td>
+<td style="text-align: center;">AND bit a bit combinado</td>
 <td style="text-align: center;"><code>a &amp;= b</code></td>
 <td style="text-align: left;">Equivalente a <code>a = a &amp; b</code></td>
 </tr>
 <tr>
-<td style="text-align: center;">OR bit-a-bit combinado</td>
-<td style="text-align: center;"><code>a |= b</code></td>
-<td style="text-align: left;">Equivalente a <code>a = a | b</code></td>
+<td style="text-align: center;">OR bit a bit combinado</td>
+<td style="text-align: center;"><code>a &#124;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &#124; b</code></td>
 </tr>
 <tr>
-<td style="text-align: center;">XOR bit-a-bit combinado</td>
+<td style="text-align: center;">XOR bit a bit combinado</td>
 <td style="text-align: center;"><code>a ^= b</code></td>
 <td style="text-align: left;">Equivalente a <code>a = a ^ b</code></td>
 </tr>
@@ -3280,7 +3347,7 @@
 <td style="text-align: left;">Endereço de memória do objeto <code>a</code></td>
 </tr>
 <tr>
-<td style="text-align: center;">Dereferenciamento de estrutura</td>
+<td style="text-align: center;">Desreferenciamento de estrutura</td>
 <td style="text-align: center;"><code>a-&gt;b</code></td>
 <td style="text-align: left;">Membro <code>b</code> do objeto apontado por <code>a</code></td>
 </tr>
@@ -3304,7 +3371,12 @@
 <tr>
 <td style="text-align: center;">Tamanho de</td>
 <td style="text-align: center;"><code>sizeof a</code><br><code>sizeof (T)</code></td>
-<td style="text-align: left;">Retorna o tamanho do objeto <code>a</code> ou do tipo <code>T</code> em número de <code>chars</code>. Ou seja, <code>sizeof (char)</code> é sempre igual a 1. Como em muitos casos o tamanho do caracter (<code>sizeof (char)</code>) é igual a 8 bits, ou seja, 1 byte, <code>sizeof (T)</code> tipicamente retorna o tamanho em bytes ocupado por uma variável do tipo <code>T</code></td>
+<td style="text-align: left;">Retorna o tamanho em bytes, com tipo <code>size_t</code>. <code>sizeof(char)</code> sempre vale 1; o número de bits por byte é <code>CHAR_BIT</code>, definido em <code>limits.h</code>, e vale pelo menos 8</td>
+</tr>
+<tr>
+<td style="text-align: center;">Alinhamento de</td>
+<td style="text-align: center;"><code>_Alignof(T)</code></td>
+<td style="text-align: left;">Retorna o alinhamento exigido pelo tipo <code>T</code>, em bytes, com tipo <code>size_t</code>; disponível desde o C11</td>
 </tr>
 <tr>
 <td style="text-align: center;">Conversão explícita</td>
@@ -3314,14 +3386,21 @@
 </tbody>
 </table>
 <h2 id="precedencia-dos-operadores">Precedência dos operadores<a class="headerlink" href="#precedencia-dos-operadores" title="Permanent link">&para;</a></h2>
-<p>Da hora de avaliar uma expressão, seja ela aritmética, de bit ou lógica, os diversos operadores presentes precisam ser avaliados na ordem correta de precedência. Já fazemos isso quando nós mesmos resolvemos uma expressão aritmética no papel: primeiro as potências e raízes, depois os produtos e quocientes, e assim sucessivamente.</p>
-<p>A tabela abaixo mostra os operadores ordenados de forma decrescente de prioridade (primeiro os do início, depois os do final), quantos operandos eles têm (um, nos unários; dois, nos binários; três, no operador ternário), e se são avaliados da esquerda para a direita (&rarr;) ou da direita para a esquerda (&larr;).</p>
+<p>A precedência determina <strong>como a expressão é agrupada</strong>: <code>a + b * c</code>
+significa <code>a + (b * c)</code>. Ela não determina a ordem em que os operandos são
+executados. Por exemplo, em <code>f() + g() * h()</code>, a multiplicação agrupa os
+resultados de <code>g()</code> e <code>h()</code>, mas isso não garante que essas funções sejam
+chamadas antes de <code>f()</code>.</p>
+<p>A tabela abaixo mostra a prioridade, da maior para a menor, e a
+<strong>associatividade</strong>, que determina o agrupamento entre operadores do mesmo
+nível. Por exemplo, <code>a - b - c</code> agrupa como <code>(a - b) - c</code>. As setas indicam
+o sentido desse agrupamento.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Operador</th>
 <th style="text-align: center;">Operandos</th>
-<th style="text-align: center;">Sentido da avaliação</th>
+<th style="text-align: center;">Associatividade</th>
 </tr>
 </thead>
 <tbody>
@@ -3331,7 +3410,7 @@
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>++a</code> <code>--a</code> <code>+a</code> <code>-a</code> <code>!</code> <code>~</code> <code>(T)</code> <code>*p</code> <code>&amp;a</code> <code>sizeof</code> (prefixados)</td>
+<td style="text-align: center;"><code>++a</code> <code>--a</code> <code>+a</code> <code>-a</code> <code>!</code> <code>~</code> <code>(T)</code> <code>*p</code> <code>&amp;a</code> <code>sizeof</code> <code>_Alignof</code></td>
 <td style="text-align: center;">1</td>
 <td style="text-align: center;"><big>&larr;</big></td>
 </tr>
@@ -3371,7 +3450,7 @@
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>|</code></td>
+<td style="text-align: center;"><code>&#124;</code></td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
@@ -3381,7 +3460,7 @@
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>||</code></td>
+<td style="text-align: center;"><code>&#124;&#124;</code></td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
@@ -3402,8 +3481,13 @@
 </tr>
 </tbody>
 </table>
-<p>Os operadores pós-fixados (<code class="language-c highlight"><span class="n">a</span><span class="o">++</span></code>, <code class="language-c highlight"><span class="n">a</span><span class="o">--</span></code>, chamada de função, acesso a posição de arranjo e acesso a membro) têm prioridade maior que os prefixados (<code class="language-c highlight"><span class="o">++</span><span class="n">a</span></code>, <code class="language-c highlight"><span class="o">--</span><span class="n">a</span></code>, sinais, negações, conversão de tipo, indireção, endereço e <code class="language-c highlight"><span class="k">sizeof</span></code>). Por isso, <code class="language-c highlight"><span class="o">*</span><span class="n">p</span><span class="o">++</span></code> incrementa o ponteiro <code>p</code> (e não o valor apontado), e <code class="language-c highlight"><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></code> é o inverso do elemento <code>x[2]</code>. Repare também que <code>*</code>, <code>&amp;</code>, <code>+</code> e <code>-</code> aparecem duas vezes na tabela: como operadores unários (indireção, endereço e sinais) e como operadores binários (multiplicação, E bit-a-bit, soma e subtração).</p>
-<p>Na linha dos operadores de atribuição, <code>op=</code> representa os operadores na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span> listados em seção <a href="#operadores-de-atribuicao">anterior</a>. O operador vírgula, na última linha, avalia o operando da esquerda, descarta o resultado, e então avalia o da direita; ele aparece quase sempre no laço <code class="language-c highlight"><span class="k">for</span></code>, como em <code class="language-c highlight"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">--</span><span class="p">)</span></code>.</p>
+<p>Os operadores pós-fixados (<code class="language-c highlight"><span class="n">a</span><span class="o">++</span></code>, <code class="language-c highlight"><span class="n">a</span><span class="o">--</span></code>, chamada de função, acesso a posição de arranjo e acesso a membro) têm prioridade maior que os prefixados (<code class="language-c highlight"><span class="o">++</span><span class="n">a</span></code>, <code class="language-c highlight"><span class="o">--</span><span class="n">a</span></code>, sinais, negações, conversão de tipo, indireção, endereço e <code class="language-c highlight"><span class="k">sizeof</span></code>). Por isso, <code class="language-c highlight"><span class="o">*</span><span class="n">p</span><span class="o">++</span></code> incrementa o ponteiro <code>p</code> (e não o valor apontado), e <code class="language-c highlight"><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span></code> é o inverso do elemento <code>x[2]</code>. Repare também que <code>*</code>, <code>&amp;</code>, <code>+</code> e <code>-</code> aparecem duas vezes na tabela: como operadores unários (indireção, endereço e sinais) e como operadores binários (multiplicação, E bit a bit, soma e subtração).</p>
+<p>Na linha dos operadores de atribuição, <code>op=</code> representa os operadores na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span> listados na seção <a href="#operadores-de-atribuicao">anterior</a>. O operador vírgula, na última linha, avalia o operando da esquerda, descarta o resultado, e então avalia o da direita; ele aparece quase sempre no laço <code class="language-c highlight"><span class="k">for</span></code>, como em <code class="language-c highlight"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">j</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">--</span><span class="p">)</span></code>.</p>
+<div class="admonition info">
+<p class="admonition-title">Comparando as regras das expressões</p>
+<p>A página <a href="../../expressoes_comparacao/">Precedência, associatividade e ordem de avaliação</a>
+compara esses conceitos em C, C++ e Python, com exemplos e atenção às versões das linguagens.</p>
+</div>
 
 
 
@@ -3426,7 +3510,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

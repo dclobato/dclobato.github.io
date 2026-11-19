@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#entrada-de-dados-pelo-console" class="md-skip">
+        <a href="#entrada-e-saida-de-dados" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -1834,6 +1834,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -1877,6 +1879,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Nesta página">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2511,7 +2515,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2604,6 +2608,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Nesta página">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2875,10 +2881,9 @@
 
 
 
-  <h1>Entrada e saída</h1>
-
-<p>A  entrada e saída de dados constituem elementos essenciais em qualquer linguagem de programação, pois possibilitam a comunicação entre o usuário e o programa. As funções fundamentais para lidar com a entrada e saída padrão em Python são <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code>, responsável por coletar dados do usuário via teclado, e <code class="language-python highlight"><span class="nb">print</span><span class="p">()</span></code>, que exibe valores, resultados e mensagens no terminal.</p>
-<p>Além de serem fáceis de usar, essas funções oferecem recursos avançados de formatação e manipulação, como as <em>f-strings</em>, a personalização do separador, do caractere final da linha e a possibilidade de redirecionar a saída. O entendimento dessas ferramentas é o ponto de partida para o desenvolvimento de programas interativos e eficientes, onde a troca de informações com o usuário é fundamental para a execução das tarefas propostas.</p>
+<h1 id="entrada-e-saida-de-dados">Entrada e saída de dados<a class="headerlink" href="#entrada-e-saida-de-dados" title="Permanent link">&para;</a></h1>
+<p>A entrada e a saída de dados constituem elementos essenciais em qualquer linguagem de programação, pois possibilitam a comunicação entre o usuário e o programa. As funções fundamentais para lidar com a entrada e saída padrão em Python são <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code>, responsável por coletar dados do usuário via teclado, e <code class="language-python highlight"><span class="nb">print</span><span class="p">()</span></code>, que exibe valores, resultados e mensagens no terminal.</p>
+<p>Além de serem fáceis de usar, essas funções oferecem recursos avançados de formatação e manipulação, como as <em>f-strings</em>, a personalização do separador, do caractere final da linha e a possibilidade de redirecionar a saída. O entendimento dessas ferramentas é o ponto de partida para o desenvolvimento de programas interativos e eficientes, nos quais a troca de informações com o usuário é fundamental para a execução das tarefas propostas.</p>
 <h2 id="entrada-de-dados-pelo-console">Entrada de dados pelo console<a class="headerlink" href="#entrada-de-dados-pelo-console" title="Permanent link">&para;</a></h2>
 <h3 id="input"><code>input()</code><a class="headerlink" href="#input" title="Permanent link">&para;</a></h3>
 <p>A função <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code> é uma ferramenta fundamental para a interação entre o usuário e o programa em Python. Ela pausa a execução do programa e aguarda uma informação na entrada padrão (tipicamente, o teclado), retornando sempre uma <em>string</em> com o que foi digitado. Opcionalmente, a função aceita um argumento de texto que é exibido como um <em>prompt</em> para orientar o usuário sobre o que deve ser digitado:</p>
@@ -2890,7 +2895,7 @@
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">idade</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Digite sua idade: "</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="split-e-map"><code>.split()</code> e <code>map()</code><a class="headerlink" href="#split-e-map" title="Permanent link">&para;</a></h3>
-<p>Para entrada múltipla, é comum usar <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code> com o método <code class="language-python highlight"><span class="o">.</span><span class="n">split</span><span class="p">()</span></code>, que divide a <em>string</em> em uma lista de <em>substrings</em> com base nos espaços. Combinado com a função <code class="language-python highlight"><span class="nb">map</span><span class="p">()</span></code>, é possível converter cada item da lista para o tipo desejado e desempacotá-los diretamente em variáveis:</p>
+<p>Para entrada múltipla, é comum usar <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code> com o método <code class="language-python highlight"><span class="o">.</span><span class="n">split</span><span class="p">()</span></code>, que divide a <em>string</em> em uma lista de <em>substrings</em> com base nos espaços. Combinado com a função <code class="language-python highlight"><span class="nb">map</span><span class="p">()</span></code>, é possível converter cada item da lista para o tipo desejado e desempacotar os valores diretamente em variáveis:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Digite dois números separados por espaço: "</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Soma: </span><span class="si">{</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -2904,11 +2909,11 @@
 <li><strong>Tratamento de exceções:</strong> Em casos de conversão, o programa pode lançar exceções ao tentar converter valores inválidos. O uso do bloco <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">except</span></code> permite capturar esses erros e solicitar uma nova entrada, evitando que o programa termine abruptamente.</li>
 <li><strong>Captura de interrupção do usuário:</strong> Caso o usuário pressione <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> durante a espera na função <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code>, uma exceção <code class="language-python highlight"><span class="ne">KeyboardInterrupt</span></code> é gerada. Capturá-la com <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">except</span></code> possibilita tratar a interrupção de maneira amigável.</li>
 </ul>
-<p>Exemplos de uso de tratamento exceções na manipulação de arquivos estão na seção de <a href="../fluxo/#tratamento-de-excecoes">tratamento de erros</a>.</p>
-<p>Essas práticas ampliam a usabilidade da função <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code> , permitindo criar programas interativos mais seguros e amigáveis, capazes de validar e reagir adequadamente às entradas dos usuários.</p>
+<p>Exemplos de uso de tratamento de exceções na manipulação de arquivos estão na seção de <a href="../fluxo/#tratamento-de-excecoes">tratamento de erros</a>.</p>
+<p>Essas práticas ampliam a usabilidade da função <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code>, permitindo criar programas interativos mais seguros e amigáveis, capazes de validar e reagir adequadamente às entradas dos usuários.</p>
 <h2 id="saida-de-dados-pelo-console">Saída de dados pelo console<a class="headerlink" href="#saida-de-dados-pelo-console" title="Permanent link">&para;</a></h2>
 <h3 id="print"><code>print()</code><a class="headerlink" href="#print" title="Permanent link">&para;</a></h3>
-<p>A função <code class="language-python highlight"><span class="nb">print</span><span class="p">()</span></code> exibe valores na saída padrão (tipicamente, o terminal). Por padrão, múltiplos argumentos são separados por espaço e um caractere de nova linha é adicionado ao final. Esse comportamento pode ser alterado com os parâmetros <code>end</code> e <code>sep</code>. O parâmetro opcional <code>end</code> define o caractere a ser impresso ao final  da linha, podendo ser uma <em>string</em> vazia ou espaço, e o parâmetro opcional <code>sep</code> indica o separador que será usado entre os argumentos.</p>
+<p>A função <code class="language-python highlight"><span class="nb">print</span><span class="p">()</span></code> exibe valores na saída padrão (tipicamente, o terminal). Por padrão, múltiplos argumentos são separados por espaço e um caractere de nova linha é adicionado ao final. Esse comportamento pode ser alterado com os parâmetros <code>end</code> e <code>sep</code>. O parâmetro opcional <code>end</code> define a cadeia a ser escrita depois dos argumentos, podendo ser uma <em>string</em> vazia ou espaço, e o parâmetro opcional <code>sep</code> indica o separador que será usado entre os argumentos.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
 <span class="normal"><a href="#__codelineno-3-2">2</a></span>
 <span class="normal"><a href="#__codelineno-3-3">3</a></span>
@@ -2918,15 +2923,15 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nb">print</span><span class="p">(</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">'-'</span><span class="p">)</span>          <span class="c1"># Saída: A-B-C</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="f-strings">f-strings<a class="headerlink" href="#f-strings" title="Permanent link">&para;</a></h3>
-<p>As <em>f-strings</em>, ou "<em>formatted string literals</em>", foram introduzidas no Python 3.6 através da PEP 498 como uma forma de realizar interpolação de <em>strings</em>. Elas permitem que expressões Python sejam embutidas diretamente em literais de <em>string</em> prefixadas pela letra <code>f</code> ou <code>F</code>, com as expressões colocadas dentro de chaves (<code>{}</code>). Essa inovação tornou o código mais legível e conciso, além oferecer melhor desempenho em relação às técnicas anteriores de formatação de texto.</p>
-<p>Antes das <em>f-strings</em>, o Python oferecia principalmente duas opções para interpolação e formatação de strings. A primeira era o operador <code>%</code>, similar ao usado em C, que utiliza especificadores de formato para substituir valores em uma string (ex: <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">"Olá </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">nome</span><span class="p">)</span></code>). A segunda era o método <code class="language-python highlight"><span class="o">.</span><span class="n">format</span><span class="p">()</span></code>, introduzido no Python 3.0, que é mais flexível e poderoso, permitindo a formatação por posição ou por nome, além de especificadores detalhados (<code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">"Olá </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nome</span><span class="p">))</span></code>). No entanto, ambos se mostraram menos intuitivos e mais verbosos em comparação com as <em>f-strings</em>, que simplificaram a sintaxe ao unir interpolação e formatação dentro da própria <em>string</em> literal, com avaliação dinâmica das expressões em tempo de execução.</p>
+<p>As <em>f-strings</em>, ou "<em>formatted string literals</em>", foram introduzidas no Python 3.6 por meio da PEP 498 como uma forma de realizar interpolação de <em>strings</em>. Elas permitem que expressões Python sejam embutidas diretamente em literais de <em>string</em> prefixados pela letra <code>f</code> ou <code>F</code>, com as expressões colocadas dentro de chaves (<code>{}</code>). Essa inovação tornou o código mais legível e conciso, além de oferecer melhor desempenho em relação às técnicas anteriores de formatação de texto.</p>
+<p>Antes das <em>f-strings</em>, o Python oferecia principalmente duas opções para interpolação e formatação de strings. A primeira era o operador <code>%</code>, que utiliza especificadores de formato para substituir valores em uma string (por exemplo, <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">"Olá </span><span class="si">%s</span><span class="s2">"</span> <span class="o">%</span> <span class="n">nome</span><span class="p">)</span></code>). A segunda era o método <code class="language-python highlight"><span class="o">.</span><span class="n">format</span><span class="p">()</span></code>, introduzido no Python 3.0, que é mais flexível e poderoso, permitindo a formatação por posição ou por nome, além de especificadores detalhados (<code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="s2">"Olá </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nome</span><span class="p">))</span></code>). No entanto, ambos se mostraram menos intuitivos e mais verbosos em comparação com as <em>f-strings</em>, que simplificaram a sintaxe ao unir interpolação e formatação dentro da própria <em>string</em> literal, com avaliação dinâmica das expressões em tempo de execução.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
 <span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="n">nome</span> <span class="o">=</span> <span class="s2">"Ana"</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Nome: </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2">, Idade: </span><span class="si">{</span><span class="n">idade</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Dentro das <em>f-strings</em>, usa-se dois-pontos (<code>:</code>) para aplicar especificadores de formatação, controlando casas decimais, largura, alinhamento e preenchimento. A tabela abaixo apresenta um resumo das opções de formatação disponíveis:</p>
+<p>Dentro das <em>f-strings</em>, usam-se dois-pontos (<code>:</code>) para aplicar especificadores de formatação, controlando casas decimais, largura, alinhamento e preenchimento. A tabela abaixo apresenta um resumo das opções de formatação disponíveis:</p>
 <table>
 <thead>
 <tr>
@@ -3102,7 +3107,7 @@
 <p>O juiz compara a saída do programa, caractere por caractere, com a saída esperada. Por isso:</p>
 <ul>
 <li><strong>Não passe mensagens para <code>input()</code></strong>: em <code class="language-python highlight"><span class="nb">input</span><span class="p">(</span><span class="s2">"Digite um número: "</span><span class="p">)</span></code>, a mensagem é escrita na saída padrão e faz a resposta ser considerada errada. Use <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code>, sem argumento;</li>
-<li>Siga exatamente o formato de saída pedido, inclusive espaços, quebras de linha e a quantidade de casas decimais, que pode ser controlada com as <a href="#f-strings"><em>f-strings</em></a>, e;</li>
+<li>Siga exatamente o formato de saída pedido, inclusive espaços, quebras de linha e a quantidade de casas decimais, que pode ser controlada com as <a href="#f-strings"><em>f-strings</em></a>;</li>
 <li>Mensagens de depuração podem ser escritas no fluxo de erros, com <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span></code>, que normalmente não é comparado pelo juiz. O ideal, porém, é removê-las antes de enviar.</li>
 </ul>
 <h3 id="lendo-ate-o-final-da-entrada">Lendo até o final da entrada<a class="headerlink" href="#lendo-ate-o-final-da-entrada" title="Permanent link">&para;</a></h3>
@@ -3182,8 +3187,8 @@
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nb">input</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span>
 </span></code></pre></div>
 <p>Com isso, todas as chamadas a <code class="language-python highlight"><span class="nb">input</span><span class="p">()</span></code> passam a usar <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span></code>, que é bem mais rápida. A diferença é que ela <strong>mantém</strong> o <code>\n</code> no final da linha: <code class="language-python highlight"><span class="nb">int</span><span class="p">()</span></code> e <code class="language-python highlight"><span class="n">split</span><span class="p">()</span></code> ignoram esse caractere, mas, ao ler um texto, é preciso removê-lo com <code class="language-python highlight"><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span></code> (a linha <code>Maria Clara</code> seria lida como <code>'Maria Clara\n'</code>). Além disso, no final da entrada, <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span></code> devolve uma cadeia vazia, em vez de levantar <code class="language-python highlight"><span class="ne">EOFError</span></code>.</p>
-<p>Quando a entrada é formada só por números (ou palavras) separados por espaços e quebras de linha, a forma mais rápida é ler tudo de uma vez e dividir em partes, independentemente de como os valores estão distribuídos nas linhas:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Entrada</label><label for="__tabbed_2_3">Saída</label></div>
+<p>Quando a entrada é formada só por números (ou palavras) separados por espaços e quebras de linha, uma alternativa que costuma ser rápida é ler tudo de uma vez, quando o volume cabe na memória, e dividir em partes, independentemente de como os valores estão distribuídos nas linhas:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Entrada</label><label for="__tabbed_2_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">casos.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
@@ -3234,7 +3239,7 @@
 <h3 id="recursao-profunda">Recursão profunda<a class="headerlink" href="#recursao-profunda" title="Permanent link">&para;</a></h3>
 <p>O interpretador limita a profundidade da recursão a cerca de 1000 chamadas, e uma função recursiva que passa desse limite termina com <code>RecursionError</code>. Em problemas com entradas grandes, aumente o limite com <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span></code>, ou reescreva a função com um laço, como mostra a seção sobre <a href="../funcoes/#recursao">recursão</a>.</p>
 <h2 id="entrada-e-saida-em-arquivos">Entrada e Saída em Arquivos<a class="headerlink" href="#entrada-e-saida-em-arquivos" title="Permanent link">&para;</a></h2>
-<p>Embora as operações de entrada e saída via console sejam fundamentais para a interação direta com o usuário, o processamento de dados em grande escala frequentemente requer a manipulação de arquivos. Python oferece recursos para trabalhar com arquivos através da função <code class="language-python highlight"><span class="nb">open</span><span class="p">()</span></code> e do gerenciador de contexto <code class="language-python highlight"><span class="k">with</span></code>, proporcionando controle sobre o acesso aos dados armazenados e garantindo o fechamento adequado dos recursos do sistema.</p>
+<p>Embora as operações de entrada e saída via console sejam fundamentais para a interação direta com o usuário, o processamento de dados em grande escala frequentemente requer a manipulação de arquivos. Python oferece recursos para trabalhar com arquivos por meio da função <code class="language-python highlight"><span class="nb">open</span><span class="p">()</span></code> e do gerenciador de contexto <code class="language-python highlight"><span class="k">with</span></code>, proporcionando controle sobre o acesso aos dados armazenados e garantindo o fechamento adequado dos recursos do sistema.</p>
 <p>A manipulação de arquivos em Python segue o paradigma de abertura, processamento e fechamento, no qual cada arquivo deve ser explicitamente aberto antes do uso e fechado após o processamento. O gerenciador de contexto <code class="language-python highlight"><span class="k">with</span></code> automatiza esse processo, garantindo que os recursos sejam liberados mesmo em situações de erro, tornando o código mais seguro e confiável.</p>
 <h3 id="abertura-de-arquivos-com-with-open">Abertura de arquivos com <code>with open()</code><a class="headerlink" href="#abertura-de-arquivos-com-with-open" title="Permanent link">&para;</a></h3>
 <p>A declaração <code class="language-python highlight"><span class="k">with</span> <span class="nb">open</span><span class="p">()</span></code> é a forma recomendada para trabalhar com arquivos em Python. Ela combina a abertura do arquivo com um gerenciador de contexto que assegura o fechamento automático do arquivo ao final do bloco de código, mesmo que ocorram exceções durante o processamento.</p>
@@ -3246,7 +3251,7 @@
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">conteudo</span><span class="p">)</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="c1"># O arquivo é automaticamente fechado aqui</span>
 </span></code></pre></div></td></tr></table></div>
-<p>A sintaxe básica requer dois parâmetros obrigatórios: o nome (ou caminho) do arquivo e o modo de abertura. O terceiro parâmetro, <code>encoding</code>, embora opcional, é altamente recomendado para garantir a correta interpretação dos caracteres, especialmente em sistemas que lidam com texto em português.</p>
+<p>Somente o arquivo é obrigatório em <code>open()</code>: o modo padrão é <code>"r"</code>. Para arquivos de texto, indique a codificação por nome, como em <code>open(caminho, "r", encoding="utf-8")</code>. <strong><code>encoding</code> não é o terceiro argumento posicional</strong>: essa posição corresponde a <code>buffering</code>. Em modo binário, não informe <code>encoding</code>.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
 <span class="normal"><a href="#__codelineno-17-2">2</a></span>
 <span class="normal"><a href="#__codelineno-17-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'dados.txt'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">arquivo</span><span class="p">:</span>
@@ -3342,7 +3347,7 @@
 </span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Relatório de Notas"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
 </span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"="</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
 </span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Aluno: </span><span class="si">{</span><span class="n">nome</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Notas: </span><span class="si">{</span><span class="n">nota</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">nota</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">nota</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Notas: </span><span class="si">{</span><span class="n">notas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">notas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">notas</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
 </span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Média: </span><span class="si">{</span><span class="n">media</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
 </span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Status: </span><span class="si">{</span><span class="s1">'Aprovado'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">7.0</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'Reprovado'</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">arquivo</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
@@ -3373,7 +3378,7 @@
 </span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Escritos </span><span class="si">{</span><span class="n">caracteres_escritos</span><span class="si">}</span><span class="s2"> caracteres"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h5 id="writelines"><code>writelines()</code><a class="headerlink" href="#writelines" title="Permanent link">&para;</a></h5>
-<p>O método <code class="language-python highlight"><span class="n">writelines</span><span class="p">()</span></code> aceita uma sequência iterável de strings e as escreve no arquivo. Importante notar que não adiciona quebras de linha entre os elementos, sendo necessário incluí-las nas strings quando desejado.</p>
+<p>O método <code class="language-python highlight"><span class="n">writelines</span><span class="p">()</span></code> aceita uma sequência iterável de strings e as escreve no arquivo. É importante observar que não adiciona quebras de linha entre os elementos, sendo necessário incluí-las nas strings quando desejado.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
@@ -3411,7 +3416,7 @@
 </span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Tamanho: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">conteudo_completo</span><span class="p">)</span><span class="si">}</span><span class="s2"> caracteres"</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h5 id="readlines"><code>readlines()</code><a class="headerlink" href="#readlines" title="Permanent link">&para;</a></h5>
-<p>O método <code class="language-python highlight"><span class="n">readlines</span><span class="p">()</span></code> retorna uma lista onde cada elemento é uma linha do arquivo, incluindo os caracteres de quebra de linha. Útil quando é necessário processar todas as linhas do arquivo após carregá-las para a memória.</p>
+<p>O método <code class="language-python highlight"><span class="n">readlines</span><span class="p">()</span></code> retorna uma lista em que cada elemento é uma linha do arquivo, incluindo os caracteres de quebra de linha. É útil quando é necessário processar todas as linhas do arquivo após carregá-las para a memória.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
 <span class="normal"><a href="#__codelineno-26-2">2</a></span>
 <span class="normal"><a href="#__codelineno-26-3">3</a></span>
@@ -3610,7 +3615,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:48:51 -03">19 de novembro de 2026 02:48:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

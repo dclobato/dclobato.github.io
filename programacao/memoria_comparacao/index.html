@@ -283,7 +283,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2216,7 +2216,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2386,7 +2386,7 @@
 <p>Todo programa precisa de memória para guardar os seus dados, e toda memória que deixa de ser usada precisa, em algum momento, ser devolvida. As três linguagens deste texto resolvem esse problema de formas muito diferentes, e cada forma tem consequências para a velocidade dos programas, para a quantidade de memória que eles usam e para os erros que o programador pode cometer:</p>
 <ul>
 <li>Em <strong>C</strong>, o controle é <strong>totalmente manual</strong>: o programador pede memória com <code>malloc</code> e a devolve com <code>free</code>;</li>
-<li>Em <strong>C++</strong>, o controle continua nas mãos do programador, mas é <strong>automatizado pelo escopo</strong>: objetos que são donos de memória, como <code>std::vector</code> e <code>std::unique_ptr</code>, a liberam sozinhos quando deixam de existir, e;</li>
+<li>Em <strong>C++</strong>, o controle continua nas mãos do programador, mas é <strong>automatizado pelo escopo</strong>: objetos que são donos de memória, como <code>std::vector</code> e <code>std::unique_ptr</code>, liberam-na sozinhos quando deixam de existir;</li>
 <li>Em <strong>Python</strong>, o gerenciamento é <strong>totalmente automático</strong>: o interpretador cria os objetos, conta quantas referências apontam para cada um e os libera quando ninguém mais os usa.</li>
 </ul>
 <p>Esta página compara as três abordagens. Os detalhes de cada uma estão nas páginas <a href="../c/memoria/">Ponteiros e memória</a> (C), <a href="../cpp/memoria/">Ponteiros, referências e memória</a> (C++) e <a href="../python/memoria/">Gerenciamento de memória</a> (Python).</p>
@@ -2621,7 +2621,7 @@
 </div>
 <ul>
 <li>Em <strong>C</strong>, cada recurso só é liberado porque o programa chama <code>libera</code> explicitamente. Se a chamada for esquecida, a memória fica ocupada até o fim do programa (um <strong>vazamento</strong>); se for feita duas vezes, ou se o recurso for usado depois dela, o resultado é imprevisível;</li>
-<li>Em <strong>C++</strong>, a liberação acontece sozinha, no fechamento do bloco: quando a variável <code>b</code> deixa de existir, o destrutor do <code>std::unique_ptr</code> libera o recurso. Esse princípio, de amarrar a vida de um recurso à vida de um objeto, chama-se <strong>RAII</strong> (<em>Resource Acquisition Is Initialization</em>). O programador não chama nenhuma função de liberação, mas o momento da liberação continua exato e previsível, e;</li>
+<li>Em <strong>C++</strong>, a liberação acontece sozinha, no fechamento do bloco: quando a variável <code>b</code> deixa de existir, o destrutor do <code>std::unique_ptr</code> libera o recurso. Esse princípio, de amarrar a vida de um recurso à vida de um objeto, chama-se <strong>RAII</strong> (<em>Resource Acquisition Is Initialization</em>). O programador não chama nenhuma função de liberação, mas o momento da liberação continua exato e previsível;</li>
 <li>Em <strong>Python</strong>, o recurso 2 é liberado quando a função termina, porque o nome <code>b</code> era a única referência a ele e a contagem caiu a zero. O recurso 1 é liberado quando o interpretador encerra. O programador não controla, e normalmente nem precisa saber, quando isso acontece.</li>
 </ul>
 <h2 id="vantagens-e-custos-de-cada-abordagem">Vantagens e custos de cada abordagem<a class="headerlink" href="#vantagens-e-custos-de-cada-abordagem" title="Permanent link">&para;</a></h2>
@@ -2632,7 +2632,7 @@
 <p>Não existe uma abordagem melhor em todos os casos. Uma forma de resumir:</p>
 <ul>
 <li><strong>C</strong>, quando é preciso controlar cada byte e cada instrução: sistemas embarcados, sistemas operacionais, dispositivos com pouca memória, bibliotecas usadas por outras linguagens;</li>
-<li><strong>C++</strong>, quando é preciso o desempenho e o baixo consumo de memória de C, mas com uma forma mais segura e mais produtiva de gerenciar os recursos: jogos, aplicações de alto desempenho, programação competitiva, e;</li>
+<li><strong>C++</strong>, quando são necessários o desempenho e o baixo consumo de memória de C, mas com uma forma mais segura e produtiva de gerenciar os recursos: jogos, aplicações de alto desempenho, programação competitiva;</li>
 <li><strong>Python</strong>, quando a produtividade de quem escreve o programa importa mais do que a eficiência no uso da memória e do processador: automação, análise de dados, protótipos, aplicações <em>web</em>, ensino.</li>
 </ul>
 <p>Na prática, as três convivem: muitas bibliotecas usadas em Python, como as de computação numérica, são escritas em C ou C++, justamente para combinar a facilidade de uma linguagem com a eficiência da outra.</p>
@@ -2658,7 +2658,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:48:51 -03">19 de novembro de 2026 02:48:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

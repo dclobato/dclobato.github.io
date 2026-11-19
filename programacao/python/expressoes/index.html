@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2365,7 +2365,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2584,7 +2584,7 @@
 <h1 id="expressoes-e-operadores-em-python">Expressões e operadores em Python<a class="headerlink" href="#expressoes-e-operadores-em-python" title="Permanent link">&para;</a></h1>
 <p>Nas subseções a seguir, letras minúsculas como <code>a</code> e <code>b</code> representam valores literais ou nomes de variáveis, o que for apropriado no contexto. Ao avaliar uma expressão, os seguintes operadores podem ser usados.</p>
 <h2 id="expressoes-e-operadores-aritmeticos">Expressões e operadores aritméticos<a class="headerlink" href="#expressoes-e-operadores-aritmeticos" title="Permanent link">&para;</a></h2>
-<p>Uma expressão aritmética em Python é construída a partir de operadores aritméticos e variáveis ou constantes numéricas. Python suporta uma ampla gama de operadores aritméticos, alguns semelhantes aos de C e outros específicos da linguagem.</p>
+<p>Uma expressão aritmética em Python é construída a partir de operadores aritméticos e variáveis ou constantes numéricas. A tabela abaixo apresenta os operadores disponíveis até o Python 3.14.</p>
 <table>
 <thead>
 <tr>
@@ -2620,19 +2620,24 @@
 <td style="text-align: left;">Também usado para repetição de sequências (<code>"abc" * 3</code> resulta em <code>"abcabcabc"</code>)</td>
 </tr>
 <tr>
+<td style="text-align: left;">Multiplicação matricial</td>
+<td style="text-align: center;"><code>a @ b</code></td>
+<td style="text-align: left;">Disponível desde o Python 3.5 para tipos que implementam essa operação</td>
+</tr>
+<tr>
 <td style="text-align: left;">Divisão</td>
 <td style="text-align: center;"><code>a / b</code></td>
-<td style="text-align: left;">Sempre resulta em um número de ponto flutuante, mesmo quando os operandos são inteiros</td>
+<td style="text-align: left;">Com operandos <code>int</code> ou <code>float</code>, resulta em <code>float</code>; com operandos complexos, resulta em <code>complex</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Divisão inteira</td>
 <td style="text-align: center;"><code>a // b</code></td>
-<td style="text-align: left;">Retorna o maior inteiro menor ou igual ao quociente (arredonda para baixo)</td>
+<td style="text-align: left;">Arredonda o quociente para baixo; com operandos inteiros, retorna <code>int</code>, e, se houver um <code>float</code>, retorna <code>float</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Módulo</td>
 <td style="text-align: center;"><code>a % b</code></td>
-<td style="text-align: left;">Resto da divisão de <code>a</code> por <code>b</code></td>
+<td style="text-align: left;">Resto da divisão de <code>a</code> por <code>b</code>; quando não é zero, tem o sinal do divisor</td>
 </tr>
 <tr>
 <td style="text-align: left;">Exponenciação</td>
@@ -2641,20 +2646,28 @@
 </tr>
 </tbody>
 </table>
-<p>Diferentemente de C, Python não possui operadores de incremento/decremento (<code>++</code> ou <code>--</code>). Para aumentar ou diminuir o valor de uma variável, deve-se usar operadores de atribuição combinada como <code class="language-python highlight"><span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span></code> ou <code class="language-python highlight"><span class="n">a</span> <span class="o">-=</span> <span class="mi">1</span></code>.</p>
-<p>No que diz respeito à conversão de tipos em operações aritméticas, Python também realiza coerção de tipos, mas com regras ligeiramente diferentes das de C:</p>
+<p>O operador <code>@</code> é destinado à multiplicação de matrizes. Os tipos nativos, como
+<code>int</code>, <code>float</code> e <code>list</code>, não o implementam; ele é usado por tipos de bibliotecas
+numéricas, como os arrays do NumPy. Uma lista de listas, por si só, não permite
+usar <code>@</code>. A <a href="https://peps.python.org/pep-0465/">PEP 465</a> descreve sua introdução.</p>
+<p>Python não possui operadores de incremento ou decremento (<code>++</code> ou <code>--</code>). Para aumentar ou diminuir o valor de uma variável, use operadores de atribuição combinada, como <code class="language-python highlight"><span class="n">a</span> <span class="o">+=</span> <span class="mi">1</span></code> ou <code class="language-python highlight"><span class="n">a</span> <span class="o">-=</span> <span class="mi">1</span></code>.</p>
+<p>Em operações aritméticas com tipos numéricos diferentes, Python realiza conversões implícitas de tipos, também chamadas de coerção, seguindo estas regras:</p>
 <ol>
-<li>Se qualquer operando for um número complexo, o resultado será complexo</li>
-<li>Se qualquer operando for um número de ponto flutuante, o resultado será de ponto flutuante</li>
-<li>Se todos os operandos forem inteiros, o resultado será inteiro, exceto para a divisão normal (<code>/</code>), que sempre retorna um número de ponto flutuante</li>
+<li>Se houver um operando complexo, o outro será convertido para <code>complex</code>;</li>
+<li>Caso contrário, se houver um operando de ponto flutuante, o outro será convertido para <code>float</code>;</li>
+<li>Se ambos forem inteiros, os operandos permanecem como <code>int</code>.</li>
 </ol>
+<p>O tipo do resultado também depende da operação: <code>/</code> entre inteiros retorna
+<code>float</code>, assim como uma potência de base inteira e expoente inteiro negativo,
+como <code class="language-python highlight"><span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span></code> (que vale <code>0.5</code>). Os operadores <code>//</code> e <code>%</code> não aceitam
+números complexos. Dividir por zero com <code>/</code>, <code>//</code> ou <code>%</code> gera <code>ZeroDivisionError</code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Uma diferença significativa em relação ao C é o comportamento da divisão. Em Python 3, a divisão com o operador <code>/</code> sempre resulta em um número de ponto flutuante, mesmo quando os operandos são inteiros. Para obter uma divisão inteira (semelhante à divisão inteira em C), use o operador <code>//</code>.</p>
+<p>Com operandos <code>int</code> ou <code>float</code>, a divisão com o operador <code>/</code> resulta em um número de ponto flutuante, mesmo quando os operandos são inteiros. O operador <code>//</code> calcula o quociente arredondado para baixo; com operandos inteiros, o resultado é inteiro.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># Resulta em 2.5</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">//</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># Resulta em 2</span>
 </span></code></pre></div>
-<p>Isso elimina uma fonte comum de erros que existe em C, onde a divisão de inteiros pode silenciosamente truncar o resultado.</p>
+<p>Escolha o operador de acordo com o resultado desejado: <code>/</code> para divisão com resultado de ponto flutuante ou <code>//</code> para divisão com arredondamento para baixo.</p>
 </div>
 <h3 id="arredondamento-exato-com-aritmetica-inteira">Arredondamento Exato com Aritmética Inteira<a class="headerlink" href="#arredondamento-exato-com-aritmetica-inteira" title="Permanent link">&para;</a></h3>
 <p>Para calcular e formatar uma razão <span class="arithmatex">\(A/B\)</span> (ou um percentual <span class="arithmatex">\(100 \times A/B\)</span>) com exatamente <span class="arithmatex">\(K\)</span> casas decimais, evitando imprecisões de ponto flutuante e divergências de arredondamento, utilizamos aritmética inteira escalonada.</p>
@@ -2666,7 +2679,7 @@
 <li><span class="arithmatex">\(q = a\)</span>, se <span class="arithmatex">\(2r \lt B\)</span>;</li>
 <li><span class="arithmatex">\(q = a + 1\)</span>, se <span class="arithmatex">\(2r \ge B\)</span>.</li>
 </ul>
-<p>Em Python, como o tipo <code>int</code> possui precisão arbitrária nativa, não há risco de estouro de memória (<em>overflow</em>) nas multiplicações intermediárias. Para exibir o resultado final, extrai-se a parte inteira por meio de <code>q // S</code> e a parte fracionária por meio de <code>q % S</code>, formatando o resto com zeros à esquerda para ocupar exatamente <span class="arithmatex">\(K\)</span> dígitos (por exemplo, <code>f"{q // S}.{q % S:0{K}d}"</code> para <span class="arithmatex">\(K \gt 0\)</span>).</p>
+<p>Em Python, como o tipo <code>int</code> possui precisão arbitrária nativa, não há risco de transbordamento de inteiros (<em>overflow</em>) nas multiplicações intermediárias. Para exibir o resultado final, extrai-se a parte inteira por meio de <code>q // S</code> e a parte fracionária por meio de <code>q % S</code>, formatando o resto com zeros à esquerda para ocupar exatamente <span class="arithmatex">\(K\)</span> dígitos (por exemplo, <code>f"{q // S}.{q % S:0{K}d}"</code> para <span class="arithmatex">\(K \gt 0\)</span>).</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">B</span> <span class="o">=</span> <span class="mi">128</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">K</span> <span class="o">=</span> <span class="mi">4</span>
@@ -2695,21 +2708,21 @@
 <tr>
 <td style="text-align: center;">NOT</td>
 <td style="text-align: center;"><code class="language-python highlight"><span class="ow">not</span> <span class="n">a</span></code></td>
-<td style="text-align: left;">Nega o valor de <code>a</code></td>
+<td style="text-align: left;">Retorna <code>True</code> se <code>a</code> for falso, ou <code>False</code> caso contrário</td>
 </tr>
 <tr>
 <td style="text-align: center;">AND</td>
 <td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code></td>
-<td style="text-align: left;">Será verdadeiro apenas quando <code>a</code> e <code>b</code> forem verdadeiros</td>
+<td style="text-align: left;">Retorna <code>a</code> se ele for falso; caso contrário, avalia e retorna <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">OR</td>
 <td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span></code></td>
-<td style="text-align: left;">Será falso apenas quando <code>a</code> e <code>b</code> forem falsos</td>
+<td style="text-align: left;">Retorna <code>a</code> se ele for verdadeiro; caso contrário, avalia e retorna <code>b</code></td>
 </tr>
 </tbody>
 </table>
-<p>As tabelas de verdade são idênticas às de C:</p>
+<p>As tabelas de verdade abaixo mostram os resultados para operandos booleanos:</p>
 <table>
 <thead>
 <tr>
@@ -2790,12 +2803,12 @@
 </tr>
 </tbody>
 </table>
-<p>Assim como em C, Python também implementa avaliação de curto-circuito para os operadores lógicos:</p>
+<p>Python implementa avaliação de curto-circuito para os operadores lógicos:</p>
 <ul>
 <li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span></code>, se <code>a</code> for falso, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
 <li>Para <code class="language-python highlight"><span class="n">a</span> <span class="ow">or</span> <span class="n">b</span></code>, se <code>a</code> for verdadeiro, <code>b</code> não é avaliado e o resultado é <code>a</code></li>
 </ul>
-<p>Uma diferença significativa em relação ao C é que os operadores lógicos em Python não retornam necessariamente valores booleanos (<code>True</code> ou <code>False</code>), mas sim o último valor avaliado. Isso permite construções concisas como:</p>
+<p>Os operadores <code>and</code> e <code>or</code> não retornam necessariamente valores booleanos (<code>True</code> ou <code>False</code>), mas sim o último operando avaliado. Isso permite construções concisas como:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Se entrada_do_usuario for vazia, nome será "Anônimo"</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">nome</span> <span class="o">=</span> <span class="n">entrada_do_usuario</span> <span class="ow">or</span> <span class="s2">"Anônimo"</span>
 </span></code></pre></div>
@@ -2808,9 +2821,12 @@
 <li>Dicionários vazios: <code>{}</code></li>
 <li>Conjuntos vazios: <code>set()</code></li>
 </ul>
-<p>Todos os outros valores são considerados verdadeiros.</p>
+<p>Outras coleções vazias, como <code>range(0)</code> e <code>frozenset()</code>, também são falsas.
+Objetos são considerados verdadeiros por padrão, mas classes podem definir
+esse comportamento com <code>__bool__()</code> ou, na ausência dele, com <code>__len__()</code>:
+retornar <code>False</code> no primeiro ou zero no segundo torna o objeto falso.</p>
 <h2 id="operadores-relacionais">Operadores relacionais<a class="headerlink" href="#operadores-relacionais" title="Permanent link">&para;</a></h2>
-<p>Python oferece os mesmos operadores relacionais que C, com algumas adições úteis.</p>
+<p>Os operadores relacionais permitem comparar valores, verificar a identidade de objetos e testar a pertinência em coleções.</p>
 <table>
 <thead>
 <tr>
@@ -2828,7 +2844,7 @@
 <tr>
 <td style="text-align: left;">Não igual a<br>(diferente de)</td>
 <td style="text-align: center;"><code>a != b</code></td>
-<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
+<td style="text-align: left;"><code>a</code> diferente de <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Maior que</td>
@@ -2853,26 +2869,26 @@
 <tr>
 <td style="text-align: left;">Identidade</td>
 <td style="text-align: center;"><code>a is b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> referem-se ao mesmo objeto em memória</td>
+<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> se referem ao mesmo objeto em memória</td>
 </tr>
 <tr>
 <td style="text-align: left;">Não identidade</td>
 <td style="text-align: center;"><code>a is not b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> não referem-se ao mesmo objeto</td>
+<td style="text-align: left;">Verifica se <code>a</code> e <code>b</code> não se referem ao mesmo objeto</td>
 </tr>
 <tr>
-<td style="text-align: left;">Contém</td>
+<td style="text-align: left;">Pertence a</td>
 <td style="text-align: center;"><code>a in b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> está contido em <code>b</code> (para sequências e coleções)</td>
+<td style="text-align: left;">Verifica se <code>a</code> pertence a <code>b</code>; em dicionários, consulta as chaves e, em strings, procura uma substring</td>
 </tr>
 <tr>
-<td style="text-align: left;">Não contém</td>
+<td style="text-align: left;">Não pertence a</td>
 <td style="text-align: center;"><code>a not in b</code></td>
-<td style="text-align: left;">Verifica se <code>a</code> não está contido em <code>b</code></td>
+<td style="text-align: left;">Nega o resultado do teste de pertinência</td>
 </tr>
 </tbody>
 </table>
-<p>Uma característica poderosa de Python é que os operadores relacionais podem ser encadeados, o que não é possível em C. Por exemplo:</p>
+<p>Em Python, os operadores relacionais podem ser encadeados para expressar várias comparações de forma concisa. Por exemplo:</p>
 <div class="language-python highlight"><span class="filename">Encadeamento de operadores relacionais</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Em Python, isso funciona como esperado</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"n está entre 10 e 50"</span><span class="p">)</span>
@@ -2881,6 +2897,12 @@
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">if</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"n está entre 10 e 50"</span><span class="p">)</span>
 </span></code></pre></div>
+<p>No encadeamento, cada expressão intermediária é avaliada apenas uma vez.
+Assim, <code class="language-python highlight"><span class="mi">10</span> <span class="o">&lt;</span> <span class="n">obter_numero</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">50</span></code> chama <code>obter_numero()</code> uma única vez.
+As comparações seguintes só são avaliadas se as anteriores forem verdadeiras.
+Os operadores de ordenação (<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code> e <code>&gt;=</code>) exigem tipos compatíveis:
+por exemplo, comparar um inteiro com uma string ou ordenar números complexos
+gera <code>TypeError</code>.</p>
 <p>Os operadores <code class="language-python highlight"><span class="ow">is</span></code> e <code class="language-python highlight"><span class="ow">is</span> <span class="ow">not</span></code> verificam a identidade do objeto, não o valor. Isso é diferente de <code>==</code> e <code>!=</code>, que verificam a igualdade de valor:</p>
 <div class="language-python highlight"><span class="filename">Identidade vs igualdade</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -2897,14 +2919,14 @@
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Diferentemente de C, em Python não há confusão possível entre o operador de atribuição (<code>=</code>) e o operador de igualdade (<code>==</code>) em expressões condicionais, pois atribuições não são expressões que retornam valores. Uma atribuição dentro de uma condição resultará em erro de sintaxe:</p>
+<p>Em expressões condicionais, use <code>==</code> para comparar valores. O operador de atribuição <code>=</code> não pode ser usado dentro de uma condição: isso resulta em erro de sintaxe. Para atribuir um valor como parte de uma expressão, existe o operador <code>:=</code>, apresentado mais adiante.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Isso causará um erro de sintaxe em Python</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">):</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Isso não funciona em Python"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <h2 id="operadores-de-bit">Operadores de bit<a class="headerlink" href="#operadores-de-bit" title="Permanent link">&para;</a></h2>
-<p>Python suporta os mesmos operadores de bit que C.</p>
+<p>Os operadores de bit permitem manipular a representação binária de números inteiros.</p>
 <table>
 <thead>
 <tr>
@@ -2917,22 +2939,22 @@
 <tr>
 <td style="text-align: center;">NOT</td>
 <td style="text-align: center;"><code class="language-python highlight"><span class="o">~</span><span class="n">a</span></code></td>
-<td style="text-align: left;">Inverte os bits de <code>a</code></td>
+<td style="text-align: left;">Inverte os bits de <code>a</code>; para inteiros, equivale a <code>-a - 1</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">AND</td>
 <td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span></code></td>
-<td style="text-align: left;">Efetua a operação AND bit-a-bit</td>
+<td style="text-align: left;">Efetua a operação AND bit a bit</td>
 </tr>
 <tr>
 <td style="text-align: center;">OR</td>
-<td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">|</span> <span class="n">b</span></code></td>
-<td style="text-align: left;">Efetua a operação OR bit-a-bit</td>
+<td style="text-align: center;"><code>a &#124; b</code></td>
+<td style="text-align: left;">Efetua a operação OR bit a bit</td>
 </tr>
 <tr>
 <td style="text-align: center;">XOR</td>
 <td style="text-align: center;"><code class="language-python highlight"><span class="n">a</span> <span class="o">^</span> <span class="n">b</span></code></td>
-<td style="text-align: left;">Efetua a operação XOR bit-a-bit</td>
+<td style="text-align: left;">Efetua a operação XOR bit a bit</td>
 </tr>
 <tr>
 <td style="text-align: center;">Deslocamento à esquerda</td>
@@ -2946,21 +2968,31 @@
 </tr>
 </tbody>
 </table>
-<p>Em Python, esses operadores funcionam primariamente com inteiros, embora alguns como <code class="language-python highlight"><span class="o">&amp;</span></code>, <code class="language-python highlight"><span class="o">|</span></code>, e <code class="language-python highlight"><span class="o">^</span></code> também sejam sobrecarregados para trabalhar com o tipo <code>set</code> (conjunto), realizando operações de interseção, união e diferença simétrica, respectivamente.</p>
-<p>Os operadores de deslocamento têm o mesmo efeito de multiplicação e divisão por potências de 2, como em C:</p>
+<p>Em Python, esses operadores funcionam primariamente com inteiros, embora alguns como <code class="language-python highlight"><span class="o">&amp;</span></code>, <code class="language-python highlight"><span class="o">|</span></code> e <code class="language-python highlight"><span class="o">^</span></code> também sejam sobrecarregados para trabalhar com o tipo <code>set</code> (conjunto), realizando operações de interseção, união e diferença simétrica, respectivamente.</p>
+<p>O significado depende dos operandos: <code>|</code> também pode combinar dicionários
+(desde o Python 3.9) e representar uniões de tipos em anotações, como
+<code>int | None</code> (desde o Python 3.10).</p>
+<p>Os operadores de deslocamento correspondem à multiplicação e à divisão com arredondamento para baixo por potências de 2:</p>
 <ul>
 <li><code class="language-python highlight"><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">b</span></code> é equivalente a <code class="language-python highlight"><span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span></code></li>
 <li><code class="language-python highlight"><span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span></code> é equivalente a <code class="language-python highlight"><span class="n">a</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="n">b</span><span class="p">)</span></code></li>
 </ul>
-<p>Uma diferença notável é que Python suporta inteiros de precisão arbitrária, então você não precisa se preocupar com <em>overflow</em> em operações de deslocamento.</p>
+<p>Python suporta inteiros de precisão arbitrária, limitados pela memória disponível, o que evita o transbordamento de inteiros (<em>overflow</em>) em operações de deslocamento.</p>
+<p>Para inteiros negativos, as operações de bit seguem o modelo de complemento
+de dois com extensão de sinal. Por exemplo, <code class="language-python highlight"><span class="o">-</span><span class="mi">8</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span></code> vale <code>-4</code>.
+A quantidade de posições do deslocamento deve ser não negativa: <code>1 &lt;&lt; -1</code>
+gera <code>ValueError</code>.</p>
+<p>Os operadores de bit não fazem curto-circuito. Para combinar condições lógicas,
+use <code>and</code>, <code>or</code> e <code>not</code>. Python não tem uma palavra-chave <code>xor</code>; para dois
+valores booleanos, <code>a != b</code> indica que exatamente um deles é verdadeiro.</p>
 <h2 id="operadores-de-atribuicao">Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permanent link">&para;</a></h2>
-<p>Python oferece operadores de atribuição combinada semelhantes aos de C.</p>
+<p>Os operadores de atribuição combinada atualizam uma variável aplicando uma operação ao seu valor atual.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Operação</th>
 <th style="text-align: center;">Sintaxe</th>
-<th style="text-align: left;">Exemplo e/ou observações</th>
+<th style="text-align: left;">Forma expandida do cálculo</th>
 </tr>
 </thead>
 <tbody>
@@ -2985,6 +3017,11 @@
 <td style="text-align: left;">Equivalente a <code>a = a * b</code></td>
 </tr>
 <tr>
+<td style="text-align: center;">Multiplicação matricial combinada</td>
+<td style="text-align: center;"><code>a @= b</code></td>
+<td style="text-align: left;">Corresponde ao cálculo <code>a = a @ b</code>, com suporte à operação no próprio objeto</td>
+</tr>
+<tr>
 <td style="text-align: center;">Divisão combinada</td>
 <td style="text-align: center;"><code>a /= b</code></td>
 <td style="text-align: left;">Equivalente a <code>a = a / b</code></td>
@@ -3005,17 +3042,17 @@
 <td style="text-align: left;">Equivalente a <code>a = a ** b</code></td>
 </tr>
 <tr>
-<td style="text-align: center;">AND bit-a-bit combinado</td>
+<td style="text-align: center;">AND bit a bit combinado</td>
 <td style="text-align: center;"><code>a &amp;= b</code></td>
 <td style="text-align: left;">Equivalente a <code>a = a &amp; b</code></td>
 </tr>
 <tr>
-<td style="text-align: center;">OR bit-a-bit combinado</td>
-<td style="text-align: center;"><code>a |= b</code></td>
-<td style="text-align: left;">Equivalente a <code>a = a | b</code></td>
+<td style="text-align: center;">OR bit a bit combinado</td>
+<td style="text-align: center;"><code>a &#124;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &#124; b</code></td>
 </tr>
 <tr>
-<td style="text-align: center;">XOR bit-a-bit combinado</td>
+<td style="text-align: center;">XOR bit a bit combinado</td>
 <td style="text-align: center;"><code>a ^= b</code></td>
 <td style="text-align: left;">Equivalente a <code>a = a ^ b</code></td>
 </tr>
@@ -3031,7 +3068,12 @@
 </tr>
 </tbody>
 </table>
-<p>Python também suporta atribuição múltipla e atribuição de desempacotamento, recursos que não existem em C:</p>
+<p>As formas expandidas da tabela indicam o cálculo realizado, mas a atribuição
+combinada pode modificar o próprio objeto e avalia o destino apenas uma vez.
+Por exemplo, <code>lista += [3]</code> modifica a lista existente, enquanto
+<code>lista = lista + [3]</code> cria outra lista. Esse comportamento é explicado na
+seção sobre <a href="../funcoes/#objetos-mutaveis">objetos mutáveis</a>.</p>
+<p>Python também suporta atribuição múltipla e atribuição por desempacotamento:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Atribuição múltipla</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -3055,7 +3097,7 @@
 </span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    <span class="n">processar</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span></code></pre></div>
 <h2 id="operador-de-fatiamento">Operador de fatiamento<a class="headerlink" href="#operador-de-fatiamento" title="Permanent link">&para;</a></h2>
-<p>O operador de fatiamento é uma característica poderosa de Python que não existe em C:</p>
+<p>O operador de fatiamento permite selecionar partes de uma sequência:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
@@ -3065,33 +3107,41 @@
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>    <span class="c1"># [5, 4, 3, 2, 1, 0] (invertido)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>O operador de fatiamento (<code class="language-python highlight"><span class="n">a</span><span class="p">[</span><span class="n">b</span><span class="p">:</span><span class="n">c</span><span class="p">:</span><span class="n">d</span><span class="p">]</span></code>) funciona selecionando, de <code class="language-python highlight"><span class="n">a</span></code>, os elementos de <code class="language-python highlight"><span class="n">b</span></code> até antes de <code class="language-python highlight"><span class="n">c</span></code>, <code class="language-python highlight"><span class="n">d</span></code> a <code class="language-python highlight"><span class="n">d</span></code>.</p>
+<p>O passo pode ser negativo para percorrer a sequência no sentido inverso,
+mas não pode ser zero (<code>ValueError</code>). Quando o passo é positivo, o início
+omitido corresponde ao começo da sequência, e o fim omitido, ao final;
+com passo negativo, esses sentidos se invertem.</p>
 <p>Em Python, os índices negativos contam a partir do final da sequência. O índice <code>-1</code> representa o último elemento, <code>-2</code> o penúltimo e assim sucessivamente. Quando utilizamos estes índices negativos em operações de fatiamento, podemos manipular sequências de formas bastante elegantes. Consideremos o seguinte exemplo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<p>As saídas são exibidas com <code>repr()</code> para mostrar as aspas e tornar visíveis
+os espaços no início e no final de cada fatia.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">texto</span> <span class="o">=</span> <span class="s2">"Programação de Redes de Computadores"</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># Fatiamento simples com índices negativos</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:])</span>         <span class="c1"># Extrai os 10 últimos caracteres</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">12</span><span class="p">])</span>      <span class="c1"># Extrai uma seção do meio usando índices negativos</span>
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[:</span><span class="o">-</span><span class="mi">15</span><span class="p">])</span>         <span class="c1"># Do início até 15 caracteres antes do final</span>
-</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>     <span class="c1"># Do caractere -20 até -5 pulando de 2 em 2</span>
-</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>         <span class="c1"># Inverte a string completa</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">:]))</span>        <span class="c1"># Extrai os 10 últimos caracteres</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">22</span><span class="p">:</span><span class="o">-</span><span class="mi">12</span><span class="p">]))</span>     <span class="c1"># Extrai uma seção do meio usando índices negativos</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">texto</span><span class="p">[:</span><span class="o">-</span><span class="mi">15</span><span class="p">]))</span>        <span class="c1"># Do início até 15 caracteres antes do final</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="o">-</span><span class="mi">20</span><span class="p">:</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]))</span>     <span class="c1"># Do índice -20 até antes de -5, de 2 em 2</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">texto</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>        <span class="c1"># Inverte a string completa</span>
 </span></code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Computadores
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Redes de Co
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Programação de Redes de
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>d ooaçmar
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>serodatupmoC ed sedeR ed oãçamargorP
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>'mputadores'
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>' Redes de '
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>'Programação de Redes '
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>'ee eCmua'
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>'serodatupmoC ed sedeR ed oãçamargorP'
 </span></code></pre></div>
 </div>
 </div>
 </div>
 <p>Os índices negativos são particularmente úteis quando você precisa trabalhar com o final de uma sequência sem conhecer seu tamanho exato, tornando o código mais elegante e adaptável a diferentes entradas.</p>
 <h2 id="precedencia-dos-operadores">Precedência dos operadores<a class="headerlink" href="#precedencia-dos-operadores" title="Permanent link">&para;</a></h2>
-<p>Assim como em C, Python segue uma ordem específica ao avaliar expressões com múltiplos operadores. A tabela abaixo mostra os operadores em ordem decrescente de prioridade (do mais alto para o mais baixo).</p>
+<p>Python segue regras de precedência para agrupar expressões com múltiplos
+operadores. A tabela abaixo segue a <a href="https://docs.python.org/3.14/reference/expressions.html#operator-precedence">referência do Python 3.14</a>,
+em ordem decrescente de prioridade (da mais alta para a mais baixa).</p>
 <table>
 <thead>
 <tr>
@@ -3101,8 +3151,16 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;"><code>()</code> <code>[]</code> <code>.</code></td>
-<td style="text-align: left;">Chamadas, indexação, atributos</td>
+<td style="text-align: center;"><code>(expressao)</code> <code>(a, b, ...)</code> <code>[elementos]</code> <code>{chave: valor}</code> <code>{elementos}</code></td>
+<td style="text-align: left;">Agrupamento e construção de tuplas, listas, dicionários e conjuntos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>a[i]</code> <code>a[inicio:fim:passo]</code> <code>f(argumentos)</code> <code>a.atributo</code></td>
+<td style="text-align: left;">Indexação, fatiamento, chamadas e acesso a atributos</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>await a</code></td>
+<td style="text-align: left;">Espera por uma operação assíncrona</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>**</code></td>
@@ -3110,11 +3168,11 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>+x</code> <code>-x</code> <code>~x</code></td>
-<td style="text-align: left;">Unários positivo, negativo, NOT bit-a-bit</td>
+<td style="text-align: left;">Unários positivo, negativo, NOT bit a bit</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>*</code> <code>/</code> <code>//</code> <code>%</code></td>
-<td style="text-align: left;">Multiplicação, divisão, div. inteira, módulo</td>
+<td style="text-align: center;"><code>*</code> <code>@</code> <code>/</code> <code>//</code> <code>%</code></td>
+<td style="text-align: left;">Multiplicação, multiplicação matricial, divisão, divisão inteira, módulo</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>+</code> <code>-</code></td>
@@ -3126,15 +3184,15 @@
 </tr>
 <tr>
 <td style="text-align: center;"><code>&amp;</code></td>
-<td style="text-align: left;">AND bit-a-bit</td>
+<td style="text-align: left;">AND bit a bit</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>^</code></td>
-<td style="text-align: left;">XOR bit-a-bit</td>
+<td style="text-align: left;">XOR bit a bit</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>\|</code></td>
-<td style="text-align: left;">OR bit-a-bit</td>
+<td style="text-align: center;"><code>&#124;</code></td>
+<td style="text-align: left;">OR bit a bit</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>==</code> <code>!=</code> <code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code> <code>is</code> <code>is not</code> <code>in</code> <code>not in</code></td>
@@ -3153,31 +3211,80 @@
 <td style="text-align: left;">OR lógico</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>:=</code></td>
-<td style="text-align: left;">Atribuição de expressão (Python 3.8+)</td>
+<td style="text-align: center;"><code>if</code> <code>else</code></td>
+<td style="text-align: left;">Operador condicional</td>
 </tr>
 <tr>
 <td style="text-align: center;"><code>lambda</code></td>
 <td style="text-align: left;">Expressão lambda</td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>if</code> <code>else</code></td>
-<td style="text-align: left;">Operador condicional</td>
-</tr>
-<tr>
-<td style="text-align: center;"><code>=</code> <code>+=</code> <code>-=</code> etc.</td>
-<td style="text-align: left;">Atribuição</td>
+<td style="text-align: center;"><code>:=</code></td>
+<td style="text-align: left;">Expressão de atribuição (Python 3.8+)</td>
 </tr>
 </tbody>
 </table>
-<p>Quando os operadores têm a mesma precedência, a associatividade determina a ordem de avaliação. A maioria dos operadores em Python associa da esquerda para a direita, exceto a exponenciação (<code>**</code>) que associa da direita para a esquerda.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Exemplos que demonstram precedência</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>          <span class="c1"># 14 (multiplicação antes da adição)</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">print</span><span class="p">((</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 20 (parênteses alteram a precedência)</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>         <span class="c1"># 512 (2 ** 9, a exponenciação associa da direita para a esquerda)</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>   <span class="c1"># False (NOT tem precedência sobre OR)</span>
+<p>Uma expressão condicional tem a forma <code>valor1 if condicao else valor2</code> e avalia
+apenas o valor escolhido. As <a href="../funcoes/#expressoes-lambda">expressões lambda</a>
+criam funções anônimas. A expressão <code>await</code> é usada em funções assíncronas,
+definidas com <code>async def</code>, para aguardar um objeto aguardável, como uma corrotina.</p>
+<p>As atribuições <code>=</code> e suas formas combinadas, como <code>+=</code> e <code>@=</code>, são instruções,
+por isso não têm posição na tabela de precedência das expressões. Já <code>:=</code>
+faz parte de uma expressão e tem a menor precedência da tabela.</p>
+<p>Operadores na mesma linha têm a mesma precedência e, em geral, são agrupados
+da esquerda para a direita. As exceções são a exponenciação e a expressão
+condicional, que são agrupadas da direita para a esquerda; as comparações
+podem ser encadeadas. Esse sentido de agrupamento é a <strong>associatividade</strong>.</p>
+<p>A <strong>ordem de avaliação</strong> é uma regra diferente. Em operações binárias como
+<code>+</code>, <code>*</code> e <code>**</code>, Python avalia primeiro o operando esquerdo e depois o direito.
+Os argumentos de uma chamada também são avaliados da esquerda para a direita.
+Por exemplo, em <code>f() + g() * h()</code>, as chamadas ocorrem na ordem <code>f()</code>, <code>g()</code>
+e <code>h()</code>, embora a multiplicação de seus resultados venha antes da soma.</p>
+<p>Mesmo a associatividade à direita de <code>**</code> não inverte a ordem das chamadas:</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Agrupamento e ordem de avaliação</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">mostra</span><span class="p">(</span><span class="n">nome</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">nome</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a>    <span class="k">return</span> <span class="n">valor</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="n">resultado</span> <span class="o">=</span> <span class="n">mostra</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="n">mostra</span><span class="p">(</span><span class="s2">"b"</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">**</span> <span class="n">mostra</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Saída</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span>
+<span class="normal"><a href="#__codelineno-13-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a>a
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2"></a>b
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3"></a>c
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4"></a>512
+</span></code></pre></div></td></tr></table></div>
+<p>As chamadas ocorrem na ordem <code>a</code>, <code>b</code>, <code>c</code>, mas o cálculo agrupa os valores
+como <code>2 ** (3 ** 2)</code>. A expressão condicional tem uma regra própria: avalia
+a condição antes de apenas um dos ramos. Os operadores <code>and</code> e <code>or</code> seguem
+o curto-circuito descrito anteriormente. Em uma atribuição normal, o lado
+direito é avaliado antes do destino. A
+<a href="https://docs.python.org/3.14/reference/expressions.html#evaluation-order">referência sobre ordem de avaliação</a>
+detalha essas regras.</p>
+<p>O sinal unário à direita de <code>**</code> pertence ao expoente: <code class="language-python highlight"><span class="mi">2</span> <span class="o">**</span> <span class="o">-</span><span class="mi">1</span></code>
+vale <code>0.5</code>. À esquerda, <code class="language-python highlight"><span class="o">-</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span></code> equivale a <code class="language-python highlight"><span class="o">-</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span></code>
+e vale <code>-4</code>; para elevar a base negativa ao quadrado, use <code class="language-python highlight"><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span></code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Exemplos que demonstram precedência</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>          <span class="c1"># 14 (multiplicação antes da adição)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nb">print</span><span class="p">((</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 20 (parênteses tornam explícito o agrupamento da soma)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>         <span class="c1"># 512 (2 ** 9, a exponenciação associa da direita para a esquerda)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>   <span class="c1"># False (NOT tem precedência sobre OR)</span>
 </span></code></pre></div>
-<p>A clara compreensão da precedência de operadores é fundamental para escrever expressões complexas corretamente, mas em caso de dúvida, é sempre recomendável usar parênteses para tornar a intenção explícita – uma prática que também melhora a legibilidade do código.</p>
+<p>A clara compreensão da precedência de operadores é fundamental para escrever expressões complexas corretamente, mas, em caso de dúvida, é sempre recomendável usar parênteses para tornar a intenção explícita – uma prática que também melhora a legibilidade do código.</p>
+<div class="admonition info">
+<p class="admonition-title">Comparando as regras das expressões</p>
+<p>A página <a href="../../expressoes_comparacao/">Precedência, associatividade e ordem de avaliação</a>
+compara esses conceitos em C, C++ e Python, com exemplos e atenção às versões das linguagens.</p>
+</div>
 
 
 
@@ -3200,7 +3307,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="16 de novembro de 2026 16:50:50 -03">16 de novembro de 2026 16:50:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

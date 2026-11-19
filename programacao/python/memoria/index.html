@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2337,7 +2337,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2555,13 +2555,13 @@
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>False
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>True False
 </span></code></pre></div>
-<p>Os dois números 1000 e as duas cadeias <code>"programa"</code> têm o mesmo valor, mas são objetos diferentes. A primeira linha mostra uma otimização do interpretador: alguns objetos imutáveis muito usados, como os inteiros de -5 a 256, são criados uma única vez e reaproveitados, e por isso <code>a is b</code> foi verdadeiro. Como esse comportamento depende de detalhes da implementação, <strong>use sempre <code>==</code> para comparar valores</strong>, e reserve <code>is</code> para comparações com <code class="language-python highlight"><span class="kc">None</span></code> (<code class="language-python highlight"><span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span></code>).</p>
+<p>Nesta execução do CPython, os valores 1000 e as cadeias <code>"programa"</code> iguais foram representados por objetos distintos. Já alguns objetos imutáveis, como os inteiros de -5 a 256, são reaproveitados nessa implementação. A identidade de valores iguais depende de otimizações: não conte com um objeto novo nem compartilhado. <strong>Use <code>==</code> para comparar valores</strong>; <code>is</code> verifica identidade e é a escolha para <code>x is None</code>.</p>
 <p>A seção sobre <a href="../funcoes/#passagem-de-parametros">passagem de parâmetros</a> mostra as consequências desse modelo nas chamadas de funções: o parâmetro passa a ser mais um nome para o objeto passado como argumento.</p>
 <h2 id="onde-ficam-os-objetos-o-heap-privado-e-a-pilha">Onde ficam os objetos: o <em>heap</em> privado e a pilha<a class="headerlink" href="#onde-ficam-os-objetos-o-heap-privado-e-a-pilha" title="Permanent link">&para;</a></h2>
-<p>A memória usada por um programa em Python é organizada em duas partes, com papéis bem diferentes:</p>
+<p>O modelo abaixo descreve o <strong>CPython</strong>, com um diagrama simplificado dos objetos e das chamadas. Alocadores, contagem de referências e tamanhos em bytes são detalhes da implementação, não garantias da linguagem. As medições variam com a versão, a arquitetura e a configuração do interpretador.</p>
 <ul>
-<li><strong>O <em>heap</em> privado do Python</strong> é a área onde ficam <strong>todos os objetos</strong> e as estruturas internas do interpretador. Ele é chamado de privado porque é gerenciado exclusivamente pelo <strong>gerenciador de memória</strong> do interpretador: o programa nunca escolhe onde um objeto vai ficar, nem pode liberar um objeto diretamente. Para os objetos pequenos (até 512 bytes), que são a imensa maioria, o interpretador usa um alocador especializado, o <strong><em>pymalloc</em></strong>, que pede ao sistema operacional blocos grandes de memória (as <em>arenas</em>) e os divide em partes menores, reaproveitando o espaço dos objetos liberados. Isso é muito mais rápido do que pedir memória ao sistema a cada objeto criado. Os objetos grandes, como listas com milhões de elementos, são alocados diretamente com o sistema operacional, e;</li>
-<li><strong>A pilha de execução</strong> (<em>call stack</em>) guarda as <strong>chamadas de funções</strong> em andamento. Cada chamada cria um <strong>quadro</strong> (<em>frame</em>) com os nomes locais da função (os parâmetros e as variáveis criadas nela) e a informação de em que ponto a execução vai continuar quando a função terminar. Quando a função termina, o quadro é removido da pilha.</li>
+<li><strong>O <em>heap</em> privado</strong> contém os objetos e seu armazenamento associado. O gerenciador de memória combina alocadores e caches. Na configuração tradicional do CPython, <code>pymalloc</code> atende pequenas alocações, de até 512 bytes, usando arenas; pedidos maiores seguem para o alocador do sistema, sem necessariamente pedir memória nova ao sistema operacional a cada chamada. No CPython 3.14 com execução sem GIL (<em>free-threaded</em>), os domínios de objetos e memória usam <code>mimalloc</code>. A <a href="https://docs.python.org/3.14/c-api/memory.html#default-memory-allocators">documentação dos alocadores</a> detalha essas configurações;</li>
+<li><strong>A pilha de chamadas</strong> representa as funções em execução e seu estado local. Frames podem continuar acessíveis após o retorno, por exemplo por um traceback; geradores também preservam estado entre chamadas. O diagrama é conceitual e não especifica a disposição física dessas estruturas na memória.</li>
 </ul>
 <pre class="mermaid"><code>flowchart LR
   subgraph pilha ["Pilha de execução"]
@@ -2584,7 +2584,7 @@
   o2 --&gt; o5</code></pre>
 <p>O diagrama mostra um programa que chamou uma função <code>dobro(n)</code>. Os quadros da pilha guardam apenas <strong>nomes</strong>; os objetos, inclusive os números, ficam todos no <em>heap</em>. O nome <code>x</code>, da função, e o nome <code>n</code>, do módulo, apontam para o mesmo objeto. A lista, por sua vez, também é feita de referências: cada elemento aponta para um objeto que está em outro lugar do <em>heap</em>.</p>
 <p>A pilha de execução fica visível quando um erro acontece: o <em>traceback</em> mostra justamente os quadros que estavam na pilha, do mais antigo (o módulo) para o mais recente. A função <code>traceback.print_stack()</code> mostra a pilha sem que haja um erro:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">pilha.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
@@ -2640,9 +2640,9 @@
 </div>
 <p>A última linha mostra o <strong>limite de profundidade da pilha</strong>: por padrão, o interpretador permite cerca de 1000 quadros ao mesmo tempo, e uma recursão que passe disso termina com <code>RecursionError</code>. A seção sobre <a href="../funcoes/#recursao">recursão</a> mostra como aumentar esse limite.</p>
 <h2 id="contagem-de-referencias">Contagem de referências<a class="headerlink" href="#contagem-de-referencias" title="Permanent link">&para;</a></h2>
-<p>Como o interpretador sabe que um objeto pode ser liberado? O mecanismo principal é a <strong>contagem de referências</strong>: cada objeto guarda quantas referências apontam para ele. Criar um nome para o objeto, colocá-lo em uma lista ou passá-lo para uma função aumenta a contagem; apagar um nome com <code class="language-python highlight"><span class="k">del</span></code>, atribuir outro objeto ao nome, remover o objeto da lista ou terminar a função diminui a contagem. Quando a contagem chega a <strong>zero</strong>, nenhuma parte do programa consegue mais acessar o objeto, e ele é liberado imediatamente.</p>
-<p>A função <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">getrefcount</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></code> mostra a contagem (com uma referência a mais, a do próprio argumento da função). O método especial <code>__del__</code> de uma classe é chamado quando um objeto está para ser liberado, o que permite observar o momento exato da liberação:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Saída</label></div>
+<p>No <strong>CPython</strong>, o mecanismo principal é a <strong>contagem de referências</strong>, complementada por um coletor de ciclos. Em objetos comuns, criar referências aumenta a contagem e removê-las a diminui. Ao chegar a zero, o objeto normalmente é finalizado e seu armazenamento pode ser reaproveitado. Há exceções e otimizações: objetos imortais, como alguns inteiros pequenos, não seguem uma contagem comum, e configurações sem GIL podem adiar a recuperação. Outras implementações de Python podem usar mecanismos diferentes.</p>
+<p><code>sys.getrefcount(obj)</code> permite observar a contagem no CPython, normalmente incluindo uma referência temporária do argumento. O número não deve orientar a lógica do programa, especialmente para objetos imortais. O exemplo usa <code>__del__</code> para observar a finalização na configuração tradicional; não há garantia geral de execução imediata desse método. Para liberar arquivos e outros recursos no momento certo, use <code>with</code>, em vez de depender de <code>__del__</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">referencias.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -2710,7 +2710,7 @@
 <p>Repare que <code class="language-python highlight"><span class="k">del</span> <span class="n">p</span></code> <strong>não apaga o objeto</strong>: ele apaga o <strong>nome</strong> <code>p</code>. O objeto só foi liberado porque aquele era o último nome que apontava para ele; se ainda houvesse outra referência (em <code>q</code> ou na lista), o objeto continuaria existindo.</p>
 <h2 id="o-coletor-de-lixo-e-os-ciclos">O coletor de lixo e os ciclos<a class="headerlink" href="#o-coletor-de-lixo-e-os-ciclos" title="Permanent link">&para;</a></h2>
 <p>A contagem de referências tem um ponto fraco: os <strong>ciclos</strong>. Se o objeto A aponta para o objeto B, e B aponta para A, cada um mantém a contagem do outro acima de zero, mesmo que nenhuma parte do programa consiga mais acessar nenhum dos dois. Para esses casos, o interpretador tem um <strong>coletor de lixo</strong> (<em>garbage collector</em>), que é executado periodicamente, procura grupos de objetos que só são referenciados uns pelos outros e os libera. O módulo <code>gc</code> permite controlá-lo e executá-lo manualmente:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código fonte</label><label for="__tabbed_3_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código-fonte</label><label for="__tabbed_3_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ciclo.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
@@ -2767,8 +2767,8 @@
 </div>
 <p>Depois do <code class="language-python highlight"><span class="k">del</span></code>, os dois objetos continuaram existindo ("depois do del" foi escrito antes das mensagens de liberação), porque um mantinha o outro. Eles só foram liberados quando o coletor de lixo foi executado. Na prática, não é preciso chamar <code class="language-python highlight"><span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span></code>: o coletor é executado automaticamente, de tempos em tempos, conforme objetos são criados. Mas os ciclos fazem a memória ser liberada mais tarde, e estruturas com muitas referências cruzadas (como grafos em que cada nó aponta para os vizinhos) dão mais trabalho ao coletor.</p>
 <h2 id="quanto-ocupam-os-objetos">Quanto ocupam os objetos<a class="headerlink" href="#quanto-ocupam-os-objetos" title="Permanent link">&para;</a></h2>
-<p>A função <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></code> informa quantos bytes o próprio objeto ocupa no <em>heap</em>. Os resultados abaixo mostram que, em Python, mesmo os valores mais simples ocupam bem mais memória do que o valor em si, porque cada objeto guarda também o seu tipo, a sua contagem de referências e outras informações:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código fonte</label><label for="__tabbed_4_2">Saída</label></div>
+<p>A função <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></code> informa o tamanho direto atribuído ao objeto, sem somar recursivamente os objetos referenciados nem todo o custo do alocador. Os valores abaixo são de uma execução específica do CPython em 64 bits. Os resultados abaixo mostram que, em Python, mesmo os valores mais simples ocupam bem mais memória do que o valor em si, porque cada objeto guarda também o seu tipo, a sua contagem de referências e outras informações:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código-fonte</label><label for="__tabbed_4_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">tamanhos.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
@@ -2822,14 +2822,14 @@
 </div>
 </div>
 <ul>
-<li>Um número inteiro pequeno ocupa 28 bytes, e os inteiros crescem conforme a quantidade de dígitos (sem limite de tamanho). Um <code class="language-python highlight"><span class="nb">float</span></code> ocupa 24 bytes;</li>
+<li>Um número inteiro pequeno ocupa 28 bytes, e os inteiros crescem conforme a quantidade de dígitos (limitados pelos recursos disponíveis). Um <code class="language-python highlight"><span class="nb">float</span></code> ocupa 24 bytes;</li>
 <li>Uma cadeia de caracteres vazia ocupa 41 bytes, e cada letra sem acento acrescenta 1 byte. Cadeias com caracteres fora da tabela ASCII, como as letras acentuadas, usam uma representação interna diferente, com um cabeçalho maior (repare nos 61 bytes de <code>"á"</code>), e caracteres como os <em>emojis</em> ocupam até 4 bytes cada;</li>
-<li>Uma lista guarda apenas <strong>referências</strong> (8 bytes cada) para os elementos, que são objetos separados. <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span></code> conta só as referências, e não os objetos apontados, e;</li>
+<li>Uma lista guarda apenas <strong>referências</strong> (8 bytes cada) para os elementos, que são objetos separados. <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span></code> conta só as referências, e não os objetos apontados;</li>
 <li>As últimas linhas mostram como uma lista cresce: em vez de aumentar a cada <code>append</code>, ela reserva espaço extra de vez em quando (com 1, 5, 9 e 17 elementos, no exemplo). Por isso, acrescentar elementos ao final de uma lista custa <span class="arithmatex">\(O(1)\)</span> <a href="../../algoritmos/complexidade/#complexidade-amortizada">amortizado</a>.</li>
 </ul>
 <h2 id="economizando-memoria">Economizando memória<a class="headerlink" href="#economizando-memoria" title="Permanent link">&para;</a></h2>
-<p>Na maior parte dos programas, a memória não é um problema. Mas, em problemas com milhões de valores, como em algumas competições de programação, ela pode fazer diferença. O módulo <code>tracemalloc</code> mede a memória realmente usada pelos objetos criados pelo programa:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código fonte</label><label for="__tabbed_5_2">Saída</label></div>
+<p>Na maior parte dos programas, a memória não é um problema. Mas, em problemas com milhões de valores, como em algumas competições de programação, ela pode fazer diferença. O módulo <code>tracemalloc</code> acompanha alocações de memória feitas pelos alocadores monitorados do Python; essa medida não é o consumo total do processo:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código-fonte</label><label for="__tabbed_5_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">grande.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
@@ -2890,9 +2890,13 @@
 </div>
 <ul>
 <li>Uma lista com 1 milhão de inteiros ocupou cerca de <strong>40 MB</strong>: 8 MB para as referências e o restante para os objetos <code class="language-python highlight"><span class="nb">int</span></code>, cada um com cerca de 32 bytes;</li>
-<li>O módulo <code>array</code> guarda os números diretamente, sem criar um objeto para cada um. Um <code class="language-python highlight"><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">"i"</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span></code> guarda inteiros de 4 bytes, e o mesmo milhão de números ocupou cerca de <strong>4 MB</strong>, dez vezes menos. Em troca, ele só aceita números do tipo indicado (<code>"i"</code> para inteiros de 4 bytes, <code>"q"</code> para 8 bytes, <code>"d"</code> para reais), e;</li>
+<li>O módulo <code>array</code> guarda os números diretamente, sem criar um objeto para cada um. Um <code class="language-python highlight"><span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s2">"i"</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span></code> guarda inteiros de 4 bytes, e o mesmo milhão de números ocupou cerca de <strong>4 MB</strong>, dez vezes menos. Em troca, ele só aceita valores do tipo indicado. A largura de cada elemento depende da plataforma: consulte <code>itemsize</code>, especialmente para códigos como <code>"i"</code> e <code>"q"</code>;</li>
 <li>Um <a href="../funcoes/#geradores">gerador</a> produz os valores um de cada vez, sem guardá-los: a soma dos quadrados de 1 milhão de números foi calculada com um pico de menos de 1 kB de memória. Sempre que os valores forem usados uma única vez, prefira <code class="language-python highlight"><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="o">...</span><span class="p">)</span></code> a <code class="language-python highlight"><span class="nb">sum</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="o">...</span><span class="p">])</span></code>, que monta a lista inteira antes de somar.</li>
 </ul>
+<p>A última medição usa uma <strong>expressão geradora</strong>, a mesma forma apresentada na
+comparação entre <a href="../tiposdedados/#compreensao-de-lista-ou-expressao-geradora">compreensão de lista e expressão geradora</a>.
+Lá, os exemplos mostram como <code>sum()</code> consome esses valores, a relação com
+<code>yield</code> e quando vale a pena guardar os resultados em uma lista para reutilizá-los.</p>
 <div class="admonition tip">
 <p class="admonition-title">Libere o que não usa mais</p>
 <p>Como a liberação depende das referências, uma estrutura grande continua ocupando memória enquanto houver um nome apontando para ela, mesmo que ela não seja mais usada. Em funções, isso raramente é um problema, porque os nomes locais deixam de existir quando a função termina. No nível do módulo, use <code class="language-python highlight"><span class="k">del</span></code> para apagar o nome de uma estrutura grande que não será mais usada, ou, melhor ainda, organize o programa em funções, como mostra a seção sobre <a href="../funcoes/#organizando-funcoes-em-modulos">módulos</a>.</p>
@@ -2923,7 +2927,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:48:51 -03">19 de novembro de 2026 02:48:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

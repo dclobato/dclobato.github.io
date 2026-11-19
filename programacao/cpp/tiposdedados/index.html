@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2504,7 +2504,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2894,7 +2894,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">char</span></code></td>
-<td style="text-align: left;">O mesmo tamanho de <code class="language-cpp highlight"><span class="kt">char</span></code>, apenas valores positivos</td>
+<td style="text-align: left;">O mesmo tamanho de <code class="language-cpp highlight"><span class="kt">char</span></code>, valores não negativos</td>
 <td style="text-align: right;"><span class="arithmatex">\(\geq 8\)</span></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -2906,7 +2906,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span></code><br /><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">short</span><span class="w"> </span><span class="kt">int</span></code></td>
-<td style="text-align: left;">Inteiro curto sem sinal (apenas valores positivos)</td>
+<td style="text-align: left;">Inteiro curto sem sinal (valores não negativos)</td>
 <td style="text-align: right;"><span class="arithmatex">\(\geq 16\)</span></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -2918,7 +2918,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-cpp highlight"><span class="kt">unsigned</span></code><br /><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></code></td>
-<td style="text-align: left;">Inteiro sem sinal (apenas valores positivos)</td>
+<td style="text-align: left;">Inteiro sem sinal (valores não negativos)</td>
 <td style="text-align: right;"><span class="arithmatex">\(\geq 16\)</span></td>
 <td style="text-align: left;"><code>u</code> ou <code>U</code></td>
 </tr>
@@ -2930,7 +2930,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code></td>
-<td style="text-align: left;">Inteiro longo sem sinal (apenas valores positivos)</td>
+<td style="text-align: left;">Inteiro longo sem sinal (valores não negativos)</td>
 <td style="text-align: right;"><span class="arithmatex">\(\geq 32\)</span></td>
 <td style="text-align: left;"><code>ul</code> ou <code>UL</code></td>
 </tr>
@@ -2942,7 +2942,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code><br /><code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">int</span></code></td>
-<td style="text-align: left;">Inteiro "longo longo" sem sinal (apenas valores positivos)</td>
+<td style="text-align: left;">Inteiro "longo longo" sem sinal (valores não negativos)</td>
 <td style="text-align: right;"><span class="arithmatex">\(\geq 64\)</span></td>
 <td style="text-align: left;"><code>ull</code> ou <code>ULL</code></td>
 </tr>
@@ -2966,7 +2966,7 @@
 </tr>
 </tbody>
 </table>
-<p>A linguagem garante apenas os tamanhos <strong>mínimos</strong> da tabela e a relação entre eles: <code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não é menor que <code class="language-cpp highlight"><span class="kt">long</span></code>, que não é menor que <code class="language-cpp highlight"><span class="kt">int</span></code>, que não é menor que <code class="language-cpp highlight"><span class="kt">short</span></code>, que não é menor que <code class="language-cpp highlight"><span class="kt">char</span></code>. O tamanho exato depende do processador e do sistema operacional. O operador <code class="language-cpp highlight"><span class="k">sizeof</span></code> informa quantos bytes cada tipo ocupa na máquina em que o programa é compilado:</p>
+<p>Para os inteiros, a linguagem garante as larguras <strong>mínimas</strong> da tabela e a relação entre eles: <code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não é menor que <code class="language-cpp highlight"><span class="kt">long</span></code>, que não é menor que <code class="language-cpp highlight"><span class="kt">int</span></code>, que não é menor que <code class="language-cpp highlight"><span class="kt">short</span></code>, que não é menor que <code class="language-cpp highlight"><span class="kt">char</span></code>. Para ponto flutuante, 32 e 64 bits são tamanhos usuais de <code>float</code> e <code>double</code>, não exigências universais do padrão; a garantia é sobre propriedades e intervalos mínimos representáveis. O tamanho exato depende da implementação. O operador <code class="language-cpp highlight"><span class="k">sizeof</span></code> informa quantos bytes cada tipo ocupa na máquina em que o programa é compilado:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Resultado (Linux, 64 bits)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3017,12 +3017,12 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>O tipo <code class="language-cpp highlight"><span class="kt">long</span></code> tem 64 bits no Linux, mas apenas 32 bits no Windows. Um programa que guarda um valor grande em um <code class="language-cpp highlight"><span class="kt">long</span></code> pode funcionar no computador de um colega e falhar no seu. <strong>Quando precisar de inteiros de 64 bits, use <code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code></strong>, que tem pelo menos 64 bits em qualquer sistema.</p>
+<p>Nas plataformas usuais de 64 bits, <code>long</code> tem 64 bits no Linux e 32 bits no Windows; isso não descreve todas as plataformas Linux. Um programa que guarda um valor grande em um <code class="language-cpp highlight"><span class="kt">long</span></code> pode funcionar no computador de um colega e falhar no seu. <strong>Quando precisar de inteiros de 64 bits, use <code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code></strong>, que tem pelo menos 64 bits em qualquer sistema.</p>
 </div>
 <p>Na prática, os tipos mais usados são <code class="language-cpp highlight"><span class="kt">int</span></code> para inteiros (cerca de <span class="arithmatex">\(\pm 2{,}1 \times 10^9\)</span>), <code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> para inteiros maiores (cerca de <span class="arithmatex">\(\pm 9{,}2 \times 10^{18}\)</span>), <code class="language-cpp highlight"><span class="kt">double</span></code> para números reais, <code class="language-cpp highlight"><span class="kt">char</span></code> para caracteres e <code class="language-cpp highlight"><span class="kt">bool</span></code> para valores lógicos. O tipo <code class="language-cpp highlight"><span class="kt">float</span></code> tem pouca precisão (cerca de 7 dígitos significativos, contra cerca de 15 do <code class="language-cpp highlight"><span class="kt">double</span></code>) e deve ser evitado, a menos que haja um bom motivo para economizar memória.</p>
 <div class="admonition note">
 <p class="admonition-title">Outros tipos de caractere</p>
-<p>Além de <code class="language-cpp highlight"><span class="kt">char</span></code>, a linguagem tem os tipos <code class="language-cpp highlight"><span class="kt">wchar_t</span></code>, <code class="language-cpp highlight"><span class="kt">char8_t</span></code>, <code class="language-cpp highlight"><span class="kt">char16_t</span></code> e <code class="language-cpp highlight"><span class="kt">char32_t</span></code>, usados para representar caracteres de codificações como UTF-8, UTF-16 e UTF-32. Eles são necessários em programas que manipulam textos em vários idiomas de forma mais sofisticada, e não são usados neste texto.</p>
+<p>Além de <code class="language-cpp highlight"><span class="kt">char</span></code>, a linguagem tem os tipos <code class="language-cpp highlight"><span class="kt">wchar_t</span></code>, <code class="language-cpp highlight"><span class="kt">char8_t</span></code>, <code class="language-cpp highlight"><span class="kt">char16_t</span></code> e <code class="language-cpp highlight"><span class="kt">char32_t</span></code>, usados como unidades de código em representações de texto. <code>char8_t</code>, <code>char16_t</code> e <code>char32_t</code> estão associados a UTF-8, UTF-16 e UTF-32; um caractere pode exigir várias unidades, e a representação de <code>wchar_t</code> depende da implementação. Eles são necessários em programas que manipulam textos em vários idiomas de forma mais sofisticada, e não são usados neste texto.</p>
 </div>
 <h3 id="o-tipo-bool">O tipo <code>bool</code><a class="headerlink" href="#o-tipo-bool" title="Permanent link">&para;</a></h3>
 <p>O tipo <code class="language-cpp highlight"><span class="kt">bool</span></code> representa valores lógicos e tem apenas dois valores possíveis, <code class="language-cpp highlight"><span class="nb">true</span></code> e <code class="language-cpp highlight"><span class="nb">false</span></code>. Ele é o resultado de todas as comparações e operações lógicas, e é o tipo esperado nas condições de <code class="language-cpp highlight"><span class="k">if</span></code>, <code class="language-cpp highlight"><span class="k">while</span></code> e <code class="language-cpp highlight"><span class="k">for</span></code>.</p>
@@ -3056,7 +3056,7 @@
 <h3 id="estouro-de-capacidade">Estouro de capacidade<a class="headerlink" href="#estouro-de-capacidade" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>O que acontece se tentarmos colocar em uma variável um número maior que o maior valor que o tipo dela pode armazenar? É como tentar colocar um tênis tamanho 45 numa caixa de sapato feita para tamanho 38. Esse problema se chama <strong><em>overflow</em></strong> (estouro de capacidade), e o C++ não avisa com erros de compilação nem de execução quando ele acontece.</p>
+<p>O que acontece se tentarmos colocar em uma variável um número maior que o maior valor que o tipo dela pode armazenar? É como tentar colocar um tênis tamanho 45 numa caixa de sapato feita para tamanho 38. Esse problema se chama <strong><em>overflow</em></strong> (estouro de capacidade), e nem sempre há diagnóstico. O estouro aritmético de inteiros com sinal tem regras diferentes da conversão de um valor para outro tipo; os itens abaixo tratam das operações aritméticas.</p>
 <ul>
 <li>Nos tipos <strong>sem sinal</strong> (<code class="language-cpp highlight"><span class="kt">unsigned</span></code>), o comportamento é bem definido: os valores "dão a volta". Somar 1 ao maior <code class="language-cpp highlight"><span class="kt">unsigned</span><span class="w"> </span><span class="kt">int</span></code> resulta em 0, e subtrair 1 de 0 resulta no maior valor do tipo;</li>
 <li>Nos tipos <strong>com sinal</strong> (<code class="language-cpp highlight"><span class="kt">int</span></code>, <code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code>...), o estouro tem <strong>comportamento indefinido</strong>. Na maioria das máquinas o resultado parece "dar a volta" para os negativos, mas o compilador tem o direito de assumir que o estouro nunca acontece e otimizar o programa com base nisso, produzindo resultados imprevisíveis.</li>
@@ -3116,14 +3116,14 @@
 <p>Um zero à esquerda transforma o número em octal: <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">010</span><span class="p">;</span></code> guarda o valor <strong>8</strong>, e não 10. Nunca use zeros à esquerda para "alinhar" números no código.</p>
 </div>
 <h3 id="tipos-de-tamanho-fixo">Tipos de tamanho fixo<a class="headerlink" href="#tipos-de-tamanho-fixo" title="Permanent link">&para;</a></h3>
-<p>Como o tamanho dos tipos inteiros varia de uma máquina para outra, o cabeçalho <code>&lt;cstdint&gt;</code> define tipos com tamanhos exatos, que garantem que o programa se comporte da mesma forma em qualquer arquitetura:</p>
+<p>O cabeçalho <code>&lt;cstdint&gt;</code> oferece famílias de tipos inteiros com requisitos de largura definidos. Os tipos de largura <strong>exata</strong>, como <code>std::int32_t</code>, são opcionais: só existem quando a implementação fornece um tipo com essa largura e sem bits de preenchimento. As famílias de largura mínima e rápida têm garantias diferentes:</p>
 <ul>
 <li><strong><code>std::int</code><span class="arithmatex">\(b\)</span><code>_t</code></strong>: inteiro com exatamente <span class="arithmatex">\(b\)</span> bits e com sinal (por exemplo, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="kt">int32_t</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span></code>);</li>
 <li><strong><code>std::uint</code><span class="arithmatex">\(b\)</span><code>_t</code></strong>: inteiro com exatamente <span class="arithmatex">\(b\)</span> bits e sem sinal (por exemplo, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="kt">uint8_t</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="kt">uint64_t</span></code>);</li>
-<li><strong><code>std::int_least</code><span class="arithmatex">\(b\)</span><code>_t</code></strong> e <strong><code>std::uint_least</code><span class="arithmatex">\(b\)</span><code>_t</code></strong>: o menor tipo com pelo menos <span class="arithmatex">\(b\)</span> bits, e;</li>
+<li><strong><code>std::int_least</code><span class="arithmatex">\(b\)</span><code>_t</code></strong> e <strong><code>std::uint_least</code><span class="arithmatex">\(b\)</span><code>_t</code></strong>: o menor tipo com pelo menos <span class="arithmatex">\(b\)</span> bits;</li>
 <li><strong><code>std::int_fast</code><span class="arithmatex">\(b\)</span><code>_t</code></strong> e <strong><code>std::uint_fast</code><span class="arithmatex">\(b\)</span><code>_t</code></strong>: o tipo mais rápido com pelo menos <span class="arithmatex">\(b\)</span> bits.</li>
 </ul>
-<p>Para todos os casos, <span class="arithmatex">\(b \in \{8, 16, 32, 64\}\)</span>. Os tipos de tamanho fixo são indispensáveis quando o tamanho exato importa, como na leitura de arquivos binários ou na comunicação entre máquinas diferentes. Mais detalhes podem ser obtidos <a href="https://en.cppreference.com/w/cpp/types/integer">aqui</a>.</p>
+<p>As larguras padronizadas são <span class="arithmatex">\(b \in \{8, 16, 32, 64\}\)</span>. Esses tipos ajudam quando a largura importa, mas não definem sozinhos um formato binário portátil: a ordem dos bytes e a representação dos demais dados também precisam ser especificadas. Consulte a <a href="https://en.cppreference.com/w/cpp/types/integer">referência dos tipos inteiros</a>.</p>
 <h3 id="limites-de-cada-tipo">Limites de cada tipo<a class="headerlink" href="#limites-de-cada-tipo" title="Permanent link">&para;</a></h3>
 <p>Os valores mínimo e máximo de cada tipo podem ser consultados com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span></code>, do cabeçalho <code>&lt;limits&gt;</code>:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Resultado (Linux, 64 bits)</label></div>
@@ -3172,7 +3172,7 @@
 </div>
 </div>
 </div>
-<p>Para os tipos reais, <code class="language-cpp highlight"><span class="n">min</span><span class="p">()</span></code> é o menor valor <strong>positivo</strong> representável; o valor mais negativo é obtido com <code class="language-cpp highlight"><span class="n">lowest</span><span class="p">()</span></code>. Os limites de todos os tipos estão resumidos na biblioteca de códigos em C++.</p>
+<p>Para os tipos de ponto flutuante, <code>min()</code> é o menor valor <strong>positivo normalizado</strong>. Quando existem valores subnormais, <code>denorm_min()</code> informa o menor positivo representável. O valor mais negativo é obtido com <code>lowest()</code>. Os limites dos tipos estão resumidos na biblioteca de códigos em C++.</p>
 <h2 id="declaracao-e-inicializacao-de-variaveis">Declaração e inicialização de variáveis<a class="headerlink" href="#declaracao-e-inicializacao-de-variaveis" title="Permanent link">&para;</a></h2>
 <p>Declarar uma variável é informar ao compilador o tipo e o nome dela; inicializar é dar a ela um valor inicial. Em C++, há três formas de inicializar uma variável na declaração:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">   </span><span class="c1">// com sinal de igual</span>
@@ -3180,15 +3180,15 @@
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">{</span><span class="mi">7</span><span class="p">};</span><span class="w">    </span><span class="c1">// com chaves (inicialização uniforme)</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="p">{};</span><span class="w">     </span><span class="c1">// chaves vazias: valor zero</span>
 </span></code></pre></div>
-<p>As três primeiras formas produzem o mesmo resultado neste caso. A forma com chaves, chamada de <strong>inicialização uniforme</strong>, tem duas vantagens: funciona da mesma forma para todos os tipos, inclusive arranjos, estruturas e contêineres; e <strong>impede conversões com perda de informação</strong> (<em>narrowing</em>). Com sinal de igual, o compilador aceita guardar um número real em uma variável inteira, descartando silenciosamente a parte fracionária; com chaves, o compilador avisa (ou recusa a compilação, se o valor for uma constante):</p>
+<p>As três primeiras formas produzem o mesmo resultado neste caso. As chaves também podem inicializar arranjos, estruturas e contêineres, mas seu significado depende do tipo: <code>std::vector&lt;int&gt;{5}</code> contém um elemento de valor 5, enquanto <code>std::vector&lt;int&gt;(5)</code> contém cinco zeros. Outra propriedade das chaves é impedir conversões classificadas como <strong>estreitamento</strong> (<em>narrowing</em>), como a conversão de <code>double</code> para <code>int</code>: ambas as linhas abaixo com estreitamento tornam o programa inválido e exigem um diagnóstico do compilador. Algumas opções do compilador aceitam a primeira como extensão, emitindo apenas um aviso.</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.7</span><span class="p">;</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">e</span><span class="p">;</span><span class="w">      </span><span class="c1">// aceito: f recebe 3, e a parte fracionária se perde sem aviso</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">{</span><span class="n">e</span><span class="p">};</span><span class="w">       </span><span class="c1">// aviso: narrowing conversion of 'e' from 'double' to 'int'</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">g</span><span class="p">{</span><span class="n">e</span><span class="p">};</span><span class="w">       </span><span class="c1">// inválido: conversão de estreitamento</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">h</span><span class="p">{</span><span class="mf">3.7</span><span class="p">};</span><span class="w">     </span><span class="c1">// erro de compilação</span>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Uma variável declarada sem inicialização, como em <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span></code>, tem um valor <strong>indeterminado</strong>: ela guarda o que estiver naquela posição de memória, o "lixo" deixado por outras partes do programa. Usar o valor de uma variável não inicializada é um erro grave e difícil de encontrar, porque o programa pode funcionar em um computador e falhar em outro. <strong>Sempre inicialize as variáveis</strong>, nem que seja com <code>{}</code>.</p>
+<p>Uma variável <strong>local automática de tipo fundamental</strong>, como <code>int x;</code>, pode ter valor indeterminado; usar esse valor em uma conta tem comportamento indefinido em C++20. Isso não se aplica a toda declaração sem inicializador: variáveis globais e <code>static</code> recebem inicialização zero antes das demais etapas, e <code>std::string s;</code> constrói uma cadeia vazia. <strong>Inicialize os valores locais</strong>, por exemplo com <code>int x{};</code>.</p>
 </div>
 <h3 id="deducao-de-tipo-com-auto">Dedução de tipo com <code>auto</code><a class="headerlink" href="#deducao-de-tipo-com-auto" title="Permanent link">&para;</a></h3>
 <p>Em vez de escrever o tipo de uma variável, podemos usar a palavra <code class="language-cpp highlight"><span class="k">auto</span></code> e deixar que o compilador deduza o tipo a partir do valor usado na inicialização:</p>
@@ -3208,7 +3208,7 @@
 <p>Uma constante é uma variável cujo valor não pode ser alterado depois de definido. Ela é definida uma única vez, na declaração, e permanece fixa durante toda a execução do programa. Usar constantes no lugar de valores "soltos" no código (os chamados <strong>números mágicos</strong>) deixa o programa mais legível e mais fácil de modificar: para mudar o número máximo de alunos de uma turma, basta alterar a constante em um único lugar.</p>
 <p>C++ tem duas palavras-chave para declarar constantes, <code class="language-cpp highlight"><span class="k">const</span></code> e <code class="language-cpp highlight"><span class="k">constexpr</span></code>:</p>
 <ul>
-<li><code class="language-cpp highlight"><span class="k">const</span></code> indica que o valor não pode ser modificado depois da inicialização. O valor pode ser calculado durante a execução, por exemplo a partir de algo digitado pelo usuário, e;</li>
+<li><code class="language-cpp highlight"><span class="k">const</span></code> indica que o valor não pode ser modificado depois da inicialização. O valor pode ser calculado durante a execução, por exemplo a partir de algo digitado pelo usuário;</li>
 <li><code class="language-cpp highlight"><span class="k">constexpr</span></code> indica que o valor, além de não poder ser modificado, precisa ser conhecido <strong>durante a compilação</strong>. Isso permite que a constante seja usada em lugares onde o compilador precisa saber o valor de antemão, como no tamanho de um arranjo.</li>
 </ul>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Constantes com const e constexpr</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
@@ -3251,7 +3251,7 @@
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">E o <code>#define</code>?</p>
-<p>Também é possível definir constantes com a diretiva <code class="language-cpp highlight"><span class="cp">#define</span></code> do pré-processador (<code class="language-cpp highlight"><span class="cp">#define PI 3.14159</span></code>). Nesse caso, o pré-processador apenas substitui o texto <code>PI</code> por <code>3.14159</code> em todo o código antes da compilação: a "constante" não tem tipo, não respeita escopo e não aparece no depurador. <strong>Em C++, prefira sempre <code class="language-cpp highlight"><span class="k">constexpr</span></code> ou <code class="language-cpp highlight"><span class="k">const</span></code>.</strong></p>
+<p>Também é possível definir constantes com a diretiva <code class="language-cpp highlight"><span class="cp">#define</span></code> do pré-processador (<code class="language-cpp highlight"><span class="cp">#define PI 3.14159</span></code>). Nesse caso, o pré-processador apenas substitui o texto <code>PI</code> por <code>3.14159</code> em todo o código antes da compilação: a macro não cria um objeto nem respeita os escopos da linguagem, embora o literal que a substitui tenha um tipo. <strong>Em C++, prefira sempre <code class="language-cpp highlight"><span class="k">constexpr</span></code> ou <code class="language-cpp highlight"><span class="k">const</span></code>.</strong></p>
 </div>
 <h2 id="enumeracoes">Enumerações<a class="headerlink" href="#enumeracoes" title="Permanent link">&para;</a></h2>
 <p>As enumerações (ou <strong>enums</strong>) são tipos definidos pelo programador que consistem em um conjunto de constantes inteiras com nomes. Elas permitem escrever <code>Semaforo::Vermelho</code> em vez de um número qualquer, deixando o código mais legível e evitando números mágicos.</p>
@@ -3301,7 +3301,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>O exemplo mostra mais duas características das enumerações com escopo:</p>
 <ul>
-<li><strong>Elas não são convertidas automaticamente para inteiros.</strong> Uma linha como <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span></code> não compila. Isso evita erros como comparar um semáforo com um número qualquer ou somar duas direções. Quando o valor numérico for realmente necessário, a conversão é feita explicitamente, com <code class="language-cpp highlight"><span class="k">static_cast</span></code>, e;</li>
+<li><strong>Elas não são convertidas automaticamente para inteiros.</strong> Uma linha como <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">;</span></code> não compila. Isso evita erros como comparar um semáforo com um número qualquer ou somar duas direções. Quando o valor numérico for realmente necessário, a conversão é feita explicitamente, com <code class="language-cpp highlight"><span class="k">static_cast</span></code>;</li>
 <li><strong>É possível escolher o tipo usado para guardar os valores</strong> (por padrão, <code class="language-cpp highlight"><span class="kt">int</span></code>), escrevendo-o depois do nome, como em <code class="language-cpp highlight"><span class="k">enum</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Direcao</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">char</span></code>. Também é possível atribuir valores específicos às constantes.</li>
 </ul>
 <div class="admonition info">
@@ -3365,7 +3365,7 @@
 <ul>
 <li>Você tem um conjunto de valores relacionados que não mudarão, como dias da semana, meses, naipes de cartas ou estados de um sistema;</li>
 <li>Você precisa de constantes com nomes para melhorar a legibilidade do código;</li>
-<li>Você está trabalhando com <em>flags</em> e precisa combinar múltiplos valores, e;</li>
+<li>Você está trabalhando com <em>flags</em> e precisa combinar múltiplos valores;</li>
 <li>Você quer evitar o uso de números mágicos no código.</li>
 </ul>
 <h2 id="sequencias-de-escape">Sequências de escape<a class="headerlink" href="#sequencias-de-escape" title="Permanent link">&para;</a></h2>
@@ -3541,7 +3541,7 @@
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Arranjos nativos <strong>não verificam os índices</strong>. Acessar <code>faltas[5]</code> ou <code>faltas[-1]</code> em um arranjo de 5 elementos não gera erro de compilação, e o programa vai ler ou escrever em uma posição de memória que não pertence ao arranjo. O resultado é <strong>comportamento indefinido</strong>: o programa pode funcionar por acaso, produzir valores sem sentido, corromper outras variáveis ou ser encerrado pelo sistema operacional.</p>
-<p>Além disso, arranjos nativos não podem ser copiados com <code>=</code> nem comparados com <code>==</code>, e não "sabem" o próprio tamanho quando passados para funções. Por esses motivos, em código novo, prefira <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code> (para tamanho fixo) e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code> (para tamanho variável).</p>
+<p>Além disso, arranjos nativos não podem ser copiados por atribuição com <code>=</code>. A expressão <code>a == b</code> normalmente compara os <strong>endereços</strong> obtidos pelo decaimento dos arranjos, não seus elementos. Ao recebê-los como ponteiros em funções, o tamanho não é preservado. Em código novo, prefira <code>std::array</code> para tamanho fixo e <code>std::vector</code> para tamanho variável.</p>
 </div>
 <h3 id="o-tipo-stdarray">O tipo <code>std::array</code><a class="headerlink" href="#o-tipo-stdarray" title="Permanent link">&para;</a></h3>
 <p>O tipo <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code>, do cabeçalho <code>&lt;array&gt;</code>, representa um arranjo de tamanho fixo com uma interface mais segura e mais conveniente. Ele é declarado com o tipo dos elementos e o tamanho entre os sinais <code>&lt;</code> e <code>&gt;</code>:</p>
@@ -3592,7 +3592,7 @@
 </span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>O acesso com colchetes (<code class="language-cpp highlight"><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></code>) funciona como nos arranjos nativos, sem verificação. Já o método <code class="language-cpp highlight"><span class="n">at</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></code> verifica o índice e, se ele for inválido, lança uma <strong>exceção</strong> do tipo <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">out_of_range</span></code>, que pode ser tratada com <code class="language-cpp highlight"><span class="k">try</span></code>/<code class="language-cpp highlight"><span class="k">catch</span></code> (o tratamento de exceções é apresentado na seção de controle de fluxo). Use <code class="language-cpp highlight"><span class="n">at</span><span class="p">()</span></code> quando houver qualquer dúvida sobre a validade do índice.</p>
-<p>Uma matriz de tamanho fixo pode ser declarada como um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code> de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code>: <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span></code> declara uma matriz de 3 linhas e 4 colunas.</p>
+<p>Uma matriz de tamanho fixo pode ser declarada como um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code> de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span></code>: <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="o">&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">{};</span></code> declara uma matriz de 3 linhas e 4 colunas, com todos os elementos iguais a zero.</p>
 <h2 id="cadeias-de-caracteres">Cadeias de caracteres<a class="headerlink" href="#cadeias-de-caracteres" title="Permanent link">&para;</a></h2>
 <p>Textos são representados em C++ pelo tipo <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>, do cabeçalho <code>&lt;string&gt;</code>. Uma <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> pode ser atribuída com <code>=</code>, concatenada com <code>+</code>, comparada com <code>==</code> e <code>&lt;</code>, e cresce automaticamente conforme necessário:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Ada"</span><span class="p">;</span>
@@ -3604,7 +3604,7 @@
 <p>As cadeias de caracteres têm uma seção própria, com todas as operações disponíveis.</p>
 <div class="admonition note">
 <p class="admonition-title">Aspas simples ou duplas?</p>
-<p>Em C++, caracteres individuais são cercados por aspas simples (<code>'</code>) e cadeias de caracteres por aspas duplas (<code>"</code>). <code>'a'</code> é um valor do tipo <code class="language-cpp highlight"><span class="kt">char</span></code>; <code>"a"</code> é uma cadeia com um único caractere.</p>
+<p>Em C++, caracteres individuais são cercados por aspas simples (<code>'</code>) e cadeias de caracteres por aspas duplas (<code>"</code>). <code>'a'</code> é um valor do tipo <code class="language-cpp highlight"><span class="kt">char</span></code>; <code>"a"</code> é um arranjo de dois <code>const char</code>: a letra e o terminador nulo <code>\0</code>.</p>
 </div>
 <h2 id="estruturas">Estruturas<a class="headerlink" href="#estruturas" title="Permanent link">&para;</a></h2>
 <p>Estruturas agregam vários dados, de tipos iguais ou diferentes, em uma única variável. Elas são usadas para representar entidades que têm várias características, como uma pessoa (nome, idade, telefone), um ponto no plano (coordenadas <code>x</code> e <code>y</code>) ou uma data (dia, mês e ano). O exemplo abaixo cria uma estrutura chamada <code>Aniversario</code> para armazenar o nome e a data de nascimento de uma pessoa:</p>
@@ -3844,7 +3844,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

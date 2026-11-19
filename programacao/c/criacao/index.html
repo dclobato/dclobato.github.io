@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -740,12 +740,12 @@
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edição do código fonte
+        Edição do código-fonte
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Edição do código fonte">
+    <nav class="md-nav" aria-label="Edição do código-fonte">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2343,7 +2343,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2461,12 +2461,12 @@
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edição do código fonte
+        Edição do código-fonte
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Edição do código fonte">
+    <nav class="md-nav" aria-label="Edição do código-fonte">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2538,9 +2538,9 @@
 
 
 <h1 id="a-criacao-de-um-programa-em-c">A criação de um programa em C<a class="headerlink" href="#a-criacao-de-um-programa-em-c" title="Permanent link">&para;</a></h1>
-<p>Quando escrevemos um programa em C, o código que criamos, geralmente salvo em arquivos com extensão <code>.c</code> (os arquivos fonte), não pode ser executado diretamente pelo computador.</p>
-<p>A razão disso é porque o processador só entende instruções em linguagem de máquina, um código binário bem diferente das palavras e comandos que usamos em C, como <code>printf()</code> ou <code>int</code>. O processo de <strong>compilação</strong> é justamente o que transforma esse código legível por humanos em algo que o computador pode executar.</p>
-<p>Para transformar arquivos com o código fonte em um programa que possa ser executado pelo computador, precisamos passar por quatro etapas: edição do código fonte, pré-processamento, compilação e montagem, e link-edição. O programa executável só existe depois da última etapa concluída.</p>
+<p>Quando escrevemos um programa em C, o código que criamos, geralmente salvo em arquivos com extensão <code>.c</code> (os arquivos-fonte), não pode ser executado diretamente pelo computador.</p>
+<p>Isso acontece porque o processador só entende instruções em linguagem de máquina, um código binário bem diferente das palavras e comandos que usamos em C, como <code>printf()</code> ou <code>int</code>. O processo de <strong>compilação</strong> é justamente o que transforma esse código legível por humanos em algo que o computador pode executar.</p>
+<p>Para transformar arquivos com o código-fonte em um programa que possa ser executado pelo computador, precisamos passar por quatro etapas: edição do código-fonte, pré-processamento, compilação e montagem, e link-edição. O programa executável só existe depois que a última etapa é concluída.</p>
 <pre class="mermaid"><code>graph TD
   Fonte1 --&gt; Preprocessamento1 --&gt; Processado1
   Fonte2 --&gt; Preprocessamento2 --&gt; Processado2
@@ -2590,16 +2590,16 @@
 <ul>
 <li><code class="language-c highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span></code> é uma <strong>diretiva do pré-processador</strong>, que inclui no programa as declarações da biblioteca de entrada e saída (<em>standard input/output</em>), onde está a função <code class="language-c highlight"><span class="n">printf</span></code>;</li>
 <li><code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code> é a definição da função <code class="language-c highlight"><span class="n">main</span></code>, por onde a execução do programa começa. O <code class="language-c highlight"><span class="kt">int</span></code> indica que ela devolve um número inteiro ao sistema operacional, e o <code class="language-c highlight"><span class="kt">void</span></code> entre os parênteses indica que ela não recebe parâmetros. As instruções da função ficam entre as chaves;</li>
-<li><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">"Olá, mundo!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span></code> escreve o texto entre aspas na tela. O <code>\n</code> é uma sequência de escape que representa a quebra de linha, e o ponto e vírgula encerra a instrução, e;</li>
+<li><code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">"Olá, mundo!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span></code> escreve o texto entre aspas na tela. O <code>\n</code> é uma sequência de escape que representa a quebra de linha, e o ponto e vírgula encerra a instrução;</li>
 <li><code class="language-c highlight"><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></code> encerra a função <code class="language-c highlight"><span class="n">main</span></code> e informa ao sistema operacional que o programa terminou com sucesso. Qualquer outro valor indica que houve um erro.</li>
 </ul>
 <p>O restante desta página mostra o caminho entre esse arquivo de texto e um programa que o computador consegue executar.</p>
-<h2 id="edicao-do-codigo-fonte">Edição do código fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
-<p>Analisando friamente, podemos utilizar qualquer editor de textos para escrever um programa em linguagem C (ou em qualquer outra linguagem).  O problema é que a nossa produtividade (linhas de código que escrevemos pelo esforço despendido) não vai ser boa.</p>
-<p>Um editor de texto está preparado para editar qualquer tipo de texto. Ele não foi pensado para escrever programas, então faltam algumas coisas importantes, como por exemplo a integração com um compilador, um ambiente para executar o programa, ferramentas para auxiliar a resolver erros que aparecem durante a execução ou compilação do programa.  O ideal é que façamos o desenvolvimento dentro de um IDE.</p>
-<p>Um Ambiente Integrado de Desenvolvimento (IDE, do inglês <em>Integrated Development Environment</em>) é um software que reúne diversas ferramentas essenciais para a programação em um único local, facilitando o desenvolvimento de aplicações. Ele geralmente inclui um editor de código, um compilador ou interpretador, um depurador e outros recursos que auxiliam na escrita, teste e manutenção do código. Eles surgiram para simplificar o processo de programação, que anteriormente exigia que os desenvolvedores escrevessem código em um editor de texto, salvassem o arquivo, acionassem o compilador separadamente e depois retornassem ao editor para corrigir eventuais erros.</p>
-<p>Entretanto, o uso de Ambientes Integrados de Desenvolvimento (IDEs) durante o aprendizado de programação é um tópico que gera debates intensos entre desenvolvedores e educadores. Por um lado, as IDEs oferecem uma série de benefícios que podem acelerar o processo de aprendizado e desenvolvimento. Elas fornecem suporte contextual, realce de sintaxe, autocompletar e depuração integrada, o que ajuda a evitar erros e aumenta a produtividade. Além disso, muitas IDEs são projetadas para simplificar o aprendizado, oferecendo uma curva de aprendizado mais suave para iniciantes.</p>
-<p>No entanto, há argumentos significativos contra o uso de IDEs durante o aprendizado inicial. Uma das principais preocupações é que as IDEs podem desviar o foco do aluno da linguagem em si para a ferramenta. Recursos como autocompletar e sugestões automáticas podem evitar que os estudantes compreendam completamente a sintaxe e a lógica por trás do código. Além disso, a dependência excessiva em IDEs pode criar dificuldades quando se trabalha em ambientes mais simples ou diferentes, o que é uma habilidade crucial em muitos contextos profissionais.</p>
+<h2 id="edicao-do-codigo-fonte">Edição do código-fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
+<p>Analisando friamente, podemos utilizar qualquer editor de textos para escrever um programa em linguagem C (ou em qualquer outra linguagem). O problema é que a nossa produtividade (linhas de código que escrevemos pelo esforço despendido) não vai ser boa.</p>
+<p>Um editor de texto comum está preparado para editar qualquer tipo de texto. Ele não foi pensado para escrever programas, então faltam alguns recursos importantes, como a integração com um compilador, um ambiente para executar o programa e ferramentas para auxiliar na resolução de erros que aparecem durante a compilação ou a execução. O ideal é que façamos o desenvolvimento dentro de uma IDE.</p>
+<p>Um ambiente de desenvolvimento integrado (IDE, do inglês <em>Integrated Development Environment</em>) é um software que reúne diversas ferramentas essenciais para a programação em um único local, facilitando o desenvolvimento de aplicações. Uma IDE geralmente inclui um editor de código, um compilador ou interpretador, um depurador e outros recursos que auxiliam na escrita, no teste e na manutenção do código. Esses ambientes surgiram para simplificar o processo de programação, que anteriormente exigia que os desenvolvedores escrevessem código em um editor de texto, salvassem o arquivo, acionassem o compilador separadamente e depois retornassem ao editor para corrigir eventuais erros.</p>
+<p>Entretanto, o uso de ambientes de desenvolvimento integrado (IDEs) durante o aprendizado de programação é um tópico que gera debates intensos entre desenvolvedores e educadores. Por um lado, as IDEs oferecem uma série de benefícios que podem acelerar o processo de aprendizado e desenvolvimento. Elas fornecem suporte contextual, realce de sintaxe, autocompletar e depuração integrada, o que ajuda a evitar erros e aumenta a produtividade. Além disso, muitas IDEs são projetadas para simplificar o aprendizado, oferecendo uma curva de aprendizado mais suave para iniciantes.</p>
+<p>No entanto, há argumentos significativos contra o uso de IDEs durante o aprendizado inicial. Uma das principais preocupações é que as IDEs podem desviar o foco do aluno da linguagem em si para a ferramenta. Recursos como autocompletar e sugestões automáticas podem evitar que os estudantes compreendam completamente a sintaxe e a lógica por trás do código. Além disso, a dependência excessiva de IDEs pode criar dificuldades quando se trabalha em ambientes mais simples ou diferentes, o que é uma habilidade crucial em muitos contextos profissionais.</p>
 <p>Diante dessas visões conflitantes, uma abordagem equilibrada pode ser a melhor escolha. Em vez de evitar completamente as IDEs ou se render a todas as suas funcionalidades, podemos optar por usar uma IDE mais simples, como o <a href="https://www.embarcadero.com/free-tools/dev-cpp">Embarcadero Dev-CPP</a>, que oferece suporte básico sem sobrecarregar o desenvolvedor com recursos avançados. Essa abordagem permite que os estudantes se beneficiem das vantagens das IDEs, como a integração com compiladores e depuradores, sem perder o foco na linguagem em si. Além disso, ao limitar o uso de recursos avançados, os estudantes são incentivados a entender os conceitos fundamentais da programação, o que é essencial para uma compreensão profunda e duradoura.</p>
 <p>Assim, ao utilizar uma IDE como o Dev-CPP de forma controlada, podemos maximizar os benefícios do uso de uma ferramenta integrada enquanto mantemos o foco no aprendizado da linguagem de programação. Isso permite que os estudantes desenvolvam habilidades sólidas em programação, preparando-os para trabalhar em diferentes ambientes e contextos ao longo de suas carreiras.</p>
 <figure>
@@ -2656,27 +2656,27 @@
 <p>Durante esta fase:</p>
 <ul>
 <li>As macros são expandidas;</li>
-<li>Os arquivos de cabeçalho (.h) são incluídos no arquivo fonte;</li>
-<li>Os trechos de compilação condicional (<code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#if</span></code>) são mantidos ou descartados, e;</li>
+<li>Os arquivos de cabeçalho (.h) são incluídos no arquivo-fonte;</li>
+<li>Os trechos de compilação condicional (<code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#if</span></code>) são mantidos ou descartados;</li>
 <li>Os comentários são eliminados.</li>
 </ul>
-<p>O resultado é uma versão do código fonte "limpa". Este arquivo, normalmente com extensão <code>.i</code>, contém todo o código-fonte original mais o conteúdo dos arquivos incluídos e as macros expandidas, gerando um arquivo significativamente maior que o original.</p>
+<p>O resultado é uma versão do código-fonte "limpa". Este arquivo, normalmente com extensão <code>.i</code>, contém todo o código-fonte original mais o conteúdo dos arquivos incluídos e as macros expandidas, gerando um arquivo significativamente maior que o original.</p>
 <p>As principais diretivas de pré-compilação são:</p>
 <ul>
 <li>
-<p><code class="language-c highlight"><span class="cp">#include</span></code>: substituem declarações de inclusão de arquivos, como arquivos de cabeçalho (.h). Isso permite que funções e definições externas sejam incorporadas ao código. Por exemplo, ao escrever <code class="language-c highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span></code>, estamos pedindo para incluir o conteúdo do arquivo de cabeçalho <code>stdio.h</code> (que contém declarações de funções como <code>printf()</code>) no nosso código;</p>
+<p><code class="language-c highlight"><span class="cp">#include</span></code>: substitui declarações de inclusão de arquivos, como arquivos de cabeçalho (.h). Isso permite que funções e definições externas sejam incorporadas ao código. Por exemplo, ao escrever <code class="language-c highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span></code>, estamos pedindo para incluir o conteúdo do arquivo de cabeçalho <code>stdio.h</code> (que contém declarações de funções como <code>printf()</code>) no nosso código;</p>
 </li>
 <li>
-<p><code class="language-c highlight"><span class="cp">#define</span></code>: realizam substituições de macros, que podem ser valores constantes ou pequenas funções inline. Se usarmos, por exemplo, <code class="language-c highlight"><span class="cp">#define PI 3.14</span></code>, o pré-processador substituirá todas as ocorrências de <code>PI</code> no código por <code>3.14</code>. Ao fazermos <code class="language-c highlight"><span class="cp">#define QUADRADO(x) ((x) * (x))</span></code>, o pré-processador substitui todas as ocorrências de <code>QUADRADO(valor)</code> pela expressão <code>((valor) * (valor))</code> antes da compilação. A diretiva pode ser usada também apenas para a definição de um símbolo (<code class="language-c highlight"><span class="cp">#define DEBUG</span></code>, por exemplo) que pode ter a existência verificada (<code class="language-c highlight"><span class="cp">#ifdef DEBUG</span></code>, por exemplo);</p>
+<p><code class="language-c highlight"><span class="cp">#define</span></code>: realiza substituições de macros, que podem ser valores constantes ou pequenas funções inline. Se usarmos, por exemplo, <code class="language-c highlight"><span class="cp">#define PI 3.14</span></code>, o pré-processador substituirá todas as ocorrências de <code>PI</code> no código por <code>3.14</code>. Ao fazermos <code class="language-c highlight"><span class="cp">#define QUADRADO(x) ((x) * (x))</span></code>, o pré-processador substitui todas as ocorrências de <code>QUADRADO(valor)</code> pela expressão <code>((valor) * (valor))</code> antes da compilação. A diretiva pode ser usada também apenas para a definição de um símbolo (<code class="language-c highlight"><span class="cp">#define DEBUG</span></code>, por exemplo) que pode ter a existência verificada (<code class="language-c highlight"><span class="cp">#ifdef DEBUG</span></code>, por exemplo);</p>
 </li>
 <li>
 <p><code class="language-c highlight"><span class="cp">#undef</span></code>: remove a definição de um símbolo ou de uma macro. A partir desse ponto, o pré-processador não conhece mais essa macro;</p>
 </li>
 <li>
-<p><code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#ifndef</span></code> e outras relacionadas: permitem compilar trechos específicos do código com base em definições previamente estabelecidas. Isso é extremamente útil quando estamos escrevendo um programa que deve rodar em mais de uma arquitetura e, dependendo da arquitetura vai utilizar uma biblioteca ou outra, por exemplo.</p>
+<p><code class="language-c highlight"><span class="cp">#ifdef</span></code>, <code class="language-c highlight"><span class="cp">#ifndef</span></code> e outras relacionadas: permitem compilar trechos específicos do código com base em definições previamente estabelecidas. Isso é extremamente útil quando estamos escrevendo um programa que deve rodar em mais de uma arquitetura e, dependendo da arquitetura, vai utilizar uma biblioteca ou outra, por exemplo.</p>
 </li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplos de uso de diretivas de compilação</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -2723,7 +2723,7 @@
 <p>Os parênteses em volta de cada parâmetro e da expressão inteira são essenciais. Sem eles, com <code class="language-c highlight"><span class="cp">#define QUADRADO(x) x * x</span></code>, a expressão <code>QUADRADO(x + 1)</code> seria substituída por <code>x + 1 * x + 1</code>, que vale 11, e não 36.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Uma macro não é uma função: o pré-processador apenas substitui o texto, e cada argumento aparece no resultado tantas vezes quantas o parâmetro aparece na macro. Em <code>QUADRADO(i++)</code>, a substituição gera <code>((i++) * (i++))</code>, que incrementa <code>i</code> duas vezes na mesma expressão, o que é comportamento indefinido (o compilador avisa: <code>operation on 'i' may be undefined</code>). Para cálculos, prefira escrever <a href="../funcoes/">funções</a>; para valores constantes, <code class="language-c highlight"><span class="k">const</span></code> é uma alternativa às macros, como mostra a seção sobre <a href="../tiposdedados/#constantes">constantes</a>.</p>
+<p>Uma macro não é uma função: o pré-processador apenas substitui o texto, e cada argumento aparece no resultado tantas vezes quantas forem as ocorrências do parâmetro na macro. Em <code>QUADRADO(i++)</code>, a substituição gera <code>((i++) * (i++))</code>, que incrementa <code>i</code> duas vezes na mesma expressão, o que é comportamento indefinido (o compilador avisa: <code>operation on 'i' may be undefined</code>). Para cálculos, prefira escrever <a href="../funcoes/">funções</a>; para valores constantes, <code class="language-c highlight"><span class="k">const</span></code> é uma alternativa às macros, como mostra a seção sobre <a href="../tiposdedados/#constantes">constantes</a>.</p>
 </div>
 <h2 id="compilacao-e-montagem">Compilação e montagem<a class="headerlink" href="#compilacao-e-montagem" title="Permanent link">&para;</a></h2>
 <!-- gcc -S arquivo.c -->
@@ -2735,20 +2735,20 @@
   Processado1@{ shape: doc, label: "**Código pré-processado**&lt;br /&gt;(.i)" }
   Compilador1@{shape: process, label: "Compilação e montagem" }
   Obj1@{ shape: doc, label: "**Código objeto**&lt;br /&gt;(.o)" }</code></pre>
-<p>Nesta etapa, o compilador realiza a análise sintática e semântica do código pré-processado. Ele verifica se o código está escrito corretamente, seguindo as regras da linguagem C, como parênteses não fechados, falta de ponto e vírgula, entre outros erros sintáticos.</p>
-<p>Se não houver erros, o compilador traduz o código para a linguagem de montagem da máquina (linguagem <em>assembly</em>), que é uma representação de baixo nível mais próxima da linguagem de máquina. O resultado é, normalmente, um arquivo com extensão <code>.s</code></p>
-<p>O código em <em>assembly</em> resultante vai conter instruções específicas para a arquitetura do processador (como x86 ou ARM) que será utilizado.</p>
-<p>A etapa de montagem transforma o código assembly em código-objeto, que está em linguagem de máquina, porém ainda não está pronto para ser executado. O código binário resultante ainda não pode ser executado porque pode depender de funções ou variáveis definidas em outros lugares (como em outro arquivo <code>.c</code> ou em bibliotecas externas). Cada arquivo <code>.c</code> gera seu próprio arquivo objeto, de extensão <code>.o</code>, nessa etapa.</p>
+<p>Nesta etapa, o compilador realiza a análise sintática e semântica do código pré-processado. Ele verifica se o código segue as regras da linguagem C e identifica erros como parênteses não fechados e falta de ponto e vírgula.</p>
+<p>Se não houver erros, o compilador traduz o código para a linguagem de montagem da máquina (linguagem <em>assembly</em>), que é uma representação de baixo nível mais próxima da linguagem de máquina. O resultado é, normalmente, um arquivo com extensão <code>.s</code>.</p>
+<p>O código em <em>assembly</em> resultante contém instruções específicas para a arquitetura do processador que será utilizado (como x86 ou ARM).</p>
+<p>A etapa de montagem transforma o código <em>assembly</em> em código-objeto, que está em linguagem de máquina, porém ainda não está pronto para ser executado. O código binário resultante ainda não pode ser executado porque pode depender de funções ou variáveis definidas em outros lugares (como em outro arquivo <code>.c</code> ou em bibliotecas externas). Cada arquivo <code>.c</code> gera seu próprio arquivo-objeto, de extensão <code>.o</code>, nessa etapa.</p>
 <p>A parte do compilador que faz essa conversão é o montador, ou <em>assembler</em>.</p>
 <p>Na prática, não executamos cada etapa separadamente: um único comando faz o pré-processamento, a compilação, a montagem e a link-edição. Com o GCC, o comando é <code>gcc</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>gcc -std=c17 -Wall -Wextra -o ola ola.c
 </span></code></pre></div>
 <p>Cada parte do comando tem um papel:</p>
 <ul>
-<li><code>-std=c17</code>: indica a versão do padrão da linguagem que deve ser usada. Sem essa opção, o compilador usa uma versão padrão, que varia de acordo com a versão do próprio compilador (no GCC 13 e no GCC 14, é o <code>gnu17</code>: o C17 com as extensões do GCC). As versões com <code>gnu</code> no nome, como o <code>gnu11</code> usado na Maratona, aceitam recursos que não fazem parte do C padrão; com <code>c17</code>, o compilador segue o padrão à risca, o que ajuda a escrever programas que funcionam em qualquer compilador;</li>
+<li><code>-std=c17</code>: seleciona o padrão C17. Especifique-o para não depender do padrão do compilador: o GCC 13 e o 14 usam <code>gnu17</code> por padrão, enquanto o GCC 15 passou a usar <code>gnu23</code>. As variantes <code>gnu</code> habilitam extensões. Mesmo com <code>-std=c17</code>, algumas extensões podem ser aceitas; acrescente <code>-Wpedantic</code> para obter os diagnósticos exigidos pelo padrão, ou <code>-pedantic-errors</code> para tratá-los como erros;</li>
 <li><code>-Wall -Wextra</code>: ativam a maior parte dos <strong>avisos</strong> (<em>warnings</em>) do compilador. Um aviso não impede a geração do programa, mas indica um trecho de código suspeito, que provavelmente contém um erro;</li>
-<li><code>-o ola</code>: define o nome do arquivo executável gerado (no Windows, <code>ola.exe</code>), e;</li>
-<li><code>ola.c</code>: o arquivo fonte a ser compilado. Um programa dividido em vários arquivos é compilado com todos eles no mesmo comando, como mostra a seção sobre <a href="../funcoes/#organizando-funcoes-em-varios-arquivos">funções</a>.</li>
+<li><code>-o ola</code>: define o nome do arquivo executável gerado (no Windows, <code>ola.exe</code>);</li>
+<li><code>ola.c</code>: o arquivo-fonte a ser compilado. Um programa dividido em vários arquivos é compilado com todos eles no mesmo comando, como mostra a seção sobre <a href="../funcoes/#organizando-funcoes-em-varios-arquivos">funções</a>.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Leve os avisos a sério</p>
@@ -2760,8 +2760,8 @@
 <ul>
 <li><code>gcc -E ola.c -o ola.i</code>: só o pré-processamento;</li>
 <li><code>gcc -S ola.c</code>: pré-processamento e compilação, gerando o <em>assembly</em> (<code>ola.s</code>);</li>
-<li><code>gcc -c ola.c</code>: pré-processamento, compilação e montagem, gerando o código objeto (<code>ola.o</code>), e;</li>
-<li><code>gcc ola.o -o ola</code>: só a link-edição, a partir do código objeto.</li>
+<li><code>gcc -c ola.c</code>: pré-processamento, compilação e montagem, gerando o código-objeto (<code>ola.o</code>);</li>
+<li><code>gcc ola.o -o ola</code>: só a link-edição, a partir do código-objeto.</li>
 </ul>
 </div>
 <h2 id="link-edicao">Link-edição<a class="headerlink" href="#link-edicao" title="Permanent link">&para;</a></h2>
@@ -2773,13 +2773,13 @@
   Bib1@{ shape: lin-doc, label: "**Bibliotecas**&lt;br /&gt;(libc, libm, .a, .so, .dll)" }
   Link@{ shape: process, label: "Link-edição" }
   Exec@{ shape: doc, label: "**Programa executável**&lt;br /&gt;(.exe)" }</code></pre>
-<p>Imagine que os arquivos objeto .o são como peças de um quebra-cabeça: cada um tem uma parte do programa, mas eles precisam ser conectados para formar o todo. A link-edição é a etapa final do processo, onde o linkeditor (linker) combina todos os arquivos-objeto gerados e as bibliotecas necessárias em um único arquivo executável. O linker realiza as seguintes tarefas:</p>
+<p>Imagine que os arquivos-objeto (<code>.o</code>) são como peças de um quebra-cabeça: cada um tem uma parte do programa, mas eles precisam ser conectados para formar o todo. A link-edição é a etapa final do processo, na qual o linkeditor (<em>linker</em>) combina todos os arquivos-objeto gerados e as bibliotecas necessárias em um único arquivo executável. O <em>linker</em> realiza as seguintes tarefas:</p>
 <ul>
 <li>Resolve referências entre os diferentes módulos do programa, garantindo que todas as referências a funções e variáveis estejam devidamente definidas e resolvidas;</li>
-<li>Adiciona ao executável o código das bibliotecas usadas pelo programa. As funções da biblioteca padrão, como <code class="language-c highlight"><span class="n">printf</span></code> e <code class="language-c highlight"><span class="n">strlen</span></code>, ficam na biblioteca <code>libc</code>, que o comando <code>gcc</code> inclui automaticamente, e;</li>
+<li>Adiciona ao executável o código das bibliotecas usadas pelo programa. As funções da biblioteca padrão, como <code class="language-c highlight"><span class="n">printf</span></code> e <code class="language-c highlight"><span class="n">strlen</span></code>, ficam na biblioteca <code>libc</code>, que o comando <code>gcc</code> inclui automaticamente;</li>
 <li>Gera o arquivo executável final.</li>
 </ul>
-<p>Se alguma função foi declarada e usada, mas não foi definida em nenhum arquivo objeto ou biblioteca, o linker interrompe o processo com um erro de "referência indefinida" (<em>undefined reference</em>). Esse erro aparece mesmo quando o código de cada arquivo está correto, porque o problema não está em nenhum arquivo isolado, e sim na ligação entre eles.</p>
+<p>Se alguma função foi declarada e usada, mas não foi definida em nenhum arquivo-objeto ou biblioteca, o linker interrompe o processo com um erro de "referência indefinida" (<em>undefined reference</em>). Esse erro aparece mesmo quando o código de cada arquivo está correto, porque o problema não está em nenhum arquivo isolado, e sim na ligação entre eles.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>No Linux, as funções matemáticas de <code>math.h</code>, como <code class="language-c highlight"><span class="n">sqrt</span></code>, <code class="language-c highlight"><span class="n">pow</span></code> e <code class="language-c highlight"><span class="n">log</span></code>, ficam em uma biblioteca separada, a <code>libm</code>, que <strong>não</strong> é incluída automaticamente. Incluir o cabeçalho <code>math.h</code> não basta: é preciso pedir a biblioteca ao linker, com a opção <code>-lm</code> no <strong>final</strong> do comando:</p>
@@ -2810,7 +2810,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

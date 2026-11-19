@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2426,7 +2426,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2780,7 +2780,7 @@
 <p>O <code class="language-cpp highlight"><span class="k">const</span></code> depois dos parênteses de <code>apresentar</code> indica que esse método não altera o objeto; voltaremos a ele adiante.</p>
 <div class="admonition note">
 <p class="admonition-title"><code>class</code> ou <code>struct</code>?</p>
-<p>Em C++, <code class="language-cpp highlight"><span class="k">class</span></code> e <code class="language-cpp highlight"><span class="k">struct</span></code> são praticamente a mesma coisa: ambas podem ter atributos, métodos, construtores e herança. A única diferença é a visibilidade padrão dos membros: em uma <code class="language-cpp highlight"><span class="k">struct</span></code>, tudo é público, a menos que se diga o contrário; em uma <code class="language-cpp highlight"><span class="k">class</span></code>, tudo é privado. Por convenção, usa-se <code class="language-cpp highlight"><span class="k">struct</span></code> para agrupamentos simples de dados, sem regras a proteger, e <code class="language-cpp highlight"><span class="k">class</span></code> quando há dados que precisam ser protegidos e métodos que controlam o acesso a eles.</p>
+<p>Em C++, <code>class</code> e <code>struct</code> permitem atributos, métodos, construtores e herança. Diferem no acesso <strong>padrão dos membros e da herança</strong>: público em <code>struct</code>, privado em <code>class</code>. Especificadores explícitos substituem esses padrões. Por convenção, <code>struct</code> costuma representar registros simples, e <code>class</code>, objetos cujas regras precisam ser protegidas.</p>
 </div>
 <h2 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">&para;</a></h2>
 <p>O <strong>encapsulamento</strong> é o princípio de esconder os detalhes internos de um objeto e expor apenas uma interface controlada para o mundo exterior. Na classe <code>Pessoa</code>, qualquer parte do programa pode escrever <code>p1.idade = -50;</code>, deixando o objeto em um estado sem sentido. Com o encapsulamento, os atributos ficam protegidos, e só podem ser alterados pelos métodos da classe, que garantem que as regras sejam respeitadas.</p>
@@ -2925,7 +2925,7 @@
 <p>O sublinhado no final dos nomes dos atributos privados (<code>saldo_</code>, <code>titular_</code>) é uma convenção comum, que ajuda a distinguir atributos de variáveis locais e parâmetros, e permite usar o nome sem sublinhado (<code>saldo()</code>) para o método que devolve o valor.</p>
 <h2 id="construtores">Construtores<a class="headerlink" href="#construtores" title="Permanent link">&para;</a></h2>
 <p>Um <strong>construtor</strong> é um método especial, executado automaticamente quando um objeto é criado. Ele tem o mesmo nome da classe e não tem tipo de retorno. Sua função é deixar o objeto em um estado válido desde o primeiro instante, inicializando todos os atributos. Uma classe pode ter vários construtores, com parâmetros diferentes (é um caso de sobrecarga).</p>
-<p>Os atributos devem ser inicializados na <strong>lista de inicialização de membros</strong>, escrita entre os parênteses dos parâmetros e o corpo do construtor, depois de dois pontos:</p>
+<p>Os atributos podem ser inicializados na declaração ou na <strong>lista de inicialização de membros</strong>, escrita entre os parênteses dos parâmetros e o corpo do construtor, depois de dois pontos:</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Construtores</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
@@ -3022,7 +3022,7 @@
 </span><span id="__span-2-47"><a id="__codelineno-2-47" name="__codelineno-2-47"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-2-48"><a id="__codelineno-2-48" name="__codelineno-2-48"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>O construtor sem parâmetros é chamado de <strong>construtor padrão</strong>, e é usado quando um objeto é declarado sem argumentos (<code class="language-cpp highlight"><span class="n">Ponto</span><span class="w"> </span><span class="n">origem</span><span class="p">;</span></code>). Se uma classe não declarar nenhum construtor, o compilador cria um construtor padrão automaticamente; mas, se a classe declarar qualquer construtor, o padrão deixa de ser criado, e só passa a existir se for escrito explicitamente.</p>
+<p>Um <strong>construtor padrão</strong> pode ser chamado sem argumentos; ele também pode ter parâmetros, se todos tiverem valores padrão. Se a classe não declarar construtores, o compilador normalmente declara um padrão, mas ele pode ser definido como excluído (<code>deleted</code>) se uma base ou um atributo não puder ser inicializado. Declarar outro construtor normalmente impede essa declaração automática; use <code>= default</code> quando apropriado.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Para criar um objeto com o construtor padrão, <strong>não use parênteses vazios</strong>: <code class="language-cpp highlight"><span class="n">Ponto</span><span class="w"> </span><span class="nf">origem</span><span class="p">();</span></code> não cria um objeto, e sim declara uma <strong>função</strong> chamada <code>origem</code>, sem parâmetros, que devolve um <code>Ponto</code>. Use <code class="language-cpp highlight"><span class="n">Ponto</span><span class="w"> </span><span class="n">origem</span><span class="p">;</span></code> ou <code class="language-cpp highlight"><span class="n">Ponto</span><span class="w"> </span><span class="n">origem</span><span class="p">{};</span></code>.</p>
@@ -3154,10 +3154,10 @@
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Fim de main
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Liberando A
 </span></code></pre></div>
-<p>Os objetos são destruídos na <strong>ordem inversa</strong> à da construção, e sempre que a execução sai do bloco em que foram criados, seja pelo final do bloco, por um <code class="language-cpp highlight"><span class="k">return</span></code>, por um <code class="language-cpp highlight"><span class="k">break</span></code> ou por uma exceção. Essa garantia é a base do princípio <strong>RAII</strong> (<em>Resource Acquisition Is Initialization</em>), que já apareceu nas seções sobre memória e arquivos: um recurso é adquirido no construtor e liberado no destrutor, e por isso nunca é esquecido. É assim que funcionam <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span></code> e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span></code>.</p>
+<p>Objetos automáticos são destruídos na <strong>ordem inversa</strong> à da construção na saída normal do bloco, incluindo <code>return</code> e <code>break</code>, e no desenrolamento da pilha para tratar exceções. Encerramentos abruptos não oferecem essa garantia. Essa garantia é a base do princípio <strong>RAII</strong> (<em>Resource Acquisition Is Initialization</em>), que já apareceu nas seções sobre memória e arquivos: um recurso é adquirido no construtor e liberado no destrutor, e por isso nunca é esquecido. É assim que funcionam <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span></code> e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span></code>.</p>
 <div class="admonition tip">
 <p class="admonition-title">A regra do zero</p>
-<p>Na grande maioria das classes, <strong>não é preciso escrever um destrutor</strong>. Se os atributos forem tipos que já cuidam dos próprios recursos (números, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>, contêineres da biblioteca padrão, ponteiros inteligentes), o destrutor gerado automaticamente pelo compilador destrói cada atributo corretamente, e as cópias também funcionam sem nenhum código extra. Essa recomendação é conhecida como "regra do zero". Um destrutor escrito à mão só é necessário em classes que gerenciam diretamente um recurso, como memória alocada com <code class="language-cpp highlight"><span class="k">new</span></code>, e essas classes exigem cuidados adicionais com cópias, que vão além deste texto.</p>
+<p>Na grande maioria das classes, <strong>não é preciso escrever um destrutor</strong>. Se os atributos forem tipos que já cuidam dos próprios recursos (números, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>, contêineres da biblioteca padrão, ponteiros inteligentes), o destrutor gerado automaticamente pelo compilador destrói cada atributo corretamente, e as operações de cópia e movimento seguem as capacidades desses atributos. Um atributo <code>unique_ptr</code>, por exemplo, impede a cópia automática da classe. Essa recomendação é conhecida como "regra do zero". Um destrutor escrito à mão só é necessário em classes que gerenciam diretamente um recurso, como memória alocada com <code class="language-cpp highlight"><span class="k">new</span></code>, e essas classes exigem cuidados adicionais com cópias, que vão além deste texto.</p>
 </div>
 <h2 id="getters-e-setters"><em>Getters</em> e <em>setters</em><a class="headerlink" href="#getters-e-setters" title="Permanent link">&para;</a></h2>
 <p>Como os atributos de uma classe bem encapsulada são privados, o acesso a eles é feito por métodos: os <strong><em>getters</em></strong>, que devolvem o valor de um atributo, e os <strong><em>setters</em></strong>, que alteram o valor, normalmente verificando se o novo valor é válido.</p>
@@ -3266,7 +3266,7 @@
 <p>O exemplo mostra três ideias importantes:</p>
 <ul>
 <li><strong>Validação</strong>: o <em>setter</em> <code>set_preco</code> recusa preços negativos, lançando uma exceção. O construtor também usa <code>set_preco</code>, para que a mesma regra valha na criação do objeto;</li>
-<li><strong>Atributos somente leitura</strong>: o nome do produto tem <em>getter</em>, mas não tem <em>setter</em>. Depois que o objeto é criado, o nome não pode mais ser alterado, e;</li>
+<li><strong>Atributos somente leitura</strong>: o nome do produto tem <em>getter</em>, mas não tem <em>setter</em>. Depois que o objeto é criado, o nome não pode mais ser alterado;</li>
 <li><strong>Valores calculados</strong>: <code>preco_com_desconto</code> não corresponde a nenhum atributo, mas é usado da mesma forma que um <em>getter</em>. Quem usa a classe não precisa saber se um valor está guardado ou é calculado.</li>
 </ul>
 <p>O <em>getter</em> <code>nome()</code> devolve uma referência constante (<code class="language-cpp highlight"><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span></code>), o que evita copiar a cadeia a cada chamada e, ao mesmo tempo, impede que ela seja alterada por quem chamou o método.</p>
@@ -3282,13 +3282,20 @@
 <ul>
 <li><strong>Validação</strong>: os dados são verificados antes de serem armazenados, e o objeto nunca fica em um estado inválido;</li>
 <li><strong>Flexibilidade</strong>: a forma como os dados são armazenados internamente pode mudar sem afetar o código que usa a classe;</li>
-<li><strong>Controle de acesso</strong>: atributos podem ser somente leitura (apenas <em>getter</em>), e;</li>
+<li><strong>Controle de acesso</strong>: atributos podem ser somente leitura (apenas <em>getter</em>);</li>
 <li><strong>Depuração</strong>: é possível registrar, em um único lugar, todas as alterações de um atributo.</li>
 </ul>
 <p>Por outro lado, não crie <em>getters</em> e <em>setters</em> automaticamente para todos os atributos: um <em>setter</em> sem nenhuma validação para cada atributo privado é, na prática, o mesmo que deixar os atributos públicos. Pense em quais operações fazem sentido para o objeto (como <code>depositar</code> e <code>sacar</code>, em vez de <code>set_saldo</code>).</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Ordem de inicialização</p>
+<p>As classes base são inicializadas antes dos atributos, e os atributos
+seguem a <strong>ordem de declaração na classe</strong>, independentemente da ordem
+escrita na lista de inicialização. Escreva a lista nessa mesma ordem e
+não use um atributo que ainda não foi inicializado.</p>
+</div>
 <h2 id="membros-estaticos">Membros estáticos<a class="headerlink" href="#membros-estaticos" title="Permanent link">&para;</a></h2>
-<p>Um atributo declarado com <code class="language-cpp highlight"><span class="k">static</span></code> pertence à <strong>classe</strong>, e não a cada objeto: existe uma única cópia, compartilhada por todos os objetos. Da mesma forma, um método <code class="language-cpp highlight"><span class="k">static</span></code> pode ser chamado sem nenhum objeto, usando o nome da classe e o operador <code>::</code>, e só tem acesso aos membros estáticos.</p>
+<p>Um atributo declarado com <code class="language-cpp highlight"><span class="k">static</span></code> pertence à <strong>classe</strong>, e não a cada objeto: existe uma única cópia, compartilhada por todos os objetos. Da mesma forma, um método <code class="language-cpp highlight"><span class="k">static</span></code> pode ser chamado sem nenhum objeto, usando o nome da classe e o operador <code>::</code>, e não tem um objeto implícito (<code>this</code>). Ele pode acessar membros não estáticos se receber ou criar um objeto para isso.</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Membros estáticos</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -3355,7 +3362,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>Cada novo aluno incrementa o contador compartilhado <code>total_</code>, e usa o valor como sua matrícula. A palavra <code class="language-cpp highlight"><span class="kr">inline</span></code> permite inicializar o atributo estático dentro da própria classe.</p>
 <h2 id="heranca">Herança<a class="headerlink" href="#heranca" title="Permanent link">&para;</a></h2>
-<p>A <strong>herança</strong> permite criar uma nova classe a partir de uma classe existente, aproveitando seus atributos e métodos. A nova classe (chamada de <strong>classe derivada</strong>, ou subclasse) herda tudo o que a classe original (a <strong>classe base</strong>, ou superclasse) tem, e pode acrescentar novos atributos e métodos. A herança representa uma relação do tipo "é um": um cachorro <strong>é um</strong> animal, um aluno <strong>é uma</strong> pessoa.</p>
+<p>A <strong>herança</strong> permite criar uma nova classe a partir de uma classe existente, aproveitando seus atributos e métodos. A nova classe (chamada de <strong>classe derivada</strong>, ou subclasse) contém uma parte correspondente à classe original (a <strong>classe base</strong>, ou superclasse), respeita suas regras de acesso, e pode acrescentar novos atributos e métodos. A herança representa uma relação do tipo "é um": um cachorro <strong>é um</strong> animal, um aluno <strong>é uma</strong> pessoa.</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Herança</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
@@ -3568,15 +3575,15 @@
 <p>Vários elementos trabalham juntos neste exemplo:</p>
 <ul>
 <li><strong><code class="language-cpp highlight"><span class="k">virtual</span></code></strong>: indica que o método pode ser redefinido pelas classes derivadas, e que a versão executada deve ser escolhida <strong>durante a execução</strong>, de acordo com o tipo real do objeto. Quando <code>falar()</code> chama <code>som()</code>, é executada a versão de <code>Cachorro</code>, de <code>Gato</code> ou de <code>Vaca</code>, conforme o objeto;</li>
-<li><strong><code>= 0</code></strong>: transforma <code>som()</code> em uma <strong>função virtual pura</strong>, que não tem implementação na classe base. Uma classe com pelo menos uma função virtual pura é uma <strong>classe abstrata</strong>: ela não pode ter objetos (<code class="language-cpp highlight"><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="s">"x"</span><span class="p">);</span></code> não compila), e serve apenas como base para outras classes, que são obrigadas a implementar as funções puras;</li>
+<li><strong><code>= 0</code></strong>: transforma <code>som()</code> em uma <strong>função virtual pura</strong>. Neste exemplo, ela não tem implementação na base; uma função pura pode ter uma definição separada, sem deixar de ser pura. Uma classe com pelo menos uma função virtual pura é uma <strong>classe abstrata</strong>: ela não pode ter objetos (<code class="language-cpp highlight"><span class="n">Animal</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="s">"x"</span><span class="p">);</span></code> não compila), e serve como base. Uma derivada só pode ser instanciada se não restarem funções virtuais puras sem uma implementação final concreta;</li>
 <li><strong><code class="language-cpp highlight"><span class="k">override</span></code></strong>: indica que o método redefine um método virtual da classe base. Ele não é obrigatório, mas deve ser usado sempre, porque o compilador verifica se realmente existe um método virtual correspondente. Se a assinatura estiver diferente (por exemplo, sem o <code class="language-cpp highlight"><span class="k">const</span></code>), o compilador acusa o erro (<code>marked 'override', but does not override</code>), em vez de criar silenciosamente um método novo;</li>
-<li><strong>Destrutor virtual</strong>: toda classe base com funções virtuais deve ter um destrutor virtual. Sem ele, destruir um <code>Cachorro</code> por meio de um ponteiro para <code>Animal</code> não executaria a parte da destruição que é específica de <code>Cachorro</code>;</li>
-<li><strong><code class="language-cpp highlight"><span class="k">using</span><span class="w"> </span><span class="n">Animal</span><span class="o">::</span><span class="n">Animal</span><span class="p">;</span></code></strong>: faz com que as classes derivadas herdem os construtores da classe base, sem precisar reescrevê-los, e;</li>
+<li><strong>Destrutor virtual</strong>: se a hierarquia permite destruir objetos derivados por um ponteiro para a base, o destrutor da base deve ser virtual. Sem isso, o <code>delete</code> do exemplo tem <strong>comportamento indefinido</strong>, não apenas uma destruição incompleta. Uma alternativa de projeto é impedir essa exclusão pela base com um destrutor protegido não virtual;</li>
+<li><strong><code class="language-cpp highlight"><span class="k">using</span><span class="w"> </span><span class="n">Animal</span><span class="o">::</span><span class="n">Animal</span><span class="p">;</span></code></strong>: faz com que as classes derivadas herdem os construtores da classe base, sem precisar reescrevê-los;</li>
 <li><strong>Coleções polimórficas</strong>: para guardar animais de tipos diferentes no mesmo vetor, guardamos <strong>ponteiros</strong> para a classe base (aqui, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;</span></code>, que libera cada animal automaticamente). A função <code>apresentar</code>, que recebe uma referência para <code>Animal</code>, funciona com qualquer animal pelo mesmo motivo.</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>O polimorfismo só acontece com <strong>funções virtuais</strong> chamadas por meio de <strong>referências ou ponteiros</strong>. Sem <code class="language-cpp highlight"><span class="k">virtual</span></code>, quem decide qual versão executar é o tipo declarado da referência, e não o tipo real do objeto:</p>
+<p>O polimorfismo de execução usa <strong>funções virtuais</strong>. Referências e ponteiros para a base permitem preservar o tipo dinâmico de um objeto derivado; chamadas virtuais também podem usar a sintaxe com ponto sobre um objeto. Sem <code class="language-cpp highlight"><span class="k">virtual</span></code>, quem decide qual versão executar é o tipo declarado da referência, e não o tipo real do objeto:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">som</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"...</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="k">class</span><span class="w"> </span><span class="nc">Gato</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">public</span><span class="o">:</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">som</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Miau!</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
@@ -3698,7 +3705,7 @@
 <p>Alguns detalhes:</p>
 <ul>
 <li><code>a + b</code> é transformado pelo compilador em <code>a.operator+(b)</code>: o objeto da esquerda é o objeto em que o método é chamado, e o da direita é o parâmetro;</li>
-<li>O operador <code>&lt;&lt;</code> para escrita em fluxos tem um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span></code> à esquerda, e não uma <code>Fracao</code>. Por isso, ele não pode ser um método de <code>Fracao</code>; ele é declarado como uma função <code class="language-cpp highlight"><span class="k">friend</span></code> ("amiga"), que não é um método, mas tem acesso aos membros privados da classe. Ele devolve o próprio fluxo, para que as saídas possam ser encadeadas, e;</li>
+<li>O operador <code>&lt;&lt;</code> para escrita em fluxos tem um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ostream</span></code> à esquerda, e não uma <code>Fracao</code>. Por isso, ele não pode ser um método de <code>Fracao</code>; ele é declarado como uma função <code class="language-cpp highlight"><span class="k">friend</span></code> ("amiga"), que não é um método, mas tem acesso aos membros privados da classe. Ele devolve o próprio fluxo, para que as saídas possam ser encadeadas;</li>
 <li>Com <code>operator&lt;</code> definido, objetos do tipo <code>Fracao</code> podem ser ordenados com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">sort</span></code> e usados como elementos de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">set</span></code> ou como chaves de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">map</span></code>, que dependem dessa comparação.</li>
 </ul>
 <h3 id="comparacoes-geradas-automaticamente">Comparações geradas automaticamente<a class="headerlink" href="#comparacoes-geradas-automaticamente" title="Permanent link">&para;</a></h3>
@@ -3830,7 +3837,7 @@
 <li>Declare como <strong><code class="language-cpp highlight"><span class="k">const</span></code></strong> todo método que não altera o objeto, e passe objetos para funções por <strong>referência constante</strong>;</li>
 <li>Declare como <strong><code class="language-cpp highlight"><span class="k">explicit</span></code></strong> os construtores de um único parâmetro;</li>
 <li>Prefira atributos que gerenciam os próprios recursos (<code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>, contêineres, ponteiros inteligentes) e siga a <strong>regra do zero</strong>;</li>
-<li>Em hierarquias de classes, declare o <strong>destrutor da classe base como virtual</strong> e use <strong><code class="language-cpp highlight"><span class="k">override</span></code></strong> em todos os métodos redefinidos, e;</li>
+<li>Em hierarquias de classes, declare o <strong>destrutor da classe base como virtual</strong> e use <strong><code class="language-cpp highlight"><span class="k">override</span></code></strong> em todos os métodos redefinidos;</li>
 <li>Use <strong><code class="language-cpp highlight"><span class="k">struct</span></code></strong> para registros simples de dados, e <strong><code class="language-cpp highlight"><span class="k">class</span></code></strong> quando houver regras a proteger.</li>
 </ul>
 
@@ -3855,7 +3862,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

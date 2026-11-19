@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#instrucoes-e-blocos" class="md-skip">
+        <a href="#controle-de-fluxo" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -838,6 +838,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -881,6 +883,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Nesta página">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2500,7 +2504,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2593,6 +2597,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Nesta página">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2853,8 +2859,7 @@
 
 
 
-  <h1>Controle de fluxo</h1>
-
+<h1 id="controle-de-fluxo">Controle de fluxo<a class="headerlink" href="#controle-de-fluxo" title="Permanent link">&para;</a></h1>
 <p>As estruturas de controle de fluxo são componentes fundamentais em qualquer linguagem de programação, incluindo C. Elas permitem que o programador defina caminhos alternativos de execução, possibilitando que um programa tome decisões e execute diferentes blocos de código com base em condições específicas. Sem estas estruturas, os programas seriam executados de forma linear e previsível, do primeiro ao último comando, o que limitaria drasticamente sua utilidade e aplicabilidade.</p>
 <p>A capacidade de alterar o fluxo de execução baseado em valores de variáveis, entradas do usuário ou resultados de operações é o que torna os programas verdadeiramente dinâmicos e capazes de resolver problemas complexos. Em essência, as estruturas de controle de fluxo são o que permitem que os programas "pensem" e se adaptem a diferentes situações, aproximando-os do raciocínio humano.</p>
 <h2 id="instrucoes-e-blocos">Instruções e blocos<a class="headerlink" href="#instrucoes-e-blocos" title="Permanent link">&para;</a></h2>
@@ -2877,13 +2882,13 @@
 <p>As únicas situações em que o uso de variáveis globais pode ser considerado aceitável são:</p>
 <ul>
 <li><strong>Constantes globais</strong>: se um determinado valor não muda durante a execução do programa (por exemplo, o valor de <span class="arithmatex">\(\pi\)</span>), ele pode ser armazenado como uma variável global no escopo mais externo;</li>
-<li><strong>Configurações compartilhadas</strong>: em programas grandes, algumas configurações globais podem ser mais fáceis de gerenciar, como por exemplo, o nível de verbosidade das mensagens de depuração, ou se o programa está funcionando em modo final ou de desenvolvimento;</li>
+<li><strong>Configurações compartilhadas</strong>: em programas grandes, algumas configurações globais podem ser mais fáceis de gerenciar, como o nível de verbosidade das mensagens de depuração ou se o programa está funcionando em modo final ou de desenvolvimento;</li>
 <li><strong>Gerenciamento de estado</strong>: para sistemas embarcados ou aplicações de tempo real, pode ser útil ter variáveis globais para armazenar estados do sistema.</li>
 </ul>
-<p>Mas, a regra geral é: <strong>não use variáveis globais</strong>.</p>
+<p>Mas a regra geral é: <strong>não use variáveis globais</strong>.</p>
 </div>
 <p>Veja o exemplo abaixo:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de definição bloco e de escopo de variável</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de definição de bloco e de escopo de variável</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
@@ -2997,7 +3002,7 @@
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Quando há mais de duas possibilidades, os testes podem ser encadeados com <code class="language-c highlight"><span class="k">else</span><span class="w"> </span><span class="k">if</span></code>. As condições são verificadas em ordem, e só o bloco da <strong>primeira</strong> condição verdadeira é executado:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Entrada</label><label for="__tabbed_1_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Entrada</label><label for="__tabbed_1_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">conceitos.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
@@ -3074,7 +3079,7 @@
 <p>O operador ternário (<code class="language-c highlight"><span class="o">?</span><span class="w"> </span><span class="o">:</span></code>) é uma forma concisa de expressar uma decisão condicional. Sua sintaxe é:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">condição</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">expressão1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">expressão2</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Se a condição for verdadeira, o valor da expressão será <code>expressão1</code>; caso contrário, será <code>expressão2</code>. Este operador é particularmente útil para atribuições condicionais simples, como no exemplo abaixo</p>
+<p>Se a condição for verdadeira, o valor da expressão será <code>expressão1</code>; caso contrário, será <code>expressão2</code>. Este operador é particularmente útil para atribuições condicionais simples, como no exemplo abaixo:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de uso do operador ternário</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
@@ -3197,12 +3202,12 @@
 <p>Neste exemplo, o programa imprime o nome do dia da semana correspondente ao valor da variável <code class="language-c highlight"><span class="n">dia</span></code>. Se <code class="language-c highlight"><span class="n">dia</span></code> não estiver entre 1 e 7, será impresso <code>"Dia inválido"</code>.</p>
 <p>A estrutura <code class="language-c highlight"><span class="k">switch</span><span class="w"> </span><span class="k">case</span></code> difere de <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="k">else</span></code> aninhados em dois aspectos principais:</p>
 <ul>
-<li>O <code class="language-c highlight"><span class="k">switch</span></code> avalia a expressão apenas uma vez, enquanto múltiplos <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="k">else</span></code> avaliam cada condição separadamente, e;</li>
+<li>O <code class="language-c highlight"><span class="k">switch</span></code> avalia a expressão apenas uma vez, enquanto múltiplos <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="k">else</span></code> avaliam cada condição separadamente;</li>
 <li>O <code class="language-c highlight"><span class="k">switch</span></code> só pode comparar a expressão com valores constantes, enquanto <code class="language-c highlight"><span class="k">if</span><span class="w"> </span><span class="k">else</span></code> pode usar qualquer expressão condicional.</li>
 </ul>
 <p>A expressão do <code class="language-c highlight"><span class="k">switch</span></code> precisa ser de um tipo inteiro (o que inclui <code class="language-c highlight"><span class="kt">char</span></code> e as enumerações): não é possível usar <code class="language-c highlight"><span class="k">switch</span></code> com números reais nem com cadeias de caracteres. Os rótulos precisam ser constantes conhecidas durante a compilação, como <code class="language-c highlight"><span class="mi">3</span></code>, <code class="language-c highlight"><span class="sc">'a'</span></code> ou uma constante de enumeração.</p>
 <p>O <em>fall-through</em> é útil quando vários valores devem executar o mesmo código: basta escrever os rótulos em sequência, sem nada entre eles:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Entrada</label><label for="__tabbed_2_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Entrada</label><label for="__tabbed_2_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">classifica.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
@@ -3282,7 +3287,7 @@
 <li>A <strong>condição</strong> é avaliada antes de cada iteração; se for falsa, o <em>loop</em> termina.</li>
 <li>A <strong>pós-operação</strong> é executada após cada iteração.</li>
 </ul>
-<p>Veja o fluxograma equivalente a execução da declaração <code class="language-c highlight"><span class="k">for</span><span class="p">(</span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="p">;</span></code></p>
+<p>Veja o fluxograma equivalente à execução da instrução <code class="language-c highlight"><span class="k">for</span><span class="p">(</span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="p">;</span></code>:</p>
 <pre class="mermaid"><code>   flowchart LR
       A --&gt; B --&gt; C
       C -- Sim --&gt; D --&gt; E --&gt; C
@@ -3315,7 +3320,7 @@
 </span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Neste exemplo, o loop executa exatamente 5 vezes, com i assumindo os valores de 0 a 4.</p>
+<p>Neste exemplo, o laço é executado exatamente 5 vezes, com <code>i</code> assumindo os valores de 0 a 4.</p>
 <h3 id="estruturas-while-e-do-while">Estruturas <code>while</code> e <code>do {} while</code><a class="headerlink" href="#estruturas-while-e-do-while" title="Permanent link">&para;</a></h3>
 <p>A estrutura <code class="language-c highlight"><span class="k">while</span></code> executa um bloco de código enquanto uma condição for verdadeira. Sua sintaxe é:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
@@ -3478,7 +3483,7 @@
 </span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Neste exemplo, o primeiro <em>loop</em> imprime apenas os números ímpares de 0 a 9, pois o comando <code class="language-c highlight"><span class="k">continue</span></code> pula a iteração quando <code class="language-c highlight"><span class="n">i</span></code> é par. O segundo <em>loop</em> imprime os números de 0 a 4, pois o comando <code class="language-c highlight"><span class="k">break</span></code> interrompe o loop quando <code class="language-c highlight"><span class="n">i</span></code> é igual a 5.</p>
-<p>Estes comandos são particularmente úteis em situações onde é necessário interromper uma iteração ou todo o <em>loop</em> com base em condições específicas, evitando a necessidade de lógicas condicionais mais complexas.</p>
+<p>Estes comandos são particularmente úteis em situações em que é necessário interromper uma iteração ou todo o <em>loop</em> com base em condições específicas, evitando a necessidade de lógicas condicionais mais complexas.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Em um laço <code class="language-c highlight"><span class="k">while</span></code>, o <code class="language-c highlight"><span class="k">continue</span></code> volta direto para a condição, <strong>sem</strong> passar pelo incremento que fica no final do bloco. O laço abaixo nunca termina, porque, quando <code>i</code> vale 2, o <code class="language-c highlight"><span class="n">i</span><span class="o">++</span></code> não é mais executado:</p>
@@ -3494,7 +3499,7 @@
 <p>No <code class="language-c highlight"><span class="k">for</span></code>, isso não acontece, porque a pós-operação (<code>i++</code>) é executada também depois de um <code class="language-c highlight"><span class="k">continue</span></code>.</p>
 </div>
 <p>O <code class="language-c highlight"><span class="k">break</span></code> interrompe apenas o laço <strong>mais interno</strong> em que ele está. Para sair de dois laços aninhados de uma vez, uma solução é usar uma variável que indica que o laço externo também deve parar:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código fonte</label><label for="__tabbed_3_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código-fonte</label><label for="__tabbed_3_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">busca_matriz.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
@@ -3553,7 +3558,7 @@
 <p>Em qualquer programa, situações inesperadas podem acontecer: um arquivo que não existe, uma entrada em formato errado, falta de memória, uma divisão por zero. A linguagem C não tem um mecanismo próprio para tratar essas situações, como o lançamento de exceções existente em outras linguagens: os erros são tratados com as estruturas de controle que já conhecemos, a partir de informações devolvidas pelas funções. Há quatro ferramentas principais.</p>
 <h3 id="valores-de-retorno">Valores de retorno<a class="headerlink" href="#valores-de-retorno" title="Permanent link">&para;</a></h3>
 <p>A forma mais comum de uma função indicar que algo deu errado é o seu <strong>valor de retorno</strong>. As funções da biblioteca padrão seguem esse modelo: <code class="language-c highlight"><span class="n">fopen</span></code> e <code class="language-c highlight"><span class="n">malloc</span></code> devolvem <code class="language-c highlight"><span class="nb">NULL</span></code> quando falham, e <code class="language-c highlight"><span class="n">scanf</span></code> devolve a quantidade de valores lidos. Funções escritas por você podem fazer o mesmo, devolvendo um código que indica sucesso ou falha e entregando o resultado por meio de um <a href="../funcoes/#devolvendo-mais-de-um-valor">parâmetro de saída</a>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código fonte</label><label for="__tabbed_4_2">Entrada</label><label for="__tabbed_4_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código-fonte</label><label for="__tabbed_4_2">Entrada</label><label for="__tabbed_4_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">divide.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1"> 1</a></span>
@@ -3622,7 +3627,7 @@
 <p>A desvantagem desse modelo é que nada obriga quem chama a função a verificar o valor devolvido: um erro ignorado não interrompe o programa, que continua trabalhando com valores errados. Por isso, <strong>verifique sempre</strong> o retorno das funções que podem falhar, especialmente <code class="language-c highlight"><span class="n">fopen</span></code>, <code class="language-c highlight"><span class="n">malloc</span></code> e <code class="language-c highlight"><span class="n">scanf</span></code>.</p>
 <h3 id="errno-perror-e-strerror"><code>errno</code>, <code>perror()</code> e <code>strerror()</code><a class="headerlink" href="#errno-perror-e-strerror" title="Permanent link">&para;</a></h3>
 <p>Muitas funções da biblioteca padrão, além de devolverem um valor que indica a falha, guardam um código que indica o <strong>motivo</strong> do erro na variável global <code class="language-c highlight"><span class="n">errno</span></code>, declarada em <code>errno.h</code>. A função <code class="language-c highlight"><span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">)</span></code>, de <code>string.h</code>, devolve uma descrição do código, e a função <code class="language-c highlight"><span class="n">perror</span><span class="p">(</span><span class="n">mensagem</span><span class="p">)</span></code>, de <code>stdio.h</code>, escreve no fluxo de erros a mensagem seguida dessa descrição:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código fonte</label><label for="__tabbed_5_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código-fonte</label><label for="__tabbed_5_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">motivo.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
@@ -3665,8 +3670,8 @@
 </div>
 <p>O valor de <code class="language-c highlight"><span class="n">errno</span></code> só tem significado logo depois de uma função indicar, pelo seu valor de retorno, que falhou: as funções da biblioteca não zeram <code class="language-c highlight"><span class="n">errno</span></code> quando dão certo. Funções como <code class="language-c highlight"><span class="n">strtol</span></code>, que não têm um valor de retorno especial para o erro, exigem que <code class="language-c highlight"><span class="n">errno</span></code> seja zerado <strong>antes</strong> da chamada, como mostra a seção sobre <a href="../strings/#convertendo-entre-textos-e-numeros">conversão de cadeias em números</a>.</p>
 <h3 id="encerrando-o-programa-exit">Encerrando o programa: <code>exit()</code><a class="headerlink" href="#encerrando-o-programa-exit" title="Permanent link">&para;</a></h3>
-<p>Quando um erro impede que o programa continue, ele pode ser encerrado imediatamente, de qualquer ponto, com a função <code class="language-c highlight"><span class="n">exit</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span></code>, de <code>stdlib.h</code>. O código é entregue ao sistema operacional, como o valor devolvido por <code class="language-c highlight"><span class="n">main</span></code>: as constantes <code class="language-c highlight"><span class="n">EXIT_SUCCESS</span></code> (0) e <code class="language-c highlight"><span class="n">EXIT_FAILURE</span></code> (1) indicam sucesso e falha. Antes de encerrar, é uma boa prática escrever uma mensagem no fluxo de erros, <code>stderr</code>, para que ela não se misture com a saída normal do programa:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código fonte</label><label for="__tabbed_6_2">Entrada correta</label><label for="__tabbed_6_3">Entrada com erro</label></div>
+<p>Quando um erro impede que o programa continue, ele pode ser encerrado imediatamente, de qualquer ponto, com a função <code class="language-c highlight"><span class="n">exit</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span></code>, de <code>stdlib.h</code>. O código é entregue ao sistema operacional, como o valor devolvido por <code class="language-c highlight"><span class="n">main</span></code>: as constantes <code class="language-c highlight"><span class="n">EXIT_SUCCESS</span></code> (0) e <code class="language-c highlight"><span class="n">EXIT_FAILURE</span></code> (um valor definido pela implementação) indicam sucesso e falha. Antes de encerrar, é uma boa prática escrever uma mensagem no fluxo de erros, <code>stderr</code>, para que ela não se misture com a saída normal do programa:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código-fonte</label><label for="__tabbed_6_2">Entrada correta</label><label for="__tabbed_6_3">Entrada com erro</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">media_valores.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
@@ -3761,7 +3766,7 @@
 <p>Com <code class="language-c highlight"><span class="n">exit</span></code>, a função <code>le_valores</code> pode devolver diretamente o arranjo lido, sem precisar de um código de erro: se ela retornar, é porque deu certo. Ao encerrar, <code class="language-c highlight"><span class="n">exit</span></code> grava o que estiver pendente nos <em>buffers</em> dos arquivos abertos e os fecha. Em funções de bibliotecas, que serão usadas por outros programas, prefira devolver um código de erro e deixar que quem chama decida o que fazer: encerrar o programa inteiro por causa de um erro em uma função auxiliar raramente é a melhor escolha.</p>
 <h3 id="verificando-hipoteses-assert">Verificando hipóteses: <code>assert()</code><a class="headerlink" href="#verificando-hipoteses-assert" title="Permanent link">&para;</a></h3>
 <p>A macro <code class="language-c highlight"><span class="n">assert</span><span class="p">(</span><span class="n">condição</span><span class="p">)</span></code>, de <code>assert.h</code>, verifica uma condição que <strong>deveria ser sempre verdadeira</strong>, se o programa estiver correto. Se a condição for falsa, o programa é encerrado imediatamente, com uma mensagem que mostra a condição, o arquivo, a linha e a função onde a verificação falhou:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Código fonte</label><label for="__tabbed_7_2">Execução</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Código-fonte</label><label for="__tabbed_7_2">Execução</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">assert.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-38-1"> 1</a></span>
@@ -3992,7 +3997,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

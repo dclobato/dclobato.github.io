@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2526,7 +2526,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2915,16 +2915,16 @@
 </span></code></pre></div>
 <h3 id="blocos-e-escopo">Blocos e escopo<a class="headerlink" href="#blocos-e-escopo" title="Permanent link">&para;</a></h3>
 <p>Um conjunto de instruções delimitado por chaves (<code>{</code> e <code>}</code>) é chamado de <strong>bloco</strong> (ou instrução composta). Os blocos agrupam instruções que devem ser executadas juntas, como o corpo de uma função ou o conjunto de instruções executadas por um <code class="language-cpp highlight"><span class="k">if</span></code>.</p>
-<p>Uma característica importante dos blocos é que eles definem um <strong>escopo</strong> para as variáveis. O escopo determina onde uma variável é visível e qual é o seu <strong>tempo de vida</strong>: uma variável declarada dentro de um bloco só existe a partir da declaração até o final daquele bloco. Quando a execução sai do bloco, a variável é destruída, e o espaço que ela ocupava é liberado.</p>
+<p>Blocos definem o <strong>escopo</strong>, que determina onde um nome é visível. Isso é diferente do <strong>tempo de vida</strong> do objeto. Uma variável local automática normalmente é destruída ao sair do bloco, mas uma variável local <code>static</code> permanece entre chamadas. Objetos dinâmicos têm seu tempo de vida controlado separadamente, de preferência por contêineres e ponteiros inteligentes.</p>
 <p>Os blocos podem ser aninhados, criando uma hierarquia de escopos. Variáveis declaradas em blocos externos são acessíveis nos blocos internos, mas o contrário não é verdade. Os conceitos gerais de <a href="../../algoritmos/variaveis/#escopo-e-tempo-de-vida">escopo e tempo de vida</a> são apresentados na seção sobre variáveis, e o escopo das variáveis de uma função, na seção sobre <a href="../funcoes/#variaveis-locais-globais-e-estaticas">funções</a>.</p>
-<p>O ciclo de vida de uma variável envolve quatro etapas: <strong>declaração</strong> (<code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span></code>), quando reservamos um espaço na memória e associamos um nome a ele; <strong>inicialização</strong> (<code class="language-cpp highlight"><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span></code>, ou, de preferência, <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span></code> em uma única etapa), quando atribuímos o primeiro valor; <strong>uso</strong>, quando lemos ou alteramos o valor; e <strong>destruição</strong>, quando a execução sai do bloco em que a variável foi declarada.</p>
+<p>A declaração introduz o nome e o tipo. A <strong>inicialização</strong> acontece na criação do objeto, como em <code>int x = 10;</code>. Já <code>int x; x = 10;</code> declara primeiro um inteiro local sem valor inicial definido e depois faz uma <strong>atribuição</strong>: essa segunda operação não é inicialização. Após o uso, o objeto é destruído conforme sua duração de armazenamento.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Variáveis <strong>globais</strong> são declaradas fora de qualquer bloco ou função e podem ser acessadas em qualquer parte do programa. O uso de variáveis globais é geralmente desencorajado porque dificulta a compreensão do código: qualquer parte do programa pode alterá-las, e fica difícil descobrir onde e por que um valor foi modificado.</p>
 <p>As únicas situações em que o uso de variáveis globais pode ser considerado aceitável são:</p>
 <ul>
 <li><strong>Constantes globais</strong>: se um valor não muda durante a execução do programa (por exemplo, o valor de <span class="arithmatex">\(\pi\)</span>), ele pode ser declarado como uma constante (<code class="language-cpp highlight"><span class="k">constexpr</span></code>) no escopo mais externo;</li>
-<li><strong>Configurações compartilhadas</strong>: em programas grandes, algumas configurações globais podem ser mais fáceis de gerenciar, como o nível de detalhe das mensagens de depuração, e;</li>
+<li><strong>Configurações compartilhadas</strong>: em programas grandes, algumas configurações globais podem ser mais fáceis de gerenciar, como o nível de detalhe das mensagens de depuração;</li>
 <li><strong>Gerenciamento de estado</strong>: em sistemas embarcados ou aplicações de tempo real, pode ser útil ter variáveis globais para armazenar estados do sistema.</li>
 </ul>
 <p>Mas a regra geral é: <strong>não use variáveis globais</strong>.</p>
@@ -3371,7 +3371,7 @@
 <p>A estrutura <code class="language-cpp highlight"><span class="k">switch</span></code> difere de <code class="language-cpp highlight"><span class="k">if</span></code>/<code class="language-cpp highlight"><span class="k">else</span></code> encadeados em três aspectos principais:</p>
 <ul>
 <li>O <code class="language-cpp highlight"><span class="k">switch</span></code> avalia a expressão apenas uma vez, enquanto os <code class="language-cpp highlight"><span class="k">if</span></code>/<code class="language-cpp highlight"><span class="k">else</span></code> avaliam cada condição separadamente;</li>
-<li>O <code class="language-cpp highlight"><span class="k">switch</span></code> só compara a expressão com <strong>valores constantes</strong>, conhecidos durante a compilação, enquanto <code class="language-cpp highlight"><span class="k">if</span></code>/<code class="language-cpp highlight"><span class="k">else</span></code> pode usar qualquer condição, e;</li>
+<li>O <code class="language-cpp highlight"><span class="k">switch</span></code> só compara a expressão com <strong>valores constantes</strong>, conhecidos durante a compilação, enquanto <code class="language-cpp highlight"><span class="k">if</span></code>/<code class="language-cpp highlight"><span class="k">else</span></code> pode usar qualquer condição;</li>
 <li>A expressão do <code class="language-cpp highlight"><span class="k">switch</span></code> precisa ser de um tipo inteiro (incluindo <code class="language-cpp highlight"><span class="kt">char</span></code>, <code class="language-cpp highlight"><span class="kt">bool</span></code> e enumerações). Não é possível usar <code class="language-cpp highlight"><span class="k">switch</span></code> com números reais nem com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code>; para eles, use <code class="language-cpp highlight"><span class="k">if</span></code>/<code class="language-cpp highlight"><span class="k">else</span></code>.</li>
 </ul>
 <h2 id="estruturas-iterativas">Estruturas iterativas<a class="headerlink" href="#estruturas-iterativas" title="Permanent link">&para;</a></h2>
@@ -3386,7 +3386,7 @@
 </span></code></pre></div>
 <ul>
 <li>A <strong>inicialização</strong> é executada uma única vez, antes do início do laço;</li>
-<li>A <strong>condição</strong> é avaliada antes de cada repetição; se for falsa, o laço termina, e;</li>
+<li>A <strong>condição</strong> é avaliada antes de cada repetição; se for falsa, o laço termina;</li>
 <li>A <strong>pós-operação</strong> é executada após cada repetição.</li>
 </ul>
 <p>Veja o fluxograma equivalente à execução da instrução <code class="language-cpp highlight"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="p">;</span></code></p>
@@ -3898,7 +3898,7 @@
 <p>Quando há vários blocos <code class="language-cpp highlight"><span class="k">catch</span></code>, eles são testados na ordem em que aparecem. Por isso, os tipos mais específicos devem vir <strong>antes</strong> dos mais genéricos: se o <code class="language-cpp highlight"><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span></code> viesse primeiro, ele capturaria todas as exceções, e os blocos seguintes nunca seriam executados.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Nem todo erro gera uma exceção em C++. <strong>Divisão inteira por zero, acesso fora dos limites com colchetes (<code>v[10]</code>), dereferência de ponteiro nulo e estouro de capacidade de inteiros com sinal não lançam exceções</strong>: eles têm comportamento indefinido, e normalmente o programa simplesmente é encerrado (ou, pior, continua executando com valores errados). Um <code class="language-cpp highlight"><span class="k">try</span></code>/<code class="language-cpp highlight"><span class="k">catch</span></code> não protege contra esses erros. A única defesa é verificar as condições antes: o divisor é diferente de zero? O índice está dentro dos limites?</p>
+<p>Nem todo erro gera uma exceção em C++. <strong>Divisão inteira por zero, acesso fora dos limites com colchetes (<code>v[10]</code>), desreferência de ponteiro nulo e estouro de capacidade de inteiros com sinal não lançam exceções</strong>: eles têm comportamento indefinido, e normalmente o programa simplesmente é encerrado (ou, pior, continua executando com valores errados). Um <code class="language-cpp highlight"><span class="k">try</span></code>/<code class="language-cpp highlight"><span class="k">catch</span></code> não protege contra esses erros. A única defesa é verificar as condições antes: o divisor é diferente de zero? O índice está dentro dos limites?</p>
 </div>
 <h3 id="lancando-excecoes-com-throw">Lançando exceções com <code>throw</code><a class="headerlink" href="#lancando-excecoes-com-throw" title="Permanent link">&para;</a></h3>
 <p>Uma função lança uma exceção com a instrução <code class="language-cpp highlight"><span class="k">throw</span></code>, seguida de um objeto que descreve o problema. Normalmente, usa-se uma das exceções da biblioteca padrão, com uma mensagem:</p>
@@ -4040,7 +4040,7 @@
 </span></code></pre></div>
 <p>Além da mensagem, a exceção carrega uma informação extra (<code>falta</code>), que o código que a captura pode usar para decidir o que fazer. E, por herdar de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span></code>, ela também pode ser capturada por um <code class="language-cpp highlight"><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span></code> genérico.</p>
 <h3 id="excecoes-e-liberacao-de-recursos">Exceções e liberação de recursos<a class="headerlink" href="#excecoes-e-liberacao-de-recursos" title="Permanent link">&para;</a></h3>
-<p>Quando uma exceção interrompe uma função, todas as variáveis automáticas criadas até ali são destruídas normalmente, na ordem inversa da criação. Isso significa que objetos que seguem o princípio RAII, como arquivos (<code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span></code>), contêineres (<code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code>) e ponteiros inteligentes (<code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span></code>), liberam seus recursos automaticamente, mesmo quando uma exceção acontece no meio do caminho:</p>
+<p>No <strong>desenrolamento da pilha</strong> para alcançar um tratador de exceção, os objetos automáticos já construídos nos escopos abandonados são destruídos na ordem inversa da construção. Assim, arquivos, contêineres e ponteiros inteligentes liberam seus recursos por RAII. Se nenhuma função tratar a exceção, <code>std::terminate</code> é chamado, e não há garantia de desenrolamento da pilha antes do encerramento.</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">processa</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">nome</span><span class="p">)</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="p">{</span>
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ofstream</span><span class="w"> </span><span class="n">arquivo</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
@@ -4052,7 +4052,7 @@
 <p>É por isso que C++ não precisa de um bloco para "limpar" recursos depois de um erro: a limpeza fica a cargo dos próprios objetos. O mesmo não acontece com memória alocada com <code class="language-cpp highlight"><span class="k">new</span></code> e controlada por ponteiros comuns, que vaza se uma exceção impedir a execução do <code class="language-cpp highlight"><span class="k">delete</span></code>. Mais um motivo para usar contêineres e ponteiros inteligentes.</p>
 <div class="admonition note">
 <p class="admonition-title"><code>noexcept</code></p>
-<p>Uma função pode ser declarada com a palavra-chave <code class="language-cpp highlight"><span class="k">noexcept</span></code> (por exemplo, <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">soma</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="k">noexcept</span></code>) para indicar que ela nunca lança exceções. Isso documenta a intenção e permite algumas otimizações. Se uma função <code class="language-cpp highlight"><span class="k">noexcept</span></code> lançar uma exceção mesmo assim, o programa é encerrado imediatamente.</p>
+<p>Uma função declarada com <code>noexcept</code>, como <code>int soma(int a, int b) noexcept</code>, promete que <strong>nenhuma exceção escapará</strong> dela. Ela ainda pode lançar e tratar exceções internamente. Se uma exceção ultrapassar seu limite, ocorre <code>std::terminate</code>; o compilador não precisa rejeitar uma instrução <code>throw</code> dentro dessa função.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Quando usar exceções?</p>
@@ -4080,7 +4080,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

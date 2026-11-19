@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2387,7 +2387,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -3116,8 +3116,10 @@
 </span></code></pre></div></td></tr></table></div>
 <p>O operador <code>&gt;&gt;</code> lê uma palavra de cada vez, pulando todos os espaços, tabulações e quebras de linha; quando não há mais palavras, a condição do <code class="language-cpp highlight"><span class="k">while</span></code> se torna falsa. Já <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">getline</span><span class="p">(</span><span class="n">fluxo</span><span class="p">,</span><span class="w"> </span><span class="n">campo</span><span class="p">,</span><span class="w"> </span><span class="sc">';'</span><span class="p">)</span></code> lê tudo até o próximo <code>;</code>, o que permite separar campos que contêm espaços. As palavras são guardadas em um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span></code>, uma sequência de cadeias que cresce conforme novos elementos são acrescentados com <code class="language-cpp highlight"><span class="n">push_back</span><span class="p">()</span></code> (o <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code> é apresentado em detalhes na seção sobre a biblioteca padrão).</p>
 <p>Para juntar as partes com um separador, o laço acrescenta o separador antes de cada palavra, exceto a primeira.</p>
+<p>O ponteiro retornado por <code>c_str()</code> depende do tempo de vida e do armazenamento da cadeia: sua destruição ou operações que realoquem os caracteres podem invalidá-lo. Não guarde esse ponteiro para usar depois dessas mudanças.</p>
+<p>Ao usar <code>std::string_view</code>, lembre-se de que ela não possui os caracteres e não prolonga o tempo de vida da origem; destruir a cadeia ou realocar seus caracteres pode deixá-la pendente. Ela também não garante um terminador nulo no fim de seu trecho.</p>
 <h2 id="cadeias-de-caracteres-no-estilo-antigo">Cadeias de caracteres no estilo antigo<a class="headerlink" href="#cadeias-de-caracteres-no-estilo-antigo" title="Permanent link">&para;</a></h2>
-<p>Em códigos mais antigos e em algumas bibliotecas, textos aparecem como <strong>arranjos de caracteres terminados pelo caractere nulo</strong> (<code>'\0'</code>), manipulados por meio de ponteiros do tipo <code class="language-cpp highlight"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span></code>. É esse, inclusive, o tipo de um literal entre aspas. A conversão para <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> é automática, e o método <code class="language-cpp highlight"><span class="n">c_str</span><span class="p">()</span></code> faz o caminho inverso, quando uma função exige um <code class="language-cpp highlight"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span></code>:</p>
+<p>Em códigos mais antigos e em algumas bibliotecas, textos aparecem como <strong>arranjos de caracteres terminados pelo caractere nulo</strong> (<code>'\0'</code>), manipulados por meio de ponteiros do tipo <code class="language-cpp highlight"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span></code>. Um literal comum entre aspas tem tipo arranjo de <code>const char</code>, incluindo o terminador nulo; na maioria das expressões, ele decai para <code>const char*</code>. A construção de uma <code>std::string</code> a partir desses caracteres copia o texto, e o método <code class="language-cpp highlight"><span class="n">c_str</span><span class="p">()</span></code> faz o caminho inverso, quando uma função exige um <code class="language-cpp highlight"><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span></code>:</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Conversão entre const char* e std::string</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -3187,7 +3189,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

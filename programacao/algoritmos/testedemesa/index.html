@@ -94,7 +94,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metodologia-de-execucao" class="md-skip">
+        <a href="#teste-de-mesa" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -498,6 +498,8 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -541,6 +543,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Nesta página">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -2322,7 +2326,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2416,6 +2420,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2497,15 +2503,14 @@
 
 
 
-  <h1>Teste de mesa</h1>
-
+<h1 id="teste-de-mesa">Teste de mesa<a class="headerlink" href="#teste-de-mesa" title="Permanent link">&para;</a></h1>
 <p>O <strong>teste de mesa</strong>, também conhecido como <strong>rastreamento manual</strong> ou <strong>simulação de algoritmo</strong>, é uma técnica sistemática utilizada no desenvolvimento e análise de algoritmos para verificar sua correção, comportamento e desempenho. Consiste na execução manual e metódica de um algoritmo, passo a passo, acompanhando as alterações nos valores das variáveis, expressões condicionais e fluxo de controle durante todo o processo. Esta técnica permite ao programador ou analista compreender em detalhes a dinâmica interna do algoritmo, identificando possíveis erros de lógica, inconsistências ou comportamentos inesperados antes da implementação em código-fonte.</p>
 <p>A importância do teste de mesa vai além do simples processo de verificação de correção, pois ele facilita a compreensão dos conceitos algorítmicos fundamentais e, em contextos profissionais, funciona como uma etapa preliminar de depuração, economizando tempo significativo que seria despendido na correção de erros durante fases posteriores do desenvolvimento de software.</p>
 <h2 id="metodologia-de-execucao">Metodologia de Execução<a class="headerlink" href="#metodologia-de-execucao" title="Permanent link">&para;</a></h2>
-<p>A execução de um teste de mesa segue um conjunto bem definido de passos que podem ser resumidos  nas seguintes etapas:</p>
+<p>A execução de um teste de mesa segue um conjunto bem definido de passos que podem ser resumidos nas seguintes etapas:</p>
 <ol>
 <li>
-<p><strong>Preparação</strong>: Inicialmente, elabora-se uma tabela onde as colunas representam as variáveis do algoritmo e cada linha corresponderá a um estado de execução. Adicionalmente, deve-se reservar uma coluna para indicar a linha ou instrução do algoritmo que está sendo executada.</p>
+<p><strong>Preparação</strong>: Inicialmente, elabora-se uma tabela em que as colunas representam as variáveis do algoritmo e cada linha corresponderá a um estado de execução. Adicionalmente, deve-se reservar uma coluna para indicar a linha ou instrução do algoritmo que está sendo executada.</p>
 </li>
 <li>
 <p><strong>Inicialização</strong>: Registram-se os valores iniciais das variáveis, tipicamente parâmetros de entrada ou valores iniciais explicitamente declarados no algoritmo.</p>
@@ -2514,14 +2519,14 @@
 <p><strong>Execução sequencial</strong>: Para cada instrução do algoritmo, registra-se na tabela o novo estado das variáveis afetadas. Em estruturas condicionais, deve-se avaliar a expressão lógica e seguir o fluxo correspondente (verdadeiro ou falso). Em estruturas iterativas, cada iteração gerará uma ou mais linhas na tabela.</p>
 </li>
 <li>
-<p><strong>Análise de saída</strong>: Ao término da execução, analisa-se o estado final das variáveis, especialmente aquelas designadas como saída do algoritmo, verificando se correspondem ao resultado esperado para os dados de entrada fornecidos.</p>
+<p><strong>Análise de saída</strong>: Ao término da execução, analisa-se o estado final das variáveis, especialmente daquelas designadas como saída do algoritmo, verificando se correspondem ao resultado esperado para os dados de entrada fornecidos.</p>
 </li>
 <li>
 <p><strong>Validação</strong>: Compara-se o resultado obtido com o resultado esperado para os casos de teste selecionados, validando assim o comportamento do algoritmo.</p>
 </li>
 </ol>
 <h2 id="exemplo-pratico-de-teste-de-mesa">Exemplo Prático de Teste de Mesa<a class="headerlink" href="#exemplo-pratico-de-teste-de-mesa" title="Permanent link">&para;</a></h2>
-<p>Para ilustrar concretamente a aplicação de um teste de mesa, consideremos um algoritmo simples que calcula o valor fatorial de um número inteiro não-negativo:</p>
+<p>Para ilustrar concretamente a aplicação de um teste de mesa, consideremos um algoritmo simples que calcula o fatorial de um número inteiro não negativo:</p>
 <pre class="mermaid"><code>flowchart TD
   A --&gt; B --&gt; C --&gt; D --&gt; E
   E -- Sim --&gt; F --&gt; G --&gt; E
@@ -2535,7 +2540,7 @@
   G@{ shape: process, label: "i &amp;larr; i + 1&lt;br&gt;(5)" }
   H@{ shape: display, label: "fat&lt;br&gt;(6)"}
   Z@{ shape: stadium, label: "Fim" }</code></pre>
-<p>Quando realizamos um teste de mesa para este algoritmo com a entrada <code>n = 4</code>, produzimos a tabela a seguir, onde é possível ver o estado das variáveis após cada instrução relevante:</p>
+<p>Quando realizamos um teste de mesa para este algoritmo com a entrada <code>n = 4</code>, produzimos a tabela a seguir, na qual é possível ver o estado das variáveis após cada instrução relevante:</p>
 <table>
 <thead>
 <tr>
@@ -2640,10 +2645,10 @@
 </tr>
 </tbody>
 </table>
-<p>Através desta simulação manual, verificamos que o algoritmo produz corretamente o valor 24 para o fatorial de 4, o que confere com o resultado esperado matematicamente (<span class="arithmatex">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>).</p>
+<p>Por meio desta simulação manual, verificamos que o algoritmo produz corretamente o valor 24 para o fatorial de 4, o que confere com o resultado esperado matematicamente (<span class="arithmatex">\(4! = 4 \times 3 \times 2 \times 1 = 24\)</span>).</p>
 <div class="admonition note">
 <p class="admonition-title"> </p>
-<p>Para um teste de mesa funcionar, é necessário seguir o algoritmo tal qual ele está descrito. Não é permitido fazer "ajustes" nas operações, ou assumir alguma coisa que não está explicitamente indicado no algoritmo.</p>
+<p>Para um teste de mesa funcionar, é necessário seguir o algoritmo tal qual ele está descrito. Não é permitido fazer "ajustes" nas operações ou assumir alguma coisa que não esteja explicitamente indicada no algoritmo.</p>
 </div>
 <h2 id="vantagens-e-limitacoes">Vantagens e Limitações<a class="headerlink" href="#vantagens-e-limitacoes" title="Permanent link">&para;</a></h2>
 <p>O teste de mesa apresenta vantagens significativas no processo de desenvolvimento de algoritmos:</p>
@@ -2666,10 +2671,10 @@
 <li><strong>Casos limítrofes</strong>: Valores extremos ou no limite do domínio de entrada.</li>
 <li><strong>Casos especiais</strong>: Entradas que podem provocar comportamentos particulares no algoritmo.</li>
 </ol>
-<p>Considere, por exemplo, o algoritmo para calculo de fatorial discutido anteriormente. Seria pertinente realizar testes de mesa para situações como, por exemplo, n valendo 0 ou n valendo um número negativo.</p>
+<p>Considere, por exemplo, o algoritmo para cálculo de fatorial discutido anteriormente. Seria pertinente realizar testes de mesa para situações como <code>n</code> valendo 0 ou <code>n</code> valendo um número negativo.</p>
 <h2 id="conclusao">Conclusão<a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h2>
 <p>O teste de mesa constitui uma ferramenta metodológica fundamental no desenvolvimento algorítmico, proporcionando uma verificação sistemática e detalhada do comportamento dos algoritmos. Apesar de suas limitações em termos de escalabilidade e tempo de execução, continua sendo uma técnica inestimável, especialmente nas fases iniciais de desenvolvimento e no contexto educacional. A capacidade de rastrear manualmente a execução de um algoritmo não apenas valida sua correção, mas também promove uma compreensão mais profunda dos princípios fundamentais da programação e da lógica computacional.</p>
-<p>Em um cenário onde as ferramentas automáticas de depuração são cada vez mais sofisticadas, o teste de mesa mantém sua relevância como uma prática que desenvolve o raciocínio algorítmico e a intuição do programador, habilidades essenciais para o desenvolvimento de software de alta qualidade e desempenho.</p>
+<p>Em um cenário em que as ferramentas automáticas de depuração são cada vez mais sofisticadas, o teste de mesa mantém sua relevância como uma prática que desenvolve o raciocínio algorítmico e a intuição do programador, habilidades essenciais para o desenvolvimento de software de alta qualidade e desempenho.</p>
 
 
 
@@ -2692,7 +2697,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="13 de março de 2025 02:43:42 -03">13 de março de 2025 02:43:42</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2376,7 +2376,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2639,12 +2639,12 @@
 <tr>
 <td style="text-align: left;">Multiplicação</td>
 <td style="text-align: center;"><code>a * b</code></td>
-<td style="text-align: left;">O produto será do tipo com maior precisão entre os fatores</td>
+<td style="text-align: left;">Os operandos passam pelas promoções e conversões aritméticas usuais</td>
 </tr>
 <tr>
 <td style="text-align: left;">Divisão</td>
 <td style="text-align: center;"><code>a / b</code></td>
-<td style="text-align: left;">O quociente será do tipo com maior precisão entre o dividendo e o divisor. Se ambos forem inteiros, a divisão é inteira</td>
+<td style="text-align: left;">Os operandos passam pelas conversões aritméticas usuais. Se o tipo resultante for inteiro, a divisão é inteira</td>
 </tr>
 <tr>
 <td style="text-align: left;">Módulo</td>
@@ -2654,26 +2654,26 @@
 <tr>
 <td style="text-align: left;">Pré-incremento</td>
 <td style="text-align: center;"><code>++a</code></td>
-<td style="text-align: left;">Incrementa de um o valor de <code>a</code>, e depois utiliza o valor</td>
+<td style="text-align: left;">Incrementa em uma unidade o valor de <code>a</code> e depois utiliza o valor</td>
 </tr>
 <tr>
 <td style="text-align: left;">Pós-incremento</td>
 <td style="text-align: center;"><code>a++</code></td>
-<td style="text-align: left;">Utiliza o valor de <code>a</code>, e depois incrementa de um o valor</td>
+<td style="text-align: left;">Utiliza o valor de <code>a</code> e depois o incrementa em uma unidade</td>
 </tr>
 <tr>
 <td style="text-align: left;">Pré-decremento</td>
 <td style="text-align: center;"><code>--a</code></td>
-<td style="text-align: left;">Decrementa de um o valor de <code>a</code>, e depois utiliza o valor</td>
+<td style="text-align: left;">Decrementa em uma unidade o valor de <code>a</code> e depois utiliza o valor</td>
 </tr>
 <tr>
 <td style="text-align: left;">Pós-decremento</td>
 <td style="text-align: center;"><code>a--</code></td>
-<td style="text-align: left;">Utiliza o valor de <code>a</code>, e depois decrementa de um o valor</td>
+<td style="text-align: left;">Utiliza o valor de <code>a</code> e depois o decrementa em uma unidade</td>
 </tr>
 </tbody>
 </table>
-<p>Quando os dois operandos da divisão são inteiros, o resultado também é inteiro: a parte fracionária é descartada (o resultado é <strong>truncado em direção a zero</strong>). O resto da divisão, obtido com <code>%</code>, tem sempre o mesmo sinal do dividendo, de forma que a relação <code>(a / b) * b + a % b == a</code> vale sempre.</p>
+<p>Quando os dois operandos da divisão são inteiros, a parte fracionária é descartada: o resultado é <strong>truncado em direção a zero</strong>. Se o resto não for zero, ele tem o mesmo sinal do dividendo. A relação <code>(a / b) * b + a % b == a</code> vale quando a divisão está definida: o divisor não pode ser zero, e o quociente precisa caber no tipo. Dividir o menor inteiro com sinal por <code>-1</code> viola essa última condição e tem comportamento indefinido, inclusive ao calcular <code>%</code>.</p>
 <div class="language-cpp highlight"><span class="filename">Divisão inteira e resto com números negativos</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span><span class="w">    </span><span class="c1">// 3 1</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">-7</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">-7</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span><span class="w">  </span><span class="c1">// -3 -1</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">-2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">' '</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">-2</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span><span class="w">  </span><span class="c1">// -3 1</span>
@@ -2710,7 +2710,7 @@
 <p>Quando usados isoladamente, em uma linha como <code class="language-cpp highlight"><span class="n">contador</span><span class="o">++</span><span class="p">;</span></code> ou <code class="language-cpp highlight"><span class="o">++</span><span class="n">contador</span><span class="p">;</span></code>, as duas formas têm exatamente o mesmo efeito.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p><strong>Nunca modifique a mesma variável mais de uma vez na mesma expressão.</strong> Observe a linha abaixo:</p>
+<p><strong>Evite combinar modificações da mesma variável em uma expressão sem conhecer as regras de sequenciamento.</strong> Observe a linha abaixo:</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">++</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">--</span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">++</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="o">--</span><span class="p">;</span><span class="w">  </span><span class="c1">// NÃO FAÇA ISSO</span>
@@ -2721,20 +2721,11 @@
 </span></code></pre></div>
 <p>A solução é separar as operações em várias linhas, deixando claro o que deve acontecer e em que ordem.</p>
 </div>
-<p>Quando os operandos são de tipos diferentes, mas compatíveis, o C++ faz uma conversão de tipo implícita, também conhecida como <strong>coerção</strong>. Nesse caso, o operando de tipo "menor" é convertido para o tipo "maior" antes da operação. Por exemplo, se um <code class="language-cpp highlight"><span class="kt">int</span></code> for somado a um <code class="language-cpp highlight"><span class="kt">double</span></code>, o <code class="language-cpp highlight"><span class="kt">int</span></code> é implicitamente convertido em <code class="language-cpp highlight"><span class="kt">double</span></code> e o resultado será do tipo <code class="language-cpp highlight"><span class="kt">double</span></code>. Tipos menores que <code class="language-cpp highlight"><span class="kt">int</span></code>, como <code class="language-cpp highlight"><span class="kt">char</span></code>, <code class="language-cpp highlight"><span class="kt">short</span></code> e <code class="language-cpp highlight"><span class="kt">bool</span></code>, são sempre convertidos para <code class="language-cpp highlight"><span class="kt">int</span></code> antes de qualquer operação aritmética.</p>
-<pre class="mermaid"><code>flowchart TD
-  subgraph s1 [Tipos inteiros]
-    direction RL
-    A[int] --&gt; B[unsigned int] --&gt; C[long int] --&gt; D[unsigned&lt;br /&gt;long int] --&gt; E[long long&lt;br /&gt;int] --&gt; F[unsigned long&lt;br /&gt;long int]
-  end
-  subgraph s2 [Tipos reais]
-    direction RL
-    G[float] --&gt; H[double] --&gt; I[long double]
-  end
-  s1 --&gt; s2</code></pre>
+<p>Antes das operações aritméticas, ocorrem <strong>promoções inteiras</strong> e, quando necessário, as <strong>conversões aritméticas usuais</strong>, que estabelecem um tipo comum para os operandos. <code>bool</code> é promovido a <code>int</code>; tipos como <code>char</code> e <code>short</code> são promovidos a <code>int</code> se todos os seus valores couberem nele, ou a <code>unsigned int</code> caso contrário. Isso também pode acontecer quando os dois operandos têm o mesmo tipo. Ao somar <code>int</code> e <code>double</code>, por exemplo, o inteiro é convertido para <code>double</code>.</p>
+<p>Misturar inteiros com e sem sinal exige cuidado: a conversão depende da categoria dos tipos e dos intervalos representáveis, e não apenas do tamanho. Em <code>-1 &lt; 1u</code>, por exemplo, <code>-1</code> é convertido para <code>unsigned int</code>, tornando a comparação falsa. Converter um inteiro para ponto flutuante também pode perder precisão.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>A conversão implícita só acontece quando os tipos são diferentes. Então, ao efetuar a divisão de um inteiro por outro, o resultado será inteiro, a menos que seja feita a conversão explícita do dividendo ou do divisor para <code class="language-cpp highlight"><span class="kt">double</span></code>. <code>5 / 2</code> não é <code>2.5</code>, e sim <code>2</code>, pois <code>5</code> e <code>2</code> são do mesmo tipo (<code class="language-cpp highlight"><span class="kt">int</span></code>), então o resultado será, também, do mesmo tipo. Para que seja <code>2.5</code>, é preciso fazer <code>5.0 / 2</code> ou <code>5 / 2.0</code>.</p>
+<p>Se os operandos, depois das promoções e conversões, forem inteiros, a divisão será inteira. <code>5 / 2</code> resulta em <code>2</code>; para obter <code>2.5</code>, use <code>5.0 / 2</code>, <code>5 / 2.0</code> ou converta explicitamente um dos operandos para <code>double</code>.</p>
 <p>Não importa o tipo da variável que vai <strong>receber</strong> o resultado: a divisão é feita primeiro, com os tipos dos operandos, e só depois o resultado (já truncado) é convertido para o tipo da variável.</p>
 <p>Quando os operandos são variáveis, a conversão explícita é feita com <code class="language-cpp highlight"><span class="k">static_cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span></code>, que converte <code>valor</code> para o tipo <code>T</code>.</p>
 <div class="admonition failure">
@@ -2753,7 +2744,7 @@
 </div>
 </div>
 <h3 id="arredondamento-exato-com-aritmetica-inteira">Arredondamento exato com aritmética inteira<a class="headerlink" href="#arredondamento-exato-com-aritmetica-inteira" title="Permanent link">&para;</a></h3>
-<p>Para calcular e formatar uma razão <span class="arithmatex">\(A/B\)</span> (ou um percentual <span class="arithmatex">\(100 \times A/B\)</span>) com exatamente <span class="arithmatex">\(K\)</span> casas decimais, evitando os erros de precisão do tipo <code class="language-cpp highlight"><span class="kt">double</span></code> e a regra de arredondamento para o par mais próximo (<em>round half to even</em>) usada por padrão na formatação da saída, utilizamos aritmética inteira escalonada.</p>
+<p>Para calcular e formatar uma razão <span class="arithmatex">\(A/B\)</span> (ou um percentual <span class="arithmatex">\(100 \times A/B\)</span>) com exatamente <span class="arithmatex">\(K\)</span> casas decimais e arredondamento dos empates para cima, podemos usar aritmética inteira escalonada. A fórmula abaixo considera <span class="arithmatex">\(A \ge 0\)</span>, <span class="arithmatex">\(B &gt; 0\)</span> e <span class="arithmatex">\(K \ge 0\)</span>, e exige que <strong>todos os resultados intermediários caibam no tipo escolhido</strong>.</p>
 <p>Definimos o fator de escala como <span class="arithmatex">\(S = 10^K\)</span> para razões simples, ou <span class="arithmatex">\(S = 10^{K+2}\)</span> para valores percentuais. Ao multiplicar o valor exato por <span class="arithmatex">\(S\)</span>, reduzimos o problema a encontrar o inteiro <span class="arithmatex">\(q\)</span> mais próximo de <span class="arithmatex">\(\frac{S \cdot A}{B}\)</span>, arredondando empates exatos na metade (<span class="arithmatex">\(0,5\)</span>) para cima (<em>round half up</em>).</p>
 <p>A fórmula geral utilizando divisão inteira é:</p>
 <div class="arithmatex">\[q = \left\lfloor \frac{2 \cdot S \cdot A + B}{2B} \right\rfloor\]</div>
@@ -2762,7 +2753,7 @@
 <li><span class="arithmatex">\(q = a\)</span>, se <span class="arithmatex">\(2r \lt B\)</span>;</li>
 <li><span class="arithmatex">\(q = a + 1\)</span>, se <span class="arithmatex">\(2r \ge B\)</span>.</li>
 </ul>
-<p>É preciso atenção aos limites dos tipos inteiros. Como o numerador <span class="arithmatex">\(2 \cdot S \cdot A + B\)</span> frequentemente ultrapassa o limite de um inteiro de 32 bits (<span class="arithmatex">\(\approx 2 \times 10^9\)</span>), é indispensável utilizar inteiros de 64 bits (<code class="language-cpp highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> ou <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span></code>), ou até o tipo <code class="language-cpp highlight"><span class="kt">__int128</span></code> (uma extensão do GCC) caso <span class="arithmatex">\(S \cdot A\)</span> exceda <span class="arithmatex">\(10^{18}\)</span>. Para imprimir o resultado (assumindo <span class="arithmatex">\(K \gt 0\)</span>), separa-se a parte inteira (<code>q / S</code>) e a parte fracionária (<code>q % S</code>), preenchendo esta última com zeros à esquerda até completar <span class="arithmatex">\(K\)</span> dígitos.</p>
+<p>É preciso escolher um tipo que comporte não apenas <span class="arithmatex">\(S \cdot A\)</span>, mas também <span class="arithmatex">\(2 \cdot S \cdot A + B\)</span>, <span class="arithmatex">\(2B\)</span> e o próprio cálculo de <span class="arithmatex">\(S\)</span>. <code>long long</code> ou <code>std::int64_t</code> podem ser suficientes; <code>__int128</code> é uma extensão disponível em alguns compiladores e plataformas, com limites próprios. Para imprimir uma razão com <span class="arithmatex">\(K &gt; 0\)</span>, separe a parte inteira e a fracionária usando <span class="arithmatex">\(10^K\)</span>; em percentuais, o fator usado para calcular <span class="arithmatex">\(q\)</span> é <span class="arithmatex">\(10^{K+2}\)</span>, mas a separação continua usando <span class="arithmatex">\(10^K\)</span>, como no exemplo.</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Percentual de 1 em 128 com 4 casas decimais</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
@@ -2815,7 +2806,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>O valor exato é <span class="arithmatex">\(100 \times 1/128 = 0,78125\)</span>, e o programa imprime <code>0.7813</code>. Os manipuladores <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">setfill</span><span class="p">(</span><span class="sc">'0'</span><span class="p">)</span></code> e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">setw</span><span class="p">(</span><span class="n">K</span><span class="p">)</span></code>, do cabeçalho <code>&lt;iomanip&gt;</code>, fazem com que a parte fracionária seja escrita com exatamente <code>K</code> dígitos, completando com zeros à esquerda quando necessário. Eles são apresentados em detalhes na seção de entrada e saída.</p>
 <h2 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h2>
-<p>Operadores lógicos operam sobre valores do tipo <code class="language-cpp highlight"><span class="kt">bool</span></code> e retornam um valor do tipo <code class="language-cpp highlight"><span class="kt">bool</span></code>, indicando o resultado da operação.</p>
+<p>Os operadores lógicos nativos convertem os operandos contextualmente para <code>bool</code> e produzem <code>bool</code>. Por exemplo, zero e ponteiros nulos são falsos; números diferentes de zero e ponteiros não nulos são verdadeiros. Operadores definidos por classes podem ter outro comportamento.</p>
 <table>
 <thead>
 <tr>
@@ -2840,7 +2831,7 @@
 </tr>
 <tr>
 <td style="text-align: center;">OR (<span class="arithmatex">\(\lor\)</span>)</td>
-<td style="text-align: center;"><code>a || b</code></td>
+<td style="text-align: center;"><code>a &#124;&#124; b</code></td>
 <td style="text-align: center;"><code>a or b</code></td>
 <td style="text-align: left;">Será falso apenas quando <code>a</code> e <code>b</code> forem falsos; em todos os outros casos, verdadeiro</td>
 </tr>
@@ -2932,7 +2923,7 @@
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <p>A forma com símbolos (<code class="language-cpp highlight"><span class="o">&amp;&amp;</span></code>, <code class="language-cpp highlight"><span class="o">||</span></code> e <code class="language-cpp highlight"><span class="o">!</span></code>) é, de longe, a mais usada, e é a que aparece no restante deste texto.</p>
-<p>A avaliação dos operadores <code class="language-cpp highlight"><span class="o">&amp;&amp;</span></code> (E lógico) e <code class="language-cpp highlight"><span class="o">||</span></code> (OU lógico) segue uma estratégia conhecida como <strong>curto-circuito</strong>: a avaliação de uma expressão lógica é interrompida assim que o resultado final pode ser determinado de forma inequívoca.</p>
+<p>A avaliação dos operadores <strong>nativos</strong> <code>&amp;&amp;</code> (E lógico) e <code>||</code> (OU lógico) usa <strong>curto-circuito</strong>: o segundo operando só é avaliado quando necessário para determinar o resultado. Sobrecargas desses operadores para classes não preservam o curto-circuito: os dois operandos são avaliados.</p>
 <p>No caso do operador <code class="language-cpp highlight"><span class="o">&amp;&amp;</span></code>, a avaliação ocorre da esquerda para a direita. Se o primeiro operando for falso, o resultado final será necessariamente falso, independentemente do valor do segundo operando. Portanto, o segundo operando não é avaliado. Isso permite escrever condições em que a segunda parte só é segura se a primeira for verdadeira, como a verificação de um ponteiro antes de acessar a memória para a qual ele aponta:</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Curto-circuito protegendo o acesso a um ponteiro</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
@@ -2992,7 +2983,7 @@
 <tr>
 <td style="text-align: left;">Não igual a<br>(diferente de)</td>
 <td style="text-align: center;"><code>a != b</code></td>
-<td style="text-align: left;"><code>a</code> não igual (diferente) a <code>b</code></td>
+<td style="text-align: left;"><code>a</code> diferente de <code>b</code></td>
 </tr>
 <tr>
 <td style="text-align: left;">Maior que</td>
@@ -3045,7 +3036,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">O operador de comparação de três vias (C++20)</p>
-<p>O C++20 introduziu o operador <code class="language-cpp highlight"><span class="o">&lt;=&gt;</span></code>, apelidado de "nave espacial" (<em>spaceship operator</em>). Em vez de responder sim ou não, ele diz de uma só vez se <code>a</code> é menor, igual ou maior que <code>b</code>: o resultado de <code class="language-cpp highlight"><span class="n">a</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="n">b</span></code> pode ser comparado com zero (<code class="language-cpp highlight"><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span></code> significa que <code>a</code> é menor que <code>b</code>). Seu principal uso é na definição de comparações para tipos criados pelo programador, assunto da seção de orientação a objetos.</p>
+<p>O C++20 introduziu o operador <code class="language-cpp highlight"><span class="o">&lt;=&gt;</span></code>, apelidado de "nave espacial" (<em>spaceship operator</em>). Em vez de responder sim ou não, ele diz de uma só vez se <code>a</code> é menor, igual ou maior que <code>b</code>: o resultado de <code class="language-cpp highlight"><span class="n">a</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="n">b</span></code> pode ser comparado com zero (<code class="language-cpp highlight"><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;=&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span></code> significa que <code>a</code> é menor que <code>b</code>). Com ponto flutuante, também pode indicar que os operandos não são ordenáveis, como em uma comparação com NaN; portanto, nem todo resultado é menor, igual ou maior. Seu principal uso é na definição de comparações para tipos criados pelo programador, assunto da seção de orientação a objetos.</p>
 </div>
 <h2 id="operadores-de-bit">Operadores de bit<a class="headerlink" href="#operadores-de-bit" title="Permanent link">&para;</a></h2>
 <div class="admonition note inline end">
@@ -3055,11 +3046,11 @@
 <p>Usando o mesmo número <code>a = 5</code> (binário <code>00000101</code>), um deslocamento à direita de 1 bit (<code>a &gt;&gt; 1</code>) resulta em <code>00000010</code>, que é 2 em decimal. Ou seja, <code>5 &gt;&gt; 1</code> resulta em 2.</p>
 <p>Resumo:</p>
 <ul>
-<li><code>a &lt;&lt; b</code>: multiplica <code>a</code> por <span class="arithmatex">\(2^b\)</span>.</li>
-<li><code>a &gt;&gt; b</code>: divide <code>a</code> por <span class="arithmatex">\(2^b\)</span> (com comportamento diferente para números negativos).</li>
+<li><code>a &lt;&lt; b</code>: corresponde à multiplicação por <span class="arithmatex">\(2^b\)</span>, com o resultado ajustado ao número de bits do tipo.</li>
+<li><code>a &gt;&gt; b</code>: divide <code>a</code> por <span class="arithmatex">\(2^b\)</span>, arredondando para menos infinito em C++20. Assim, <code>-5 &gt;&gt; 1</code> resulta em <code>-3</code>.</li>
 </ul>
 </div>
-<p>Os operadores de bit operam sobre a representação binária dos valores inteiros.</p>
+<p>Os operadores de bit operam sobre a representação binária dos valores inteiros, após as promoções inteiras. Em <code>a &lt;&lt; b</code> e <code>a &gt;&gt; b</code>, <code>b</code> deve ser não negativo e menor que a largura do tipo promovido de <code>a</code>; violar esse limite tem comportamento indefinido. Em C++20, o deslocamento à esquerda é definido módulo <span class="arithmatex">\(2^N\)</span>, sendo <span class="arithmatex">\(N\)</span> a largura do resultado, e o deslocamento à direita de inteiros com sinal preserva o sinal. Essas regras não tornam o estouro de <code>+</code> ou <code>*</code> com sinal válido. Para máscaras de bits, prefira tipos sem sinal.</p>
 <table>
 <thead>
 <tr>
@@ -3081,7 +3072,7 @@
 </tr>
 <tr>
 <td style="text-align: center;">OR</td>
-<td style="text-align: center;"><code>a | b</code></td>
+<td style="text-align: center;"><code>a &#124; b</code></td>
 <td style="text-align: left;">Efetua a operação OR bit a bit sobre os operandos <code>a</code> e <code>b</code></td>
 </tr>
 <tr>
@@ -3101,7 +3092,7 @@
 </tr>
 </tbody>
 </table>
-<p>O operador XOR (OU exclusivo) retorna verdadeiro apenas quando <code>a != b</code>.</p>
+<p>O operador XOR (<code>^</code>) compara <strong>cada par de bits</strong>: o bit resultante vale 1 quando os bits de entrada diferem. A tabela abaixo mostra essa regra para valores lógicos; com inteiros, o resultado é um inteiro, não uma comparação de desigualdade. Por exemplo, <code>5 ^ 3</code> resulta em <code>6</code>. <code>^</code> não calcula potências.</p>
 <table>
 <thead>
 <tr>
@@ -3149,7 +3140,7 @@
 <p>O mesmo vale para os próprios deslocamentos: para escrever o valor de <code>a</code> deslocado duas posições, use <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span></code>.</p>
 </div>
 <h2 id="operadores-de-atribuicao">Operadores de atribuição<a class="headerlink" href="#operadores-de-atribuicao" title="Permanent link">&para;</a></h2>
-<p>Para operadores combinados na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span>, a operação equivalente é <span class="arithmatex">\(a = a \circledcirc b\)</span>.</p>
+<p>Para operadores nativos combinados na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span>, o efeito corresponde a <span class="arithmatex">\(a = a \circledcirc b\)</span>, mas o destino <code>a</code> é avaliado <strong>uma única vez</strong>. Por exemplo, <code>v[i++] += 2</code> incrementa <code>i</code> apenas uma vez. As conversões do resultado para o tipo do destino continuam se aplicando.</p>
 <table>
 <thead>
 <tr>
@@ -3196,8 +3187,8 @@
 </tr>
 <tr>
 <td style="text-align: center;">OR bit a bit combinado</td>
-<td style="text-align: center;"><code>a |= b</code></td>
-<td style="text-align: left;">Equivalente a <code>a = a | b</code></td>
+<td style="text-align: center;"><code>a &#124;= b</code></td>
+<td style="text-align: left;">Equivalente a <code>a = a &#124; b</code></td>
 </tr>
 <tr>
 <td style="text-align: center;">XOR bit a bit combinado</td>
@@ -3314,14 +3305,23 @@
 </span></code></pre></div>
 <p>A linguagem tem ainda outras três formas de conversão explícita (<code class="language-cpp highlight"><span class="k">const_cast</span></code>, <code class="language-cpp highlight"><span class="k">reinterpret_cast</span></code> e <code class="language-cpp highlight"><span class="k">dynamic_cast</span></code>), usadas em situações bem específicas. A forma antiga, <code>(T) a</code>, tenta todas elas até encontrar uma que funcione, o que pode esconder erros. Por isso, prefira sempre <code class="language-cpp highlight"><span class="k">static_cast</span></code>.</p>
 <h2 id="precedencia-dos-operadores">Precedência dos operadores<a class="headerlink" href="#precedencia-dos-operadores" title="Permanent link">&para;</a></h2>
-<p>Na hora de avaliar uma expressão, seja ela aritmética, de bit ou lógica, os diversos operadores presentes precisam ser avaliados na ordem correta de precedência. Já fazemos isso quando resolvemos uma expressão aritmética no papel: primeiro as potências e raízes, depois os produtos e quocientes, e assim sucessivamente.</p>
-<p>A tabela abaixo mostra os operadores mais usados, ordenados de forma decrescente de prioridade (primeiro os do início, depois os do final), quantos operandos possuem, e se são avaliados da esquerda para a direita (&rarr;) ou da direita para a esquerda (&larr;).</p>
+<p>A <strong>precedência</strong> determina como os operadores agrupam uma expressão:
+<code>a + b * c</code> significa <code>a + (b * c)</code>. A <strong>associatividade</strong> determina o
+agrupamento entre operadores do mesmo nível: <code>a - b - c</code> significa
+<code>(a - b) - c</code>, pois a subtração associa da esquerda para a direita.</p>
+<p>Essas regras não estabelecem a <strong>ordem de avaliação</strong> dos operandos.
+Em <code>f() + g() * h()</code>, a multiplicação agrupa os resultados de <code>g()</code> e <code>h()</code>,
+mas não garante que essas funções sejam chamadas antes de <code>f()</code>. Acrescentar
+parênteses para escrever <code>f() + (g() * h())</code> mantém essa ordem não especificada.</p>
+<p>A tabela abaixo mostra os operadores mais usados, da maior para a menor
+precedência, a quantidade de operandos e o sentido da <strong>associatividade</strong>.
+As setas indicam o agrupamento, não a ordem de execução das chamadas.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Operador</th>
 <th style="text-align: center;">Operandos</th>
-<th style="text-align: center;">Sentido da avaliação</th>
+<th style="text-align: center;">Associatividade</th>
 </tr>
 </thead>
 <tbody>
@@ -3381,7 +3381,7 @@
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>|</code></td>
+<td style="text-align: center;"><code>&#124;</code></td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
@@ -3391,7 +3391,7 @@
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
 <tr>
-<td style="text-align: center;"><code>||</code></td>
+<td style="text-align: center;"><code>&#124;&#124;</code></td>
 <td style="text-align: center;">2</td>
 <td style="text-align: center;"><big>&rarr;</big></td>
 </tr>
@@ -3408,9 +3408,27 @@
 </tbody>
 </table>
 <p>Na penúltima linha, <code>op=</code> representa os operadores na forma <span class="arithmatex">\(a~ \circledcirc= b\)</span> listados na seção <a href="#operadores-de-atribuicao">anterior</a>.</p>
+<p>Alguns operadores têm regras próprias de sequenciamento. Os operadores
+lógicos nativos <code>&amp;&amp;</code> e <code>||</code> avaliam o operando esquerdo primeiro e só avaliam
+o direito quando necessário. O operador <code>?:</code> avalia a condição e depois
+apenas o ramo escolhido. O operador vírgula nativo avalia o lado esquerdo
+antes do direito; as vírgulas que separam argumentos de uma chamada não são
+esse operador.</p>
+<p>Em <code>processa(f(), g())</code>, a ordem entre <code>f()</code> e <code>g()</code> não é especificada.
+Desde o C++17, a avaliação de um argumento termina antes de começar a do
+outro, mas qualquer um deles pode vir primeiro. Quando o programa precisar
+de uma ordem específica, calcule os argumentos em instruções separadas.
+Essas regras são descritas nas seções sobre
+<a href="https://eel.is/c++draft/intro.execution">execução de expressões</a> e
+<a href="https://eel.is/c++draft/expr.call">chamadas de função</a> do padrão.</p>
 <div class="admonition tip">
 <p class="admonition-title">Na dúvida, use parênteses</p>
-<p>Ninguém precisa decorar a tabela inteira. Quando uma expressão misturar operadores de grupos diferentes e houver qualquer dúvida sobre a ordem de avaliação, use parênteses: eles deixam a intenção explícita para o compilador e, principalmente, para quem for ler o código depois.</p>
+<p>Ninguém precisa decorar a tabela inteira. Quando houver dúvida sobre o agrupamento de uma expressão, use parênteses para deixar a intenção explícita. Para impor uma ordem entre operações com efeitos colaterais, separe-as em instruções; os parênteses não garantem essa ordem.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Comparando as regras das expressões</p>
+<p>A página <a href="../../expressoes_comparacao/">Precedência, associatividade e ordem de avaliação</a>
+compara esses conceitos em C, C++ e Python, com exemplos e atenção às versões das linguagens.</p>
 </div>
 
 
@@ -3434,7 +3452,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2381,7 +2381,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2852,7 +2852,7 @@
 </tbody>
 </table>
 <h2 id="numeros-aleatorios">Números aleatórios<a class="headerlink" href="#numeros-aleatorios" title="Permanent link">&para;</a></h2>
-<p>O módulo <code>random</code> gera números <strong>pseudoaleatórios</strong>: uma sequência calculada a partir de um valor inicial, a <strong>semente</strong>. Por padrão, a semente é escolhida a partir do relógio do computador, e cada execução produz uma sequência diferente. Com <code class="language-python highlight"><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">valor</span><span class="p">)</span></code>, a sequência é sempre a mesma, o que é útil para testar programas e repetir experimentos:</p>
+<p>O módulo <code>random</code> gera números <strong>pseudoaleatórios</strong> a partir de uma semente. Por padrão, usa uma fonte de aleatoriedade do sistema operacional quando disponível, ou o relógio como alternativa. Uma semente fixa ajuda a reproduzir testes no mesmo ambiente; nem todas as funções mantêm sequências idênticas entre versões de Python.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">aleatorio.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -3124,8 +3124,8 @@
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>False True
 </span></code></pre></div>
 <ul>
-<li>Os inteiros (<code class="language-python highlight"><span class="nb">int</span></code>) <strong>não têm limite</strong> de tamanho: <code class="language-python highlight"><span class="mi">2</span> <span class="o">**</span> <span class="mi">100</span></code> é calculado exatamente. O único limite é a memória disponível. <code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">maxsize</span></code> é o maior índice que uma lista pode ter, e não o maior inteiro;</li>
-<li>Os números reais (<code class="language-python highlight"><span class="nb">float</span></code>) têm cerca de 15 dígitos significativos (<code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">dig</span></code>), e vão até cerca de <span class="arithmatex">\(1{,}8 \times 10^{308}\)</span>. <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">inf</span></code> representa o infinito, e <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">nan</span></code> representa um valor indefinido ("não é um número"), que é diferente de tudo, inclusive de si mesmo (por isso, use <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">isnan</span></code> para testá-lo), e;</li>
+<li>Os inteiros (<code class="language-python highlight"><span class="nb">int</span></code>) <strong>não têm limite</strong> de tamanho: <code class="language-python highlight"><span class="mi">2</span> <span class="o">**</span> <span class="mi">100</span></code> é calculado exatamente. O único limite é a memória disponível. <code>sys.maxsize</code> é o maior valor de <code>Py_ssize_t</code>, usado para tamanhos e índices na implementação; não é o maior inteiro de Python nem uma promessa de que uma lista desse tamanho possa ser alocada;</li>
+<li>Os números reais (<code class="language-python highlight"><span class="nb">float</span></code>) têm cerca de 15 dígitos significativos (<code class="language-python highlight"><span class="n">sys</span><span class="o">.</span><span class="n">float_info</span><span class="o">.</span><span class="n">dig</span></code>), e vão até cerca de <span class="arithmatex">\(1{,}8 \times 10^{308}\)</span>. <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">inf</span></code> representa o infinito, e <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">nan</span></code> representa um valor indefinido ("não é um número"), que é diferente de tudo, inclusive de si mesmo (por isso, use <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">isnan</span></code> para testá-lo);</li>
 <li>Por causa da representação aproximada, compare números reais com <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span></code>, e não com <code>==</code>.</li>
 </ul>
 <h2 id="funcoes-matematicas">Funções matemáticas<a class="headerlink" href="#funcoes-matematicas" title="Permanent link">&para;</a></h2>
@@ -3306,7 +3306,7 @@
 </tr>
 </tbody>
 </table>
-<p>Cadeias de caracteres são <strong>imutáveis</strong>: todos esses métodos devolvem uma cadeia nova, e a original não muda.</p>
+<p>Cadeias de caracteres são <strong>imutáveis</strong>: esses métodos não modificam a original, e alguns podem devolver o próprio objeto quando o resultado não muda.</p>
 <h2 id="colecoes-e-algoritmos-da-biblioteca-padrao">Coleções e algoritmos da biblioteca padrão<a class="headerlink" href="#colecoes-e-algoritmos-da-biblioteca-padrao" title="Permanent link">&para;</a></h2>
 <p>Além das listas, tuplas, dicionários e conjuntos, apresentados na seção sobre <a href="../tiposdedados/">tipos de dados</a>, a biblioteca padrão tem estruturas e funções que resolvem muitos problemas comuns com poucas linhas:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">colecoes.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
@@ -3483,7 +3483,7 @@
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>('Ana', 9.0)
 </span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>[3, 2, 1]
 </span></code></pre></div>
-<p><code class="language-python highlight"><span class="nb">sorted</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span></code> devolve uma lista nova ordenada, e <code class="language-python highlight"><span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span></code> ordena a própria lista (e devolve <code class="language-python highlight"><span class="kc">None</span></code>). As duas aceitam <code>reverse=True</code> e uma função <code>key</code>, aplicada a cada elemento antes da comparação: com uma tupla, como <code class="language-python highlight"><span class="p">(</span><span class="o">-</span><span class="n">nota</span><span class="p">,</span> <span class="n">nome</span><span class="p">)</span></code>, a ordenação usa vários critérios, e o sinal de menos inverte a ordem de um critério numérico. Sem <code>key</code>, as letras maiúsculas vêm antes das minúsculas; com <code>key=str.lower</code>, a diferença é ignorada. A seção sobre <a href="../funcoes/#funcoes-como-argumentos-key">funções</a> explica o parâmetro <code>key</code> em detalhes.</p>
+<p><code class="language-python highlight"><span class="nb">sorted</span><span class="p">(</span><span class="n">seq</span><span class="p">)</span></code> devolve uma lista nova ordenada, e <code class="language-python highlight"><span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span></code> ordena a própria lista (e devolve <code class="language-python highlight"><span class="kc">None</span></code>). As duas aceitam <code>reverse=True</code> e uma função <code>key</code>, aplicada a cada elemento antes da comparação: com uma tupla, como <code class="language-python highlight"><span class="p">(</span><span class="o">-</span><span class="n">nota</span><span class="p">,</span> <span class="n">nome</span><span class="p">)</span></code>, a ordenação usa vários critérios, e o sinal de menos inverte a ordem de um critério numérico. Sem <code>key</code>, cadeias são comparadas pelos pontos de código Unicode; para as letras ASCII, maiúsculas vêm antes de minúsculas; com <code>key=str.lower</code>, a diferença é ignorada. A seção sobre <a href="../funcoes/#funcoes-como-argumentos-key">funções</a> explica o parâmetro <code>key</code> em detalhes.</p>
 
 
 
@@ -3506,7 +3506,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:40:09 -03">19 de novembro de 2026 02:40:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2498,7 +2498,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2853,7 +2853,7 @@
 <ul>
 <li><strong>Reutilização</strong>: um trecho de código escrito uma vez pode ser usado em vários lugares, sem repetição;</li>
 <li><strong>Legibilidade</strong>: um nome bem escolhido, como <code>calcula_media</code> ou <code>le_matriz</code>, explica o que um trecho de código faz, sem que seja preciso ler cada linha dele;</li>
-<li><strong>Manutenção</strong>: se houver um erro no cálculo da média, ele é corrigido em um único lugar, e;</li>
+<li><strong>Manutenção</strong>: se houver um erro no cálculo da média, ele é corrigido em um único lugar;</li>
 <li><strong>Teste</strong>: cada função pode ser testada isoladamente, com entradas conhecidas.</li>
 </ul>
 <h2 id="definindo-e-chamando-funcoes">Definindo e chamando funções<a class="headerlink" href="#definindo-e-chamando-funcoes" title="Permanent link">&para;</a></h2>
@@ -2866,7 +2866,7 @@
 <ul>
 <li>O <strong>tipo de retorno</strong> indica o tipo do valor devolvido pela função. Uma função que não devolve nada tem tipo de retorno <code class="language-cpp highlight"><span class="kt">void</span></code>;</li>
 <li>O <strong>nome</strong> segue as mesmas regras dos nomes de variáveis;</li>
-<li>A <strong>lista de parâmetros</strong> declara, separados por vírgulas, o tipo e o nome de cada dado que a função recebe. Ela pode ser vazia, e;</li>
+<li>A <strong>lista de parâmetros</strong> declara, separados por vírgulas, o tipo e o nome de cada dado que a função recebe. Ela pode ser vazia;</li>
 <li>O <strong>corpo</strong> contém as instruções executadas quando a função é chamada. A instrução <code class="language-cpp highlight"><span class="k">return</span></code> encerra a função e devolve o valor indicado para quem a chamou.</li>
 </ul>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Definição e chamada de funções</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -2963,7 +2963,7 @@
 </span></code></pre></div></td></tr></table></div>
 <p>A declaração informa ao compilador o nome da função, os tipos dos parâmetros e o tipo de retorno, o que é suficiente para verificar se as chamadas estão corretas. O corpo pode estar mais adiante no mesmo arquivo, ou até em outro arquivo.</p>
 <h3 id="organizando-funcoes-em-varios-arquivos">Organizando funções em vários arquivos<a class="headerlink" href="#organizando-funcoes-em-varios-arquivos" title="Permanent link">&para;</a></h3>
-<p>Em programas maiores, as funções são agrupadas por assunto em arquivos separados. As declarações ficam em um arquivo de cabeçalho (<code>.hpp</code>), protegido contra inclusão múltipla, e as definições em um arquivo fonte (<code>.cpp</code>) com o mesmo nome. Qualquer arquivo que precise usar as funções inclui o cabeçalho:</p>
+<p>Em programas maiores, as funções são agrupadas por assunto em arquivos separados. As declarações ficam em um arquivo de cabeçalho (<code>.hpp</code>), protegido contra inclusão múltipla, e as definições em um arquivo-fonte (<code>.cpp</code>) com o mesmo nome. Qualquer arquivo que precise usar as funções inclui o cabeçalho:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">geometria.hpp</label><label for="__tabbed_1_2">geometria.cpp</label><label for="__tabbed_1_3">main.cpp</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3034,7 +3034,7 @@
 </div>
 </div>
 </div>
-<p>Os dois arquivos fonte são compilados juntos, e o linkeditor liga a chamada feita em <code>main.cpp</code> à definição que está em <code>geometria.cpp</code>:</p>
+<p>Os dois arquivos-fonte são compilados juntos, e o linkeditor liga a chamada feita em <code>main.cpp</code> à definição que está em <code>geometria.cpp</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>g++ -std=c++20 -Wall -Wextra -o programa main.cpp geometria.cpp
 </span></code></pre></div>
 <p>A constante <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">numbers</span><span class="o">::</span><span class="n">pi</span></code>, do cabeçalho <code>&lt;numbers&gt;</code>, está disponível a partir do C++20.</p>
@@ -3177,7 +3177,7 @@
 <p>A única diferença em relação ao programa anterior é o <code>&amp;</code> nos parâmetros, e agora as duas funções fazem o que prometem. Repare que a chamada é escrita exatamente da mesma forma (<code class="language-cpp highlight"><span class="n">dobra</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></code>, <code class="language-cpp highlight"><span class="n">troca</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">)</span></code>): olhando apenas para a chamada, não é possível saber se a passagem é por valor ou por referência. É preciso olhar a declaração da função.</p>
 <p>Como o parâmetro precisa ser um apelido para uma variável, uma função com parâmetro <code class="language-cpp highlight"><span class="kt">int</span><span class="o">&amp;</span></code> <strong>só aceita variáveis</strong> como argumento. Chamadas como <code class="language-cpp highlight"><span class="n">dobra</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span></code> ou <code class="language-cpp highlight"><span class="n">dobra</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span></code> não compilam (<code>cannot bind non-const lvalue reference</code>), porque <code>5</code> e <code>n + 1</code> não são variáveis que possam ser alteradas.</p>
 <h3 id="passagem-por-ponteiro">Passagem por ponteiro<a class="headerlink" href="#passagem-por-ponteiro" title="Permanent link">&para;</a></h3>
-<p>Na <strong>passagem por ponteiro</strong>, a função recebe o <strong>endereço</strong> da variável, e acessa a variável original por meio do operador de dereferência (<code>*</code>). Tecnicamente, o ponteiro em si é passado por valor (a função recebe uma cópia do endereço), mas, como a cópia aponta para o mesmo lugar, a função consegue alterar a variável original:</p>
+<p>Na <strong>passagem por ponteiro</strong>, a função recebe o <strong>endereço</strong> da variável, e acessa a variável original por meio do operador de desreferência (<code>*</code>). Tecnicamente, o ponteiro em si é passado por valor (a função recebe uma cópia do endereço), mas, como a cópia aponta para o mesmo lugar, a função consegue alterar a variável original:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código fonte</label><label for="__tabbed_4_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3242,7 +3242,7 @@
 </div>
 </div>
 </div>
-<p>O resultado é o mesmo da passagem por referência, mas a sintaxe é mais carregada: a chamada precisa do operador de endereço (<code>&amp;n</code>), e o corpo da função precisa do operador de dereferência (<code>*x</code>) em todo acesso. Em compensação, a chamada deixa explícito que a variável pode ser alterada, e um ponteiro pode receber <code class="language-cpp highlight"><span class="nb">nullptr</span></code> para indicar que o argumento não foi fornecido (o que obriga a função a verificar isso antes de usá-lo).</p>
+<p>O resultado é o mesmo da passagem por referência, mas a sintaxe é mais carregada: a chamada precisa do operador de endereço (<code>&amp;n</code>), e o corpo da função precisa do operador de desreferência (<code>*x</code>) em todo acesso. Em compensação, a chamada deixa explícito que a variável pode ser alterada, e um ponteiro pode receber <code class="language-cpp highlight"><span class="nb">nullptr</span></code> para indicar que o argumento não foi fornecido (o que obriga a função a verificar isso antes de usá-lo).</p>
 <h3 id="comparando-as-tres-formas">Comparando as três formas<a class="headerlink" href="#comparando-as-tres-formas" title="Permanent link">&para;</a></h3>
 <p>O diagrama abaixo mostra a memória durante a execução de <code>troca(p, q)</code> em cada uma das formas:</p>
 <pre class="mermaid"><code>flowchart LR
@@ -3270,7 +3270,7 @@
   pb --&gt; q</code></pre>
 <ul>
 <li><strong>Por valor</strong>, <code>a</code> e <code>b</code> são variáveis novas, com cópias dos valores. A troca acontece nas cópias, que são destruídas quando a função termina;</li>
-<li><strong>Por referência</strong>, <code>a</code> e <code>b</code> não são variáveis novas: são outros nomes para <code>p</code> e <code>q</code>. A troca acontece em <code>p</code> e <code>q</code>, e;</li>
+<li><strong>Por referência</strong>, <code>a</code> e <code>b</code> não são variáveis novas: são outros nomes para <code>p</code> e <code>q</code>. A troca acontece em <code>p</code> e <code>q</code>;</li>
 <li><strong>Por ponteiro</strong>, <code>a</code> e <code>b</code> são variáveis novas que guardam os endereços de <code>p</code> e <code>q</code>. A troca acontece em <code>p</code> e <code>q</code>, acessadas por meio dos endereços.</li>
 </ul>
 <p>Um <a href="../../algoritmos/testedemesa/">teste de mesa</a> da chamada <code>troca(p, q)</code> deixa a diferença ainda mais clara. Na passagem por valor, <code>a</code>, <code>b</code> e <code>aux</code> são variáveis da função, e <code>p</code> e <code>q</code> nunca mudam:</p>
@@ -3381,7 +3381,7 @@
 </table>
 <h3 id="referencias-constantes">Referências constantes<a class="headerlink" href="#referencias-constantes" title="Permanent link">&para;</a></h3>
 <p>E quando a função precisa apenas <strong>ler</strong> um argumento grande, como uma <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> longa ou um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code> com milhões de elementos? A passagem por valor funcionaria, mas faria uma cópia completa a cada chamada, o que pode custar muito tempo e memória. A passagem por referência evita a cópia, mas permite que a função altere o argumento, e não aceita valores temporários.</p>
-<p>A solução é a <strong>passagem por referência constante</strong> (<code class="language-cpp highlight"><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="o">&amp;</span></code>): não há cópia, e o compilador impede que a função altere o argumento. Uma tentativa de alteração gera um erro de compilação (<code>assignment of read-only location</code>). Além disso, uma referência constante aceita qualquer argumento, inclusive literais e resultados de expressões.</p>
+<p>A <strong>passagem por referência constante</strong> (<code>const T&amp;</code>) permite ler um objeto compatível sem copiá-lo quando a ligação é direta, e impede modificações <strong>por essa referência</strong>. Ela também pode se ligar a temporários compatíveis, inclusive os criados por uma conversão. Não aceita qualquer tipo, e não impede alterações por outros acessos a um objeto que não é constante.</p>
 <p>O exemplo abaixo mostra as três formas aplicadas a um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">vector</span></code>:</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Passando vetores para funções</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
@@ -3473,7 +3473,7 @@
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li><code>media</code> recebe o vetor por <strong>referência constante</strong>: lê todos os elementos sem copiá-los e sem poder alterá-los;</li>
-<li><code>normaliza</code> recebe o vetor por <strong>referência</strong>: altera os elementos do vetor <code>notas</code> de <code class="language-cpp highlight"><span class="n">main</span></code>, e;</li>
+<li><code>normaliza</code> recebe o vetor por <strong>referência</strong>: altera os elementos do vetor <code>notas</code> de <code class="language-cpp highlight"><span class="n">main</span></code>;</li>
 <li><code>dobrados</code> recebe o vetor por <strong>valor</strong>: trabalha em uma cópia, que é alterada e devolvida, enquanto o vetor original permanece intacto. Essa forma faz sentido justamente quando a função precisaria fazer uma cópia de qualquer forma.</li>
 </ul>
 <div class="admonition note">
@@ -3706,7 +3706,7 @@
 <h2 id="variaveis-locais-globais-e-estaticas">Variáveis locais, globais e estáticas<a class="headerlink" href="#variaveis-locais-globais-e-estaticas" title="Permanent link">&para;</a></h2>
 <p>Além das variáveis locais, há outros dois tipos de variáveis que interessam no estudo de funções:</p>
 <ul>
-<li><strong>Variáveis globais</strong> são declaradas fora de qualquer função. Elas existem durante toda a execução do programa e podem ser acessadas por qualquer função do arquivo, e;</li>
+<li><strong>Variáveis globais</strong> são declaradas fora de qualquer função. Elas existem durante toda a execução do programa e podem ser acessadas por qualquer função do arquivo;</li>
 <li><strong>Variáveis locais estáticas</strong> são declaradas dentro de uma função, com a palavra-chave <code class="language-cpp highlight"><span class="k">static</span></code>. Elas só podem ser acessadas dentro da função, como as locais, mas existem durante toda a execução do programa, como as globais: são inicializadas uma única vez, na primeira vez em que a execução passa pela declaração, e <strong>mantêm o valor</strong> entre uma chamada e outra.</li>
 </ul>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Variáveis globais e locais estáticas</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
@@ -3837,7 +3837,7 @@
 </span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>
 </span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="k">constexpr</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">MOD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">potencia</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span><span class="w">   </span><span class="c1">// calculado na compilação: 1000000007</span>
 </span></code></pre></div>
-<p>A palavra-chave <code class="language-cpp highlight"><span class="kr">inline</span></code>, por sua vez, permite que uma função seja definida em um arquivo de cabeçalho incluído por vários arquivos fonte, sem causar erro de definição duplicada na link-edição. Apesar do nome, ela não obriga o compilador a "copiar" o corpo da função no lugar da chamada; o compilador decide isso sozinho, com base nas otimizações.</p>
+<p>A palavra-chave <code class="language-cpp highlight"><span class="kr">inline</span></code>, por sua vez, permite que uma função seja definida em um arquivo de cabeçalho incluído por vários arquivos-fonte, sem causar erro de definição duplicada na link-edição, desde que as definições satisfaçam a regra de uma definição, incluindo a mesma sequência de tokens e a resolução consistente dos nomes. Apesar do nome, ela não obriga o compilador a "copiar" o corpo da função no lugar da chamada; o compilador decide isso sozinho, com base nas otimizações.</p>
 <h2 id="templates-de-funcoes"><em>Templates</em> de funções<a class="headerlink" href="#templates-de-funcoes" title="Permanent link">&para;</a></h2>
 <p>As versões de <code>maior</code> para <code class="language-cpp highlight"><span class="kt">int</span></code> e para <code class="language-cpp highlight"><span class="kt">double</span></code> da seção de sobrecarga têm exatamente o mesmo código: só os tipos mudam. Um <strong><em>template</em></strong> (modelo) de função permite escrever esse código uma única vez, deixando o tipo como um parâmetro:</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Templates de funções</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
@@ -3979,7 +3979,7 @@
 <p>O exemplo mostra os usos mais comuns:</p>
 <ul>
 <li>Uma lambda pode ser guardada em uma variável (declarada com <code class="language-cpp highlight"><span class="k">auto</span></code>) e chamada como uma função comum, como <code>quadrado</code> e <code>soma</code>;</li>
-<li>Em <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">sort</span></code>, a lambda recebe dois elementos e devolve <code class="language-cpp highlight"><span class="nb">true</span></code> se o primeiro deve vir <strong>antes</strong> do segundo. Com <code>a &gt; b</code>, a ordem fica decrescente; no último exemplo, a lambda ordena por tamanho e, em caso de empate, por ordem alfabética, e;</li>
+<li>Em <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">sort</span></code>, a lambda recebe dois elementos e devolve <code class="language-cpp highlight"><span class="nb">true</span></code> se o primeiro deve vir <strong>antes</strong> do segundo. Com <code>a &gt; b</code>, a ordem fica decrescente; no último exemplo, a lambda ordena por tamanho e, em caso de empate, por ordem alfabética;</li>
 <li>Em <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">count_if</span></code>, a lambda recebe um elemento e devolve <code class="language-cpp highlight"><span class="nb">true</span></code> se ele deve ser contado.</li>
 </ul>
 <h3 id="captura-de-variaveis">Captura de variáveis<a class="headerlink" href="#captura-de-variaveis" title="Permanent link">&para;</a></h3>
@@ -4053,6 +4053,7 @@
 </span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
+<p>Uma captura por referência não prolonga o tempo de vida da variável. Não devolva nem guarde uma lambda que referencia uma variável local já destruída; prefira capturar por valor quando a lambda precisar sobreviver ao escopo.</p>
 <p>No exemplo anterior, <code>[limite]</code> captura o limite por valor, porque a lambda só precisa lê-lo, e <code>[&amp;total]</code> captura o total por referência, porque a lambda precisa acumular a soma na variável de <code class="language-cpp highlight"><span class="n">main</span></code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Guardando funções em variáveis: <code>std::function</code></p>
@@ -4087,7 +4088,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 00:12:24 -03">19 de novembro de 2026 00:12:24</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

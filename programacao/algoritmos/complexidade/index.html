@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2404,7 +2404,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2759,7 +2759,7 @@
 </table>
 <p>Duas observações:</p>
 <ul>
-<li><strong>Os termos menores deixam de importar.</strong> Para <span class="arithmatex">\(n = 10^6\)</span>, o "<span class="arithmatex">\(+ 3\)</span>" da primeira expressão e o "<span class="arithmatex">\(- \frac{n}{2}\)</span>" da segunda são insignificantes perto do termo principal. O que determina o comportamento é o <strong>termo dominante</strong>: <span class="arithmatex">\(2n\)</span> na primeira, <span class="arithmatex">\(\frac{n^2}{2}\)</span> na segunda, e;</li>
+<li><strong>Os termos menores deixam de importar.</strong> Para <span class="arithmatex">\(n = 10^6\)</span>, o "<span class="arithmatex">\(+ 3\)</span>" da primeira expressão e o "<span class="arithmatex">\(- \frac{n}{2}\)</span>" da segunda são insignificantes perto do termo principal. O que determina o comportamento é o <strong>termo dominante</strong>: <span class="arithmatex">\(2n\)</span> na primeira, <span class="arithmatex">\(\frac{n^2}{2}\)</span> na segunda;</li>
 <li><strong>As constantes multiplicativas importam menos que a forma da função.</strong> Se um computador fosse duas vezes mais rápido, ou se uma implementação fosse mais cuidadosa, as constantes 2 e <span class="arithmatex">\(\frac{1}{2}\)</span> mudariam. Mas nada muda o fato de que, quando <span class="arithmatex">\(n\)</span> é multiplicado por 10, a primeira contagem é multiplicada por 10, e a segunda, por 100.</li>
 </ul>
 <p>Por isso, dizemos que o primeiro algoritmo tem complexidade <strong>linear</strong> e o segundo, complexidade <strong>quadrática</strong>, e escrevemos isso com a <strong>notação O</strong> (lê-se "ó grande"): o primeiro é <span class="arithmatex">\(O(n)\)</span>, e o segundo é <span class="arithmatex">\(O(n^2)\)</span>.</p>
@@ -2784,13 +2784,13 @@
 <li><strong>Descarte as constantes multiplicativas:</strong> <span class="arithmatex">\(5n\)</span> é <span class="arithmatex">\(O(n)\)</span>, e <span class="arithmatex">\(\frac{n^2}{2}\)</span> é <span class="arithmatex">\(O(n^2)\)</span>;</li>
 <li><strong>Fique apenas com o termo dominante:</strong> <span class="arithmatex">\(n^2 + 100n + 7\)</span> é <span class="arithmatex">\(O(n^2)\)</span>, e <span class="arithmatex">\(n + \log n\)</span> é <span class="arithmatex">\(O(n)\)</span>;</li>
 <li><strong>Trechos em sequência se somam</strong>, e o maior deles domina: um laço <span class="arithmatex">\(O(n)\)</span> seguido de um laço <span class="arithmatex">\(O(n^2)\)</span> resulta em <span class="arithmatex">\(O(n + n^2) = O(n^2)\)</span>;</li>
-<li><strong>Trechos aninhados se multiplicam:</strong> um laço que executa <span class="arithmatex">\(n\)</span> vezes, contendo outro laço que executa <span class="arithmatex">\(n\)</span> vezes, resulta em <span class="arithmatex">\(O(n \cdot n) = O(n^2)\)</span>; se o laço interno executa <span class="arithmatex">\(\log n\)</span> vezes, o resultado é <span class="arithmatex">\(O(n \log n)\)</span>, e;</li>
+<li><strong>Trechos aninhados se multiplicam:</strong> um laço que executa <span class="arithmatex">\(n\)</span> vezes, contendo outro laço que executa <span class="arithmatex">\(n\)</span> vezes, resulta em <span class="arithmatex">\(O(n \cdot n) = O(n^2)\)</span>; se o laço interno executa <span class="arithmatex">\(\log n\)</span> vezes, o resultado é <span class="arithmatex">\(O(n \log n)\)</span>;</li>
 <li><strong>Operações simples são <span class="arithmatex">\(O(1)\)</span>:</strong> atribuições, operações aritméticas, comparações e o acesso a uma posição de um arranjo levam um tempo constante, que não depende de <span class="arithmatex">\(n\)</span>. No caso das operações aritméticas, isso vale porque os números guardados em uma variável têm um tamanho fixo (32 ou 64 bits, por exemplo); com números de tamanho arbitrário, a história é outra, como mostra a seção sobre as <a href="#as-operacoes-aritmeticas-do-dia-a-dia">operações aritméticas</a>.</li>
 </ul>
 <h3 id="cotas-inferiores-e-exatas-e">Cotas inferiores e exatas: Ω e Θ<a class="headerlink" href="#cotas-inferiores-e-exatas-e" title="Permanent link">&para;</a></h3>
 <p>A notação O dá um limite <strong>superior</strong>: ela diz que <span class="arithmatex">\(f(n)\)</span> cresce <strong>no máximo</strong> como <span class="arithmatex">\(g(n)\)</span>. Há outras duas notações, definidas da mesma forma:</p>
 <ul>
-<li><strong><span class="arithmatex">\(\Omega\)</span> (ômega)</strong> dá um limite <strong>inferior</strong>: <span class="arithmatex">\(f(n) = \Omega(g(n))\)</span> se existem constantes <span class="arithmatex">\(c &gt; 0\)</span> e <span class="arithmatex">\(n_0\)</span> tais que <span class="arithmatex">\(c \cdot g(n) \leq f(n)\)</span> para todo <span class="arithmatex">\(n \geq n_0\)</span>. Ou seja, <span class="arithmatex">\(f(n)\)</span> cresce <strong>pelo menos</strong> como <span class="arithmatex">\(g(n)\)</span>, e;</li>
+<li><strong><span class="arithmatex">\(\Omega\)</span> (ômega)</strong> dá um limite <strong>inferior</strong>: <span class="arithmatex">\(f(n) = \Omega(g(n))\)</span> se existem constantes <span class="arithmatex">\(c &gt; 0\)</span> e <span class="arithmatex">\(n_0\)</span> tais que <span class="arithmatex">\(c \cdot g(n) \leq f(n)\)</span> para todo <span class="arithmatex">\(n \geq n_0\)</span>. Ou seja, <span class="arithmatex">\(f(n)\)</span> cresce <strong>pelo menos</strong> como <span class="arithmatex">\(g(n)\)</span>;</li>
 <li><strong><span class="arithmatex">\(\Theta\)</span> (teta)</strong> dá um limite <strong>exato</strong>: <span class="arithmatex">\(f(n) = \Theta(g(n))\)</span> se existem constantes <span class="arithmatex">\(c_1, c_2 &gt; 0\)</span> e <span class="arithmatex">\(n_0\)</span> tais que <span class="arithmatex">\(c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)\)</span> para todo <span class="arithmatex">\(n \geq n_0\)</span>. Ou seja, <span class="arithmatex">\(f(n)\)</span> fica "presa" entre dois múltiplos da mesma função <span class="arithmatex">\(g(n)\)</span>, e cresce <strong>exatamente</strong> como ela, a menos de constantes.</li>
 </ul>
 <figure>
@@ -2884,7 +2884,7 @@
 <ul>
 <li><span class="arithmatex">\(O(n!)\)</span> e <span class="arithmatex">\(O(2^n)\)</span> saem do gráfico antes de <span class="arithmatex">\(n = 100\)</span>. Um algoritmo <span class="arithmatex">\(O(n!)\)</span> leva mais de um segundo a partir de <span class="arithmatex">\(n = 12\)</span>, e mais que a <strong>idade do universo</strong> a partir de <span class="arithmatex">\(n = 26\)</span>. Um algoritmo <span class="arithmatex">\(O(2^n)\)</span> leva mais de uma hora a partir de <span class="arithmatex">\(n = 39\)</span>, e mais que a idade do universo a partir de <span class="arithmatex">\(n = 86\)</span>;</li>
 <li><span class="arithmatex">\(O(n^2)\)</span> cruza a linha de um segundo em <span class="arithmatex">\(n = 10^4\)</span>, e chega a cerca de 3 horas em <span class="arithmatex">\(n = 10^6\)</span>;</li>
-<li><span class="arithmatex">\(O(n \log n)\)</span> e <span class="arithmatex">\(O(n)\)</span> ficam abaixo de um segundo em toda a faixa: para <span class="arithmatex">\(n = 10^6\)</span>, são cerca de <span class="arithmatex">\(2 \times 10^7\)</span> e <span class="arithmatex">\(10^6\)</span> operações, e;</li>
+<li><span class="arithmatex">\(O(n \log n)\)</span> e <span class="arithmatex">\(O(n)\)</span> ficam abaixo de um segundo em toda a faixa: para <span class="arithmatex">\(n = 10^6\)</span>, são cerca de <span class="arithmatex">\(2 \times 10^7\)</span> e <span class="arithmatex">\(10^6\)</span> operações;</li>
 <li><span class="arithmatex">\(O(\log n)\)</span> e <span class="arithmatex">\(O(1)\)</span> continuam praticamente parados: para <span class="arithmatex">\(n = 10^6\)</span>, <span class="arithmatex">\(\log_2 n \approx 20\)</span>.</li>
 </ul>
 <p>Em escala logarítmica, as funções da forma <span class="arithmatex">\(n^k\)</span> aparecem como retas, com inclinação maior quanto maior o expoente: <span class="arithmatex">\(n^2\)</span> sobe duas vezes mais rápido que <span class="arithmatex">\(n\)</span>. Já as funções exponenciais e o fatorial se curvam para cima, porque crescem mais rápido que qualquer potência de <span class="arithmatex">\(n\)</span>.</p>
@@ -3079,7 +3079,7 @@
 <p>O número de operações de um algoritmo nem sempre depende só do tamanho da entrada: depende também dos valores. Na busca sequencial, em que os elementos são examinados um a um até que o procurado seja encontrado:</p>
 <ul>
 <li>No <strong>melhor caso</strong>, o elemento procurado é o primeiro, e basta uma comparação: <span class="arithmatex">\(O(1)\)</span>;</li>
-<li>No <strong>pior caso</strong>, o elemento é o último, ou não está na lista, e são necessárias <span class="arithmatex">\(n\)</span> comparações: <span class="arithmatex">\(O(n)\)</span>, e;</li>
+<li>No <strong>pior caso</strong>, o elemento é o último, ou não está na lista, e são necessárias <span class="arithmatex">\(n\)</span> comparações: <span class="arithmatex">\(O(n)\)</span>;</li>
 <li>No <strong>caso médio</strong>, supondo que o elemento está em uma posição qualquer com a mesma probabilidade, são necessárias cerca de <span class="arithmatex">\(\frac{n}{2}\)</span> comparações, o que também é <span class="arithmatex">\(O(n)\)</span>.</li>
 </ul>
 <p>O melhor caso raramente é útil, porque não diz nada sobre as outras entradas. Quando não há indicação contrária, a complexidade de um algoritmo se refere ao <strong>pior caso</strong>: ela é uma garantia de que o algoritmo nunca vai ser mais lento do que aquilo. Algumas estruturas de dados, como as tabelas de dispersão (<em>hash tables</em>), são conhecidas pelo seu <strong>caso médio</strong>, de <span class="arithmatex">\(O(1)\)</span> por operação, embora o pior caso, raro na prática, seja <span class="arithmatex">\(O(n)\)</span>.</p>
@@ -3135,7 +3135,7 @@
 <p>A notação O esconde as constantes, e por isso não conta toda a história:</p>
 <ul>
 <li>Para entradas <strong>pequenas</strong>, um algoritmo <span class="arithmatex">\(O(n^2)\)</span> simples pode ser mais rápido que um <span class="arithmatex">\(O(n \log n)\)</span> complicado. Muitas implementações de ordenação usam um algoritmo quadrático para trechos com poucos elementos, justamente por isso;</li>
-<li>Dois algoritmos com a mesma complexidade podem ter tempos muito diferentes: um algoritmo que faz <span class="arithmatex">\(100n\)</span> operações e outro que faz <span class="arithmatex">\(2n\)</span> são ambos <span class="arithmatex">\(O(n)\)</span>, e;</li>
+<li>Dois algoritmos com a mesma complexidade podem ter tempos muito diferentes: um algoritmo que faz <span class="arithmatex">\(100n\)</span> operações e outro que faz <span class="arithmatex">\(2n\)</span> são ambos <span class="arithmatex">\(O(n)\)</span>;</li>
 <li>Uma operação que parece simples no código pode esconder um laço. Verificar se um valor está em uma lista, remover o primeiro elemento de uma lista ou concatenar cadeias de caracteres longas podem custar <span class="arithmatex">\(O(n)\)</span> cada. Uma dessas operações dentro de um laço que executa <span class="arithmatex">\(n\)</span> vezes transforma um algoritmo que parecia <span class="arithmatex">\(O(n)\)</span> em <span class="arithmatex">\(O(n^2)\)</span>. As seções de cada linguagem indicam a complexidade das operações das principais estruturas de dados.</li>
 </ul>
 </div>
@@ -3169,7 +3169,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 00:57:49 -03">19 de novembro de 2026 00:57:49</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

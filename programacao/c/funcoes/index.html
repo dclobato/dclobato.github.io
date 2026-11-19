@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2560,7 +2560,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2977,7 +2977,7 @@
 <ul>
 <li><strong>Reutilização</strong>: um trecho de código escrito uma vez pode ser usado em vários lugares, sem repetição;</li>
 <li><strong>Legibilidade</strong>: um nome bem escolhido, como <code>calcula_media</code> ou <code>le_matriz</code>, explica o que um trecho de código faz, sem que seja preciso ler cada linha dele;</li>
-<li><strong>Manutenção</strong>: se houver um erro no cálculo da média, ele é corrigido em um único lugar, e;</li>
+<li><strong>Manutenção</strong>: se houver um erro no cálculo da média, ele é corrigido em um único lugar;</li>
 <li><strong>Teste</strong>: cada função pode ser testada isoladamente, com entradas conhecidas.</li>
 </ul>
 <p>Você já usa funções desde o primeiro programa: <code class="language-c highlight"><span class="n">printf</span></code>, <code class="language-c highlight"><span class="n">scanf</span></code>, <code class="language-c highlight"><span class="n">sqrt</span></code> e <code class="language-c highlight"><span class="n">strlen</span></code> são funções da biblioteca padrão, e o próprio <code class="language-c highlight"><span class="n">main</span></code> é uma função, chamada automaticamente quando o programa começa.</p>
@@ -2991,7 +2991,7 @@
 <ul>
 <li>O <strong>tipo de retorno</strong> indica o tipo do valor devolvido pela função. Uma função que não devolve nada tem tipo de retorno <code class="language-c highlight"><span class="kt">void</span></code>;</li>
 <li>O <strong>nome</strong> segue as mesmas regras dos nomes de variáveis;</li>
-<li>A <strong>lista de parâmetros</strong> declara, separados por vírgulas, o tipo e o nome de cada dado que a função recebe. Uma função sem parâmetros tem a lista <code class="language-c highlight"><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code>, e;</li>
+<li>A <strong>lista de parâmetros</strong> declara, separados por vírgulas, o tipo e o nome de cada dado que a função recebe. Uma função sem parâmetros tem a lista <code class="language-c highlight"><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code>;</li>
 <li>O <strong>corpo</strong> contém as instruções executadas quando a função é chamada. A instrução <code class="language-c highlight"><span class="k">return</span></code> encerra a função e devolve o valor indicado para quem a chamou.</li>
 </ul>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Definição e chamada de funções</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -3067,7 +3067,11 @@
 </div>
 <p>Cada parâmetro e cada variável declarada no corpo de uma função são <strong>variáveis locais</strong>: elas existem apenas enquanto a função está sendo executada e não são visíveis fora dela. Duas funções diferentes podem ter variáveis com o mesmo nome sem nenhum conflito. Os conceitos de <a href="../../algoritmos/variaveis/#escopo-e-tempo-de-vida">escopo e tempo de vida</a> são apresentados na seção sobre variáveis, e a seção <a href="#variaveis-locais-globais-e-estaticas">Variáveis locais, globais e estáticas</a>, mais adiante, mostra os outros tipos de variáveis que interessam no estudo de funções.</p>
 <h3 id="funcoes-sem-parametros">Funções sem parâmetros<a class="headerlink" href="#funcoes-sem-parametros" title="Permanent link">&para;</a></h3>
-<p>Uma função que não recebe parâmetros deve ser declarada com <code class="language-c highlight"><span class="kt">void</span></code> entre os parênteses, como em <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code>. A forma com os parênteses vazios, <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span></code>, também é aceita, mas tem um significado diferente: ela diz que a função recebe uma quantidade <strong>não especificada</strong> de parâmetros, e o compilador deixa de verificar as chamadas:</p>
+<p>Uma função que não recebe parâmetros deve ser declarada com <code class="language-c highlight"><span class="kt">void</span></code> entre
+os parênteses, como em <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code>. No C17, uma declaração com
+parênteses vazios, como <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="nf">sorteia</span><span class="p">();</span></code>, não informa os tipos nem a
+quantidade de parâmetros para a verificação das chamadas. Isso pode deixar
+passar uma chamada incorreta:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Parênteses vazios desligam a verificação dos argumentos</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -3088,11 +3092,23 @@
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="p">{</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">sorteia</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">));</span><span class="w">   </span><span class="c1">// compila sem nenhum aviso!</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">sorteia</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">));</span><span class="w">   </span><span class="c1">// pode compilar; a chamada é inválida</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Com <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">sorteia</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code>, a chamada <code class="language-c highlight"><span class="n">sorteia</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span></code> é rejeitada pelo compilador (<code>too many arguments to function 'sorteia'</code>). Por isso, prefira sempre <code class="language-c highlight"><span class="p">(</span><span class="kt">void</span><span class="p">)</span></code> nas funções sem parâmetros.</p>
+<p>A definição de <code>sorteia</code> do exemplo não recebe parâmetros. Chamar essa função
+com dois argumentos tem comportamento indefinido no C17, mesmo que o
+compilador aceite o código. A ausência de um diagnóstico não torna a chamada
+correta.</p>
+<div class="admonition note">
+<p class="admonition-title">Essa regra muda no C23</p>
+<p>O exemplo acima segue o C17. No C23, uma lista de parâmetros vazia também
+significa que a função não recebe argumentos, e a chamada com dois
+argumentos deve ser diagnosticada. Ao comparar comportamentos de
+compiladores, selecione explicitamente o padrão com <code>-std=c17</code> ou
+<code>-std=c23</code>.</p>
+</div>
 <h2 id="declaracao-e-definicao">Declaração e definição<a class="headerlink" href="#declaracao-e-definicao" title="Permanent link">&para;</a></h2>
 <p>O compilador lê o código de cima para baixo e precisa conhecer uma função antes de compilar uma chamada a ela. Por isso, até aqui, as funções foram escritas antes de <code class="language-c highlight"><span class="n">main</span></code>. Quando isso não for conveniente, a função pode ser <strong>declarada</strong> antes de ser usada e <strong>definida</strong> depois. A declaração, também chamada de <strong>protótipo</strong>, é apenas a primeira linha da função, terminada com ponto e vírgula:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Declaração e definição separadas</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -3138,7 +3154,7 @@
 <p>O GCC 13.2 apenas avisa (<code>warning: implicit declaration of function 'dobro'</code>) e gera o programa. O GCC 14.2 trata a mesma situação como erro (<code>error: implicit declaration of function 'dobro'</code>), e o programa não compila. Um código que compila no seu computador pode não compilar no juiz <em>online</em>. <strong>Não ignore esse aviso</strong>: ele também aparece quando você esquece de incluir um cabeçalho, como <code>math.h</code> antes de usar <code class="language-c highlight"><span class="n">sqrt</span></code>.</p>
 </div>
 <h3 id="organizando-funcoes-em-varios-arquivos">Organizando funções em vários arquivos<a class="headerlink" href="#organizando-funcoes-em-varios-arquivos" title="Permanent link">&para;</a></h3>
-<p>Em programas maiores, as funções são agrupadas por assunto em arquivos separados. As declarações ficam em um arquivo de cabeçalho (<code>.h</code>), protegido contra inclusão múltipla, e as definições em um arquivo fonte (<code>.c</code>) com o mesmo nome. Qualquer arquivo que precise usar as funções inclui o cabeçalho, com o nome entre aspas:</p>
+<p>Em programas maiores, as funções são agrupadas por assunto em arquivos separados. As declarações ficam em um arquivo de cabeçalho (<code>.h</code>), protegido contra inclusão múltipla, e as definições em um arquivo-fonte (<code>.c</code>) com o mesmo nome. Qualquer arquivo que precise usar as funções inclui o cabeçalho, com o nome entre aspas:</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">geometria.h</label><label for="__tabbed_1_2">geometria.c</label><label for="__tabbed_1_3">main.c</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3219,7 +3235,7 @@
 </div>
 </div>
 </div>
-<p>Os dois arquivos fonte são compilados juntos, e o linkeditor liga a chamada feita em <code>main.c</code> à definição que está em <code>geometria.c</code>:</p>
+<p>Os dois arquivos-fonte são compilados juntos, e o linkeditor liga a chamada feita em <code>main.c</code> à definição que está em <code>geometria.c</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>gcc -std=c17 -Wall -Wextra -o programa main.c geometria.c
 </span></code></pre></div>
 <p>A palavra-chave <code class="language-c highlight"><span class="k">static</span></code>, quando aplicada a uma função ou a uma variável declarada fora das funções, restringe a visibilidade ao arquivo em que ela foi definida. A função <code>quadrado</code> é um detalhe interno de <code>geometria.c</code>: ela não aparece no cabeçalho, não pode ser chamada de <code>main.c</code>, e outro arquivo do programa pode ter uma função <code>quadrado</code> própria sem causar conflito na link-edição. Marcar como <code class="language-c highlight"><span class="k">static</span></code> tudo o que não faz parte da "interface" de um arquivo é uma boa prática.</p>
@@ -3227,7 +3243,7 @@
 <p>Esta é uma das partes mais importantes sobre funções: entender o que acontece com uma variável quando ela é passada como argumento. A regra é simples: <strong>todos os argumentos são passados por valor</strong>. A função sempre recebe uma <strong>cópia</strong> do valor do argumento. Quando a função precisa alterar uma variável de quem a chamou, ela recebe uma cópia do <strong>endereço</strong> dessa variável, e acessa a variável original por meio dele.</p>
 <h3 id="passagem-por-valor">Passagem por valor<a class="headerlink" href="#passagem-por-valor" title="Permanent link">&para;</a></h3>
 <p>Na <strong>passagem por valor</strong>, o parâmetro é uma <strong>nova variável</strong>, inicializada com uma cópia do valor do argumento. A função trabalha com essa cópia, e qualquer alteração feita no parâmetro não afeta a variável usada na chamada:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">valor.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
@@ -3294,8 +3310,8 @@
 <p>A função <code>dobra</code> dobrou o valor de <code>x</code>, mas <code>n</code> continuou valendo 5: <code>x</code> é outra variável, que apenas começou com o mesmo valor de <code>n</code>. Pelo mesmo motivo, a função <code>troca</code> trocou os valores de <code>a</code> e <code>b</code>, que são cópias, e <code>p</code> e <code>q</code> ficaram como estavam. <strong>Não há erro de compilação</strong>: o programa simplesmente não faz o que parece fazer.</p>
 <p>A passagem por valor é adequada quando a função só precisa <strong>ler</strong> o argumento. Ela tem uma vantagem importante: a função não tem como alterar, nem por engano, as variáveis de quem a chamou.</p>
 <h3 id="passagem-por-endereco-ponteiros">Passagem por endereço (ponteiros)<a class="headerlink" href="#passagem-por-endereco-ponteiros" title="Permanent link">&para;</a></h3>
-<p>Para que uma função consiga alterar uma variável de quem a chamou, a função recebe o <strong>endereço</strong> da variável, em um parâmetro do tipo <a href="../memoria/#ponteiros">ponteiro</a>. Na chamada, o endereço é obtido com o operador <code>&amp;</code>; dentro da função, a variável original é acessada com o operador de dereferência <code>*</code>. Essa técnica é chamada de <strong>passagem por endereço</strong>, ou de <strong>passagem por referência</strong>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código fonte</label><label for="__tabbed_3_2">Saída</label></div>
+<p>Para que uma função consiga alterar uma variável de quem a chamou, a função recebe o <strong>endereço</strong> da variável, em um parâmetro do tipo <a href="../memoria/#ponteiros">ponteiro</a>. Na chamada, o endereço é obtido com o operador <code>&amp;</code>; dentro da função, a variável original é acessada com o operador de desreferência <code>*</code>. Essa técnica é chamada de <strong>passagem por endereço</strong>, ou de <strong>passagem por referência</strong>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código-fonte</label><label for="__tabbed_3_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ponteiro.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
@@ -3369,7 +3385,7 @@
 <h3 id="voce-ja-usou-isso-scanf">Você já usou isso: <code>scanf</code><a class="headerlink" href="#voce-ja-usou-isso-scanf" title="Permanent link">&para;</a></h3>
 <p>A passagem por endereço explica por que é preciso escrever <code class="language-c highlight"><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span></code>, com <code>&amp;</code>, mas <code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">)</span></code>, sem. A função <code class="language-c highlight"><span class="n">printf</span></code> só precisa <strong>ler</strong> o valor de <code>n</code>, e uma cópia é suficiente. A função <code class="language-c highlight"><span class="n">scanf</span></code> precisa <strong>guardar</strong> um valor em <code>n</code>, e para isso precisa saber onde <code>n</code> está na memória.</p>
 <p>Funções escritas por você podem seguir o mesmo modelo: devolver um código indicando se deu certo, e entregar os dados lidos ou calculados por meio de parâmetros ponteiros. A função abaixo lê os dois extremos de um intervalo, coloca-os em ordem e devolve 1 em caso de sucesso, ou 0 quando a entrada termina:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código fonte</label><label for="__tabbed_4_2">Entrada</label><label for="__tabbed_4_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código-fonte</label><label for="__tabbed_4_2">Entrada</label><label for="__tabbed_4_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">leitura.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
@@ -3452,7 +3468,7 @@
   pa --&gt; p
   pb --&gt; q</code></pre>
 <ul>
-<li><strong>Por valor</strong>, <code>a</code> e <code>b</code> são variáveis novas, com cópias dos valores de <code>p</code> e <code>q</code>. A troca acontece nas cópias, que deixam de existir quando a função termina, e;</li>
+<li><strong>Por valor</strong>, <code>a</code> e <code>b</code> são variáveis novas, com cópias dos valores de <code>p</code> e <code>q</code>. A troca acontece nas cópias, que deixam de existir quando a função termina;</li>
 <li><strong>Por endereço</strong>, <code>a</code> e <code>b</code> também são variáveis novas, mas guardam os endereços de <code>p</code> e <code>q</code>. A troca acontece em <code>*a</code> e <code>*b</code>, que são as próprias <code>p</code> e <code>q</code>.</li>
 </ul>
 <p>Um <a href="../../algoritmos/testedemesa/">teste de mesa</a> das duas versões deixa a diferença ainda mais clara. Na passagem por valor, <code>a</code>, <code>b</code> e <code>aux</code> são variáveis da função, e <code>p</code> e <code>q</code> nunca mudam:</p>
@@ -3589,7 +3605,11 @@
 </span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">    </span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// erro: assignment of read-only location '*x'</span>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="p">}</span>
 </span></code></pre></div>
-<p>O <code class="language-c highlight"><span class="k">const</span></code> funciona como uma promessa, verificada pelo compilador, de que a função não vai alterar o argumento. Quem lê a declaração <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="n">distancia</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ponto</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ponto</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">)</span></code> sabe que os pontos passados não serão modificados. As seções a seguir mostram onde isso é útil: arranjos, cadeias de caracteres e estruturas.</p>
+<p>O <code class="language-c highlight"><span class="k">const</span></code> impede alterações no objeto <strong>por meio desse parâmetro</strong>.
+Na declaração <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="n">distancia</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ponto</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">ponto</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">)</span></code>,
+os pontos são acessados para leitura. Outros ponteiros modificáveis para o
+mesmo objeto ainda podem alterá-lo, se ele não tiver sido definido com <code>const</code>.
+As seções a seguir mostram esse uso com arranjos, cadeias e estruturas.</p>
 <h2 id="arranjos-como-parametros">Arranjos como parâmetros<a class="headerlink" href="#arranjos-como-parametros" title="Permanent link">&para;</a></h2>
 <p>Arranjos têm um comportamento especial quando passados para funções: o arranjo <strong>não é copiado</strong>. Quando o nome de um arranjo é usado como argumento, o que a função recebe é o <strong>endereço do primeiro elemento</strong>. Por isso, uma função que altera os elementos de um arranjo recebido como parâmetro altera o arranjo original:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Passando arranjos para funções</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1"> 1</a></span>
@@ -3659,7 +3679,7 @@
 </span><span id="__span-18-33"><a id="__codelineno-18-33" name="__codelineno-18-33"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li><code>media</code> recebe o arranjo como <code class="language-c highlight"><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">valores</span><span class="p">[]</span></code>: lê todos os elementos e não pode alterá-los, e;</li>
+<li><code>media</code> recebe o arranjo como <code class="language-c highlight"><span class="k">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">valores</span><span class="p">[]</span></code>: lê todos os elementos e não pode alterá-los;</li>
 <li><code>normaliza</code> recebe o arranjo como <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="n">valores</span><span class="p">[]</span></code>: altera os elementos do arranjo <code>notas</code> de <code class="language-c highlight"><span class="n">main</span></code>, sem nenhum <code>&amp;</code> na chamada.</li>
 </ul>
 <p>Na lista de parâmetros, as declarações <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="n">valores</span><span class="p">[]</span></code> e <code class="language-c highlight"><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">valores</span></code> são <strong>equivalentes</strong>: nos dois casos, o parâmetro é um ponteiro para o primeiro elemento. A forma com colchetes é preferida por deixar claro que a função espera um arranjo, e não o endereço de uma única variável.</p>
@@ -3919,7 +3939,7 @@
 <ul>
 <li><code>mostra</code> recebe a estrutura <strong>por valor</strong>. Para uma estrutura pequena, como um ponto com dois <code class="language-c highlight"><span class="kt">double</span></code>, a cópia não custa quase nada;</li>
 <li><code>desloca</code> recebe o <strong>endereço</strong> da estrutura e altera os membros do ponto <code>a</code> de <code class="language-c highlight"><span class="n">main</span></code>;</li>
-<li><code>distancia</code> recebe <strong>ponteiros para constantes</strong>: lê os pontos sem copiá-los e sem poder alterá-los. Essa é a forma recomendada para estruturas grandes, como uma estrutura com um nome de 100 caracteres, e;</li>
+<li><code>distancia</code> recebe <strong>ponteiros para constantes</strong>: lê os pontos sem copiá-los e sem poder alterá-los. Essa é a forma recomendada para estruturas grandes, como uma estrutura com um nome de 100 caracteres;</li>
 <li><code>ponto_medio</code> <strong>devolve</strong> uma estrutura. Isso é permitido e é uma forma prática de uma função produzir um dado composto.</li>
 </ul>
 <p>Lembre-se de compilar com <code>-lm</code> quando usar funções de <code>math.h</code>, como <code class="language-c highlight"><span class="n">sqrt</span></code>.</p>
@@ -4089,7 +4109,7 @@
 <h2 id="variaveis-locais-globais-e-estaticas">Variáveis locais, globais e estáticas<a class="headerlink" href="#variaveis-locais-globais-e-estaticas" title="Permanent link">&para;</a></h2>
 <p>Além das variáveis locais, que existem apenas durante a execução da função, há outros dois tipos de variáveis que interessam no estudo de funções:</p>
 <ul>
-<li><strong>Variáveis globais</strong> são declaradas fora de qualquer função. Elas existem durante toda a execução do programa e podem ser acessadas por qualquer função do arquivo, e;</li>
+<li><strong>Variáveis globais</strong> são declaradas fora de qualquer função. Elas existem durante toda a execução do programa e podem ser acessadas por qualquer função do arquivo;</li>
 <li><strong>Variáveis locais estáticas</strong> são declaradas dentro de uma função, com a palavra-chave <code class="language-c highlight"><span class="k">static</span></code>. Elas só podem ser acessadas dentro da função, como as locais, mas existem durante toda a execução do programa, como as globais: são inicializadas uma única vez, e <strong>mantêm o valor</strong> entre uma chamada e outra.</li>
 </ul>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Variáveis globais e locais estáticas</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1"> 1</a></span>
@@ -4334,8 +4354,13 @@
 <div class="language-c highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">qsort</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">base</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">quantidade</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">tamanho_do_elemento</span><span class="p">,</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">           </span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">compara</span><span class="p">)(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">));</span>
 </span></code></pre></div>
+<p>O nome não obriga a implementação a usar <em>quicksort</em>, e o padrão C não fixa
+uma complexidade para <code>qsort</code>. Ela também não garante uma ordenação
+<strong>estável</strong>: elementos considerados iguais podem trocar de ordem. Quando
+for preciso preservar a ordem de entrada entre empates, acrescente a posição
+original como último critério de comparação.</p>
 <p>A função de comparação recebe os endereços de dois elementos, como ponteiros genéricos (<code class="language-c highlight"><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span></code>), e deve devolver um número <strong>negativo</strong> se o primeiro deve vir antes do segundo, <strong>zero</strong> se eles são equivalentes, ou <strong>positivo</strong> se o primeiro deve vir depois:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código fonte</label><label for="__tabbed_5_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código-fonte</label><label for="__tabbed_5_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ordena.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1"> 1</a></span>
@@ -4453,8 +4478,8 @@
 </div>
 </div>
 <ul>
-<li>Em <code>crescente</code>, os ponteiros genéricos são convertidos para <code class="language-c highlight"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span></code> e dereferenciados. A expressão <code class="language-c highlight"><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span></code> vale -1, 0 ou 1, conforme <code>x</code> seja menor, igual ou maior que <code>y</code>;</li>
-<li><code>decrescente</code> reaproveita <code>crescente</code>, trocando a ordem dos argumentos, e;</li>
+<li>Em <code>crescente</code>, os ponteiros genéricos são convertidos para <code class="language-c highlight"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span></code> e desreferenciados. A expressão <code class="language-c highlight"><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span></code> vale -1, 0 ou 1, conforme <code>x</code> seja menor, igual ou maior que <code>y</code>;</li>
+<li><code>decrescente</code> reaproveita <code>crescente</code>, trocando a ordem dos argumentos;</li>
 <li><code>por_nota_e_nome</code> compara primeiro as notas (em ordem decrescente) e, em caso de empate, os nomes, com <code class="language-c highlight"><span class="n">strcmp</span></code>, que segue a mesma convenção de negativo, zero e positivo.</li>
 </ul>
 <div class="admonition failure">
@@ -4514,13 +4539,13 @@
 <ul>
 <li><code class="language-c highlight"><span class="kt">va_list</span></code> é o tipo da variável que percorre os argumentos extras;</li>
 <li><code class="language-c highlight"><span class="n">va_start</span></code> prepara essa variável, a partir do último parâmetro fixo (<code>quantidade</code>);</li>
-<li>cada <code class="language-c highlight"><span class="n">va_arg</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span></code> devolve o próximo argumento, interpretado como um <code class="language-c highlight"><span class="kt">int</span></code>, e;</li>
+<li>cada <code class="language-c highlight"><span class="n">va_arg</span><span class="p">(</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span></code> devolve o próximo argumento, interpretado como um <code class="language-c highlight"><span class="kt">int</span></code>;</li>
 <li><code class="language-c highlight"><span class="n">va_end</span></code> encerra a leitura.</li>
 </ul>
 <p>A função não tem como saber quantos argumentos extras recebeu, nem de que tipo eles são: essas informações precisam vir de um parâmetro fixo. Em <code>soma</code>, é a <code>quantidade</code>; em <code class="language-c highlight"><span class="n">printf</span></code>, é a cadeia de formato, em que cada <code>%d</code> ou <code>%f</code> indica um argumento e o seu tipo. Se a informação estiver errada, o compilador não tem como detectar o erro, e o resultado é imprevisível. Por isso, prefira funções com parâmetros fixos sempre que possível.</p>
 <h2 id="os-parametros-de-main">Os parâmetros de <code>main</code><a class="headerlink" href="#os-parametros-de-main" title="Permanent link">&para;</a></h2>
 <p>A função <code class="language-c highlight"><span class="n">main</span></code> também pode receber parâmetros: os <strong>argumentos de linha de comando</strong>, escritos depois do nome do programa quando ele é executado no terminal. Para isso, ela é declarada com dois parâmetros:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código fonte</label><label for="__tabbed_6_2">Execução</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código-fonte</label><label for="__tabbed_6_2">Execução</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">argumentos.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-36-1"> 1</a></span>
@@ -4569,7 +4594,7 @@
 </div>
 </div>
 <ul>
-<li><code>argc</code> (<em>argument count</em>) é a quantidade de argumentos, <strong>incluindo</strong> o nome do programa, e;</li>
+<li><code>argc</code> (<em>argument count</em>) é a quantidade de argumentos, <strong>incluindo</strong> o nome do programa;</li>
 <li><code>argv</code> (<em>argument vector</em>) é um arranjo de cadeias de caracteres: <code>argv[0]</code> é o nome do programa, e <code>argv[1]</code> até <code>argv[argc - 1]</code> são os argumentos, na ordem em que foram escritos.</li>
 </ul>
 <p>Os argumentos chegam sempre como cadeias de caracteres, e precisam ser convertidos quando representam números. A função <code class="language-c highlight"><span class="n">atoi</span></code> faz essa conversão, mas devolve 0 quando a cadeia não representa um número, como aconteceu com <code>"abc"</code>, sem nenhuma indicação de erro. A função <code class="language-c highlight"><span class="n">strtol</span></code> permite detectar esse tipo de problema.</p>
@@ -4596,7 +4621,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

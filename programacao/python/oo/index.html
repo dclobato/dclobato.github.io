@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2415,7 +2415,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2704,7 +2704,7 @@
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
 <span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Pessoa</span><span class="p">:</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="c1"># Método inicializador (construtor)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="c1"># Método inicializador</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">idade</span><span class="p">):</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>        <span class="c1"># Atributos ou propriedades</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
@@ -2728,14 +2728,22 @@
 <li><code>pessoa1</code> e <code>pessoa2</code> são objetos (instâncias) da classe <code>Pessoa</code>;</li>
 <li><code>nome</code> e <code>idade</code> são atributos (propriedades);</li>
 <li><code>apresentar()</code> é um método;</li>
-<li><code>__init__</code> é o método construtor, chamado quando um novo objeto é criado;</li>
+<li><code>__init__</code> inicializa a instância após sua criação por <code>__new__</code>; ele não deve devolver um valor diferente de <code>None</code>;</li>
 <li><code>self</code> é uma referência ao próprio objeto.</li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Atributos de instância e de classe</p>
+<p>Atribuições como <code>self.nome = nome</code> criam atributos da instância. Já
+<code>itens = []</code> diretamente no corpo da classe cria uma lista compartilhada
+pelas instâncias que a acessam sem um atributo próprio. Para uma lista
+independente por objeto, crie-a em <code>__init__</code> com <code>self.itens = []</code>.
+Em dataclasses, use <code>field(default_factory=list)</code> para esse propósito.</p>
+</div>
 <h3 id="encapsulamento">Encapsulamento<a class="headerlink" href="#encapsulamento" title="Permanent link">&para;</a></h3>
-<p>O <strong>encapsulamento</strong> é o princípio de esconder os detalhes internos de um objeto e expor apenas as interfaces necessárias. Em Python, o encapsulamento é implementado através de convenções de nomenclatura:</p>
+<p>O <strong>encapsulamento</strong> é o princípio de esconder os detalhes internos de um objeto e expor apenas as interfaces necessárias. Em Python, o encapsulamento é implementado por meio de convenções de nomenclatura:</p>
 <ul>
 <li>Atributos com prefixo <code>_</code> (underscore simples) são considerados "protegidos" (apenas uma convenção)</li>
-<li>Atributos com prefixo <code>__</code> (duplo underscore) são "privados" (tecnicamente, são renomeados pelo interpretador)</li>
+<li>Nomes com pelo menos dois sublinhados iniciais e sem dois sublinhados finais passam por <em>name mangling</em>: <code>__historico</code>, por exemplo, vira <code>_ContaBancaria__historico</code>. Isso evita conflitos acidentais em subclasses, mas não impede acesso externo nem se aplica a nomes especiais como <code>__init__</code>.</li>
 </ul>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
@@ -3010,7 +3018,7 @@
 </span><span id="__span-5-47"><a id="__codelineno-5-47" name="__codelineno-5-47"></a><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </span><span id="__span-5-48"><a id="__codelineno-5-48" name="__codelineno-5-48"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>         <span class="c1"># Idade deve ser um inteiro entre 0 e 150</span>
 </span></code></pre></div></td></tr></table></div>
-<p>O uso de <code class="language-python highlight"><span class="nd">@property</span></code> torna o código mais limpo e pythônico, mantendo a sintaxe de acesso a atributos enquanto permite a validação e lógica adicional.</p>
+<p>O uso de <code class="language-python highlight"><span class="nd">@property</span></code> torna o código mais limpo e idiomático, mantendo a sintaxe de acesso a atributos enquanto permite a validação e lógica adicional.</p>
 <h3 id="propriedades-somente-leitura">Propriedades somente leitura<a class="headerlink" href="#propriedades-somente-leitura" title="Permanent link">&para;</a></h3>
 <p>Para criar propriedades que não podem ser modificadas após a criação do objeto, basta implementar apenas o <em>getter</em> sem o <em>setter</em> correspondente:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
@@ -3082,14 +3090,14 @@
 </ul>
 <h3 id="boas-praticas">Boas Práticas<a class="headerlink" href="#boas-praticas" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>Use <code>@property</code> em vez de métodos explícitos</strong> sempre que possível para manter uma interface pythônica</li>
+<li><strong>Use <code>@property</code> em vez de métodos explícitos</strong> sempre que possível para manter uma interface idiomática</li>
 <li><strong>Projete suas classes cuidadosamente</strong> para que a maioria dos atributos seja acessível diretamente</li>
 <li><strong>Use <em>getters</em> e <em>setters</em> apenas quando necessário</strong> para validação ou lógica adicional</li>
 <li><strong>Documente o comportamento esperado</strong> das propriedades para que outros desenvolvedores entendam as restrições</li>
 </ul>
 <h2 id="classes-de-dados-dataclass">Classes de Dados (<code>dataclass</code>)<a class="headerlink" href="#classes-de-dados-dataclass" title="Permanent link">&para;</a></h2>
 <p>As <strong>classes de dados</strong> (<code class="language-python highlight"><span class="n">dataclass</span></code>) em Python são um recurso da linguagem que facilita a criação de classes voltadas para o armazenamento e manipulação de dados. Introduzidas no Python 3.7, elas geram automaticamente métodos comuns, como <code class="language-python highlight"><span class="fm">__init__</span></code>, <code class="language-python highlight"><span class="fm">__repr__</span></code>, <code class="language-python highlight"><span class="fm">__eq__</span></code>, e outros, com base nos atributos declarados na classe, o que reduz a quantidade de código repetitivo.</p>
-<p>Enquanto as classes tradicionais oferecem flexibilidade para definir métodos e lógica de negócio, as <em>dataclasses</em> são focadas em simplificar a criação de classes para armazenar dados. Elas são adequadas quando o principal objetivo da classe é representar um objeto com atributos específicos e não possui lógica de comportamento complexa.  </p>
+<p>Enquanto as classes tradicionais oferecem flexibilidade para definir métodos e lógica de negócio, as <em>dataclasses</em> são focadas em simplificar a criação de classes para armazenar dados. Elas são adequadas quando o principal objetivo é armazenar dados com atributos específicos, sem lógica de comportamento complexa.</p>
 <p>A criação de uma <em>dataclass</em> é feita utilizando o decorador <code>@dataclass</code>. Ao decorar uma classe com <code class="language-python highlight"><span class="nd">@dataclass</span></code>, Python automaticamente cria o método <code class="language-python highlight"><span class="fm">__init__</span></code> e outros métodos importantes, como <code class="language-python highlight"><span class="fm">__repr__</span></code> e <code class="language-python highlight"><span class="fm">__eq__</span></code>.  </p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Criando uma dataclass</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
@@ -3114,7 +3122,7 @@
 </span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># True</span>
 </span></code></pre></div></td></tr></table></div>
 <p>O exemplo acima define uma <em>dataclass</em> chamada <code>Pessoa</code> com dois atributos: <code>nome</code> e <code>idade</code>. O método <code class="language-python highlight"><span class="fm">__repr__</span></code> gerado automaticamente facilita a exibição do conteúdo da instância, bem como o método <code class="language-python highlight"><span class="fm">__eq__</span></code> para comparar instâncias de uma classe de dados.  </p>
-<p>Além disso, é possível tornar uma <em>dataclass</em> imutável, definindo o parâmetro <code class="language-python highlight"><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span></code> no decorador <code class="language-python highlight"><span class="nd">@dataclass</span></code>. Com isso, os atributos da instância não poderão ser modificados após sua criação.</p>
+<p>Com <code>frozen=True</code>, a dataclass recusa a atribuição e a remoção comuns de atributos. Essa proteção é <strong>rasa</strong>: se um campo contiver uma lista, ainda será possível alterar essa lista. Portanto, <code>frozen=True</code> não garante imutabilidade completa nem torna automaticamente qualquer campo hashable.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Dataclass imutável</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
@@ -3168,7 +3176,7 @@
 </span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="n">cachorro</span> <span class="o">=</span> <span class="n">Cachorro</span><span class="p">(</span><span class="s2">"Rex"</span><span class="p">,</span> <span class="s2">"Cachorro"</span><span class="p">,</span> <span class="s2">"Marrom"</span><span class="p">)</span>
 </span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="nb">print</span><span class="p">(</span><span class="n">cachorro</span><span class="o">.</span><span class="n">falar</span><span class="p">())</span>  <span class="c1"># Rex diz au au!</span>
 </span></code></pre></div></td></tr></table></div>
-<p>No exemplo acima, <code>Cachorro</code> herda de <code>Animal</code> e sobrescreve o método <code>falar</code>. Essa flexibilidade permite que as <em>dataclasses</em> sejam utilizadas em sistemas onde a simplicidade de armazenamento de dados ainda é necessária, mas com a possibilidade de estender comportamentos através de herança.</p>
+<p>No exemplo acima, <code>Cachorro</code> herda de <code>Animal</code> e sobrescreve o método <code>falar</code>. Essa flexibilidade permite que as <em>dataclasses</em> sejam utilizadas em sistemas em que a simplicidade de armazenamento de dados ainda é necessária, mas com a possibilidade de estender comportamentos por meio de herança.</p>
 
 
 
@@ -3191,7 +3199,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34 -03">31 de março de 2025 00:49:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

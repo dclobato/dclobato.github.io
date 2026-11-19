@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -942,6 +942,17 @@
     <span class="md-ellipsis">
       
         realloc: arranjos que crescem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conferindo-o-tamanho-antes-de-alocar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conferindo o tamanho antes de alocar
       
     </span>
   </a>
@@ -2459,7 +2470,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2702,6 +2713,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#conferindo-o-tamanho-antes-de-alocar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conferindo o tamanho antes de alocar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#matrizes-dinamicas" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2786,11 +2808,11 @@
 </div>
 <p>Dois operadores são usados com ponteiros:</p>
 <ul>
-<li>O operador <code>&amp;</code>, chamado de <strong>operador de endereço</strong>, devolve o endereço de memória de uma variável. Se <code>x</code> é uma variável inteira, <code>&amp;x</code> é o endereço onde <code>x</code> está guardada, e pode ser atribuído a um ponteiro para <code class="language-c highlight"><span class="kt">int</span></code>, e;</li>
-<li>O operador <code>*</code>, chamado de <strong>operador de indireção</strong> ou de <strong>dereferência</strong>, acessa a variável que está no endereço guardado pelo ponteiro. Se o ponteiro <code>p</code> guarda o endereço de <code>x</code>, então <code>*p</code> <strong>é</strong> a variável <code>x</code>: podemos ler o valor de <code>x</code> com <code>*p</code> e alterá-lo com <code>*p = ...</code>.</li>
+<li>O operador <code>&amp;</code>, chamado de <strong>operador de endereço</strong>, devolve o endereço de memória de uma variável. Se <code>x</code> é uma variável inteira, <code>&amp;x</code> é o endereço onde <code>x</code> está guardada, e pode ser atribuído a um ponteiro para <code class="language-c highlight"><span class="kt">int</span></code>;</li>
+<li>O operador <code>*</code>, chamado de <strong>operador de indireção</strong> ou de <strong>desreferência</strong>, acessa a variável que está no endereço guardado pelo ponteiro. Se o ponteiro <code>p</code> guarda o endereço de <code>x</code>, então <code>*p</code> <strong>é</strong> a variável <code>x</code>: podemos ler o valor de <code>x</code> com <code>*p</code> e alterá-lo com <code>*p = ...</code>.</li>
 </ul>
 <p>Ponteiros também podem apontar para outros ponteiros. Um "ponteiro para ponteiro para <code>T</code>" (declarado com <code>**</code>) guarda o endereço de uma variável que, por sua vez, guarda o endereço de um <code>T</code> (uma indireção dupla). Veja o exemplo a seguir:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">ponteiros.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -2856,12 +2878,12 @@
 <ul>
 <li><code>valor</code> é uma variável comum, guardada no endereço <code>0x7fff8154c204</code>;</li>
 <li><code>ptr</code> guarda o endereço de <code>valor</code>. Por isso, <code>ptr</code> e <code>&amp;valor</code> escrevem o mesmo número, e <code>*ptr</code> é o próprio <code>valor</code>;</li>
-<li><code>ptr_ptr</code> guarda o endereço de <code>ptr</code>. <code>*ptr_ptr</code> é o próprio <code>ptr</code> (e escreve o endereço de <code>valor</code>), e <code>**ptr_ptr</code> é <code>*ptr</code>, ou seja, <code>valor</code>, e;</li>
+<li><code>ptr_ptr</code> guarda o endereço de <code>ptr</code>. <code>*ptr_ptr</code> é o próprio <code>ptr</code> (e escreve o endereço de <code>valor</code>), e <code>**ptr_ptr</code> é <code>*ptr</code>, ou seja, <code>valor</code>;</li>
 <li>A atribuição <code class="language-c highlight"><span class="o">*</span><span class="n">ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">25</span></code> altera <code>valor</code>, sem usar o nome <code>valor</code>.</li>
 </ul>
 <p>Repare que um ponteiro é uma variável como outra qualquer: ele ocupa espaço na memória, tem o seu próprio endereço (<code>&amp;ptr</code>) e guarda um valor, que por acaso é um endereço. Os tipos precisam ser compatíveis: <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">ptr_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">valor</span><span class="p">;</span></code> está errado, porque <code>&amp;valor</code> é um "ponteiro para <code class="language-c highlight"><span class="kt">int</span></code>", e não um "ponteiro para ponteiro para <code class="language-c highlight"><span class="kt">int</span></code>" (o GCC 13.2 avisa, com <code>initialization of 'int **' from incompatible pointer type 'int *'</code>, e o GCC 14.2 trata a mesma situação como erro).</p>
 <h3 id="o-ponteiro-nulo-null">O ponteiro nulo (<code>NULL</code>)<a class="headerlink" href="#o-ponteiro-nulo-null" title="Permanent link">&para;</a></h3>
-<p>Um ponteiro que não aponta para nenhuma variável deve guardar o valor especial <code class="language-c highlight"><span class="nb">NULL</span></code>, definido em <code>stdio.h</code>, <code>stdlib.h</code> e em outros cabeçalhos. Dereferenciar um ponteiro nulo é um erro, que normalmente encerra o programa com <code>Segmentation fault</code>. Por isso, quando um ponteiro pode ser nulo, ele deve ser testado antes de ser usado:</p>
+<p>Um ponteiro que não aponta para nenhuma variável deve guardar o valor especial <code class="language-c highlight"><span class="nb">NULL</span></code>, definido em <code>stdio.h</code>, <code>stdlib.h</code> e em outros cabeçalhos. Desreferenciar um ponteiro nulo é um erro, que normalmente encerra o programa com <code>Segmentation fault</code>. Por isso, quando um ponteiro pode ser nulo, ele deve ser testado antes de ser usado:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Testando o ponteiro nulo</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2906,12 +2928,12 @@
 </span></code></pre></div></td></tr></table></div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Um ponteiro declarado sem inicialização, como <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span></code>, guarda um endereço qualquer, que estava na memória naquele momento. Dereferenciar esse ponteiro pode alterar outra variável do programa, encerrar o programa, ou parecer funcionar. <strong>Sempre inicialize os ponteiros</strong>: com o endereço de uma variável ou com <code class="language-c highlight"><span class="nb">NULL</span></code>.</p>
+<p>Um ponteiro declarado sem inicialização, como <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="p">;</span></code>, guarda um endereço qualquer, que estava na memória naquele momento. Desreferenciar esse ponteiro pode alterar outra variável do programa, encerrar o programa, ou parecer funcionar. <strong>Sempre inicialize os ponteiros</strong>: com o endereço de uma variável ou com <code class="language-c highlight"><span class="nb">NULL</span></code>.</p>
 </div>
 <h3 id="ponteiros-e-arranjos">Ponteiros e arranjos<a class="headerlink" href="#ponteiros-e-arranjos" title="Permanent link">&para;</a></h3>
 <p>Ponteiros e arranjos estão intimamente ligados. Os elementos de um arranjo ficam em posições consecutivas da memória e, na maioria das expressões, o nome de um arranjo é convertido automaticamente em um ponteiro para o seu primeiro elemento: <code>v</code> vale o mesmo que <code>&amp;v[0]</code>. Esse comportamento é chamado de <strong>decaimento</strong> do arranjo (<em>array decay</em>).</p>
 <p>Somar um inteiro <code>n</code> a um ponteiro faz com que ele avance <code>n</code> <strong>elementos</strong>, e não <code>n</code> bytes. Se <code>p</code> aponta para <code>v[0]</code>, então <code>p + 1</code> aponta para <code>v[1]</code>, e <code>*(p + 1)</code> é o próprio <code>v[1]</code>. Essa é a <strong>aritmética de ponteiros</strong>, e o operador de indexação é definido a partir dela: <code>v[i]</code> é, por definição, o mesmo que <code>*(v + i)</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Resultado</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Resultado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">aritmetica.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
@@ -3057,7 +3079,7 @@
 <p>Nesse caso, <code>ptr1 == ptr2</code> <strong>pode</strong> ser verdadeiro, mas isso é uma otimização do compilador, e não um comportamento garantido pela linguagem: com outro compilador, ou com outras opções de compilação, o resultado pode ser outro. Para comparar cadeias, use sempre <code class="language-c highlight"><span class="n">strcmp</span></code>.</p>
 </div>
 <h3 id="acessando-estruturas-via-ponteiros">Acessando estruturas via ponteiros<a class="headerlink" href="#acessando-estruturas-via-ponteiros" title="Permanent link">&para;</a></h3>
-<p>Quando temos um ponteiro para uma <a href="../tiposdedados/#estruturas">estrutura</a>, os membros podem ser acessados de duas formas: dereferenciando o ponteiro e usando o operador ponto, como em <code>(*p).dia</code>, ou usando o operador seta, como em <code>p-&gt;dia</code>. As duas formas são equivalentes, e o operador seta é o mais usado, por ser mais conciso:</p>
+<p>Quando temos um ponteiro para uma <a href="../tiposdedados/#estruturas">estrutura</a>, os membros podem ser acessados de duas formas: desreferenciando o ponteiro e usando o operador ponto, como em <code>(*p).dia</code>, ou usando o operador seta, como em <code>p-&gt;dia</code>. As duas formas são equivalentes, e o operador seta é o mais usado, por ser mais conciso:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Acessando membros por meio de um ponteiro</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -3108,7 +3130,9 @@
 </span></code></pre></div></td></tr></table></div>
 <p>Os parênteses em <code>(*p).mes</code> são necessários: como o operador ponto tem prioridade maior que o <code>*</code>, a expressão <code>*p.mes</code> seria interpretada como <code>*(p.mes)</code>, o que não compila.</p>
 <h3 id="ponteiros-e-const">Ponteiros e <code>const</code><a class="headerlink" href="#ponteiros-e-const" title="Permanent link">&para;</a></h3>
-<p>A palavra-chave <code class="language-c highlight"><span class="k">const</span></code> pode ser aplicada ao valor apontado, ao próprio ponteiro, ou aos dois. A regra para ler essas declarações é olhar o que está imediatamente à direita do <code class="language-c highlight"><span class="k">const</span></code>:</p>
+<p>A palavra-chave <code class="language-c highlight"><span class="k">const</span></code> pode ser aplicada ao valor apontado, ao próprio
+ponteiro ou aos dois. <code>const int *p</code> e <code>int const *p</code> qualificam o inteiro
+apontado; <code>int *const p</code> qualifica o ponteiro. Observe os exemplos:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w">        </span><span class="c1">// ponteiro para constante</span>
@@ -3121,9 +3145,13 @@
 </span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
 </span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="k">const</span><span class="w"> </span><span class="n">p3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">;</span><span class="w">  </span><span class="c1">// nem o valor apontado, nem o ponteiro podem mudar</span>
 </span></code></pre></div>
-<p>A forma mais usada é a primeira, o <strong>ponteiro para constante</strong>, nos parâmetros de funções que recebem um endereço apenas para ler o valor apontado, como em <code class="language-c highlight"><span class="kt">size_t</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">)</span></code>. O <code class="language-c highlight"><span class="k">const</span></code> funciona como uma promessa, verificada pelo compilador, de que a função não vai alterar o que recebeu.</p>
+<p>A forma mais usada é a primeira, o <strong>ponteiro para constante</strong>, nos parâmetros
+de funções que recebem um endereço apenas para ler o valor apontado, como em
+<code class="language-c highlight"><span class="kt">size_t</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">)</span></code>. O compilador impede a alteração por meio
+desse ponteiro. Isso não torna o objeto original imutável se ele foi criado
+sem <code>const</code>: outra referência modificável ainda pode alterá-lo.</p>
 <h3 id="ponteiros-genericos-void">Ponteiros genéricos (<code>void *</code>)<a class="headerlink" href="#ponteiros-genericos-void" title="Permanent link">&para;</a></h3>
-<p>Um ponteiro do tipo <code class="language-c highlight"><span class="kt">void</span><span class="w"> </span><span class="o">*</span></code> é um <strong>ponteiro genérico</strong>: ele pode guardar o endereço de uma variável de qualquer tipo, mas não pode ser dereferenciado diretamente, porque não se sabe o tipo (nem o tamanho) do que está no endereço. Antes de usar o valor apontado, é preciso convertê-lo para um ponteiro do tipo correto:</p>
+<p>Um ponteiro do tipo <code class="language-c highlight"><span class="kt">void</span><span class="w"> </span><span class="o">*</span></code> é um <strong>ponteiro genérico</strong>: ele pode guardar o endereço de uma variável de qualquer tipo, mas não pode ser desreferenciado diretamente, porque não se sabe o tipo (nem o tamanho) do que está no endereço. Antes de usar o valor apontado, é preciso convertê-lo para um ponteiro do tipo correto:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span><span class="w">             </span><span class="c1">// qualquer endereço pode ser guardado em um void *</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">;</span><span class="w">               </span><span class="c1">// conversão automática de void * para int *</span>
@@ -3154,9 +3182,9 @@
 <tr>
 <td style="text-align: left;"><strong>Memória estática</strong></td>
 <td style="text-align: left;">Variáveis globais e variáveis locais <code class="language-c highlight"><span class="k">static</span></code></td>
-<td style="text-align: left;">Quando o programa começa (com todos os bytes zerados)</td>
+<td style="text-align: left;">Antes do início do programa, com a inicialização indicada ou com zero por padrão</td>
 <td style="text-align: left;">Quando o programa termina</td>
-<td style="text-align: left;">Limitado apenas pela memória disponível</td>
+<td style="text-align: left;">Depende dos limites do ambiente e da memória disponível</td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong><em>Heap</em></strong>, ou memória dinâmica</td>
@@ -3252,7 +3280,15 @@
 </div>
 </div>
 </div>
-<p>Declarar o arranjo como <code class="language-c highlight"><span class="k">static</span></code> (ou como variável global) o coloca na memória estática, onde há espaço de sobra. Essa é uma prática comum em programação competitiva, onde o tamanho máximo da entrada é conhecido. A segunda limitação é que o tamanho de um arranjo automático precisa ser conhecido quando ele é criado, e não pode mudar depois. Quando o tamanho só é conhecido durante a execução, ou quando os dados precisam continuar existindo depois que a função que os criou termina, usa-se a memória dinâmica.</p>
+<p>Declarar o arranjo como <code class="language-c highlight"><span class="k">static</span></code> ou como variável global evita ocupar a
+pilha de execução, mas continua sujeito ao limite total de memória do programa.
+Essa é uma prática comum em programação competitiva, quando o tamanho máximo
+da entrada é conhecido. A segunda limitação é que o tamanho de um arranjo
+automático não pode mudar depois de sua criação. Um arranjo de tamanho variável
+pode usar uma dimensão conhecida durante a execução, se o compilador oferecer
+esse recurso, mas continua tendo duração automática. Quando os dados precisam
+crescer ou continuar existindo depois que a função termina, usa-se memória
+dinâmica.</p>
 <h2 id="alocacao-dinamica-de-memoria">Alocação dinâmica de memória<a class="headerlink" href="#alocacao-dinamica-de-memoria" title="Permanent link">&para;</a></h2>
 <p>As funções de alocação dinâmica estão declaradas em <code>stdlib.h</code>:</p>
 <table>
@@ -3284,7 +3320,7 @@
 <p>As três funções de alocação devolvem <code class="language-c highlight"><span class="nb">NULL</span></code> quando não conseguem reservar a memória pedida. O endereço devolvido é um <code class="language-c highlight"><span class="kt">void</span><span class="w"> </span><span class="o">*</span></code>, que é convertido automaticamente para o tipo do ponteiro que o recebe.</p>
 <h3 id="malloc-e-free"><code>malloc</code> e <code>free</code><a class="headerlink" href="#malloc-e-free" title="Permanent link">&para;</a></h3>
 <p>O programa abaixo lê a quantidade de notas, aloca um arranjo do tamanho exato, lê as notas e mostra as que estão acima da média:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código fonte</label><label for="__tabbed_5_2">Entrada</label><label for="__tabbed_5_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Código-fonte</label><label for="__tabbed_5_2">Entrada</label><label for="__tabbed_5_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">malloc.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
@@ -3322,42 +3358,52 @@
 <span class="normal"><a href="#__codelineno-15-33">33</a></span>
 <span class="normal"><a href="#__codelineno-15-34">34</a></span>
 <span class="normal"><a href="#__codelineno-15-35">35</a></span>
-<span class="normal"><a href="#__codelineno-15-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="p">{</span>
-</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a>
-</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="p">);</span>
-</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">notas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Memória insuficiente</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16"></a>
-</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="w">        </span><span class="n">scanf</span><span class="p">(</span><span class="s">"%lf"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">        </span><span class="n">soma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22"></a>
-</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
-</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Média: %.2f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="p">);</span>
-</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Acima da média:"</span><span class="p">);</span>
-</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">media</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">" %.1f"</span><span class="p">,</span><span class="w"> </span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32"></a>
-</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">notas</span><span class="p">);</span>
-</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="w">    </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-15-36">36</a></span>
+<span class="normal"><a href="#__codelineno-15-37">37</a></span>
+<span class="normal"><a href="#__codelineno-15-38">38</a></span>
+<span class="normal"><a href="#__codelineno-15-39">39</a></span>
+<span class="normal"><a href="#__codelineno-15-40">40</a></span>
+<span class="normal"><a href="#__codelineno-15-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="p">{</span>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a><span class="w">        </span><span class="p">(</span><span class="kt">size_t</span><span class="p">)</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">SIZE_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12"></a>
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="p">);</span>
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">notas</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"Memória insuficiente</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-15-17"><a id="__codelineno-15-17" name="__codelineno-15-17"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-18"><a id="__codelineno-15-18" name="__codelineno-15-18"></a>
+</span><span id="__span-15-19"><a id="__codelineno-15-19" name="__codelineno-15-19"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">soma</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-15-20"><a id="__codelineno-15-20" name="__codelineno-15-20"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-21"><a id="__codelineno-15-21" name="__codelineno-15-21"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%lf"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-22"><a id="__codelineno-15-22" name="__codelineno-15-22"></a><span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="n">notas</span><span class="p">);</span>
+</span><span id="__span-15-23"><a id="__codelineno-15-23" name="__codelineno-15-23"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-15-24"><a id="__codelineno-15-24" name="__codelineno-15-24"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-25"><a id="__codelineno-15-25" name="__codelineno-15-25"></a><span class="w">        </span><span class="n">soma</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span><span id="__span-15-26"><a id="__codelineno-15-26" name="__codelineno-15-26"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-27"><a id="__codelineno-15-27" name="__codelineno-15-27"></a>
+</span><span id="__span-15-28"><a id="__codelineno-15-28" name="__codelineno-15-28"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">media</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">soma</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-15-29"><a id="__codelineno-15-29" name="__codelineno-15-29"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Média: %.2f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">media</span><span class="p">);</span>
+</span><span id="__span-15-30"><a id="__codelineno-15-30" name="__codelineno-15-30"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Acima da média:"</span><span class="p">);</span>
+</span><span id="__span-15-31"><a id="__codelineno-15-31" name="__codelineno-15-31"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-32"><a id="__codelineno-15-32" name="__codelineno-15-32"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">media</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-15-33"><a id="__codelineno-15-33" name="__codelineno-15-33"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">" %.1f"</span><span class="p">,</span><span class="w"> </span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-15-34"><a id="__codelineno-15-34" name="__codelineno-15-34"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-15-35"><a id="__codelineno-15-35" name="__codelineno-15-35"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-15-36"><a id="__codelineno-15-36" name="__codelineno-15-36"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-15-37"><a id="__codelineno-15-37" name="__codelineno-15-37"></a>
+</span><span id="__span-15-38"><a id="__codelineno-15-38" name="__codelineno-15-38"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">notas</span><span class="p">);</span>
+</span><span id="__span-15-39"><a id="__codelineno-15-39" name="__codelineno-15-39"></a><span class="w">    </span><span class="n">notas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-15-40"><a id="__codelineno-15-40" name="__codelineno-15-40"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-15-41"><a id="__codelineno-15-41" name="__codelineno-15-41"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3376,7 +3422,7 @@
 <li><code class="language-c highlight"><span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span><span class="p">)</span></code> reserva espaço para <code>n</code> elementos do tipo apontado por <code>notas</code>. Escrever <code class="language-c highlight"><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">notas</span></code>, em vez de <code class="language-c highlight"><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span></code>, garante que o tamanho continua correto mesmo que o tipo de <code>notas</code> seja alterado depois;</li>
 <li>O resultado de <code class="language-c highlight"><span class="n">malloc</span></code> é testado antes de ser usado. Pedidos pequenos raramente falham, mas um pedido grande demais devolve <code class="language-c highlight"><span class="nb">NULL</span></code>;</li>
 <li>Depois de alocado, o bloco é usado exatamente como um arranjo: <code>notas[i]</code>, <code>&amp;notas[i]</code>;</li>
-<li><code class="language-c highlight"><span class="n">free</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span></code> devolve a memória ao sistema quando ela não é mais necessária. Toda memória alocada deve ser liberada <strong>exatamente uma vez</strong>, e;</li>
+<li><code class="language-c highlight"><span class="n">free</span><span class="p">(</span><span class="n">notas</span><span class="p">)</span></code> devolve a memória ao sistema quando ela não é mais necessária. Toda memória alocada deve ser liberada <strong>exatamente uma vez</strong>;</li>
 <li>Depois do <code class="language-c highlight"><span class="n">free</span></code>, o ponteiro continua guardando o endereço antigo, que não pode mais ser usado. Atribuir <code class="language-c highlight"><span class="nb">NULL</span></code> ao ponteiro evita que ele seja usado por engano.</li>
 </ul>
 <h3 id="calloc"><code>calloc</code><a class="headerlink" href="#calloc" title="Permanent link">&para;</a></h3>
@@ -3434,7 +3480,7 @@
 <p>Com <code class="language-c highlight"><span class="n">malloc</span></code>, o conteúdo inicial do bloco é imprevisível, e os contadores começariam com valores quaisquer.</p>
 <h3 id="realloc-arranjos-que-crescem"><code>realloc</code>: arranjos que crescem<a class="headerlink" href="#realloc-arranjos-que-crescem" title="Permanent link">&para;</a></h3>
 <p>Quando não se sabe quantos dados virão, uma estratégia comum é começar com um arranjo pequeno e <strong>dobrar</strong> a sua capacidade sempre que ele encher. A função <code class="language-c highlight"><span class="n">realloc</span></code> muda o tamanho do bloco, preservando o conteúdo já guardado:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código fonte</label><label for="__tabbed_6_2">Entrada</label><label for="__tabbed_6_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código-fonte</label><label for="__tabbed_6_2">Entrada</label><label for="__tabbed_6_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">realloc.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1"> 1</a></span>
@@ -3472,42 +3518,56 @@
 <span class="normal"><a href="#__codelineno-19-33">33</a></span>
 <span class="normal"><a href="#__codelineno-19-34">34</a></span>
 <span class="normal"><a href="#__codelineno-19-35">35</a></span>
-<span class="normal"><a href="#__codelineno-19-36">36</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="p">{</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">capacidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tamanho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">capacidade</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
-</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12"></a>
-</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tamanho</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">capacidade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16"></a><span class="w">            </span><span class="n">capacidade</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
-</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">novo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realloc</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">capacidade</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
-</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">novo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="normal"><a href="#__codelineno-19-36">36</a></span>
+<span class="normal"><a href="#__codelineno-19-37">37</a></span>
+<span class="normal"><a href="#__codelineno-19-38">38</a></span>
+<span class="normal"><a href="#__codelineno-19-39">39</a></span>
+<span class="normal"><a href="#__codelineno-19-40">40</a></span>
+<span class="normal"><a href="#__codelineno-19-41">41</a></span>
+<span class="normal"><a href="#__codelineno-19-42">42</a></span>
+<span class="normal"><a href="#__codelineno-19-43">43</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="p">{</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">capacidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">tamanho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">capacidade</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-19-10"><a id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">v</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-11"><a id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-19-12"><a id="__codelineno-19-12" name="__codelineno-19-12"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-13"><a id="__codelineno-19-13" name="__codelineno-19-13"></a>
+</span><span id="__span-19-14"><a id="__codelineno-19-14" name="__codelineno-19-14"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-19-15"><a id="__codelineno-19-15" name="__codelineno-19-15"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">scanf</span><span class="p">(</span><span class="s">"%d"</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-16"><a id="__codelineno-19-16" name="__codelineno-19-16"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tamanho</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">capacidade</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-17"><a id="__codelineno-19-17" name="__codelineno-19-17"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">capacidade</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">SIZE_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">||</span>
+</span><span id="__span-19-18"><a id="__codelineno-19-18" name="__codelineno-19-18"></a><span class="w">                </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">capacidade</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">SIZE_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-19-19"><a id="__codelineno-19-19" name="__codelineno-19-19"></a><span class="w">                </span><span class="n">free</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
 </span><span id="__span-19-20"><a id="__codelineno-19-20" name="__codelineno-19-20"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
 </span><span id="__span-19-21"><a id="__codelineno-19-21" name="__codelineno-19-21"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22"></a><span class="w">            </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">novo</span><span class="p">;</span>
-</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">"(capacidade aumentada para %d)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">capacidade</span><span class="p">);</span>
-</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25"></a><span class="w">        </span><span class="n">v</span><span class="p">[</span><span class="n">tamanho</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
-</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27"></a>
-</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Lidos %d valores, em ordem inversa:"</span><span class="p">,</span><span class="w"> </span><span class="n">tamanho</span><span class="p">);</span>
-</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tamanho</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">" %d"</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-</span><span id="__span-19-33"><a id="__codelineno-19-33" name="__codelineno-19-33"></a>
-</span><span id="__span-19-34"><a id="__codelineno-19-34" name="__codelineno-19-34"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-</span><span id="__span-19-35"><a id="__codelineno-19-35" name="__codelineno-19-35"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-19-36"><a id="__codelineno-19-36" name="__codelineno-19-36"></a><span class="p">}</span>
+</span><span id="__span-19-22"><a id="__codelineno-19-22" name="__codelineno-19-22"></a><span class="w">            </span><span class="kt">size_t</span><span class="w"> </span><span class="n">nova_capacidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">capacidade</span><span class="p">;</span>
+</span><span id="__span-19-23"><a id="__codelineno-19-23" name="__codelineno-19-23"></a><span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">novo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realloc</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">nova_capacidade</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-19-24"><a id="__codelineno-19-24" name="__codelineno-19-24"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">novo</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-25"><a id="__codelineno-19-25" name="__codelineno-19-25"></a><span class="w">                </span><span class="n">free</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-19-26"><a id="__codelineno-19-26" name="__codelineno-19-26"></a><span class="w">                </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-19-27"><a id="__codelineno-19-27" name="__codelineno-19-27"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-19-28"><a id="__codelineno-19-28" name="__codelineno-19-28"></a><span class="w">            </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">novo</span><span class="p">;</span>
+</span><span id="__span-19-29"><a id="__codelineno-19-29" name="__codelineno-19-29"></a><span class="w">            </span><span class="n">capacidade</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nova_capacidade</span><span class="p">;</span>
+</span><span id="__span-19-30"><a id="__codelineno-19-30" name="__codelineno-19-30"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">"(capacidade aumentada para %zu)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">capacidade</span><span class="p">);</span>
+</span><span id="__span-19-31"><a id="__codelineno-19-31" name="__codelineno-19-31"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-19-32"><a id="__codelineno-19-32" name="__codelineno-19-32"></a><span class="w">        </span><span class="n">v</span><span class="p">[</span><span class="n">tamanho</span><span class="o">++</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-19-33"><a id="__codelineno-19-33" name="__codelineno-19-33"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-34"><a id="__codelineno-19-34" name="__codelineno-19-34"></a>
+</span><span id="__span-19-35"><a id="__codelineno-19-35" name="__codelineno-19-35"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Lidos %zu valores, em ordem inversa:"</span><span class="p">,</span><span class="w"> </span><span class="n">tamanho</span><span class="p">);</span>
+</span><span id="__span-19-36"><a id="__codelineno-19-36" name="__codelineno-19-36"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tamanho</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-19-37"><a id="__codelineno-19-37" name="__codelineno-19-37"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">" %d"</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]);</span>
+</span><span id="__span-19-38"><a id="__codelineno-19-38" name="__codelineno-19-38"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-19-39"><a id="__codelineno-19-39" name="__codelineno-19-39"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-19-40"><a id="__codelineno-19-40" name="__codelineno-19-40"></a>
+</span><span id="__span-19-41"><a id="__codelineno-19-41" name="__codelineno-19-41"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+</span><span id="__span-19-42"><a id="__codelineno-19-42" name="__codelineno-19-42"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-19-43"><a id="__codelineno-19-43" name="__codelineno-19-43"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -3524,9 +3584,13 @@
 </div>
 <p>O resultado de <code class="language-c highlight"><span class="n">realloc</span></code> é guardado em um ponteiro auxiliar (<code>novo</code>), e só depois atribuído a <code>v</code>. Se <code class="language-c highlight"><span class="n">realloc</span></code> falhar, ele devolve <code class="language-c highlight"><span class="nb">NULL</span></code>, mas o bloco antigo <strong>continua alocado</strong>; escrever <code class="language-c highlight"><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">realloc</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span></code> perderia o único endereço desse bloco, que não poderia mais ser liberado. Como <code class="language-c highlight"><span class="n">realloc</span></code> pode mudar o bloco de lugar (copiando o conteúdo para o novo endereço), qualquer outro ponteiro que apontasse para o bloco antigo deixa de ser válido.</p>
 <p>Dobrar a capacidade, em vez de aumentá-la de um em um, faz com que o número de realocações seja pequeno: para guardar um milhão de valores começando com capacidade 2, são necessárias apenas 19 realocações.</p>
-<h3 id="matrizes-dinamicas">Matrizes dinâmicas<a class="headerlink" href="#matrizes-dinamicas" title="Permanent link">&para;</a></h3>
-<p>Uma matriz com dimensões conhecidas apenas durante a execução pode ser montada como um arranjo de ponteiros, em que cada ponteiro aponta para uma linha alocada separadamente:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Alocando e liberando uma matriz</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
+<h3 id="conferindo-o-tamanho-antes-de-alocar">Conferindo o tamanho antes de alocar<a class="headerlink" href="#conferindo-o-tamanho-antes-de-alocar" title="Permanent link">&para;</a></h3>
+<p>O tamanho passado a <code>malloc</code> ou <code>realloc</code> é um <code>size_t</code>, um tipo inteiro sem
+sinal. Se a multiplicação da quantidade de elementos pelo tamanho de cada um
+ultrapassar <code>SIZE_MAX</code>, ela pode produzir um número pequeno. A alocação desse
+bloco menor pode ter sucesso, mas escrever a quantidade original de elementos
+ultrapassaria seus limites. Testar apenas o retorno de <code>malloc</code> não evita isso.</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Alocação com verificação do produto</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
@@ -3536,108 +3600,34 @@
 <span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-22-10">10</a></span>
-<span class="normal"><a href="#__codelineno-22-11">11</a></span>
-<span class="normal"><a href="#__codelineno-22-12">12</a></span>
-<span class="normal"><a href="#__codelineno-22-13">13</a></span>
-<span class="normal"><a href="#__codelineno-22-14">14</a></span>
-<span class="normal"><a href="#__codelineno-22-15">15</a></span>
-<span class="normal"><a href="#__codelineno-22-16">16</a></span>
-<span class="normal"><a href="#__codelineno-22-17">17</a></span>
-<span class="normal"><a href="#__codelineno-22-18">18</a></span>
-<span class="normal"><a href="#__codelineno-22-19">19</a></span>
-<span class="normal"><a href="#__codelineno-22-20">20</a></span>
-<span class="normal"><a href="#__codelineno-22-21">21</a></span>
-<span class="normal"><a href="#__codelineno-22-22">22</a></span>
-<span class="normal"><a href="#__codelineno-22-23">23</a></span>
-<span class="normal"><a href="#__codelineno-22-24">24</a></span>
-<span class="normal"><a href="#__codelineno-22-25">25</a></span>
-<span class="normal"><a href="#__codelineno-22-26">26</a></span>
-<span class="normal"><a href="#__codelineno-22-27">27</a></span>
-<span class="normal"><a href="#__codelineno-22-28">28</a></span>
-<span class="normal"><a href="#__codelineno-22-29">29</a></span>
-<span class="normal"><a href="#__codelineno-22-30">30</a></span>
-<span class="normal"><a href="#__codelineno-22-31">31</a></span>
-<span class="normal"><a href="#__codelineno-22-32">32</a></span>
-<span class="normal"><a href="#__codelineno-22-33">33</a></span>
-<span class="normal"><a href="#__codelineno-22-34">34</a></span>
-<span class="normal"><a href="#__codelineno-22-35">35</a></span>
-<span class="normal"><a href="#__codelineno-22-36">36</a></span>
-<span class="normal"><a href="#__codelineno-22-37">37</a></span>
-<span class="normal"><a href="#__codelineno-22-38">38</a></span>
-<span class="normal"><a href="#__codelineno-22-39">39</a></span>
-<span class="normal"><a href="#__codelineno-22-40">40</a></span>
-<span class="normal"><a href="#__codelineno-22-41">41</a></span>
-<span class="normal"><a href="#__codelineno-22-42">42</a></span>
-<span class="normal"><a href="#__codelineno-22-43">43</a></span>
-<span class="normal"><a href="#__codelineno-22-44">44</a></span>
-<span class="normal"><a href="#__codelineno-22-45">45</a></span>
-<span class="normal"><a href="#__codelineno-22-46">46</a></span>
-<span class="normal"><a href="#__codelineno-22-47">47</a></span>
-<span class="normal"><a href="#__codelineno-22-48">48</a></span>
-<span class="normal"><a href="#__codelineno-22-49">49</a></span>
-<span class="normal"><a href="#__codelineno-22-50">50</a></span>
-<span class="normal"><a href="#__codelineno-22-51">51</a></span>
-<span class="normal"><a href="#__codelineno-22-52">52</a></span>
-<span class="normal"><a href="#__codelineno-22-53">53</a></span>
-<span class="normal"><a href="#__codelineno-22-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="normal"><a href="#__codelineno-22-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdint.h&gt;</span>
 </span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3"></a>
-</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="nf">cria_matriz</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">linhas</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">colunas</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="nf">aloca_inteiros</span><span class="p">(</span><span class="kt">size_t</span><span class="w"> </span><span class="n">quantidade</span><span class="p">)</span>
 </span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="p">{</span>
-</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">linhas</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">);</span>
-</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">valores</span><span class="p">;</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">quantidade</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">quantidade</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">SIZE_MAX</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">valores</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
 </span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="w">        </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="n">colunas</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="w">                </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15"></a><span class="w">            </span><span class="p">}</span>
-</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16"></a><span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
-</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
-</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
-</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21"></a><span class="p">}</span>
-</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22"></a>
-</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23"></a><span class="kt">void</span><span class="w"> </span><span class="nf">libera_matriz</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">linhas</span><span class="p">)</span>
-</span><span id="__span-22-24"><a id="__codelineno-22-24" name="__codelineno-22-24"></a><span class="p">{</span>
-</span><span id="__span-22-25"><a id="__codelineno-22-25" name="__codelineno-22-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-26"><a id="__codelineno-22-26" name="__codelineno-22-26"></a><span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-</span><span id="__span-22-27"><a id="__codelineno-22-27" name="__codelineno-22-27"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-22-28"><a id="__codelineno-22-28" name="__codelineno-22-28"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
-</span><span id="__span-22-29"><a id="__codelineno-22-29" name="__codelineno-22-29"></a><span class="p">}</span>
-</span><span id="__span-22-30"><a id="__codelineno-22-30" name="__codelineno-22-30"></a>
-</span><span id="__span-22-31"><a id="__codelineno-22-31" name="__codelineno-22-31"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-22-32"><a id="__codelineno-22-32" name="__codelineno-22-32"></a><span class="p">{</span>
-</span><span id="__span-22-33"><a id="__codelineno-22-33" name="__codelineno-22-33"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">linhas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">colunas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
-</span><span id="__span-22-34"><a id="__codelineno-22-34" name="__codelineno-22-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cria_matriz</span><span class="p">(</span><span class="n">linhas</span><span class="p">,</span><span class="w"> </span><span class="n">colunas</span><span class="p">);</span>
-</span><span id="__span-22-35"><a id="__codelineno-22-35" name="__codelineno-22-35"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-36"><a id="__codelineno-22-36" name="__codelineno-22-36"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-22-37"><a id="__codelineno-22-37" name="__codelineno-22-37"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-22-38"><a id="__codelineno-22-38" name="__codelineno-22-38"></a>
-</span><span id="__span-22-39"><a id="__codelineno-22-39" name="__codelineno-22-39"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-40"><a id="__codelineno-22-40" name="__codelineno-22-40"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">colunas</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-41"><a id="__codelineno-22-41" name="__codelineno-22-41"></a><span class="w">            </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">colunas</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
-</span><span id="__span-22-42"><a id="__codelineno-22-42" name="__codelineno-22-42"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-22-43"><a id="__codelineno-22-43" name="__codelineno-22-43"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-22-44"><a id="__codelineno-22-44" name="__codelineno-22-44"></a>
-</span><span id="__span-22-45"><a id="__codelineno-22-45" name="__codelineno-22-45"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-46"><a id="__codelineno-22-46" name="__codelineno-22-46"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">colunas</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-22-47"><a id="__codelineno-22-47" name="__codelineno-22-47"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">"%3d"</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
-</span><span id="__span-22-48"><a id="__codelineno-22-48" name="__codelineno-22-48"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-22-49"><a id="__codelineno-22-49" name="__codelineno-22-49"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
-</span><span id="__span-22-50"><a id="__codelineno-22-50" name="__codelineno-22-50"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-22-51"><a id="__codelineno-22-51" name="__codelineno-22-51"></a>
-</span><span id="__span-22-52"><a id="__codelineno-22-52" name="__codelineno-22-52"></a><span class="w">    </span><span class="n">libera_matriz</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">linhas</span><span class="p">);</span>
-</span><span id="__span-22-53"><a id="__codelineno-22-53" name="__codelineno-22-53"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-22-54"><a id="__codelineno-22-54" name="__codelineno-22-54"></a><span class="p">}</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">quantidade</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">valores</span><span class="p">);</span>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-<p><code>m</code> é um ponteiro para ponteiro: aponta para um arranjo de <code>linhas</code> ponteiros, e cada um deles aponta para um arranjo de <code>colunas</code> inteiros. O acesso continua sendo <code>m[i][j]</code>. A liberação é feita na ordem inversa da alocação: primeiro as linhas, depois o arranjo de ponteiros. Se <code>m</code> fosse liberado primeiro, os endereços das linhas seriam perdidos.</p>
-<h3 id="funcoes-que-devolvem-memoria-alocada">Funções que devolvem memória alocada<a class="headerlink" href="#funcoes-que-devolvem-memoria-alocada" title="Permanent link">&para;</a></h3>
-<p>A memória dinâmica continua existindo depois que a função que a alocou termina. Por isso, uma função pode alocar um bloco e devolver o seu endereço, o que não é possível com variáveis locais. Em troca, <strong>quem chama fica responsável por liberar o bloco</strong>, e isso deve estar claro na documentação da função:</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Duplicando uma cadeia de caracteres</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
+<p>Nesta função, quantidade zero é rejeitada por decisão da interface.
+<code>SIZE_MAX</code> é definido em <code>stdint.h</code>, e a divisão verifica o limite <strong>antes</strong>
+de realizar a multiplicação. Ao dobrar a capacidade de um vetor, confira
+também o limite antes de multiplicar a capacidade por dois. O
+<a href="../estruturas_dados/#vetor-dinamico">vetor dinâmico</a> mostra essa verificação.</p>
+<div class="admonition warning">
+<p class="admonition-title">Evite <code>realloc(p, 0)</code></p>
+<p>Para liberar um bloco, use <code>free(p)</code> e, quando apropriado, atribua <code>NULL</code>
+ao ponteiro. No C17, <code>realloc</code> com tamanho zero tem regras dependentes da
+implementação; no C23, esse uso tem comportamento indefinido. As regras
+de falha que preservam o bloco antigo devem ser aplicadas a pedidos de
+tamanho maior que zero.</p>
+</div>
+<h3 id="matrizes-dinamicas">Matrizes dinâmicas<a class="headerlink" href="#matrizes-dinamicas" title="Permanent link">&para;</a></h3>
+<p>Uma matriz com dimensões conhecidas apenas durante a execução pode ser montada como um arranjo de ponteiros, em que cada ponteiro aponta para uma linha alocada separadamente:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Alocando e liberando uma matriz</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
 <span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
@@ -3661,31 +3651,142 @@
 <span class="normal"><a href="#__codelineno-23-22">22</a></span>
 <span class="normal"><a href="#__codelineno-23-23">23</a></span>
 <span class="normal"><a href="#__codelineno-23-24">24</a></span>
-<span class="normal"><a href="#__codelineno-23-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="normal"><a href="#__codelineno-23-25">25</a></span>
+<span class="normal"><a href="#__codelineno-23-26">26</a></span>
+<span class="normal"><a href="#__codelineno-23-27">27</a></span>
+<span class="normal"><a href="#__codelineno-23-28">28</a></span>
+<span class="normal"><a href="#__codelineno-23-29">29</a></span>
+<span class="normal"><a href="#__codelineno-23-30">30</a></span>
+<span class="normal"><a href="#__codelineno-23-31">31</a></span>
+<span class="normal"><a href="#__codelineno-23-32">32</a></span>
+<span class="normal"><a href="#__codelineno-23-33">33</a></span>
+<span class="normal"><a href="#__codelineno-23-34">34</a></span>
+<span class="normal"><a href="#__codelineno-23-35">35</a></span>
+<span class="normal"><a href="#__codelineno-23-36">36</a></span>
+<span class="normal"><a href="#__codelineno-23-37">37</a></span>
+<span class="normal"><a href="#__codelineno-23-38">38</a></span>
+<span class="normal"><a href="#__codelineno-23-39">39</a></span>
+<span class="normal"><a href="#__codelineno-23-40">40</a></span>
+<span class="normal"><a href="#__codelineno-23-41">41</a></span>
+<span class="normal"><a href="#__codelineno-23-42">42</a></span>
+<span class="normal"><a href="#__codelineno-23-43">43</a></span>
+<span class="normal"><a href="#__codelineno-23-44">44</a></span>
+<span class="normal"><a href="#__codelineno-23-45">45</a></span>
+<span class="normal"><a href="#__codelineno-23-46">46</a></span>
+<span class="normal"><a href="#__codelineno-23-47">47</a></span>
+<span class="normal"><a href="#__codelineno-23-48">48</a></span>
+<span class="normal"><a href="#__codelineno-23-49">49</a></span>
+<span class="normal"><a href="#__codelineno-23-50">50</a></span>
+<span class="normal"><a href="#__codelineno-23-51">51</a></span>
+<span class="normal"><a href="#__codelineno-23-52">52</a></span>
+<span class="normal"><a href="#__codelineno-23-53">53</a></span>
+<span class="normal"><a href="#__codelineno-23-54">54</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
-</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
-</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a>
-</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="cm">/* Devolve uma cópia de s, que deve ser liberada com free. */</span>
-</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">duplica</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">)</span>
-</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="p">{</span>
-</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">copia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="c1">// + 1 para o '\0'</span>
-</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">copia</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">        </span><span class="n">strcpy</span><span class="p">(</span><span class="n">copia</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
-</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">copia</span><span class="p">;</span>
-</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="p">}</span>
-</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14"></a>
-</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16"></a><span class="p">{</span>
-</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duplica</span><span class="p">(</span><span class="s">"Ada Lovelace"</span><span class="p">);</span>
-</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nome</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
-</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="w">    </span><span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'E'</span><span class="p">;</span>
-</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%s (%zu caracteres)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">nome</span><span class="p">));</span><span class="w">   </span><span class="c1">// Eda Lovelace (12 caracteres)</span>
-</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
-</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25"></a><span class="p">}</span>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3"></a>
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="nf">cria_matriz</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">linhas</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">colunas</span><span class="p">)</span>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="p">{</span>
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">linhas</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">);</span>
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="w">        </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">calloc</span><span class="p">(</span><span class="n">colunas</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="w"> </span><span class="o">*</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-13"><a id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-14"><a id="__codelineno-23-14" name="__codelineno-23-14"></a><span class="w">                </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+</span><span id="__span-23-15"><a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="w">            </span><span class="p">}</span>
+</span><span id="__span-23-16"><a id="__codelineno-23-16" name="__codelineno-23-16"></a><span class="w">            </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+</span><span id="__span-23-17"><a id="__codelineno-23-17" name="__codelineno-23-17"></a><span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-23-18"><a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-23-19"><a id="__codelineno-23-19" name="__codelineno-23-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-20"><a id="__codelineno-23-20" name="__codelineno-23-20"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">m</span><span class="p">;</span>
+</span><span id="__span-23-21"><a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="p">}</span>
+</span><span id="__span-23-22"><a id="__codelineno-23-22" name="__codelineno-23-22"></a>
+</span><span id="__span-23-23"><a id="__codelineno-23-23" name="__codelineno-23-23"></a><span class="kt">void</span><span class="w"> </span><span class="nf">libera_matriz</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">linhas</span><span class="p">)</span>
+</span><span id="__span-23-24"><a id="__codelineno-23-24" name="__codelineno-23-24"></a><span class="p">{</span>
+</span><span id="__span-23-25"><a id="__codelineno-23-25" name="__codelineno-23-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-26"><a id="__codelineno-23-26" name="__codelineno-23-26"></a><span class="w">        </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span><span id="__span-23-27"><a id="__codelineno-23-27" name="__codelineno-23-27"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-28"><a id="__codelineno-23-28" name="__codelineno-23-28"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+</span><span id="__span-23-29"><a id="__codelineno-23-29" name="__codelineno-23-29"></a><span class="p">}</span>
+</span><span id="__span-23-30"><a id="__codelineno-23-30" name="__codelineno-23-30"></a>
+</span><span id="__span-23-31"><a id="__codelineno-23-31" name="__codelineno-23-31"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-23-32"><a id="__codelineno-23-32" name="__codelineno-23-32"></a><span class="p">{</span>
+</span><span id="__span-23-33"><a id="__codelineno-23-33" name="__codelineno-23-33"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">linhas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">colunas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+</span><span id="__span-23-34"><a id="__codelineno-23-34" name="__codelineno-23-34"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cria_matriz</span><span class="p">(</span><span class="n">linhas</span><span class="p">,</span><span class="w"> </span><span class="n">colunas</span><span class="p">);</span>
+</span><span id="__span-23-35"><a id="__codelineno-23-35" name="__codelineno-23-35"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-36"><a id="__codelineno-23-36" name="__codelineno-23-36"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-23-37"><a id="__codelineno-23-37" name="__codelineno-23-37"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-38"><a id="__codelineno-23-38" name="__codelineno-23-38"></a>
+</span><span id="__span-23-39"><a id="__codelineno-23-39" name="__codelineno-23-39"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-40"><a id="__codelineno-23-40" name="__codelineno-23-40"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">colunas</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-41"><a id="__codelineno-23-41" name="__codelineno-23-41"></a><span class="w">            </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">colunas</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-23-42"><a id="__codelineno-23-42" name="__codelineno-23-42"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-23-43"><a id="__codelineno-23-43" name="__codelineno-23-43"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-44"><a id="__codelineno-23-44" name="__codelineno-23-44"></a>
+</span><span id="__span-23-45"><a id="__codelineno-23-45" name="__codelineno-23-45"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">linhas</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-46"><a id="__codelineno-23-46" name="__codelineno-23-46"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">colunas</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-23-47"><a id="__codelineno-23-47" name="__codelineno-23-47"></a><span class="w">            </span><span class="n">printf</span><span class="p">(</span><span class="s">"%3d"</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span><span id="__span-23-48"><a id="__codelineno-23-48" name="__codelineno-23-48"></a><span class="w">        </span><span class="p">}</span>
+</span><span id="__span-23-49"><a id="__codelineno-23-49" name="__codelineno-23-49"></a><span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+</span><span id="__span-23-50"><a id="__codelineno-23-50" name="__codelineno-23-50"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-23-51"><a id="__codelineno-23-51" name="__codelineno-23-51"></a>
+</span><span id="__span-23-52"><a id="__codelineno-23-52" name="__codelineno-23-52"></a><span class="w">    </span><span class="n">libera_matriz</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">linhas</span><span class="p">);</span>
+</span><span id="__span-23-53"><a id="__codelineno-23-53" name="__codelineno-23-53"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-23-54"><a id="__codelineno-23-54" name="__codelineno-23-54"></a><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><code>m</code> é um ponteiro para ponteiro: aponta para um arranjo de <code>linhas</code> ponteiros, e cada um deles aponta para um arranjo de <code>colunas</code> inteiros. O acesso continua sendo <code>m[i][j]</code>. A liberação é feita na ordem inversa da alocação: primeiro as linhas, depois o arranjo de ponteiros. Se <code>m</code> fosse liberado primeiro, os endereços das linhas seriam perdidos.</p>
+<h3 id="funcoes-que-devolvem-memoria-alocada">Funções que devolvem memória alocada<a class="headerlink" href="#funcoes-que-devolvem-memoria-alocada" title="Permanent link">&para;</a></h3>
+<p>A memória dinâmica continua existindo depois que a função que a alocou termina. Por isso, uma função pode alocar um bloco e devolver o seu endereço, o que não é possível com variáveis locais. Em troca, <strong>quem chama fica responsável por liberar o bloco</strong>, e isso deve estar claro na documentação da função:</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Duplicando uma cadeia de caracteres</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span>
+<span class="normal"><a href="#__codelineno-24-12">12</a></span>
+<span class="normal"><a href="#__codelineno-24-13">13</a></span>
+<span class="normal"><a href="#__codelineno-24-14">14</a></span>
+<span class="normal"><a href="#__codelineno-24-15">15</a></span>
+<span class="normal"><a href="#__codelineno-24-16">16</a></span>
+<span class="normal"><a href="#__codelineno-24-17">17</a></span>
+<span class="normal"><a href="#__codelineno-24-18">18</a></span>
+<span class="normal"><a href="#__codelineno-24-19">19</a></span>
+<span class="normal"><a href="#__codelineno-24-20">20</a></span>
+<span class="normal"><a href="#__codelineno-24-21">21</a></span>
+<span class="normal"><a href="#__codelineno-24-22">22</a></span>
+<span class="normal"><a href="#__codelineno-24-23">23</a></span>
+<span class="normal"><a href="#__codelineno-24-24">24</a></span>
+<span class="normal"><a href="#__codelineno-24-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4"></a>
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="cm">/* Devolve uma cópia de s, que deve ser liberada com free. */</span>
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="nf">duplica</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="p">{</span>
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">copia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w">     </span><span class="c1">// + 1 para o '\0'</span>
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">copia</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="w">        </span><span class="n">strcpy</span><span class="p">(</span><span class="n">copia</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-24-12"><a id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">copia</span><span class="p">;</span>
+</span><span id="__span-24-13"><a id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="p">}</span>
+</span><span id="__span-24-14"><a id="__codelineno-24-14" name="__codelineno-24-14"></a>
+</span><span id="__span-24-15"><a id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</span><span id="__span-24-16"><a id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="p">{</span>
+</span><span id="__span-24-17"><a id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">duplica</span><span class="p">(</span><span class="s">"Ada Lovelace"</span><span class="p">);</span>
+</span><span id="__span-24-18"><a id="__codelineno-24-18" name="__codelineno-24-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nome</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-24-19"><a id="__codelineno-24-19" name="__codelineno-24-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-24-20"><a id="__codelineno-24-20" name="__codelineno-24-20"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-24-21"><a id="__codelineno-24-21" name="__codelineno-24-21"></a><span class="w">    </span><span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">'E'</span><span class="p">;</span>
+</span><span id="__span-24-22"><a id="__codelineno-24-22" name="__codelineno-24-22"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"%s (%zu caracteres)</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">nome</span><span class="p">,</span><span class="w"> </span><span class="n">strlen</span><span class="p">(</span><span class="n">nome</span><span class="p">));</span><span class="w">   </span><span class="c1">// Eda Lovelace (12 caracteres)</span>
+</span><span id="__span-24-23"><a id="__codelineno-24-23" name="__codelineno-24-23"></a><span class="w">    </span><span class="n">free</span><span class="p">(</span><span class="n">nome</span><span class="p">);</span>
+</span><span id="__span-24-24"><a id="__codelineno-24-24" name="__codelineno-24-24"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-24-25"><a id="__codelineno-24-25" name="__codelineno-24-25"></a><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
 <p>Esquecer o <code>+ 1</code> para o caractere nulo é um dos erros mais comuns com cadeias alocadas dinamicamente: <code class="language-c highlight"><span class="n">strcpy</span></code> escreveria um byte além do fim do bloco.</p>
 <h2 id="erros-comuns-com-memoria-dinamica">Erros comuns com memória dinâmica<a class="headerlink" href="#erros-comuns-com-memoria-dinamica" title="Permanent link">&para;</a></h2>
@@ -3734,19 +3835,19 @@
 <p>Os resultados desses erros são imprevisíveis: o programa pode ser encerrado (<code>Segmentation fault</code>, ou <code>free(): double free detected</code>), escrever valores sem sentido, ou funcionar no seu computador e falhar no juiz <em>online</em>. Nos testes feitos para este texto, o mesmo programa com uso depois da liberação escreveu <code>227970</code> sem otimizações e <code>-936863756</code> com <code>-O2</code>, sem nenhuma mensagem de erro.</p>
 <div class="admonition tip">
 <p class="admonition-title">Deixe o compilador procurar os erros por você</p>
-<p>O GCC tem um modo de compilação que verifica, durante a execução, todos os acessos à memória: a opção <code>-fsanitize=address</code> (o <strong><em>AddressSanitizer</em></strong>). O programa fica mais lento, mas, quando um dos erros da tabela acontece, ele é interrompido com uma mensagem que diz qual foi o erro e em que linha do código fonte ele aconteceu. Compile também com <code>-g</code>, para que as linhas apareçam na mensagem:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>gcc -std=c17 -Wall -Wextra -g -fsanitize=address -o programa programa.c
+<p>O GCC tem um modo de compilação que verifica, durante a execução, todos os acessos à memória: a opção <code>-fsanitize=address</code> (o <strong><em>AddressSanitizer</em></strong>). O programa fica mais lento, mas, quando um dos erros da tabela acontece, ele é interrompido com uma mensagem que diz qual foi o erro e em que linha do código-fonte ele aconteceu. Compile também com <code>-g</code>, para que as linhas apareçam na mensagem:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>gcc -std=c17 -Wall -Wextra -g -fsanitize=address -o programa programa.c
 </span></code></pre></div>
 <p>Com essa opção, um laço que escreve uma posição além do fim de um bloco de 5 inteiros produz:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>==12==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000000054 ...
-</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>WRITE of size 4 at 0x603000000054 thread T0
-</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>    #0 0x401210 in main /src/fora.c:8
-</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>0x603000000054 is located 0 bytes after 20-byte region [0x603000000040,0x603000000054)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>==12==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x603000000054 ...
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>WRITE of size 4 at 0x603000000054 thread T0
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    #0 0x401210 in main /src/fora.c:8
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>0x603000000054 is located 0 bytes after 20-byte region [0x603000000040,0x603000000054)
 </span></code></pre></div>
 <p>E um programa que aloca memória sem liberar termina com um relatório dos vazamentos:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>==28==ERROR: LeakSanitizer: detected memory leaks
-</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>Direct leak of 4000000 byte(s) in 1000 object(s) allocated from:
-</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>    #1 0x401170 in main /src/vazamento.c:6
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>==28==ERROR: LeakSanitizer: detected memory leaks
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>Direct leak of 4000000 byte(s) in 1000 object(s) allocated from:
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    #1 0x401170 in main /src/vazamento.c:6
 </span></code></pre></div>
 <p>Use essa opção enquanto testa o programa, e compile sem ela a versão final. A ferramenta <code>valgrind</code> faz verificações parecidas, sem precisar recompilar o programa.</p>
 </div>
@@ -3755,13 +3856,13 @@
 <li>Inicialize todo ponteiro, com um endereço válido ou com <code class="language-c highlight"><span class="nb">NULL</span></code>;</li>
 <li>Teste o resultado de <code class="language-c highlight"><span class="n">malloc</span></code>, <code class="language-c highlight"><span class="n">calloc</span></code> e <code class="language-c highlight"><span class="n">realloc</span></code> antes de usá-lo;</li>
 <li>Para cada alocação, saiba onde está o <code class="language-c highlight"><span class="n">free</span></code> correspondente. De preferência, a mesma função (ou o mesmo par de funções, como <code>cria_matriz</code> e <code>libera_matriz</code>) aloca e libera;</li>
-<li>Depois de <code class="language-c highlight"><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></code>, faça <code class="language-c highlight"><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span></code>. Chamar <code class="language-c highlight"><span class="n">free</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span></code> não faz nada, e por isso a liberação dupla de um ponteiro anulado é inofensiva, e;</li>
+<li>Depois de <code class="language-c highlight"><span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">)</span></code>, faça <code class="language-c highlight"><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span></code>. Chamar <code class="language-c highlight"><span class="n">free</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span></code> não faz nada, e por isso a liberação dupla de um ponteiro anulado é inofensiva;</li>
 <li>Quando o tamanho máximo dos dados é conhecido e não é grande demais, prefira arranjos automáticos ou estáticos, que não precisam ser liberados.</li>
 </ul>
 <h2 id="riscos-e-vantagens-dos-ponteiros">Riscos e vantagens dos ponteiros<a class="headerlink" href="#riscos-e-vantagens-dos-ponteiros" title="Permanent link">&para;</a></h2>
 <p>A manipulação de ponteiros é frequentemente considerada o aspecto mais desafiador da linguagem. Os ponteiros possibilitam operações poderosas, mas também introduzem riscos significativos: como a linguagem não verifica se um endereço é válido, nem se um acesso está dentro dos limites de um bloco, os erros de memória não são detectados automaticamente. Acessos fora dos limites, além de causar resultados imprevisíveis, são uma das principais fontes de falhas de segurança em programas: um acesso além do final de um arranjo pode sobrescrever outras variáveis do programa e, nos casos mais graves, permitir a execução de código arbitrário.</p>
 <p>Por outro lado, os ponteiros permitem que os programas acessem e modifiquem dados diretamente na memória, sem cópias, o que é essencial em aplicações que exigem alto desempenho, como jogos, sistemas operacionais e sistemas embarcados. Eles permitem a criação de estruturas de dados dinâmicas, como listas ligadas e árvores, que crescem e diminuem conforme a necessidade. Em sistemas embarcados, ou em programas que manipulam diretamente o <em>hardware</em>, os ponteiros permitem ler e escrever em endereços específicos que correspondem a registradores dos dispositivos. E é por meio deles que uma função consegue alterar as variáveis de quem a chamou, como mostra a seção sobre <a href="../funcoes/#passagem-de-parametros">passagem de parâmetros</a>.</p>
-<p>Uma abordagem disciplinada elimina a maioria dos problemas: inicializar sempre os ponteiros, verificar se são nulos antes de dereferenciá-los, ter uma estratégia clara para a liberação da memória e testar os programas com as ferramentas de verificação.</p>
+<p>Uma abordagem disciplinada elimina a maioria dos problemas: inicializar sempre os ponteiros, verificar se são nulos antes de desreferenciá-los, ter uma estratégia clara para a liberação da memória e testar os programas com as ferramentas de verificação.</p>
 <div class="admonition info">
 <p class="admonition-title">Comparando com outras linguagens</p>
 <p>A página <a href="../../memoria_comparacao/">Gerenciamento de memória em C, C++ e Python</a> compara a forma como cada uma dessas linguagens gerencia a memória, com um mesmo programa escrito nas três.</p>
@@ -3788,7 +3889,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:48:51 -03">19 de novembro de 2026 02:48:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

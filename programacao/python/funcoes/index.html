@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2565,7 +2565,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2987,21 +2987,21 @@
 <ul>
 <li><strong>Reutilização</strong>: um trecho de código escrito uma vez pode ser usado em vários lugares, sem repetição;</li>
 <li><strong>Legibilidade</strong>: um nome bem escolhido, como <code>calcula_media</code> ou <code>le_matriz</code>, explica o que um trecho de código faz, sem que seja preciso ler cada linha dele;</li>
-<li><strong>Manutenção</strong>: se houver um erro no cálculo da média, ele é corrigido em um único lugar, e;</li>
+<li><strong>Manutenção</strong>: se houver um erro no cálculo da média, ele é corrigido em um único lugar;</li>
 <li><strong>Teste</strong>: cada função pode ser testada isoladamente, com entradas conhecidas.</li>
 </ul>
 <p>Você já usa funções desde o primeiro programa: <code class="language-python highlight"><span class="nb">print</span></code>, <code class="language-python highlight"><span class="nb">input</span></code>, <code class="language-python highlight"><span class="nb">len</span></code> e <code class="language-python highlight"><span class="nb">int</span></code> são funções embutidas na linguagem, e <code class="language-python highlight"><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span></code> é uma função do módulo <code>math</code>.</p>
 <h2 id="definindo-e-chamando-funcoes">Definindo e chamando funções<a class="headerlink" href="#definindo-e-chamando-funcoes" title="Permanent link">&para;</a></h2>
 <p>Uma função é definida com a palavra-chave <code class="language-python highlight"><span class="k">def</span></code>, seguida do nome da função, da lista de parâmetros entre parênteses e de dois pontos. O corpo da função é o bloco indentado logo abaixo:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">nome</span><span class="p">(</span><span class="n">lista_de_parâmetros</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="c1"># corpo da função</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">pass</span>  <span class="c1"># substitua pelas instruções da função</span>
 </span></code></pre></div>
 <ul>
-<li>O <strong>nome</strong> segue as mesmas regras dos nomes de variáveis. Por convenção, usa-se letras minúsculas, com as palavras separadas por sublinhado (<code>calcula_media</code>);</li>
-<li>A <strong>lista de parâmetros</strong> contém, separados por vírgulas, os nomes dos dados que a função recebe. Ela pode ser vazia, e;</li>
+<li>O <strong>nome</strong> segue as mesmas regras dos nomes de variáveis. Por convenção, usam-se letras minúsculas, com as palavras separadas por sublinhado (<code>calcula_media</code>);</li>
+<li>A <strong>lista de parâmetros</strong> contém, separados por vírgulas, os nomes dos dados que a função recebe. Ela pode ser vazia;</li>
 <li>O <strong>corpo</strong> contém as instruções executadas quando a função é chamada. A instrução <code class="language-python highlight"><span class="k">return</span></code> encerra a função e devolve o valor indicado para quem a chamou.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">definicao.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -3102,9 +3102,9 @@
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">dobro</span><span class="p">(</span><span class="mi">21</span><span class="p">))</span>          <span class="c1"># 42</span>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">dobro</span><span class="p">(</span><span class="s2">"ab"</span><span class="p">))</span>        <span class="c1"># abab</span>
 </span></code></pre></div></td></tr></table></div>
-<p>As anotações são apenas <strong>informativas</strong>: o interpretador não as verifica durante a execução. A chamada <code class="language-python highlight"><span class="n">dobro</span><span class="p">(</span><span class="s2">"ab"</span><span class="p">)</span></code> funciona sem erro (e devolve <code>"abab"</code>, porque <code>*</code> repete cadeias), apesar de a anotação dizer que <code>x</code> deveria ser um <code class="language-python highlight"><span class="nb">int</span></code>. Mesmo assim, elas são úteis: documentam a função para quem a lê, e são usadas pelos editores e por ferramentas de verificação, como o <code>mypy</code>, para apontar erros antes de o programa ser executado.</p>
+<p>As anotações não impõem os tipos automaticamente: o interpretador não rejeita argumentos apenas por contrariá-las. No Python 3.14, sua avaliação é adiada por padrão até serem consultadas; isso não altera o funcionamento da chamada abaixo. A chamada <code class="language-python highlight"><span class="n">dobro</span><span class="p">(</span><span class="s2">"ab"</span><span class="p">)</span></code> funciona sem erro (e devolve <code>"abab"</code>, porque <code>*</code> repete cadeias), apesar de a anotação dizer que <code>x</code> deveria ser um <code class="language-python highlight"><span class="nb">int</span></code>. Mesmo assim, elas são úteis: documentam a função para quem a lê, e são usadas pelos editores e por ferramentas de verificação, como o <code>mypy</code>, para apontar erros antes de o programa ser executado.</p>
 <h2 id="escopo-de-variaveis">Escopo de variáveis<a class="headerlink" href="#escopo-de-variaveis" title="Permanent link">&para;</a></h2>
-<p>Cada parâmetro e cada variável criada no corpo de uma função são <strong>variáveis locais</strong>: elas existem apenas enquanto a função está sendo executada e não são visíveis fora dela. Duas funções diferentes podem ter variáveis com o mesmo nome sem nenhum conflito. Os conceitos de <a href="../../algoritmos/variaveis/#escopo-e-tempo-de-vida">escopo e tempo de vida</a> são apresentados na seção sobre variáveis, e a seção sobre <a href="../fluxo/#blocos-e-escopo">blocos e escopo</a> apresenta a regra LEGB, usada para encontrar o valor de um nome.</p>
+<p>Parâmetros e nomes associados no corpo de uma função normalmente são <strong>locais</strong>, salvo declarações como <code>global</code> e <code>nonlocal</code>. O escopo local define onde esses nomes podem ser usados; não significa que seus objetos sejam destruídos no retorno. Objetos e valores capturados por closures podem continuar vivos. Duas chamadas têm estados locais separados. Consulte <a href="../../algoritmos/variaveis/#escopo-e-tempo-de-vida">escopo e tempo de vida</a> e a <a href="../fluxo/#blocos-e-escopo">regra LEGB</a>.</p>
 <p>Uma função pode <strong>ler</strong> uma variável global sem nenhuma declaração especial. Mas, se a função <strong>atribui</strong> um valor a um nome em qualquer ponto do seu corpo, esse nome passa a ser local em toda a função, o que causa um erro curioso:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Variáveis globais e locais</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
@@ -3158,8 +3158,8 @@
 <p>Esta é uma das partes mais importantes sobre funções: entender o que acontece com uma variável quando ela é passada como argumento. Para isso, é preciso lembrar como as variáveis funcionam: <strong>uma variável é um nome que aponta para um objeto</strong>. A atribuição <code class="language-python highlight"><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span></code> cria (ou reaproveita) um objeto <code class="language-python highlight"><span class="nb">int</span></code> com o valor 5, e faz o nome <code>n</code> apontar para ele.</p>
 <p>Na chamada de uma função, cada parâmetro passa a ser <strong>mais um nome para o mesmo objeto</strong> passado como argumento (a seção sobre <a href="../memoria/">gerenciamento de memória</a> mostra onde ficam os nomes e os objetos). Não há cópia do objeto. Esse modelo é chamado de <strong>passagem por atribuição</strong> (ou passagem por referência de objeto), porque funciona exatamente como uma atribuição <code>parâmetro = argumento</code>. O que acontece depois depende de duas coisas: se o objeto pode ser alterado, e se a função altera o objeto ou apenas faz o parâmetro apontar para outro objeto.</p>
 <h3 id="objetos-imutaveis">Objetos imutáveis<a class="headerlink" href="#objetos-imutaveis" title="Permanent link">&para;</a></h3>
-<p>Números, cadeias de caracteres, tuplas e valores lógicos são objetos <strong>imutáveis</strong>: depois de criados, eles não podem ser alterados. Uma operação como <code>x * 2</code> não altera o objeto apontado por <code>x</code>: ela cria um <strong>novo</strong> objeto, e a atribuição <code>x = x * 2</code> faz o nome <code>x</code> apontar para ele. Por isso, uma função não tem como alterar um argumento imutável:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Saída</label></div>
+<p>Números, cadeias de caracteres, tuplas e valores lógicos são objetos <strong>imutáveis</strong>: depois de criados, eles não podem ser alterados. Uma operação como <code>x * 2</code> não altera o objeto apontado por <code>x</code>: ela produz um resultado, que pode ser um objeto novo ou reaproveitado, e a atribuição <code>x = x * 2</code> faz o nome <code>x</code> apontar para ele. Por isso, uma função não tem como alterar um argumento imutável:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">imutaveis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
@@ -3261,7 +3261,7 @@
 </span></code></pre></div></td></tr></table></div>
 <h3 id="objetos-mutaveis">Objetos mutáveis<a class="headerlink" href="#objetos-mutaveis" title="Permanent link">&para;</a></h3>
 <p>Listas, dicionários, conjuntos e a maioria dos objetos criados a partir de classes são <strong>mutáveis</strong>: eles podem ser alterados depois de criados. Como o parâmetro aponta para o mesmo objeto que o argumento, <strong>alterações feitas no objeto dentro da função são vistas fora dela</strong>. Mas uma <strong>atribuição</strong> ao parâmetro continua apenas fazendo o nome local apontar para outro objeto:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código fonte</label><label for="__tabbed_3_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código-fonte</label><label for="__tabbed_3_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">mutaveis.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
@@ -3319,7 +3319,7 @@
 </div>
 <ul>
 <li><code>adiciona</code> chama um método que <strong>altera</strong> a lista. Como <code>v</code> e <code>lista</code> apontam para a mesma lista, a alteração aparece em <code>lista</code>;</li>
-<li><code>reatribui</code> faz <code>v</code> apontar para uma lista nova. A lista original não é tocada, e <code>lista</code> continua como estava, e;</li>
+<li><code>reatribui</code> faz <code>v</code> apontar para uma lista nova. A lista original não é tocada, e <code>lista</code> continua como estava;</li>
 <li><code>exclamacao</code> parece alterar a cadeia, mas cadeias são imutáveis: <code>s += "!"</code> cria uma nova cadeia e faz <code>s</code> apontar para ela.</li>
 </ul>
 <p>O diagrama abaixo mostra os nomes e os objetos durante a execução de cada função. As setas indicam para qual objeto cada nome aponta:</p>
@@ -3350,7 +3350,7 @@
   x -.-&gt;|"depois de x = x * 2"| I10</code></pre>
 <ul>
 <li>Em <code>adiciona</code>, <code>v</code> e <code>lista</code> apontam para o <strong>mesmo</strong> objeto, e <code>v.append(4)</code> altera esse objeto;</li>
-<li>Em <code>reatribui</code>, <code>v</code> começa apontando para a mesma lista, mas a atribuição faz <code>v</code> apontar para uma lista nova, e;</li>
+<li>Em <code>reatribui</code>, <code>v</code> começa apontando para a mesma lista, mas a atribuição faz <code>v</code> apontar para uma lista nova;</li>
 <li>Em <code>dobra</code>, <code>x</code> começa apontando para o mesmo objeto que <code>n</code>, mas a atribuição faz <code>x</code> apontar para um novo objeto, com o valor 10.</li>
 </ul>
 <p>Um <a href="../../algoritmos/testedemesa/">teste de mesa</a> das chamadas <code>adiciona(lista)</code> e <code>reatribui(lista)</code> deixa a diferença ainda mais clara. A coluna "objetos" mostra todas as listas existentes, com uma letra para identificar cada uma:</p>
@@ -3425,7 +3425,7 @@
 </span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="n">com_soma</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 </span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>                 <span class="c1"># [1, 2, 3]</span>
 </span></code></pre></div>
-<p>Com objetos imutáveis, como números, cadeias e tuplas, <code>+=</code> sempre cria um novo objeto.</p>
+<p>Com objetos imutáveis, como números, cadeias e tuplas, <code>+=</code> não modifica o objeto original: o resultado pode ser novo ou reaproveitado, e é associado novamente ao nome.</p>
 </div>
 <h3 id="listas-como-parametros">Listas como parâmetros<a class="headerlink" href="#listas-como-parametros" title="Permanent link">&para;</a></h3>
 <p>O exemplo abaixo mostra três formas de uma função trabalhar com uma lista recebida como parâmetro:</p>
@@ -3475,13 +3475,13 @@
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li><code>media</code> apenas <strong>lê</strong> a lista. Não há cópia: a função percorre a própria lista <code>notas</code>;</li>
-<li><code>normaliza</code> <strong>altera</strong> os elementos da lista recebida, por meio de atribuições como <code>valores[i] = ...</code>, que alteram o objeto. As alterações aparecem em <code>notas</code>, e;</li>
+<li><code>normaliza</code> <strong>altera</strong> os elementos da lista recebida, por meio de atribuições como <code>valores[i] = ...</code>, que alteram o objeto. As alterações aparecem em <code>notas</code>;</li>
 <li><code>dobrados</code> cria e <strong>devolve</strong> uma lista nova, sem alterar a original.</li>
 </ul>
 <p>Repare que, em <code>normaliza</code>, um laço como <code class="language-python highlight"><span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">valores</span><span class="p">:</span> <span class="n">v</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="n">maximo</span> <span class="o">*</span> <span class="mi">10</span></code> <strong>não</strong> funcionaria: <code>v</code> é apenas um nome que aponta para cada número, e a atribuição faz <code>v</code> apontar para um novo número, sem alterar a lista. É preciso atribuir à posição da lista, com <code>valores[i]</code>.</p>
 <p>Quando uma função altera um argumento, isso precisa ficar claro no nome e na documentação dela. Na dúvida, prefira funções que não alteram os argumentos e devolvem um resultado novo, como <code>dobrados</code>: elas são mais fáceis de entender e de testar. A própria linguagem segue esse padrão: <code class="language-python highlight"><span class="n">lista</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span></code> altera a lista e devolve <code class="language-python highlight"><span class="kc">None</span></code>, enquanto <code class="language-python highlight"><span class="nb">sorted</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span></code> devolve uma lista nova e não altera a original.</p>
 <h3 id="fazendo-copias">Fazendo cópias<a class="headerlink" href="#fazendo-copias" title="Permanent link">&para;</a></h3>
-<p>Quando uma função precisa alterar uma lista sem afetar a original, ela (ou quem a chama) deve fazer uma <strong>cópia</strong>. Uma lista pode ser copiada com <code>v[:]</code>, <code class="language-python highlight"><span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></code> ou <code class="language-python highlight"><span class="n">v</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></code>. Essas três formas fazem uma <strong>cópia rasa</strong>: a lista é nova, mas os elementos são os mesmos objetos. Quando os elementos também são mutáveis, como em uma matriz (uma lista de listas), é preciso uma <strong>cópia profunda</strong>, feita com <code class="language-python highlight"><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span></code>:</p>
+<p>Quando uma função precisa alterar uma lista sem afetar a original, ela (ou quem a chama) deve fazer uma <strong>cópia</strong>. Uma lista pode ser copiada com <code>v[:]</code>, <code class="language-python highlight"><span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)</span></code> ou <code class="language-python highlight"><span class="n">v</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span></code>. Essas três formas fazem uma <strong>cópia rasa</strong>: a lista é nova, mas os elementos são os mesmos objetos. Quando os elementos também são mutáveis, como em uma matriz (uma lista de listas), pode ser necessário copiar também esses elementos, por exemplo com uma <strong>cópia profunda</strong>, feita com <code class="language-python highlight"><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span></code>:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Cópias rasas e profundas</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
@@ -3626,7 +3626,7 @@
 </span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9"></a><span class="n">saudar</span><span class="p">(</span><span class="s2">"Davi"</span><span class="p">,</span> <span class="n">repeticoes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>                            <span class="c1"># Olá, Davi! (duas vezes)</span>
 </span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10"></a><span class="n">saudar</span><span class="p">(</span><span class="n">repeticoes</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">nome</span><span class="o">=</span><span class="s2">"Eva"</span><span class="p">,</span> <span class="n">saudacao</span><span class="o">=</span><span class="s2">"Boa noite"</span><span class="p">)</span>  <span class="c1"># Boa noite, Eva!</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Os parâmetros com valor padrão precisam vir depois dos parâmetros sem valor padrão. Na chamada, os argumentos posicionais vêm primeiro, e os nomeados depois. Os argumentos nomeados permitem pular parâmetros (como em <code class="language-python highlight"><span class="n">saudar</span><span class="p">(</span><span class="s2">"Davi"</span><span class="p">,</span> <span class="n">repeticoes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>, que usa o valor padrão de <code>saudacao</code>) e deixam a chamada mais clara: <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">valores</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">", "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span></code> é um exemplo que você já conhece.</p>
+<p>Entre os parâmetros posicionais, os que têm valor padrão precisam vir depois dos que não têm. Parâmetros somente por nome podem ser obrigatórios mesmo depois de outros com valor padrão. Na chamada, os argumentos posicionais vêm primeiro, e os nomeados depois. Os argumentos nomeados permitem pular parâmetros (como em <code class="language-python highlight"><span class="n">saudar</span><span class="p">(</span><span class="s2">"Davi"</span><span class="p">,</span> <span class="n">repeticoes</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></code>, que usa o valor padrão de <code>saudacao</code>) e deixam a chamada mais clara: <code class="language-python highlight"><span class="nb">print</span><span class="p">(</span><span class="o">*</span><span class="n">valores</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">", "</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span></code> é um exemplo que você já conhece.</p>
 <div class="admonition failure">
 <p class="admonition-title">Nunca use um objeto mutável como valor padrão</p>
 <p>O valor padrão é criado <strong>uma única vez</strong>, quando a instrução <code class="language-python highlight"><span class="k">def</span></code> é executada, e não a cada chamada. Se o valor padrão for uma lista, todas as chamadas que omitem o argumento compartilham a <strong>mesma</strong> lista:</p>
@@ -3846,7 +3846,7 @@
 </span><span id="__span-25-24"><a id="__codelineno-25-24" name="__codelineno-25-24"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Com cache: </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">perf_counter</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inicio</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2"> s"</span><span class="p">)</span>
 </span><span id="__span-25-25"><a id="__codelineno-25-25" name="__codelineno-25-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">300</span><span class="p">))</span>
 </span></code></pre></div></td></tr></table></div>
-<p>No computador usado nos testes, a versão sem <em>cache</em> levou cerca de 0,3 segundo para calcular <code>fib(32)</code>, e a versão com <em>cache</em>, cerca de 30 milionésimos de segundo; <code>fib(300)</code>, que levaria séculos na versão direta, é calculado instantaneamente. A técnica de guardar resultados já calculados se chama <strong>memorização</strong> (<em>memoization</em>), e só funciona com funções que sempre devolvem o mesmo resultado para os mesmos argumentos, que precisam ser imutáveis (números, cadeias, tuplas). O que é um decorador é explicado <a href="#decoradores">mais adiante</a>.</p>
+<p>No computador usado nos testes, a versão sem <em>cache</em> levou cerca de 0,3 segundo para calcular <code>fib(32)</code>, e a versão com <em>cache</em>, cerca de 30 milionésimos de segundo; <code>fib(300)</code>, que levaria séculos na versão direta, é calculado instantaneamente. A técnica de guardar resultados já calculados se chama <strong>memorização</strong> (<em>memoization</em>), e só funciona com funções que sempre devolvem o mesmo resultado para os mesmos argumentos, que precisam ser <strong>hashable</strong>: devem oferecer um hash estável e uma igualdade compatível. Números e cadeias atendem a esse requisito; uma tupla só atende se todos os seus elementos também atenderem. O cache mantém referências aos argumentos e resultados; não o use para chamadas com efeitos colaterais ou resultados mutáveis que deveriam ser independentes. O que é um decorador é explicado <a href="#decoradores">mais adiante</a>.</p>
 <h2 id="funcoes-sao-objetos">Funções são objetos<a class="headerlink" href="#funcoes-sao-objetos" title="Permanent link">&para;</a></h2>
 <p>Uma função também é um objeto: o nome usado no <code class="language-python highlight"><span class="k">def</span></code> é uma variável que aponta para esse objeto. Por isso, uma função pode ser atribuída a outra variável, guardada em uma lista ou em um dicionário, passada como argumento para outra função e devolvida por uma função:</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Funções como objetos</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1"> 1</a></span>
@@ -3910,7 +3910,7 @@
 <p>Muitas vezes, a função passada como argumento é tão simples que não vale a pena defini-la com <code class="language-python highlight"><span class="k">def</span></code> e dar um nome a ela. As <strong>expressões lambda</strong> criam funções anônimas, diretamente no lugar onde são usadas:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">lambda</span> <span class="n">parâmetros</span><span class="p">:</span> <span class="n">expressão</span>
 </span></code></pre></div>
-<p>O corpo de uma lambda é uma <strong>única expressão</strong>, cujo valor é devolvido automaticamente, sem <code class="language-python highlight"><span class="k">return</span></code>. Ela não pode conter instruções como <code class="language-python highlight"><span class="k">if</span></code> (embora possa usar o operador ternário), <code class="language-python highlight"><span class="k">for</span></code> ou atribuições.</p>
+<p>O corpo de uma lambda é uma <strong>única expressão</strong>, cujo valor é devolvido automaticamente, sem <code class="language-python highlight"><span class="k">return</span></code>. Ela não pode conter instruções como <code>if</code>, <code>for</code> ou uma atribuição com <code>=</code>. Pode, porém, usar uma expressão condicional, compreensões e a expressão de atribuição <code>:=</code>, com os parênteses exigidos pela sintaxe.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Expressões lambda</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-30-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-30-3"> 3</a></span>
@@ -3950,7 +3950,7 @@
 <p>O exemplo mostra os usos mais comuns:</p>
 <ul>
 <li>Para ordenar por <strong>mais de um critério</strong>, a função <code>key</code> devolve uma tupla, e as tuplas são comparadas elemento a elemento. Em <code class="language-python highlight"><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">n</span><span class="p">)</span></code>, os nomes são ordenados pelo tamanho e, em caso de empate, por ordem alfabética;</li>
-<li>Para ordenar em ordem <strong>decrescente</strong> por um critério numérico e crescente por outro, troca-se o sinal do critério numérico: em <code class="language-python highlight"><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></code>, os alunos são ordenados pela nota, da maior para a menor, e, em caso de empate, pelo nome, e;</li>
+<li>Para ordenar em ordem <strong>decrescente</strong> por um critério numérico e crescente por outro, troca-se o sinal do critério numérico: em <code class="language-python highlight"><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span></code>, os alunos são ordenados pela nota, da maior para a menor, e, em caso de empate, pelo nome;</li>
 <li>As funções <code class="language-python highlight"><span class="nb">filter</span></code> e <code class="language-python highlight"><span class="nb">map</span></code> recebem uma função e a aplicam a cada elemento. Na maioria dos casos, uma compreensão de lista, como <code class="language-python highlight"><span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">v</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">limite</span><span class="p">]</span></code>, faz o mesmo de forma mais legível.</li>
 </ul>
 <p>Guardar uma lambda em uma variável, como em <code>quadrado</code>, funciona, mas não é recomendado pelo guia de estilo da linguagem: se a função precisa de um nome, use <code class="language-python highlight"><span class="k">def</span></code>.</p>
@@ -4007,7 +4007,7 @@
 </span><span id="__span-31-25"><a id="__codelineno-31-25" name="__codelineno-31-25"></a><span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">())</span>                      <span class="c1"># 1</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
-<li>Cada chamada de <code>multiplicador</code> cria uma nova função <code>multiplica</code>, que lembra do <code>fator</code> com que foi criada: <code>dobro</code> lembra do 2, e <code>triplo</code>, do 3, e;</li>
+<li>Cada chamada de <code>multiplicador</code> cria uma nova função <code>multiplica</code>, que lembra do <code>fator</code> com que foi criada: <code>dobro</code> lembra do 2, e <code>triplo</code>, do 3;</li>
 <li>Em <code>cria_contador</code>, a função interna precisa <strong>alterar</strong> a variável <code>total</code>, da função externa. Sem a declaração <code class="language-python highlight"><span class="k">nonlocal</span> <span class="n">total</span></code>, a atribuição <code>total += 1</code> faria de <code>total</code> uma variável local de <code>conta</code>, e o resultado seria um <code>UnboundLocalError</code>. Cada contador criado tem o seu próprio <code>total</code>.</li>
 </ul>
 <div class="admonition warning">
@@ -4173,7 +4173,7 @@
 </div>
 </div>
 <p>Os dois arquivos ficam no mesmo diretório. Com <code class="language-python highlight"><span class="kn">import</span><span class="w"> </span><span class="nn">geometria</span></code>, as funções são acessadas com o nome do módulo como prefixo (<code>geometria.area_circulo</code>); com <code class="language-python highlight"><span class="kn">from</span><span class="w"> </span><span class="nn">geometria</span><span class="w"> </span><span class="kn">import</span> <span class="n">area_retangulo</span></code>, a função pode ser usada diretamente pelo nome.</p>
-<p>Quando um módulo é importado, todo o seu código é executado. A variável especial <code>__name__</code> vale <code>"__main__"</code> quando o arquivo é executado diretamente (com <code>python3 geometria.py</code>), e vale o nome do módulo (<code>"geometria"</code>) quando ele é importado. Por isso, o bloco <code class="language-python highlight"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span></code> é executado apenas no primeiro caso: ao executar <code>main.py</code>, os testes de <code>geometria.py</code> não aparecem.</p>
+<p>Na primeira importação normal de um módulo, seu código de nível superior é executado. Importações posteriores normalmente reutilizam o módulo em <code>sys.modules</code>, sem executar novamente seu código. A variável especial <code>__name__</code> vale <code>"__main__"</code> quando o arquivo é executado diretamente (com <code>python3 geometria.py</code>), e vale o nome do módulo (<code>"geometria"</code>) quando ele é importado. Por isso, o bloco <code class="language-python highlight"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span></code> é executado apenas no primeiro caso: ao executar <code>main.py</code>, os testes de <code>geometria.py</code> não aparecem.</p>
 <div class="admonition tip">
 <p class="admonition-title">Organizando um programa em funções</p>
 <p>Mesmo em um programa de um único arquivo, como os de programação competitiva, vale a pena separar a leitura dos dados, o processamento e a escrita do resultado em funções, e reunir a parte principal em uma função <code>main</code>:</p>
@@ -4220,7 +4220,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:40:09 -03">19 de novembro de 2026 02:40:09</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -1160,12 +1160,12 @@
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edição do código fonte
+        Edição do código-fonte
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Edição do código fonte">
+    <nav class="md-nav" aria-label="Edição do código-fonte">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2377,7 +2377,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2512,12 +2512,12 @@
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edição do código fonte
+        Edição do código-fonte
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Edição do código fonte">
+    <nav class="md-nav" aria-label="Edição do código-fonte">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2606,9 +2606,9 @@
 
 
 <h1 id="a-criacao-de-um-programa-em-c">A criação de um programa em C++<a class="headerlink" href="#a-criacao-de-um-programa-em-c" title="Permanent link">&para;</a></h1>
-<p>Quando escrevemos um programa em C++, o código que criamos, geralmente salvo em arquivos com extensão <code>.cpp</code> (os arquivos fonte) e <code>.h</code> ou <code>.hpp</code> (os arquivos de cabeçalho), não pode ser executado diretamente pelo computador.</p>
+<p>Quando escrevemos um programa em C++, o código que criamos, geralmente salvo em arquivos com extensão <code>.cpp</code> (os arquivos-fonte) e <code>.h</code> ou <code>.hpp</code> (os arquivos de cabeçalho), não pode ser executado diretamente pelo computador.</p>
 <p>A razão disso é que o processador só entende instruções em linguagem de máquina, um código binário bem diferente das palavras e comandos que usamos em C++, como <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> ou <code class="language-cpp highlight"><span class="kt">int</span></code>. O processo de <strong>compilação</strong> é justamente o que transforma esse código legível por humanos em algo que o computador pode executar.</p>
-<p>Para transformar arquivos com o código fonte em um programa que possa ser executado pelo computador, precisamos passar por quatro etapas: edição do código fonte, pré-processamento, compilação e montagem, e link-edição. O programa executável só existe depois que a última etapa é concluída.</p>
+<p>Para transformar arquivos com o código-fonte em um programa que possa ser executado pelo computador, precisamos passar por quatro etapas: edição do código-fonte, pré-processamento, compilação e montagem, e link-edição. O programa executável só existe depois que a última etapa é concluída.</p>
 <pre class="mermaid"><code>graph TD
   Fonte1 --&gt; Preprocessamento1 --&gt; Processado1
   Fonte2 --&gt; Preprocessamento2 --&gt; Processado2
@@ -2657,9 +2657,9 @@
 <p>Mesmo sendo curto, ele já mostra a estrutura que todo programa em C++ vai ter:</p>
 <ul>
 <li><strong>Linha 1</strong>: <code class="language-cpp highlight"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span></code> pede que o conteúdo do arquivo de cabeçalho <code>iostream</code> seja incluído no programa. É nele que estão declarados os recursos de entrada e saída de dados, como o <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code>. Os cabeçalhos da biblioteca padrão de C++ não têm extensão: escrevemos <code>&lt;iostream&gt;</code>, <code>&lt;string&gt;</code> e <code>&lt;vector&gt;</code>, e não <code>&lt;iostream.h&gt;</code>;</li>
-<li><strong>Linha 3</strong>: <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span></code> define a função principal. Todo programa em C++ tem exatamente uma função <code class="language-cpp highlight"><span class="n">main</span></code>, e a execução sempre começa por ela. O <code class="language-cpp highlight"><span class="kt">int</span></code> indica que ela devolve um número inteiro para o sistema operacional ao terminar;</li>
+<li><strong>Linha 3</strong>: <code class="language-cpp highlight"><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span></code> define a função principal. Nos programas executáveis comuns deste texto, <code>main</code> é o ponto de entrada do código principal. A inicialização de objetos globais pode executar código antes dela. O <code class="language-cpp highlight"><span class="kt">int</span></code> indica que ela devolve um número inteiro para o sistema operacional ao terminar;</li>
 <li><strong>Linhas 4 e 7</strong>: as chaves <code>{</code> e <code>}</code> delimitam o <strong>corpo</strong> da função, ou seja, as instruções que ela executa;</li>
-<li><strong>Linha 5</strong>: <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> é o fluxo de saída padrão (normalmente, a tela). O operador <code>&lt;&lt;</code> "envia" o que está à direita para o fluxo. O <code>\n</code> no fim da cadeia de caracteres faz o cursor pular para a próxima linha, e o ponto e vírgula encerra a instrução, e;</li>
+<li><strong>Linha 5</strong>: <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code> é o fluxo de saída padrão (normalmente, a tela). O operador <code>&lt;&lt;</code> "envia" o que está à direita para o fluxo. O <code>\n</code> no fim da cadeia de caracteres faz o cursor pular para a próxima linha, e o ponto e vírgula encerra a instrução;</li>
 <li><strong>Linha 6</strong>: <code class="language-cpp highlight"><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span></code> encerra a função <code class="language-cpp highlight"><span class="n">main</span></code> e informa ao sistema operacional que o programa terminou sem erros. Qualquer valor diferente de zero costuma indicar que algo deu errado.</li>
 </ul>
 <h3 id="espacos-de-nomes-namespace">Espaços de nomes (<code>namespace</code>)<a class="headerlink" href="#espacos-de-nomes-namespace" title="Permanent link">&para;</a></h3>
@@ -2719,14 +2719,14 @@
 </span></code></pre></div>
 <p><strong>Neste texto, os exemplos sempre usam o prefixo <code>std::</code> explicitamente.</strong> Assim, fica claro o que vem da biblioteca padrão e o que foi definido no próprio programa.</p>
 </div>
-<h2 id="edicao-do-codigo-fonte">Edição do código fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
+<h2 id="edicao-do-codigo-fonte">Edição do código-fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
 <p>Analisando friamente, podemos utilizar qualquer editor de textos para escrever um programa em C++ (ou em qualquer outra linguagem). O problema é que a nossa produtividade (linhas de código que escrevemos pelo esforço despendido) não vai ser boa.</p>
-<p>Um editor de texto está preparado para editar qualquer tipo de texto. Ele não foi pensado para escrever programas, então faltam algumas coisas importantes, como a integração com um compilador, um ambiente para executar o programa e ferramentas para auxiliar a resolver erros que aparecem durante a compilação ou a execução. O ideal é que façamos o desenvolvimento dentro de um IDE.</p>
-<p>Um Ambiente Integrado de Desenvolvimento (IDE, do inglês <em>Integrated Development Environment</em>) é um software que reúne diversas ferramentas essenciais para a programação em um único local. Ele geralmente inclui um editor de código, um compilador, um depurador e outros recursos que auxiliam na escrita, teste e manutenção do código.</p>
+<p>Um editor de texto comum está preparado para editar qualquer tipo de texto. Ele não foi pensado para escrever programas, então faltam alguns recursos importantes, como a integração com um compilador, um ambiente para executar o programa e ferramentas para auxiliar na resolução de erros que aparecem durante a compilação ou a execução. O ideal é que façamos o desenvolvimento dentro de uma IDE.</p>
+<p>Um Ambiente Integrado de Desenvolvimento (IDE, do inglês <em>Integrated Development Environment</em>) é um software que reúne diversas ferramentas essenciais para a programação em um único local. Ele geralmente inclui um editor de código, um compilador, um depurador e outros recursos que auxiliam na escrita, no teste e na manutenção do código.</p>
 <p>O uso de IDEs durante o aprendizado de programação gera debates entre desenvolvedores e educadores. Por um lado, elas oferecem realce de sintaxe, autocompletar, indicação de erros enquanto digitamos e depuração integrada, o que acelera o desenvolvimento. Por outro lado, recursos como autocompletar e sugestões automáticas podem fazer com que o estudante não compreenda completamente a sintaxe e a lógica por trás do código, e a dependência excessiva da ferramenta pode criar dificuldades quando for preciso trabalhar em ambientes mais simples. Uma abordagem equilibrada é usar a IDE pelo que ela tem de melhor (a integração entre editor, compilador e depurador), sem deixar que ela escreva o programa por você.</p>
 <p>Para C++, há um cuidado adicional: <strong>a versão do compilador importa</strong>. Os exemplos deste texto usam recursos do padrão C++20, que exigem o GCC na versão 13 ou mais recente (e alguns recursos de C++23, sempre indicados, exigem o GCC 14). Algumas IDEs populares entre iniciantes trazem compiladores antigos embutidos e não vão conseguir compilar parte dos exemplos. Algumas combinações que funcionam bem são:</p>
 <ul>
-<li><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong> com a extensão C/C++, usando um compilador GCC recente. No Windows, o GCC pode ser instalado por meio do <a href="https://www.msys2.org/">MSYS2</a>; no Linux, ele está disponível no gerenciador de pacotes da distribuição, e;</li>
+<li><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong> com a extensão C/C++, usando um compilador GCC recente. No Windows, o GCC pode ser instalado por meio do <a href="https://www.msys2.org/">MSYS2</a>; no Linux, ele está disponível no gerenciador de pacotes da distribuição;</li>
 <li><strong><a href="https://www.jetbrains.com/clion/">CLion</a></strong>, da JetBrains, que é gratuito para uso não comercial e educacional.</li>
 </ul>
 <div class="admonition tip">
@@ -2735,7 +2735,7 @@
 <p>Na Maratona SBC de Programação e no ICPC, os programas são compilados com o GCC 13.2 em C++20. No <a href="https://arena.onlinejudge.com.br/">Arena</a>, com o GCC 14.2 e a linha de comando <code>g++ -std=c++23 -O2</code>. A seção <a href="../versoes/">C++20 e C++23</a> detalha o que muda entre esses ambientes.</p>
 </div>
 <h3 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h3>
-<p>Os comentários são elementos não executáveis que fornecem descrições e explicações adicionais dentro do código fonte. Eles desempenham um papel fundamental na documentação do programa, tornando-o mais legível e compreensível tanto para o próprio desenvolvedor quanto para outros programadores que possam trabalhar com o código no futuro.</p>
+<p>Os comentários são elementos não executáveis que fornecem descrições e explicações adicionais dentro do código-fonte. Eles desempenham um papel fundamental na documentação do programa, tornando-o mais legível e compreensível tanto para o próprio desenvolvedor quanto para outros programadores que possam trabalhar com o código no futuro.</p>
 <p>A linguagem C++ suporta dois tipos de comentários.</p>
 <p>O primeiro tipo são os <strong>comentários de linha única</strong>, que começam com duas barras (<code class="language-cpp highlight"><span class="c1">//</span></code>) e se estendem até o final da linha. Tudo o que estiver após essas duas barras será ignorado pelo compilador.</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Este é um comentário de linha única</span>
@@ -2749,7 +2749,7 @@
 <p>Os comentários são utilizados por diversas razões importantes no desenvolvimento de software:</p>
 <ul>
 <li>Eles tornam o código mais legível para referência futura, o que é especialmente útil quando o programador precisa revisitar seu próprio código após um longo período;</li>
-<li>Os comentários são ferramentas valiosas para depuração, permitindo que partes do código sejam temporariamente desativadas para testes, e;</li>
+<li>Os comentários são ferramentas valiosas para depuração, permitindo que partes do código sejam temporariamente desativadas para testes;</li>
 <li>Em ambientes onde múltiplos desenvolvedores trabalham no mesmo projeto, comentários bem escritos facilitam o entendimento do código por todos os membros da equipe, principalmente em códigos complexos ou otimizados, onde a lógica pode não ser imediatamente óbvia.</li>
 </ul>
 <div class="admonition warning inline">
@@ -2770,12 +2770,12 @@
 <p>A segunda etapa é o pré-processamento, feita pelo pré-processador, um programa que "prepara" o código antes da compilação propriamente dita. As instruções para o pré-processador são chamadas de <strong>diretivas</strong> e começam sempre com <code class="language-cpp highlight"><span class="cp">#</span></code>.</p>
 <p>Durante esta fase:</p>
 <ul>
-<li>Os arquivos de cabeçalho são incluídos no arquivo fonte;</li>
+<li>Os arquivos de cabeçalho são incluídos no arquivo-fonte;</li>
 <li>As macros são expandidas;</li>
-<li>Os trechos de compilação condicional são mantidos ou descartados, e;</li>
+<li>Os trechos de compilação condicional são mantidos ou descartados;</li>
 <li>Os comentários são eliminados.</li>
 </ul>
-<p>O resultado é uma versão "limpa" do código fonte, normalmente com extensão <code>.ii</code>, que contém o código original mais o conteúdo de todos os arquivos incluídos. Esse arquivo é muito maior que o original: o "Olá, mundo!" da seção anterior, que tem 7 linhas, vira um arquivo com dezenas de milhares de linhas depois do pré-processamento, porque o cabeçalho <code>&lt;iostream&gt;</code> inclui muitos outros.</p>
+<p>O resultado é uma versão "limpa" do código-fonte, normalmente com extensão <code>.ii</code>, que contém o código original mais o conteúdo de todos os arquivos incluídos. Esse arquivo é muito maior que o original: o "Olá, mundo!" da seção anterior, que tem 7 linhas, vira um arquivo com dezenas de milhares de linhas depois do pré-processamento, porque o cabeçalho <code>&lt;iostream&gt;</code> inclui muitos outros.</p>
 <p>As principais diretivas do pré-processador são:</p>
 <ul>
 <li>
@@ -2785,7 +2785,7 @@
 <p><code class="language-cpp highlight"><span class="cp">#define</span></code>: define uma macro, que é uma substituição de texto. Se usarmos, por exemplo, <code class="language-cpp highlight"><span class="cp">#define PI 3.14159</span></code>, o pré-processador substituirá todas as ocorrências de <code>PI</code> no código por <code>3.14159</code>. Ao fazermos <code class="language-cpp highlight"><span class="cp">#define QUADRADO(x) ((x) * (x))</span></code>, o pré-processador substitui as ocorrências de <code>QUADRADO(valor)</code> por <code>((valor) * (valor))</code> antes da compilação. A diretiva também pode ser usada apenas para definir um símbolo (<code class="language-cpp highlight"><span class="cp">#define DEBUG</span></code>), cuja existência pode ser verificada depois (<code class="language-cpp highlight"><span class="cp">#ifdef DEBUG</span></code>);</p>
 </li>
 <li>
-<p><code class="language-cpp highlight"><span class="cp">#undef</span></code>: remove a definição de um símbolo ou macro. A partir deste ponto, o pré-processador não conhece mais aquele nome, e;</p>
+<p><code class="language-cpp highlight"><span class="cp">#undef</span></code>: remove a definição de um símbolo ou macro. A partir deste ponto, o pré-processador não conhece mais aquele nome;</p>
 </li>
 <li>
 <p><code class="language-cpp highlight"><span class="cp">#ifdef</span></code>, <code class="language-cpp highlight"><span class="cp">#ifndef</span></code>, <code class="language-cpp highlight"><span class="cp">#if</span></code>, <code class="language-cpp highlight"><span class="cp">#else</span></code> e <code class="language-cpp highlight"><span class="cp">#endif</span></code>: permitem compilar trechos do código apenas se determinada condição for satisfeita. Isso é útil, por exemplo, para incluir mensagens de depuração apenas durante o desenvolvimento, ou para escrever um programa que use bibliotecas diferentes dependendo do sistema operacional.</p>
@@ -2853,7 +2853,7 @@
 <p>Em C++, use <code class="language-cpp highlight"><span class="k">constexpr</span></code> para constantes e funções no lugar de macros. Reserve o <code class="language-cpp highlight"><span class="cp">#define</span></code> para a compilação condicional e para as proteções de cabeçalho, apresentadas a seguir.</p>
 </div>
 <h3 id="protecao-contra-inclusao-multipla">Proteção contra inclusão múltipla<a class="headerlink" href="#protecao-contra-inclusao-multipla" title="Permanent link">&para;</a></h3>
-<p>Em um projeto com vários arquivos, é comum que um mesmo cabeçalho acabe sendo incluído mais de uma vez no mesmo arquivo fonte (por exemplo, quando dois cabeçalhos diferentes incluem um terceiro). Isso faria com que as mesmas declarações aparecessem repetidas, gerando erros de compilação. Para evitar o problema, todo arquivo de cabeçalho deve ter uma <strong>proteção de inclusão</strong> (<em>include guard</em>):</p>
+<p>Em um projeto com vários arquivos, é comum que um mesmo cabeçalho acabe sendo incluído mais de uma vez no mesmo arquivo-fonte (por exemplo, quando dois cabeçalhos diferentes incluem um terceiro). Isso faria com que as mesmas declarações aparecessem repetidas, gerando erros de compilação. Para evitar o problema, todo arquivo de cabeçalho deve ter uma <strong>proteção de inclusão</strong> (<em>include guard</em>):</p>
 <div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">geometria.hpp</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
@@ -2879,7 +2879,7 @@
   Obj1@{ shape: doc, label: "**Código objeto**&lt;br /&gt;(.o)" }</code></pre>
 <p>Nesta etapa, o compilador realiza a análise sintática e semântica do código pré-processado. Ele verifica se o código está escrito corretamente, seguindo as regras da linguagem C++: parênteses não fechados, falta de ponto e vírgula, uso de variáveis não declaradas, tipos incompatíveis, entre outros erros.</p>
 <p>Se não houver erros, o compilador traduz o código para a linguagem de montagem da máquina (linguagem <em>assembly</em>), que é uma representação de baixo nível mais próxima da linguagem de máquina, com instruções específicas para a arquitetura do processador (como x86 ou ARM) em que o programa vai ser executado. O resultado é, normalmente, um arquivo com extensão <code>.s</code>.</p>
-<p>A etapa de montagem transforma o código <em>assembly</em> em código objeto, que já está em linguagem de máquina, porém ainda não pode ser executado: ele pode depender de funções ou variáveis definidas em outros lugares (em outro arquivo <code>.cpp</code> ou em bibliotecas). Cada arquivo <code>.cpp</code> gera seu próprio arquivo objeto, de extensão <code>.o</code>. A parte do compilador que faz essa conversão é o montador, ou <em>assembler</em>.</p>
+<p>A etapa de montagem transforma o código <em>assembly</em> em código-objeto, que já está em linguagem de máquina, porém ainda não pode ser executado: ele pode depender de funções ou variáveis definidas em outros lugares (em outro arquivo <code>.cpp</code> ou em bibliotecas). Cada arquivo <code>.cpp</code> gera seu próprio arquivo-objeto, de extensão <code>.o</code>. A parte do compilador que faz essa conversão é o montador, ou <em>assembler</em>.</p>
 <p>Na prática, não executamos cada etapa separadamente: um único comando faz o pré-processamento, a compilação, a montagem e a link-edição. Com o GCC, o compilador de C++ é chamado de <code>g++</code>:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>g++ -std=c++20 -Wall -Wextra -o ola ola.cpp
 </span></code></pre></div>
@@ -2887,8 +2887,8 @@
 <ul>
 <li><code>-std=c++20</code>: indica a versão do padrão da linguagem que deve ser usada. Sem essa opção, o compilador usa uma versão padrão, que varia de acordo com a versão do próprio compilador;</li>
 <li><code>-Wall -Wextra</code>: ativam a maior parte dos <strong>avisos</strong> (<em>warnings</em>) do compilador. Um aviso não impede a geração do programa, mas indica um trecho de código suspeito, que provavelmente contém um erro;</li>
-<li><code>-o ola</code>: define o nome do arquivo executável gerado (no Windows, <code>ola.exe</code>), e;</li>
-<li><code>ola.cpp</code>: o arquivo fonte a ser compilado.</li>
+<li><code>-o ola</code>: define o nome do arquivo executável gerado (no Windows, <code>ola.exe</code>);</li>
+<li><code>ola.cpp</code>: o arquivo-fonte a ser compilado.</li>
 </ul>
 <div class="admonition tip">
 <p class="admonition-title">Leve os avisos a sério</p>
@@ -2900,8 +2900,8 @@
 <ul>
 <li><code>g++ -E ola.cpp -o ola.ii</code>: só o pré-processamento;</li>
 <li><code>g++ -S ola.cpp</code>: pré-processamento e compilação, gerando o <em>assembly</em> (<code>ola.s</code>);</li>
-<li><code>g++ -c ola.cpp</code>: pré-processamento, compilação e montagem, gerando o código objeto (<code>ola.o</code>), e;</li>
-<li><code>g++ ola.o -o ola</code>: só a link-edição, a partir do código objeto.</li>
+<li><code>g++ -c ola.cpp</code>: pré-processamento, compilação e montagem, gerando o código-objeto (<code>ola.o</code>);</li>
+<li><code>g++ ola.o -o ola</code>: só a link-edição, a partir do código-objeto.</li>
 </ul>
 </div>
 <h2 id="link-edicao">Link-edição<a class="headerlink" href="#link-edicao" title="Permanent link">&para;</a></h2>
@@ -2913,13 +2913,13 @@
   Bib1@{ shape: lin-doc, label: "**Bibliotecas**&lt;br /&gt;(libstdc++, .a, .so, .dll)" }
   Link@{ shape: process, label: "Link-edição" }
   Exec@{ shape: doc, label: "**Programa executável**&lt;br /&gt;(.exe)" }</code></pre>
-<p>Imagine que os arquivos objeto são como peças de um quebra-cabeça: cada um tem uma parte do programa, mas eles precisam ser conectados para formar o todo. A link-edição é a etapa final do processo, em que o linkeditor (<em>linker</em>) combina todos os arquivos objeto gerados e as bibliotecas necessárias em um único arquivo executável. O linker realiza as seguintes tarefas:</p>
+<p>Imagine que os arquivos-objeto são como peças de um quebra-cabeça: cada um tem uma parte do programa, mas eles precisam ser conectados para formar o todo. A link-edição é a etapa final do processo, em que o linkeditor (<em>linker</em>) combina todos os arquivos-objeto gerados e as bibliotecas necessárias em um único arquivo executável. O <em>linker</em> realiza as seguintes tarefas:</p>
 <ul>
-<li>Resolve as referências entre os diferentes arquivos objeto do programa, garantindo que toda função ou variável usada em um arquivo esteja definida em algum lugar;</li>
-<li>Adiciona ao executável o código das bibliotecas usadas pelo programa. Em C++, a mais importante é a implementação da biblioteca padrão (no GCC, chamada de <code>libstdc++</code>), onde estão <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> e todos os outros recursos do espaço de nomes <code>std</code>. O comando <code>g++</code> já inclui essa biblioteca automaticamente, e;</li>
+<li>Resolve as referências entre os diferentes arquivos-objeto do programa, garantindo que toda função ou variável usada em um arquivo esteja definida em algum lugar;</li>
+<li>Adiciona ao executável o código das bibliotecas usadas pelo programa. Em C++, a mais importante é a implementação da biblioteca padrão (no GCC, chamada de <code>libstdc++</code>), onde estão <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">cout</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> e todos os outros recursos do espaço de nomes <code>std</code>. O comando <code>g++</code> já inclui essa biblioteca automaticamente;</li>
 <li>Gera o arquivo executável final.</li>
 </ul>
-<p>Se alguma função foi declarada e usada, mas não foi definida em nenhum arquivo objeto ou biblioteca, o linker interrompe o processo com um erro de "referência indefinida" (<em>undefined reference</em>). Esse erro aparece mesmo quando o código de cada arquivo está correto, porque o problema não está em nenhum arquivo isolado, e sim na ligação entre eles.</p>
+<p>Se alguma função foi declarada e usada, mas não foi definida em nenhum arquivo-objeto ou biblioteca, o <em>linker</em> interrompe o processo com um erro de "referência indefinida" (<em>undefined reference</em>). Esse erro aparece mesmo quando o código de cada arquivo está correto, porque o problema não está em nenhum arquivo isolado, e sim na ligação entre eles.</p>
 <p>O arquivo gerado ao final pode ser executado diretamente pelo sistema operacional.</p>
 
 
@@ -2943,7 +2943,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

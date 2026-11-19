@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2504,7 +2504,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2863,7 +2863,7 @@
 <p>As funções de entrada e saída de dados estão declaradas no cabeçalho <code>stdio.h</code> (<em>standard input/output</em>). Elas trabalham com <strong>fluxos</strong> (<em>streams</em>): sequências de caracteres que o programa lê ou escreve, uma depois da outra. Todo programa começa com três fluxos já abertos:</p>
 <ul>
 <li><strong><em>stdin</em></strong> (<em>standard input</em>): o fluxo de entrada padrão, normalmente associado ao teclado;</li>
-<li><strong><em>stdout</em></strong> (<em>standard output</em>): o fluxo de saída padrão, normalmente associado à tela, e;</li>
+<li><strong><em>stdout</em></strong> (<em>standard output</em>): o fluxo de saída padrão, normalmente associado à tela;</li>
 <li><strong><em>stderr</em></strong> (<em>standard error</em>): o fluxo de saída de erros, usado para mensagens de erro e de diagnóstico. Normalmente, ele também aparece na tela, mas pode ser separado da saída padrão.</li>
 </ul>
 <p>Funções como <code class="language-c highlight"><span class="n">printf</span></code> e <code class="language-c highlight"><span class="n">scanf</span></code> usam <code>stdout</code> e <code>stdin</code>. Os mesmos fluxos podem ser <a href="#redirecionamento-dos-fluxos-padrao">redirecionados</a> para arquivos, e o programa pode abrir outros fluxos para ler e escrever em <a href="#arquivos-texto">arquivos</a>.</p>
@@ -3321,8 +3321,8 @@
 <p>Em <code class="language-c highlight"><span class="n">scanf</span></code>, <code>%f</code> lê um <code class="language-c highlight"><span class="kt">float</span></code> e <code>%lf</code> lê um <code class="language-c highlight"><span class="kt">double</span></code>. Trocar um pelo outro produz valores sem sentido. Em <code class="language-c highlight"><span class="n">printf</span></code>, os dois funcionam para <code class="language-c highlight"><span class="kt">double</span></code>. Para <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code>, use <code>%lld</code> nos dois.</p>
 </div>
 <h3 id="verificando-o-retorno-de-scanf">Verificando o retorno de <code>scanf()</code><a class="headerlink" href="#verificando-o-retorno-de-scanf" title="Permanent link">&para;</a></h3>
-<p>A função <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code> devolve a <strong>quantidade de valores lidos e guardados com sucesso</strong>. Se a entrada não tiver o formato esperado, a leitura para no primeiro valor que não pôde ser convertido, e as variáveis seguintes ficam como estavam. Se a entrada terminar antes do primeiro valor, <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code> devolve a constante <code class="language-c highlight"><span class="n">EOF</span></code> (<em>end of file</em>, que vale -1):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Entrada</label><label for="__tabbed_2_3">Saída</label></div>
+<p>A função <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code> devolve a <strong>quantidade de valores lidos e guardados com sucesso</strong>. Se a entrada não tiver o formato esperado, a leitura para no primeiro valor que não pôde ser convertido, e as variáveis seguintes ficam como estavam. Uma falha de entrada antes da primeira conversão concluída faz a função devolver <code class="language-c highlight"><span class="n">EOF</span></code>, uma constante negativa de <code>stdio.h</code>, normalmente igual a -1:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Entrada</label><label for="__tabbed_2_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">retorno.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
@@ -3363,9 +3363,18 @@
 </div>
 </div>
 <p>Verificar o retorno de <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code> evita que o programa continue trabalhando com variáveis que não receberam nenhum valor, e é a base para ler a entrada até o final.</p>
+<div class="admonition warning">
+<p class="admonition-title">Retorno válido não verifica o intervalo do número</p>
+<p>Se a entrada representa um número que não cabe no tipo de destino,
+a conversão de <code>scanf</code> tem comportamento indefinido. Para validar entradas
+arbitrárias, leia a linha e use <code>strtol</code> ou <code>strtod</code>, conferindo o fim da
+conversão, <code>errno</code> e os limites do tipo. A
+<a href="../biblioteca_c/#leitura-de-inteiros-reais-e-cadeias-de-caracteres-sem-o-uso-de-scanf">biblioteca de códigos</a>
+apresenta funções que fazem essas verificações.</p>
+</div>
 <h3 id="lendo-ate-o-final-da-entrada">Lendo até o final da entrada<a class="headerlink" href="#lendo-ate-o-final-da-entrada" title="Permanent link">&para;</a></h3>
 <p>Muitos problemas não informam quantos valores serão lidos: o programa deve ler até o <strong>final da entrada</strong>. Como <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code> devolve a quantidade de valores lidos, basta repetir a leitura enquanto ela devolver o valor esperado:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código fonte</label><label for="__tabbed_3_2">Entrada</label><label for="__tabbed_3_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código-fonte</label><label for="__tabbed_3_2">Entrada</label><label for="__tabbed_3_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">soma_eof.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1"> 1</a></span>
@@ -3557,7 +3566,7 @@
 </div>
 <p>O <code>%d</code> lê o número 42 e para no caractere seguinte, a quebra de linha, que fica esperando no fluxo de entrada. O <code>%c</code> seguinte lê essa quebra de linha (código 10), e não o <code>+</code>. Um <strong>espaço</strong> na cadeia de formato, antes do <code>%c</code>, faz o <code class="language-c highlight"><span class="n">scanf</span></code> pular todos os espaços em branco, inclusive quebras de linha, antes de ler o caractere.</p>
 <p>Para ler caractere por caractere até o final da entrada, a função <code class="language-c highlight"><span class="n">getchar</span><span class="p">()</span></code> é mais simples. Ela devolve o próximo caractere da entrada padrão, ou <code class="language-c highlight"><span class="n">EOF</span></code> quando a entrada termina (<code class="language-c highlight"><span class="n">getc</span><span class="p">(</span><span class="n">fluxo</span><span class="p">)</span></code> faz o mesmo com qualquer fluxo):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código fonte</label><label for="__tabbed_6_2">Entrada</label><label for="__tabbed_6_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><input id="__tabbed_6_3" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código-fonte</label><label for="__tabbed_6_2">Entrada</label><label for="__tabbed_6_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">conta_letras.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-40-1"> 1</a></span>
@@ -3616,7 +3625,7 @@
 </div>
 <h3 id="lendo-palavras-e-linhas">Lendo palavras e linhas<a class="headerlink" href="#lendo-palavras-e-linhas" title="Permanent link">&para;</a></h3>
 <p>O especificador <code>%s</code> lê uma <strong>palavra</strong>: ele pula os espaços em branco iniciais e para no primeiro espaço seguinte. Por isso, ele não serve para ler um nome completo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Código fonte</label><label for="__tabbed_7_2">Entrada</label><label for="__tabbed_7_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Código-fonte</label><label for="__tabbed_7_2">Entrada</label><label for="__tabbed_7_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">palavras.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-43-1"> 1</a></span>
@@ -3651,8 +3660,8 @@
 </div>
 </div>
 <p>O <code>%s</code> leu apenas "Maria"; em seguida, o <code>%d</code> encontrou "Clara", que não é um número, e a leitura parou. O <code>19</code> em <code>%19s</code> limita a quantidade de caracteres lidos ao tamanho do arranjo menos um (o espaço do <code>'\0'</code>). <strong>Sempre</strong> indique esse limite: sem ele, uma palavra maior que o arranjo é escrita além do seu final, corrompendo a memória.</p>
-<p>Para ler uma <strong>linha inteira</strong>, com espaços, use <code class="language-c highlight"><span class="n">fgets</span><span class="p">(</span><span class="n">arranjo</span><span class="p">,</span><span class="w"> </span><span class="n">tamanho</span><span class="p">,</span><span class="w"> </span><span class="n">fluxo</span><span class="p">)</span></code>. Ela lê até o final da linha (incluindo o <code>'\n'</code>) ou até preencher <code>tamanho - 1</code> caracteres, sempre termina a cadeia com <code>'\0'</code>, e devolve <code class="language-c highlight"><span class="nb">NULL</span></code> quando a entrada termina:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Código fonte</label><label for="__tabbed_8_2">Entrada</label><label for="__tabbed_8_3">Saída</label></div>
+<p>Para ler uma <strong>linha inteira</strong>, com espaços, use <code class="language-c highlight"><span class="n">fgets</span><span class="p">(</span><span class="n">arranjo</span><span class="p">,</span><span class="w"> </span><span class="n">tamanho</span><span class="p">,</span><span class="w"> </span><span class="n">fluxo</span><span class="p">)</span></code>, com tamanho de pelo menos 2. Em uma leitura bem-sucedida, ela guarda até <code>tamanho - 1</code> caracteres, inclui a quebra de linha se ela couber e acrescenta <code>'\0'</code>. Devolve <code class="language-c highlight"><span class="nb">NULL</span></code> se a entrada terminar sem nenhum caractere lido ou se ocorrer um erro de leitura:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><input id="__tabbed_8_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Código-fonte</label><label for="__tabbed_8_2">Entrada</label><label for="__tabbed_8_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">linhas.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-46-1"> 1</a></span>
@@ -3703,6 +3712,21 @@
 </div>
 </div>
 <p>A linha lida por <code class="language-c highlight"><span class="n">fgets</span></code> inclui o <code>'\n'</code> do final. A função <code class="language-c highlight"><span class="n">strcspn</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span></code>, de <code>string.h</code>, devolve a posição do primeiro <code>'\n'</code> (ou o tamanho da cadeia, se não houver nenhum), e a atribuição de <code>'\0'</code> nessa posição remove a quebra de linha. Essa forma funciona também na última linha de um arquivo que não termina com <code>'\n'</code> e com linhas vazias, casos em que a forma <code>linha[strlen(linha) - 1] = '\0'</code> apagaria um caractere errado. A <a href="../biblioteca_c/#removendo-caracteres-em-branco-no-inicio-e-no-final-de-linhas-de-texto">biblioteca de códigos</a> tem uma função que remove os espaços do início e do final da linha.</p>
+<div class="admonition warning">
+<p class="admonition-title">Uma chamada nem sempre lê a linha inteira</p>
+<p>Se a linha tiver mais caracteres do que cabem no arranjo, <code>fgets</code> entrega
+apenas um trecho e deixa o restante para a próxima leitura. Remover o
+<code>'\n'</code> com <code>strcspn</code> não resolve esse truncamento. A ausência de <code>'\n'</code>
+também pode ocorrer na última linha de um arquivo sem quebra final.
+Para ler linhas completas sem um limite fixo, use
+<a href="../biblioteca_c/#leitura-de-inteiros-reais-e-cadeias-de-caracteres-sem-o-uso-de-scanf"><code>lerLinhaArquivo</code></a>,
+que amplia o armazenamento conforme a necessidade.</p>
+</div>
+<p><code>fgets</code> e <code>getchar</code> podem sinalizar tanto fim de arquivo quanto erro de leitura.
+Depois que um laço de leitura terminar, <code>ferror(fluxo)</code> identifica um erro,
+e <code>feof(fluxo)</code> informa se uma tentativa de leitura encontrou o fim do arquivo.
+Não use <code>while (!feof(arquivo))</code>: o indicador só é ativado <strong>depois</strong> de uma
+tentativa de ler além do fim. Controle o laço pelo retorno da função de leitura.</p>
 <div class="admonition failure">
 <p class="admonition-title">Nunca use <code>gets()</code></p>
 <p>A função <code class="language-c highlight"><span class="n">gets</span><span class="p">()</span></code>, que lia uma linha sem nenhum limite de tamanho, era tão perigosa (qualquer linha maior que o arranjo corrompia a memória) que foi <strong>removida</strong> da linguagem no C11. Os compiladores atuais avisam ou recusam o seu uso. Use <code class="language-c highlight"><span class="n">fgets</span><span class="p">()</span></code>.</p>
@@ -3802,7 +3826,7 @@
 <p>A função <code>descarta_linha</code> lê e descarta os caracteres até o final da linha atual. Uma forma ainda mais robusta é <strong>não misturar</strong> as duas funções: ler todas as linhas com <code class="language-c highlight"><span class="n">fgets</span></code> e extrair os valores de cada linha com <code class="language-c highlight"><span class="n">sscanf</span></code>, apresentada a seguir.</p>
 <h3 id="funcao-sscanf">Função <code>sscanf()</code><a class="headerlink" href="#funcao-sscanf" title="Permanent link">&para;</a></h3>
 <p>A função <code class="language-c highlight"><span class="n">sscanf</span><span class="p">()</span></code> funciona como <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code>, mas lê os valores de uma <strong>cadeia de caracteres</strong>, e não da entrada padrão. Combinada com <code class="language-c highlight"><span class="n">fgets</span><span class="p">()</span></code>, ela permite ler a entrada linha por linha e verificar o formato de cada linha separadamente, sem que um erro em uma linha atrapalhe as seguintes:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Código fonte</label><label for="__tabbed_10_2">Entrada</label><label for="__tabbed_10_3">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Código-fonte</label><label for="__tabbed_10_2">Entrada</label><label for="__tabbed_10_3">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">linha_sscanf.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-55-1"> 1</a></span>
@@ -3902,7 +3926,7 @@
 <p>As funções de escrita e de leitura em arquivos são as mesmas já vistas, com um <code>f</code> no início do nome e o arquivo como argumento: <code class="language-c highlight"><span class="n">fprintf</span><span class="p">(</span><span class="n">arquivo</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span></code>, <code class="language-c highlight"><span class="n">fputs</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span><span class="w"> </span><span class="n">arquivo</span><span class="p">)</span></code>, <code class="language-c highlight"><span class="n">fscanf</span><span class="p">(</span><span class="n">arquivo</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span></code>, <code class="language-c highlight"><span class="n">fgets</span><span class="p">(</span><span class="n">linha</span><span class="p">,</span><span class="w"> </span><span class="n">tamanho</span><span class="p">,</span><span class="w"> </span><span class="n">arquivo</span><span class="p">)</span></code> e <code class="language-c highlight"><span class="n">getc</span><span class="p">(</span><span class="n">arquivo</span><span class="p">)</span></code>. Os fluxos padrão também podem ser usados nessas funções: <code class="language-c highlight"><span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span></code> é o mesmo que <code class="language-c highlight"><span class="n">printf</span><span class="p">(...)</span></code>.</p>
 <h3 id="escrevendo-em-arquivos">Escrevendo em arquivos<a class="headerlink" href="#escrevendo-em-arquivos" title="Permanent link">&para;</a></h3>
 <p>O programa abaixo cria o arquivo <code>notas.txt</code> e grava três linhas, com <code class="language-c highlight"><span class="n">fprintf</span></code> e <code class="language-c highlight"><span class="n">fputs</span></code>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Código fonte</label><label for="__tabbed_11_2">Conteúdo de <code>notas.txt</code></label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Código-fonte</label><label for="__tabbed_11_2">Conteúdo de <code>notas.txt</code></label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">escreve_notas.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-59-1"> 1</a></span>
@@ -3980,7 +4004,7 @@
 </span></code></pre></div></td></tr></table></div>
 <h3 id="lendo-arquivos">Lendo arquivos<a class="headerlink" href="#lendo-arquivos" title="Permanent link">&para;</a></h3>
 <p>Para ler um arquivo linha por linha, usa-se <code class="language-c highlight"><span class="n">fgets</span><span class="p">()</span></code> em um laço, até que ela devolva <code class="language-c highlight"><span class="nb">NULL</span></code>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Código fonte</label><label for="__tabbed_12_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Código-fonte</label><label for="__tabbed_12_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">le_linhas.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-62-1"> 1</a></span>
@@ -4038,7 +4062,7 @@
 </div>
 </div>
 <p>Quando o arquivo tem um formato bem definido, como um nome e uma nota em cada linha, <code class="language-c highlight"><span class="n">fscanf</span><span class="p">()</span></code> lê os valores diretamente, e o seu retorno indica quando o arquivo terminou:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Código fonte</label><label for="__tabbed_13_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Código-fonte</label><label for="__tabbed_13_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">media_notas.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-64-1"> 1</a></span>
@@ -4107,7 +4131,7 @@
 <p><code class="language-c highlight"><span class="n">fscanf</span><span class="p">()</span></code> tem as mesmas limitações de <code class="language-c highlight"><span class="n">scanf</span><span class="p">()</span></code>: <code>%s</code> lê só uma palavra, e um erro de formato no meio do arquivo interrompe a leitura sem dizer em que linha ele está. Para arquivos em que os campos podem ter espaços, ou em que é preciso tratar linhas mal formadas, leia cada linha com <code class="language-c highlight"><span class="n">fgets</span><span class="p">()</span></code> e extraia os valores com <code class="language-c highlight"><span class="n">sscanf</span><span class="p">()</span></code>.</p>
 </div>
 <h2 id="arquivos-binarios">Arquivos binários<a class="headerlink" href="#arquivos-binarios" title="Permanent link">&para;</a></h2>
-<p>Além de arquivos de texto, é possível trabalhar com <strong>arquivos binários</strong>, que guardam os dados exatamente como eles estão na memória, sem conversão para texto. Um <code class="language-c highlight"><span class="kt">int</span></code>, por exemplo, ocupa sempre 4 bytes no arquivo, qualquer que seja o seu valor, enquanto, em um arquivo de texto, o valor 1234567 ocupa 7 caracteres. Arquivos binários são usados para guardar estruturas, imagens, sons e outros dados que não precisam ser lidos por pessoas.</p>
+<p>Além de arquivos de texto, é possível trabalhar com <strong>arquivos binários</strong>, que guardam os dados como uma sequência de bytes, sem conversão para texto. Ao gravar um <code class="language-c highlight"><span class="kt">int</span></code> diretamente, ele ocupa <code class="language-c highlight"><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span></code> bytes no arquivo (4 nos ambientes dos exemplos), qualquer que seja o valor. Em um arquivo de texto, o número 1234567 ocupa 7 caracteres. Arquivos binários são usados para guardar estruturas, imagens, sons e outros dados que não precisam ser lidos por pessoas.</p>
 <p>A abertura é feita com <code class="language-c highlight"><span class="n">fopen</span><span class="p">()</span></code>, acrescentando um <code>b</code> ao modo de abertura: <code>"rb"</code>, <code>"wb"</code>, <code>"ab"</code>, <code>"rb+"</code>, <code>"wb+"</code> e <code>"ab+"</code>. A leitura e a escrita são feitas com as funções <code class="language-c highlight"><span class="n">fread</span><span class="p">()</span></code> e <code class="language-c highlight"><span class="n">fwrite</span><span class="p">()</span></code>:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a><span class="kt">size_t</span><span class="w"> </span><span class="nf">fwrite</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dados</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">tamanho</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">quantidade</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">arquivo</span><span class="p">);</span>
 </span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a><span class="kt">size_t</span><span class="w"> </span><span class="nf">fread</span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">dados</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">tamanho</span><span class="p">,</span><span class="w"> </span><span class="kt">size_t</span><span class="w"> </span><span class="n">quantidade</span><span class="p">,</span><span class="w"> </span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">arquivo</span><span class="p">);</span>
@@ -4232,7 +4256,7 @@
 </span><span id="__span-71-2"><a id="__codelineno-71-2" name="__codelineno-71-2" href="#__codelineno-71-2"></a><span class="kt">long</span><span class="w"> </span><span class="nf">ftell</span><span class="p">(</span><span class="kt">FILE</span><span class="w"> </span><span class="o">*</span><span class="n">arquivo</span><span class="p">);</span>
 </span></code></pre></div>
 <p>O deslocamento, que pode ser negativo, é contado a partir da origem: <code class="language-c highlight"><span class="n">SEEK_SET</span></code> (o início do arquivo), <code class="language-c highlight"><span class="n">SEEK_CUR</span></code> (a posição atual) ou <code class="language-c highlight"><span class="n">SEEK_END</span></code> (o final do arquivo). A função <code class="language-c highlight"><span class="n">rewind</span><span class="p">(</span><span class="n">arquivo</span><span class="p">)</span></code> volta ao início, como <code class="language-c highlight"><span class="n">fseek</span><span class="p">(</span><span class="n">arquivo</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">SEEK_SET</span><span class="p">)</span></code>. Ir para o final e perguntar a posição é uma forma de descobrir o tamanho do arquivo:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Código fonte</label><label for="__tabbed_15_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Código-fonte</label><label for="__tabbed_15_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">tamanho.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-72-1"> 1</a></span>
@@ -4291,7 +4315,7 @@
 </div>
 </div>
 <p>Como todos os registros têm o mesmo tamanho, o registro de índice <code>i</code> começa na posição <code>i * sizeof(Aluno)</code>. Isso permite ler ou alterar um registro diretamente, sem percorrer os anteriores. O programa abaixo abre o arquivo para leitura e escrita (<code>"rb+"</code>), lê o segundo registro, altera a nota e grava o registro de volta no mesmo lugar:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Código fonte</label><label for="__tabbed_16_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Código-fonte</label><label for="__tabbed_16_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">altera_registro.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-74-1"> 1</a></span>
@@ -4374,14 +4398,14 @@
 </div>
 </div>
 </div>
-<p>Depois da leitura, a posição atual fica no início do terceiro registro. Por isso, antes de gravar, é preciso voltar com <code class="language-c highlight"><span class="n">fseek</span><span class="p">()</span></code> para o início do segundo. Em um arquivo aberto para leitura e escrita, também é obrigatório chamar <code class="language-c highlight"><span class="n">fseek</span><span class="p">()</span></code> (ou <code class="language-c highlight"><span class="n">rewind</span><span class="p">()</span></code>) entre uma leitura e uma escrita, e vice-versa.</p>
+<p>Depois da leitura, a posição atual fica no início do terceiro registro. Por isso, antes de gravar, é preciso voltar com <code class="language-c highlight"><span class="n">fseek</span><span class="p">()</span></code> para o início do segundo. Em arquivos abertos para leitura e escrita, uma escrita deve ser seguida de <code class="language-c highlight"><span class="n">fflush</span><span class="p">()</span></code> ou de uma operação de posicionamento antes de ler; uma leitura deve ser seguida de posicionamento antes de escrever, salvo quando ela encontrou o fim do arquivo. Usar <code class="language-c highlight"><span class="n">fseek</span><span class="p">()</span></code> entre as duas operações, como no exemplo, atende a essas regras.</p>
 <div class="admonition warning">
 <p class="admonition-title">Evite <code class="language-c highlight"><span class="n">fseek</span><span class="p">()</span></code> em arquivos texto</p>
 <p>Em arquivos texto, <code class="language-c highlight"><span class="n">fseek</span><span class="p">()</span></code> só funciona de forma confiável com posições obtidas por <code class="language-c highlight"><span class="n">ftell</span><span class="p">()</span></code>, porque alguns sistemas operacionais convertem a quebra de linha <code>\r\n</code> em <code>\n</code>, e a quantidade de bytes no arquivo não corresponde à quantidade de caracteres lidos. Use o posicionamento em arquivos binários.</p>
 </div>
 <h2 id="redirecionamento-dos-fluxos-padrao">Redirecionamento dos fluxos padrão<a class="headerlink" href="#redirecionamento-dos-fluxos-padrao" title="Permanent link">&para;</a></h2>
 <p>Os fluxos padrão podem ser <strong>redirecionados</strong> quando o programa é executado no terminal. Com <code>&lt;</code>, a entrada padrão passa a ser lida de um arquivo; com <code>&gt;</code>, a saída padrão passa a ser gravada em um arquivo (que é criado, ou tem o conteúdo apagado). O programa não precisa de nenhuma alteração: para ele, <code class="language-c highlight"><span class="n">scanf</span></code> continua lendo de <code>stdin</code>, e <code class="language-c highlight"><span class="n">printf</span></code> continua escrevendo em <code>stdout</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="17:4"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><input id="__tabbed_17_4" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Código fonte</label><label for="__tabbed_17_2">Conteúdo de <code>entrada.txt</code></label><label for="__tabbed_17_3">Execução no Linux</label><label for="__tabbed_17_4">Execução no Windows</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:4"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><input id="__tabbed_17_3" name="__tabbed_17" type="radio" /><input id="__tabbed_17_4" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Código-fonte</label><label for="__tabbed_17_2">Conteúdo de <code>entrada.txt</code></label><label for="__tabbed_17_3">Execução no Linux</label><label for="__tabbed_17_4">Execução no Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">dobro.c</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-76-1"> 1</a></span>
@@ -4485,7 +4509,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

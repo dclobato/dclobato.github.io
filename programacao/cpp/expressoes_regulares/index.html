@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2431,7 +2431,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2722,7 +2722,7 @@
 <p>Expressões regulares são usadas para:</p>
 <ul>
 <li><strong>Validar dados</strong>: verificar se um e-mail, um telefone, um CEP ou uma placa de veículo estão no formato correto;</li>
-<li><strong>Extrair informações</strong>: localizar datas, valores, códigos ou palavras-chave em textos longos e arquivos de registro (<em>logs</em>), e;</li>
+<li><strong>Extrair informações</strong>: localizar datas, valores, códigos ou palavras-chave em textos longos e arquivos de registro (<em>logs</em>);</li>
 <li><strong>Transformar textos</strong>: substituir padrões, padronizar formatos e dividir textos com separadores variados.</li>
 </ul>
 <p>Em C++, as expressões regulares estão no cabeçalho <code>&lt;regex&gt;</code>. O padrão é representado por um objeto do tipo <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex</span></code>, e as operações são feitas por funções como <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex_search</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex_match</span></code> e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex_replace</span></code>.</p>
@@ -2733,7 +2733,7 @@
 <h2 id="buscando-e-verificando">Buscando e verificando<a class="headerlink" href="#buscando-e-verificando" title="Permanent link">&para;</a></h2>
 <p>As duas operações básicas são:</p>
 <ul>
-<li><code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex_search</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span><span class="w"> </span><span class="n">padrao</span><span class="p">)</span></code>: verifica se o padrão aparece <strong>em algum lugar</strong> do texto, e;</li>
+<li><code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex_search</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span><span class="w"> </span><span class="n">padrao</span><span class="p">)</span></code>: verifica se o padrão aparece <strong>em algum lugar</strong> do texto;</li>
 <li><code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex_match</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span><span class="w"> </span><span class="n">padrao</span><span class="p">)</span></code>: verifica se o <strong>texto inteiro</strong> corresponde ao padrão.</li>
 </ul>
 <p>As duas devolvem um <code class="language-cpp highlight"><span class="kt">bool</span></code>. Para saber o que foi encontrado e onde, passa-se também um objeto do tipo <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">smatch</span></code>, que recebe o resultado:</p>
@@ -2915,7 +2915,7 @@
 <p>A função <code>contar</code> usa um <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">sregex_iterator</span></code>, que percorre todas as ocorrências do padrão no texto, e conta quantas são com <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">distance</span></code>. Os iteradores de expressões regulares são apresentados em detalhes adiante.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>Em C++, <code>\w</code>, <code>[a-z]</code> e as demais classes trabalham com <strong>bytes</strong>, e não reconhecem letras acentuadas codificadas em UTF-8: para <code>\w</code>, o "é" de "ótimo" não é uma letra. Para textos com acentos, inclua os caracteres explicitamente no padrão, ou trate o texto de outra forma.</p>
+<p>Com <code>std::regex</code> sobre <code>std::string</code>, a busca percorre unidades <code>char</code>, normalmente bytes, e não decodifica UTF-8. A interpretação de classes também pode depender da localidade. Acrescentar letras acentuadas a uma classe como <code>[áé]</code> não a torna uma classe Unicode: os bytes podem ser tratados separadamente. Para processamento Unicode, use uma solução que reconheça explicitamente a codificação.</p>
 </div>
 <h3 id="quantificadores">Quantificadores<a class="headerlink" href="#quantificadores" title="Permanent link">&para;</a></h3>
 <p>Os <strong>quantificadores</strong> indicam quantas vezes o elemento anterior pode se repetir:</p>
@@ -3300,7 +3300,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">regex</span><span class="o">::</span><span class="n">ECMAScript</span></code></td>
-<td style="text-align: left;">Usa a sintaxe ECMAScript (é o padrão; precisa ser escrita explicitamente quando combinada com outras opções, como <code>multiline</code>)</td>
+<td style="text-align: left;">Usa a sintaxe ECMAScript (é a gramática padrão quando nenhuma outra gramática é selecionada; pode ser combinada explicitamente com <code>multiline</code>)</td>
 </tr>
 </tbody>
 </table>
@@ -3516,8 +3516,8 @@
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>A implementação de expressões regulares da biblioteca padrão de C++ é conhecida por ser <strong>lenta</strong>, bem mais lenta que a de outras linguagens e bibliotecas, e alguns padrões podem levar um tempo enorme em textos longos. Como mudanças internas quebrariam a compatibilidade com programas já compilados, essa situação não deve mudar. Em projetos em que o desempenho importa, é comum usar bibliotecas externas, como a <strong>Boost.Regex</strong>, a <strong>RE2</strong> (do Google, com tempo de execução garantidamente linear), a <strong>PCRE2</strong> (com a sintaxe do Perl) ou a <strong>CTRE</strong> (que monta a expressão regular durante a compilação).</p>
-<p>Em competições de programação e juízes <em>online</em>, apenas a biblioteca padrão está disponível, e os limites de tempo são apertados. Nesses ambientes, prefira resolver os problemas de texto com as operações de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> e laços simples, e reserve <code>&lt;regex&gt;</code> para entradas pequenas.</p>
+<p>O desempenho de <code>std::regex</code> depende da implementação, do padrão e do texto. Padrões com muitas alternativas e repetições podem causar retrocesso excessivo e tempos muito altos. Meça com as entradas relevantes antes de escolher uma solução. Bibliotecas externas oferecem outras características, como RE2, que garante tempo linear na entrada para os padrões que suporta, e CTRE, que analisa padrões durante a compilação.</p>
+<p>Em competições de programação e juízes <em>online</em>, frequentemente só a biblioteca padrão está disponível, e os limites de tempo são apertados. Nesses ambientes, prefira resolver os problemas de texto com as operações de <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string</span></code> e laços simples, e reserve <code>&lt;regex&gt;</code> para entradas pequenas.</p>
 </div>
 
 
@@ -3541,7 +3541,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

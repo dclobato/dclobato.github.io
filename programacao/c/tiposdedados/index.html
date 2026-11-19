@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2415,7 +2415,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2682,10 +2682,10 @@
 
 
 <h1 id="tipos-de-dados-em-c">Tipos de dados em C<a class="headerlink" href="#tipos-de-dados-em-c" title="Permanent link">&para;</a></h1>
-<p>No C, os tipos de dados definem a semântica, características de armazenamento e operações permitidas para elementos de dados, sendo expressos na sintaxe através de <strong>declarações de variáveis</strong>; a linguagem oferece tipos aritméticos básicos (inteiros e reais) e sintaxe para construir arranjos (<em>arrays</em>) e tipos compostos.</p>
-<p>O valor máximo que um determinado tipo de dados pode armazenar depende de fatores como sistema operacional e tipo de processador. Uma forma de verificar os limites na máquina que você está usando, é verificar os valores disponíveis na biblioteca <code>limits.h</code> (veja <a href="../biblioteca_c/#limitsh">aqui</a>).</p>
+<p>Em C, os tipos de dados definem a semântica, as características de armazenamento e as operações permitidas para elementos de dados, sendo expressos na sintaxe por meio de <strong>declarações de variáveis</strong>; a linguagem oferece tipos aritméticos básicos (inteiros e reais) e sintaxe para construir arranjos (<em>arrays</em>) e tipos compostos.</p>
+<p>O valor máximo que um determinado tipo de dados pode armazenar depende de fatores como sistema operacional e tipo de processador. Uma forma de verificar os limites na máquina que você está usando é consultar os valores disponíveis no cabeçalho <a href="../biblioteca_c/#limitsh"><code>limits.h</code></a>.</p>
 <h2 id="tipos-principais">Tipos principais<a class="headerlink" href="#tipos-principais" title="Permanent link">&para;</a></h2>
-<p>A linguagem C fornece quatro especificadores de tipos dados aritméticos: <code class="language-c highlight"><span class="kt">char</span></code>, <code class="language-c highlight"><span class="kt">int</span></code>, <code class="language-c highlight"><span class="kt">float</span></code> e <code class="language-c highlight"><span class="kt">double</span></code> (além do tipo lógico <code class="language-c highlight"><span class="kt">bool</span></code>), e os modificados <code class="language-c highlight"><span class="kt">signed</span></code>, <code class="language-c highlight"><span class="kt">unsigned</span></code>, <code class="language-c highlight"><span class="kt">short</span></code> e <code class="language-c highlight"><span class="kt">long</span></code>. A combinação dos tipos com os modificadores produz os seguintes tipos de dados.</p>
+<p>A linguagem C fornece quatro especificadores de tipos de dados aritméticos: <code class="language-c highlight"><span class="kt">char</span></code>, <code class="language-c highlight"><span class="kt">int</span></code>, <code class="language-c highlight"><span class="kt">float</span></code> e <code class="language-c highlight"><span class="kt">double</span></code> (além do tipo lógico <code class="language-c highlight"><span class="kt">bool</span></code>), e os modificadores <code class="language-c highlight"><span class="kt">signed</span></code>, <code class="language-c highlight"><span class="kt">unsigned</span></code>, <code class="language-c highlight"><span class="kt">short</span></code> e <code class="language-c highlight"><span class="kt">long</span></code>. A combinação dos tipos com os modificadores produz os seguintes tipos de dados.</p>
 <table>
 <thead>
 <tr>
@@ -2704,7 +2704,7 @@
 </tr>
 <tr>
 <td style="text-align: left;"><code class="language-c highlight"><span class="kt">char</span></code></td>
-<td style="text-align: left;">Menor unidade endereçável da máquina que pode conter conjunto de caracteres básicos.</td>
+<td style="text-align: left;">Menor unidade endereçável da máquina que pode conter o conjunto de caracteres básicos.</td>
 <td style="text-align: right;"><span class="arithmatex">\(\geq 8\)</span></td>
 <td style="text-align: left;"></td>
 </tr>
@@ -2788,9 +2788,9 @@
 </tr>
 </tbody>
 </table>
-<p>Não existem sufixos para os tipos <code class="language-c highlight"><span class="kt">char</span></code> e <code class="language-c highlight"><span class="kt">short</span></code>: uma constante inteira sem sufixo, como <code class="language-c highlight"><span class="mi">42</span></code>, é do tipo <code class="language-c highlight"><span class="kt">int</span></code>, e é convertida para o tipo da variável na atribuição. Os sufixos podem ser combinados em qualquer ordem e com letras maiúsculas ou minúsculas (<code class="language-c highlight"><span class="mi">10UL</span></code>, <code class="language-c highlight"><span class="mf">10l</span><span class="n">u</span></code>), mas prefira as maiúsculas: o <code>l</code> minúsculo é facilmente confundido com o dígito <code>1</code>.</p>
-<p>Os valores mínimos e máximos de cada tipo de dados pode ser, também, consultado na biblioteca <code>limits.h</code></p>
-<p>A relação entre os modificadores obriga que <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não seja menor que <code class="language-c highlight"><span class="kt">long</span></code>, que não é menor que <code class="language-c highlight"><span class="kt">int</span></code>, que não é menor que <code class="language-c highlight"><span class="kt">short</span></code>. O menor tamanho é do tipo <code class="language-c highlight"><span class="kt">char</span></code>. O tipo <code class="language-c highlight"><span class="kt">int</span></code> deve ser o tipo inteiro que o processador manipula com mais eficiência.</p>
+<p>Não existem sufixos para os tipos <code class="language-c highlight"><span class="kt">char</span></code> e <code class="language-c highlight"><span class="kt">short</span></code>: uma constante inteira decimal sem sufixo é do tipo <code class="language-c highlight"><span class="kt">int</span></code> quando seu valor cabe nele (como <code class="language-c highlight"><span class="mi">42</span></code>), ou de um tipo inteiro com sinal maior quando necessário, e é convertida para o tipo da variável na atribuição. Os sufixos podem ser combinados em qualquer ordem e com letras maiúsculas ou minúsculas (<code class="language-c highlight"><span class="mi">10UL</span></code>, <code class="language-c highlight"><span class="mf">10l</span><span class="n">u</span></code>), mas prefira as maiúsculas: o <code>l</code> minúsculo é facilmente confundido com o dígito <code>1</code>.</p>
+<p>Os valores mínimos e máximos de cada tipo de dados também podem ser consultados na biblioteca <code>limits.h</code>.</p>
+<p>A relação entre os modificadores exige que <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não seja menor que <code class="language-c highlight"><span class="kt">long</span></code>, que não é menor que <code class="language-c highlight"><span class="kt">int</span></code>, que não é menor que <code class="language-c highlight"><span class="kt">short</span></code>. O menor tamanho é do tipo <code class="language-c highlight"><span class="kt">char</span></code>. O tipo <code class="language-c highlight"><span class="kt">int</span></code> deve ser o tipo inteiro que o processador manipula com mais eficiência.</p>
 <p>O padrão define apenas os tamanhos <strong>mínimos</strong>. Nos computadores atuais, com processadores de 64 bits, os tamanhos e os limites são os da tabela abaixo, que também mostra os especificadores usados para escrever e ler cada tipo com <code class="language-c highlight"><span class="n">printf</span></code> e <code class="language-c highlight"><span class="n">scanf</span></code>:</p>
 <table>
 <thead>
@@ -2881,15 +2881,15 @@
 <p>O que acontece se eu tentar colocar um número maior que o maior valor que determinado tipo de dado pode armazenar? É como tentar colocar um tênis tamanho 45 numa caixa de sapato feita para tamanho 38.</p>
 <p>A linguagem C não avisa com erros de compilação ou de execução sobre isso. Esse problema se chama <strong>transbordamento</strong> (<strong><em>overflow</em></strong>), e o que acontece depende do tipo:</p>
 <ul>
-<li>Com tipos <strong>sem sinal</strong> (<code class="language-c highlight"><span class="kt">unsigned</span></code>), o valor "dá a volta": o resultado é calculado módulo <span class="arithmatex">\(2^b\)</span>, em que <span class="arithmatex">\(b\)</span> é o número de bits do tipo. <code class="language-c highlight"><span class="n">UINT_MAX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span></code> vale 0, e <code class="language-c highlight"><span class="mi">0u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span></code> vale <code class="language-c highlight"><span class="n">UINT_MAX</span></code>, e;</li>
+<li>Com tipos <strong>sem sinal</strong> (<code class="language-c highlight"><span class="kt">unsigned</span></code>), o valor "dá a volta": o resultado é calculado módulo <span class="arithmatex">\(2^b\)</span>, em que <span class="arithmatex">\(b\)</span> é o número de bits do tipo. <code class="language-c highlight"><span class="n">UINT_MAX</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span></code> vale 0, e <code class="language-c highlight"><span class="mi">0u</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span></code> vale <code class="language-c highlight"><span class="n">UINT_MAX</span></code>;</li>
 <li>Com tipos <strong>com sinal</strong>, o transbordamento é <strong>comportamento indefinido</strong>. Na prática, o valor costuma "dar a volta" para o lado negativo, mas o compilador pode supor que isso nunca acontece e otimizar o código de formas inesperadas.</li>
 </ul>
 <p>O erro mais comum em programação competitiva é calcular um valor que só cabe em <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> usando apenas variáveis <code class="language-c highlight"><span class="kt">int</span></code>:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100000</span><span class="p">;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">errado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">       </span><span class="c1">// 1410065408: a conta foi feita em int</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">errado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">       </span><span class="c1">// comportamento indefinido com int de 32 bits</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">certo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1L</span><span class="n">L</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w">  </span><span class="c1">// 10000000000</span>
 </span></code></pre></div>
-<p>Guardar o resultado em um <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não basta: a multiplicação <code>n * n</code> é feita com o tipo dos operandos (<code class="language-c highlight"><span class="kt">int</span></code>), transborda, e só depois o resultado (já errado) é convertido. Multiplicar primeiro por <code class="language-c highlight"><span class="mf">1L</span><span class="n">L</span></code> faz com que toda a conta seja feita em <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code>. O compilador não avisa sobre esse erro.</p>
+<p>Guardar o resultado em um <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code> não basta: a multiplicação <code>n * n</code> é feita com o tipo dos operandos (<code class="language-c highlight"><span class="kt">int</span></code>), transborda, e só depois o resultado (já errado) é convertido. Multiplicar primeiro por <code class="language-c highlight"><span class="mf">1L</span><span class="n">L</span></code> faz com que toda a conta seja feita em <code class="language-c highlight"><span class="kt">long</span><span class="w"> </span><span class="kt">long</span></code>. O compilador pode não diagnosticar esse erro.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Tipos de tamanho fixo</p>
@@ -2908,23 +2908,28 @@
 <li><strong>int_fast<span class="arithmatex">\(b\)</span>_t</strong>: inteiro de acesso mais rápido com pelo menos <span class="arithmatex">\(b\)</span> bits e com sinal</li>
 <li><strong>uint_fast<span class="arithmatex">\(b\)</span>_t</strong>: inteiro de acesso mais rápido com pelo menos <span class="arithmatex">\(b\)</span> bits e sem sinal</li>
 </ul>
-<p>Para todos os casos, <span class="arithmatex">\(b \in \{8, 16, 32, 64\}\)</span>.  Se por acaso a arquitetura não tiver um determinado tamanho, o tipo não estará definido no compilador, e um erro vai aparecer durante a compilação.</p>
+<p>Para <span class="arithmatex">\(b \in \{8, 16, 32, 64\}\)</span>, os tipos <code>int_least</code> e <code>int_fast</code>, com e sem sinal, são obrigatórios. Já os tipos de tamanho exato, como <code>int32_t</code>, só existem se a implementação oferecer uma representação adequada, sem bits de preenchimento. Portanto, nem todo tipo de tamanho exato é obrigatório.</p>
 <p>Esses tipos estão definidos no cabeçalho <code>stdint.h</code>. Para escrevê-los com <code class="language-c highlight"><span class="n">printf</span></code>, o cabeçalho <code>inttypes.h</code> define macros com os especificadores corretos, como em <code class="language-c highlight"><span class="n">printf</span><span class="p">(</span><span class="s">"%"</span><span class="w"> </span><span class="n">PRId64</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)</span></code> para um <code class="language-c highlight"><span class="kt">int64_t</span></code>.</p>
-<p>Mais detalhes podem ser obtidos <a href="https://en.cppreference.com/w/c/types/integer">aqui</a> ou <a href="https://www.gnu.org/software/libc/manual/html_node/Integers.html#Integers">aqui</a>.</p>
+<p>Mais detalhes podem ser obtidos na <a href="https://en.cppreference.com/w/c/types/integer">referência de tipos inteiros do cppreference</a> ou no <a href="https://www.gnu.org/software/libc/manual/html_node/Integers.html#Integers">manual da GNU C Library</a>.</p>
 </div>
 <h2 id="constantes">Constantes<a class="headerlink" href="#constantes" title="Permanent link">&para;</a></h2>
-<p>Uma constante é um nome dado à variável cujos valores não podem ser alterados ou modificados. Uma constante é muito semelhante a variáveis em C, mas com a principal diferença que só pode ter o valor definido uma única vez, durante a declaração da variável. Isso significa que, uma vez que atribuímos um valor à constante, não podemos mudá-lo durante toda a execução do programa &mdash; ele permanece fixo.</p>
+<p>Usamos constantes para dar nomes a valores que permanecem fixos no programa.
+No C17, é importante distinguir uma <strong>macro</strong>, substituída pelo pré-processador,
+de um <strong>objeto qualificado com <code>const</code></strong>, cujo valor não pode ser alterado após
+a inicialização. Esses mecanismos têm usos semelhantes, mas regras diferentes.</p>
 <div class="admonition warning inline end">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Na prática, o uso de <code class="language-c highlight"><span class="k">const</span></code> é preferível na grande maioria dos casos devido à segurança de tipo, possibilidade de depuração e escopo mais restrito. Use <code class="language-c highlight"><span class="cp">#define</span></code> apenas se você tiver uma razão forte para isso, como definir o tamanho de um arranjo global (veja o aviso mais abaixo).</p>
 </div>
-<p>Constantes podem ser definidas de duas formas: com o uso da diretiva de pré-processador <code class="language-c highlight"><span class="cp">#define</span></code>, ou com o uso da palavra-chave <code class="language-c highlight"><span class="k">const</span></code> antes do tipo da variável durante a sua declaração. Na maior parte dos usos, as duas formas se comportam da mesma maneira, apesar de "por baixo dos panos" serem completamente diferentes.</p>
+<p>As formas mais comuns de nomear esses valores são a diretiva de pré-processador
+<code class="language-c highlight"><span class="cp">#define</span></code> e a palavra-chave <code class="language-c highlight"><span class="k">const</span></code> na declaração de um objeto.
+Constantes de enumeração também podem ser usadas para valores inteiros.</p>
 <h3 id="usando-define">Usando <code>#define</code><a class="headerlink" href="#usando-define" title="Permanent link">&para;</a></h3>
-<p>A diretiva <code class="language-c highlight"><span class="cp">#define</span></code> é processada pelo pré-processador antes da compilação. O pré-processador substitui todas as ocorrências do nome da constante pelo seu valor antes do código ser compilado. Isso significa que:</p>
+<p>A diretiva <code class="language-c highlight"><span class="cp">#define</span></code> é processada pelo pré-processador antes da compilação. O pré-processador substitui todas as ocorrências do nome da constante pelo seu valor antes de o código ser compilado. Isso significa que:</p>
 <ul>
-<li>A constante não tem um tipo associado. O valor substituído depende do contexto em que aparece no código;</li>
-<li>Como a substituição ocorre antes da análise do código pelo compilador, erros podem ser mais difíceis de detectar, e;</li>
-<li>Não ocupa espaço na memória, pois não é armazenada como uma variável real. Apenas ocorre uma substituição textual;</li>
+<li>A macro não declara um objeto com tipo próprio. Após a substituição, os literais e as expressões usados nela são analisados com as regras normais de tipos;</li>
+<li>Como a substituição ocorre antes da análise do código pelo compilador, erros podem ser mais difíceis de detectar;</li>
+<li>A macro é uma substituição textual, e não uma variável armazenada na memória. O resultado da substituição pode, contudo, criar objetos, como acontece com literais de texto.</li>
 </ul>
 <p>Exemplo:
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de constante com #define</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -2954,7 +2959,7 @@
 <p>O uso de <code class="language-c highlight"><span class="k">const</span></code> define uma variável que é tratada como uma constante pelo compilador. Diferente de <code class="language-c highlight"><span class="cp">#define</span></code>, essa constante tem um tipo definido e ocupa espaço na memória (a menos que o compilador otimize e substitua seu uso diretamente).</p>
 <ul>
 <li>A constante tem um tipo de dado explícito, permitindo verificações de tipo pelo compilador;</li>
-<li>Pode ter um escopo definido, ao contrário de <code class="language-c highlight"><span class="cp">#define</span></code>, que é global por padrão, e;</li>
+<li>Segue as regras de escopo da linguagem; uma macro fica definida do seu <code class="language-c highlight"><span class="cp">#define</span></code> até o <code class="language-c highlight"><span class="cp">#undef</span></code> correspondente ou o fim da unidade de tradução, sem respeitar os blocos delimitados por chaves;</li>
 <li>Pode ser usada para ponteiros, arranjos e outras estruturas de dados.</li>
 </ul>
 <p>Exemplo:
@@ -2984,7 +2989,7 @@
 <p>Em C, uma variável <code class="language-c highlight"><span class="k">const</span></code> <strong>não é uma constante de compilação</strong>: o compilador não pode usar o seu valor onde a linguagem exige um valor conhecido durante a compilação. Declarar um arranjo global com <code class="language-c highlight"><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="p">;</span></code> e <code class="language-c highlight"><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">[</span><span class="n">N</span><span class="p">];</span></code> não compila (<code>variably modified 'v' at file scope</code>). Usar <code>N</code> como rótulo de um <code class="language-c highlight"><span class="k">case</span></code> também não é permitido pelo padrão: o GCC 13.2 com <code>-std=c17</code> recusa (<code>case label does not reduce to an integer constant</code>), embora o GCC aceite esse uso como extensão em outros modos (como o <code>gnu11</code> da Maratona) e na versão 14. Para tamanhos de arranjos e rótulos de <code class="language-c highlight"><span class="k">case</span></code>, use <code class="language-c highlight"><span class="cp">#define N 100</span></code> ou uma enumeração: <code class="language-c highlight"><span class="k">enum</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="p">};</span></code>.</p>
 </div>
 <h2 id="enumeracoes">Enumerações<a class="headerlink" href="#enumeracoes" title="Permanent link">&para;</a></h2>
-<p>As enumerações (ou <strong>enums</strong>) na linguagem C são um tipo de dados definido pelo usuário que consistem em um conjunto de constantes inteiras nomeadas. Elas fornecem uma maneira de criar nomes descritivos e significativos para um conjunto de valores inteiros, tornando o código mais legível e fácil de manter.</p>
+<p>As enumerações (ou <strong>enums</strong>) na linguagem C são tipos de dados definidos pelo usuário que consistem em conjuntos de constantes inteiras nomeadas. Elas fornecem uma maneira de criar nomes descritivos e significativos para um conjunto de valores inteiros, tornando o código mais legível e fácil de manter.</p>
 <p>Para declarar uma enumeração em C, utiliza-se a palavra-chave <code class="language-c highlight"><span class="k">enum</span></code> seguida pelo nome da enumeração e a lista de constantes entre chaves:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">enum</span><span class="w"> </span><span class="n">nome_enum</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">const1</span><span class="p">,</span>
@@ -3008,7 +3013,7 @@
 <div class="admonition note">
 <p class="admonition-title">Características importantes</p>
 <ul>
-<li><strong>Tamanho em Memória</strong>: Uma variável de enumeração ocupa o mesmo espaço que um inteiro (geralmente 4 bytes).</li>
+<li><strong>Tamanho em memória</strong>: No C17, o tipo inteiro compatível com cada enumeração é escolhido pela implementação, desde que represente seus valores. O tamanho não é obrigatoriamente igual ao de <code>int</code>; consulte <code>sizeof(enum nome)</code>.</li>
 <li><strong>Uso em Expressões</strong>: As constantes de enumeração podem ser usadas em qualquer lugar onde a linguagem C permite uma expressão inteira.</li>
 <li><strong>Escopo</strong>: Os identificadores em uma lista de enumeração devem ser distintos de outros identificadores no mesmo escopo com a mesma visibilidade.</li>
 </ul>
@@ -3058,7 +3063,7 @@
 <p>Embora seja possível realizar quase tudo em C sem usar enumerações, elas proporcionam uma maneira elegante e legível de trabalhar com conjuntos de constantes relacionadas, tornando o código mais fácil de entender e manter.</p>
 <h2 id="sequencias-de-escape">Sequências de escape<a class="headerlink" href="#sequencias-de-escape" title="Permanent link">&para;</a></h2>
 <p>Alguns caracteres podem ser representados como <strong>sequências de escape</strong>: são conjuntos de dois ou mais caracteres que, na realidade, representam apenas um caractere. Um exemplo de sequência de escape é o <code class="language-c highlight"><span class="err">\</span><span class="n">n</span></code>, utilizado para representar o final de uma linha.</p>
-<p>Qualquer caracter pode ser representado pela sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">ooo</span></code>, onde <code>ooo</code> é o número octal do caracter na tabela ASCII<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Outra possibilidade é representar o caracter utilizando a sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">xhh</span></code>, onde <code>hh</code> é o número hexadecimal do caracter na tabela ASCII. Assim, a letra <code>A</code> pode ser armazenada como <code>A</code>, ou como <code class="language-c highlight"><span class="err">\</span><span class="mi">101</span></code>, que é a representação em octal do valor 65 associado à letra A maiúscula na tabela ASCII, ou como <code class="language-c highlight"><span class="err">\</span><span class="n">x41</span></code>, que é a representação em hexadecimal de 65.</p>
+<p>Qualquer caractere pode ser representado pela sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">ooo</span></code>, onde <code>ooo</code> é o número octal do caractere na tabela ASCII<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Outra possibilidade é representar o caractere utilizando a sequência de escape <code class="language-c highlight"><span class="err">\</span><span class="n">xhh</span></code>, onde <code>hh</code> é o número hexadecimal do caractere na tabela ASCII. Assim, a letra <code>A</code> pode ser armazenada como <code>A</code>, ou como <code class="language-c highlight"><span class="err">\</span><span class="mi">101</span></code>, que é a representação em octal do valor 65 associado à letra A maiúscula na tabela ASCII, ou como <code class="language-c highlight"><span class="err">\</span><span class="n">x41</span></code>, que é a representação em hexadecimal de 65.</p>
 <p>Há algumas sequências de escape já definidas na linguagem C, para os caracteres mais comuns que não podem ser diretamente digitados.</p>
 <table>
 <thead>
@@ -3123,7 +3128,7 @@
 </tbody>
 </table>
 <h2 id="arranjos-arrays">Arranjos (<em>arrays</em>)<a class="headerlink" href="#arranjos-arrays" title="Permanent link">&para;</a></h2>
-<p>Para cada tipo <code>T</code>, exceto o tipo <code>void</code>, existe um tipo "arranjo de <span class="arithmatex">\(N\)</span> elementos do tipo <code>T</code>". Um arranjo é uma coleção de valores, todos do mesmo tipo, armazenados de forma contígua na memória.  Os elementos que compõem um arranjo de tamanho <span class="arithmatex">\(N\)</span> são indexados por inteiros que variam de <code>0</code> até <code>N-1</code>. Por exemplo</p>
+<p>Para cada tipo <code>T</code>, exceto o tipo <code>void</code>, existe um tipo "arranjo de <span class="arithmatex">\(N\)</span> elementos do tipo <code>T</code>". Um arranjo é uma coleção de valores, todos do mesmo tipo, armazenados de forma contígua na memória.  Os elementos que compõem um arranjo de tamanho <span class="arithmatex">\(N\)</span> são indexados por inteiros que variam de <code>0</code> até <code>N-1</code>. Por exemplo:</p>
 <div class="language-c highlight"><span class="filename">Declaração de arranjo unidimensional em C</span><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">faltas</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">  </span><span class="c1">// arranjo com 10 elementos, cada</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">                 </span><span class="c1">// um do tipo inteiro</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -3136,7 +3141,10 @@
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">dias</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">};</span><span class="w"> </span><span class="c1">// tamanho 4, calculado pelo compilador</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">dias</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">dias</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span><span class="w">   </span><span class="c1">// quantidade de elementos: 4</span>
 </span></code></pre></div>
-<p>Um arranjo declarado dentro de uma função <strong>sem</strong> inicialização contém valores imprevisíveis, que estavam na memória naquele momento; um arranjo global é inicializado automaticamente com zeros.</p>
+<p>Um arranjo local automático declarado <strong>sem</strong> inicialização contém valores
+indeterminados; lê-los pode causar comportamento indefinido. Arranjos globais
+ou declarados com <code>static</code>, quando não têm inicialização explícita, recebem
+inicialização com zero.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>A linguagem não verifica se o índice está dentro dos limites do arranjo. Em um arranjo com 10 elementos, <code>faltas[10]</code> (o décimo primeiro elemento, que não existe) e <code>faltas[-1]</code> compilam normalmente, e acessam a memória que estiver naquela posição. O resultado é <strong>comportamento indefinido</strong>: o programa pode escrever valores sem sentido, alterar outras variáveis, ser encerrado com <code>Segmentation fault</code>, ou parecer funcionar. Em um laço que percorre um arranjo de <code>N</code> elementos, a condição é <code>i &lt; N</code>, e não <code>i &lt;= N</code>.</p>
@@ -3157,7 +3165,7 @@
 </span></code></pre></div>
 <p>Como são arranjos, as cadeias não podem ser atribuídas com <code>=</code> nem comparadas com <code>==</code>: para isso, existem as funções <code class="language-c highlight"><span class="n">strcpy</span></code> e <code class="language-c highlight"><span class="n">strcmp</span></code>, do cabeçalho <code>string.h</code>. As cadeias são o assunto da seção <a href="../strings/">Cadeias de caracteres</a>, que mostra como declará-las, lê-las, copiá-las, compará-las, convertê-las em números e dividi-las em partes.</p>
 <h2 id="estruturas">Estruturas<a class="headerlink" href="#estruturas" title="Permanent link">&para;</a></h2>
-<p>Estruturas agregam o armazenamento de múltiplos itens de dados, de mesmo tipo ou não, em um único bloco de memória referenciado por uma única variável. O exemplo abaixo cria uma estrutura chamada <code>aniversario</code> para armazenar o nome e a data de nascimento de uma pessoa; em seguida, temos a declaração de uma variável chamada <code>Abelardo</code> do tipo <code class="language-c highlight"><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span></code></p>
+<p>Estruturas agregam o armazenamento de múltiplos itens de dados, de mesmo tipo ou não, em um único bloco de memória referenciado por uma única variável. O exemplo abaixo cria uma estrutura chamada <code>aniversario</code> para armazenar o nome e a data de nascimento de uma pessoa; em seguida, temos a declaração de uma variável chamada <code>Abelardo</code> do tipo <code class="language-c highlight"><span class="k">struct</span><span class="w"> </span><span class="nc">aniversario</span></code>.</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de estrutura em C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
 <span class="normal"><a href="#__codelineno-11-3">3</a></span>
@@ -3182,7 +3190,7 @@
 <h3 id="acessando-membros-de-estruturas">Acessando membros de estruturas<a class="headerlink" href="#acessando-membros-de-estruturas" title="Permanent link">&para;</a></h3>
 <p>As estruturas em C são uma forma poderosa de organizar dados relacionados sob um único nome. Quando trabalhamos com o exemplo da estrutura <code>aniversario</code>, precisamos entender como acessar e manipular cada um dos membros individuais dessa estrutura.</p>
 <p>Para acessar os membros de uma estrutura em C, utilizamos o operador ponto (<code>.</code>). Este operador conecta o nome da variável da estrutura com o membro específico que desejamos acessar.</p>
-<p>Considerando a estrutura aniversario e a variável Abelardo do exemplo, podemos acessar e atribuir valores aos membros da seguinte forma:</p>
+<p>Considerando a estrutura <code>aniversario</code> e a variável <code>Abelardo</code> do exemplo, podemos acessar e atribuir valores aos membros da seguinte forma:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
@@ -3201,7 +3209,7 @@
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="n">printf</span><span class="p">(</span><span class="s">"Nome: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">.</span><span class="n">nome</span><span class="p">);</span>
 </span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="n">printf</span><span class="p">(</span><span class="s">"Data de nascimento: %d/%d/%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">.</span><span class="n">dia</span><span class="p">,</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">.</span><span class="n">mes</span><span class="p">,</span><span class="w"> </span><span class="n">Abelardo</span><span class="p">.</span><span class="n">ano</span><span class="p">);</span>
 </span></code></pre></div></td></tr></table></div>
-<p>Observe que para o membro <code>nome</code>, que é um array de caracteres, utilizamos a função <code class="language-c highlight"><span class="n">strcpy</span><span class="p">()</span></code> para atribuir um valor, pois não podemos atribuir cadeias de caracteres diretamente em C (o motivo é explicado na seção sobre <a href="../memoria/#por-que-o-operador-nao-funciona-para-cadeias">ponteiros</a>).</p>
+<p>Observe que, para o membro <code>nome</code>, que é um arranjo de caracteres, utilizamos a função <code class="language-c highlight"><span class="n">strcpy</span><span class="p">()</span></code> para atribuir um valor, pois não podemos atribuir cadeias de caracteres diretamente em C (o motivo é explicado na seção sobre <a href="../memoria/#por-que-o-operador-nao-funciona-para-cadeias">ponteiros</a>).</p>
 <p>Quando temos estruturas dentro de estruturas (aninhadas), o acesso aos membros é feito de forma encadeada:</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
@@ -3249,12 +3257,12 @@
 <p>O comando <code class="language-c highlight"><span class="k">typedef</span></code> em C é usado para criar sinônimos ou "<em>aliases</em>" para tipos de dados existentes. Ele permite renomear tipos de dados, facilitando a organização e o entendimento do código.</p>
 <div class="admonition warning inline end">
 <p class="admonition-title">Veja bem, preste atenção!</p>
-<p>É importante ressaltar que o <code class="language-c highlight"><span class="k">typedef</span></code> não cria um novo tipo de dado, apenas permite que um tipo existente seja denominado de uma forma diferente</p>
+<p>É importante ressaltar que o <code class="language-c highlight"><span class="k">typedef</span></code> não cria um novo tipo de dado, apenas permite que um tipo existente seja denominado de uma forma diferente.</p>
 </div>
 <p>A sintaxe básica do <code class="language-c highlight"><span class="k">typedef</span></code> é:</p>
 <div class="language-c highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">typedef</span><span class="w"> </span><span class="o">&lt;</span><span class="n">tipo_existente</span><span class="o">&gt;</span><span class="w"> </span><span class="o">&lt;</span><span class="n">novo_nome</span><span class="o">&gt;</span><span class="p">;</span>
 </span></code></pre></div>
-<p>O uso de <code class="language-c highlight"><span class="k">typedef</span></code> em programação oferece diversas vantagens. Em primeiro lugar, ele aprimora a legibilidade do código ao simplificar declarações complexas, facilitando o entendimento; em segundo lugar, facilita a manutenção, permitindo que a alteração de um tipo de dado seja feita em um único local, sem a necessidade de modificar cada instância de uso, e; por fim, ele simplifica as declarações de estruturas, reduzindo a necessidade de utilizar repetidamente a palavra-chave <code class="language-c highlight"><span class="k">struct</span></code>.</p>
+<p>O uso de <code class="language-c highlight"><span class="k">typedef</span></code> em programação oferece diversas vantagens. Em primeiro lugar, ele aprimora a legibilidade do código ao simplificar declarações complexas, facilitando o entendimento; em segundo lugar, facilita a manutenção, permitindo que a alteração de um tipo de dado seja feita em um único local, sem a necessidade de modificar cada instância de uso; por fim, ele simplifica as declarações de estruturas, reduzindo a necessidade de utilizar repetidamente a palavra-chave <code class="language-c highlight"><span class="k">struct</span></code>.</p>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Exemplo de uso de typedef</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-16-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-16-3"> 3</a></span>
@@ -3305,7 +3313,7 @@
 <hr />
 <ol>
 <li id="fn:1">
-<p>O <em>Código Padrão Americano para o Intercâmbio de Informação</em> (ou, no original, <em>American Standard Code for Information Interchange</em>) é um sistema de representação de letras, algarismos e sinais de pontuação e de controle codificados em um número binário entre 0 e 127. Esses códigos cobrem 95 sinais gráficos (letras do alfabeto latino, algarismos arábicos, sinais de pontuação e sinais matemáticos) e 33 sinais de controle. Como um byte tem 8 bits, sobra um bit no código ASCII que pode ser usado de diferentes formas, para representar outras caracteres não cobertos pela tabela ASCII original.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>O <em>Código Padrão Americano para o Intercâmbio de Informação</em> (ou, no original, <em>American Standard Code for Information Interchange</em>) é um sistema de representação de letras, algarismos e sinais de pontuação e de controle codificados em um número binário entre 0 e 127. Esses códigos cobrem 95 sinais gráficos (letras do alfabeto latino, algarismos arábicos, sinais de pontuação e sinais matemáticos) e 33 sinais de controle. Como um byte tem 8 bits, sobra um bit no código ASCII que pode ser usado de diferentes formas, para representar outros caracteres não cobertos pela tabela ASCII original.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -3331,7 +3339,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:28:45 -03">19 de novembro de 2026 02:28:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

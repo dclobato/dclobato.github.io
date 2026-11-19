@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2365,7 +2365,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2584,31 +2584,31 @@
 <h1 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h1>
 <p>Agora que conhecemos os blocos fundamentais para construir algoritmos, precisamos entender onde armazenamos os dados que eles manipulam. Afinal, as estruturas sequenciais precisam guardar resultados intermediários, as condicionais precisam comparar valores, as repetições precisam contar iterações, e tanto a entrada quanto a saída trabalham com informações que precisam estar acessíveis durante toda a execução do programa. Variáveis são a base para qualquer processamento computacional, funcionando como os contêineres que armazenam os dados com os quais o programa trabalha.</p>
 <p>Durante a execução de qualquer tipo de programa, os computadores estão manipulando informações parciais ou finais. Para que essas informações fiquem disponíveis e possam ser processadas ou mesmo apresentadas, o computador precisa guardá-las em sua memória. Para acessar individualmente cada uma destas informações, a princípio, seria necessário saber o que está guardado lá (um número? uma palavra?) e a posição inicial deste conjunto de bytes na memória. Isso seria muito complicado para o programador, além de engessar demais o programa (as informações teriam que estar, sempre, nos mesmos lugares da memória).</p>
-<p>Para contornar esta situação criou-se o conceito de <strong>variável</strong>, que é uma <strong>entidade destinada a guardar uma informação</strong>.</p>
-<p>Ao utilizar variáveis, o mesmo código pode ser reutilizado para diferentes entradas, tornando os programas mais versáteis e reutilizáveis: ao invés de criar um algoritmo que funcione apenas com valores específicos, podemos usar variáveis para criar soluções genéricas que funcionam com qualquer conjunto de dados válido. Por exemplo, um algoritmo para calcular a área de um retângulo pode usar variáveis para comprimento e largura, permitindo que o mesmo algoritmo calcule a área de qualquer retângulo, não apenas um com dimensões predefinidas. Sem variáveis, não teríamos como capturar e utilizar dados fornecidos pelo usuário durante a execução do programa.</p>
-<p>As variáveis também facilitam a manutenção e atualização dos algoritmos. Se precisarmos alterar um valor usado em várias partes do algoritmo, podemos simplesmente modificar o valor da variável correspondente em um único lugar, em vez de procurar e alterar cada ocorrência desse valor.</p>
-<p><img align="right" alt="Variável" src="../../img/variaveis.jpeg" width="200" />Podemos pensar nas variáveis como caixas etiquetadas em uma sala. Cada caixa (<strong>variável</strong>) tem uma etiqueta (<strong>nome</strong>) que nos permite encontrá-la facilmente, um tipo específico de conteúdo que pode armazenar (<strong>tipo de dado</strong>), e o conteúdo em si (<strong>valor</strong>). Assim como não colocaríamos líquidos em uma caixa de papelão, cada variável só pode armazenar dados compatíveis com seu tipo.</p>
+<p>Para contornar esta situação, criou-se o conceito de <strong>variável</strong>, que é uma <strong>entidade destinada a guardar uma informação</strong>.</p>
+<p>Ao utilizar variáveis, o mesmo código pode ser reutilizado para diferentes entradas, tornando os programas mais versáteis e reutilizáveis: em vez de criar um algoritmo que funcione apenas com valores específicos, podemos usar variáveis para criar soluções genéricas que funcionam com qualquer conjunto de dados válido. Por exemplo, um algoritmo para calcular a área de um retângulo pode usar variáveis para comprimento e largura, permitindo que o mesmo algoritmo calcule a área de qualquer retângulo, não apenas de um com dimensões predefinidas. Sem variáveis, não teríamos como capturar e utilizar dados fornecidos pelo usuário durante a execução do programa.</p>
+<p>As variáveis também facilitam a manutenção e a atualização dos algoritmos. Se precisarmos alterar um valor usado em várias partes do algoritmo, podemos simplesmente modificar o valor da variável correspondente em um único lugar, em vez de procurar e alterar cada ocorrência desse valor.</p>
+<p><img align="right" alt="Variável" src="../../img/variaveis.jpeg" width="200" />Podemos pensar nas variáveis como caixas etiquetadas em uma sala. Cada caixa (<strong>variável</strong>) tem uma etiqueta (<strong>nome</strong>) que nos permite encontrá-la facilmente, um tipo específico de conteúdo que pode armazenar (<strong>tipo de dado</strong>) e o conteúdo em si (<strong>valor</strong>). Assim como não colocaríamos líquidos em uma caixa de papelão, cada variável só pode armazenar dados compatíveis com seu tipo.</p>
 <p>O nome de uma variável é um identificador simbólico que permite ao programador referenciar a informação armazenada sem precisar lidar diretamente com endereços de memória.</p>
 <h2 id="atributos-das-variaveis">Atributos das variáveis<a class="headerlink" href="#atributos-das-variaveis" title="Permanent link">&para;</a></h2>
-<p>Uma variável possui três atributos fundamentais: um <strong>nome</strong> que a identifica, um <strong>tipo de dado</strong> que determina que tipo de informação ela pode armazenar, e o <strong>valor</strong> (a informação propriamente dita) por ela guardado.</p>
+<p>Uma variável possui três atributos fundamentais: um <strong>nome</strong> que a identifica, um <strong>tipo de dado</strong> que determina que tipo de informação ela pode armazenar e o <strong>valor</strong> (a informação propriamente dita) por ela guardado.</p>
 <p>O <strong>nome</strong> funciona como uma etiqueta que permite referenciar a variável no algoritmo. Por exemplo, em vez de lembrar que "na posição de memória 0x7FFE1234 está guardado o número 25", simplesmente usamos um nome como <code>idade</code> e atribuímos o valor 25 a ela.</p>
 <div class="admonition success">
 <p class="admonition-title">Qual nome eu posso dar para a minha variável?</p>
-<p>A escolha do nome de uma variável não é apenas uma formalidade técnica -- é uma decisão que impacta diretamente na clareza e compreensibilidade do algoritmo. Um bom nome deve expressar claramente o propósito da variável e o tipo de informação que ela armazena. Compare, por exemplo, um algoritmo que usa variáveis chamadas <code>x</code>, <code>y</code> e <code>z</code> com outro que usa <code>salarioBruto</code>, <code>impostos</code> e <code>salarioLiquido</code>. No primeiro caso, qualquer pessoa que leia o código (incluindo você mesmo no futuro) precisará decifrar o que cada variável representa. No segundo, o significado é imediatamente aparente.</p>
+<p>A escolha do nome de uma variável não é apenas uma formalidade técnica -- é uma decisão que impacta diretamente a clareza e a compreensibilidade do algoritmo. Um bom nome deve expressar claramente o propósito da variável e o tipo de informação que ela armazena. Compare, por exemplo, um algoritmo que usa variáveis chamadas <code>x</code>, <code>y</code> e <code>z</code> com outro que usa <code>salarioBruto</code>, <code>impostos</code> e <code>salarioLiquido</code>. No primeiro caso, qualquer pessoa que leia o código (incluindo você mesmo no futuro) precisará decifrar o que cada variável representa. No segundo, o significado é imediatamente evidente.</p>
 <p>Nomes descritivos tornam o algoritmo <strong>autodocumentado</strong> -- isto é, o próprio código explica o que está fazendo, sem necessidade de comentários adicionais. Se você precisa calcular a área de um retângulo, usar <code>base</code> e <code>altura</code> é infinitamente melhor que usar <code>a</code> e <code>b</code>, mesmo que ambos funcionem tecnicamente. Pense que você está escrevendo não apenas para o computador executar, mas também para seres humanos lerem e entenderem -- inclusive você mesmo daqui a alguns meses.</p>
-<p>Nomes genéricos como <code>x</code>, <code>temp</code>, <code>aux</code>, <code>variavel1</code> devem ser evitados sempre que possível. Eles não comunicam intenção e tornam o código confuso. A única exceção aceitável é em contextos matemáticos muito específicos onde a convenção estabelecida usa essas letras (como coordenadas <code>x</code> e <code>y</code> em geometria), ou em estruturas de repetição determinada, onde <code>i</code>, <code>j</code> e <code>k</code> são tradicionalmente usados como contadores.</p>
+<p>Nomes genéricos como <code>x</code>, <code>temp</code>, <code>aux</code> e <code>variavel1</code> devem ser evitados sempre que possível. Eles não comunicam intenção e tornam o código confuso. A única exceção aceitável é em contextos matemáticos muito específicos, em que a convenção estabelecida usa essas letras (como coordenadas <code>x</code> e <code>y</code> em geometria), ou em estruturas de repetição determinada, em que <code>i</code>, <code>j</code> e <code>k</code> são tradicionalmente usados como contadores.</p>
 </div>
 <p>O <strong>tipo de dado</strong> indica qual categoria de informação a variável pode armazenar — números inteiros, números com casas decimais, texto, valores lógicos (verdadeiro/falso), entre outros. Essa definição ajuda tanto o programador quanto o computador a entender como tratar aquela informação.</p>
 <p>O <strong>valor</strong> é a informação propriamente dita que está armazenada na variável em um determinado momento da execução do algoritmo. Este valor pode mudar ao longo do tempo — afinal, se o valor nunca mudasse, não seria uma variável, mas sim uma constante.</p>
-<p>Durante a execução de um algoritmo, criamos variáveis quando precisamos armazenar informações, utilizamos essas variáveis lendo ou modificando seus valores conforme necessário, e elas deixam de existir quando o algoritmo termina. A beleza das variáveis está em permitir que trabalhemos com informações de forma simbólica e genérica, sem nos preocuparmos com os detalhes técnicos de como o computador organiza sua memória.</p>
+<p>Durante a execução de um algoritmo, criamos variáveis quando precisamos armazenar informações e utilizamos essas variáveis lendo ou modificando seus valores conforme necessário; elas deixam de existir quando o algoritmo termina. A beleza das variáveis está em permitir que trabalhemos com informações de forma simbólica e genérica, sem nos preocuparmos com os detalhes técnicos de como o computador organiza sua memória.</p>
 <div class="admonition tip">
 <p class="admonition-title">Uma observação para o futuro</p>
-<p>Quando você começar a programar em linguagens específicas, descobrirá que algumas exigem que você declare explicitamente o tipo de cada variável (como C), enquanto outras inferem automaticamente o tipo baseado no valor atribuído (como Python). Por enquanto, nos algoritmos, basta indicar conceitualmente se uma variável guarda números, texto ou valores lógicos.</p>
+<p>Quando você começar a programar em linguagens específicas, descobrirá que algumas exigem que você declare explicitamente o tipo de cada variável (como C), enquanto outras inferem automaticamente o tipo com base no valor atribuído (como Python). Por enquanto, nos algoritmos, basta indicar conceitualmente se uma variável guarda números, texto ou valores lógicos.</p>
 </div>
 <h2 id="escopo-e-tempo-de-vida">Escopo e tempo de vida<a class="headerlink" href="#escopo-e-tempo-de-vida" title="Permanent link">&para;</a></h2>
 <p>Em um algoritmo pequeno, todas as variáveis existem durante toda a execução e podem ser usadas em qualquer ponto. Mas, quando o algoritmo é dividido em <a href="../tiposdeprocessamento/#reuso">funções e procedimentos</a>, cada uma dessas partes passa a ter as suas próprias variáveis, e surgem duas perguntas novas sobre cada variável:</p>
 <ul>
-<li><strong>Onde</strong> ela pode ser usada? A região do algoritmo em que o nome de uma variável é reconhecido é o seu <strong>escopo</strong>, e;</li>
+<li><strong>Onde</strong> ela pode ser usada? A região do algoritmo em que o nome de uma variável é reconhecido é o seu <strong>escopo</strong>;</li>
 <li><strong>Quando</strong> ela existe? O intervalo da execução entre a criação da variável e o momento em que ela deixa de existir é o seu <strong>tempo de vida</strong>.</li>
 </ul>
 <p>Voltando à analogia das caixas etiquetadas: é como se cada função fosse uma sala separada, com as suas próprias caixas. Quem está dentro de uma sala só enxerga as caixas daquela sala, e duas salas diferentes podem ter caixas com a mesma etiqueta sem nenhuma confusão.</p>
@@ -2726,7 +2726,7 @@
 <p>Na maior parte das vezes, o escopo e o tempo de vida andam juntos: uma variável local só pode ser usada dentro da função e só existe enquanto a função está sendo executada. Mas são conceitos diferentes, e há situações em que eles se separam:</p>
 <ul>
 <li>Em uma função <strong>recursiva</strong>, que chama a si mesma, cada chamada tem as <strong>suas próprias</strong> variáveis locais. Enquanto a quinta chamada está sendo executada, as variáveis das quatro chamadas anteriores continuam existindo (o tempo de vida delas ainda não terminou), mas não podem ser acessadas pela quinta chamada (estão fora do seu escopo);</li>
-<li>Algumas linguagens permitem criar variáveis locais que <strong>mantêm o valor</strong> entre uma chamada e outra da função: o escopo é local, mas o tempo de vida é o da execução inteira, e;</li>
+<li>Algumas linguagens permitem criar variáveis locais que <strong>mantêm o valor</strong> entre uma chamada e outra da função: o escopo é local, mas o tempo de vida é o da execução inteira;</li>
 <li>Em algumas linguagens, uma função criada dentro de outra pode continuar usando as variáveis da função externa mesmo depois que a função externa terminou: a variável não pode mais ser acessada pelo nome no escopo onde foi criada, mas continua existindo enquanto a função interna precisar dela.</li>
 </ul>
 <h3 id="escopo-nas-linguagens">Escopo nas linguagens<a class="headerlink" href="#escopo-nas-linguagens" title="Permanent link">&para;</a></h3>
@@ -2807,7 +2807,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="18 de novembro de 2026 23:59:20 -03">18 de novembro de 2026 23:59:20</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

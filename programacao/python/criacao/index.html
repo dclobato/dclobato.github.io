@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -1753,12 +1753,12 @@
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edição do código fonte
+        Edição do código-fonte
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Edição do código fonte">
+    <nav class="md-nav" aria-label="Edição do código-fonte">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1832,17 +1832,6 @@
     <span class="md-ellipsis">
       
         Características do interpretador Python
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#python-ou-c-python-e-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python ou C? Python e C!
       
     </span>
   </a>
@@ -2371,7 +2360,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2478,12 +2467,12 @@
   <a href="#edicao-do-codigo-fonte" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Edição do código fonte
+        Edição do código-fonte
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Edição do código fonte">
+    <nav class="md-nav" aria-label="Edição do código-fonte">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2563,17 +2552,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#python-ou-c-python-e-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Python ou C? Python e C!
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2594,16 +2572,16 @@
 
 
 <h1 id="a-criacao-de-um-programa-em-python">A Criação de um Programa em Python<a class="headerlink" href="#a-criacao-de-um-programa-em-python" title="Permanent link">&para;</a></h1>
-<p>Quando escrevemos um programa em Python, o código que criamos, geralmente salvo em arquivos com extensão <code>.py</code> (os arquivos fonte), passa por um processo bastante diferente do que ocorre em linguagens compiladas como C. Python é uma linguagem interpretada, o que significa que o código não precisa ser transformado em linguagem de máquina antes da execução.</p>
-<p>A razão para essa diferença fundamental é que, em Python, existe um componente chamado <strong>interpretador</strong> que lê o código fonte linha por linha e o executa diretamente. Isso contrasta com o modelo de compilação do C, onde todo o código precisa ser traduzido para linguagem de máquina antes de qualquer execução.</p>
-<p>Para executar um programa Python, precisamos essencialmente de duas etapas: edição do código fonte e interpretação. Essa simplicidade é uma das características que torna Python acessível para iniciantes.</p>
-<p>Vamos analisar essas etapas e entender como elas diferem do processo em C.</p>
-<h2 id="edicao-do-codigo-fonte">Edição do código fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
-<p>Assim como em C, podemos utilizar qualquer editor de texto para escrever um programa em Python. No entanto, para aumentar nossa produtividade, é recomendável usar um ambiente de desenvolvimento integrado (IDE) ou um editor de código específico para programação.</p>
-<p>Python é conhecido por sua legibilidade e simplicidade sintática, o que o torna mais amigável para iniciantes em comparação com C. Isto significa que, mesmo sem recursos avançados de IDE, é possível escrever código Python efetivo. No entanto, ferramentas específicas para Python oferecem vantagens significativas:</p>
+<p>Quando escrevemos um programa em Python, o código que criamos geralmente é salvo em arquivos com extensão <code>.py</code>, chamados arquivos-fonte. Para executar esse código, utilizamos um <strong>interpretador</strong>.</p>
+<p>O interpretador processa o código-fonte e executa as instruções do programa. Nas próximas seções, veremos como ele analisa o código, gera uma representação intermediária e a executa.</p>
+<p>Para executar um programa Python, precisamos essencialmente de duas etapas: edição do código-fonte e interpretação. Essa simplicidade é uma das características que tornam Python acessível para iniciantes.</p>
+<p>Vamos analisar essas etapas e entender o papel de cada uma delas.</p>
+<h2 id="edicao-do-codigo-fonte">Edição do código-fonte<a class="headerlink" href="#edicao-do-codigo-fonte" title="Permanent link">&para;</a></h2>
+<p>Podemos utilizar qualquer editor de texto para escrever um programa em Python. Para aumentar nossa produtividade, é recomendável usar um ambiente de desenvolvimento integrado (IDE) ou um editor de código específico para programação.</p>
+<p>Python é conhecido por sua legibilidade e simplicidade sintática. Mesmo sem recursos avançados de uma IDE, é possível escrever programas em Python. Ferramentas específicas para a linguagem oferecem vantagens significativas:</p>
 <ul>
 <li>
-<p><strong>IDEs completas</strong> como <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a> com <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">extensões Python</a>, ou <a href="https://www.spyder-ide.org/">Spyder</a> oferecem um conjunto abrangente de ferramentas para desenvolvimento Python. Estas incluem destaque de sintaxe, autocompletar, depuração integrada, gerenciamento de pacotes, e ferramentas para teste e análise de código.</p>
+<p><strong>IDEs completas</strong> como <a href="https://www.jetbrains.com/pycharm/">PyCharm</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a> com <a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">extensões Python</a>, ou <a href="https://www.spyder-ide.org/">Spyder</a> oferecem um conjunto abrangente de ferramentas para desenvolvimento Python. Estas incluem destaque de sintaxe, autocompletar, depuração integrada, gerenciamento de pacotes e ferramentas para teste e análise de código.</p>
 </li>
 <li>
 <p><strong>Notebooks interativos</strong> como <a href="https://jupyter.org/">Jupyter Notebook</a> ou <a href="https://colab.research.google.com/">Google Colab</a> são particularmente populares para análise de dados, aprendizado de máquina e ensino de Python. Eles permitem combinar código executável, visualizações e texto explicativo em um único documento.</p>
@@ -2617,8 +2595,8 @@
 </figure>
 <p>A escolha do ambiente de desenvolvimento para Python frequentemente depende do caso de uso específico. Por exemplo, cientistas de dados podem preferir notebooks Jupyter, enquanto desenvolvedores de aplicações web podem optar por IDEs mais robustas como PyCharm.</p>
 <p>Uma vantagem significativa para iniciantes é que Python vem com um modo interativo integrado, acessível pelo comando <code>python</code> ou <code>python3</code> no terminal. Este modo REPL (<em>Read-Eval-Print Loop</em>) permite experimentar comandos Python e ver os resultados imediatamente, sem necessidade de criar, salvar e executar arquivos.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>python
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Python<span class="w"> </span><span class="m">3</span>.12.0<span class="w"> </span><span class="o">(</span>main,<span class="w"> </span>Oct<span class="w">  </span><span class="m">4</span><span class="w"> </span><span class="m">2023</span>,<span class="w"> </span><span class="m">22</span>:41:25<span class="o">)</span><span class="w"> </span><span class="o">[</span>GCC<span class="w"> </span><span class="m">11</span>.4.0<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>linux
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>python3
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Python<span class="w"> </span><span class="m">3</span>.14.4<span class="w"> </span><span class="o">(</span>main,<span class="w"> </span>Aug<span class="w"> </span><span class="m">20</span><span class="w"> </span><span class="m">2026</span>,<span class="w"> </span><span class="m">10</span>:41:58<span class="o">)</span><span class="w"> </span><span class="o">[</span>GCC<span class="w"> </span><span class="m">15</span>.2.0<span class="o">]</span><span class="w"> </span>on<span class="w"> </span>linux
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Type<span class="w"> </span><span class="s2">"help"</span>,<span class="w"> </span><span class="s2">"copyright"</span>,<span class="w"> </span><span class="s2">"credits"</span><span class="w"> </span>or<span class="w"> </span><span class="s2">"license"</span><span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>information.
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>&gt;&gt;&gt;<span class="w"> </span>print<span class="o">(</span><span class="s2">"Hello, World!"</span><span class="o">)</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Hello,<span class="w"> </span>World!
@@ -2626,14 +2604,14 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="m">4</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>&gt;&gt;&gt;<span class="w"> </span>
 </span></code></pre></div>
-<p>Este modo interativo é uma excelente ferramenta de aprendizado, pois permite testar pequenos trechos de código instantaneamente, algo que não tem equivalente direto em C.</p>
+<p>Este modo interativo é uma ferramenta de aprendizado que permite testar pequenos trechos de código e observar os resultados imediatamente.</p>
 <h3 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h3>
-<p>Os comentários em Python, assim como em C, são elementos não executáveis que fornecem descrições e explicações dentro do código-fonte. Eles são essenciais para documentar o código, tornando-o mais compreensível tanto para quem o escreveu quanto para outros desenvolvedores.</p>
-<p>Python suporta dois tipos principais de comentários:</p>
-<p>O primeiro tipo são os <strong>comentários de linha única</strong>, que começam com o caractere <code>#</code>. Tudo que estiver após esse símbolo até o final da linha será ignorado pelo interpretador Python:</p>
+<p>Os comentários em Python são elementos não executáveis que fornecem descrições e explicações dentro do código-fonte. Eles ajudam a documentar o código, tornando-o mais compreensível tanto para quem o escreveu quanto para outros desenvolvedores.</p>
+<p>Python oferece comentários de linha única e strings de documentação para registrar explicações sobre o código:</p>
+<p>Os <strong>comentários de linha única</strong> começam com o caractere <code>#</code>. Tudo o que estiver após esse símbolo até o final da linha será ignorado pelo interpretador Python:</p>
 <div class="language-python highlight"><span class="filename">Exemplo de comentário</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Este é um comentário de linha única em Python</span>
 </span></code></pre></div>
-<p>O segundo tipo, exclusivo do Python, são as <strong>strings de documentação</strong> ou <strong>docstrings</strong>. Embora tecnicamente não sejam comentários (são strings literais), docstrings servem como uma forma especial de documentação que pode ser acessada programaticamente. Elas são definidas com três aspas duplas ou simples e são frequentemente usadas para documentar funções, classes e módulos:</p>
+<p>As <strong>strings de documentação</strong>, ou <strong>docstrings</strong>, são strings literais usadas como documentação de funções, classes e módulos. Elas podem ser acessadas programaticamente e costumam ser delimitadas por três aspas duplas ou simples:</p>
 <div class="language-python highlight"><span class="filename">Exemplo de docstring</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">calcular_area</span><span class="p">(</span><span class="n">raio</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">"""</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Calcula a área de um círculo.</span>
@@ -2647,7 +2625,7 @@
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
 </span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">raio</span> <span class="o">**</span> <span class="mi">2</span>
 </span></code></pre></div>
-<p>Diferentemente dos comentários em C, Python não possui comentários de múltiplas linhas no estilo <code class="language-c highlight"><span class="cm">/* */</span></code>. Para comentar blocos inteiros de código, os desenvolvedores Python frequentemente usam o caractere <code>#</code> no início de cada linha ou, em alguns casos, envolvem o código em um par de docstrings que não são atribuídas a nenhuma variável.</p>
+<p>Para comentar blocos inteiros de código, use o caractere <code>#</code> no início de cada linha. Strings delimitadas por aspas triplas são literais de texto, e seu uso como docstrings tem a finalidade de documentar funções, classes e módulos.</p>
 <p>Os comentários em Python são utilizados por várias razões importantes:</p>
 <ul>
 <li>Eles explicam o raciocínio por trás de decisões complexas de programação</li>
@@ -2655,26 +2633,26 @@
 <li>Servem como notas temporárias durante o desenvolvimento</li>
 <li>Podem desativar temporariamente partes do código durante testes (comentar código)</li>
 </ul>
-<p>As docstrings têm a vantagem adicional de serem acessíveis através do atributo <code class="language-python highlight"><span class="vm">__doc__</span></code> ou da função <code class="language-python highlight"><span class="n">help</span><span class="p">()</span></code>, o que facilita a criação de documentação automática:</p>
-<div class="language-python highlight"><span class="filename">Consultando a documentação da função `calcular_area`</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">calcular_area</span><span class="p">)</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Help</span> <span class="n">on</span> <span class="n">function</span> <span class="n">calcular_area</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">__main__</span><span class="p">:</span>
+<p>As docstrings têm a vantagem adicional de serem acessíveis por meio do atributo <code class="language-python highlight"><span class="vm">__doc__</span></code> ou da função <code class="language-python highlight"><span class="n">help</span><span class="p">()</span></code>, o que facilita a criação de documentação automática:</p>
+<div class="language-pycon highlight"><span class="filename">Consultando a documentação da função `calcular_area`</span><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">calcular_area</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">Help on function calcular_area in module __main__:</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">calcular_area</span><span class="p">(</span><span class="n">raio</span><span class="p">)</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">Calcula</span> <span class="n">a</span> <span class="n">área</span> <span class="n">de</span> <span class="n">um</span> <span class="n">círculo</span><span class="o">.</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="go">calcular_area(raio)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="go">    Calcula a área de um círculo.</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">Args</span><span class="p">:</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="n">raio</span> <span class="p">(</span><span class="nb">float</span><span class="p">):</span> <span class="n">O</span> <span class="n">raio</span> <span class="n">do</span> <span class="n">círculo</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="go">    Args:</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="go">        raio (float): O raio do círculo</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">Returns</span><span class="p">:</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="nb">float</span><span class="p">:</span> <span class="n">A</span> <span class="n">área</span> <span class="n">calculada</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="go">    Returns:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="go">        float: A área calculada</span>
 </span></code></pre></div>
-<p>Assim como em C, as melhores práticas para uso de comentários em Python incluem:</p>
+<p>As melhores práticas para o uso de comentários em Python incluem:</p>
 <ul>
-<li>Comentar o "porquê" ao invés do "como" (o código já mostra como algo é feito)</li>
+<li>Comentar o "porquê" em vez do "como" (o código já mostra como algo é feito)</li>
 <li>Manter os comentários atualizados quando o código muda</li>
 <li>Usar docstrings para documentar funções, classes e módulos</li>
 <li>Evitar comentários redundantes que apenas repetem o que o código claramente expressa</li>
-<li>Seguir convenções estabelecidas como o <a href="https://peps.python.org/pep-0257/">PEP 257</a> para docstrings</li>
+<li>Seguir convenções estabelecidas como a <a href="https://peps.python.org/pep-0257/">PEP 257</a> para docstrings</li>
 </ul>
 <p>A filosofia de Python enfatiza a legibilidade do código, conforme expressa no Zen do Python com o princípio "<em>explicit is better than implicit</em>" (explícito é melhor que implícito). Bons comentários contribuem para essa clareza, tornando o código mais acessível e facilitando a manutenção.</p>
 <h2 id="interpretacao-e-execucao">Interpretação e Execução<a class="headerlink" href="#interpretacao-e-execucao" title="Permanent link">&para;</a></h2>
@@ -2686,42 +2664,32 @@
   Bytecode@{ shape: doc, label: "**Bytecode**&lt;br /&gt;(.pyc)" }
   Maquina@{ shape: process, label: "Máquina Virtual Python" }
   Execução@{ shape: process, label: "Execução do programa" }</code></pre>
-<p>Ao contrário do C, que passa por várias etapas de processamento antes da execução, o processo em Python é mais direto. No entanto, existe um nível de complexidade que vale a pena entender.</p>
+<p>As etapas abaixo descrevem o <strong>CPython</strong>, a implementação mais usada de Python. Outras implementações podem executar a mesma linguagem com mecanismos internos diferentes.</p>
 <p>Quando executamos um programa Python, o interpretador realiza as seguintes ações:</p>
 <h3 id="analise-sintatica-parsing">Análise sintática (<em>parsing</em>)<a class="headerlink" href="#analise-sintatica-parsing" title="Permanent link">&para;</a></h3>
-<p>O interpretador Python primeiro verifica o código em busca de erros sintáticos &mdash; como parênteses não fechados, indentação incorreta, ou uso impróprio de palavras-chave. Se encontrar erros, ele interrompe a execução e exibe uma mensagem de erro.</p>
-<p>Python é particularmente rigoroso com a indentação, pois esta define a estrutura dos blocos de código, ao contrário de C que usa chaves <code>{ }</code> para este propósito.</p>
+<p>O interpretador Python primeiro verifica o código em busca de erros sintáticos &mdash; como parênteses não fechados, indentação incorreta ou uso impróprio de palavras-chave. Se encontrar erros, ele interrompe a execução e exibe uma mensagem de erro.</p>
+<p>Em Python, a indentação define a estrutura dos blocos de código e deve ser usada de forma consistente.</p>
 <h3 id="compilacao-para-bytecode">Compilação para <em>bytecode</em><a class="headerlink" href="#compilacao-para-bytecode" title="Permanent link">&para;</a></h3>
-<p>Se o código não contiver erros sintáticos, o interpretador Python compila o código fonte para um formato intermediário chamado <strong><em>bytecode</em></strong>. Este <em>bytecode</em> não é código de máquina específico para um processador, mas sim instruções para a Máquina Virtual Python (PVM).</p>
-<p>Os arquivos de <em>bytecode</em> têm extensão <code>.pyc</code> e são armazenados no diretório <code>__pycache__</code> para uso futuro. Isso permite que o Python pule a etapa de compilação quando o arquivo fonte não foi modificado, acelerando a inicialização em execuções subsequentes.</p>
-<p>Essa etapa de compilação para <em>bytecode</em> é significativamente diferente da compilação em C. Enquanto o compilador C gera código de máquina nativo para uma arquitetura específica de processador, o compilador Python gera um código intermediário que é independente de plataforma.</p>
+<p>Se o código não contiver erros sintáticos, o interpretador Python compila o código-fonte para um formato intermediário chamado <strong><em>bytecode</em></strong>. Este <em>bytecode</em> não é código de máquina específico para um processador, mas sim instruções para a Máquina Virtual Python (PVM).</p>
+<p>Ao importar módulos, o CPython pode guardar o bytecode em arquivos <code>.pyc</code> dentro de <code>__pycache__</code>, evitando recompilar código que continua válido. Esse cache depende da configuração e da permissão de escrita. O arquivo principal executado diretamente como script normalmente não ganha um <code>.pyc</code> automaticamente, e a ausência do cache não impede a execução.</p>
+<p>O <em>bytecode</em> é um código intermediário executado pelo interpretador, sem depender diretamente da arquitetura do processador.</p>
 <h3 id="execucao-do-bytecode">Execução do bytecode<a class="headerlink" href="#execucao-do-bytecode" title="Permanent link">&para;</a></h3>
-<p>A Máquina Virtual Python (PVM) executa o <em>bytecode</em> instrução por instrução. Durante essa execução, a PVM gerencia a memória automaticamente (através da coleta de lixo), lida com exceções, e interage com o sistema operacional subjacente.</p>
-<p>Esse modelo de execução difere fundamentalmente do modelo em C:</p>
-<ul>
-<li>Em C, o código compilado é executado diretamente pelo processador, oferecendo alta velocidade mas sem flexibilidade durante a execução.</li>
-<li>Em Python, o <em>bytecode</em> é interpretado pela PVM, oferecendo maior flexibilidade e portabilidade, mas com desempenho geralmente mais lento.</li>
-</ul>
+<p>A Máquina Virtual Python (PVM) executa o <em>bytecode</em> instrução por instrução. Durante essa execução, a PVM gerencia a memória automaticamente (por meio da coleta de lixo), lida com exceções e interage com o sistema operacional subjacente.</p>
+<p>Nesse modelo, o <em>bytecode</em> é interpretado pela PVM, que coordena a execução das instruções e o gerenciamento dos recursos do programa.</p>
 <h2 id="caracteristicas-do-interpretador-python">Características do interpretador Python<a class="headerlink" href="#caracteristicas-do-interpretador-python" title="Permanent link">&para;</a></h2>
-<p><strong>Tipagem dinâmica</strong>: Ao contrário de C, que verifica os tipos de variáveis durante a compilação, Python verifica tipos em tempo de execução. Isso permite maior flexibilidade, mas também significa que erros de tipo só são descobertos quando o código é executado.</p>
+<p><strong>Tipagem dinâmica</strong>: Python verifica os tipos em tempo de execução. Isso permite flexibilidade, mas também significa que erros de tipo podem ser descobertos apenas quando o trecho correspondente é executado.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Em Python, podemos mudar o tipo de uma variável durante a execução</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>        <span class="c1"># x é um inteiro</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">x</span> <span class="o">=</span> <span class="s2">"texto"</span>  <span class="c1"># agora x é uma string</span>
 </span></code></pre></div>
-<p><strong>Interpretação linha por linha</strong>: Embora Python tecnicamente compile para <em>bytecode</em>, ele mantém a característica de execução linha por linha, permitindo a execução interativa em interfaces REPL e facilitando a depuração.</p>
-<p><strong>Importação de módulos</strong>: Quando importamos um módulo em Python, o interpretador procura o módulo, o compila para <em>bytecode</em> (se necessário), e o executa. O estado resultante da execução do módulo (como funções e classes definidas) é então disponibilizado para o código que o importou.</p>
+<p><strong>Execução de instruções</strong>: o código de um script é analisado e compilado antes de começar sua execução. O fluxo segue as chamadas, condições e repetições do programa, e não necessariamente a ordem das linhas. No REPL, cada entrada completa é processada separadamente.</p>
+<p><strong>Importação de módulos</strong>: Quando importamos um módulo em Python, o interpretador procura o módulo, o compila para <em>bytecode</em> (se necessário) e o executa. O estado resultante da execução do módulo (como funções e classes definidas) é então disponibilizado para o código que o importou.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>  <span class="c1"># O módulo math é carregado e suas funções ficam disponíveis</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">area</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">**</span> <span class="mi">2</span>
 </span></code></pre></div>
-<p><strong>Modo interativo vs. Execução de scripts</strong>: Python pode ser executado interativamente, interpretando comandos um a um, ou pode executar scripts completos. Esta flexibilidade não existe em C, onde o programa inteiro deve ser compilado antes de qualquer execução.</p>
-<p>Este modelo de execução baseado em interpretação dá ao Python várias de suas características mais distintivas, incluindo portabilidade entre plataformas, facilidade de prototipagem, e recursos dinâmicos como introspecção e metaclasses. Por outro lado, também explica por que Python geralmente não alcança a velocidade de execução de linguagens compiladas como C para tarefas computacionalmente intensivas.</p>
-<h2 id="python-ou-c-python-e-c">Python ou C? Python e C!<a class="headerlink" href="#python-ou-c-python-e-c" title="Permanent link">&para;</a></h2>
-<p>A diferença fundamental entre o fluxo de execução em Python e C ilustra as diferentes filosofias por trás dessas linguagens:</p>
-<p><strong>C</strong> prioriza a eficiência e o controle detalhado, exigindo um processo mais complexo de compilação que produz código otimizado para a máquina alvo. Este processo de múltiplas etapas resulta em programas que executam rapidamente, mas com um ciclo de desenvolvimento mais longo entre modificar o código e testar as mudanças.</p>
-<p><strong>Python</strong> prioriza a produtividade do desenvolvedor e a flexibilidade, com um processo mais direto que permite mudanças rápidas e iteração. O trade-off é um desempenho de execução geralmente mais lento para operações computacionalmente intensivas.</p>
-<p>Esta diferença fundamental é a razão pela qual muitos projetos utilizam ambas as linguagens: Python para prototipagem rápida, interface com o usuário e lógica de alto nível, e C para componentes críticos de desempenho. Muitas bibliotecas Python populares para computação científica (como NumPy, TensorFlow, e PyTorch) são implementadas como <em>wrappers</em> Python em torno de código C ou C++ altamente otimizado, combinando assim o melhor dos dois mundos.</p>
-<p>Em resumo, enquanto C e Python seguem paradigmas diferentes na execução de código, eles podem ser complementares em muitos contextos de desenvolvimento, cada um trazendo seus pontos fortes para resolver diferentes aspectos de problemas complexos.</p>
+<p><strong>Modo interativo e execução de scripts</strong>: Python pode ser executado interativamente, processando comandos um a um, ou pode executar scripts completos.</p>
+<p>Este modelo de execução dá ao Python características como portabilidade entre plataformas, facilidade de prototipagem e recursos dinâmicos como introspecção e metaclasses.</p>
 
 
 
@@ -2744,7 +2712,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="31 de março de 2025 00:49:34 -03">31 de março de 2025 00:49:34</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

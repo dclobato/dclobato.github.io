@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2343,7 +2343,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2546,12 +2546,12 @@
 <p>Essa decisão de design foi tomada intencionalmente por <a href="https://www.crockford.com/about.html">Douglas Crockford</a>, o criador do JSON, por vários motivos, sendo os principais:</p>
 <ul>
 <li><strong>Evitar diretivas de processamento:</strong> <a href="https://archive.ph/20150704102718/https://plus.google.com/+DouglasCrockfordEsq/posts/RK8qyGVaGSr">Crockford observou</a> que comentários eram, às vezes, usados para incorporar diretivas de processamento ou instruções específicas para determinados processadores de documento. Essa prática poderia levar à falta de interoperabilidade, já que diferentes processadores poderiam interpretar essas diretivas de forma diferente ou nem interpretá-las, potencialmente interrompendo o comportamento pretendido dos dados JSON em vários sistemas;</li>
-<li><strong>Manter a simplicidade e o foco somente em dados:</strong> o JSON foi projetado como um formato leve e genérico para intercâmbio de dados entre máquinas (M2M). A inclusão de comentários adicionaria uma camada de complexidade ao processo de processamento e potencialmente mudaria seu foco da representação pura de dados para um formato mais expressivo, semelhante a uma configuração. O objetivo era manter o JSON como uma estrutura de dados clara e inequívoca, e;</li>
+<li><strong>Manter a simplicidade e o foco somente em dados:</strong> o JSON foi projetado como um formato leve e genérico para intercâmbio de dados entre máquinas (M2M). A inclusão de comentários adicionaria uma camada de complexidade ao processo de processamento e potencialmente mudaria seu foco da representação pura de dados para um formato mais expressivo, semelhante a uma configuração. O objetivo era manter o JSON como uma estrutura de dados clara e inequívoca;</li>
 <li><strong>Garantir a portabilidade:</strong> ao excluir comentários, o JSON garante que os dados em si sejam a única fonte de informação, tornando-os mais portáteis e consistentemente interpretáveis em diferentes linguagens de programação e plataformas, sem preocupações sobre como os comentários podem ser tratados.</li>
 </ul>
 </div>
 <p>Para um desenvolvedor Python, a estrutura de um documento JSON é imediatamente familiar, pois se assemelha muito a um dicionário aninhado com listas. No entanto, é crucial entender que JSON e dicionários Python não são a mesma coisa. O módulo <code>json</code> do Python atua como uma "ponte", traduzindo (serializando e desserializando) objetos de um formato para o outro.</p>
-<p>As principais diferenças entre dicionários e documentos JSON em Python são:</p>
+<p>Um documento JSON pode conter qualquer valor JSON no nível principal, inclusive um número, texto, booleano ou <code>null</code>. As principais diferenças em relação aos dicionários Python são:</p>
 <table>
 <thead>
 <tr>
@@ -2563,7 +2563,7 @@
 <tbody>
 <tr>
 <td style="text-align: left;">Chaves</td>
-<td style="text-align: left;">Podem ser de vários tipos imutáveis (<em>strings</em>, números, tuplas).</td>
+<td style="text-align: left;">Precisam ser <em>hashable</em>, como strings, números e tuplas cujos elementos também sejam hashable.</td>
 <td style="text-align: left;">Obrigatoriamente strings, sempre entre aspas duplas.</td>
 </tr>
 <tr>
@@ -2668,19 +2668,19 @@
 <p>Neste exemplo:</p>
 <ul>
 <li>A chave <code>endereco</code> é um objeto aninhado detalhando o endereço do usuário;</li>
-<li>A chave <code>contatos</code> é uma lista (<em>array</em>) de objetos, cada um representando um tipo de contato, e;</li>
+<li>A chave <code>contatos</code> é uma lista (<em>array</em>) de objetos, cada um representando um tipo de contato;</li>
 <li>O campo <code>projetos</code> é uma lista de objetos, detalhando múltiplos projetos, cada um com suas próprias propriedades e listas internas.</li>
 </ul>
 <p>Isso ilustra como JSON pode modelar informações complexas e hierárquicas de forma organizada e legível.</p>
-<p>Além disso, um aspecto importante do JSON é a padronização da codificação de caracteres em UTF-8. Isso assegura compatibilidade global, facilitando a transmissão de dados que contenham acentos, símbolos internacionais ou caracteres não-ASCII entre sistemas de diferentes partes do mundo, sem perda de informação.</p>
-<p>Outro elemento fundamental é a portabilidade e independência de linguagem: JSON pode ser manipulado nativamente ou por meio de bibliotecas em praticamente todas as linguagens de programação modernas, como Python, JavaScript, Java, C#, PHP e muitas outras. Essa característica consolidou o formato não apenas como uma escolha popular em APIs <em>web</em>, mas também em bancos de dados NoSQL, arquivos de configuração e sistemas distribuídos.</p>
+<p>Além disso, um aspecto importante do JSON é a padronização da codificação de caracteres em UTF-8. Isso assegura compatibilidade global, facilitando a transmissão de dados que contenham acentos, símbolos internacionais ou caracteres não ASCII entre sistemas de diferentes partes do mundo, sem perda de informação.</p>
+<p>Outros elementos fundamentais são a portabilidade e a independência de linguagem: JSON pode ser manipulado nativamente ou por meio de bibliotecas em praticamente todas as linguagens de programação modernas, como Python, JavaScript, Java, C#, PHP e muitas outras. Essa característica consolidou o formato não apenas como uma escolha popular em APIs <em>web</em>, mas também em bancos de dados NoSQL, arquivos de configuração e sistemas distribuídos.</p>
 <h2 id="lendo-desserializando-dados-json">Lendo (desserializando) dados JSON<a class="headerlink" href="#lendo-desserializando-dados-json" title="Permanent link">&para;</a></h2>
 <p>Desserializar é o processo de converter uma <em>string</em> ou um arquivo JSON em um objeto Python (normalmente um dicionário ou uma lista). O módulo <code class="language-python highlight"><span class="n">json</span></code> oferece duas funções principais para isso:</p>
 <ul>
 <li><code class="language-python highlight"><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">()</span></code>: Carrega (<em><strong>load s</strong>tring</em>) um objeto JSON a partir de uma <em>string</em>.</li>
 <li><code class="language-python highlight"><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">()</span></code>: Carrega um objeto JSON a partir de um arquivo.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código fonte</label><label for="__tabbed_1_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Código-fonte</label><label for="__tabbed_1_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">le_json.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
@@ -2762,9 +2762,9 @@
 <ul>
 <li><code>indent</code>: Define o número de espaços para a indentação, tornando o resultado legível para humanos (pretty-printing).</li>
 <li><code>sort_keys=True</code>: Ordena as chaves do dicionário em ordem alfabética.</li>
-<li><code>ensure_ascii=False</code>: Garante que caracteres não-ASCII (como ç, ã) sejam escritos como são, em vez de sequências de escape. É essencial ao trabalhar com <code>encoding='utf-8'</code>.</li>
+<li><code>ensure_ascii=False</code>: Garante que caracteres não ASCII (como ç, ã) sejam escritos como são, em vez de sequências de escape. É uma opção de legibilidade: os escapes também são válidos em um arquivo UTF-8 e preservam os mesmos caracteres.</li>
 </ul>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código fonte</label><label for="__tabbed_2_2">Saída</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Código-fonte</label><label for="__tabbed_2_2">Saída</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">escreve_json.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
@@ -2852,6 +2852,16 @@
 </div>
 </div>
 <p>Na conversão, <code class="language-python highlight"><span class="kc">None</span></code> virou <code>null</code> e <code class="language-python highlight"><span class="kc">True</span></code> virou <code>true</code>, e as chaves foram ordenadas por causa de <code>sort_keys=True</code>. A penúltima linha mostra o efeito de omitir <code>ensure_ascii=False</code>: os caracteres acentuados são escritos como sequências de escape (<code>\u00e7</code> é o <code>ç</code>), o que continua sendo um JSON válido, mas difícil de ler.</p>
+<div class="admonition warning">
+<p class="admonition-title">Números e interoperabilidade</p>
+<p>Por padrão, <code>json.dumps()</code> aceita <code>NaN</code> e infinitos, embora esses valores
+não façam parte do formato JSON. Use <code>allow_nan=False</code> para recusá-los
+com <code>ValueError</code>. Na leitura, <code>parse_constant</code> permite rejeitar essas
+extensões. Além disso, <code>skipkeys=False</code> é o padrão: chaves de tipos não
+aceitos pelo serializador causam <code>TypeError</code>; chaves numéricas aceitas
+são convertidas em texto. Serializar e ler novamente um dicionário não
+preserva necessariamente os tipos de suas chaves.</p>
+</div>
 <h2 id="tratamento-de-excecoes-comuns">Tratamento de exceções comuns<a class="headerlink" href="#tratamento-de-excecoes-comuns" title="Permanent link">&para;</a></h2>
 <p>Durante a manipulação de documentos JSON, alguns problemas podem acontecer, e eles são sinalizados por meio de <strong>exceções</strong>. A explicação detalhada de como funciona o tratamento de exceções está na seção sobre <a href="../fluxo/#tratamento-de-excecoes">controle de fluxo</a>.</p>
 <p>Durante a manipulação de JSON, duas exceções principais podem ocorrer:</p>
@@ -2914,9 +2924,9 @@
 <p>A solução mais simples é converter o valor para um tipo que o JSON aceita antes de serializar: uma data vira um texto no formato ISO (<code>AAAA-MM-DD</code>), com <code class="language-python highlight"><span class="n">isoformat</span><span class="p">()</span></code>, e um conjunto vira uma lista, com <code class="language-python highlight"><span class="nb">list</span><span class="p">()</span></code>. Na leitura, o texto pode ser convertido de volta com <code class="language-python highlight"><span class="n">date</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">()</span></code>.</p>
 <h2 id="exemplo-completo">Exemplo completo<a class="headerlink" href="#exemplo-completo" title="Permanent link">&para;</a></h2>
 <p>O código a seguir apresenta um exemplo abrangente da manipulação de arquivos estruturados em Python, demonstrando de forma integrada as operações fundamentais de leitura, processamento e escrita de dados. A função <code>processar_vendas_diarias_json()</code> implementa um sistema de análise de vendas que lê dados de um arquivo JSON, exemplificando as melhores práticas no manuseio de arquivos, combinando verificações de integridade, tratamento de erros e a geração automatizada de relatórios em múltiplos formatos.</p>
-<p>A lógica da aplicação inicia com uma verificação da existência do arquivo de entrada utilizando <code class="language-python highlight"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span></code>, estabelecendo uma abordagem que evita falhas de execução desnecessárias. O processamento principal emprega o gerenciador de contexto <code class="language-python highlight"><span class="k">with</span> <span class="nb">open</span><span class="p">()</span></code>, garantindo o fechamento automático dos recursos de sistema mesmo em caso de exceções, uma prática fundamental para aplicações robustas. A especificação explícita da codificação UTF-8 assegura compatibilidade internacional e tratamento adequado de caracteres acentuados.</p>
+<p>A lógica da aplicação começa com uma verificação da existência do arquivo de entrada utilizando <code class="language-python highlight"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span></code>, estabelecendo uma abordagem que evita falhas de execução desnecessárias. O processamento principal emprega o gerenciador de contexto <code class="language-python highlight"><span class="k">with</span> <span class="nb">open</span><span class="p">()</span></code>, garantindo o fechamento automático dos recursos de sistema mesmo em caso de exceções, uma prática fundamental para aplicações robustas. A especificação explícita da codificação UTF-8 assegura compatibilidade internacional e tratamento adequado de caracteres acentuados.</p>
 <p>Durante a fase de leitura e processamento, o código utiliza o método <code class="language-python highlight"><span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">()</span></code> para decodificar o arquivo de entrada diretamente em uma estrutura de dados Python. A estratégia de validação itera sobre cada registro de venda (um dicionário dentro de uma lista) e utiliza blocos <code class="language-python highlight"><span class="k">try</span><span class="o">/</span><span class="k">except</span></code> para lidar de forma segura com inconsistências, como a ausência de chaves esperadas (<code class="language-python highlight"><span class="ne">KeyError</span></code>) ou valores que não podem ser convertidos para números (<code class="language-python highlight"><span class="ne">ValueError</span></code>, <code class="language-python highlight"><span class="ne">TypeError</span></code>), garantindo a integridade do processamento mesmo com dados malformados.</p>
-<p>A geração de saídas demonstra a flexibilidade do Python ao produzir dois tipos de relatórios a partir dos mesmos dados processados. Primeiramente, um relatório de texto legível para humanos é criado, utilizando a função <code class="language-python highlight"><span class="nb">print</span><span class="p">()</span></code> com o parâmetro file para cabeçalhos e resumos, e o método <code class="language-python highlight"><span class="n">write</span><span class="p">()</span></code> para a apresentação tabular dos dados. Em segundo lugar, um arquivo de resumo JSON é gerado com <code class="language-python highlight"><span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span></code>, contendo os dados consolidados de forma estruturada, ideal para ser consumido por outros sistemas ou para arquivamento. A implementação de ordenação decrescente por valor de vendas utilizando <code class="language-python highlight"><span class="nb">sorted</span><span class="p">()</span></code> com função <em>lambda</em> exemplifica técnicas de processamento que agregam valor analítico aos dois relatórios finais.</p>
+<p>A geração de saídas demonstra a flexibilidade do Python ao produzir dois tipos de relatórios a partir dos mesmos dados processados. Primeiramente, um relatório de texto legível para humanos é criado, utilizando a função <code class="language-python highlight"><span class="nb">print</span><span class="p">()</span></code> com o parâmetro <code>file</code> para cabeçalhos e resumos, e o método <code class="language-python highlight"><span class="n">write</span><span class="p">()</span></code> para a apresentação tabular dos dados. Em segundo lugar, um arquivo de resumo JSON é gerado com <code class="language-python highlight"><span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span></code>, contendo os dados consolidados de forma estruturada, ideal para ser consumido por outros sistemas ou para arquivamento. A implementação de ordenação decrescente por valor de vendas utilizando <code class="language-python highlight"><span class="nb">sorted</span><span class="p">()</span></code> com função <em>lambda</em> exemplifica técnicas de processamento que agregam valor analítico aos dois relatórios finais.</p>
 <p>A estratégia de nomenclatura temporal para os arquivos de relatório, empregando <code class="language-python highlight"><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">()</span></code>, estabelece um sistema de versionamento automático que previne sobreposições acidentais e facilita o rastreamento histórico. O bloco de execução condicional <code class="language-python highlight"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span></code> ilustra a estrutura modular adequada para código Python, permitindo tanto a importação como módulo quanto a execução independente, facilitando testes e reutilização em diferentes contextos de desenvolvimento.</p>
 <div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">  1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">  2</a></span>
@@ -3244,7 +3254,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 02:48:51 -03">19 de novembro de 2026 02:48:51</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     

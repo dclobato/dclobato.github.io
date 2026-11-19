@@ -1,0 +1,36 @@
+/* Usado apenas na versão em PDF (mkdocs-pdf.yml). */
+
+/* Todas as abas visíveis, uma depois da outra, sem a barra de títulos. */
+.tabbed-set.abas-expandidas > .tabbed-labels {
+  display: none !important;
+}
+.tabbed-set.abas-expandidas > .tabbed-content > .tabbed-block {
+  display: block !important;
+}
+.md-typeset .rotulo-aba {
+  margin: 0.8em 0 0.2em;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+@media print {
+  /* Evita quebrar blocos de código e tabelas no meio, quando possível. */
+  .md-typeset pre, .md-typeset table, .md-typeset .admonition {
+    break-inside: avoid;
+  }
+  .md-typeset h1, .md-typeset h2, .md-typeset h3 {
+    break-after: avoid;
+  }
+}
+
+/* Textos do plugin de impressão em português. */
+@page {
+  @bottom-right {
+    content: 'Página ' counter(page);
+  }
+}
+.print-site-enumerate-figures figcaption:before {
+  content: "Figura " counter(figurecounter) ": ";
+}

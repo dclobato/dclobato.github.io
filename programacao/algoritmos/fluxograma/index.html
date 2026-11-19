@@ -287,7 +287,7 @@
   <span class="md-ellipsis">
     
   
-    Porque aprender a programar?
+    Por que aprender a programar?
   
 
     
@@ -2304,7 +2304,7 @@
   <span class="md-ellipsis">
     
   
-    Questões de competicao
+    Questões de competição
   
 
     
@@ -2520,7 +2520,7 @@
 </figcaption>
 </figure>
 <ul>
-<li><strong>Entrada</strong>: Representa operações de entrada de dados por meio da interação do usuário com o programa (o usuário digita alguma coisa, por exemplo)</li>
+<li><strong>Entrada</strong>: Representa operações de entrada de dados por meio da interação do usuário com o programa (o usuário digita alguma coisa, por exemplo).</li>
 </ul>
 <figure>
 <pre class="mermaid"><code>   flowchart LR
@@ -2564,7 +2564,7 @@
 </figure>
 <h2 id="outros-simbolos-usados-em-fluxogramas">Outros símbolos usados em fluxogramas<a class="headerlink" href="#outros-simbolos-usados-em-fluxogramas" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Armazenamento em memória secundária</strong>: Indica que determina informação está sendo armazenada ou recuperada da memória secundária, como por exemplo o disco rígido</li>
+<li><strong>Armazenamento em memória secundária</strong>: Indica que determinada informação está sendo armazenada ou recuperada da memória secundária, como o disco rígido.</li>
 </ul>
 <figure>
 <pre class="mermaid"><code>   flowchart TD
@@ -2599,14 +2599,14 @@
 </figcaption>
 </figure>
 <h2 id="exemplos-de-fluxogramas">Exemplos de Fluxogramas<a class="headerlink" href="#exemplos-de-fluxogramas" title="Permanent link">&para;</a></h2>
-<p>Conhecendo os símbolos, podemos começar a construir fluxogramas para resolver determinados problemas. Vamos ver alguns exemplos de problemas e um possível fluxograma que resolva o problema (lembre-se que um problema pode ser resolvido de várias formas).</p>
-<p>O ideal é desenhar o fluxograma de cima para baixo, e da esquerda para a direita.  Em alguns casos, é aceitável fazendo apenas da esquerda para a direita.</p>
+<p>Conhecendo os símbolos, podemos começar a construir fluxogramas para resolver determinados problemas. Vamos ver alguns exemplos de problemas e um possível fluxograma que os resolva (lembre-se de que um problema pode ser resolvido de várias formas).</p>
+<p>O ideal é desenhar o fluxograma de cima para baixo e da esquerda para a direita. Em alguns casos, é aceitável fazê-lo apenas da esquerda para a direita.</p>
 <div class="admonition warning">
 <p class="admonition-title">Veja bem, preste atenção!</p>
 <p>Vale ressaltar que não existe um símbolo específico para representar estruturas de repetição em fluxogramas. As repetições são identificadas pela presença de um bloco de decisão (losango) cujas setas de saída criam um caminho de retorno a passos anteriores, formando um laço. Nesse contexto, o bloco de decisão não representa apenas uma escolha simples entre alternativas, mas sim a condição que determina se devemos continuar ou interromper a execução repetida de um conjunto de instruções.</p>
 </div>
 <ul>
-<li>A divisão de dois números pode ser feita como uma sucessão de subtrações do valor do divisor do valor do dividendo. O número de divisões que puderam ser feitas antes de o dividendo ficar menor que zero é o quociente, e o que sobrou do dividendo é o resto da divisão. Faça um fluxograma que leia o dividendo e o divisor e apresente o quociente e o resto utilizando o método das subtrações sucessivas</li>
+<li>A divisão de dois números pode ser feita como uma sucessão de subtrações do valor do divisor a partir do valor do dividendo. O número de subtrações que puderam ser feitas antes de o dividendo ficar menor que o divisor é o quociente, e o que sobrou do dividendo é o resto da divisão. Faça um fluxograma que leia o dividendo e o divisor e apresente o quociente e o resto utilizando o método das subtrações sucessivas.</li>
 </ul>
 <pre class="mermaid"><code>   flowchart TD
       I([Início]) --&gt; A --&gt; B --&gt; C
@@ -2620,9 +2620,9 @@
       E@{ shape: process, label: "quociente &amp;larr; quociente + 1" }
       F@{ shape: process, label: "resto &amp;larr; dividendo" }
       G@{ shape: curv-trap, label: "quociente&lt;br&gt;resto" }</code></pre>
-<p>No fluxograma acima, temos um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> onde obtemos os valores do dividendo e do divisor, seguido por <a href="../tiposdeprocessamento/#estruturas-sequenciais">estruturas sequenciais</a> que inicializam a variável <code>quociente</code>, realizam as subtrações sucessivas do <code>divisor</code> do <code>dividendo</code> e incrementam o <code>quociente</code>. O bloco de decisão <code>dividendo &gt;= divisor?</code> caracteriza uma <a href="../tiposdeprocessamento/#indeterminada">estrutura de repetição indeterminada</a>, pois não sabemos previamente quantas vezes será necessário subtrair o <code>divisor</code> do <code>dividendo</code> até que este se torne menor que o divisor. Ao final, temos um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o valor final do <code>quociente</code> e do <code>resto</code>.</p>
+<p>No fluxograma acima, temos um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> no qual obtemos os valores do dividendo e do divisor, seguido por <a href="../tiposdeprocessamento/#estruturas-sequenciais">estruturas sequenciais</a> que inicializam a variável <code>quociente</code>, realizam as subtrações sucessivas do <code>divisor</code> do <code>dividendo</code> e incrementam o <code>quociente</code>. O bloco de decisão <code>dividendo &gt;= divisor?</code> caracteriza uma <a href="../tiposdeprocessamento/#indeterminada">estrutura de repetição indeterminada</a>, pois não sabemos previamente quantas vezes será necessário subtrair o <code>divisor</code> do <code>dividendo</code> até que este se torne menor que o divisor. Ao final, temos um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o valor final do <code>quociente</code> e do <code>resto</code>.</p>
 <ul>
-<li>Chico tem 150cm e cresce 2cm por ano, enquanto Zé tem 110cm e cresce 3cm por ano. Construa um fluxograma que calcule e imprima quantos anos são necessários para que Zé fique mais alto que Chico</li>
+<li>Chico tem 150 cm e cresce 2 cm por ano, enquanto Zé tem 110 cm e cresce 3 cm por ano. Construa um fluxograma que calcule e imprima quantos anos são necessários para que Zé fique mais alto que Chico.</li>
 </ul>
 <pre class="mermaid"><code>   flowchart TD
       I([Início]) --&gt; A --&gt; B
@@ -2633,7 +2633,7 @@
       B@{ shape: question, label: "ze &gt; chico?" }
       C@{ shape: curv-trap, label: "anos" }
       D@{ shape: process, label: "ze &amp;larr; ze + 3&lt;br&gt;chico &amp;larr; chico + 2&lt;br&gt;anos &amp;larr; anos + 1" }</code></pre>
-<p>No fluxograma acima, temos uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> inicial onde as variáveis <code>chico</code>, <code>ze</code> e <code>anos</code> são inicializadas com os valores <code>150</code>, <code>110</code> e <code>0</code>, respectivamente. O bloco de decisão <code>ze &gt; chico?</code> caracteriza uma <a href="../tiposdeprocessamento/#indeterminada">estrutura de repetição indeterminada</a>, pois não sabemos previamente quantos anos serão necessários para que Zé ultrapasse a altura de Chico, já que isso depende da diferença inicial e das taxas de crescimento distintas. Enquanto a condição não for satisfeita, executamos <a href="../tiposdeprocessamento/#estruturas-sequenciais">estruturas sequenciais</a> que incrementam as alturas e o contador de anos. Quando finalmente <code>ze</code> supera <code>chico</code>, o programa executa um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o número de anos necessários.</p>
+<p>No fluxograma acima, temos uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> inicial na qual as variáveis <code>chico</code>, <code>ze</code> e <code>anos</code> são inicializadas com os valores <code>150</code>, <code>110</code> e <code>0</code>, respectivamente. O bloco de decisão <code>ze &gt; chico?</code> caracteriza uma <a href="../tiposdeprocessamento/#indeterminada">estrutura de repetição indeterminada</a>, pois não sabemos previamente quantos anos serão necessários para que Zé ultrapasse a altura de Chico, já que isso depende da diferença inicial e das taxas de crescimento distintas. Enquanto a condição não for satisfeita, executamos <a href="../tiposdeprocessamento/#estruturas-sequenciais">estruturas sequenciais</a> que incrementam as alturas e o contador de anos. Quando finalmente <code>ze</code> supera <code>chico</code>, o programa executa um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o número de anos necessários.</p>
 <ul>
 <li>Uma empresa paga ao vendedor uma comissão calculada de acordo com o valor de suas vendas. Se o valor da venda de um corretor for de <span class="arithmatex">\(\text{R\$}~50000.00\)</span> ou mais, a comissão será de 12% do valor vendido. Se o valor da venda for maior que <span class="arithmatex">\(\text{R\$}~30000.00\)</span> e menor que <span class="arithmatex">\(\text{R\$}~50000.00\)</span>, a comissão é de 9,5%. Nos demais casos, a comissão é de 7%. Leia o total de vendas de um vendedor e imprima a comissão devida pela empresa a ele.</li>
 </ul>
@@ -2658,9 +2658,9 @@
     H@{ shape: circle, label: "A" }
     I@{ shape: display, label: "comissao" }
     style Sub1 fill:#FFFFFF00, stroke:#FFFFFF00;</code></pre>
-<p>No fluxograma acima, temos inicialmente um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> onde obtemos o valor de <code>totalVendas</code>. Em seguida, encontramos <a href="../tiposdeprocessamento/#estruturas-condicionais">estruturas condicionais</a> encadeadas que verificam primeiramente se <code>totalVendas</code> é maior ou igual a 50000 e, em caso negativo, se é maior que 30000. Cada condição leva a uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> diferente que calcula a comissão apropriada: 12% para vendas acima de 50000, 9,5% para vendas entre 30000 e 50000, e 7% para os demais casos. Após qualquer um dos três cálculos possíveis, todos os caminhos convergem para um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o valor da comissão calculada.</p>
+<p>No fluxograma acima, temos inicialmente um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> no qual obtemos o valor de <code>totalVendas</code>. Em seguida, encontramos <a href="../tiposdeprocessamento/#estruturas-condicionais">estruturas condicionais</a> encadeadas que verificam primeiramente se <code>totalVendas</code> é maior ou igual a 50000 e, em caso negativo, se é maior que 30000. Cada condição leva a uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> diferente que calcula a comissão apropriada: 12% para vendas acima de 50000, 9,5% para vendas entre 30000 e 50000, e 7% para os demais casos. Após qualquer um dos três cálculos possíveis, todos os caminhos convergem para um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o valor da comissão calculada.</p>
 <ul>
-<li>João e Maria são amigos desde que se conheceram na creche. Desde então, eles compartilham uma rotina de brincadeiras: todas as vezes que eles se encontram, eles jogam Cara ou Coroa com uma moeda, e quem ganhar tem o privilégio de decidir quais brincadeiras eles irão jogar durante o dia. Maria sempre escolhe cara, e João sempre escolhe coroa. Hoje em dia eles estão na faculdade, mas continuam sendo bons amigos. Sempre que se encontram, eles ainda jogam Cara ou Coroa, e o vencedor decide que filme assistir, ou em que restaurante jantar, e assim por diante. Ontem Maria contou a João que ela guarda um registro de todas as vezes que eles jogaram, desde os tempos da creche. João ficou espantado. Porém João está estudando Ciência da Computação e decidiu que essa era uma boa oportunidade para mostrar a Maria suas habilidades em programação, escrevendo um programa que mostrasse o número de vezes que cada um deles venceu ao longo de todos esses anos. Leia um inteiro N que indica o número de partidas jogadas, e depois N inteiros que indicam se Maria (0) ou João (1) ganhou a partida. Por fim, diga quantas partidas João ganhou, e quantas partidas Maria ganhou.</li>
+<li>João e Maria são amigos desde que se conheceram na creche. Desde então, eles compartilham uma rotina de brincadeiras: todas as vezes que se encontram, jogam Cara ou Coroa com uma moeda, e quem ganha tem o privilégio de decidir quais brincadeiras irão fazer durante o dia. Maria sempre escolhe cara, e João sempre escolhe coroa. Hoje em dia eles estão na faculdade, mas continuam sendo bons amigos. Sempre que se encontram, ainda jogam Cara ou Coroa, e o vencedor decide que filme assistir, em que restaurante jantar, e assim por diante. Ontem Maria contou a João que guarda um registro de todas as vezes que eles jogaram, desde os tempos da creche. João ficou espantado. Porém, João está estudando Ciência da Computação e decidiu que essa era uma boa oportunidade para mostrar a Maria suas habilidades em programação, escrevendo um programa que mostrasse o número de vezes que cada um deles venceu ao longo de todos esses anos. Leia um inteiro <code>N</code> que indica o número de partidas jogadas e, depois, <code>N</code> inteiros que indicam se Maria (0) ou João (1) ganhou a partida. Por fim, informe quantas partidas João ganhou e quantas partidas Maria ganhou.</li>
 </ul>
 <pre class="mermaid"><code>flowchart TD
     0([Início])
@@ -2686,7 +2686,7 @@
     J@{ shape: circle, label: "A"}
     K@{ shape: circle, label: "A"}
     L@{ shape: circle, label: "A"}</code></pre>
-<p>No fluxograma acima, temos inicialmente um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> onde obtemos o valor de <code>N</code>, que representa o número total de partidas disputadas. Em seguida, executamos uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> que inicializa as variáveis <code>joaoVitorias</code>, <code>mariaVitorias</code> e <code>contador</code> com o valor zero. O bloco de decisão <code>contador == N</code> caracteriza uma <a href="../tiposdeprocessamento/#determinada">estrutura de repetição determinada</a>, pois sabemos exatamente quantas iterações ocorrerão: o laço será executado <code>N</code> vezes. A cada iteração, temos um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> que recebe o <code>resultado</code> da partida atual, seguido por uma <a href="../tiposdeprocessamento/#estruturas-condicionais">estrutura condicional</a> que verifica se <code>resultado</code> é igual a 1. Dependendo dessa condição, executamos <a href="../tiposdeprocessamento/#estruturas-sequenciais">estruturas sequenciais</a> que incrementam <code>joaoVitorias</code> ou <code>mariaVitorias</code>. Independentemente do resultado, o fluxo sempre executa uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> que incrementa o <code>contador</code> antes de retornar ao início do laço. Quando todas as <code>N</code> partidas forem processadas, o programa finaliza com um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o total de vitórias de João e de Maria.</p>
+<p>No fluxograma acima, temos inicialmente um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> no qual obtemos o valor de <code>N</code>, que representa o número total de partidas disputadas. Em seguida, executamos uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> que inicializa as variáveis <code>joaoVitorias</code>, <code>mariaVitorias</code> e <code>contador</code> com o valor zero. O bloco de decisão <code>contador == N</code> caracteriza uma <a href="../tiposdeprocessamento/#determinada">estrutura de repetição determinada</a>, pois sabemos exatamente quantas iterações ocorrerão: o laço será executado <code>N</code> vezes. A cada iteração, temos um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">entrada de dados</a> que recebe o <code>resultado</code> da partida atual, seguido por uma <a href="../tiposdeprocessamento/#estruturas-condicionais">estrutura condicional</a> que verifica se <code>resultado</code> é igual a 1. Dependendo dessa condição, executamos <a href="../tiposdeprocessamento/#estruturas-sequenciais">estruturas sequenciais</a> que incrementam <code>joaoVitorias</code> ou <code>mariaVitorias</code>. Independentemente do resultado, o fluxo sempre executa uma <a href="../tiposdeprocessamento/#estruturas-sequenciais">estrutura sequencial</a> que incrementa o <code>contador</code> antes de retornar ao início do laço. Quando todas as <code>N</code> partidas forem processadas, o programa finaliza com um bloco de <a href="../tiposdeprocessamento/#entrada-e-saida">saída de dados</a> que exibe o total de vitórias de João e de Maria.</p>
 
 
 
@@ -2709,7 +2709,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="11 de fevereiro de 2026 01:08:45 -03">11 de fevereiro de 2026 01:08:45</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
   </span>
 
     
