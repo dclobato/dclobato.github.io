@@ -2131,6 +2131,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../exercicios/tipos_de_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipos de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../exercicios/selecao/" class="md-nav__link">
         
   
@@ -2167,34 +2195,6 @@
     
   
     Estruturas de repetição e arranjos
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../exercicios/diversos/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Assuntos diversos
   
 
     
@@ -2345,7 +2345,7 @@
 </figcaption>
 </figure>
 <p>Durante o doutorado na Universidade de Cambridge, Stroustrup trabalhou com a linguagem Simula, considerada a primeira linguagem orientada a objetos. Ele gostou muito da forma como Simula permitia organizar um programa em classes, mas os programas resultantes eram lentos demais para uso prático. Ao chegar aos Laboratórios Bell, decidiu acrescentar classes à linguagem C, que já era usada no desenvolvimento do sistema operacional Unix. O resultado, chamado inicialmente de "C com Classes" (<em>C with Classes</em>), ganhou em 1983 o nome definitivo: C++. O nome é uma brincadeira com o operador de incremento <code class="language-cpp highlight"><span class="o">++</span></code>, sugerindo "um passo além".</p>
-<p>Em 1985 foram lançados o primeiro compilador comercial, o Cfront, e a primeira edição do livro <em>The C++ Programming Language</em>, escrito pelo próprio Stroustrup, que por muitos anos foi a única referência da linguagem. Nos anos seguintes a linguagem ganhou herança múltipla, classes abstratas, <em>templates</em> (que permitem escrever código genérico, independente de tipo) e tratamento de exceções.</p>
+<p>Em 1985 foram lançados o primeiro compilador comercial, o Cfront, e a primeira edição do livro <a href="https://www.google.com.br/books/edition/The_C++_Programming_Language/PSUNAAAAQBAJ?hl=en&amp;gbpv=0"><em>The C++ Programming Language</em></a>, escrito pelo próprio Stroustrup, que por muitos anos foi a única referência da linguagem. Nos anos seguintes a linguagem ganhou herança múltipla, classes abstratas, <em>templates</em> (que permitem escrever código genérico, independente de tipo) e tratamento de exceções.</p>
 <p>Um marco importante veio em 1994, quando a biblioteca de <em>templates</em> desenvolvida por Alexander Stepanov e Meng Lee, chamada STL (<em>Standard Template Library</em>), foi aceita para fazer parte da linguagem. A STL trouxe contêineres genéricos (vetores, listas, conjuntos, mapas...) e algoritmos prontos (ordenação, busca...) que funcionam com qualquer tipo de dado, e até hoje é uma das partes mais usadas da linguagem.</p>
 <p>A filosofia de projeto de C++ pode ser resumida em algumas ideias que Stroustrup repete com frequência:</p>
 <ul>
@@ -2424,9 +2424,9 @@
 <p>O C++14 fez ajustes e pequenas melhorias no C++11. O C++17 trouxe as <em>structured bindings</em> (que permitem "desempacotar" pares e estruturas em várias variáveis), os tipos <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">optional</span></code>, <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">variant</span></code> e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">string_view</span></code>, e a biblioteca de manipulação de arquivos e diretórios <code class="language-cpp highlight"><span class="o">&lt;</span><span class="n">filesystem</span><span class="o">&gt;</span></code>. O C++20 foi outra revisão de grande porte, com <em>concepts</em> (restrições sobre os tipos aceitos por <em>templates</em>), <em>ranges</em> (uma forma mais simples de compor algoritmos sobre sequências), módulos, corrotinas, o operador de comparação de três vias <code class="language-cpp highlight"><span class="o">&lt;=&gt;</span></code> e a biblioteca de formatação <code class="language-cpp highlight"><span class="o">&lt;</span><span class="n">format</span><span class="o">&gt;</span></code>. O C++23 trouxe, entre outros recursos, as funções <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">print</span></code> e <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">println</span></code> para saída formatada, o tipo <code class="language-cpp highlight"><span class="n">std</span><span class="o">::</span><span class="n">expected</span></code> para representar resultados que podem falhar e várias melhorias nos <em>ranges</em>. O próximo padrão, C++26, já tem o conteúdo definido pelo comitê, com novidades como reflexão estática (a capacidade de um programa inspecionar a própria estrutura durante a compilação) e contratos (pré e pós-condições verificáveis em funções).</p>
 <div class="admonition note">
 <p class="admonition-title">Qual versão usamos neste texto?</p>
-<p>Os exemplos deste texto seguem o padrão <strong>C++20</strong> e foram testados com o GCC 13.2 (<code>g++ -std=c++20</code>), o mesmo ambiente da Maratona SBC de Programação e do ICPC. Os recursos que só existem no <strong>C++23</strong> aparecem separados, sempre acompanhados da alternativa em C++20. A seção <a href="versoes/">C++20 e C++23</a> explica as diferenças e lista os recursos de cada versão.</p>
+<p>Os exemplos deste texto seguem o padrão <strong>C++20</strong> e foram testados com o <a href="https://icpc.global/worldfinals/programming-environment">GCC 13.2</a> (<code>g++ -std=c++20</code>), o mesmo ambiente da Maratona SBC de Programação e do ICPC (a OBI e a IOI também usam C++20, com <code>-std=gnu++20</code>). Os recursos que só existem no <strong>C++23</strong> aparecem separados, sempre acompanhados da alternativa em C++20. A seção <a href="versoes/">C++20 e C++23</a> explica as diferenças e lista os recursos de cada versão.</p>
 </div>
-<p>Hoje, C++ está presente em praticamente toda área em que desempenho é crítico: motores de jogos e de computação gráfica, navegadores <em>web</em>, bancos de dados, sistemas financeiros de alta frequência, compiladores, sistemas embarcados, aplicações científicas e bibliotecas de aprendizado de máquina. É também a linguagem mais usada em competições de programação, por combinar velocidade de execução com a riqueza da biblioteca padrão. Não por acaso, C++ aparece há décadas entre as primeiras posições do <a href="https://www.tiobe.com/tiobe-index/">TIOBE index</a>, que mede a popularidade das linguagens de programação.</p>
+<p>Hoje, C++ está presente em praticamente toda área em que desempenho é crítico: motores de jogos e de computação gráfica, navegadores <em>web</em>, bancos de dados, sistemas financeiros de alta frequência, compiladores, sistemas embarcados, aplicações científicas e bibliotecas de aprendizado de máquina. É também a linguagem mais usada em competições de programação, por combinar velocidade de execução com a riqueza da biblioteca padrão. Não por acaso, C++ aparece há décadas entre as primeiras posições do <a href="https://www.tiobe.com/tiobe-index/">índice TIOBE</a>, que mede a popularidade das linguagens de programação.</p>
 <p>Em resumo, C++ nasceu da vontade de unir eficiência e organização, evoluiu de uma extensão experimental para uma linguagem padronizada internacionalmente e continua se renovando a cada três anos. Aprender C++ é aprender, ao mesmo tempo, como o computador funciona "por baixo" e como construir abstrações poderosas sobre ele.</p>
 
 
@@ -2450,7 +2450,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="22 de novembro de 2026 01:36:06 -03">22 de novembro de 2026 01:36:06</span>
   </span>
 
     

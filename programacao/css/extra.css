@@ -12,3 +12,18 @@
 .md-typeset__table {
   line-height: 0.75em; /* Adjust as needed */
 }
+
+.md-typeset h4.exercicio {
+  margin-bottom: 0.2em;
+}
+
+.md-typeset h4.exercicio + p {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 1.25rem;
+}
+
+.md-typeset small.resumo-problema {
+  font-size: 0.8em;
+  opacity: 1;
+}

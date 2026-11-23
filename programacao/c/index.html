@@ -2131,6 +2131,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../exercicios/tipos_de_dados/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipos de dados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../exercicios/selecao/" class="md-nav__link">
         
   
@@ -2167,34 +2195,6 @@
     
   
     Estruturas de repetição e arranjos
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../exercicios/diversos/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Assuntos diversos
   
 
     
@@ -2319,6 +2319,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Nesta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#versoes-de-c-nas-competicoes-de-programacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Versões de C nas competições de programação
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2344,7 +2363,7 @@
 <p>Dennis Ritchie<br /><small><a href="https://ethw.org/Dennis_Ritchie">Engineering and Technology History Wiki</a></small></p>
 </figcaption>
 </figure>
-<p>C evoluiu a partir da linguagem B, que por sua vez derivou da linguagem BCPL (Basic Combined Programming Language) desenvolvida por Martin Richards na década de 1960. A BCPL foi criada com o objetivo de facilitar a escrita de compiladores. Ken Thompson simplificou a BCPL e criou a linguagem B, que foi utilizada nas primeiras versões do Unix.</p>
+<p>C evoluiu a partir da linguagem B, que por sua vez derivou da linguagem BCPL (<em>Basic Combined Programming Language</em>), desenvolvida por Martin Richards na década de 1960. A BCPL foi criada com o objetivo de facilitar a escrita de compiladores. Ken Thompson simplificou a BCPL e criou a linguagem B, que foi utilizada nas primeiras versões do Unix.</p>
 <p>A necessidade de tipos de dados mais ricos e melhor suporte à manipulação de hardware levou Ritchie a criar o C, adicionando tipos de dados, estruturas e outras funcionalidades. A primeira versão documentada de C surgiu em 1972. O design da linguagem refletia a filosofia minimalista de Ritchie e Thompson, que priorizavam simplicidade, eficiência e proximidade com o hardware. Esta abordagem "enxuta" foi posteriormente sintetizada no que se tornou conhecido como "Filosofia Unix": fazer uma coisa e fazê-la bem.</p>
 <p>O impacto do C na engenharia de software foi revolucionário. Antes do C, a maioria dos sistemas operacionais era escrita em assembly, específico para cada arquitetura. A inovação do C como linguagem de alto nível com capacidades de baixo nível permitiu que o Unix fosse reescrito em C em 1973, tornando-o o primeiro sistema operacional amplamente portável. Esta característica foi particularmente relevante no contexto tecnológico da época, marcado pela rápida evolução dos computadores e proliferação de diferentes arquiteturas de hardware.</p>
 <p>A portabilidade do Unix, possibilitada pelo uso de C, contribuiu significativamente para a rápida disseminação da linguagem em diversas plataformas. A distribuição do Unix para instituições acadêmicas a preços acessíveis potencializou este processo, introduzindo o C em ambientes universitários e influenciando gerações de cientistas da computação e engenheiros de software. O livro <em>The C Programming Language</em>, escrito por Brian Kernighan e Dennis Ritchie, tornou-se a referência fundamental para programadores de C<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
@@ -2399,17 +2418,18 @@
 </tr>
 </tbody>
 </table>
-<p>A padronização da linguagem pelo ANSI (American National Standards Institute) em 1989 (ANSI C ou C89) e pela ISO (International Organization for Standardization) em 1990 (ISO C ou C90) consolidou a linguagem e garantiu sua compatibilidade entre diferentes compiladores.</p>
+<p>A padronização da linguagem pelo ANSI (<em>American National Standards Institute</em>) em 1989 (ANSI C ou C89) e pela ISO (<em>International Organization for Standardization</em>) em 1990 (ISO C ou C90) consolidou a linguagem e garantiu sua compatibilidade entre diferentes compiladores.</p>
 <p>Após o C90, a linguagem continuou a evoluir com novas revisões. O C99 (ISO/IEC 9899:1999) introduziu funcionalidades como tipos de dados <code>long long</code>, arranjos (<em>arrays</em>) de tamanho variável e suporte para números complexos. O C11 (ISO/IEC 9899:2011) trouxe melhorias como suporte a <em>threads</em>, alinhamento de memória e expressões de seleção genérica de tipo.</p>
 <p>O C17 (ISO/IEC 9899:2018), também chamado de C18, foi principalmente uma correção de erros e esclarecimentos do C11, sem introduzir grandes funcionalidades novas. O C23 (ISO/IEC 9899:2024) é o padrão mais recente, e trouxe recursos como as palavras-chave <code class="language-c highlight"><span class="kt">bool</span></code>, <code class="language-c highlight"><span class="nb">true</span></code>, <code class="language-c highlight"><span class="nb">false</span></code> e <code class="language-c highlight"><span class="nb">nullptr</span></code>, constantes binárias (<code class="language-c highlight"><span class="mb">0b1010</span></code>), separadores de dígitos (<code class="language-c highlight"><span class="mi">1'000'000</span></code>), <code class="language-c highlight"><span class="k">typeof</span></code> e <code class="language-c highlight"><span class="k">constexpr</span></code>. Trabalhos já estão sendo realizados na próxima versão do padrão, que deve se chamar C2Y.</p>
 <div class="admonition note">
 <p class="admonition-title">A versão de C usada neste texto</p>
 <p>Os exemplos deste texto seguem o padrão <strong>C17</strong> (que é o C11 com correções, sem recursos novos) e não usam extensões de compiladores específicos. Eles foram compilados e executados nos ambientes dos juízes <em>online</em>:</p>
 <ul>
-<li>Na <strong>Maratona SBC de Programação</strong> e no <strong>ICPC</strong>, com o GCC 13.2 e o comando <code>gcc -g -O2 -std=gnu11 -static ... -lm</code> (o C11 com as extensões do GCC);</li>
-<li>No <strong><a href="https://arena.onlinejudge.com.br/">Arena</a></strong>, com o GCC 14.2 e o comando <code>gcc -std=c17 -O2 -D_GNU_SOURCE ... -lm</code>.</li>
+<li>Na <strong>Maratona SBC de Programação</strong> e no <strong>ICPC</strong>, com o <a href="https://icpc.global/worldfinals/programming-environment">GCC 13.2</a> (ou <a href="https://www.icpclatam.org/assets/docs/LAR2025%20-%20info_sheet.pdf">13.3</a>) e o comando <code>gcc -x c -g -O2 -std=gnu11 -static ... -lm</code> (o C11 com as extensões do GCC);</li>
+<li>Na <strong>OBI</strong>, com o <a href="https://olimpiada.ic.unicamp.br/info/regulamento/">GCC 15.2 ou superior</a> e o comando <code>gcc -lm -O2 -static -o executavel programa.c</code>;</li>
+<li>No <strong><a href="https://arena.onlinejudge.com.br/">Arena</a></strong>, com o GCC 14.2 e o comando <code>gcc -std=gnu17 -O2 -D_GNU_SOURCE ... -lm</code>.</li>
 </ul>
-<p>A seção <a href="criacao/">A criação de um programa em C</a> mostra como compilar os programas.</p>
+<p>As seções <a href="#versoes-de-c-nas-competicoes-de-programacao">Versões de C nas competições de programação</a>, ao final desta página, e <a href="criacao/">A criação de um programa em C</a> detalham como compilar os programas.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Garantias da linguagem e comportamento dos exemplos</p>
@@ -2427,11 +2447,49 @@ distinguidas ao testar os exemplos.</p>
 <p>O C estabeleceu um paradigma que influenciou diretamente o desenvolvimento de linguagens subsequentes, como C++, C#, Java, JavaScript, PHP, Python e muitas outras. A sintaxe básica do C tornou-se um padrão <em>de facto</em> na indústria de software, com sua influência perceptível mesmo em linguagens modernas desenvolvidas décadas depois.</p>
 <p>A dualidade única do C como linguagem que combina elegantemente abstração e acesso direto ao hardware explica sua extraordinária longevidade e relevância contínua. Mesmo após cinco décadas, o C permanece indispensável em áreas como desenvolvimento de sistemas embarcados, controladores, núcleos de sistemas operacionais e aplicações de alto desempenho, onde eficiência e controle preciso sobre o hardware são essenciais.</p>
 <p>Em resumo, C nasceu da necessidade de um sistema operacional portátil e evoluiu a partir de linguagens como BCPL e B, tornando-se uma linguagem fundamental na história da computação devido à sua portabilidade, eficiência e influência em outras linguagens. As sucessivas versões, desde C89 até C23, demonstram sua contínua evolução e adaptação às necessidades da programação moderna, além de permanecer há muito tempo nas primeiras posições do <a href="https://www.tiobe.com/tiobe-index/">índice TIOBE</a>, que mede a popularidade das linguagens de programação.</p>
+<h2 id="versoes-de-c-nas-competicoes-de-programacao">Versões de C nas competições de programação<a class="headerlink" href="#versoes-de-c-nas-competicoes-de-programacao" title="Permanent link">&para;</a></h2>
+<p>Nas competições, o compilador e as opções de compilação são fixados pela organização, e não adianta argumentar com o juiz depois de receber um "erro de compilação". A tabela abaixo resume os ambientes das competições e juízes citados neste texto:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Ambiente</th>
+<th style="text-align: left;">Compilador</th>
+<th style="text-align: left;">Padrão</th>
+<th style="text-align: left;">Linha de comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Maratona SBC de Programação e ICPC</td>
+<td style="text-align: left;"><a href="https://icpc.global/worldfinals/programming-environment">GCC 13.2</a> (<a href="https://www.icpclatam.org/assets/docs/LAR2025%20-%20info_sheet.pdf">13.3 na Regional Latam</a>)</td>
+<td style="text-align: left;"><code>gnu11</code></td>
+<td style="text-align: left;"><code>gcc -x c -g -O2 -std=gnu11 -static -lm</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://olimpiada.ic.unicamp.br/">OBI</a></td>
+<td style="text-align: left;"><a href="https://olimpiada.ic.unicamp.br/info/regulamento/">GCC 15.2 ou superior</a></td>
+<td style="text-align: left;"><code>gnu23</code><sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup></td>
+<td style="text-align: left;"><code>gcc -lm -O2 -static -o executavel programa.c</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="https://arena.onlinejudge.com.br/">Arena</a></td>
+<td style="text-align: left;">GCC 14.2</td>
+<td style="text-align: left;"><code>gnu17</code></td>
+<td style="text-align: left;"><code>gcc -std=gnu17 -O2 -D_GNU_SOURCE -lm</code></td>
+</tr>
+</tbody>
+</table>
+<p>Em todos esses ambientes, as extensões do GCC estão habilitadas (<code>gnu11</code>, <code>gnu17</code> ou <code>gnu23</code>): na Maratona e no ICPC, com <code>-std=gnu11</code>; no Arena, com <code>-std=gnu17</code> e <code>-D_GNU_SOURCE</code>, que também mantém disponíveis, na biblioteca, funções do GNU e do POSIX, como <code class="language-c highlight"><span class="n">strdup</span></code> e <code class="language-c highlight"><span class="n">getline</span></code>; e, na OBI, pelo padrão do próprio compilador<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>.</p>
+<p>A <a href="https://ioi2026.uz/contest-rules">IOI</a> não aparece na tabela porque aceita apenas C++.</p>
+<p>Como este texto usa o C17, que não acrescentou recursos ao C11, os exemplos compilam em todos esses ambientes. O mesmo não vale para o C23: as palavras-chave <code class="language-c highlight"><span class="kt">bool</span></code>, <code class="language-c highlight"><span class="nb">true</span></code>, <code class="language-c highlight"><span class="nb">false</span></code> e <code class="language-c highlight"><span class="nb">nullptr</span></code>, as constantes binárias e os separadores de dígitos só compilam quando o compilador está em modo C23 (como no GCC 15 da OBI), e falham na Maratona, no ICPC e no Arena. Para que o seu programa compile em qualquer um deles, escreva usando apenas recursos do C17.</p>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
 <p>Disponível via <a href="https://ifsp.pergamum.com.br/acervo/30219">Pergamum</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>Ao contrário do que faz em C++ (em que a linha de comando fixa <code>-std=gnu++20</code>), o <a href="https://olimpiada.ic.unicamp.br/info/regulamento/">regulamento da OBI</a> não inclui a opção <code>-std</code> na compilação em C, de modo que o GCC usa o padrão <em>default</em> da própria versão instalada. Entre o GCC 5 e o GCC 14 (inclusive o GCC 14.2 usado na OBI2025), esse padrão era <code>gnu17</code>; a partir do <a href="https://gcc.gnu.org/gcc-15/changes.html#c">GCC 15</a> (usado na OBI2026, com o GCC 15.2), o padrão <em>default</em> de C passou a ser <code>gnu23</code>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -2457,7 +2515,7 @@ distinguidas ao testar os exemplos.</p>
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de novembro de 2026 15:26:31 -03">19 de novembro de 2026 15:26:31</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="22 de novembro de 2026 01:36:06 -03">22 de novembro de 2026 01:36:06</span>
   </span>
 
     
